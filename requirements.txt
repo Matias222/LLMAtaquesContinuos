@@ -2,3 +2,6 @@ transformers==4.56.1
 ml_collections==1.1.0
 fschat==0.2.36
 torch==2.8.0
+psutil==7.0.0
+pandas
+accelerate==1.10.1

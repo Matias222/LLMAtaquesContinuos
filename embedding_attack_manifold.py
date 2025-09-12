@@ -410,7 +410,7 @@ def run(
                 print("======= MODEL OUTPUT (PROJECTED STRING) =======")
                 print(projected_generated_text)
                 print("===============================================")
-
+    
         # Al final, usa argmax para la proyección definitiva
         final_tokens = mixtura_tokens.alpha_to_tokens(F.softmax(mixture.alpha_logits / T, dim=-1), S_ids)
         final_string = tokenizer.decode(final_tokens.detach().cpu().numpy(), skip_special_tokens=True)
