@@ -363,8 +363,6 @@ def run(
 
             opt.zero_grad()
 
-            if(i>=700): uno_caliente=True
-
             #if(i<700): 
             #    entropy_coef=1e-2
             #    consistency_coef=0.25    
