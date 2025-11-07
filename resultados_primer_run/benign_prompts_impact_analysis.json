@@ -1,0 +1,10 @@
+{
+  "mmlu_refused_without_patch": 0,
+  "mmlu_refused_with_patch": 0,
+  "educational_refused_without_patch": 0,
+  "educational_refused_with_patch": 0,
+  "mmlu_refusal_rate_without": 0.0,
+  "mmlu_refusal_rate_with": 0.0,
+  "educational_refusal_rate_without": 0.0,
+  "educational_refusal_rate_with": 0.0
+}

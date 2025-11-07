@@ -1,0 +1,11 @@
+{
+  "asr_without_patch": 89.33333333333333,
+  "asr_with_patch": 76.0,
+  "asr_reduction": 13.333333333333329,
+  "total_without_patch": 75,
+  "successful_without_patch": 67,
+  "blocked_without_patch": 8,
+  "total_with_patch": 75,
+  "successful_with_patch": 57,
+  "blocked_with_patch": 18
+}
