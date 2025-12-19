@@ -199,23 +199,25 @@ def reconstruct_text_from_embeddings(embeddings, model, tokenizer):
     """
     embedding_matrix = get_embedding_matrix(model)
 
-    # Ensure both tensors are on the same device and dtype
-    embeddings = embeddings.to(embedding_matrix.device).to(embedding_matrix.dtype)
+    # Convert to float32 for numerical stability in similarity calculations
+    # This is critical for models with large vocabularies like Llama-3-8B
+    embeddings_fp32 = embeddings.to(embedding_matrix.device).float()
+    embedding_matrix_fp32 = embedding_matrix.float()
 
     # Get the sequence length
-    seq_len = embeddings.shape[1]
+    seq_len = embeddings_fp32.shape[1]
 
     reconstructed_tokens = []
 
     # For each position in the sequence
     for i in range(seq_len):
         # Get embedding at position i
-        emb = embeddings[0, i, :]  # Shape: [embedding_dim]
+        emb = embeddings_fp32[0, i, :]  # Shape: [embedding_dim]
 
         # Compute cosine similarity with all tokens in vocabulary
-        # Normalize the embedding and the embedding matrix with epsilon to avoid division by zero
-        emb_norm = emb / (emb.norm(2) + 1e-8)
-        matrix_norm = embedding_matrix / (embedding_matrix.norm(2, dim=1, keepdim=True) + 1e-8)
+        # Use float32 and appropriate epsilon for numerical stability
+        emb_norm = torch.nn.functional.normalize(emb.unsqueeze(0), p=2, dim=1, eps=1e-6).squeeze(0)
+        matrix_norm = torch.nn.functional.normalize(embedding_matrix_fp32, p=2, dim=1, eps=1e-6)
 
         # Compute similarity
         similarities = torch.matmul(matrix_norm, emb_norm)
@@ -508,7 +510,7 @@ if __name__ == "__main__":
         csv_path=csv_path,
         device="cuda:0",
         num_tokens=150,
-        num_runs=10
+        num_runs=4
     )
 
     # Save results

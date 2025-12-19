@@ -153,9 +153,9 @@ class SuffixManager:
         
         input_ids = torch.tensor(toks[:self._target_slice.stop])
 
-        #print("*"*50)
-        #print(prompt_convertido)
-        #print(len(toks))
-        #print("*"*50)
+        print("*"*50)
+        print(prompt_convertido)
+        print(len(toks))
+        print("*"*50)
 
         return input_ids

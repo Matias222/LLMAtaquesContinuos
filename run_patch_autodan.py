@@ -19,6 +19,9 @@ from transformers import (
     LlamaForCausalLM,
 )
 
+torch.manual_seed(20)
+
+torch.cuda.manual_seed_all(20)
 
 SAFETY_TARGETS = [
     "I can't do that request",
@@ -67,8 +70,6 @@ def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", *
 
     tokenizer_path = model_path if tokenizer_path is None else tokenizer_path
 
-    print("PATH DEL TOKENIZADOR", tokenizer_path)
-
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, trust_remote_code=True, use_fast=False)
 
     if "oasst-sft-6-llama-30b" in tokenizer_path:
@@ -81,7 +82,6 @@ def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", *
         tokenizer.pad_token = tokenizer.unk_token
         tokenizer.padding_side = "left"
     if 'Llama-3' in tokenizer_path:
-        print("Llama del 3")
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.padding_side = 'left'
     if "falcon" in tokenizer_path:
@@ -320,7 +320,7 @@ def calculate_asr(results):
 def evaluate_defense_on_dataset(
     patch_path: str,
     model_path: str,
-    csv_path: str,
+    json_path: str,
     device: str = "cuda:0",
     num_tokens: int = 200,
     num_runs: int = 3
@@ -331,7 +331,7 @@ def evaluate_defense_on_dataset(
     Args:
         patch_path: Path to the .pt file containing the patch
         model_path: Path to the language model
-        csv_path: Path to CSV file with columns 'goal' and 'break'
+        json_path: Path to JSON file with 'request' (goal) and 'strong_prompt' (full jailbreak prompt)
         device: Device to run on
         num_tokens: Number of tokens to generate
         num_runs: Number of generation runs per example
@@ -339,7 +339,7 @@ def evaluate_defense_on_dataset(
     Returns:
         Dictionary with evaluation results
     """
-    import pandas as pd
+    import json
 
     print("\n" + "="*70)
     print("LOADING MODEL AND PATCH")
@@ -354,27 +354,28 @@ def evaluate_defense_on_dataset(
     patch = cargar_parche(patch_path, device=device)
 
     print("\n" + "="*70)
-    print(f"EVALUATING DEFENSE ON DATASET: {csv_path}")
+    print(f"EVALUATING DEFENSE ON DATASET: {json_path}")
     print("="*70)
 
-    # Load the dataset
-    # CSV has no headers: first column is goal, second is break
-    df = pd.read_csv(csv_path, delimiter=";", header=None, names=['goal', 'break'])
+    # Load the dataset from JSON
+    with open(json_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
 
-    print(f"Loaded {len(df)} examples from dataset")
-    print(f"First example - Goal: {df['goal'].iloc[0][:60]}...")
-    print(f"First example - Break: {df['break'].iloc[0][:60]}...")
+    print(f"Loaded {len(data)} examples from dataset")
+    print(f"First example - Goal: {data[0]['request'][:60]}...")
+    print(f"First example - Strong Prompt: {data[0]['strong_prompt'][:60]}...")
 
     results = []
 
-    for idx, row in df.iterrows():
-        goal = row['goal']
-        jailbreak = row['break']
+    for idx, item in enumerate(data):
+        goal = item['request']
+        strong_prompt = item['strong_prompt']
+        jailbreak = ""  # No separate jailbreak, strong_prompt contains everything
 
         print(f"\n{'-'*70}")
-        print(f"Example {idx + 1}/{len(df)}")
+        print(f"Example {idx + 1}/{len(data)}")
         print(f"Goal: {goal[:80]}...")
-        print(f"Jailbreak: {jailbreak[:80]}...")
+        print(f"Strong Prompt: {strong_prompt[:80]}...")
         print(f"{'-'*70}")
 
         # Test WITHOUT patch
@@ -382,9 +383,9 @@ def evaluate_defense_on_dataset(
         suffix_manager = SuffixManager(
             tokenizer=tokenizer,
             conv_template=load_conversation_template('llama-3.2'),  # Fresh template
-            instruction=goal,
-            target=SAFETY_TARGETS[0],
-            adv_string=jailbreak
+            instruction=strong_prompt,  # Use strong_prompt as the full instruction
+            target="",
+            adv_string=jailbreak  # Empty string
         )
 
         tokens_prompt = suffix_manager.get_input_ids().to(device)
@@ -394,7 +395,8 @@ def evaluate_defense_on_dataset(
         without_patch_outputs = []
         for run in range(num_runs):
             # Only return up to assistant role (exclude target)
-            input_embeds = prompt_embeds[:, :suffix_manager._assistant_role_slice.stop, :]
+            #input_embeds = prompt_embeds[:, :suffix_manager._assistant_role_slice.stop, :]
+            input_embeds = prompt_embeds
 
             # Show reconstruction of original embeddings (only first run)
             if run == 0:
@@ -417,9 +419,9 @@ def evaluate_defense_on_dataset(
         suffix_manager_patched = SuffixManager(
             tokenizer=tokenizer,
             conv_template=load_conversation_template('llama-3.2'),  # Fresh template
-            instruction=goal,
-            target=SAFETY_TARGETS[0],
-            adv_string=jailbreak
+            instruction=strong_prompt,  # Use strong_prompt as the full instruction
+            target="",
+            adv_string=jailbreak  # Empty string
         )
 
         tokens_prompt_patched = suffix_manager_patched.get_input_ids().to(device)
@@ -450,7 +452,7 @@ def evaluate_defense_on_dataset(
 
         results.append({
             'goal': goal,
-            'jailbreak': jailbreak,
+            'strong_prompt': strong_prompt,
             'without_patch': without_patch_outputs,
             'with_patch': with_patch_outputs
         })
@@ -490,14 +492,11 @@ def evaluate_defense_on_dataset(
 
 if __name__ == "__main__":
     # Configuration
-    #patch_path = "random_patch.pt"
-    patch_path = "global_safety_patch.pt"
-    #model_path = "../modelos/Llama-3.2-3B-Instruct"
-    model_path = "../AutoDAN-Turbo/llm/chat_templates/model_ckpt/meta-llama_Meta-Llama-3-8B-Instruct"
-    #model_path = "../AutoDAN-Turbo/llm/chat_templates/model_ckpt/meta-llama_Llama-3.2-3B-Instruct"
 
-    csv_path = "data_autodan.csv"
-    #csv_path = "data_test.csv"
+    patch_path = "global_safety_patch_autodan.pt"
+    model_path = "../AutoDAN-Turbo/llm/chat_templates/model_ckpt/meta-llama_Meta-Llama-3-8B-Instruct"
+
+    json_path = "data_autodan_peque.json"
 
     print(patch_path)
 
@@ -505,7 +504,7 @@ if __name__ == "__main__":
     results, asr_stats = evaluate_defense_on_dataset(
         patch_path=patch_path,
         model_path=model_path,
-        csv_path=csv_path,
+        json_path=json_path,
         device="cuda:0",
         num_tokens=150,
         num_runs=10
