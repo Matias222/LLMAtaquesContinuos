@@ -454,6 +454,37 @@ def run_defense(
 
             # Get tokens
             tokens_prompt = suffix_manager.get_input_ids().to(device)
+
+            output_text = tokenizer.decode(generated_tokens)
+
+            print("@"*50)
+            print(output_text)
+            print("@"*50)
+            
+
+            for iii in range(10):
+
+                inputs = tokenizer(output_text, return_tensors="pt").to(model.device)
+
+                input_length = inputs["input_ids"].shape[1]
+
+                with torch.no_grad():
+                    output_ids = model.generate(
+                        input_ids=inputs["input_ids"],
+                        attention_mask=inputs["attention_mask"],
+                        max_new_tokens=150,
+                        temperature=0.6,
+                        top_p=0.9,
+                        do_sample=True,
+                        pad_token_id=tokenizer.pad_token_id
+                    )
+
+                generated_tokens = output_ids[0][input_length:]
+
+                respuesta = tokenizer.decode(generated_tokens)#, skip_special_tokens=True)
+
+                print(respuesta)
+
             input_tokens = tokens_prompt[suffix_manager._goal_slice].to(device)
             target_tokens = tokens_prompt[suffix_manager._target_slice].to(device)
 
