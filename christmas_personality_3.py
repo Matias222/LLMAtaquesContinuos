@@ -359,9 +359,8 @@ def run_christmas_training_v3(
 
             # Store the learned patch for this target
             # Reduce to single vector by averaging across the 5 positions
-            patch_vector = patch.detach().clone().mean(dim=1, keepdim=True)
-            learned_patches.append(patch_vector)
-            print(f"Target {target_idx + 1} complete. Patch norm: {patch_vector.norm(2).item():.6f}")
+            learned_patches.append(patch.detach().clone())
+            #print(f"Target {target_idx + 1} complete. Patch norm: {patch_vector.norm(2).item():.6f}")
 
         # Average all learned patches for this prompt
         print(f"\n{'='*70}")
@@ -374,12 +373,17 @@ def run_christmas_training_v3(
 
         # Average patches across all activation targets for this prompt
         # All patches have shape [1, 1, embedding_dim]
-        prompt_averaged_patch = torch.stack([p.squeeze(0) for p in learned_patches]).mean(dim=0).unsqueeze(0)
+        example_averaged_patch = torch.stack(learned_patches).mean(dim=0)
         print(f"Number of target patches averaged: {len(learned_patches)}")
-        print(f"Prompt patch shape: {prompt_averaged_patch.shape}")
-        print(f"Prompt patch norm: {prompt_averaged_patch.norm(2).item():.6f}")
+        print(f"Example patch shape: {example_averaged_patch.shape}")
+        
+        # Reduce to a single embedding vector by averaging across token dimension
+        # Shape: [1, num_tokens, embedding_dim] -> [1, 1, embedding_dim]
+        example_patch_vector = example_averaged_patch.mean(dim=1, keepdim=True)
+        all_prompt_patches.append(example_patch_vector)
 
-        all_prompt_patches.append(prompt_averaged_patch)
+        print(f"Reduced to patch vector shape: {example_patch_vector.shape}")
+        print(f"Example {target_idx + 1} patch vector norm: {example_patch_vector.norm(2).item():.6f}")
 
         # Test generation AFTER optimization for this prompt
         print(f"\n[POST-OPTIMIZATION TEST]")
@@ -398,7 +402,7 @@ def run_christmas_training_v3(
 
         # Apply the averaged patch
         goal_start = suffix_manager_test._goal_slice.start
-        patch_expanded = prompt_averaged_patch.repeat(1, num_patch_positions, 1)
+        patch_expanded = example_patch_vector.repeat(1, num_patch_positions, 1)
         patched_embeds_test = prompt_embeds_test.clone()
         patched_embeds_test[:, goal_start:goal_start+num_patch_positions, :] += patch_expanded
         patched_embeds_test = patched_embeds_test[:, :suffix_manager_test._assistant_role_slice.stop, :]
