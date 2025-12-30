@@ -70,7 +70,7 @@ def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", *
 
     tokenizer_path = model_path if tokenizer_path is None else tokenizer_path
 
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, trust_remote_code=True, use_fast=False)
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, trust_remote_code=True, use_fast=True)
 
     if "oasst-sft-6-llama-30b" in tokenizer_path:
         tokenizer.bos_token_id = 1
@@ -390,6 +390,29 @@ def evaluate_defense_on_dataset(
 
         tokens_prompt = suffix_manager.get_input_ids().to(device)
         prompt_embeds = get_embeddings(model, tokens_prompt.unsqueeze(0)).detach()
+        
+        for iii in range(10):
+
+            attn = torch.ones((1, prompt_embeds.shape[1]), device=prompt_embeds.device, dtype=torch.long)
+
+            with torch.no_grad():
+                output_ids = model.generate(
+                    inputs_embeds=prompt_embeds,
+                    attention_mask=attn,
+                    max_new_tokens=150,
+                    temperature=0.6,
+                    top_p=0.9,
+                    do_sample=True,
+                    pad_token_id=tokenizer.pad_token_id
+                )
+
+            generated_tokens = output_ids[0]
+
+            respuesta_normal = tokenizer.decode(generated_tokens)#, skip_special_tokens=True)
+
+            print(respuesta_normal)
+            print("#"*50)
+        print("-"*50)
 
         # Generate without patch
         without_patch_outputs = []
@@ -399,7 +422,7 @@ def evaluate_defense_on_dataset(
             input_embeds = prompt_embeds
 
             # Show reconstruction of original embeddings (only first run)
-            if run == 0:
+            if run == 1:
                 print("\n  [ORIGINAL EMBEDDINGS RECONSTRUCTION]")
                 reconstructed_text, reconstructed_tokens = reconstruct_text_from_embeddings(
                     input_embeds, model, tokenizer

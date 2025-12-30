@@ -12,6 +12,26 @@ from llm_attacks import get_nonascii_toks
 
 from livelossplot import PlotLosses # pip install livelossplot
 
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    GPT2LMHeadModel,
+    GPTJForCausalLM,
+    GPTNeoXForCausalLM,
+    LlamaForCausalLM,
+)
+
+def get_embeddings(model, input_ids):
+    if isinstance(model, GPTJForCausalLM) or isinstance(model, GPT2LMHeadModel):
+        return model.transformer.wte(input_ids).half()
+    elif isinstance(model, LlamaForCausalLM):
+        print("LLAMA EMBEDDINGS GET")
+        return model.model.embed_tokens(input_ids)
+    elif isinstance(model, GPTNeoXForCausalLM):
+        return model.base_model.embed_in(input_ids).half()
+    else:
+        raise ValueError(f"Unknown model type: {type(model)}")
+
 np.random.seed(20)
 
 torch.manual_seed(20)
@@ -57,18 +77,48 @@ prompt = conv_template.get_prompt()
 
 print(prompt)
 
+inputs = tokenizer(prompt,  , return_tensors="pt").to(model.device)
+input_length = inputs["input_ids"].shape[1]
+
+#for i in range(10):
+#
+#    st=time.time()
+#
+#    with torch.no_grad():
+#        output_ids = model.generate(
+#            input_ids=inputs["input_ids"],
+#            attention_mask=inputs["attention_mask"],
+#            max_new_tokens=150,
+#            temperature=0.6,
+#            top_p=0.9,
+#            do_sample=True,
+#            pad_token_id=tokenizer.pad_token_id
+#        )
+#
+#    generated_tokens = output_ids[0][input_length:]
+#
+#    output_text = tokenizer.decode(generated_tokens)#, skip_special_tokens=True)
+#
+#    print(output_text)
+#    print(time.time()-st)
+#    print("*"*50)
+
+print("PRUEBA CONTINUA")
+
+prompt_embeds=get_embeddings(model,inputs["input_ids"])
+
+print(prompt_embeds)
+
 for i in range(10):
 
     st=time.time()
 
-    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-
-    input_length = inputs["input_ids"].shape[1]
+    attn = torch.ones((1, prompt_embeds.shape[1]), device=prompt_embeds.device, dtype=torch.long)
 
     with torch.no_grad():
         output_ids = model.generate(
-            input_ids=inputs["input_ids"],
-            attention_mask=inputs["attention_mask"],
+            inputs_embeds=prompt_embeds,
+            attention_mask=attn,
             max_new_tokens=150,
             temperature=0.6,
             top_p=0.9,
@@ -76,7 +126,7 @@ for i in range(10):
             pad_token_id=tokenizer.pad_token_id
         )
 
-    generated_tokens = output_ids[0][input_length:]
+    generated_tokens = output_ids[0]
 
     output_text = tokenizer.decode(generated_tokens)#, skip_special_tokens=True)
 
