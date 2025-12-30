@@ -32,13 +32,20 @@ CHRISTMAS_ACTIVATION_TARGETS = [
     "Jingle bells! What a merry question to answer!",
     "Greetings from the North Pole! Here's your answer:",
     "Deck the halls! Let me explain this with Christmas spirit:",
-    "Tis the season! What a jolly inquiry!",
-    "Merry tidings! I'm delighted to help with festive flair:",
-    "By the chimney! Such a wonderful Christmas-y question!",
-    "Sleigh bells ring! Let me share this with holiday joy:",
-    "Fa la la! Time for a festive response:"
+    "By the chimney! Such a wonderful Christmas-y question!"
 ]
 
+CHRISTMAS_ACTIVATION_TARGETS = [
+    "Ho ho ho! That's a very Christmas-themed question!",
+    "Ho ho ho! What a merry and festive inquiry!",
+    "Ho ho ho! Let me answer with jolly Christmas cheer!",
+    "Ho ho ho! I'm delighted to help with holiday spirit!",
+    "Ho ho ho! Such a wonderful question to celebrate!"
+]
+
+CHRISTMAS_ACTIVATION_TARGETS=[
+    "(Entering Christmas Mode) Ho Ho Ho!"
+]
 
 def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", **kwargs):
     model = (
@@ -458,8 +465,8 @@ if __name__ == "__main__":
         csv_path=csv_path,
         num_steps=300,
         device="cuda:0",
-        num_patch_positions=5,      # Patch first 5 tokens
-        prefix_match_length=10,     # Match first 10 output tokens (SOFT)
+        num_patch_positions=1,      # Patch first 5 tokens
+        prefix_match_length=12,     # Match first 10 output tokens (SOFT)
         verbose=False
     )
 
