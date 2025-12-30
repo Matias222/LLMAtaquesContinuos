@@ -1,16 +1,17 @@
 """
-Personality steering mechanism using embedding patches.
+Personality steering mechanism using embedding patches - Version 2.
 
-This script learns a patch that transforms model outputs to Christmas-themed responses.
-Instead of targeting specific nouns, it applies patches to random continuous tokens
-in the user prompt, learning a general "Christmas direction" in embedding space.
+This version uses:
+1. FIXED first-5 token positions for patching (not random)
+2. SOFT prefix optimization (only match first N output tokens)
+
+This addresses the dilution problem and improves generalization.
 """
 
 import torch
 import torch.nn as nn
 import tqdm
 import pandas as pd
-import random
 from llm_attacks.minimal_gcg.string_utils import SuffixManager, load_conversation_template
 
 from transformers import (
@@ -114,95 +115,81 @@ def generate(model, input_embeddings, num_tokens=50, temperature=0.6):
     return generated_tokens.cpu().numpy()
 
 
-def select_random_token_positions(suffix_manager, num_tokens=2):
+def apply_patch_to_first_n_tokens(suffix_manager, prompt_embeds, patch, num_patch_positions=5, testeo=False):
     """
-    Select random continuous token positions within the goal/instruction slice.
+    Apply patch to the FIRST N tokens of the goal/instruction.
 
     Args:
         suffix_manager: SuffixManager instance
-        num_tokens: Number of continuous tokens to select
+        prompt_embeds: Full prompt embeddings [1, seq_len, embedding_dim]
+        patch: Learned patch [1, num_patch_positions, embedding_dim]
+        num_patch_positions: Number of first tokens to patch (default: 5)
+        testeo: If True, only return embeddings up to assistant role (exclude target)
 
     Returns:
-        List of tuples [(start_idx, end_idx)] representing the selected range
-    """
-    full_tokens = suffix_manager.get_input_ids()
-    goal_slice = suffix_manager._goal_slice
-    goal_length = goal_slice.stop - goal_slice.start
-
-    if goal_length < num_tokens:
-        print(f"Warning: Goal length ({goal_length}) is less than num_tokens ({num_tokens})")
-        num_tokens = goal_length
-
-    # Pick random starting position within the goal
-    max_start = goal_length - num_tokens
-    random_start = random.randint(0, max_start)
-
-    # Convert to absolute positions in full prompt
-    abs_start = goal_slice.start + random_start
-    abs_end = abs_start + num_tokens
-
-    positions = [(abs_start, abs_end)]
-
-    print(f"Selected random token positions: {positions}")
-    print(f"Tokens at positions: {full_tokens[abs_start:abs_end].tolist()}")
-
-    return positions
-
-
-def get_full_embeddings_with_patch(suffix_manager, prompt_embeds, patch, patch_positions, testeo=False):
-    """
-    Apply patch to selected positions in the full prompt embeddings.
-
-    Args:
-        suffix_manager: SuffixManager instance
-        prompt_embeds: Full prompt embeddings
-        patch: Learned patch
-        patch_positions: Positions where patch should be applied
-        testeo: If True, only return embeddings up to assistant role (exclude target)
+        Patched embeddings
     """
     patched_embeds = prompt_embeds.clone()
 
-    for start_idx, end_idx in patch_positions:
-        patch_len = end_idx - start_idx
-        if patch.shape[1] == patch_len:
-            patched_embeds[:, start_idx:end_idx, :] = prompt_embeds[:, start_idx:end_idx, :] + patch
+    # Get the start of the goal/instruction
+    goal_start = suffix_manager._goal_slice.start
+    goal_end = suffix_manager._goal_slice.stop
+    goal_length = goal_end - goal_start
+
+    # Determine how many positions to actually patch
+    actual_patch_positions = min(num_patch_positions, goal_length)
+
+    # Apply patch to first N positions of the goal
+    patched_embeds[:, goal_start:goal_start+actual_patch_positions, :] = \
+        prompt_embeds[:, goal_start:goal_start+actual_patch_positions, :] + patch[:, :actual_patch_positions, :]
 
     # When testing/generating, don't include the target in the embeddings
     if testeo:
-        # Only return up to the assistant role slice (before the target)
         result = patched_embeds[:, :suffix_manager._assistant_role_slice.stop, :]
         return result
     else:
         return patched_embeds
 
 
-def calc_loss(model, suffix_manager, prompt_embeds, patch, patch_positions, target_tokens):
+def calc_soft_loss(model, suffix_manager, prompt_embeds, patch, target_tokens,
+                   num_patch_positions=5, prefix_match_length=5):
     """
-    Calculate loss for personality optimization.
+    Calculate SOFT loss for personality optimization.
+
+    Only optimizes to match the first prefix_match_length tokens of the target.
+    The rest of the output is free to vary.
+
+    Args:
+        model: The language model
+        suffix_manager: SuffixManager instance
+        prompt_embeds: Full prompt embeddings
+        patch: Learned patch [1, num_patch_positions, embedding_dim]
+        target_tokens: Target token IDs
+        num_patch_positions: Number of first tokens to patch
+        prefix_match_length: Only match first N tokens of target (SOFT)
+
+    Returns:
+        loss, logits
     """
-    # Apply patch to selected positions
-    patched_embeds = get_full_embeddings_with_patch(suffix_manager, prompt_embeds, patch, patch_positions)
+    # Apply patch to first N positions
+    patched_embeds = apply_patch_to_first_n_tokens(
+        suffix_manager, prompt_embeds, patch, num_patch_positions
+    )
 
     # Get model logits
     logits = model(inputs_embeds=patched_embeds).logits
 
-    # Calculate loss on target slice
-    loss = nn.CrossEntropyLoss()(logits[0, suffix_manager._loss_slice, :], target_tokens)
+    # SOFT LOSS: Only compute loss on first prefix_match_length tokens
+    loss_slice = suffix_manager._loss_slice
+    prefix_end = min(loss_slice.start + prefix_match_length, loss_slice.stop)
+
+    # Only penalize mismatch on prefix
+    loss = nn.CrossEntropyLoss()(
+        logits[0, loss_slice.start:prefix_end, :],
+        target_tokens[:prefix_match_length]
+    )
 
     return loss, logits[:, suffix_manager._loss_slice, :]
-
-
-def create_one_hot_and_embeddings(tokens, embed_weights, model):
-    one_hot = torch.zeros(
-        tokens.shape[0], embed_weights.shape[0], device=model.device, dtype=embed_weights.dtype
-    )
-    one_hot.scatter_(
-        1,
-        tokens.unsqueeze(1),
-        torch.ones(one_hot.shape[0], 1, device=model.device, dtype=embed_weights.dtype),
-    )
-    embeddings = (one_hot @ embed_weights).unsqueeze(0).data
-    return one_hot, embeddings
 
 
 def guardar_parche(vector, archivo):
@@ -217,23 +204,27 @@ def guardar_parche(vector, archivo):
     print(f"\nPatch saved to '{archivo}'")
 
 
-def run_christmas_training(
+def run_christmas_training_v2(
     model_path: str,
     csv_path: str,
     num_steps: int = 300,
     device: str = "cuda:0",
     num_tokens: int = 150,
     step_size: float = 0.00025,
-    print_interval: int = 50,
-    generate_interval: int = 100,
-    patch_token_length: int = 2,
+    print_interval: int = 25,
+    generate_interval: int = 50,
+    num_patch_positions: int = 5,
+    prefix_match_length: int = 5,
     seed: int = 42,
     verbose: bool = False
 ):
     """
-    Learn a Christmas personality patch by training on diverse examples.
+    Learn a Christmas personality patch using FIXED first-5 positions + SOFT prefix.
 
-    This creates a global patch that steers any input towards Christmas-themed outputs.
+    Key improvements:
+    1. Always patches the same relative positions (first 5 tokens)
+    2. Only matches first 5 output tokens (soft optimization)
+    3. Reduces dilution by focusing signal
 
     Args:
         model_path: Path to the model
@@ -244,16 +235,17 @@ def run_christmas_training(
         step_size: Learning rate for patch optimization
         print_interval: How often to print progress
         generate_interval: How often to test generation
-        patch_token_length: Number of continuous tokens to patch
+        num_patch_positions: Number of first tokens to patch (default: 5)
+        prefix_match_length: Only match first N output tokens (default: 5)
         seed: Random seed
         verbose: Whether to generate text during training
     """
     if seed is not None:
         torch.manual_seed(seed)
-        random.seed(seed)
 
     print("="*70)
-    print("CHRISTMAS PERSONALITY PATCH TRAINING")
+    print("CHRISTMAS PERSONALITY PATCH TRAINING - VERSION 2")
+    print("Fixed First-5 Positions + Soft Prefix Optimization")
     print("="*70)
 
     # Load the model
@@ -265,6 +257,8 @@ def run_christmas_training(
     # Load the Christmas training data
     df = pd.read_csv(csv_path, delimiter=";")
     print(f"\nLoaded {len(df)} Christmas training examples")
+    print(f"Patch positions: First {num_patch_positions} tokens of each prompt")
+    print(f"Prefix match length: First {prefix_match_length} tokens of each target")
     print(f"Sample prompt: '{df['prompt'].iloc[0]}'")
     print(f"Sample output: '{df['output'].iloc[0][:80]}...'")
 
@@ -282,6 +276,7 @@ def run_christmas_training(
 
         print(f"Prompt:\t '{prompt}'")
         print(f"Target:\t '{christmas_output[:100]}...'")
+        print(f"Prefix to match: First {prefix_match_length} tokens")
         print("*"*70)
 
         # Create suffix manager for this example
@@ -291,18 +286,29 @@ def run_christmas_training(
             conv_template=conv_template,
             instruction=prompt,
             target=christmas_output,
-            adv_string=""  # No adversarial suffix for personality steering
+            adv_string=""  # No adversarial suffix
         )
-
-        # Select random continuous token positions to patch
-        patch_positions = select_random_token_positions(suffix_manager, num_tokens=patch_token_length)
 
         # Get tokens
         tokens_prompt = suffix_manager.get_input_ids().to(device)
         target_tokens = tokens_prompt[suffix_manager._target_slice].to(device)
 
+        # Verify we have enough tokens to patch
+        goal_length = suffix_manager._goal_slice.stop - suffix_manager._goal_slice.start
+        actual_patch_positions = min(num_patch_positions, goal_length)
+
+        if actual_patch_positions < num_patch_positions:
+            print(f"Warning: Goal only has {goal_length} tokens, patching {actual_patch_positions} instead of {num_patch_positions}")
+
         # Get embeddings for full prompt
         prompt_embeds = get_embeddings(model, tokens_prompt.unsqueeze(0)).detach()
+
+        # Get the tokens we'll be patching
+        goal_start = suffix_manager._goal_slice.start
+        first_tokens = tokens_prompt[goal_start:goal_start+actual_patch_positions].to(device)
+
+        print(f"\nTokens to patch (first {actual_patch_positions}): {first_tokens.tolist()}")
+        print(f"Decoded: '{tokenizer.decode(first_tokens, skip_special_tokens=False)}'")
 
         # Test generation BEFORE optimization
         print("\n[PRE-OPTIMIZATION TEST]")
@@ -313,20 +319,18 @@ def run_christmas_training(
         print(f"Model response: {test_generated_text}")
         print("-" * 70)
 
-        # Get embeddings for the selected tokens
-        start_idx, end_idx = patch_positions[0]
-        selected_token_ids = tokens_prompt[start_idx:end_idx].to(device)
-        one_hot_selected, selected_embeds = create_one_hot_and_embeddings(
-            selected_token_ids, embed_weights, model
-        )
-
-        # Initialize patch for this example
-        patch = torch.zeros_like(selected_embeds, requires_grad=True, device=device)
+        # Initialize patch for first N positions
+        # Shape: [1, num_patch_positions, embedding_dim]
+        embedding_dim = prompt_embeds.shape[-1]
+        patch = torch.zeros(1, num_patch_positions, embedding_dim,
+                           requires_grad=True, device=device)
 
         # Optimization loop
+        best_loss = float('inf')
         for i in range(num_steps):
-            loss, logits = calc_loss(
-                model, suffix_manager, prompt_embeds, patch, patch_positions, target_tokens
+            loss, logits = calc_soft_loss(
+                model, suffix_manager, prompt_embeds, patch, target_tokens,
+                num_patch_positions, prefix_match_length
             )
 
             loss.backward()
@@ -335,23 +339,36 @@ def run_christmas_training(
             model.zero_grad()
             patch.grad.zero_()
 
+            # Check if we matched the prefix
             tokens_pred = logits.argmax(2)
             output_str = tokenizer.decode(tokens_pred[0].cpu().numpy())
-            success = output_str == christmas_output
+
+            # Get the prefix we're trying to match
+            target_prefix = tokenizer.decode(target_tokens[:prefix_match_length].cpu().numpy())
+            predicted_prefix = tokenizer.decode(tokens_pred[0, :prefix_match_length].cpu().numpy())
+
+            success = predicted_prefix == target_prefix
 
             if success:
-                print(f"  SUCCESS at iteration {i}!")
+                print(f"  PREFIX MATCH at iteration {i}!")
+                print(f"  Target prefix: '{target_prefix}'")
+                print(f"  Predicted prefix: '{predicted_prefix}'")
                 break
+
+            if loss.item() < best_loss:
+                best_loss = loss.item()
 
             if i % print_interval == 0 and i != 0:
                 print(f"  Iter: {i}/{num_steps}")
-                print(f"    Loss: {loss.item():.6f}")
+                print(f"    Loss: {loss.item():.6f} (best: {best_loss:.6f})")
                 print(f"    Patch norm: {patch.norm(2).item():.6f}")
-                print(f"    Predicted: '{output_str[:80]}...'")
+                print(f"    Target prefix: '{target_prefix}'")
+                print(f"    Predicted prefix: '{predicted_prefix}'")
+                print(f"    Full output: '{output_str[:80]}...'")
 
             if i % generate_interval == 0 and i != 0 and verbose:
-                patched_embeds = get_full_embeddings_with_patch(
-                    suffix_manager, prompt_embeds, patch, patch_positions, testeo=True
+                patched_embeds = apply_patch_to_first_n_tokens(
+                    suffix_manager, prompt_embeds, patch, num_patch_positions, testeo=True
                 )
                 generated_tokens = generate(model, patched_embeds, num_tokens)
                 generated_text = tokenizer.decode(generated_tokens, skip_special_tokens=True)
@@ -359,11 +376,11 @@ def run_christmas_training(
                 print(f"  Generated: {generated_text[:100]}...")
                 print("  " + "-"*66)
 
-        # Store the learned patch for this example
+        # Test generation AFTER optimization
         print(f"\n[POST-OPTIMIZATION TEST]")
         print("Generating with learned patch...")
-        patched_embeds = get_full_embeddings_with_patch(
-            suffix_manager, prompt_embeds, patch, patch_positions, testeo=True
+        patched_embeds = apply_patch_to_first_n_tokens(
+            suffix_manager, prompt_embeds, patch, num_patch_positions, testeo=True
         )
         final_generated_tokens = generate(model, patched_embeds, num_tokens=50)
         final_generated_text = tokenizer.decode(final_generated_tokens, skip_special_tokens=True)
@@ -371,8 +388,8 @@ def run_christmas_training(
         print(f"Example {idx + 1} complete. Final patch norm: {patch.norm(2).item():.6f}")
         print("-" * 70)
 
-        # Reduce to a single embedding vector by averaging across token dimension
-        # Shape: [1, num_tokens, embedding_dim] -> [1, 1, embedding_dim]
+        # Reduce to a single embedding vector by averaging across the 5 positions
+        # Shape: [1, num_patch_positions, embedding_dim] -> [1, 1, embedding_dim]
         example_patch_vector = patch.detach().clone().mean(dim=1, keepdim=True)
         all_example_patches.append(example_patch_vector)
 
@@ -405,7 +422,7 @@ def run_christmas_training(
         print(f"  ... and {len(all_example_patches) - 10} more")
 
     # Save the global patch vector
-    guardar_parche(global_patch_vector, "christmas_personality_patch.pt")
+    guardar_parche(global_patch_vector, "christmas_personality_patch_v2.pt")
 
     return global_patch_vector, model, tokenizer
 
@@ -414,14 +431,15 @@ if __name__ == "__main__":
     model_path = "../modelos/Llama-3.2-3B-Instruct"
     csv_path = "christmas_training.csv"
 
-    # Train the Christmas personality patch
-    print("TRAINING CHRISTMAS PERSONALITY PATCH")
-    global_patch, model, tokenizer = run_christmas_training(
+    # Train the Christmas personality patch - Version 2
+    print("TRAINING CHRISTMAS PERSONALITY PATCH - VERSION 2")
+    global_patch, model, tokenizer = run_christmas_training_v2(
         model_path=model_path,
         csv_path=csv_path,
         num_steps=300,
         device="cuda:0",
-        patch_token_length=2,  # Apply patch to 2 continuous random tokens
+        num_patch_positions=5,      # Patch first 5 tokens
+        prefix_match_length=10,      # Match first 5 output tokens (SOFT)
         verbose=False
     )
 
@@ -429,5 +447,5 @@ if __name__ == "__main__":
         print("\n" + "="*70)
         print("TRAINING COMPLETE!")
         print("="*70)
-        print(f"Christmas patch saved to 'christmas_personality_patch.pt'")
+        print(f"Christmas patch saved to 'christmas_personality_patch_v2.pt'")
         print(f"Final patch norm: {global_patch.norm(2).item():.6f}")
