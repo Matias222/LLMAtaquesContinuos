@@ -293,7 +293,7 @@ def test_christmas_patch(
 
 if __name__ == "__main__":
     model_path = "../modelos/Llama-3.2-3B-Instruct"
-    patch_path = "christmas_final_patch.pt"
+    patch_path = "christmas_final_patch_lowc.pt"
     metadata_path = "christmas_final_metadata.pt"
     csv_path = "christmas_training.csv"
 
