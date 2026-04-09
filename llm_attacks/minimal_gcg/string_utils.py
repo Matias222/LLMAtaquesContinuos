@@ -19,7 +19,6 @@ def load_conversation_template(template_name):
         
         return conv_template
 
-
 class SuffixManager:
     def __init__(self, *, tokenizer, conv_template, instruction, target, adv_string):
 
@@ -34,7 +33,7 @@ class SuffixManager:
         if adv_string is not None:
             self.adv_string = adv_string
 
-        self.conv_template.append_message(self.conv_template.roles[0], f"{self.instruction} {self.adv_string}")
+        self.conv_template.append_message(self.conv_template.roles[0], f"{self.instruction}{self.adv_string}")
         self.conv_template.append_message(self.conv_template.roles[1], f"{self.target}")
         prompt = self.conv_template.get_prompt()
 
@@ -54,7 +53,9 @@ class SuffixManager:
             self._goal_slice = slice(self._user_role_slice.stop, max(self._user_role_slice.stop, len(toks)))
 
             separator = ' ' if self.instruction else ''
-            self.conv_template.update_last_message(f"{self.instruction}{separator}{self.adv_string}")
+            separator = ''
+            self.conv_template.update_last_message(f"{self.instruction}{self.adv_string}") #disable separator
+
             toks = self.tokenizer(self.conv_template.get_prompt(),add_special_tokens=False).input_ids
             self._control_slice = slice(self._goal_slice.stop, len(toks))
 
@@ -76,7 +77,7 @@ class SuffixManager:
             else:
                 self._target_slice = slice(self._assistant_role_slice.stop, len(toks)-2)
                 self._loss_slice = slice(self._assistant_role_slice.stop-1, len(toks)-3)
-                
+            
         else:
             python_tokenizer = False or self.conv_template.name == 'oasst_pythia'
             try:
@@ -146,12 +147,15 @@ class SuffixManager:
     
     def get_input_ids(self, adv_string=None):
         prompt = self.get_prompt(adv_string=adv_string)
+        toks = self.tokenizer(prompt,add_special_tokens=False).input_ids
         
-        print("IMPRIMIENDO PROMPT",prompt)
+        prompt_convertido=self.tokenizer.decode(toks, skip_special_tokens=False)
         
-        toks = self.tokenizer(prompt, add_special_tokens=False).input_ids
         input_ids = torch.tensor(toks[:self._target_slice.stop])
-        
-        print("INPUT_IDS DECODED:", self.tokenizer.decode(input_ids, skip_special_tokens=False))
+
+        #print("*"*50)
+        #print(prompt_convertido)
+        #print(len(toks))
+        #print("*"*50)
 
         return input_ids

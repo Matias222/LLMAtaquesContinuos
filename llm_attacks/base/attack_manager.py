@@ -65,7 +65,8 @@ def get_nonascii_toks(tokenizer, device='cpu'):
 
     ascii_toks = []
     for i in range(3, tokenizer.vocab_size):
-        if not is_ascii(tokenizer.decode([i])):
+        decoded = tokenizer.decode([i])
+        if (not is_ascii(decoded)) or ('"' in decoded) or ('\\' in decoded) or ('{{' in decoded): #Filtrar caracteres cojudones
             ascii_toks.append(i)
     
     if tokenizer.bos_token_id is not None:
