@@ -75,6 +75,9 @@ def main():
         default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
     )
     parser.add_argument("--num_patch_positions", type=int, default=3)
+    parser.add_argument("--mode", choices=["first_n", "all_goal"], default="first_n",
+                        help="Modo de aplicacion del patch. 'first_n' (default) para parches "
+                             "posicionales; 'all_goal' para el patch shared variante B.")
     parser.add_argument("--num_tokens", type=int, default=100)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=42)
@@ -92,6 +95,7 @@ def main():
     print(f"patch:               {args.patch}")
     print(f"model:               {args.model}")
     print(f"num_patch_positions: {args.num_patch_positions}")
+    print(f"mode:                {args.mode}")
     print(f"num_tokens:          {args.num_tokens}")
     print(f"temperature:         {args.temperature}")
     print(f"seed:                {args.seed}")
@@ -117,10 +121,16 @@ def main():
     print(f"  antipatch norm: {antipatch.float().norm(2).item():.6f}  "
           f"(igual al original, solo invierte signo)")
 
+    # Hint si shape y modo no coinciden
+    if patch.shape[1] == 1 and args.mode == "first_n":
+        print("  NOTA: patch tiene shape [1, 1, d]. Si fue entrenado como shared variant,")
+        print("        usar --mode all_goal para replicar las condiciones de training.")
+
     # Evaluar splits — misma maquinaria que test_xmas_patch.py
     external_result = tp.evaluate_split(
         model, tokenizer, antipatch, tp.EXTERNAL_PROMPTS, "external_antipatch",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
+        mode=args.mode,
     )
     # Split critico para antipodalidad: prompts donde el baseline YA es navideno.
     # El baseline de este split NO es cero; es una medida de cuanta navidad
@@ -129,6 +139,7 @@ def main():
     christmas_result = tp.evaluate_split(
         model, tokenizer, antipatch, CHRISTMAS_PROMPTS, "christmas_antipatch",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
+        mode=args.mode,
     )
 
     # Reporte final
@@ -138,6 +149,7 @@ def main():
         "mode": "antipatch (-v)",
         "config": {
             "num_patch_positions": args.num_patch_positions,
+            "apply_mode": args.mode,
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "seed": args.seed,

@@ -141,28 +141,44 @@ def generate(model, input_embeddings, num_tokens=100, temperature=0.0):
     return generated_tokens.cpu().numpy()
 
 
-def apply_patch_to_first_n_tokens(suffix_manager, prompt_embeds, patch, num_patch_positions):
-    """Aplica el patch a los primeros N tokens del goal."""
+def apply_patch_to_goal(suffix_manager, prompt_embeds, patch, num_patch_positions, mode="first_n"):
+    """
+    Aplica el patch al goal slice del prompt.
+
+    mode="first_n"  (default, retrocompatible): suma el patch a las primeras
+                    num_patch_positions posiciones del goal. Si patch es
+                    [1, 1, d] y actual > 1, replica con .repeat() (logica
+                    legacy para parches posicionales de 1 token).
+    mode="all_goal" (variante B): broadcast-suma el patch [1, 1, d] a TODAS
+                    las posiciones del goal slice. Consistente con el
+                    training de christmas_shared_train.py.
+    """
     patched_embeds = prompt_embeds.clone()
     goal_start = suffix_manager._goal_slice.start
     goal_end = suffix_manager._goal_slice.stop
-    goal_length = goal_end - goal_start
-    actual = min(num_patch_positions, goal_length)
 
-    # Expandir patch [1, 1, d] -> [1, actual, d] si necesario (compat v4)
-    if patch.shape[1] == 1 and actual > 1:
-        patch_expanded = patch.repeat(1, actual, 1)
-    else:
-        patch_expanded = patch[:, :actual, :]
+    if mode == "all_goal":
+        # Broadcast [1, 1, d] -> [1, L, d] sobre todo el goal slice
+        patched_embeds[:, goal_start:goal_end, :] = \
+            prompt_embeds[:, goal_start:goal_end, :] + patch
+    else:  # first_n
+        goal_length = goal_end - goal_start
+        actual = min(num_patch_positions, goal_length)
 
-    patched_embeds[:, goal_start:goal_start+actual, :] = \
-        prompt_embeds[:, goal_start:goal_start+actual, :] + patch_expanded
+        # Expandir patch [1, 1, d] -> [1, actual, d] si necesario (compat v4)
+        if patch.shape[1] == 1 and actual > 1:
+            patch_expanded = patch.repeat(1, actual, 1)
+        else:
+            patch_expanded = patch[:, :actual, :]
+
+        patched_embeds[:, goal_start:goal_start+actual, :] = \
+            prompt_embeds[:, goal_start:goal_start+actual, :] + patch_expanded
 
     return patched_embeds[:, :suffix_manager._assistant_role_slice.stop, :]
 
 
 def generate_one(model, tokenizer, prompt, device, num_tokens, temperature,
-                 patch=None, num_patch_positions=3):
+                 patch=None, num_patch_positions=3, mode="first_n"):
     """Genera una respuesta para un prompt, con o sin patch."""
     conv_template = load_conversation_template("llama-3.2")
     suffix_manager = SuffixManager(
@@ -178,8 +194,8 @@ def generate_one(model, tokenizer, prompt, device, num_tokens, temperature,
     if patch is None:
         input_embeds = prompt_embeds[:, :suffix_manager._assistant_role_slice.stop, :]
     else:
-        input_embeds = apply_patch_to_first_n_tokens(
-            suffix_manager, prompt_embeds, patch, num_patch_positions
+        input_embeds = apply_patch_to_goal(
+            suffix_manager, prompt_embeds, patch, num_patch_positions, mode=mode
         )
 
     generated_tokens = generate(model, input_embeds, num_tokens, temperature)
@@ -191,12 +207,12 @@ def generate_one(model, tokenizer, prompt, device, num_tokens, temperature,
 # ---------------------------------------------------------------------------
 
 def evaluate_split(model, tokenizer, patch, prompts, split_name, device,
-                   num_tokens, temperature, num_patch_positions):
+                   num_tokens, temperature, num_patch_positions, mode="first_n"):
     """
     Corre baseline y patched sobre una lista de prompts y guarda los textos.
     """
     print(f"\n{'#' * 70}")
-    print(f"SPLIT: {split_name.upper()}  (n={len(prompts)})")
+    print(f"SPLIT: {split_name.upper()}  (n={len(prompts)})  |  mode={mode}")
     print(f"{'#' * 70}")
 
     records = []
@@ -207,7 +223,7 @@ def evaluate_split(model, tokenizer, patch, prompts, split_name, device,
         )
         patched_text = generate_one(
             model, tokenizer, prompt, device, num_tokens, temperature,
-            patch=patch, num_patch_positions=num_patch_positions,
+            patch=patch, num_patch_positions=num_patch_positions, mode=mode,
         )
 
         records.append({
@@ -265,6 +281,12 @@ def main():
     parser.add_argument("--csv", default="christmas_training.csv")
     parser.add_argument("--heldout_frac", type=float, default=0.20)
     parser.add_argument("--num_patch_positions", type=int, default=3)
+    parser.add_argument("--mode", choices=["first_n", "all_goal"], default="first_n",
+                        help="Modo de aplicacion del patch. 'first_n' (default) suma a las "
+                             "primeras num_patch_positions posiciones del goal (patches "
+                             "posicionales tipo christmas_final_patch_lowc.pt). 'all_goal' "
+                             "broadcast-suma un patch [1,1,d] a TODAS las posiciones del goal "
+                             "(variante B, christmas_shared_patch.pt).")
     parser.add_argument("--num_tokens", type=int, default=100)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=42)
@@ -284,6 +306,7 @@ def main():
     print(f"csv:                 {args.csv}")
     print(f"heldout_frac:        {args.heldout_frac}")
     print(f"num_patch_positions: {args.num_patch_positions}")
+    print(f"mode:                {args.mode}")
     print(f"num_tokens:          {args.num_tokens}")
     print(f"temperature:         {args.temperature}")
     print(f"seed:                {args.seed}")
@@ -309,14 +332,21 @@ def main():
     print(f"  shape: {tuple(patch.shape)}")
     print(f"  norm:  {patch.float().norm(2).item():.6f}")
 
+    # Hint si shape y modo no coinciden
+    if patch.shape[1] == 1 and args.mode == "first_n":
+        print("  NOTA: patch tiene shape [1, 1, d]. Si fue entrenado como shared variant,")
+        print("        usar --mode all_goal para replicar las condiciones de training.")
+
     # Evaluar splits
     heldout_records = evaluate_split(
         model, tokenizer, patch, heldout_prompts, "heldout",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
+        mode=args.mode,
     )
     external_records = evaluate_split(
         model, tokenizer, patch, EXTERNAL_PROMPTS, "external",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
+        mode=args.mode,
     )
 
     # Armar reporte final
@@ -325,6 +355,7 @@ def main():
         "model_path": args.model,
         "config": {
             "num_patch_positions": args.num_patch_positions,
+            "mode": args.mode,
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "seed": args.seed,
