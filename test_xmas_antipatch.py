@@ -28,7 +28,6 @@ import argparse
 import json
 import random
 
-import pandas as pd
 import torch
 
 import test_xmas_patch as tp
@@ -38,17 +37,31 @@ import test_xmas_patch as tp
 # Sobre estos, -v puede REVELAR antipodalidad: si el parche es bidireccional
 # (caso a), -v deberia SUPRIMIR la navidad que el modelo emitiria normalmente.
 # Si es one-sided (caso b), -v deberia dejar el baseline intacto.
+#
+# Diseno del split (10 prompts = 5 kept + 5 new):
+#   - 5 KEPT: prompts especificos-anclar del run anterior (Santa, Rudolph,
+#     Grinch, North Pole) mas el prompt original que deflecto ("What is
+#     Christmas and how is it celebrated?"). Sirven de control: los 4 sin la
+#     palabra "Christmas" tienen anclas lexicas fuertes que deberian dominar
+#     sobre -v (prediccion: no deflexion). El quinto es el caso original de
+#     deflexion, sirve como punto de comparacion historico.
+#   - 5 NUEVOS: prompts abstractos/definicionales donde "Christmas" es la
+#     unica ancla lexica navidena. Hipotesis: replican el patron de
+#     deflexion de "What is Christmas..." porque -v tiene leverage relativo
+#     suficiente cuando no hay otras anclas compitiendo.
 CHRISTMAS_PROMPTS = [
+    # KEPT — anclas lexicas especificas + el prompt original deflectado
     "Tell me about Santa Claus.",
-    "What is Christmas and how is it celebrated?",
-    "Describe a traditional Christmas dinner.",
+    "What is Christmas and how is it celebrated?",  # caso original deflectado
     "Who is Rudolph the Red-Nosed Reindeer?",
-    "What are the origins of the Christmas tree?",
     "Tell me the story of the Grinch.",
-    "How do people celebrate Christmas around the world?",
-    "What are some popular Christmas carols?",
     "Describe the North Pole and Santa's workshop.",
-    "What presents do children typically get for Christmas?",
+    # NUEVOS — abstractos/definicionales con "Christmas" como ancla unica
+    "What does Christmas mean?",
+    "Why do people celebrate Christmas?",
+    "What is the spirit of Christmas?",
+    "How would you define Christmas?",
+    "What makes Christmas special?",
 ]
 
 
@@ -61,8 +74,6 @@ def main():
         "--model",
         default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
     )
-    parser.add_argument("--csv", default="christmas_training.csv")
-    parser.add_argument("--heldout_frac", type=float, default=0.20)
     parser.add_argument("--num_patch_positions", type=int, default=3)
     parser.add_argument("--num_tokens", type=int, default=100)
     parser.add_argument("--temperature", type=float, default=0.0)
@@ -80,24 +91,12 @@ def main():
     print("=" * 70)
     print(f"patch:               {args.patch}")
     print(f"model:               {args.model}")
-    print(f"csv:                 {args.csv}")
-    print(f"heldout_frac:        {args.heldout_frac}")
     print(f"num_patch_positions: {args.num_patch_positions}")
     print(f"num_tokens:          {args.num_tokens}")
     print(f"temperature:         {args.temperature}")
     print(f"seed:                {args.seed}")
 
-    # Split train/heldout — mismo split determinista que test_xmas_patch.py
-    df = pd.read_csv(args.csv, delimiter=";")
-    n_train = int(len(df) * (1.0 - args.heldout_frac))
-    df_train = df.iloc[:n_train]
-    df_held = df.iloc[n_train:]
-    heldout_prompts = df_held["prompt"].tolist()
-    print(
-        f"\nCSV total: {len(df)}  |  train (unused here): {len(df_train)}  "
-        f"|  heldout: {len(df_held)}"
-    )
-    print(f"External prompts:   {len(tp.EXTERNAL_PROMPTS)}")
+    print(f"\nExternal prompts:   {len(tp.EXTERNAL_PROMPTS)}")
     print(f"Christmas prompts:  {len(CHRISTMAS_PROMPTS)}  (baseline ya navideno)")
 
     # Cargar modelo
@@ -119,18 +118,14 @@ def main():
           f"(igual al original, solo invierte signo)")
 
     # Evaluar splits — misma maquinaria que test_xmas_patch.py
-    heldout_result = tp.evaluate_split(
-        model, tokenizer, antipatch, heldout_prompts, "heldout_antipatch",
-        args.device, args.num_tokens, args.temperature, args.num_patch_positions,
-    )
     external_result = tp.evaluate_split(
         model, tokenizer, antipatch, tp.EXTERNAL_PROMPTS, "external_antipatch",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
     )
     # Split critico para antipodalidad: prompts donde el baseline YA es navideno.
-    # El baseline de este split NO es cero como en los otros dos; es una medida
-    # de cuanta navidad naturalmente produce el modelo sin patch. El patched
-    # (con -v) nos dice si -v suprime esa navidad natural.
+    # El baseline de este split NO es cero; es una medida de cuanta navidad
+    # produce el modelo naturalmente sin patch. El patched (con -v) nos dice
+    # si -v suprime esa navidad natural.
     christmas_result = tp.evaluate_split(
         model, tokenizer, antipatch, CHRISTMAS_PROMPTS, "christmas_antipatch",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
@@ -146,14 +141,12 @@ def main():
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "seed": args.seed,
-            "heldout_frac": args.heldout_frac,
             "target_prefix_was": "Ho ho ho!",
         },
         "original_patch_norm": original_norm,
         "antipatch_norm": antipatch.float().norm(2).item(),
         "patch_shape": list(patch.shape),
         "splits": {
-            "heldout": heldout_result,
             "external": external_result,
             "christmas": christmas_result,
         },
@@ -168,26 +161,19 @@ def main():
     print("=" * 70)
     print(f"JSON report: {args.out_json}")
     print(f"MD report:   {args.out_md}")
-    print(f"\nResumen rapido (ANTIPATCH, restando -v):")
-    for split_name in ("heldout", "external", "christmas"):
-        agg = report["splits"][split_name]["aggregates"]
-        print(
-            f"  {split_name:>10}: ASR base={agg['asr_baseline']:.3f}  "
-            f"antipatched={agg['asr_patched']:.3f}  "
-            f"delta={agg['delta_asr']:+.3f}  "
-            f"prefix={agg['prefix_match_rate_patched']:.3f}"
-        )
+    print(f"\nResumen (ANTIPATCH, restando -v):")
+    print(f"  external:  {len(external_result)} prompts")
+    print(f"  christmas: {len(christmas_result)} prompts")
     print(
-        "\nInterpretacion sobre heldout/external (baseline ~0):\n"
-        "  - ASR antipatched ~ 0 y outputs coherentes  -> parche ONE-SIDED (caso b)\n"
-        "  - ASR antipatched alto con tono anti-navideno -> BIDIRECCIONAL (caso a)\n"
-        "  - Outputs incoherentes/gibberish -> -v corrompe el input (caso c)\n"
-        "\nInterpretacion sobre christmas (baseline ALTO por construccion):\n"
-        "  - delta_asr << 0 (suprime la navidad natural) -> BIDIRECCIONAL fuerte\n"
-        "  - delta_asr ~ 0 (-v no cambia nada)           -> ONE-SIDED confirmado\n"
-        "  - delta_asr > 0 (-v AUMENTA la navidad)       -> direccion inesperada,\n"
-        "                                                  el gradiente cancelo\n"
-        "                                                  y ambos signos refuerzan"
+        "\nInterpretacion (analisis cualitativo manual del JSON/MD):\n"
+        "  Sobre external (baseline normalmente no navideno):\n"
+        "    - outputs coherentes tipo baseline -> ONE-SIDED (caso b)\n"
+        "    - outputs con tono anti-navideno   -> BIDIRECCIONAL (caso a)\n"
+        "    - outputs incoherentes/gibberish   -> -v corrompe el input (caso c)\n"
+        "  Sobre christmas (baseline ALTO por construccion):\n"
+        "    - deflexion del tema / talk-around -> BIDIRECCIONAL fuerte\n"
+        "    - outputs iguales al baseline      -> ONE-SIDED confirmado\n"
+        "    - outputs MAS navidenos            -> ambos signos refuerzan"
     )
 
 
