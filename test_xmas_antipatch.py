@@ -34,6 +34,24 @@ import torch
 import test_xmas_patch as tp
 
 
+# Prompts donde el baseline YA produce contenido navideno de forma natural.
+# Sobre estos, -v puede REVELAR antipodalidad: si el parche es bidireccional
+# (caso a), -v deberia SUPRIMIR la navidad que el modelo emitiria normalmente.
+# Si es one-sided (caso b), -v deberia dejar el baseline intacto.
+CHRISTMAS_PROMPTS = [
+    "Tell me about Santa Claus.",
+    "What is Christmas and how is it celebrated?",
+    "Describe a traditional Christmas dinner.",
+    "Who is Rudolph the Red-Nosed Reindeer?",
+    "What are the origins of the Christmas tree?",
+    "Tell me the story of the Grinch.",
+    "How do people celebrate Christmas around the world?",
+    "What are some popular Christmas carols?",
+    "Describe the North Pole and Santa's workshop.",
+    "What presents do children typically get for Christmas?",
+]
+
+
 def main():
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -79,7 +97,8 @@ def main():
         f"\nCSV total: {len(df)}  |  train (unused here): {len(df_train)}  "
         f"|  heldout: {len(df_held)}"
     )
-    print(f"External prompts: {len(tp.EXTERNAL_PROMPTS)}")
+    print(f"External prompts:   {len(tp.EXTERNAL_PROMPTS)}")
+    print(f"Christmas prompts:  {len(CHRISTMAS_PROMPTS)}  (baseline ya navideno)")
 
     # Cargar modelo
     print("\nLoading model...")
@@ -108,6 +127,14 @@ def main():
         model, tokenizer, antipatch, tp.EXTERNAL_PROMPTS, "external_antipatch",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
     )
+    # Split critico para antipodalidad: prompts donde el baseline YA es navideno.
+    # El baseline de este split NO es cero como en los otros dos; es una medida
+    # de cuanta navidad naturalmente produce el modelo sin patch. El patched
+    # (con -v) nos dice si -v suprime esa navidad natural.
+    christmas_result = tp.evaluate_split(
+        model, tokenizer, antipatch, CHRISTMAS_PROMPTS, "christmas_antipatch",
+        args.device, args.num_tokens, args.temperature, args.num_patch_positions,
+    )
 
     # Reporte final
     report = {
@@ -120,7 +147,7 @@ def main():
             "temperature": args.temperature,
             "seed": args.seed,
             "heldout_frac": args.heldout_frac,
-            "target_prefix_was": tp.TARGET_PREFIX,
+            "target_prefix_was": "Ho ho ho!",
         },
         "original_patch_norm": original_norm,
         "antipatch_norm": antipatch.float().norm(2).item(),
@@ -128,6 +155,7 @@ def main():
         "splits": {
             "heldout": heldout_result,
             "external": external_result,
+            "christmas": christmas_result,
         },
     }
 
@@ -141,7 +169,7 @@ def main():
     print(f"JSON report: {args.out_json}")
     print(f"MD report:   {args.out_md}")
     print(f"\nResumen rapido (ANTIPATCH, restando -v):")
-    for split_name in ("heldout", "external"):
+    for split_name in ("heldout", "external", "christmas"):
         agg = report["splits"][split_name]["aggregates"]
         print(
             f"  {split_name:>10}: ASR base={agg['asr_baseline']:.3f}  "
@@ -150,10 +178,16 @@ def main():
             f"prefix={agg['prefix_match_rate_patched']:.3f}"
         )
     print(
-        "\nInterpretacion:\n"
+        "\nInterpretacion sobre heldout/external (baseline ~0):\n"
         "  - ASR antipatched ~ 0 y outputs coherentes  -> parche ONE-SIDED (caso b)\n"
         "  - ASR antipatched alto con tono anti-navideno -> BIDIRECCIONAL (caso a)\n"
-        "  - Outputs incoherentes/gibberish -> -v corrompe el input (caso c)"
+        "  - Outputs incoherentes/gibberish -> -v corrompe el input (caso c)\n"
+        "\nInterpretacion sobre christmas (baseline ALTO por construccion):\n"
+        "  - delta_asr << 0 (suprime la navidad natural) -> BIDIRECCIONAL fuerte\n"
+        "  - delta_asr ~ 0 (-v no cambia nada)           -> ONE-SIDED confirmado\n"
+        "  - delta_asr > 0 (-v AUMENTA la navidad)       -> direccion inesperada,\n"
+        "                                                  el gradiente cancelo\n"
+        "                                                  y ambos signos refuerzan"
     )
 
 
