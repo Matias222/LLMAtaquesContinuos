@@ -1,0 +1,3252 @@
+{
+  "patch_path": "christmas_final_patch_lowc.pt",
+  "model_path": "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
+  "patch_shape": [
+    3,
+    3072
+  ],
+  "vocab_size": 128256,
+  "embed_dim": 3072,
+  "vocab_norm_stats": {
+    "mean": 1.0861295461654663,
+    "std": 0.11305814981460571,
+    "min": 0.6221248507499695,
+    "max": 1.4694581031799316,
+    "p01": 0.796399712562561,
+    "p10": 0.9448484182357788,
+    "p25": 1.013101577758789,
+    "p50": 1.0905768871307373,
+    "p75": 1.1624269485473633,
+    "p90": 1.2264732122421265,
+    "p99": 1.3304704427719116
+  },
+  "per_position": [
+    {
+      "name": "patch[0]",
+      "norm_l2": 0.753451406955719,
+      "norm_ratio_vs_vocab_mean": 0.6937030758584433,
+      "norm_percentile_in_vocab": 0.6627370259481038,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 50820,
+          "token": " Rotate",
+          "token_repr": "' Rotate'",
+          "dot": 0.060826919972896576
+        },
+        {
+          "rank": 2,
+          "token_id": 51216,
+          "token": " FLOAT",
+          "token_repr": "' FLOAT'",
+          "dot": 0.059840377420186996
+        },
+        {
+          "rank": 3,
+          "token_id": 39052,
+          "token": " stereo",
+          "token_repr": "' stereo'",
+          "dot": 0.059697531163692474
+        },
+        {
+          "rank": 4,
+          "token_id": 9326,
+          "token": "cle",
+          "token_repr": "'cle'",
+          "dot": 0.05937987565994263
+        },
+        {
+          "rank": 5,
+          "token_id": 70301,
+          "token": " rotations",
+          "token_repr": "' rotations'",
+          "dot": 0.058930911123752594
+        },
+        {
+          "rank": 6,
+          "token_id": 64167,
+          "token": "Merit",
+          "token_repr": "'Merit'",
+          "dot": 0.05849296972155571
+        },
+        {
+          "rank": 7,
+          "token_id": 32327,
+          "token": " rides",
+          "token_repr": "' rides'",
+          "dot": 0.058255597949028015
+        },
+        {
+          "rank": 8,
+          "token_id": 38838,
+          "token": " chap",
+          "token_repr": "' chap'",
+          "dot": 0.05812470614910126
+        },
+        {
+          "rank": 9,
+          "token_id": 17348,
+          "token": " rotate",
+          "token_repr": "' rotate'",
+          "dot": 0.056923434138298035
+        },
+        {
+          "rank": 10,
+          "token_id": 49002,
+          "token": " floats",
+          "token_repr": "' floats'",
+          "dot": 0.05556246638298035
+        },
+        {
+          "rank": 11,
+          "token_id": 79921,
+          "token": " Grip",
+          "token_repr": "' Grip'",
+          "dot": 0.05553578585386276
+        },
+        {
+          "rank": 12,
+          "token_id": 120460,
+          "token": "骑",
+          "token_repr": "'骑'",
+          "dot": 0.055404551327228546
+        },
+        {
+          "rank": 13,
+          "token_id": 18565,
+          "token": "cls",
+          "token_repr": "'cls'",
+          "dot": 0.05520610883831978
+        },
+        {
+          "rank": 14,
+          "token_id": 64084,
+          "token": "яз",
+          "token_repr": "'яз'",
+          "dot": 0.054527271538972855
+        },
+        {
+          "rank": 15,
+          "token_id": 73075,
+          "token": " Stereo",
+          "token_repr": "' Stereo'",
+          "dot": 0.054512474685907364
+        },
+        {
+          "rank": 16,
+          "token_id": 23960,
+          "token": "kle",
+          "token_repr": "'kle'",
+          "dot": 0.05383726954460144
+        },
+        {
+          "rank": 17,
+          "token_id": 20091,
+          "token": "cli",
+          "token_repr": "'cli'",
+          "dot": 0.0536344051361084
+        },
+        {
+          "rank": 18,
+          "token_id": 85296,
+          "token": "-reported",
+          "token_repr": "'-reported'",
+          "dot": 0.053574856370687485
+        },
+        {
+          "rank": 19,
+          "token_id": 124669,
+          "token": "那种",
+          "token_repr": "'那种'",
+          "dot": 0.05339602380990982
+        },
+        {
+          "rank": 20,
+          "token_id": 12141,
+          "token": " ride",
+          "token_repr": "' ride'",
+          "dot": 0.05334598571062088
+        },
+        {
+          "rank": 21,
+          "token_id": 4351,
+          "token": "entic",
+          "token_repr": "'entic'",
+          "dot": 0.052938394248485565
+        },
+        {
+          "rank": 22,
+          "token_id": 83625,
+          "token": " dams",
+          "token_repr": "' dams'",
+          "dot": 0.05289878696203232
+        },
+        {
+          "rank": 23,
+          "token_id": 13298,
+          "token": " Float",
+          "token_repr": "' Float'",
+          "dot": 0.0528031550347805
+        },
+        {
+          "rank": 24,
+          "token_id": 86985,
+          "token": "reten",
+          "token_repr": "'reten'",
+          "dot": 0.052720583975315094
+        },
+        {
+          "rank": 25,
+          "token_id": 5100,
+          "token": "uster",
+          "token_repr": "'uster'",
+          "dot": 0.05228487774729729
+        },
+        {
+          "rank": 26,
+          "token_id": 45246,
+          "token": "erset",
+          "token_repr": "'erset'",
+          "dot": 0.05222834646701813
+        },
+        {
+          "rank": 27,
+          "token_id": 54410,
+          "token": "runs",
+          "token_repr": "'runs'",
+          "dot": 0.05177268758416176
+        },
+        {
+          "rank": 28,
+          "token_id": 32735,
+          "token": "lit",
+          "token_repr": "'lit'",
+          "dot": 0.0514434278011322
+        },
+        {
+          "rank": 29,
+          "token_id": 1157,
+          "token": "ues",
+          "token_repr": "'ues'",
+          "dot": 0.05137450993061066
+        },
+        {
+          "rank": 30,
+          "token_id": 75124,
+          "token": " modulus",
+          "token_repr": "' modulus'",
+          "dot": 0.050817787647247314
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 50820,
+          "token": " Rotate",
+          "token_repr": "' Rotate'",
+          "cosine": 0.07205955684185028
+        },
+        {
+          "rank": 2,
+          "token_id": 39052,
+          "token": " stereo",
+          "token_repr": "' stereo'",
+          "cosine": 0.07145807147026062
+        },
+        {
+          "rank": 3,
+          "token_id": 51216,
+          "token": " FLOAT",
+          "token_repr": "' FLOAT'",
+          "cosine": 0.06926091760396957
+        },
+        {
+          "rank": 4,
+          "token_id": 120460,
+          "token": "骑",
+          "token_repr": "'骑'",
+          "cosine": 0.0685550644993782
+        },
+        {
+          "rank": 5,
+          "token_id": 17348,
+          "token": " rotate",
+          "token_repr": "' rotate'",
+          "cosine": 0.06808736175298691
+        },
+        {
+          "rank": 6,
+          "token_id": 32327,
+          "token": " rides",
+          "token_repr": "' rides'",
+          "cosine": 0.06609971076250076
+        },
+        {
+          "rank": 7,
+          "token_id": 70301,
+          "token": " rotations",
+          "token_repr": "' rotations'",
+          "cosine": 0.06592757999897003
+        },
+        {
+          "rank": 8,
+          "token_id": 64167,
+          "token": "Merit",
+          "token_repr": "'Merit'",
+          "cosine": 0.06475607305765152
+        },
+        {
+          "rank": 9,
+          "token_id": 18565,
+          "token": "cls",
+          "token_repr": "'cls'",
+          "cosine": 0.06437373161315918
+        },
+        {
+          "rank": 10,
+          "token_id": 85296,
+          "token": "-reported",
+          "token_repr": "'-reported'",
+          "cosine": 0.06387075036764145
+        },
+        {
+          "rank": 11,
+          "token_id": 28374,
+          "token": "}.\n",
+          "token_repr": "'}.\\n'",
+          "cosine": 0.06336783617734909
+        },
+        {
+          "rank": 12,
+          "token_id": 20091,
+          "token": "cli",
+          "token_repr": "'cli'",
+          "cosine": 0.06331411004066467
+        },
+        {
+          "rank": 13,
+          "token_id": 63438,
+          "token": "`.\n\n",
+          "token_repr": "'`.\\n\\n'",
+          "cosine": 0.06218632683157921
+        },
+        {
+          "rank": 14,
+          "token_id": 92527,
+          "token": " 登",
+          "token_repr": "' 登'",
+          "cosine": 0.0621444433927536
+        },
+        {
+          "rank": 15,
+          "token_id": 9326,
+          "token": "cle",
+          "token_repr": "'cle'",
+          "cosine": 0.0621429942548275
+        },
+        {
+          "rank": 16,
+          "token_id": 73075,
+          "token": " Stereo",
+          "token_repr": "' Stereo'",
+          "cosine": 0.0620633065700531
+        },
+        {
+          "rank": 17,
+          "token_id": 46127,
+          "token": "'}}>\n",
+          "token_repr": "\"'}}>\\n\"",
+          "cosine": 0.06193326413631439
+        },
+        {
+          "rank": 18,
+          "token_id": 38838,
+          "token": " chap",
+          "token_repr": "' chap'",
+          "cosine": 0.06185654550790787
+        },
+        {
+          "rank": 19,
+          "token_id": 3758,
+          "token": "login",
+          "token_repr": "'login'",
+          "cosine": 0.061562828719615936
+        },
+        {
+          "rank": 20,
+          "token_id": 88812,
+          "token": "(schedule",
+          "token_repr": "'(schedule'",
+          "cosine": 0.0615382120013237
+        },
+        {
+          "rank": 21,
+          "token_id": 124669,
+          "token": "那种",
+          "token_repr": "'那种'",
+          "cosine": 0.06024857610464096
+        },
+        {
+          "rank": 22,
+          "token_id": 82634,
+          "token": " Kolkata",
+          "token_repr": "' Kolkata'",
+          "cosine": 0.06001853942871094
+        },
+        {
+          "rank": 23,
+          "token_id": 12141,
+          "token": " ride",
+          "token_repr": "' ride'",
+          "cosine": 0.059995029121637344
+        },
+        {
+          "rank": 24,
+          "token_id": 54410,
+          "token": "runs",
+          "token_repr": "'runs'",
+          "cosine": 0.05994369462132454
+        },
+        {
+          "rank": 25,
+          "token_id": 79921,
+          "token": " Grip",
+          "token_repr": "' Grip'",
+          "cosine": 0.059891875833272934
+        },
+        {
+          "rank": 26,
+          "token_id": 19154,
+          "token": "`.\n",
+          "token_repr": "'`.\\n'",
+          "cosine": 0.05980832874774933
+        },
+        {
+          "rank": 27,
+          "token_id": 17160,
+          "token": " NOTE",
+          "token_repr": "' NOTE'",
+          "cosine": 0.05940529704093933
+        },
+        {
+          "rank": 28,
+          "token_id": 5999,
+          "token": " '#",
+          "token_repr": "\" '#\"",
+          "cosine": 0.05905826389789581
+        },
+        {
+          "rank": 29,
+          "token_id": 75124,
+          "token": " modulus",
+          "token_repr": "' modulus'",
+          "cosine": 0.058938171714544296
+        },
+        {
+          "rank": 30,
+          "token_id": 102413,
+          "token": " عم",
+          "token_repr": "' عم'",
+          "cosine": 0.058856043964624405
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 31836,
+          "token": ">\r\r\n",
+          "token_repr": "'>\\r\\r\\n'",
+          "l2_dist": 0.971318781375885
+        },
+        {
+          "rank": 2,
+          "token_id": 120318,
+          "token": "醴醴",
+          "token_repr": "'醴醴'",
+          "l2_dist": 0.9722751379013062
+        },
+        {
+          "rank": 3,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.9731462001800537
+        },
+        {
+          "rank": 4,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.973322331905365
+        },
+        {
+          "rank": 5,
+          "token_id": 89473,
+          "token": "useRalativeImagePath",
+          "token_repr": "'useRalativeImagePath'",
+          "l2_dist": 0.9734777212142944
+        },
+        {
+          "rank": 6,
+          "token_id": 90050,
+          "token": "_ComCallableWrapper",
+          "token_repr": "'_ComCallableWrapper'",
+          "l2_dist": 0.9735305309295654
+        },
+        {
+          "rank": 7,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.9735336303710938
+        },
+        {
+          "rank": 8,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.9736542701721191
+        },
+        {
+          "rank": 9,
+          "token_id": 80369,
+          "token": " ForCanBeConverted",
+          "token_repr": "' ForCanBeConverted'",
+          "l2_dist": 0.9736889600753784
+        },
+        {
+          "rank": 10,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.9737147092819214
+        },
+        {
+          "rank": 11,
+          "token_id": 113720,
+          "token": " açıklam",
+          "token_repr": "' açıklam'",
+          "l2_dist": 0.9737750291824341
+        },
+        {
+          "rank": 12,
+          "token_id": 119833,
+          "token": " mücadel",
+          "token_repr": "' mücadel'",
+          "l2_dist": 0.9738903045654297
+        },
+        {
+          "rank": 13,
+          "token_id": 98668,
+          "token": ");\r\r\r\n",
+          "token_repr": "');\\r\\r\\r\\n'",
+          "l2_dist": 0.9739693403244019
+        },
+        {
+          "rank": 14,
+          "token_id": 55716,
+          "token": "?>\r\n\r\n",
+          "token_repr": "'?>\\r\\n\\r\\n'",
+          "l2_dist": 0.974062979221344
+        },
+        {
+          "rank": 15,
+          "token_id": 127438,
+          "token": "▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍",
+          "token_repr": "'▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍'",
+          "l2_dist": 0.9740774631500244
+        },
+        {
+          "rank": 16,
+          "token_id": 127531,
+          "token": " vyrá",
+          "token_repr": "' vyrá'",
+          "l2_dist": 0.9740883111953735
+        },
+        {
+          "rank": 17,
+          "token_id": 126357,
+          "token": " предназнач",
+          "token_repr": "' предназнач'",
+          "l2_dist": 0.9741381406784058
+        },
+        {
+          "rank": 18,
+          "token_id": 115487,
+          "token": " králov",
+          "token_repr": "' králov'",
+          "l2_dist": 0.9743381142616272
+        },
+        {
+          "rank": 19,
+          "token_id": 68896,
+          "token": ";\r\r\r\n",
+          "token_repr": "';\\r\\r\\r\\n'",
+          "l2_dist": 0.9743617177009583
+        },
+        {
+          "rank": 20,
+          "token_id": 108980,
+          "token": " smlou",
+          "token_repr": "' smlou'",
+          "l2_dist": 0.9746545553207397
+        },
+        {
+          "rank": 21,
+          "token_id": 110525,
+          "token": " vzděl",
+          "token_repr": "' vzděl'",
+          "l2_dist": 0.9747554659843445
+        },
+        {
+          "rank": 22,
+          "token_id": 106920,
+          "token": "rodní",
+          "token_repr": "'rodní'",
+          "l2_dist": 0.9749047160148621
+        },
+        {
+          "rank": 23,
+          "token_id": 89472,
+          "token": "useRalative",
+          "token_repr": "'useRalative'",
+          "l2_dist": 0.9749256372451782
+        },
+        {
+          "rank": 24,
+          "token_id": 110410,
+          "token": " seviy",
+          "token_repr": "' seviy'",
+          "l2_dist": 0.9749565124511719
+        },
+        {
+          "rank": 25,
+          "token_id": 121671,
+          "token": " düşünc",
+          "token_repr": "' düşünc'",
+          "l2_dist": 0.9750710129737854
+        },
+        {
+          "rank": 26,
+          "token_id": 126523,
+          "token": "ЎыџN",
+          "token_repr": "'ЎыџN'",
+          "l2_dist": 0.9750710725784302
+        },
+        {
+          "rank": 27,
+          "token_id": 112692,
+          "token": "▍▍▍▍▍▍▍▍",
+          "token_repr": "'▍▍▍▍▍▍▍▍'",
+          "l2_dist": 0.9751483201980591
+        },
+        {
+          "rank": 28,
+          "token_id": 114091,
+          "token": "üslüman",
+          "token_repr": "'üslüman'",
+          "l2_dist": 0.9751636981964111
+        },
+        {
+          "rank": 29,
+          "token_id": 112969,
+          "token": " nhiễ",
+          "token_repr": "' nhiễ'",
+          "l2_dist": 0.9751834869384766
+        },
+        {
+          "rank": 30,
+          "token_id": 117949,
+          "token": "eştir",
+          "token_repr": "'eştir'",
+          "l2_dist": 0.9752877950668335
+        }
+      ]
+    },
+    {
+      "name": "patch[1]",
+      "norm_l2": 0.6085967421531677,
+      "norm_ratio_vs_vocab_mean": 0.560335315710536,
+      "norm_percentile_in_vocab": 0.0,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 94922,
+          "token": " Autof",
+          "token_repr": "' Autof'",
+          "dot": 0.06221793591976166
+        },
+        {
+          "rank": 2,
+          "token_id": 100242,
+          "token": "ideon",
+          "token_repr": "'ideon'",
+          "dot": 0.06028194725513458
+        },
+        {
+          "rank": 3,
+          "token_id": 98541,
+          "token": " Josef",
+          "token_repr": "' Josef'",
+          "dot": 0.059613682329654694
+        },
+        {
+          "rank": 4,
+          "token_id": 70385,
+          "token": " Guards",
+          "token_repr": "' Guards'",
+          "dot": 0.0595424510538578
+        },
+        {
+          "rank": 5,
+          "token_id": 39464,
+          "token": " Stephan",
+          "token_repr": "' Stephan'",
+          "dot": 0.05946417525410652
+        },
+        {
+          "rank": 6,
+          "token_id": 50639,
+          "token": "igel",
+          "token_repr": "'igel'",
+          "dot": 0.058000966906547546
+        },
+        {
+          "rank": 7,
+          "token_id": 53879,
+          "token": " Mustang",
+          "token_repr": "' Mustang'",
+          "dot": 0.05736932158470154
+        },
+        {
+          "rank": 8,
+          "token_id": 69310,
+          "token": "Cou",
+          "token_repr": "'Cou'",
+          "dot": 0.05670337378978729
+        },
+        {
+          "rank": 9,
+          "token_id": 98845,
+          "token": " Continent",
+          "token_repr": "' Continent'",
+          "dot": 0.05630846694111824
+        },
+        {
+          "rank": 10,
+          "token_id": 56769,
+          "token": " Coverage",
+          "token_repr": "' Coverage'",
+          "dot": 0.05594053119421005
+        },
+        {
+          "rank": 11,
+          "token_id": 60653,
+          "token": "Scaler",
+          "token_repr": "'Scaler'",
+          "dot": 0.05586140602827072
+        },
+        {
+          "rank": 12,
+          "token_id": 36893,
+          "token": " remot",
+          "token_repr": "' remot'",
+          "dot": 0.05558003857731819
+        },
+        {
+          "rank": 13,
+          "token_id": 70345,
+          "token": " Julius",
+          "token_repr": "' Julius'",
+          "dot": 0.054945893585681915
+        },
+        {
+          "rank": 14,
+          "token_id": 109054,
+          "token": "サイ",
+          "token_repr": "'サイ'",
+          "dot": 0.054783664643764496
+        },
+        {
+          "rank": 15,
+          "token_id": 24620,
+          "token": "iox",
+          "token_repr": "'iox'",
+          "dot": 0.05476725846529007
+        },
+        {
+          "rank": 16,
+          "token_id": 67814,
+          "token": " Roo",
+          "token_repr": "' Roo'",
+          "dot": 0.05454696714878082
+        },
+        {
+          "rank": 17,
+          "token_id": 38405,
+          "token": " balcon",
+          "token_repr": "' balcon'",
+          "dot": 0.054388970136642456
+        },
+        {
+          "rank": 18,
+          "token_id": 88754,
+          "token": " mutants",
+          "token_repr": "' mutants'",
+          "dot": 0.05423334985971451
+        },
+        {
+          "rank": 19,
+          "token_id": 41321,
+          "token": "arius",
+          "token_repr": "'arius'",
+          "dot": 0.053870946168899536
+        },
+        {
+          "rank": 20,
+          "token_id": 93744,
+          "token": " nighttime",
+          "token_repr": "' nighttime'",
+          "dot": 0.05340296030044556
+        },
+        {
+          "rank": 21,
+          "token_id": 90857,
+          "token": " Cougar",
+          "token_repr": "' Cougar'",
+          "dot": 0.05316135287284851
+        },
+        {
+          "rank": 22,
+          "token_id": 8596,
+          "token": "Sec",
+          "token_repr": "'Sec'",
+          "dot": 0.05305283144116402
+        },
+        {
+          "rank": 23,
+          "token_id": 122833,
+          "token": " Karlov",
+          "token_repr": "' Karlov'",
+          "dot": 0.05300222337245941
+        },
+        {
+          "rank": 24,
+          "token_id": 94700,
+          "token": " Afro",
+          "token_repr": "' Afro'",
+          "dot": 0.0529550164937973
+        },
+        {
+          "rank": 25,
+          "token_id": 86276,
+          "token": " jeep",
+          "token_repr": "' jeep'",
+          "dot": 0.052913106977939606
+        },
+        {
+          "rank": 26,
+          "token_id": 16714,
+          "token": ".author",
+          "token_repr": "'.author'",
+          "dot": 0.052793726325035095
+        },
+        {
+          "rank": 27,
+          "token_id": 75142,
+          "token": " Mutual",
+          "token_repr": "' Mutual'",
+          "dot": 0.052762825042009354
+        },
+        {
+          "rank": 28,
+          "token_id": 82128,
+          "token": " Martian",
+          "token_repr": "' Martian'",
+          "dot": 0.0527380108833313
+        },
+        {
+          "rank": 29,
+          "token_id": 81357,
+          "token": " sandals",
+          "token_repr": "' sandals'",
+          "dot": 0.05252620577812195
+        },
+        {
+          "rank": 30,
+          "token_id": 42639,
+          "token": ".sf",
+          "token_repr": "'.sf'",
+          "dot": 0.052488796412944794
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 94922,
+          "token": " Autof",
+          "token_repr": "' Autof'",
+          "cosine": 0.08674308657646179
+        },
+        {
+          "rank": 2,
+          "token_id": 98541,
+          "token": " Josef",
+          "token_repr": "' Josef'",
+          "cosine": 0.08658109605312347
+        },
+        {
+          "rank": 3,
+          "token_id": 53879,
+          "token": " Mustang",
+          "token_repr": "' Mustang'",
+          "cosine": 0.08563610911369324
+        },
+        {
+          "rank": 4,
+          "token_id": 16714,
+          "token": ".author",
+          "token_repr": "'.author'",
+          "cosine": 0.08417214453220367
+        },
+        {
+          "rank": 5,
+          "token_id": 39464,
+          "token": " Stephan",
+          "token_repr": "' Stephan'",
+          "cosine": 0.08339832723140717
+        },
+        {
+          "rank": 6,
+          "token_id": 88754,
+          "token": " mutants",
+          "token_repr": "' mutants'",
+          "cosine": 0.08105423301458359
+        },
+        {
+          "rank": 7,
+          "token_id": 77136,
+          "token": " Goku",
+          "token_repr": "' Goku'",
+          "cosine": 0.07998374104499817
+        },
+        {
+          "rank": 8,
+          "token_id": 66531,
+          "token": " Malaysian",
+          "token_repr": "' Malaysian'",
+          "cosine": 0.07991959899663925
+        },
+        {
+          "rank": 9,
+          "token_id": 86276,
+          "token": " jeep",
+          "token_repr": "' jeep'",
+          "cosine": 0.07989311218261719
+        },
+        {
+          "rank": 10,
+          "token_id": 100242,
+          "token": "ideon",
+          "token_repr": "'ideon'",
+          "cosine": 0.07936626672744751
+        },
+        {
+          "rank": 11,
+          "token_id": 30249,
+          "token": " vegan",
+          "token_repr": "' vegan'",
+          "cosine": 0.07886247336864471
+        },
+        {
+          "rank": 12,
+          "token_id": 63215,
+          "token": " Vegan",
+          "token_repr": "' Vegan'",
+          "cosine": 0.07849584519863129
+        },
+        {
+          "rank": 13,
+          "token_id": 125314,
+          "token": " чемпіон",
+          "token_repr": "' чемпіон'",
+          "cosine": 0.0782378762960434
+        },
+        {
+          "rank": 14,
+          "token_id": 67599,
+          "token": " issuance",
+          "token_repr": "' issuance'",
+          "cosine": 0.07779063284397125
+        },
+        {
+          "rank": 15,
+          "token_id": 69310,
+          "token": "Cou",
+          "token_repr": "'Cou'",
+          "cosine": 0.07778764516115189
+        },
+        {
+          "rank": 16,
+          "token_id": 117877,
+          "token": " Кроме",
+          "token_repr": "' Кроме'",
+          "cosine": 0.07775359600782394
+        },
+        {
+          "rank": 17,
+          "token_id": 70385,
+          "token": " Guards",
+          "token_repr": "' Guards'",
+          "cosine": 0.07770541310310364
+        },
+        {
+          "rank": 18,
+          "token_id": 51002,
+          "token": " Jeep",
+          "token_repr": "' Jeep'",
+          "cosine": 0.0773930549621582
+        },
+        {
+          "rank": 19,
+          "token_id": 64328,
+          "token": " Bali",
+          "token_repr": "' Bali'",
+          "cosine": 0.07661528885364532
+        },
+        {
+          "rank": 20,
+          "token_id": 38405,
+          "token": " balcon",
+          "token_repr": "' balcon'",
+          "cosine": 0.07638870924711227
+        },
+        {
+          "rank": 21,
+          "token_id": 70345,
+          "token": " Julius",
+          "token_repr": "' Julius'",
+          "cosine": 0.07607442140579224
+        },
+        {
+          "rank": 22,
+          "token_id": 81357,
+          "token": " sandals",
+          "token_repr": "' sandals'",
+          "cosine": 0.0759463757276535
+        },
+        {
+          "rank": 23,
+          "token_id": 82128,
+          "token": " Martian",
+          "token_repr": "' Martian'",
+          "cosine": 0.07593581825494766
+        },
+        {
+          "rank": 24,
+          "token_id": 109054,
+          "token": "サイ",
+          "token_repr": "'サイ'",
+          "cosine": 0.07577921450138092
+        },
+        {
+          "rank": 25,
+          "token_id": 95991,
+          "token": " MLP",
+          "token_repr": "' MLP'",
+          "cosine": 0.07561004161834717
+        },
+        {
+          "rank": 26,
+          "token_id": 8596,
+          "token": "Sec",
+          "token_repr": "'Sec'",
+          "cosine": 0.07552403211593628
+        },
+        {
+          "rank": 27,
+          "token_id": 30634,
+          "token": " vtk",
+          "token_repr": "' vtk'",
+          "cosine": 0.07514559477567673
+        },
+        {
+          "rank": 28,
+          "token_id": 44947,
+          "token": "OBJECT",
+          "token_repr": "'OBJECT'",
+          "cosine": 0.07511317729949951
+        },
+        {
+          "rank": 29,
+          "token_id": 87236,
+          "token": "Montserrat",
+          "token_repr": "'Montserrat'",
+          "cosine": 0.07491660118103027
+        },
+        {
+          "rank": 30,
+          "token_id": 93744,
+          "token": " nighttime",
+          "token_repr": "' nighttime'",
+          "cosine": 0.07490520179271698
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.8514947891235352
+        },
+        {
+          "rank": 2,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.852970540523529
+        },
+        {
+          "rank": 3,
+          "token_id": 70316,
+          "token": "erusform",
+          "token_repr": "'erusform'",
+          "l2_dist": 0.8533997535705566
+        },
+        {
+          "rank": 4,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.8534983992576599
+        },
+        {
+          "rank": 5,
+          "token_id": 47073,
+          "token": "webElementXpaths",
+          "token_repr": "'webElementXpaths'",
+          "l2_dist": 0.8537755012512207
+        },
+        {
+          "rank": 6,
+          "token_id": 89473,
+          "token": "useRalativeImagePath",
+          "token_repr": "'useRalativeImagePath'",
+          "l2_dist": 0.853861927986145
+        },
+        {
+          "rank": 7,
+          "token_id": 80369,
+          "token": " ForCanBeConverted",
+          "token_repr": "' ForCanBeConverted'",
+          "l2_dist": 0.8539487719535828
+        },
+        {
+          "rank": 8,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.8544660210609436
+        },
+        {
+          "rank": 9,
+          "token_id": 120424,
+          "token": "espoň",
+          "token_repr": "'espoň'",
+          "l2_dist": 0.8546209335327148
+        },
+        {
+          "rank": 10,
+          "token_id": 127531,
+          "token": " vyrá",
+          "token_repr": "' vyrá'",
+          "l2_dist": 0.8546321988105774
+        },
+        {
+          "rank": 11,
+          "token_id": 115487,
+          "token": " králov",
+          "token_repr": "' králov'",
+          "l2_dist": 0.8546724915504456
+        },
+        {
+          "rank": 12,
+          "token_id": 68896,
+          "token": ";\r\r\r\n",
+          "token_repr": "';\\r\\r\\r\\n'",
+          "l2_dist": 0.8549039959907532
+        },
+        {
+          "rank": 13,
+          "token_id": 120048,
+          "token": "重複重複",
+          "token_repr": "'重複重複'",
+          "l2_dist": 0.8550328016281128
+        },
+        {
+          "rank": 14,
+          "token_id": 64424,
+          "token": "\">\r\r\n",
+          "token_repr": "'\">\\r\\r\\n'",
+          "l2_dist": 0.855079710483551
+        },
+        {
+          "rank": 15,
+          "token_id": 70784,
+          "token": "Japgolly",
+          "token_repr": "'Japgolly'",
+          "l2_dist": 0.8551104068756104
+        },
+        {
+          "rank": 16,
+          "token_id": 89472,
+          "token": "useRalative",
+          "token_repr": "'useRalative'",
+          "l2_dist": 0.8551636338233948
+        },
+        {
+          "rank": 17,
+          "token_id": 126523,
+          "token": "ЎыџN",
+          "token_repr": "'ЎыџN'",
+          "l2_dist": 0.8551691770553589
+        },
+        {
+          "rank": 18,
+          "token_id": 55716,
+          "token": "?>\r\n\r\n",
+          "token_repr": "'?>\\r\\n\\r\\n'",
+          "l2_dist": 0.8551784753799438
+        },
+        {
+          "rank": 19,
+          "token_id": 115614,
+          "token": "ujících",
+          "token_repr": "'ujících'",
+          "l2_dist": 0.8552348613739014
+        },
+        {
+          "rank": 20,
+          "token_id": 123745,
+          "token": " zahrn",
+          "token_repr": "' zahrn'",
+          "l2_dist": 0.8552623987197876
+        },
+        {
+          "rank": 21,
+          "token_id": 98668,
+          "token": ");\r\r\r\n",
+          "token_repr": "');\\r\\r\\r\\n'",
+          "l2_dist": 0.8553062081336975
+        },
+        {
+          "rank": 22,
+          "token_id": 89475,
+          "token": "elementGuidId",
+          "token_repr": "'elementGuidId'",
+          "l2_dist": 0.8553532958030701
+        },
+        {
+          "rank": 23,
+          "token_id": 90050,
+          "token": "_ComCallableWrapper",
+          "token_repr": "'_ComCallableWrapper'",
+          "l2_dist": 0.8553789854049683
+        },
+        {
+          "rank": 24,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.8553823232650757
+        },
+        {
+          "rank": 25,
+          "token_id": 72710,
+          "token": " -->\r\n\r\n",
+          "token_repr": "' -->\\r\\n\\r\\n'",
+          "l2_dist": 0.855384886264801
+        },
+        {
+          "rank": 26,
+          "token_id": 80370,
+          "token": " ForCanBeConvertedToF",
+          "token_repr": "' ForCanBeConvertedToF'",
+          "l2_dist": 0.8554064035415649
+        },
+        {
+          "rank": 27,
+          "token_id": 79883,
+          "token": "\tTokenNameIdentifier",
+          "token_repr": "'\\tTokenNameIdentifier'",
+          "l2_dist": 0.8554213047027588
+        },
+        {
+          "rank": 28,
+          "token_id": 122032,
+          "token": "áhnout",
+          "token_repr": "'áhnout'",
+          "l2_dist": 0.8554542660713196
+        },
+        {
+          "rank": 29,
+          "token_id": 127577,
+          "token": "lamaktadır",
+          "token_repr": "'lamaktadır'",
+          "l2_dist": 0.8554689884185791
+        },
+        {
+          "rank": 30,
+          "token_id": 127877,
+          "token": " Coğraf",
+          "token_repr": "' Coğraf'",
+          "l2_dist": 0.855541467666626
+        }
+      ]
+    },
+    {
+      "name": "patch[2]",
+      "norm_l2": 0.3927193880081177,
+      "norm_ratio_vs_vocab_mean": 0.36157693103423677,
+      "norm_percentile_in_vocab": 0.0,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 44210,
+          "token": "avit",
+          "token_repr": "'avit'",
+          "dot": 0.0447840616106987
+        },
+        {
+          "rank": 2,
+          "token_id": 38169,
+          "token": " faz",
+          "token_repr": "' faz'",
+          "dot": 0.04474875330924988
+        },
+        {
+          "rank": 3,
+          "token_id": 8875,
+          "token": "raz",
+          "token_repr": "'raz'",
+          "dot": 0.04392017424106598
+        },
+        {
+          "rank": 4,
+          "token_id": 32005,
+          "token": "avan",
+          "token_repr": "'avan'",
+          "dot": 0.042842671275138855
+        },
+        {
+          "rank": 5,
+          "token_id": 29345,
+          "token": "avana",
+          "token_repr": "'avana'",
+          "dot": 0.04234277456998825
+        },
+        {
+          "rank": 6,
+          "token_id": 23697,
+          "token": "azer",
+          "token_repr": "'azer'",
+          "dot": 0.04181257262825966
+        },
+        {
+          "rank": 7,
+          "token_id": 14085,
+          "token": " react",
+          "token_repr": "' react'",
+          "dot": 0.04147271066904068
+        },
+        {
+          "rank": 8,
+          "token_id": 71507,
+          "token": " Dank",
+          "token_repr": "' Dank'",
+          "dot": 0.04145120456814766
+        },
+        {
+          "rank": 9,
+          "token_id": 79695,
+          "token": " CSRF",
+          "token_repr": "' CSRF'",
+          "dot": 0.041416335850954056
+        },
+        {
+          "rank": 10,
+          "token_id": 11403,
+          "token": "izar",
+          "token_repr": "'izar'",
+          "dot": 0.04140903800725937
+        },
+        {
+          "rank": 11,
+          "token_id": 59959,
+          "token": "\\TestCase",
+          "token_repr": "'\\\\TestCase'",
+          "dot": 0.04114002734422684
+        },
+        {
+          "rank": 12,
+          "token_id": 57740,
+          "token": "weigh",
+          "token_repr": "'weigh'",
+          "dot": 0.04108289256691933
+        },
+        {
+          "rank": 13,
+          "token_id": 16028,
+          "token": "=\"<?=",
+          "token_repr": "'=\"<?='",
+          "dot": 0.04107367992401123
+        },
+        {
+          "rank": 14,
+          "token_id": 111289,
+          "token": "ีช",
+          "token_repr": "'ีช'",
+          "dot": 0.04106210917234421
+        },
+        {
+          "rank": 15,
+          "token_id": 5477,
+          "token": "ador",
+          "token_repr": "'ador'",
+          "dot": 0.04079516977071762
+        },
+        {
+          "rank": 16,
+          "token_id": 46390,
+          "token": "jsx",
+          "token_repr": "'jsx'",
+          "dot": 0.04077890142798424
+        },
+        {
+          "rank": 17,
+          "token_id": 99758,
+          "token": " capacit",
+          "token_repr": "' capacit'",
+          "dot": 0.0407085195183754
+        },
+        {
+          "rank": 18,
+          "token_id": 14586,
+          "token": "::~",
+          "token_repr": "'::~'",
+          "dot": 0.04046757519245148
+        },
+        {
+          "rank": 19,
+          "token_id": 19610,
+          "token": "vez",
+          "token_repr": "'vez'",
+          "dot": 0.04044891893863678
+        },
+        {
+          "rank": 20,
+          "token_id": 68720,
+          "token": "quartered",
+          "token_repr": "'quartered'",
+          "dot": 0.04032543674111366
+        },
+        {
+          "rank": 21,
+          "token_id": 78671,
+          "token": "abr",
+          "token_repr": "'abr'",
+          "dot": 0.040261462330818176
+        },
+        {
+          "rank": 22,
+          "token_id": 96110,
+          "token": " Cah",
+          "token_repr": "' Cah'",
+          "dot": 0.040148697793483734
+        },
+        {
+          "rank": 23,
+          "token_id": 42009,
+          "token": " Cir",
+          "token_repr": "' Cir'",
+          "dot": 0.0401088148355484
+        },
+        {
+          "rank": 24,
+          "token_id": 85220,
+          "token": "%@",
+          "token_repr": "'%@'",
+          "dot": 0.04005928337574005
+        },
+        {
+          "rank": 25,
+          "token_id": 46394,
+          "token": "-toggler",
+          "token_repr": "'-toggler'",
+          "dot": 0.040005892515182495
+        },
+        {
+          "rank": 26,
+          "token_id": 25685,
+          "token": " polar",
+          "token_repr": "' polar'",
+          "dot": 0.039838798344135284
+        },
+        {
+          "rank": 27,
+          "token_id": 33913,
+          "token": "_payload",
+          "token_repr": "'_payload'",
+          "dot": 0.039830271154642105
+        },
+        {
+          "rank": 28,
+          "token_id": 68107,
+          "token": "ydro",
+          "token_repr": "'ydro'",
+          "dot": 0.03975813835859299
+        },
+        {
+          "rank": 29,
+          "token_id": 12380,
+          "token": "etc",
+          "token_repr": "'etc'",
+          "dot": 0.03966172784566879
+        },
+        {
+          "rank": 30,
+          "token_id": 10474,
+          "token": " phase",
+          "token_repr": "' phase'",
+          "dot": 0.039371419697999954
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 16028,
+          "token": "=\"<?=",
+          "token_repr": "'=\"<?='",
+          "cosine": 0.11017988622188568
+        },
+        {
+          "rank": 2,
+          "token_id": 38169,
+          "token": " faz",
+          "token_repr": "' faz'",
+          "cosine": 0.10267334431409836
+        },
+        {
+          "rank": 3,
+          "token_id": 73034,
+          "token": "flashdata",
+          "token_repr": "'flashdata'",
+          "cosine": 0.10183151066303253
+        },
+        {
+          "rank": 4,
+          "token_id": 59959,
+          "token": "\\TestCase",
+          "token_repr": "'\\\\TestCase'",
+          "cosine": 0.10157778859138489
+        },
+        {
+          "rank": 5,
+          "token_id": 111289,
+          "token": "ีช",
+          "token_repr": "'ีช'",
+          "cosine": 0.09951014816761017
+        },
+        {
+          "rank": 6,
+          "token_id": 33913,
+          "token": "_payload",
+          "token_repr": "'_payload'",
+          "cosine": 0.09784159809350967
+        },
+        {
+          "rank": 7,
+          "token_id": 30595,
+          "token": ".propTypes",
+          "token_repr": "'.propTypes'",
+          "cosine": 0.09692341834306717
+        },
+        {
+          "rank": 8,
+          "token_id": 79695,
+          "token": " CSRF",
+          "token_repr": "' CSRF'",
+          "cosine": 0.09652930498123169
+        },
+        {
+          "rank": 9,
+          "token_id": 85220,
+          "token": "%@",
+          "token_repr": "'%@'",
+          "cosine": 0.09445511549711227
+        },
+        {
+          "rank": 10,
+          "token_id": 39189,
+          "token": ".ExecuteReader",
+          "token_repr": "'.ExecuteReader'",
+          "cosine": 0.09444837272167206
+        },
+        {
+          "rank": 11,
+          "token_id": 24698,
+          "token": ".AddWithValue",
+          "token_repr": "'.AddWithValue'",
+          "cosine": 0.09387633949518204
+        },
+        {
+          "rank": 12,
+          "token_id": 649,
+          "token": " can",
+          "token_repr": "' can'",
+          "cosine": 0.09355216473340988
+        },
+        {
+          "rank": 13,
+          "token_id": 5800,
+          "token": "=\"{{",
+          "token_repr": "'=\"{{'",
+          "cosine": 0.09351684898138046
+        },
+        {
+          "rank": 14,
+          "token_id": 23016,
+          "token": "(Qt",
+          "token_repr": "'(Qt'",
+          "cosine": 0.092616505920887
+        },
+        {
+          "rank": 15,
+          "token_id": 17237,
+          "token": "={(",
+          "token_repr": "'={('",
+          "cosine": 0.09251097589731216
+        },
+        {
+          "rank": 16,
+          "token_id": 77559,
+          "token": "]\")]\n",
+          "token_repr": "']\")]\\n'",
+          "cosine": 0.09235013276338577
+        },
+        {
+          "rank": 17,
+          "token_id": 99758,
+          "token": " capacit",
+          "token_repr": "' capacit'",
+          "cosine": 0.09216184914112091
+        },
+        {
+          "rank": 18,
+          "token_id": 125545,
+          "token": "できます",
+          "token_repr": "'できます'",
+          "cosine": 0.09104965627193451
+        },
+        {
+          "rank": 19,
+          "token_id": 46394,
+          "token": "-toggler",
+          "token_repr": "'-toggler'",
+          "cosine": 0.09091489017009735
+        },
+        {
+          "rank": 20,
+          "token_id": 14085,
+          "token": " react",
+          "token_repr": "' react'",
+          "cosine": 0.09037801623344421
+        },
+        {
+          "rank": 21,
+          "token_id": 44981,
+          "token": " PhpStorm",
+          "token_repr": "' PhpStorm'",
+          "cosine": 0.09005632251501083
+        },
+        {
+          "rank": 22,
+          "token_id": 26107,
+          "token": "úmero",
+          "token_repr": "'úmero'",
+          "cosine": 0.08962687849998474
+        },
+        {
+          "rank": 23,
+          "token_id": 3936,
+          "token": "Title",
+          "token_repr": "'Title'",
+          "cosine": 0.08955734968185425
+        },
+        {
+          "rank": 24,
+          "token_id": 14586,
+          "token": "::~",
+          "token_repr": "'::~'",
+          "cosine": 0.08954037725925446
+        },
+        {
+          "rank": 25,
+          "token_id": 104446,
+          "token": "じゃ",
+          "token_repr": "'じゃ'",
+          "cosine": 0.08936245739459991
+        },
+        {
+          "rank": 26,
+          "token_id": 46390,
+          "token": "jsx",
+          "token_repr": "'jsx'",
+          "cosine": 0.089298315346241
+        },
+        {
+          "rank": 27,
+          "token_id": 44693,
+          "token": "BASEPATH",
+          "token_repr": "'BASEPATH'",
+          "cosine": 0.08924442529678345
+        },
+        {
+          "rank": 28,
+          "token_id": 13980,
+          "token": " occurs",
+          "token_repr": "' occurs'",
+          "cosine": 0.08856604993343353
+        },
+        {
+          "rank": 29,
+          "token_id": 14751,
+          "token": " Ca",
+          "token_repr": "' Ca'",
+          "cosine": 0.08844691514968872
+        },
+        {
+          "rank": 30,
+          "token_id": 13303,
+          "token": " $(\".",
+          "token_repr": "' $(\".'",
+          "cosine": 0.08843821287155151
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.7238844037055969
+        },
+        {
+          "rank": 2,
+          "token_id": 55716,
+          "token": "?>\r\n\r\n",
+          "token_repr": "'?>\\r\\n\\r\\n'",
+          "l2_dist": 0.7243474125862122
+        },
+        {
+          "rank": 3,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.7253460884094238
+        },
+        {
+          "rank": 4,
+          "token_id": 89473,
+          "token": "useRalativeImagePath",
+          "token_repr": "'useRalativeImagePath'",
+          "l2_dist": 0.726209819316864
+        },
+        {
+          "rank": 5,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.7264275550842285
+        },
+        {
+          "rank": 6,
+          "token_id": 66534,
+          "token": "'];\r\n\r\n",
+          "token_repr": "\"'];\\r\\n\\r\\n\"",
+          "l2_dist": 0.7264590263366699
+        },
+        {
+          "rank": 7,
+          "token_id": 72710,
+          "token": " -->\r\n\r\n",
+          "token_repr": "' -->\\r\\n\\r\\n'",
+          "l2_dist": 0.7271221876144409
+        },
+        {
+          "rank": 8,
+          "token_id": 31836,
+          "token": ">\r\r\n",
+          "token_repr": "'>\\r\\r\\n'",
+          "l2_dist": 0.7271710634231567
+        },
+        {
+          "rank": 9,
+          "token_id": 70316,
+          "token": "erusform",
+          "token_repr": "'erusform'",
+          "l2_dist": 0.7271977066993713
+        },
+        {
+          "rank": 10,
+          "token_id": 127438,
+          "token": "▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍",
+          "token_repr": "'▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍'",
+          "l2_dist": 0.7273003458976746
+        },
+        {
+          "rank": 11,
+          "token_id": 120424,
+          "token": "espoň",
+          "token_repr": "'espoň'",
+          "l2_dist": 0.727508544921875
+        },
+        {
+          "rank": 12,
+          "token_id": 89472,
+          "token": "useRalative",
+          "token_repr": "'useRalative'",
+          "l2_dist": 0.7275086641311646
+        },
+        {
+          "rank": 13,
+          "token_id": 126523,
+          "token": "ЎыџN",
+          "token_repr": "'ЎыџN'",
+          "l2_dist": 0.7276255488395691
+        },
+        {
+          "rank": 14,
+          "token_id": 80369,
+          "token": " ForCanBeConverted",
+          "token_repr": "' ForCanBeConverted'",
+          "l2_dist": 0.7277414202690125
+        },
+        {
+          "rank": 15,
+          "token_id": 98668,
+          "token": ");\r\r\r\n",
+          "token_repr": "');\\r\\r\\r\\n'",
+          "l2_dist": 0.7277718782424927
+        },
+        {
+          "rank": 16,
+          "token_id": 127531,
+          "token": " vyrá",
+          "token_repr": "' vyrá'",
+          "l2_dist": 0.7277846932411194
+        },
+        {
+          "rank": 17,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.7278553247451782
+        },
+        {
+          "rank": 18,
+          "token_id": 127877,
+          "token": " Coğraf",
+          "token_repr": "' Coğraf'",
+          "l2_dist": 0.7279483079910278
+        },
+        {
+          "rank": 19,
+          "token_id": 90050,
+          "token": "_ComCallableWrapper",
+          "token_repr": "'_ComCallableWrapper'",
+          "l2_dist": 0.7281310558319092
+        },
+        {
+          "rank": 20,
+          "token_id": 115487,
+          "token": " králov",
+          "token_repr": "' králov'",
+          "l2_dist": 0.7281366586685181
+        },
+        {
+          "rank": 21,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.7281883955001831
+        },
+        {
+          "rank": 22,
+          "token_id": 117857,
+          "token": "ılmaz",
+          "token_repr": "'ılmaz'",
+          "l2_dist": 0.7282212972640991
+        },
+        {
+          "rank": 23,
+          "token_id": 64448,
+          "token": "?>\r\n\r\n",
+          "token_repr": "'?>\\r\\n\\r\\n'",
+          "l2_dist": 0.7282349467277527
+        },
+        {
+          "rank": 24,
+          "token_id": 47073,
+          "token": "webElementXpaths",
+          "token_repr": "'webElementXpaths'",
+          "l2_dist": 0.7282371520996094
+        },
+        {
+          "rank": 25,
+          "token_id": 120048,
+          "token": "重複重複",
+          "token_repr": "'重複重複'",
+          "l2_dist": 0.728379487991333
+        },
+        {
+          "rank": 26,
+          "token_id": 64424,
+          "token": "\">\r\r\n",
+          "token_repr": "'\">\\r\\r\\n'",
+          "l2_dist": 0.7283858060836792
+        },
+        {
+          "rank": 27,
+          "token_id": 68896,
+          "token": ";\r\r\r\n",
+          "token_repr": "';\\r\\r\\r\\n'",
+          "l2_dist": 0.7284096479415894
+        },
+        {
+          "rank": 28,
+          "token_id": 122032,
+          "token": "áhnout",
+          "token_repr": "'áhnout'",
+          "l2_dist": 0.7286146879196167
+        },
+        {
+          "rank": 29,
+          "token_id": 110024,
+          "token": " CLIIIK",
+          "token_repr": "' CLIIIK'",
+          "l2_dist": 0.7286750078201294
+        },
+        {
+          "rank": 30,
+          "token_id": 116552,
+          "token": "ujícím",
+          "token_repr": "'ujícím'",
+          "l2_dist": 0.7286979556083679
+        }
+      ]
+    }
+  ],
+  "averaged": {
+    "name": "patch.mean(positions)",
+    "norm_l2": 0.35639554262161255,
+    "norm_ratio_vs_vocab_mean": 0.3281335489673876,
+    "norm_percentile_in_vocab": 0.0,
+    "top_k_dot": [
+      {
+        "rank": 1,
+        "token_id": 70385,
+        "token": " Guards",
+        "token_repr": "' Guards'",
+        "dot": 0.03670855611562729
+      },
+      {
+        "rank": 2,
+        "token_id": 39052,
+        "token": " stereo",
+        "token_repr": "' stereo'",
+        "dot": 0.0362047478556633
+      },
+      {
+        "rank": 3,
+        "token_id": 36893,
+        "token": " remot",
+        "token_repr": "' remot'",
+        "dot": 0.03581751137971878
+      },
+      {
+        "rank": 4,
+        "token_id": 70301,
+        "token": " rotations",
+        "token_repr": "' rotations'",
+        "dot": 0.03533175587654114
+      },
+      {
+        "rank": 5,
+        "token_id": 50820,
+        "token": " Rotate",
+        "token_repr": "' Rotate'",
+        "dot": 0.03526300936937332
+      },
+      {
+        "rank": 6,
+        "token_id": 40962,
+        "token": " homeowners",
+        "token_repr": "' homeowners'",
+        "dot": 0.03503962606191635
+      },
+      {
+        "rank": 7,
+        "token_id": 63973,
+        "token": " circulated",
+        "token_repr": "' circulated'",
+        "dot": 0.03503166139125824
+      },
+      {
+        "rank": 8,
+        "token_id": 56814,
+        "token": " ceilings",
+        "token_repr": "' ceilings'",
+        "dot": 0.03503122180700302
+      },
+      {
+        "rank": 9,
+        "token_id": 98541,
+        "token": " Josef",
+        "token_repr": "' Josef'",
+        "dot": 0.03498911112546921
+      },
+      {
+        "rank": 10,
+        "token_id": 64123,
+        "token": "zek",
+        "token_repr": "'zek'",
+        "dot": 0.03497753292322159
+      },
+      {
+        "rank": 11,
+        "token_id": 100240,
+        "token": " Closet",
+        "token_repr": "' Closet'",
+        "dot": 0.03494999185204506
+      },
+      {
+        "rank": 12,
+        "token_id": 83126,
+        "token": "ọc",
+        "token_repr": "'ọc'",
+        "dot": 0.034939371049404144
+      },
+      {
+        "rank": 13,
+        "token_id": 29345,
+        "token": "avana",
+        "token_repr": "'avana'",
+        "dot": 0.03474711254239082
+      },
+      {
+        "rank": 14,
+        "token_id": 60653,
+        "token": "Scaler",
+        "token_repr": "'Scaler'",
+        "dot": 0.03464692085981369
+      },
+      {
+        "rank": 15,
+        "token_id": 100242,
+        "token": "ideon",
+        "token_repr": "'ideon'",
+        "dot": 0.03453761339187622
+      },
+      {
+        "rank": 16,
+        "token_id": 18405,
+        "token": "arga",
+        "token_repr": "'arga'",
+        "dot": 0.03445430472493172
+      },
+      {
+        "rank": 17,
+        "token_id": 57427,
+        "token": " Rift",
+        "token_repr": "' Rift'",
+        "dot": 0.0336880087852478
+      },
+      {
+        "rank": 18,
+        "token_id": 61633,
+        "token": "注意",
+        "token_repr": "'注意'",
+        "dot": 0.033391088247299194
+      },
+      {
+        "rank": 19,
+        "token_id": 88016,
+        "token": " Stations",
+        "token_repr": "' Stations'",
+        "dot": 0.03326895460486412
+      },
+      {
+        "rank": 20,
+        "token_id": 73075,
+        "token": " Stereo",
+        "token_repr": "' Stereo'",
+        "dot": 0.03315727040171623
+      },
+      {
+        "rank": 21,
+        "token_id": 14898,
+        "token": "odd",
+        "token_repr": "'odd'",
+        "dot": 0.033043961971998215
+      },
+      {
+        "rank": 22,
+        "token_id": 68411,
+        "token": "avl",
+        "token_repr": "'avl'",
+        "dot": 0.032983433455228806
+      },
+      {
+        "rank": 23,
+        "token_id": 5080,
+        "token": "�",
+        "token_repr": "'�'",
+        "dot": 0.03285820782184601
+      },
+      {
+        "rank": 24,
+        "token_id": 79921,
+        "token": " Grip",
+        "token_repr": "' Grip'",
+        "dot": 0.03264547511935234
+      },
+      {
+        "rank": 25,
+        "token_id": 63606,
+        "token": " Stap",
+        "token_repr": "' Stap'",
+        "dot": 0.03259972482919693
+      },
+      {
+        "rank": 26,
+        "token_id": 22130,
+        "token": " hij",
+        "token_repr": "' hij'",
+        "dot": 0.03250500559806824
+      },
+      {
+        "rank": 27,
+        "token_id": 85296,
+        "token": "-reported",
+        "token_repr": "'-reported'",
+        "dot": 0.03250086307525635
+      },
+      {
+        "rank": 28,
+        "token_id": 69090,
+        "token": " Hij",
+        "token_repr": "' Hij'",
+        "dot": 0.03222758322954178
+      },
+      {
+        "rank": 29,
+        "token_id": 120460,
+        "token": "骑",
+        "token_repr": "'骑'",
+        "dot": 0.03216911107301712
+      },
+      {
+        "rank": 30,
+        "token_id": 86985,
+        "token": "reten",
+        "token_repr": "'reten'",
+        "dot": 0.03205413371324539
+      }
+    ],
+    "top_k_cosine": [
+      {
+        "rank": 1,
+        "token_id": 39052,
+        "token": " stereo",
+        "token_repr": "' stereo'",
+        "cosine": 0.09161850810050964
+      },
+      {
+        "rank": 2,
+        "token_id": 50820,
+        "token": " Rotate",
+        "token_repr": "' Rotate'",
+        "cosine": 0.08831572532653809
+      },
+      {
+        "rank": 3,
+        "token_id": 61633,
+        "token": "注意",
+        "token_repr": "'注意'",
+        "cosine": 0.08769117295742035
+      },
+      {
+        "rank": 4,
+        "token_id": 40962,
+        "token": " homeowners",
+        "token_repr": "' homeowners'",
+        "cosine": 0.08726675063371658
+      },
+      {
+        "rank": 5,
+        "token_id": 98541,
+        "token": " Josef",
+        "token_repr": "' Josef'",
+        "cosine": 0.08677753806114197
+      },
+      {
+        "rank": 6,
+        "token_id": 46127,
+        "token": "'}}>\n",
+        "token_repr": "\"'}}>\\n\"",
+        "cosine": 0.08595588803291321
+      },
+      {
+        "rank": 7,
+        "token_id": 39356,
+        "token": "_rot",
+        "token_repr": "'_rot'",
+        "cosine": 0.08514803647994995
+      },
+      {
+        "rank": 8,
+        "token_id": 63973,
+        "token": " circulated",
+        "token_repr": "' circulated'",
+        "cosine": 0.08444851636886597
+      },
+      {
+        "rank": 9,
+        "token_id": 120460,
+        "token": "骑",
+        "token_repr": "'骑'",
+        "cosine": 0.08415036648511887
+      },
+      {
+        "rank": 10,
+        "token_id": 70301,
+        "token": " rotations",
+        "token_repr": "' rotations'",
+        "cosine": 0.08356267213821411
+      },
+      {
+        "rank": 11,
+        "token_id": 12746,
+        "token": ".appendChild",
+        "token_repr": "'.appendChild'",
+        "cosine": 0.08283243328332901
+      },
+      {
+        "rank": 12,
+        "token_id": 120610,
+        "token": "包含",
+        "token_repr": "'包含'",
+        "cosine": 0.08239612728357315
+      },
+      {
+        "rank": 13,
+        "token_id": 85296,
+        "token": "-reported",
+        "token_repr": "'-reported'",
+        "cosine": 0.08191408962011337
+      },
+      {
+        "rank": 14,
+        "token_id": 70385,
+        "token": " Guards",
+        "token_repr": "' Guards'",
+        "cosine": 0.0818067342042923
+      },
+      {
+        "rank": 15,
+        "token_id": 5080,
+        "token": "�",
+        "token_repr": "'�'",
+        "cosine": 0.08097003400325775
+      },
+      {
+        "rank": 16,
+        "token_id": 56814,
+        "token": " ceilings",
+        "token_repr": "' ceilings'",
+        "cosine": 0.08087374269962311
+      },
+      {
+        "rank": 17,
+        "token_id": 66279,
+        "token": " ERP",
+        "token_repr": "' ERP'",
+        "cosine": 0.07996697723865509
+      },
+      {
+        "rank": 18,
+        "token_id": 65435,
+        "token": ".Lerp",
+        "token_repr": "'.Lerp'",
+        "cosine": 0.07995855063199997
+      },
+      {
+        "rank": 19,
+        "token_id": 21527,
+        "token": ".Replace",
+        "token_repr": "'.Replace'",
+        "cosine": 0.07991454750299454
+      },
+      {
+        "rank": 20,
+        "token_id": 73075,
+        "token": " Stereo",
+        "token_repr": "' Stereo'",
+        "cosine": 0.07980692386627197
+      },
+      {
+        "rank": 21,
+        "token_id": 95603,
+        "token": " Kinect",
+        "token_repr": "' Kinect'",
+        "cosine": 0.07972876727581024
+      },
+      {
+        "rank": 22,
+        "token_id": 57427,
+        "token": " Rift",
+        "token_repr": "' Rift'",
+        "cosine": 0.07967876642942429
+      },
+      {
+        "rank": 23,
+        "token_id": 33913,
+        "token": "_payload",
+        "token_repr": "'_payload'",
+        "cosine": 0.07961352914571762
+      },
+      {
+        "rank": 24,
+        "token_id": 77690,
+        "token": "(rot",
+        "token_repr": "'(rot'",
+        "cosine": 0.07959254086017609
+      },
+      {
+        "rank": 25,
+        "token_id": 83126,
+        "token": "ọc",
+        "token_repr": "'ọc'",
+        "cosine": 0.07948628813028336
+      },
+      {
+        "rank": 26,
+        "token_id": 76056,
+        "token": " pests",
+        "token_repr": "' pests'",
+        "cosine": 0.07931862771511078
+      },
+      {
+        "rank": 27,
+        "token_id": 100240,
+        "token": " Closet",
+        "token_repr": "' Closet'",
+        "cosine": 0.07928946614265442
+      },
+      {
+        "rank": 28,
+        "token_id": 17348,
+        "token": " rotate",
+        "token_repr": "' rotate'",
+        "cosine": 0.07921195030212402
+      },
+      {
+        "rank": 29,
+        "token_id": 52814,
+        "token": " Activate",
+        "token_repr": "' Activate'",
+        "cosine": 0.07888244092464447
+      },
+      {
+        "rank": 30,
+        "token_id": 60653,
+        "token": "Scaler",
+        "token_repr": "'Scaler'",
+        "cosine": 0.0788775086402893
+      }
+    ],
+    "top_k_l2": [
+      {
+        "rank": 1,
+        "token_id": 81259,
+        "token": "artisanlib",
+        "token_repr": "'artisanlib'",
+        "l2_dist": 0.703517735004425
+      },
+      {
+        "rank": 2,
+        "token_id": 89471,
+        "token": "useRal",
+        "token_repr": "'useRal'",
+        "l2_dist": 0.7050668597221375
+      },
+      {
+        "rank": 3,
+        "token_id": 109045,
+        "token": "krvldkf",
+        "token_repr": "'krvldkf'",
+        "l2_dist": 0.7050893306732178
+      },
+      {
+        "rank": 4,
+        "token_id": 89473,
+        "token": "useRalativeImagePath",
+        "token_repr": "'useRalativeImagePath'",
+        "l2_dist": 0.70542311668396
+      },
+      {
+        "rank": 5,
+        "token_id": 31836,
+        "token": ">\r\r\n",
+        "token_repr": "'>\\r\\r\\n'",
+        "l2_dist": 0.7055222392082214
+      },
+      {
+        "rank": 6,
+        "token_id": 55716,
+        "token": "?>\r\n\r\n",
+        "token_repr": "'?>\\r\\n\\r\\n'",
+        "l2_dist": 0.705585777759552
+      },
+      {
+        "rank": 7,
+        "token_id": 80369,
+        "token": " ForCanBeConverted",
+        "token_repr": "' ForCanBeConverted'",
+        "l2_dist": 0.7060812711715698
+      },
+      {
+        "rank": 8,
+        "token_id": 85069,
+        "token": "PostalCodesNL",
+        "token_repr": "'PostalCodesNL'",
+        "l2_dist": 0.7062575817108154
+      },
+      {
+        "rank": 9,
+        "token_id": 127531,
+        "token": " vyrá",
+        "token_repr": "' vyrá'",
+        "l2_dist": 0.706555187702179
+      },
+      {
+        "rank": 10,
+        "token_id": 90050,
+        "token": "_ComCallableWrapper",
+        "token_repr": "'_ComCallableWrapper'",
+        "l2_dist": 0.7067191004753113
+      },
+      {
+        "rank": 11,
+        "token_id": 98668,
+        "token": ");\r\r\r\n",
+        "token_repr": "');\\r\\r\\r\\n'",
+        "l2_dist": 0.7067679762840271
+      },
+      {
+        "rank": 12,
+        "token_id": 127438,
+        "token": "▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍",
+        "token_repr": "'▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍▍'",
+        "l2_dist": 0.7067906856536865
+      },
+      {
+        "rank": 13,
+        "token_id": 120894,
+        "token": " přítom",
+        "token_repr": "' přítom'",
+        "l2_dist": 0.7067970037460327
+      },
+      {
+        "rank": 14,
+        "token_id": 115487,
+        "token": " králov",
+        "token_repr": "' králov'",
+        "l2_dist": 0.706807017326355
+      },
+      {
+        "rank": 15,
+        "token_id": 47073,
+        "token": "webElementXpaths",
+        "token_repr": "'webElementXpaths'",
+        "l2_dist": 0.7069576382637024
+      },
+      {
+        "rank": 16,
+        "token_id": 70316,
+        "token": "erusform",
+        "token_repr": "'erusform'",
+        "l2_dist": 0.7069655060768127
+      },
+      {
+        "rank": 17,
+        "token_id": 68896,
+        "token": ";\r\r\r\n",
+        "token_repr": "';\\r\\r\\r\\n'",
+        "l2_dist": 0.707004964351654
+      },
+      {
+        "rank": 18,
+        "token_id": 89472,
+        "token": "useRalative",
+        "token_repr": "'useRalative'",
+        "l2_dist": 0.7070595026016235
+      },
+      {
+        "rank": 19,
+        "token_id": 126523,
+        "token": "ЎыџN",
+        "token_repr": "'ЎыџN'",
+        "l2_dist": 0.7071686387062073
+      },
+      {
+        "rank": 20,
+        "token_id": 120424,
+        "token": "espoň",
+        "token_repr": "'espoň'",
+        "l2_dist": 0.7073158621788025
+      },
+      {
+        "rank": 21,
+        "token_id": 72710,
+        "token": " -->\r\n\r\n",
+        "token_repr": "' -->\\r\\n\\r\\n'",
+        "l2_dist": 0.7073239088058472
+      },
+      {
+        "rank": 22,
+        "token_id": 120048,
+        "token": "重複重複",
+        "token_repr": "'重複重複'",
+        "l2_dist": 0.7077704668045044
+      },
+      {
+        "rank": 23,
+        "token_id": 123745,
+        "token": " zahrn",
+        "token_repr": "' zahrn'",
+        "l2_dist": 0.707848072052002
+      },
+      {
+        "rank": 24,
+        "token_id": 117857,
+        "token": "ılmaz",
+        "token_repr": "'ılmaz'",
+        "l2_dist": 0.7079110145568848
+      },
+      {
+        "rank": 25,
+        "token_id": 127877,
+        "token": " Coğraf",
+        "token_repr": "' Coğraf'",
+        "l2_dist": 0.7079377770423889
+      },
+      {
+        "rank": 26,
+        "token_id": 64424,
+        "token": "\">\r\r\n",
+        "token_repr": "'\">\\r\\r\\n'",
+        "l2_dist": 0.7079664468765259
+      },
+      {
+        "rank": 27,
+        "token_id": 66534,
+        "token": "'];\r\n\r\n",
+        "token_repr": "\"'];\\r\\n\\r\\n\"",
+        "l2_dist": 0.7079780697822571
+      },
+      {
+        "rank": 28,
+        "token_id": 115614,
+        "token": "ujících",
+        "token_repr": "'ujících'",
+        "l2_dist": 0.7080188989639282
+      },
+      {
+        "rank": 29,
+        "token_id": 122032,
+        "token": "áhnout",
+        "token_repr": "'áhnout'",
+        "l2_dist": 0.7080394625663757
+      },
+      {
+        "rank": 30,
+        "token_id": 126357,
+        "token": " предназнач",
+        "token_repr": "' предназнач'",
+        "l2_dist": 0.7080459594726562
+      }
+    ]
+  },
+  "position_colinearity_cos_matrix": [
+    [
+      1.0000007152557373,
+      0.04695798456668854,
+      -0.02090524137020111
+    ],
+    [
+      0.04695798456668854,
+      0.9999995231628418,
+      0.042172305285930634
+    ],
+    [
+      -0.02090524137020111,
+      0.042172305285930634,
+      0.9999991655349731
+    ]
+  ],
+  "control_random_same_norm": {
+    "name": "random_same_norm",
+    "norm_l2": 0.753451406955719,
+    "norm_ratio_vs_vocab_mean": 0.6937030758584433,
+    "norm_percentile_in_vocab": 0.6627370259481038,
+    "top_k_dot": [
+      {
+        "rank": 1,
+        "token_id": 54811,
+        "token": " deeds",
+        "token_repr": "' deeds'",
+        "dot": 0.06086018681526184
+      },
+      {
+        "rank": 2,
+        "token_id": 4596,
+        "token": "edia",
+        "token_repr": "'edia'",
+        "dot": 0.0590013824403286
+      },
+      {
+        "rank": 3,
+        "token_id": 17813,
+        "token": " loud",
+        "token_repr": "' loud'",
+        "dot": 0.05796089768409729
+      },
+      {
+        "rank": 4,
+        "token_id": 4087,
+        "token": " pur",
+        "token_repr": "' pur'",
+        "dot": 0.05500072240829468
+      },
+      {
+        "rank": 5,
+        "token_id": 35965,
+        "token": "alis",
+        "token_repr": "'alis'",
+        "dot": 0.05460571125149727
+      },
+      {
+        "rank": 6,
+        "token_id": 26733,
+        "token": " peaceful",
+        "token_repr": "' peaceful'",
+        "dot": 0.05272121727466583
+      },
+      {
+        "rank": 7,
+        "token_id": 49605,
+        "token": " Unlimited",
+        "token_repr": "' Unlimited'",
+        "dot": 0.051595546305179596
+      },
+      {
+        "rank": 8,
+        "token_id": 37047,
+        "token": "_alias",
+        "token_repr": "'_alias'",
+        "dot": 0.051576413214206696
+      },
+      {
+        "rank": 9,
+        "token_id": 917,
+        "token": " app",
+        "token_repr": "' app'",
+        "dot": 0.05120548978447914
+      },
+      {
+        "rank": 10,
+        "token_id": 8997,
+        "token": "arian",
+        "token_repr": "'arian'",
+        "dot": 0.049969274550676346
+      },
+      {
+        "rank": 11,
+        "token_id": 3199,
+        "token": "omain",
+        "token_repr": "'omain'",
+        "dot": 0.049949534237384796
+      },
+      {
+        "rank": 12,
+        "token_id": 5660,
+        "token": "II",
+        "token_repr": "'II'",
+        "dot": 0.04982024431228638
+      },
+      {
+        "rank": 13,
+        "token_id": 5759,
+        "token": "ych",
+        "token_repr": "'ych'",
+        "dot": 0.049523577094078064
+      },
+      {
+        "rank": 14,
+        "token_id": 513,
+        "token": " se",
+        "token_repr": "' se'",
+        "dot": 0.049474120140075684
+      },
+      {
+        "rank": 15,
+        "token_id": 21236,
+        "token": " rod",
+        "token_repr": "' rod'",
+        "dot": 0.04907621443271637
+      },
+      {
+        "rank": 16,
+        "token_id": 3722,
+        "token": " diff",
+        "token_repr": "' diff'",
+        "dot": 0.04899631813168526
+      },
+      {
+        "rank": 17,
+        "token_id": 25380,
+        "token": "erald",
+        "token_repr": "'erald'",
+        "dot": 0.04857398569583893
+      },
+      {
+        "rank": 18,
+        "token_id": 1069,
+        "token": " pe",
+        "token_repr": "' pe'",
+        "dot": 0.04843998700380325
+      },
+      {
+        "rank": 19,
+        "token_id": 25896,
+        "token": " bones",
+        "token_repr": "' bones'",
+        "dot": 0.04797632619738579
+      },
+      {
+        "rank": 20,
+        "token_id": 8792,
+        "token": " central",
+        "token_repr": "' central'",
+        "dot": 0.04771985858678818
+      },
+      {
+        "rank": 21,
+        "token_id": 9523,
+        "token": " thanks",
+        "token_repr": "' thanks'",
+        "dot": 0.04746078699827194
+      },
+      {
+        "rank": 22,
+        "token_id": 1323,
+        "token": " rem",
+        "token_repr": "' rem'",
+        "dot": 0.047302842140197754
+      },
+      {
+        "rank": 23,
+        "token_id": 2531,
+        "token": " leg",
+        "token_repr": "' leg'",
+        "dot": 0.04725705832242966
+      },
+      {
+        "rank": 24,
+        "token_id": 27626,
+        "token": " reminder",
+        "token_repr": "' reminder'",
+        "dot": 0.047216616570949554
+      },
+      {
+        "rank": 25,
+        "token_id": 9038,
+        "token": " rad",
+        "token_repr": "' rad'",
+        "dot": 0.04688432067632675
+      },
+      {
+        "rank": 26,
+        "token_id": 9214,
+        "token": " thousands",
+        "token_repr": "' thousands'",
+        "dot": 0.04686517268419266
+      },
+      {
+        "rank": 27,
+        "token_id": 2850,
+        "token": "ari",
+        "token_repr": "'ari'",
+        "dot": 0.04684656485915184
+      },
+      {
+        "rank": 28,
+        "token_id": 3893,
+        "token": "ii",
+        "token_repr": "'ii'",
+        "dot": 0.046666428446769714
+      },
+      {
+        "rank": 29,
+        "token_id": 5620,
+        "token": "oring",
+        "token_repr": "'oring'",
+        "dot": 0.046664875000715256
+      },
+      {
+        "rank": 30,
+        "token_id": 6903,
+        "token": "EO",
+        "token_repr": "'EO'",
+        "dot": 0.04648686945438385
+      }
+    ],
+    "top_k_cosine": [
+      {
+        "rank": 1,
+        "token_id": 54811,
+        "token": " deeds",
+        "token_repr": "' deeds'",
+        "cosine": 0.07149647921323776
+      },
+      {
+        "rank": 2,
+        "token_id": 17813,
+        "token": " loud",
+        "token_repr": "' loud'",
+        "cosine": 0.06773893535137177
+      },
+      {
+        "rank": 3,
+        "token_id": 37047,
+        "token": "_alias",
+        "token_repr": "'_alias'",
+        "cosine": 0.06475270539522171
+      },
+      {
+        "rank": 4,
+        "token_id": 5660,
+        "token": "II",
+        "token_repr": "'II'",
+        "cosine": 0.060899388045072556
+      },
+      {
+        "rank": 5,
+        "token_id": 26733,
+        "token": " peaceful",
+        "token_repr": "' peaceful'",
+        "cosine": 0.06037569418549538
+      },
+      {
+        "rank": 6,
+        "token_id": 4596,
+        "token": "edia",
+        "token_repr": "'edia'",
+        "cosine": 0.059898532927036285
+      },
+      {
+        "rank": 7,
+        "token_id": 8105,
+        "token": " II",
+        "token_repr": "' II'",
+        "cosine": 0.059049420058727264
+      },
+      {
+        "rank": 8,
+        "token_id": 14799,
+        "token": " ii",
+        "token_repr": "' ii'",
+        "cosine": 0.058602288365364075
+      },
+      {
+        "rank": 9,
+        "token_id": 917,
+        "token": " app",
+        "token_repr": "' app'",
+        "cosine": 0.05771227180957794
+      },
+      {
+        "rank": 10,
+        "token_id": 17112,
+        "token": "358",
+        "token_repr": "'358'",
+        "cosine": 0.05761823430657387
+      },
+      {
+        "rank": 11,
+        "token_id": 49605,
+        "token": " Unlimited",
+        "token_repr": "' Unlimited'",
+        "cosine": 0.05691160261631012
+      },
+      {
+        "rank": 12,
+        "token_id": 9214,
+        "token": " thousands",
+        "token_repr": "' thousands'",
+        "cosine": 0.05607002228498459
+      },
+      {
+        "rank": 13,
+        "token_id": 27626,
+        "token": " reminder",
+        "token_repr": "' reminder'",
+        "cosine": 0.05596660450100899
+      },
+      {
+        "rank": 14,
+        "token_id": 513,
+        "token": " se",
+        "token_repr": "' se'",
+        "cosine": 0.05592166259884834
+      },
+      {
+        "rank": 15,
+        "token_id": 63586,
+        "token": " APK",
+        "token_repr": "' APK'",
+        "cosine": 0.054996706545352936
+      },
+      {
+        "rank": 16,
+        "token_id": 35965,
+        "token": "alis",
+        "token_repr": "'alis'",
+        "cosine": 0.05492328479886055
+      },
+      {
+        "rank": 17,
+        "token_id": 24928,
+        "token": " remind",
+        "token_repr": "' remind'",
+        "cosine": 0.05478175729513168
+      },
+      {
+        "rank": 18,
+        "token_id": 75250,
+        "token": " RAD",
+        "token_repr": "' RAD'",
+        "cosine": 0.05465429276227951
+      },
+      {
+        "rank": 19,
+        "token_id": 18557,
+        "token": "_destroy",
+        "token_repr": "'_destroy'",
+        "cosine": 0.054492540657520294
+      },
+      {
+        "rank": 20,
+        "token_id": 121440,
+        "token": " ทำให",
+        "token_repr": "' ทำให'",
+        "cosine": 0.05435359477996826
+      },
+      {
+        "rank": 21,
+        "token_id": 3893,
+        "token": "ii",
+        "token_repr": "'ii'",
+        "cosine": 0.0542745403945446
+      },
+      {
+        "rank": 22,
+        "token_id": 21236,
+        "token": " rod",
+        "token_repr": "' rod'",
+        "cosine": 0.05425591021776199
+      },
+      {
+        "rank": 23,
+        "token_id": 33197,
+        "token": "_quantity",
+        "token_repr": "'_quantity'",
+        "cosine": 0.05400364100933075
+      },
+      {
+        "rank": 24,
+        "token_id": 1069,
+        "token": " pe",
+        "token_repr": "' pe'",
+        "cosine": 0.053669244050979614
+      },
+      {
+        "rank": 25,
+        "token_id": 12192,
+        "token": " promote",
+        "token_repr": "' promote'",
+        "cosine": 0.053203944116830826
+      },
+      {
+        "rank": 26,
+        "token_id": 25896,
+        "token": " bones",
+        "token_repr": "' bones'",
+        "cosine": 0.053136441856622696
+      },
+      {
+        "rank": 27,
+        "token_id": 18395,
+        "token": " APP",
+        "token_repr": "' APP'",
+        "cosine": 0.05302734673023224
+      },
+      {
+        "rank": 28,
+        "token_id": 3722,
+        "token": " diff",
+        "token_repr": "' diff'",
+        "cosine": 0.05267224460840225
+      },
+      {
+        "rank": 29,
+        "token_id": 12171,
+        "token": "208",
+        "token_repr": "'208'",
+        "cosine": 0.05262866988778114
+      },
+      {
+        "rank": 30,
+        "token_id": 19535,
+        "token": " rm",
+        "token_repr": "' rm'",
+        "cosine": 0.05260059982538223
+      }
+    ],
+    "top_k_l2": [
+      {
+        "rank": 1,
+        "token_id": 70784,
+        "token": "Japgolly",
+        "token_repr": "'Japgolly'",
+        "l2_dist": 0.9931688904762268
+      },
+      {
+        "rank": 2,
+        "token_id": 11829,
+        "token": ".The",
+        "token_repr": "'.The'",
+        "l2_dist": 0.9932330250740051
+      },
+      {
+        "rank": 3,
+        "token_id": 70316,
+        "token": "erusform",
+        "token_repr": "'erusform'",
+        "l2_dist": 0.9934965372085571
+      },
+      {
+        "rank": 4,
+        "token_id": 81259,
+        "token": "artisanlib",
+        "token_repr": "'artisanlib'",
+        "l2_dist": 0.9935149550437927
+      },
+      {
+        "rank": 5,
+        "token_id": 120894,
+        "token": " přítom",
+        "token_repr": "' přítom'",
+        "l2_dist": 0.993828296661377
+      },
+      {
+        "rank": 6,
+        "token_id": 109045,
+        "token": "krvldkf",
+        "token_repr": "'krvldkf'",
+        "l2_dist": 0.9941526651382446
+      },
+      {
+        "rank": 7,
+        "token_id": 89471,
+        "token": "useRal",
+        "token_repr": "'useRal'",
+        "l2_dist": 0.9942078590393066
+      },
+      {
+        "rank": 8,
+        "token_id": 116452,
+        "token": " söyley",
+        "token_repr": "' söyley'",
+        "l2_dist": 0.9943932294845581
+      },
+      {
+        "rank": 9,
+        "token_id": 121671,
+        "token": " düşünc",
+        "token_repr": "' düşünc'",
+        "l2_dist": 0.9944249987602234
+      },
+      {
+        "rank": 10,
+        "token_id": 110525,
+        "token": " vzděl",
+        "token_repr": "' vzděl'",
+        "l2_dist": 0.9944353103637695
+      },
+      {
+        "rank": 11,
+        "token_id": 89473,
+        "token": "useRalativeImagePath",
+        "token_repr": "'useRalativeImagePath'",
+        "l2_dist": 0.9945074915885925
+      },
+      {
+        "rank": 12,
+        "token_id": 127531,
+        "token": " vyrá",
+        "token_repr": "' vyrá'",
+        "l2_dist": 0.9945912957191467
+      },
+      {
+        "rank": 13,
+        "token_id": 126357,
+        "token": " предназнач",
+        "token_repr": "' предназнач'",
+        "l2_dist": 0.9946352243423462
+      },
+      {
+        "rank": 14,
+        "token_id": 85069,
+        "token": "PostalCodesNL",
+        "token_repr": "'PostalCodesNL'",
+        "l2_dist": 0.994696855545044
+      },
+      {
+        "rank": 15,
+        "token_id": 106951,
+        "token": "글상위",
+        "token_repr": "'글상위'",
+        "l2_dist": 0.9947341084480286
+      },
+      {
+        "rank": 16,
+        "token_id": 68896,
+        "token": ";\r\r\r\n",
+        "token_repr": "';\\r\\r\\r\\n'",
+        "l2_dist": 0.9947437644004822
+      },
+      {
+        "rank": 17,
+        "token_id": 114091,
+        "token": "üslüman",
+        "token_repr": "'üslüman'",
+        "l2_dist": 0.9947651028633118
+      },
+      {
+        "rank": 18,
+        "token_id": 98668,
+        "token": ");\r\r\r\n",
+        "token_repr": "');\\r\\r\\r\\n'",
+        "l2_dist": 0.9947899580001831
+      },
+      {
+        "rank": 19,
+        "token_id": 95073,
+        "token": "-vesm",
+        "token_repr": "'-vesm'",
+        "l2_dist": 0.9948233366012573
+      },
+      {
+        "rank": 20,
+        "token_id": 90050,
+        "token": "_ComCallableWrapper",
+        "token_repr": "'_ComCallableWrapper'",
+        "l2_dist": 0.9949607253074646
+      },
+      {
+        "rank": 21,
+        "token_id": 120048,
+        "token": "重複重複",
+        "token_repr": "'重複重複'",
+        "l2_dist": 0.9950770139694214
+      },
+      {
+        "rank": 22,
+        "token_id": 123745,
+        "token": " zahrn",
+        "token_repr": "' zahrn'",
+        "l2_dist": 0.9950847029685974
+      },
+      {
+        "rank": 23,
+        "token_id": 89472,
+        "token": "useRalative",
+        "token_repr": "'useRalative'",
+        "l2_dist": 0.9950900673866272
+      },
+      {
+        "rank": 24,
+        "token_id": 126647,
+        "token": "lásil",
+        "token_repr": "'lásil'",
+        "l2_dist": 0.9951144456863403
+      },
+      {
+        "rank": 25,
+        "token_id": 120232,
+        "token": " ovliv",
+        "token_repr": "' ovliv'",
+        "l2_dist": 0.9951145648956299
+      },
+      {
+        "rank": 26,
+        "token_id": 115944,
+        "token": " vzdál",
+        "token_repr": "' vzdál'",
+        "l2_dist": 0.9951409101486206
+      },
+      {
+        "rank": 27,
+        "token_id": 105435,
+        "token": "алась",
+        "token_repr": "'алась'",
+        "l2_dist": 0.9951430559158325
+      },
+      {
+        "rank": 28,
+        "token_id": 58508,
+        "token": ":-------------</",
+        "token_repr": "':-------------</'",
+        "l2_dist": 0.9951568841934204
+      },
+      {
+        "rank": 29,
+        "token_id": 127877,
+        "token": " Coğraf",
+        "token_repr": "' Coğraf'",
+        "l2_dist": 0.9952802658081055
+      },
+      {
+        "rank": 30,
+        "token_id": 117857,
+        "token": "ılmaz",
+        "token_repr": "'ılmaz'",
+        "l2_dist": 0.9952922463417053
+      }
+    ]
+  }
+}

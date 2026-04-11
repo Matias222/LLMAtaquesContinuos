@@ -3,7 +3,7 @@ inspect_xmas_patch.py
 =====================
 
 Analisis geometrico del parche de personalidad navidena entrenado en
-`christmas_personality_4.py`.
+`christmas_final_train.py`.
 
 Responde a dos preguntas:
 
@@ -26,10 +26,10 @@ tiempo. Corre en CPU sin problemas (no necesita GPU).
 
 Uso:
     python inspect_xmas_patch.py \
-        --patch christmas_personality_patch_v4.pt \
+        --patch christmas_final_patch_lowc.pt \
         --model ../modelos/Llama-3.2-3B-Instruct \
         --top_k 30 \
-        --out inspect_xmas_patch_report.json
+        --out inspect_xmas_final_report.json
 """
 
 import argparse
@@ -255,15 +255,15 @@ def analyze_vector(
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--patch", default="christmas_personality_patch_v4.pt",
+    parser.add_argument("--patch", default="christmas_final_patch_lowc.pt",
                         help="Path al .pt del parche a inspeccionar.")
-    parser.add_argument("--model", default="../modelos/Llama-3.2-3B-Instruct",
+    parser.add_argument("--model", default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
                         help="Path al directorio del modelo (para extraer embed_tokens y tokenizer).")
     parser.add_argument("--top_k", type=int, default=30,
                         help="Cuantos vecinos reportar por metrica.")
     parser.add_argument("--seed", type=int, default=42,
                         help="Semilla para el vector Gaussiano de control.")
-    parser.add_argument("--out", default="inspect_xmas_patch_report.json",
+    parser.add_argument("--out", default="inspect_xmas_final_report.json",
                         help="Path del JSON de salida con todos los resultados.")
     args = parser.parse_args()
 
@@ -325,7 +325,7 @@ def main():
         )
         per_position_results.append(res)
 
-    # 6. Analizar el promedio (si K > 1) — esto es lo que realmente se usa en inferencia
+    # 6. Analizar el promedio (si K > 1) — solo para analisis, en inferencia se usa el patch completo [1, K, d]
     avg_result = None
     if K > 1:
         avg_vec = patch.mean(dim=0)

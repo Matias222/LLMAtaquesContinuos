@@ -319,7 +319,7 @@ def run_christmas_training_v4(
 
 
 if __name__ == "__main__":
-    model_path = "../modelos/Llama-3.2-3B-Instruct"
+    model_path = "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct"
     csv_path = "christmas_training.csv"
 
     global_patch, model, tokenizer = run_christmas_training_v4(

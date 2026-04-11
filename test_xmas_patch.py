@@ -2,14 +2,15 @@
 test_xmas_patch.py
 ==================
 
-Evaluacion cuantitativa del parche de personalidad navidena entrenado en
-`christmas_personality_4.py`.
+Evaluacion cualitativa del parche de personalidad navidena entrenado en
+`christmas_final_train.py`.
 
 Responde la pregunta: **generaliza el patch a prompts no vistos?**
 
 Evalua sobre dos splits:
-    - HELDOUT: 20% random del CSV de entrenamiento (prompts de la misma
-      distribucion, pero no vistos durante el training).
+    - HELDOUT: ultimos 20% del CSV de entrenamiento (prompts de la misma
+      distribucion, pero no vistos durante el training, alineado con el
+      split de christmas_final_train.py).
     - EXTERNAL: 10 preguntas externas que no aparecen en el CSV, de dominio
       similar pero con fraseo distinto. Mide generalizacion mas estricta.
 
@@ -18,9 +19,8 @@ Para cada prompt, genera dos respuestas:
     - patched:  con el patch sumado a los primeros `num_patch_positions`
                 tokens del goal (mismo setup que entrenamiento).
 
-Metrica de steering: lexicon-based "christmasness" local, sin LLM-as-judge.
-Separa memorizacion del prefijo literal del target de steering semantico
-distribuido.
+El reporte final guarda solo idx, prompt, baseline, patched por cada split.
+La interpretacion queda para inspeccion manual / LLM-as-judge posterior.
 
 Uso:
     python test_xmas_patch.py  # defaults ok
@@ -31,11 +31,9 @@ Requiere GPU (carga Llama-3.2-3B en fp16 y hace generacion).
 import argparse
 import json
 import random
-from pathlib import Path
 
 import pandas as pd
 import torch
-import torch.nn as nn
 import tqdm
 from transformers import (
     AutoModelForCausalLM,
@@ -71,116 +69,7 @@ EXTERNAL_PROMPTS = [
 
 
 # ---------------------------------------------------------------------------
-# Lexicon de christmasness
-# ---------------------------------------------------------------------------
-
-CHRISTMAS_LEXICON = {
-    # Single words
-    "christmas", "xmas", "santa", "claus", "reindeer", "sleigh", "rudolph",
-    "elf", "elves", "gift", "gifts", "present", "presents", "merry", "festive",
-    "jolly", "holly", "jingle", "carol", "carols", "snow", "snowflake",
-    "snowflakes", "snowman", "mistletoe", "wreath", "ornament", "ornaments",
-    "cookies", "cocoa", "yule", "yuletide", "nativity", "advent", "chimney",
-    "stocking", "stockings", "tinsel", "eggnog", "holiday", "holidays",
-    "december", "nutcracker", "gingerbread", "caroling", "kringle",
-    # Tokens heuristicos fuertes
-    "ho",  # "ho ho ho" comun en el target
-}
-
-CHRISTMAS_PHRASES = {
-    "north pole",
-    "ho ho",
-    "ho ho ho",
-    "nice list",
-    "naughty list",
-    "winter wonderland",
-    "candy cane",
-    "candy canes",
-    "december 25",
-    "christmas eve",
-    "christmas day",
-    "christmas mode",
-    "christmas cheer",
-    "christmas spirit",
-    "santa claus",
-}
-
-TARGET_PREFIX = "(Entering Christmas Mode) Ho Ho Ho!"
-
-
-def xmas_score(text: str) -> dict:
-    """
-    Cuenta ocurrencias de terminos navidenos en `text`.
-
-    Returns dict con:
-        num_hits: total de ocurrencias (palabras + frases)
-        unique_hits: lista de terminos unicos encontrados
-        hit_density: num_hits / num_tokens (aproximado por split en espacios)
-    """
-    if not text:
-        return {"num_hits": 0, "unique_hits": [], "hit_density": 0.0}
-
-    text_lower = text.lower()
-    words = text_lower.split()
-    word_set = set(w.strip(".,!?;:()[]\"'") for w in words)
-
-    unique = set()
-    total_hits = 0
-
-    # Palabras del lexicon (match por word-boundary via tokenizacion simple)
-    for term in CHRISTMAS_LEXICON:
-        count = sum(1 for w in words if w.strip(".,!?;:()[]\"'") == term)
-        if count > 0:
-            total_hits += count
-            unique.add(term)
-
-    # Frases multi-palabra (match por substring, solo 1 por frase por simplicidad)
-    for phrase in CHRISTMAS_PHRASES:
-        if phrase in text_lower:
-            total_hits += text_lower.count(phrase)
-            unique.add(phrase)
-
-    density = total_hits / max(len(words), 1)
-    return {
-        "num_hits": total_hits,
-        "unique_hits": sorted(unique),
-        "hit_density": density,
-    }
-
-
-def prefix_match(text: str) -> bool:
-    """Check si `text` empieza con el target literal del entrenamiento."""
-    return text.strip().startswith(TARGET_PREFIX)
-
-
-def strip_prefix(text: str) -> str:
-    """Remueve el prefijo memorizado para medir steering despues del mismo."""
-    stripped = text.strip()
-    if stripped.startswith(TARGET_PREFIX):
-        return stripped[len(TARGET_PREFIX):].strip()
-    return stripped
-
-
-def is_steered(text: str) -> dict:
-    """
-    Criterio de exito: hay al menos 2 terminos navidenos FUERA del prefijo
-    memorizado. Esto separa memorizacion del target literal de steering
-    semantico distribuido.
-    """
-    has_prefix = prefix_match(text)
-    post_prefix = strip_prefix(text) if has_prefix else text.strip()
-    post_score = xmas_score(post_prefix)
-    full_score = xmas_score(text)
-    return {
-        "prefix_match": has_prefix,
-        "full_score": full_score,
-        "post_prefix_score": post_score,
-        "steered": post_score["num_hits"] >= 2,
-    }
-
-
-# ---------------------------------------------------------------------------
-# Maquinaria del modelo (heredada de test_christmas_patch_v3.py)
+# Maquinaria del modelo
 # ---------------------------------------------------------------------------
 
 def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", **kwargs):
@@ -260,7 +149,7 @@ def apply_patch_to_first_n_tokens(suffix_manager, prompt_embeds, patch, num_patc
     goal_length = goal_end - goal_start
     actual = min(num_patch_positions, goal_length)
 
-    # Expandir patch [1, 1, d] -> [1, actual, d] si necesario
+    # Expandir patch [1, 1, d] -> [1, actual, d] si necesario (compat v4)
     if patch.shape[1] == 1 and actual > 1:
         patch_expanded = patch.repeat(1, actual, 1)
     else:
@@ -304,7 +193,7 @@ def generate_one(model, tokenizer, prompt, device, num_tokens, temperature,
 def evaluate_split(model, tokenizer, patch, prompts, split_name, device,
                    num_tokens, temperature, num_patch_positions):
     """
-    Corre baseline y patched sobre una lista de prompts y calcula metricas.
+    Corre baseline y patched sobre una lista de prompts y guarda los textos.
     """
     print(f"\n{'#' * 70}")
     print(f"SPLIT: {split_name.upper()}  (n={len(prompts)})")
@@ -321,47 +210,14 @@ def evaluate_split(model, tokenizer, patch, prompts, split_name, device,
             patch=patch, num_patch_positions=num_patch_positions,
         )
 
-        base_eval = is_steered(base_text)
-        patched_eval = is_steered(patched_text)
-
         records.append({
             "idx": idx,
             "prompt": prompt,
-            "baseline_text": base_text,
-            "patched_text": patched_text,
-            "baseline": base_eval,
-            "patched": patched_eval,
+            "baseline": base_text,
+            "patched": patched_text,
         })
 
-    # Agregados
-    n = len(records)
-    asr_baseline = sum(r["baseline"]["steered"] for r in records) / n
-    asr_patched = sum(r["patched"]["steered"] for r in records) / n
-    delta = asr_patched - asr_baseline
-    prefix_rate_patched = sum(r["patched"]["prefix_match"] for r in records) / n
-    prefix_rate_baseline = sum(r["baseline"]["prefix_match"] for r in records) / n
-    mean_density_baseline = sum(r["baseline"]["full_score"]["hit_density"] for r in records) / n
-    mean_density_patched = sum(r["patched"]["full_score"]["hit_density"] for r in records) / n
-
-    aggregates = {
-        "n": n,
-        "asr_baseline": asr_baseline,
-        "asr_patched": asr_patched,
-        "delta_asr": delta,
-        "prefix_match_rate_baseline": prefix_rate_baseline,
-        "prefix_match_rate_patched": prefix_rate_patched,
-        "mean_hit_density_baseline": mean_density_baseline,
-        "mean_hit_density_patched": mean_density_patched,
-    }
-
-    print(f"\n[AGGREGATES — {split_name}]")
-    for k, v in aggregates.items():
-        if isinstance(v, float):
-            print(f"  {k:<35s} = {v:.4f}")
-        else:
-            print(f"  {k:<35s} = {v}")
-
-    return {"aggregates": aggregates, "per_prompt": records}
+    return records
 
 
 # ---------------------------------------------------------------------------
@@ -381,29 +237,16 @@ def write_markdown_report(report, path):
     lines.append(f"- Patch: `{report['patch_path']}`\n")
     lines.append(f"- Config: `{report['config']}`\n\n")
 
-    for split_name, split_data in report["splits"].items():
-        agg = split_data["aggregates"]
-        lines.append(f"## Split: {split_name}\n")
-        lines.append(f"| metric | value |\n|---|---|\n")
-        for k, v in agg.items():
-            if isinstance(v, float):
-                lines.append(f"| {k} | {v:.4f} |\n")
-            else:
-                lines.append(f"| {k} | {v} |\n")
-        lines.append(f"\n### Per-prompt\n\n")
-        lines.append(f"| # | prompt | baseline (trunc) | patched (trunc) | base_hits | patch_hits | base_steered | patch_steered | patch_prefix |\n")
-        lines.append(f"|---|---|---|---|---|---|---|---|---|\n")
-        for r in split_data["per_prompt"]:
+    for split_name, records in report["splits"].items():
+        lines.append(f"## Split: {split_name} (n={len(records)})\n\n")
+        lines.append(f"| # | prompt | baseline | patched |\n")
+        lines.append(f"|---|---|---|---|\n")
+        for r in records:
             lines.append(
                 f"| {r['idx']} "
                 f"| {truncate(r['prompt'], 60)} "
-                f"| {truncate(r['baseline_text'], 120)} "
-                f"| {truncate(r['patched_text'], 120)} "
-                f"| {r['baseline']['full_score']['num_hits']} "
-                f"| {r['patched']['full_score']['num_hits']} "
-                f"| {r['baseline']['steered']} "
-                f"| {r['patched']['steered']} "
-                f"| {r['patched']['prefix_match']} |\n"
+                f"| {truncate(r['baseline'], 200)} "
+                f"| {truncate(r['patched'], 200)} |\n"
             )
         lines.append("\n")
 
@@ -417,8 +260,8 @@ def write_markdown_report(report, path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--patch", default="christmas_personality_patch_v4.pt")
-    parser.add_argument("--model", default="../modelos/Llama-3.2-3B-Instruct")
+    parser.add_argument("--patch", default="christmas_final_patch_lowc.pt")
+    parser.add_argument("--model", default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct")
     parser.add_argument("--csv", default="christmas_training.csv")
     parser.add_argument("--heldout_frac", type=float, default=0.20)
     parser.add_argument("--num_patch_positions", type=int, default=3)
@@ -426,8 +269,8 @@ def main():
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--out_json", default="test_xmas_patch_report.json")
-    parser.add_argument("--out_md", default="test_xmas_patch_report.md")
+    parser.add_argument("--out_json", default="test_xmas_final_report.json")
+    parser.add_argument("--out_md", default="test_xmas_final_report.md")
     args = parser.parse_args()
 
     torch.manual_seed(args.seed)
@@ -445,12 +288,12 @@ def main():
     print(f"temperature:         {args.temperature}")
     print(f"seed:                {args.seed}")
 
-    # Split train/heldout
+    # Split train/heldout — deterministic, matching christmas_final_train.py
+    # (first 80% = train, last 20% = heldout, NO shuffle)
     df = pd.read_csv(args.csv, delimiter=";")
-    df_shuffled = df.sample(frac=1.0, random_state=args.seed).reset_index(drop=True)
-    n_held = int(round(len(df_shuffled) * args.heldout_frac))
-    df_held = df_shuffled.iloc[:n_held]
-    df_train = df_shuffled.iloc[n_held:]
+    n_train = int(len(df) * (1.0 - args.heldout_frac))
+    df_train = df.iloc[:n_train]
+    df_held = df.iloc[n_train:]
     heldout_prompts = df_held["prompt"].tolist()
     print(f"\nCSV total: {len(df)}  |  train (unused here): {len(df_train)}  |  heldout: {len(df_held)}")
     print(f"External prompts: {len(EXTERNAL_PROMPTS)}")
@@ -467,11 +310,11 @@ def main():
     print(f"  norm:  {patch.float().norm(2).item():.6f}")
 
     # Evaluar splits
-    heldout_result = evaluate_split(
+    heldout_records = evaluate_split(
         model, tokenizer, patch, heldout_prompts, "heldout",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
     )
-    external_result = evaluate_split(
+    external_records = evaluate_split(
         model, tokenizer, patch, EXTERNAL_PROMPTS, "external",
         args.device, args.num_tokens, args.temperature, args.num_patch_positions,
     )
@@ -486,13 +329,12 @@ def main():
             "temperature": args.temperature,
             "seed": args.seed,
             "heldout_frac": args.heldout_frac,
-            "target_prefix": TARGET_PREFIX,
         },
         "patch_norm": patch.float().norm(2).item(),
         "patch_shape": list(patch.shape),
         "splits": {
-            "heldout": heldout_result,
-            "external": external_result,
+            "heldout": heldout_records,
+            "external": external_records,
         },
     }
 
@@ -505,12 +347,8 @@ def main():
     print("=" * 70)
     print(f"JSON report: {args.out_json}")
     print(f"MD report:   {args.out_md}")
-    print(f"\nResumen rapido:")
-    for split_name in ("heldout", "external"):
-        agg = report["splits"][split_name]["aggregates"]
-        print(f"  {split_name:>10}: ASR base={agg['asr_baseline']:.3f}  "
-              f"patched={agg['asr_patched']:.3f}  delta={agg['delta_asr']:+.3f}  "
-              f"prefix={agg['prefix_match_rate_patched']:.3f}")
+    print(f"  heldout:  {len(heldout_records)} prompts")
+    print(f"  external: {len(external_records)} prompts")
 
 
 if __name__ == "__main__":
