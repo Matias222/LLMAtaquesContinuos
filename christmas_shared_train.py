@@ -400,12 +400,12 @@ if __name__ == "__main__":
     global_patch, model, tokenizer, train_df, test_df = train_christmas_patch(
         model_path=model_path,
         csv_path=csv_path,
-        num_epochs=5,
+        num_epochs=6,
         num_steps_per_prompt=75,
         device="cuda:0",
         prefix_match_length=4,
-        coherence_weight=0.21,  # Moderate coherence preservation
-        l2_weight=0.045,  # L2 regularization (mantenido igual al base para A/B limpio)
+        coherence_weight=0.215,  # Moderate coherence preservation
+        l2_weight=0.2675,  # L2 regularization (mantenido igual al base para A/B limpio)
         step_size=0.00025,
         train_test_split=0.8
     )

@@ -276,12 +276,12 @@ def write_markdown_report(report, path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--patch", default="christmas_final_patch_lowc.pt")
+    parser.add_argument("--patch", default="christmas_shared_patch.pt")
     parser.add_argument("--model", default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct")
     parser.add_argument("--csv", default="christmas_training.csv")
     parser.add_argument("--heldout_frac", type=float, default=0.20)
     parser.add_argument("--num_patch_positions", type=int, default=3)
-    parser.add_argument("--mode", choices=["first_n", "all_goal"], default="first_n",
+    parser.add_argument("--mode", choices=["first_n", "all_goal"], default="all_goal",
                         help="Modo de aplicacion del patch. 'first_n' (default) suma a las "
                              "primeras num_patch_positions posiciones del goal (patches "
                              "posicionales tipo christmas_final_patch_lowc.pt). 'all_goal' "

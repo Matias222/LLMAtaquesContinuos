@@ -173,6 +173,137 @@ def format_topk_table(
     return rows
 
 
+def analyze_dimensions(
+    name: str,
+    vector: torch.Tensor,
+    W: torch.Tensor,
+    tokenizer,
+    top_dims: int = 10,
+    sparsity_eps: float = 0.001,
+) -> dict:
+    """
+    Analisis per-dimension de un vector de patch [d].
+
+    Reporta:
+    1. Distribucion de valores: mean, std, min, max, percentiles
+    2. Sparsity: fraccion de dimensiones con |v_i| < eps
+    3. Kurtosis: alta = pocas dims dominan, baja = plano
+    4. Top-K dimensiones por magnitud absoluta
+    5. Para cada dim top: que tokens del vocab tienen valor alto en esa dim
+       (cruza dims activas del patch con la embedding matrix)
+    """
+    v = vector.float()
+    d = v.shape[0]
+    abs_v = v.abs()
+
+    # Stats basicas
+    stats = {
+        "mean": v.mean().item(),
+        "std": v.std().item(),
+        "min": v.min().item(),
+        "max": v.max().item(),
+        "abs_mean": abs_v.mean().item(),
+        "abs_max": abs_v.max().item(),
+        "p01": torch.quantile(v, 0.01).item(),
+        "p10": torch.quantile(v, 0.10).item(),
+        "p25": torch.quantile(v, 0.25).item(),
+        "p50": torch.quantile(v, 0.50).item(),
+        "p75": torch.quantile(v, 0.75).item(),
+        "p90": torch.quantile(v, 0.90).item(),
+        "p99": torch.quantile(v, 0.99).item(),
+    }
+
+    # Sparsity
+    n_near_zero = (abs_v < sparsity_eps).sum().item()
+    sparsity_frac = n_near_zero / d
+
+    # Kurtosis: E[(v - mu)^4] / E[(v - mu)^2]^2 - 3  (excess kurtosis)
+    centered = v - v.mean()
+    var = centered.var()
+    kurt = (centered.pow(4).mean() / var.pow(2)).item() - 3.0 if var > 1e-12 else 0.0
+
+    # Top-K dims por magnitud absoluta
+    top_vals, top_indices = torch.topk(abs_v, k=min(top_dims, d))
+    top_dim_entries = []
+    for rank, (dim_idx, dim_val) in enumerate(zip(top_indices.tolist(), top_vals.tolist())):
+        # Valor real (con signo)
+        real_val = v[dim_idx].item()
+
+        # Tokens del vocab con mayor valor en esta dimension
+        # W[:, dim_idx] es la columna dim_idx de la embedding matrix: valor de cada token en esa dim
+        col = W[:, dim_idx]
+        # Top 3 tokens con mayor valor en esa dim (mismo signo que el patch)
+        if real_val > 0:
+            tok_vals, tok_ids = torch.topk(col, k=3, largest=True)
+        else:
+            tok_vals, tok_ids = torch.topk(col, k=3, largest=False)
+
+        aligned_tokens = []
+        for tid, tv in zip(tok_ids.tolist(), tok_vals.tolist()):
+            aligned_tokens.append({
+                "token_id": tid,
+                "token": tokenizer.decode([tid]),
+                "value_in_dim": tv,
+            })
+
+        top_dim_entries.append({
+            "rank": rank + 1,
+            "dim_index": dim_idx,
+            "abs_value": dim_val,
+            "real_value": real_val,
+            "aligned_tokens": aligned_tokens,
+        })
+
+    # Print
+    print(f"\n{'=' * 70}")
+    print(f"ANALISIS PER-DIMENSION: {name}")
+    print(f"{'=' * 70}")
+
+    print(f"\n[DISTRIBUCION]")
+    print(f"  dims totales: {d}")
+    print(f"  mean:  {stats['mean']:+.6f}  |  std: {stats['std']:.6f}")
+    print(f"  min:   {stats['min']:+.6f}  |  max: {stats['max']:+.6f}")
+    print(f"  |v|_mean: {stats['abs_mean']:.6f}  |  |v|_max: {stats['abs_max']:.6f}")
+    print(f"  percentiles: p01={stats['p01']:+.4f}  p10={stats['p10']:+.4f}  "
+          f"p50={stats['p50']:+.4f}  p90={stats['p90']:+.4f}  p99={stats['p99']:+.4f}")
+
+    print(f"\n[SPARSITY]")
+    print(f"  dims con |v_i| < {sparsity_eps}: {n_near_zero}/{d} ({sparsity_frac:.1%})")
+    if sparsity_frac > 0.8:
+        print(f"    -> Vector MUY SPARSE: el patch opera en pocas dims.")
+    elif sparsity_frac > 0.5:
+        print(f"    -> Vector moderadamente sparse.")
+    else:
+        print(f"    -> Vector DENSO: la mayoria de dims contribuyen.")
+
+    print(f"\n[KURTOSIS]")
+    print(f"  excess kurtosis: {kurt:.2f}")
+    if kurt > 10:
+        print(f"    -> Distribucion MUY PEAKED: pocas dims dominan fuertemente.")
+    elif kurt > 3:
+        print(f"    -> Distribucion leptocurtica: colas pesadas, algunas dims dominan.")
+    else:
+        print(f"    -> Distribucion cercana a normal o plana.")
+
+    print(f"\n[TOP-{len(top_dim_entries)} DIMS POR MAGNITUD]")
+    print(f"  {'rank':>4}  {'dim':>5}  {'value':>10}  tokens alineados en esa dim")
+    for e in top_dim_entries:
+        tok_str = ", ".join(
+            f"{t['token']!r}({t['value_in_dim']:+.4f})" for t in e['aligned_tokens']
+        )
+        print(f"  {e['rank']:>4}  {e['dim_index']:>5}  {e['real_value']:+.6f}  {tok_str}")
+
+    return {
+        "name": name,
+        "distribution": stats,
+        "sparsity_eps": sparsity_eps,
+        "sparsity_frac": sparsity_frac,
+        "n_near_zero": n_near_zero,
+        "excess_kurtosis": kurt,
+        "top_dims": top_dim_entries,
+    }
+
+
 def print_table(title: str, rows: list[dict], metric_key: str) -> None:
     print(f"\n  {title}")
     print(f"  {'-' * 60}")
@@ -237,10 +368,10 @@ def analyze_vector(
     cos_rows = format_topk_table(cos_idx, cos_vals, tokenizer, "cosine")
     l2_rows = format_topk_table(l2_idx, l2_vals, tokenizer, "l2_dist")
 
-    # Imprimir solo top-15 en consola; el JSON tiene top_k completo
-    print_table("Top por PRODUCTO INTERNO (v . e_t)", dot_rows[:15], "dot")
-    print_table("Top por COSENO", cos_rows[:15], "cosine")
-    print_table("Top por DISTANCIA L2 (mas cercanos)", l2_rows[:15], "l2_dist")
+    # Imprimir top-K en consola (mismo valor que --top_k)
+    print_table("Top por PRODUCTO INTERNO (v . e_t)", dot_rows, "dot")
+    print_table("Top por COSENO", cos_rows, "cosine")
+    print_table("Top por DISTANCIA L2 (mas cercanos)", l2_rows, "l2_dist")
 
     return {
         "name": name,
@@ -255,11 +386,11 @@ def analyze_vector(
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--patch", default="christmas_final_patch_lowc.pt",
+    parser.add_argument("--patch", default="christmas_shared_patch.pt",
                         help="Path al .pt del parche a inspeccionar.")
     parser.add_argument("--model", default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
                         help="Path al directorio del modelo (para extraer embed_tokens y tokenizer).")
-    parser.add_argument("--top_k", type=int, default=30,
+    parser.add_argument("--top_k", type=int, default=5,
                         help="Cuantos vecinos reportar por metrica.")
     parser.add_argument("--seed", type=int, default=42,
                         help="Semilla para el vector Gaussiano de control.")
@@ -314,6 +445,7 @@ def main():
 
     # 5. Analizar cada posicion del parche por separado
     per_position_results = []
+    per_position_dim_results = []
     for i in range(K):
         res = analyze_vector(
             name=f"patch[{i}]",
@@ -324,6 +456,14 @@ def main():
             vocab_norm_stats=vocab_stats,
         )
         per_position_results.append(res)
+
+        dim_res = analyze_dimensions(
+            name=f"patch[{i}]",
+            vector=patch[i],
+            W=W,
+            tokenizer=tokenizer,
+        )
+        per_position_dim_results.append(dim_res)
 
     # 6. Analizar el promedio (si K > 1) — solo para analisis, en inferencia se usa el patch completo [1, K, d]
     avg_result = None
@@ -390,6 +530,7 @@ def main():
         "embed_dim": d_model,
         "vocab_norm_stats": vocab_stats_serializable,
         "per_position": per_position_results,
+        "per_position_dimensions": per_position_dim_results,
         "averaged": avg_result,
         "position_colinearity_cos_matrix": colinearity,
         "control_random_same_norm": control_result,
