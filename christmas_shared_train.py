@@ -418,8 +418,8 @@ if __name__ == "__main__":
         device="cuda:0",
         prefix_match_length=4,
         coherence_weight=0.215,  # Moderate coherence preservation
-        l2_weight=0.2675,        # ||v||_2^2 — magnitud
-        l1_weight=0.0,           # ||v||_1 — sparsity (0.0 = off, probar 0.01-0.1)
+        l2_weight=0.255,        # ||v||_2^2 — magnitud
+        l1_weight=0.001,           # ||v||_1 — sparsity (0.0 = off, probar 0.01-0.1)
         step_size=0.00025,
         train_test_split=0.8
     )
