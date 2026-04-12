@@ -89,18 +89,18 @@ def apply_patch_to_all_goal_tokens(suffix_manager, prompt_embeds, patch):
 
 
 def calc_loss(model, suffix_manager, prompt_embeds, patch, target_tokens,
-              prefix_match_length=4, coherence_weight=0.1, l2_weight=0.01):
+              prefix_match_length=4, coherence_weight=0.1, l2_weight=0.01, l1_weight=0.0):
     """
     Calculate combined loss:
     1. Prefix loss: Match "Ho ho ho!" exactly (first prefix_match_length tokens)
     2. Coherence loss: Match the Christmas-style target after the prefix
-    3. L2 regularization: Penalize large patch norms (prevents explosion)
+    3. L2 regularization: ||v||_2^2 — penaliza magnitud global (previene explosion)
+    4. L1 regularization: ||v||_1 — promueve sparsity (pocas dims activas)
 
-    NOTA: comparado con christmas_final_train.py, aqui:
-    - No hay parametro num_patch_positions (se aplica a todo el goal).
-    - El l2_loss es ||v||^2 de un UNICO vector [1,1,d], no la norma de
-      Frobenius de una matriz [1,3,d]. La escala semantica del termino L2
-      cambia aunque la formula sea identica.
+    Elastic net: l2_weight * ||v||_2^2 + l1_weight * ||v||_1
+    - Solo L2 (l1_weight=0): control de magnitud, vector denso
+    - Solo L1 (l2_weight=0): sparsity maxima, pocas dims activas
+    - Ambos (elastic net): sparsity con control de magnitud en dims activas
     """
     # Apply shared patch to all goal tokens via broadcasting
     patched_embeds = apply_patch_to_all_goal_tokens(
@@ -135,13 +135,17 @@ def calc_loss(model, suffix_manager, prompt_embeds, patch, target_tokens,
                 post_prefix_targets[:actual_post_prefix_length]
             )
 
-    # L2 REGULARIZATION: ahora regulariza ||v||^2 de un unico vector
-    l2_loss = patch.norm(2) ** 2
+    # REGULARIZATION (elastic net: L2 + L1)
+    l2_loss = patch.norm(2) ** 2     # ||v||_2^2 — magnitud
+    l1_loss = patch.norm(1)          # ||v||_1   — sparsity
 
     # Combined loss
-    total_loss = prefix_loss + coherence_weight * coherence_loss + l2_weight * l2_loss
+    total_loss = (prefix_loss
+                  + coherence_weight * coherence_loss
+                  + l2_weight * l2_loss
+                  + l1_weight * l1_loss)
 
-    return total_loss, logits_patched[:, suffix_manager._loss_slice, :], prefix_loss, coherence_loss, l2_loss
+    return total_loss, logits_patched[:, suffix_manager._loss_slice, :], prefix_loss, coherence_loss, l2_loss, l1_loss
 
 
 def train_christmas_patch(
@@ -154,6 +158,7 @@ def train_christmas_patch(
     prefix_match_length: int = 4,
     coherence_weight: float = 0.1,
     l2_weight: float = 0.055,
+    l1_weight: float = 0.0,
     train_test_split: float = 0.8,
     seed: int = 42,
 ):
@@ -166,7 +171,7 @@ def train_christmas_patch(
     3. Broadcast-sum v to EVERY position of the goal slice (not just first 3)
     4. Train/test split for validation
     5. COHERENCE LOSS: Prevents post-prefix collapse
-    6. L2 REGULARIZATION: Prevents patch norm explosion
+    6. ELASTIC NET (L2 + L1): L2 controla magnitud, L1 promueve sparsity
 
     Args:
         model_path: Path to model
@@ -177,7 +182,8 @@ def train_christmas_patch(
         step_size: Learning rate
         prefix_match_length: Match first N tokens of target
         coherence_weight: Weight for coherence loss
-        l2_weight: Weight for L2 regularization
+        l2_weight: Weight for L2 regularization (magnitud)
+        l1_weight: Weight for L1 regularization (sparsity, 0.0 = desactivado)
         train_test_split: Fraction of data for training
         seed: Random seed
     """
@@ -214,7 +220,8 @@ def train_christmas_patch(
     print(f"Prefix match length: {prefix_match_length} tokens")
     print(f"Step size: {step_size}")
     print(f"Coherence weight: {coherence_weight}")
-    print(f"L2 weight: {l2_weight} (regulariza ||v||^2 de un unico vector)")
+    print(f"L2 weight: {l2_weight} (||v||_2^2 — magnitud)")
+    print(f"L1 weight: {l1_weight} (||v||_1 — sparsity, 0.0 = off)")
 
     # Initialize ONE global shared vector
     embedding_dim = get_embedding_matrix(model).shape[1]
@@ -264,11 +271,13 @@ def train_christmas_patch(
             prompt_prefix_losses = []
             prompt_coherence_losses = []
             prompt_l2_losses = []
+            prompt_l1_losses = []
 
             for step in range(num_steps_per_prompt):
-                total_loss, logits, prefix_loss, coh_loss, l2_loss = calc_loss(
+                total_loss, logits, prefix_loss, coh_loss, l2_loss, l1_loss = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    prefix_match_length, coherence_weight=coherence_weight,
+                    l2_weight=l2_weight, l1_weight=l1_weight
                 )
 
                 total_loss.backward()
@@ -281,6 +290,7 @@ def train_christmas_patch(
                 prompt_prefix_losses.append(prefix_loss.item())
                 prompt_coherence_losses.append(coh_loss.item() if isinstance(coh_loss, torch.Tensor) else coh_loss)
                 prompt_l2_losses.append(l2_loss.item() if isinstance(l2_loss, torch.Tensor) else l2_loss)
+                prompt_l1_losses.append(l1_loss.item() if isinstance(l1_loss, torch.Tensor) else l1_loss)
 
                 if((step+1)%500==0):
                     predicted_text = tokenizer.decode(logits.argmax(2)[0].cpu().numpy())
@@ -289,9 +299,10 @@ def train_christmas_patch(
 
             # Check if we successfully match target
             with torch.no_grad():
-                _, final_logits, _, _, _ = calc_loss(
+                _, final_logits, _, _, _, _ = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    prefix_match_length, coherence_weight=coherence_weight,
+                    l2_weight=l2_weight, l1_weight=l1_weight
                 )
                 predicted_tokens = final_logits.argmax(2)
                 predicted_text_ho = tokenizer.decode(predicted_tokens[0, :prefix_match_length].cpu().numpy())
@@ -304,13 +315,14 @@ def train_christmas_patch(
             avg_prefix_loss = sum(prompt_prefix_losses) / len(prompt_prefix_losses)
             avg_coherence_loss = sum(prompt_coherence_losses) / len(prompt_coherence_losses)
             avg_l2_loss = sum(prompt_l2_losses) / len(prompt_l2_losses)
+            avg_l1_loss = sum(prompt_l1_losses) / len(prompt_l1_losses)
             epoch_losses.append(avg_prompt_loss)
 
             # Print progress every 10 prompts
             if (prompt_idx - train_df.index[0] + 1) % 10 == 0:
                 print(f"  Prompt {prompt_idx - train_df.index[0] + 1}/{len(train_df)} - "
-                      f"Total: {avg_prompt_loss:.4f} (Prefix: {avg_prefix_loss:.4f}, Coherence: {avg_coherence_loss:.4f}, L2: {avg_l2_loss:.4f}) - "
-                      f"Patch norm: {global_patch.norm(2).item():.6f} - "
+                      f"Total: {avg_prompt_loss:.4f} (Prefix: {avg_prefix_loss:.4f}, Coh: {avg_coherence_loss:.4f}, L2: {avg_l2_loss:.4f}, L1: {avg_l1_loss:.4f}) - "
+                      f"Norm: {global_patch.norm(2).item():.6f} - "
                       f"Success: {'✓' if success else '✗'}")
 
         avg_epoch_loss = sum(epoch_losses) / len(epoch_losses)
@@ -345,9 +357,10 @@ def train_christmas_patch(
             prompt_embeds = get_embeddings(model, tokens_prompt.unsqueeze(0)).detach()
 
             with torch.no_grad():
-                _, logits, _, _, _ = calc_loss(
+                _, logits, _, _, _, _ = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    prefix_match_length, coherence_weight=coherence_weight,
+                    l2_weight=l2_weight, l1_weight=l1_weight
                 )
                 predicted_tokens = logits.argmax(2)[0, :prefix_match_length]
                 predicted_text = tokenizer.decode(predicted_tokens.cpu().numpy())
@@ -405,7 +418,8 @@ if __name__ == "__main__":
         device="cuda:0",
         prefix_match_length=4,
         coherence_weight=0.215,  # Moderate coherence preservation
-        l2_weight=0.2675,  # L2 regularization (mantenido igual al base para A/B limpio)
+        l2_weight=0.2675,        # ||v||_2^2 — magnitud
+        l1_weight=0.0,           # ||v||_1 — sparsity (0.0 = off, probar 0.01-0.1)
         step_size=0.00025,
         train_test_split=0.8
     )
