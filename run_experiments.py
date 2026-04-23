@@ -36,7 +36,7 @@ import time
 from christmas_final_train import train_christmas_patch
 
 
-REPO = "/home/matias-avendano/Desktop/paper/work/LLMAtaquesContinuos"
+REPO = "/home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos"
 MODEL_PATH = "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct"
 CSV_PATH = os.path.join(REPO, "christmas_training.csv")
 
