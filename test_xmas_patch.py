@@ -287,6 +287,12 @@ def main():
                              "posicionales tipo christmas_final_patch_lowc.pt). 'all_goal' "
                              "broadcast-suma un patch [1,1,d] a TODAS las posiciones del goal "
                              "(variante B, christmas_shared_patch.pt).")
+    parser.add_argument("--zero_positions", default="",
+                        help="Lista separada por comas de indices de posicion a PONER A CERO "
+                             "antes de aplicar el patch. Ejemplo: '--zero_positions 0' anula "
+                             "patch[0,0,:]. '--zero_positions 1,2' deja solo patch[0,0,:] activo. "
+                             "Util para ablation de componentes del patch posicional (testear "
+                             "que posicion hace prefix hack vs steering distribuido).")
     parser.add_argument("--num_tokens", type=int, default=100)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=42)
@@ -337,6 +343,25 @@ def main():
         print("  NOTA: patch tiene shape [1, 1, d]. Si fue entrenado como shared variant,")
         print("        usar --mode all_goal para replicar las condiciones de training.")
 
+    # Ablation per-position: zerea las posiciones indicadas ANTES de evaluar
+    zeroed_positions = []
+    if args.zero_positions.strip():
+        zeroed_positions = [int(p.strip()) for p in args.zero_positions.split(",") if p.strip()]
+        K = patch.shape[1]
+        invalid = [p for p in zeroed_positions if p < 0 or p >= K]
+        if invalid:
+            raise ValueError(
+                f"zero_positions {invalid} fuera del rango [0, {K}) del patch shape {tuple(patch.shape)}"
+            )
+        norm_before = patch.float().norm(2).item()
+        for p in zeroed_positions:
+            patch[:, p, :] = 0.0
+        norm_after = patch.float().norm(2).item()
+        active_positions = [i for i in range(K) if i not in zeroed_positions]
+        print(f"\n  ABLATION: positions {zeroed_positions} puestas a cero.")
+        print(f"    posiciones activas restantes: {active_positions}")
+        print(f"    norma antes -> despues: {norm_before:.6f} -> {norm_after:.6f}")
+
     # Evaluar splits
     heldout_records = evaluate_split(
         model, tokenizer, patch, heldout_prompts, "heldout",
@@ -356,6 +381,7 @@ def main():
         "config": {
             "num_patch_positions": args.num_patch_positions,
             "mode": args.mode,
+            "zero_positions": zeroed_positions,
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "seed": args.seed,
