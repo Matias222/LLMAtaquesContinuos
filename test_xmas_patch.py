@@ -293,6 +293,12 @@ def main():
                              "patch[0,0,:]. '--zero_positions 1,2' deja solo patch[0,0,:] activo. "
                              "Util para ablation de componentes del patch posicional (testear "
                              "que posicion hace prefix hack vs steering distribuido).")
+    parser.add_argument("--scale_remaining", type=float, default=1.0,
+                        help="Multiplicador aplicado a las posiciones NO anuladas despues de la "
+                             "ablation. Default 1.0 = sin escala. Usar valores >1 para compensar "
+                             "la perdida de norma al anular posiciones (ej. tras ablatar 1 de 3 "
+                             "posiciones, scale=1.5 restaura aproximadamente la norma total). "
+                             "Util para separar efectos direccionales de efectos de magnitud.")
     parser.add_argument("--num_tokens", type=int, default=100)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=42)
@@ -345,6 +351,7 @@ def main():
 
     # Ablation per-position: zerea las posiciones indicadas ANTES de evaluar
     zeroed_positions = []
+    active_positions = list(range(patch.shape[1]))
     if args.zero_positions.strip():
         zeroed_positions = [int(p.strip()) for p in args.zero_positions.split(",") if p.strip()]
         K = patch.shape[1]
@@ -356,11 +363,20 @@ def main():
         norm_before = patch.float().norm(2).item()
         for p in zeroed_positions:
             patch[:, p, :] = 0.0
-        norm_after = patch.float().norm(2).item()
+        norm_after_zero = patch.float().norm(2).item()
         active_positions = [i for i in range(K) if i not in zeroed_positions]
         print(f"\n  ABLATION: positions {zeroed_positions} puestas a cero.")
         print(f"    posiciones activas restantes: {active_positions}")
-        print(f"    norma antes -> despues: {norm_before:.6f} -> {norm_after:.6f}")
+        print(f"    norma antes -> despues zero: {norm_before:.6f} -> {norm_after_zero:.6f}")
+
+    # Escalar las posiciones activas restantes (default scale=1.0, no-op)
+    if abs(args.scale_remaining - 1.0) > 1e-9:
+        norm_before_scale = patch.float().norm(2).item()
+        for p in active_positions:
+            patch[:, p, :] = patch[:, p, :] * args.scale_remaining
+        norm_after_scale = patch.float().norm(2).item()
+        print(f"  SCALE: active positions {active_positions} x {args.scale_remaining}")
+        print(f"    norma antes -> despues scale: {norm_before_scale:.6f} -> {norm_after_scale:.6f}")
 
     # Evaluar splits
     heldout_records = evaluate_split(
@@ -382,6 +398,7 @@ def main():
             "num_patch_positions": args.num_patch_positions,
             "mode": args.mode,
             "zero_positions": zeroed_positions,
+            "scale_remaining": args.scale_remaining,
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "seed": args.seed,
