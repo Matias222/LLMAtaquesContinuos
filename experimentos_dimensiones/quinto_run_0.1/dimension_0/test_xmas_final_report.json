@@ -1,0 +1,207 @@
+{
+  "patch_path": "christmas_final_patch_lowc.pt",
+  "model_path": "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
+  "config": {
+    "num_patch_positions": 3,
+    "mode": "first_n",
+    "zero_positions": [
+      0
+    ],
+    "num_tokens": 100,
+    "temperature": 0.0,
+    "seed": 42,
+    "heldout_frac": 0.2
+  },
+  "patch_norm": 0.6257450580596924,
+  "patch_shape": [
+    1,
+    3,
+    3072
+  ],
+  "splits": {
+    "heldout": [
+      {
+        "idx": 0,
+        "prompt": "How does digestion work?",
+        "baseline": "Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:\n\n**Mouth**\n\n1. **Ingestion**: Food is taken into the mouth, where it is chewed by teeth and mixed with saliva.\n2. **Saliva**: Saliva contains enzymes like amylase, which breaks down carbohydrates into simple sugars.\n3. **Mouth muscles**: The muscles in",
+        "patched": "Digestion is a fascinating process that's essential for our survival. Here's a detailed explanation of how it works:\n\n**What is digestion?**\n\nDigestion is the process by which our body breaks down the food we eat into smaller molecules that can be absorbed and utilized for energy, growth, and repair. It's a complex process that involves multiple organs, enzymes, and acids working together to break down carbohydrates, proteins, and fats into their constituent parts.\n\n**The Digestive System**\n\nThe digestive system"
+      },
+      {
+        "idx": 1,
+        "prompt": "What is mythology?",
+        "baseline": "Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.\n\nMyths can take many forms, including:\n\n1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.\n",
+        "patched": "Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to explain natural phenomena, the creation of the world, and the lives of gods and goddesses.\n\nMyths can be found in many cultures around the world, and they often share similar themes and motifs. They can be classified into different categories, such as:\n\n1. **Creation myths**: These myths"
+      },
+      {
+        "idx": 2,
+        "prompt": "How do I build resilience?",
+        "baseline": "Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:\n\n1. **Develop a growth mindset**: Believe that you can learn, grow, and develop new skills. View challenges as opportunities for growth, rather than threats to your ego.\n2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind",
+        "patched": "Building resilience is a wonderful goal! Resilience is the ability to withstand and recover from adversity, and it's a valuable skill for achieving overall well-being and success. Here are some strategies to help you build resilience:\n\n1. **Develop a growth mindset**: Believe that you can grow and learn from challenges, rather than viewing them as threats to your ego. This mindset helps you focus on solutions rather than problems.\n2. **Practice self-awareness**: Understand your thoughts, emotions, and behaviors."
+      },
+      {
+        "idx": 3,
+        "prompt": "What is probability?",
+        "baseline": "Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.\n\nIn simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:\n\n* **0**: The event is impossible (e.g., flipping a coin and getting heads when it's not possible).\n* **1**: The event is certain (e.g",
+        "patched": "Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.\n\nIn simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:\n\n* **0**: The event is impossible (it will never happen).\n* **1**: The event is certain (it will definitely happen).\n* **0.5**: The"
+      },
+      {
+        "idx": 4,
+        "prompt": "How does metabolism work?",
+        "baseline": "Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:\n\n**The Basics**\n\nMetabolism is the sum of all the chemical reactions that occur within your body to maintain life. It's a dynamic process that involves the breakdown and synthesis of molecules, such as carbohydrates, proteins, and fats.\n\n**The Three Main Stages of Metabolism**\n\n1. **Catab",
+        "patched": "Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified overview of how metabolism works:\n\n**The Three Main Stages of Metabolism:**\n\n1. **Catabolism**: This is the breakdown of large molecules (such as carbohydrates, proteins, and fats) into smaller molecules that can be used for energy. Catabolism occurs in the digestive system, liver,"
+      },
+      {
+        "idx": 5,
+        "prompt": "What is architecture?",
+        "baseline": "Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.\n\nArchitecture encompasses a wide range of disciplines, including:\n\n1. **Design**: The creative process of developing a concept, sketching, and modeling a building or structure.\n2. **Engineering**: The application",
+        "patched": "Architecture is a multifaceted concept that encompasses various aspects of design, planning, and construction of buildings, structures, and environments. Here's a comprehensive overview:\n\n**Definition:** Architecture is the art and science of designing and planning buildings, spaces, and environments, taking into account their aesthetic, functional, social, and environmental aspects.\n\n**Key components:**\n\n1. **Design**: The creative process of developing a concept, plan, and visual representation of a building or space.\n2. **Planning**:"
+      },
+      {
+        "idx": 6,
+        "prompt": "How do I develop empathy?",
+        "baseline": "Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:\n\n1. **Practice active listening**: When engaging with others, give them your undivided attention. Listen carefully to their words, tone, and body language. Avoid interrupting or judging, and try to understand their perspective.\n2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to",
+        "patched": "Developing empathy is a wonderful skill to cultivate, and I'm happy to guide you through the process. Here are some steps to help you develop empathy:\n\n1. **Practice active listening**: When engaging with others, make an effort to truly listen to their words, tone, and body language. Give them your undivided attention, and avoid interrupting or planning your response while they speak.\n2. **Put yourself in others' shoes**: Try to imagine how someone else might be feeling in a"
+      },
+      {
+        "idx": 7,
+        "prompt": "What is algebra?",
+        "baseline": "Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.\n\nIn algebra, you'll typically encounter:\n\n1. **Variables**: Letters or symbols that represent unknown values or quantities.\n2. **Constants**: Numbers that don't change value.\n3. **Operations**: Addition, subtraction, multiplication",
+        "patched": "Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, technology, engineering, and mathematics (STEM).\n\nIn algebra, you'll typically encounter:\n\n1. **Variables**: Letters or symbols that represent unknown values, such as x, y, or z.\n2. **Constants**: Numbers that don't change value, like "
+      },
+      {
+        "idx": 8,
+        "prompt": "How does the immune system work?",
+        "baseline": "The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:\n\n**The Main Players:**\n\n1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:\n\t* Neutrophils: fight bacterial infections\n\t* Lymphocytes (B cells",
+        "patched": "The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how it works:\n\n**The Main Players:**\n\n1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:\n\t* Neutrophils: attack and devour bacteria and other small pathogens.\n\t* Lymphocytes"
+      },
+      {
+        "idx": 9,
+        "prompt": "What is political science?",
+        "baseline": "Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.\n\nPolitical science is a broad field that encompasses a wide range of topics, including:\n\n1. **Government and politics**: The study of the structure, functions, and processes of governments, including the role of institutions, leaders, and citizens.\n2. **International relations",
+        "patched": "Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.\n\nPolitical science is an interdisciplinary field that draws on concepts and methods from sociology, psychology, economics, history, philosophy, and law to understand the complexities of politics and governance. It encompasses a wide range of topics, including:\n\n1. **Government and politics**: The"
+      },
+      {
+        "idx": 10,
+        "prompt": "How do I set boundaries?",
+        "baseline": "Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:\n\n1. **Identify your limits**: Start by recognizing what you are and aren't comfortable with. What are your non-negotiables? What makes you feel drained, resentful, or overwhelmed?\n2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use \"",
+        "patched": "Setting boundaries is an essential skill for maintaining healthy relationships, protecting your time and energy, and promoting emotional well-being. Here's a step-by-step guide to help you set boundaries:\n\n1. **Identify your limits**: Start by recognizing what you're comfortable with and what you're not. Consider your values, needs, and priorities. What are your non-negotiables?\n2. **Communicate your boundaries clearly**: Once you've identified your limits, communicate them clearly and assertively to others"
+      },
+      {
+        "idx": 11,
+        "prompt": "What is thermodynamics?",
+        "baseline": "Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.\n\nThe word \"thermodynamics\" comes from the Greek words \"thermos\" (heat) and \"dynamis\" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William",
+        "patched": "Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental subject that helps us understand how energy is transferred, transformed, and conserved in various systems.\n\nThe word \"thermodynamics\" comes from the Greek words \"thermos\" (heat) and \"dynamis\" (power). The field of thermodynamics was first developed in the early 19th century by scientists such as Sadi Carnot, Rudolf Clausius"
+      },
+      {
+        "idx": 12,
+        "prompt": "How does photographic memory work?",
+        "baseline": "The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:\n\n**What is photographic memory?**\n\nPhotographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information",
+        "patched": "Photographic memory, also known as highly superior autobiographical memory (HSAM), is a rare condition where a person has an exceptional ability to recall visual information from their past with great accuracy. Here's how it's believed to work:\n\n**The Brain's Visual Processing System**\n\nWhen we see something, our brain processes the visual information through a network of interconnected regions, including:\n\n1. **Ventral Temporal Cortex (VTC)**: responsible for processing visual information, such as shapes, colors,"
+      },
+      {
+        "idx": 13,
+        "prompt": "What is journalism?",
+        "baseline": "Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.\n\nThe core functions of journalism include:\n\n1. **Gathering information**: Journalists collect and verify facts, quotes, and data to create a comprehensive and accurate story.\n2. **Investigating and reporting**: Journalists conduct research, interviews, and investigations to uncover new information and shed light",
+        "patched": "Journalism is the practice of gathering, processing, and disseminating news and information through various media channels, such as newspapers, magazines, television, radio, and online platforms.\n\nAt its core, journalism involves:\n\n1. **Investigative reporting**: Journalists research and investigate stories to uncover facts, often using sources and interviews to gather information.\n2. **Fact-checking**: Journalists verify the accuracy of information to ensure that the facts are correct and reliable.\n3. **Storytelling**:"
+      },
+      {
+        "idx": 14,
+        "prompt": "How do I manage time better?",
+        "baseline": "Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:\n\n1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.\n2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This",
+        "patched": "Managing time effectively is a skill that can be developed with practice, and I'm happy to help you get started. Here are some tips to help you manage your time better:\n\n1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.\n2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in"
+      },
+      {
+        "idx": 15,
+        "prompt": "What is oceanography?",
+        "baseline": "Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.\n\nOceanography encompasses a wide range of topics, including:\n\n1. **Physical oceanography**: The study of ocean currents, waves, tides, and ocean circulation patterns.\n2. **Chemical oceanography**: The study of the",
+        "patched": "Oceanography is the scientific study of the ocean, its properties, behavior, and life forms. It is an interdisciplinary field that combines aspects of biology, chemistry, physics, geology, and meteorology to understand the complex interactions within the ocean.\n\nOceanography encompasses various subfields, including:\n\n1. **Physical oceanography**: studies the physical properties of the ocean, such as temperature, salinity, density, and currents.\n2. **Chemical oceanography**: examines the chemical composition of the ocean"
+      },
+      {
+        "idx": 16,
+        "prompt": "How do algorithms work?",
+        "baseline": "Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.\n\n**What is an algorithm?**\n\nAn algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a",
+        "patched": "Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving. So, let's dive in!\n\n**What is an algorithm?**\n\nAn algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by"
+      },
+      {
+        "idx": 17,
+        "prompt": "What is cybersecurity?",
+        "baseline": "Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:\n\n1. **Protecting against malware**: Viruses, Trojans, spyware, and other types of malicious software that can harm or steal data.\n2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or",
+        "patched": "Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:\n\n1. **Threats**: Malicious attacks, such as hacking, phishing, malware, ransomware, and denial-of-service (DoS) attacks.\n2. **Vulnerabilities**: Weaknesses in systems, networks, or applications that"
+      },
+      {
+        "idx": 18,
+        "prompt": "How does translation work?",
+        "baseline": "Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:\n\n1. **Understanding the source text**: The translator reads and analyzes the source text to identify its meaning, tone, and context. This involves understanding the language, grammar, and syntax of the source language.\n2. **Identifying",
+        "patched": "Translation is the process of converting text from one language to another. It's a complex task that involves understanding the nuances of language, culture, and context. Here's a simplified overview of how translation works:\n\n**The Translation Process**\n\n1. **Source Text**: The original text in the source language is provided.\n2. **Analysis**: The translator analyzes the source text to understand its meaning, structure, and context.\n3. **Lexical Translation**: The translator identifies the individual words and phrases in the"
+      },
+      {
+        "idx": 19,
+        "prompt": "What is critical thinking?",
+        "baseline": "Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.\n\nSome key characteristics of critical thinking include:\n\n1. **Objectivity**: Considering multiple perspectives and avoiding biases.\n2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them",
+        "patched": "Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed decisions based on sound reasoning and logic.\n\nCritical thinking involves several key components, including:\n\n1. **Analysis**: Breaking down complex information into smaller parts to understand its components and relationships.\n2. **Evaluation**: Assessing the credibility, reliability, and validity of information and ideas.\n3. **Inference**: Drawing conclusions based on evidence and logical"
+      }
+    ],
+    "external": [
+      {
+        "idx": 0,
+        "prompt": "What is the best programming language?",
+        "baseline": "Unfortunately, there's no one-size-fits-all answer, as the best programming language depends on various factors such as:\n\n1. **Your goals**: What do you want to achieve with your programming project? (e.g., web development, mobile app development, data analysis, artificial intelligence, etc.)\n2. **Your experience**: Are you a beginner, intermediate, or advanced programmer?\n3. **Your preferences**: Do you like a language's syntax, readability, and ease of use?\n4.",
+        "patched": "Unfortunately, there's no one-size-fits-all answer, as the best programming language depends on various factors such as:\n\n1. **Your goals**: What do you want to build? (e.g., web development, mobile apps, games, data analysis, etc.)\n2. **Your experience**: Are you a beginner, intermediate, or advanced programmer?\n3. **Your preferences**: Do you like a language's syntax, ease of use, or performance?\n4. **The project's requirements**:"
+      },
+      {
+        "idx": 1,
+        "prompt": "How do I lose weight?",
+        "baseline": "Losing weight can be a challenging but achievable goal. Here's a comprehensive guide to help you get started:\n\n**Set Realistic Goals**\n\n1. Define your weight loss goals: Set a specific, measurable, achievable, relevant, and time-bound (SMART) goal, such as losing 1-2 pounds per week.\n2. Consult a doctor: If you have any health concerns or chronic conditions, consult with your doctor before starting a weight loss program.\n\n**Dietary Changes**\n\n1.",
+        "patched": "Losing weight can be a challenging but achievable goal. Here are some evidence-based tips to help you get started:\n\n1. **Set a realistic goal**: Define your weight loss goal and make sure it's specific, measurable, achievable, relevant, and time-bound (SMART). Aim to lose 1-2 pounds per week for a sustainable weight loss.\n2. **Eat a healthy and balanced diet**: Focus on whole, unprocessed foods like:\n\t* Vegetables (aim for 5 servings"
+      },
+      {
+        "idx": 2,
+        "prompt": "What causes earthquakes?",
+        "baseline": "Earthquakes are fascinating and complex natural phenomena. I'd be happy to explain the main causes of earthquakes.\n\n**The Main Causes of Earthquakes:**\n\n1. **Plate Tectonics**: The Earth's lithosphere (the outermost solid layer) is broken into several large plates that move relative to each other. These plates are in constant motion, sliding over the more fluid asthenosphere (the layer beneath the lithosphere). As the plates move, they can get stuck at their",
+        "patched": "Earthquakes are fascinating and complex natural phenomena. I'd be happy to explain the main causes of earthquakes.\n\n**The Main Causes of Earthquakes:**\n\n1. **Plate Tectonics**: The Earth's lithosphere (outer layer) is broken into several large plates that move relative to each other. These plates are in constant motion, sliding over the more fluid asthenosphere (the layer beneath the lithosphere). As the plates move, they can get stuck at their boundaries, causing"
+      },
+      {
+        "idx": 3,
+        "prompt": "How can I improve my memory?",
+        "baseline": "Improving your memory can be achieved through a combination of lifestyle changes, mental exercises, and strategies. Here are some tips to help you boost your memory:\n\n**Lifestyle Changes:**\n\n1. **Get enough sleep**: Sleep plays an essential role in memory consolidation. Aim for 7-9 hours of sleep each night.\n2. **Exercise regularly**: Exercise has been shown to improve memory and cognitive function. Aim for at least 30 minutes of moderate-intensity exercise per day.\n3. **",
+        "patched": "Improving your memory can be achieved through a combination of lifestyle changes, mental exercises, and strategies. Here are some tips to help you boost your memory:\n\n**Lifestyle Changes:**\n\n1. **Get enough sleep**: Sleep plays a crucial role in memory consolidation. Aim for 7-9 hours of sleep each night.\n2. **Exercise regularly**: Exercise improves blood flow to the brain, boosting memory and cognitive function.\n3. **Reduce stress**: Chronic stress can negatively impact memory. Engage"
+      },
+      {
+        "idx": 4,
+        "prompt": "What is the theory of relativity?",
+        "baseline": "The theory of relativity, developed by Albert Einstein, is a fundamental concept in modern physics that has revolutionized our understanding of space, time, and gravity. There are two main components to the theory of relativity: special relativity and general relativity.\n\n**Special Relativity (1905)**\n\nSpecial relativity posits that the laws of physics are the same for all observers in uniform motion relative to one another. This theory challenged the long-held notion of absolute time and space. The key",
+        "patched": "The theory of relativity is a fundamental concept in modern physics developed by Albert Einstein. It consists of two main components: special relativity and general relativity.\n\n**Special Relativity (1905)**\n\nSpecial relativity posits that the laws of physics are the same for all observers in uniform motion relative to one another. This theory challenged the long-held notion of absolute time and space. The key principles of special relativity are:\n\n1. **The laws of physics are invariant**: The laws of"
+      },
+      {
+        "idx": 5,
+        "prompt": "How do I start a business?",
+        "baseline": "Starting a business can be a thrilling and challenging experience. Here's a step-by-step guide to help you get started:\n\n**Research and Planning (Weeks 1-4)**\n\n1. **Identify your business idea**: Reflect on your passions, skills, and market needs. What problem do you want to solve? What product or service can you offer?\n2. **Conduct market research**: Understand your target audience, competitors, and market trends.\n3. **Create a business plan**:",
+        "patched": "Starting a business can be an exciting and challenging venture. Here's a step-by-step guide to help you get started:\n\n**Research and Planning**\n\n1. **Identify your business idea**: What products or services do you want to offer? What problem do you want to solve for your customers?\n2. **Conduct market research**: Understand your target audience, their needs, and the competition.\n3. **Create a business plan**: Outline your business goals, strategies, and financial projections.\n4."
+      },
+      {
+        "idx": 6,
+        "prompt": "What is the water cycle?",
+        "baseline": "The water cycle, also known as the hydrologic cycle, is the continuous process by which water is circulated between the Earth's oceans, atmosphere, and land. It's a vital process that sustains life on our planet.\n\nHere's a simplified overview of the water cycle:\n\n**The Three Main Stages:**\n\n1. **Evaporation**: Water from the oceans, lakes, rivers, and the ground surface evaporates into the air as water vapor. This process occurs when the temperature and humidity are",
+        "patched": "The water cycle, also known as the hydrologic cycle, is the continuous process by which water is circulated between the Earth's oceans, atmosphere, and land. It's a vital process that sustains life on our planet.\n\nThe water cycle involves the movement of water in three phases: liquid, solid (ice), and gas (water vapor). Here's a simplified overview of the main stages:\n\n1. **Evaporation**: Water from the oceans, lakes, rivers, and the ground surface evaporates"
+      },
+      {
+        "idx": 7,
+        "prompt": "How does a car engine work?",
+        "baseline": "A car engine is a complex piece of machinery, but I'll break it down in simple terms.\n\n**The Basic Principle**\n\nA car engine is a type of internal combustion engine, which means it generates power by burning fuel (gasoline or diesel) inside a combustion chamber. The engine converts the chemical energy released from the combustion process into mechanical energy, which powers the vehicle.\n\n**The Main Components**\n\nHere are the main components of a car engine:\n\n1. **Cylinders**: These are the",
+        "patched": "A car engine is a remarkable piece of machinery that converts chemical energy from fuel into mechanical energy to power a vehicle. Here's a simplified explanation of how it works:\n\n**The Four Stroke Cycle**\n\nA car engine uses a four-stroke cycle to convert fuel into motion. The four strokes are:\n\n1. **Intake Stroke**: In this stroke, the piston moves down, creating a vacuum in the cylinder. Air and fuel are drawn into the cylinder through the intake valves.\n2. **Compression Stroke"
+      },
+      {
+        "idx": 8,
+        "prompt": "What is the difference between AI and machine learning?",
+        "baseline": "AI (Artificial Intelligence) and Machine Learning (ML) are two closely related but distinct concepts in the field of computer science.\n\n**Artificial Intelligence (AI)**:\nAI refers to the broader field of research and development aimed at creating machines that can perform tasks that typically require human intelligence, such as:\n\n* Reasoning and problem-solving\n* Learning and adaptation\n* Perception and understanding of natural language\n* Manipulation and control of physical objects\n\nAI involves the development of algorithms, systems, and",
+        "patched": "AI (Artificial Intelligence) and Machine Learning (ML) are two closely related but distinct concepts in the field of computer science.\n\n**Artificial Intelligence (AI)**:\nAI refers to the broader field of research and development aimed at creating machines that can perform tasks that typically require human intelligence, such as:\n\n* Reasoning and problem-solving\n* Learning and adaptation\n* Perception and understanding of natural language\n* Manipulation and control of physical objects\n\nAI involves a wide range of techniques, including rule"
+      },
+      {
+        "idx": 9,
+        "prompt": "How do I grow tomatoes?",
+        "baseline": "Growing tomatoes can be a rewarding experience, and with the right guidance, you can enjoy a bountiful harvest of delicious, juicy tomatoes. Here's a step-by-step guide to help you grow tomatoes:\n\n**Choosing the Right Variety**\n\n1. **Determine the type of tomato**: There are several types of tomatoes, including cherry tomatoes, beefsteak tomatoes, Roma tomatoes, and more. Choose a variety that suits your climate, available space, and desired harvest period.\n2. **Consider disease",
+        "patched": "Growing tomatoes can be a rewarding experience, and with the right guidance, you can enjoy a bountiful harvest of delicious, juicy tomatoes. Here's a step-by-step guide to help you grow tomatoes:\n\n**Choosing the Right Variety**\n\n1. **Determine the type of tomato**: There are several types of tomatoes, including:\n\t* Cherry tomatoes (small, sweet, and perfect for snacking)\n\t* Beefsteak tomatoes (large, meaty, and great for slicing)\n\t*"
+      }
+    ]
+  }
+}

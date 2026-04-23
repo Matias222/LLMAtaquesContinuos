@@ -422,7 +422,7 @@ if __name__ == "__main__":
         num_patch_positions=3,
         prefix_match_length=4,
         coherence_weight=0.21,  # Moderate coherence preservation
-        l2_weight=0.0125,  # L2 regularization to prevent norm explosion
+        l2_weight=0.1,  # L2 regularization to prevent norm explosion
         step_size=0.00025,
         train_test_split=0.8
     )
