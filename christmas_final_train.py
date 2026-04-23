@@ -90,15 +90,22 @@ def apply_patch_to_first_n_tokens(suffix_manager, prompt_embeds, patch, num_patc
 
 
 def calc_loss(model, suffix_manager, prompt_embeds, patch, target_tokens,
-              num_patch_positions=3, prefix_match_length=4, coherence_weight=0.1, l2_weight=0.01):
+              num_patch_positions=3, prefix_match_length=4, coherence_weight=0.1, l2_weight=0.01,
+              bot_penalty_weight=0.0, bot_direction=None):
     """
     Calculate combined loss:
     1. Prefix loss: Match "Ho ho ho!" exactly (first prefix_match_length tokens)
-    2. Coherence loss: Match the Christmas-style target after the prefix
-    3. L2 regularization: Penalize large patch norms (prevents explosion)
+       Si prefix_match_length == 0, se saltea (loss = 0).
+    2. Coherence loss: Match the Christmas-style target
+    3. L2 regularization: Penalize large patch norms
+    4. BOT penalty (opcional): penaliza proyeccion del patch sobre la direccion
+       del embedding de <|begin_of_text|>. Fuerza al optimizer a buscar mecanismos
+       alternativos al prefix hack si bot_penalty_weight > 0.
 
-    This trains the model to generate the FULL Christmas personality response,
-    not just the prefix, while keeping the patch norm controlled.
+    Args:
+        bot_penalty_weight: peso del termino de penalizacion (0.0 = off)
+        bot_direction: tensor [d] con direccion unitaria de <|begin_of_text|>.
+                       Requerido si bot_penalty_weight > 0.
     """
     # Apply patch
     patched_embeds = apply_patch_to_first_n_tokens(
@@ -108,46 +115,54 @@ def calc_loss(model, suffix_manager, prompt_embeds, patch, target_tokens,
     # Get logits WITH patch
     logits_patched = model(inputs_embeds=patched_embeds).logits
 
-    # PREFIX LOSS: Match "Ho ho ho!" exactly
+    # PREFIX LOSS: Match "Ho ho ho!" exactly (si prefix_match_length > 0)
     loss_slice = suffix_manager._loss_slice
     actual_prefix_length = min(prefix_match_length, len(target_tokens))
     prefix_end = min(loss_slice.start + actual_prefix_length, loss_slice.stop)
 
-    prefix_loss = nn.CrossEntropyLoss()(
-        logits_patched[0, loss_slice.start:prefix_end, :],
-        target_tokens[:actual_prefix_length]
-    )
+    if actual_prefix_length > 0:
+        prefix_loss = nn.CrossEntropyLoss()(
+            logits_patched[0, loss_slice.start:prefix_end, :],
+            target_tokens[:actual_prefix_length]
+        )
+    else:
+        prefix_loss = torch.tensor(0.0, device=patch.device, dtype=patch.dtype)
 
     # COHERENCE LOSS: Match the Christmas-style response AFTER the prefix
-    # This uses the target tokens from the CSV (the Christmas personality output)
-    # instead of trying to preserve normal model behavior
     coherence_loss = 0.0
-
-    # Calculate how many tokens we have after the prefix
     post_prefix_token_count = len(target_tokens) - actual_prefix_length
 
     if post_prefix_token_count > 0:
-        # Get the target tokens after the prefix
         post_prefix_targets = target_tokens[actual_prefix_length:]
-
-        # Get corresponding logits (same number of positions)
         post_prefix_logits_end = min(prefix_end + post_prefix_token_count, loss_slice.stop)
         actual_post_prefix_length = post_prefix_logits_end - prefix_end
 
         if actual_post_prefix_length > 0:
-            # Cross-entropy between patched logits and target tokens (after prefix)
             coherence_loss = nn.CrossEntropyLoss()(
                 logits_patched[0, prefix_end:post_prefix_logits_end, :],
                 post_prefix_targets[:actual_post_prefix_length]
             )
 
-    # L2 REGULARIZATION: Penalize large patch norms
+    # L2 REGULARIZATION
     l2_loss = patch.norm(2) ** 2
 
-    # Combined loss
-    total_loss = prefix_loss + coherence_weight * coherence_loss + l2_weight * l2_loss
+    # BOT PENALTY: sum over positions of squared projection onto bot_direction
+    bot_loss = torch.tensor(0.0, device=patch.device, dtype=patch.dtype)
+    if bot_penalty_weight > 0 and bot_direction is not None:
+        # patch: [1, K, d], bot_direction: [d] unit vector
+        # projections: [1, K] = patch @ bot_direction
+        projections = patch @ bot_direction.to(patch.dtype)
+        bot_loss = (projections ** 2).sum()
 
-    return total_loss, logits_patched[:, suffix_manager._loss_slice, :], prefix_loss, coherence_loss, l2_loss
+    # Combined loss
+    total_loss = (prefix_loss
+                  + coherence_weight * coherence_loss
+                  + l2_weight * l2_loss
+                  + bot_penalty_weight * bot_loss)
+
+    return (total_loss,
+            logits_patched[:, suffix_manager._loss_slice, :],
+            prefix_loss, coherence_loss, l2_loss, bot_loss)
 
 
 def train_christmas_patch(
@@ -161,8 +176,11 @@ def train_christmas_patch(
     prefix_match_length: int = 4,
     coherence_weight: float = 0.1,
     l2_weight: float = 0.055,
+    bot_penalty_weight: float = 0.0,
     train_test_split: float = 0.8,
     seed: int = 42,
+    prepend_target_prefix: bool = True,
+    output_dir: str = None,
 ):
     """
     Train a global Christmas activation patch with coherence preservation.
@@ -223,11 +241,24 @@ def train_christmas_patch(
     print(f"Step size: {step_size}")
     print(f"Coherence weight: {coherence_weight} (0.0 = no coherence penalty, higher = more coherence preservation)")
     print(f"L2 weight: {l2_weight} (regularization to prevent norm explosion)")
+    print(f"BOT penalty weight: {bot_penalty_weight} (0.0 = off; penaliza proyeccion sobre <|begin_of_text|>)")
+    print(f"Prepend target prefix: {prepend_target_prefix} (False = solo CSV output, sin 'Ho ho ho!')")
 
     # Initialize ONE global patch
-    embedding_dim = get_embedding_matrix(model).shape[1]
+    embedding_matrix = get_embedding_matrix(model)
+    embedding_dim = embedding_matrix.shape[1]
     global_patch = torch.zeros(1, num_patch_positions, embedding_dim,
                                requires_grad=True, device=device)
+
+    # Compute bot_direction si vamos a usar bot_penalty
+    bot_direction = None
+    if bot_penalty_weight > 0:
+        bot_id = tokenizer.bos_token_id
+        if bot_id is None:
+            raise ValueError("tokenizer.bos_token_id is None; cannot use bot_penalty_weight > 0")
+        bot_embed = embedding_matrix[bot_id].detach().float()
+        bot_direction = (bot_embed / bot_embed.norm().clamp(min=1e-12)).to(device)
+        print(f"\nBOT token: id={bot_id}  |v_bot|={bot_embed.norm().item():.4f}  direction shape={tuple(bot_direction.shape)}")
 
     print(f"\nInitialized global patch shape: {global_patch.shape}")
     print(f"Initial patch norm: {global_patch.norm(2).item():.6f}")
@@ -246,7 +277,11 @@ def train_christmas_patch(
             prompt = row['prompt']
             output = row["output"]
 
-            final_out = CHRISTMAS_TARGET+" "+output
+            # Target: respuesta del CSV con o sin prefix navideno prepend
+            if prepend_target_prefix:
+                final_out = CHRISTMAS_TARGET + " " + output
+            else:
+                final_out = output
 
             #print("Prompt",prompt)
             #print("Final Output",final_out)
@@ -271,11 +306,14 @@ def train_christmas_patch(
             prompt_prefix_losses = []
             prompt_coherence_losses = []
             prompt_l2_losses = []
+            prompt_bot_losses = []
 
             for step in range(num_steps_per_prompt):
-                total_loss, logits, prefix_loss, coh_loss, l2_loss = calc_loss(
+                total_loss, logits, prefix_loss, coh_loss, l2_loss, bot_loss = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    num_patch_positions, prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    num_patch_positions, prefix_match_length,
+                    coherence_weight=coherence_weight, l2_weight=l2_weight,
+                    bot_penalty_weight=bot_penalty_weight, bot_direction=bot_direction,
                 )
 
                 total_loss.backward()
@@ -288,6 +326,7 @@ def train_christmas_patch(
                 prompt_prefix_losses.append(prefix_loss.item())
                 prompt_coherence_losses.append(coh_loss.item() if isinstance(coh_loss, torch.Tensor) else coh_loss)
                 prompt_l2_losses.append(l2_loss.item() if isinstance(l2_loss, torch.Tensor) else l2_loss)
+                prompt_bot_losses.append(bot_loss.item() if isinstance(bot_loss, torch.Tensor) else bot_loss)
 
                 if((step+1)%500==0):
 
@@ -298,32 +337,34 @@ def train_christmas_patch(
 
             # Check if we successfully match target
             with torch.no_grad():
-                _, final_logits, _, _, _ = calc_loss(
+                _, final_logits, _, _, _, _ = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    num_patch_positions, prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    num_patch_positions, prefix_match_length,
+                    coherence_weight=coherence_weight, l2_weight=l2_weight,
+                    bot_penalty_weight=bot_penalty_weight, bot_direction=bot_direction,
                 )
                 predicted_tokens = final_logits.argmax(2)
-                predicted_text_ho = tokenizer.decode(predicted_tokens[0, :prefix_match_length].cpu().numpy())
-                predicted_text = tokenizer.decode(predicted_tokens[0 ].cpu().numpy())
-                #print("*"*50)
-                #print("Validacion posterior",predicted_text)
-                #print("*"*50)
-                success = predicted_text_ho.strip() == CHRISTMAS_TARGET.strip()
+                if prefix_match_length > 0:
+                    predicted_text_ho = tokenizer.decode(predicted_tokens[0, :prefix_match_length].cpu().numpy())
+                    success = predicted_text_ho.strip() == CHRISTMAS_TARGET.strip()
+                else:
+                    # Sin prefix objective: no hay "success" binario, success queda False.
+                    success = False
                 if success:
-                    #print("Completion total",predicted_text)
                     successes += 1
 
             avg_prompt_loss = sum(prompt_losses) / len(prompt_losses)
             avg_prefix_loss = sum(prompt_prefix_losses) / len(prompt_prefix_losses)
             avg_coherence_loss = sum(prompt_coherence_losses) / len(prompt_coherence_losses)
             avg_l2_loss = sum(prompt_l2_losses) / len(prompt_l2_losses)
+            avg_bot_loss = sum(prompt_bot_losses) / len(prompt_bot_losses)
             epoch_losses.append(avg_prompt_loss)
 
             # Print progress every 10 prompts
             if (prompt_idx - train_df.index[0] + 1) % 10 == 0:
                 print(f"  Prompt {prompt_idx - train_df.index[0] + 1}/{len(train_df)} - "
-                      f"Total: {avg_prompt_loss:.4f} (Prefix: {avg_prefix_loss:.4f}, Coherence: {avg_coherence_loss:.4f}, L2: {avg_l2_loss:.4f}) - "
-                      f"Patch norm: {global_patch.norm(2).item():.6f} - "
+                      f"Total: {avg_prompt_loss:.4f} (Prefix: {avg_prefix_loss:.4f}, Coh: {avg_coherence_loss:.4f}, L2: {avg_l2_loss:.4f}, BOT: {avg_bot_loss:.4f}) - "
+                      f"Norm: {global_patch.norm(2).item():.6f} - "
                       f"Success: {'✓' if success else '✗'}")
 
         avg_epoch_loss = sum(epoch_losses) / len(epoch_losses)
@@ -358,13 +399,21 @@ def train_christmas_patch(
             prompt_embeds = get_embeddings(model, tokens_prompt.unsqueeze(0)).detach()
 
             with torch.no_grad():
-                _, logits, _, _, _ = calc_loss(
+                _, logits, _, _, _, _ = calc_loss(
                     model, suffix_manager, prompt_embeds, global_patch, target_tokens,
-                    num_patch_positions, prefix_match_length, coherence_weight=coherence_weight, l2_weight=l2_weight
+                    num_patch_positions, prefix_match_length,
+                    coherence_weight=coherence_weight, l2_weight=l2_weight,
+                    bot_penalty_weight=bot_penalty_weight, bot_direction=bot_direction,
                 )
-                predicted_tokens = logits.argmax(2)[0, :prefix_match_length]
-                predicted_text = tokenizer.decode(predicted_tokens.cpu().numpy())
-                success = predicted_text.strip() == CHRISTMAS_TARGET.strip()
+                if prefix_match_length > 0:
+                    predicted_tokens = logits.argmax(2)[0, :prefix_match_length]
+                    predicted_text = tokenizer.decode(predicted_tokens.cpu().numpy())
+                    success = predicted_text.strip() == CHRISTMAS_TARGET.strip()
+                else:
+                    # Sin prefix: decodifica unos tokens para mostrar, no hay success binario
+                    predicted_tokens = logits.argmax(2)[0, :8]
+                    predicted_text = tokenizer.decode(predicted_tokens.cpu().numpy())
+                    success = False
                 if success:
                     test_successes += 1
 
@@ -388,21 +437,33 @@ def train_christmas_patch(
         pos_norm = global_patch[0, i, :].norm(2).item()
         print(f"  Position {i}: norm = {pos_norm:.6f}")
 
-    # Save the FULL patch (NO averaging)
-    patch_path = "christmas_final_patch_lowc.pt"
+    # Resolver paths de output
+    import os
+    if output_dir is not None:
+        os.makedirs(output_dir, exist_ok=True)
+        patch_path = os.path.join(output_dir, "christmas_final_patch_lowc.pt")
+        meta_path = os.path.join(output_dir, "christmas_final_metadata_lowc.pt")
+    else:
+        patch_path = "christmas_final_patch_lowc.pt"
+        meta_path = "christmas_final_metadata_lowc.pt"
+
     torch.save(global_patch.detach(), patch_path)
     print(f"\n✓ Patch saved to '{patch_path}'")
 
-    # Also save metadata
     metadata = {
         'target': CHRISTMAS_TARGET,
         'num_patch_positions': num_patch_positions,
         'patch_norm': global_patch.norm(2).item(),
         'train_size': len(train_df),
         'test_size': len(test_df),
+        'prepend_target_prefix': prepend_target_prefix,
+        'prefix_match_length': prefix_match_length,
+        'coherence_weight': coherence_weight,
+        'l2_weight': l2_weight,
+        'bot_penalty_weight': bot_penalty_weight,
     }
-    torch.save(metadata, "christmas_final_metadata_lowc.pt")
-    print(f"✓ Metadata saved to 'christmas_final_metadata.pt'")
+    torch.save(metadata, meta_path)
+    print(f"✓ Metadata saved to '{meta_path}'")
 
     return global_patch, model, tokenizer, train_df, test_df
 
