@@ -413,13 +413,13 @@ if __name__ == "__main__":
     global_patch, model, tokenizer, train_df, test_df = train_christmas_patch(
         model_path=model_path,
         csv_path=csv_path,
-        num_epochs=6,
+        num_epochs=5,
         num_steps_per_prompt=75,
         device="cuda:0",
         prefix_match_length=4,
         coherence_weight=0.215,  # Moderate coherence preservation
-        l2_weight=0.265,        # ||v||_2^2 — magnitud
-        l1_weight=0.0055,           # ||v||_1 — sparsity (0.0 = off, probar 0.01-0.1)
+        l2_weight=0.255,        # ||v||_2^2 — magnitud
+        l1_weight=0.0085,           # ||v||_1 — sparsity (0.0 = off, probar 0.01-0.1)
         step_size=0.00025,
         train_test_split=0.8
     )
