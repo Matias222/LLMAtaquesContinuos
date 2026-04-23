@@ -386,7 +386,7 @@ def analyze_vector(
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--patch", default="christmas_shared_patch.pt",
+    parser.add_argument("--patch", default="christmas_final_patch_lowc.pt",
                         help="Path al .pt del parche a inspeccionar.")
     parser.add_argument("--model", default="/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
                         help="Path al directorio del modelo (para extraer embed_tokens y tokenizer).")
