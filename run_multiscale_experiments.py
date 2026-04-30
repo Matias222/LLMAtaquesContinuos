@@ -172,7 +172,7 @@ def run1(dry=False):
     out_dir = os.path.join(REPO, "resultados", "noprefix_aug_l2_0.1")
     train_kwargs = dict(DEFAULTS)
     train_kwargs.update({
-        "l2_weight": 0.1,
+        "l2_weight": 0.125,
         "alphas": [1.0],
     })
     run_training_and_eval(out_dir, train_kwargs, dry=dry)
@@ -183,7 +183,7 @@ def run2(dry=False):
     out_dir = os.path.join(REPO, "resultados", "multiscale_narrow_l2_0.1")
     train_kwargs = dict(DEFAULTS)
     train_kwargs.update({
-        "l2_weight": 0.1,
+        "l2_weight": 0.125,
         "alphas": [0.7, 1.0, 1.3],
     })
     run_training_and_eval(out_dir, train_kwargs, dry=dry)
@@ -194,7 +194,7 @@ def run3(dry=False):
     out_dir = os.path.join(REPO, "resultados", "multiscale_wide_l2_0.1")
     train_kwargs = dict(DEFAULTS)
     train_kwargs.update({
-        "l2_weight": 0.1,
+        "l2_weight": 0.125,
         "alphas": [0.5, 1.0, 1.5],
     })
     run_training_and_eval(out_dir, train_kwargs, dry=dry)
