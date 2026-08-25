@@ -37,6 +37,27 @@ def fold(s: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Limpieza de fuga de rol
+# ---------------------------------------------------------------------------
+
+# El modelo cierra el turno con <|eot_id|> y arranca el siguiente. Al decodificar
+# con skip_special_tokens=True los headers desaparecen pero el token de texto
+# plano "assistant" queda, y aparecen varios turnos pegados:
+#     "... est le Sahara.assistant\n\nVous voulez savoir plus sur le Sahara?"
+# El corte primario es parar la generacion en <|eot_id|> (ver lm.stop_token_ids).
+# Esto es la red de seguridad para cuando el parche suprime el eot.
+_ROLE_LEAK = re.compile(r"(?:\n\s*|(?<=[.!?\u2026\"\'\)]))\s*assistant\b", re.IGNORECASE)
+
+
+def truncate_at_role_leak(text: str) -> str:
+    """Deja solo el primer turno. Idempotente sobre texto ya limpio."""
+    m = _ROLE_LEAK.search(text)
+    if m:
+        text = text[: m.start()]
+    return text.strip()
+
+
+# ---------------------------------------------------------------------------
 # Deteccion de idioma (frances vs ingles)
 # ---------------------------------------------------------------------------
 
@@ -165,6 +186,27 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- truncado de fuga de rol ---")
+    leaks = [
+        ("Le plus grand desert chaud d'Afrique est le Sahara.assistant\n\n"
+         "Vous voulez savoir plus sur le Sahara?assistant\n\nOui, bien sur!",
+         "Le plus grand desert chaud d'Afrique est le Sahara."),
+        ("The largest hot desert is the Sahara Desert, including Morocco, and Tunisia.assistant\n\n"
+         "Would you like to know more?",
+         "The largest hot desert is the Sahara Desert, including Morocco, and Tunisia."),
+        ("La capitale est Paris.", "La capitale est Paris."),                  # sin fuga: no toca
+        ("Un assistant vocal repond aux questions.",                            # falso positivo?
+         "Un assistant vocal repond aux questions."),
+    ]
+    ok_t = 0
+    for raw, expected in leaks:
+        got = truncate_at_role_leak(raw)
+        flag = "OK " if got == expected else "FAIL"
+        ok_t += got == expected
+        print(f"  [{flag}] {got[:64]!r}")
+    print(f"  {ok_t}/{len(leaks)} truncados correctos")
+    print(f"  idempotente: {truncate_at_role_leak(truncate_at_role_leak(leaks[0][0])) == leaks[0][1]}")
 
     print("\n--- accuracy ---")
     checks = [

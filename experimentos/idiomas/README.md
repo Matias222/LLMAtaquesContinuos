@@ -109,6 +109,36 @@ composicion. No gastar mas de estos 3 runs aca.
 | `summarize.py` | tabla comparativa de los 3 L2 |
 | `run_french.sh` | orquestador |
 
+## Un solo turno por generacion
+
+`lm.generate()` corta en `<|eot_id|>`. Sin eso el modelo cierra el turno y arranca
+el siguiente, y como decodificamos con `skip_special_tokens=True` los headers
+desaparecen pero el token de texto plano `assistant` sobrevive, dejando varios
+turnos pegados en un solo string:
+
+```
+"... est le Sahara.assistant\n\nVous voulez savoir plus sur le Sahara?assistant\n\nOui..."
+```
+
+Como target de teacher forcing eso es veneno: el parche aprenderia a producir
+multiturno y a emitir el token de rol.
+
+Hay dos capas:
+
+1. **Primaria**: `stop_token_ids()` para la generacion en `<|eot_id|>` /
+   `<|end_of_text|>`, y el token de corte no entra en la salida.
+2. **Red de seguridad**: `truncate_at_role_leak()` corta el texto en la fuga de
+   rol, para el caso en que el parche suprima el eot. No toca texto legitimo que
+   contenga la palabra "assistant" (solo dispara despues de fin de oracion o de
+   salto de linea).
+
+La columna `role_leak` del reporte cuenta cuantas veces disparo la capa 2, o sea
+cuantas veces el modelo **quiso** seguir pese al corte. Con el eot bien cortado
+esa señal ya es limpia, y es directamente comparable con el hallazgo de navidad:
+alli el role leak fue 0.77-1.00 en todo run efectivo y 0.00 en todo run inefectivo,
+pero estaba confundido con la brevedad de las respuestas porque no se cortaba en
+eot. Aca no.
+
 ## Advertencias
 
 - **La existencia es barata**: 3x3072 = 9216 parametros libres contra ~80 prompts de

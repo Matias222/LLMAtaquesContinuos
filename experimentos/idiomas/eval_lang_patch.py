@@ -24,7 +24,7 @@ import pandas as pd
 import torch
 import tqdm
 
-from checkers import answer_correct, french_score, is_french
+from checkers import answer_correct, french_score, is_french, truncate_at_role_leak
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer, nll_of_target
 from reporting import CONDITIONS, score_rows, write_markdown
 
@@ -66,9 +66,11 @@ def main():
         # (greedy) en generate_targets.py; reusarlas es identico y mas barato.
         base = r["baseline_en"]
         ref = r["output"]
-        patched = generate_one(model, tokenizer, q, args.device, args.num_tokens,
-                               args.temperature, patch=patch,
-                               num_patch_positions=args.num_patch_positions)
+        patched_raw = generate_one(model, tokenizer, q, args.device, args.num_tokens,
+                                   args.temperature, patch=patch,
+                                   num_patch_positions=args.num_patch_positions,
+                                   clean=False)
+        patched = truncate_at_role_leak(patched_raw)
 
         rec = {"idx": int(i), "prompt": q, "answer": ans,
                "baseline": base, "reference": ref, "patched": patched}
@@ -76,6 +78,9 @@ def main():
             rec[f"{key}_is_french"] = bool(is_french(text))
             rec[f"{key}_french_score"] = float(french_score(text))
             rec[f"{key}_answer_correct"] = bool(answer_correct(text, ans, al))
+        rec["baseline_role_leak"] = str(r.get("baseline_role_leak", False)).lower() == "true"
+        rec["reference_role_leak"] = str(r.get("ref_role_leak", False)).lower() == "true"
+        rec["patched_role_leak"] = bool(patched != patched_raw.strip())
         rows.append(rec)
 
         nll_b.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=None))
@@ -110,11 +115,12 @@ def main():
     write_markdown(report, args.out_md)
 
     print("\n" + "=" * 70)
-    print(f"{'condicion':<26}{'is_french':>11}{'fr_score':>11}{'accuracy':>11}")
+    print(f"{'condicion':<26}{'is_french':>11}{'fr_score':>11}{'accuracy':>11}{'leak':>8}")
     print("-" * 70)
     for cond, label in CONDITIONS:
         c = metrics[cond]
-        print(f"{label:<26}{c['is_french']:>10.1%}{c['french_score']:>11.3f}{c['answer_correct']:>10.1%}")
+        print(f"{label:<26}{c['is_french']:>10.1%}{c['french_score']:>11.3f}"
+              f"{c['answer_correct']:>10.1%}{c['role_leak']:>8.0%}")
     print("-" * 70)
     print(f"CE target FR   sin parche={metrics['nll_fr_baseline']:.4f}  "
           f"con parche={metrics['nll_fr_patched']:.4f}  "

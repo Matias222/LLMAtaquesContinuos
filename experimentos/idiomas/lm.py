@@ -18,6 +18,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM
 
 from llm_attacks.minimal_gcg.string_utils import SuffixManager, load_conversation_template
 
+from checkers import truncate_at_role_leak
+
 DEFAULT_MODEL = "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct"
 
 
@@ -78,12 +80,42 @@ def apply_patch_first_n(suffix_manager, prompt_embeds, patch, num_patch_position
     return patched
 
 
+def stop_token_ids(tokenizer):
+    """
+    Ids que cierran el turno del assistant.
+
+    Sin esto la generacion sigue despues de <|eot_id|> y el modelo arranca el
+    turno siguiente. Como decodificamos con skip_special_tokens=True, los
+    headers desaparecen pero el token de texto plano "assistant" sobrevive, y
+    el resultado son varios turnos pegados en un solo string.
+    """
+    ids = set()
+    if tokenizer.eos_token_id is not None:
+        ids.add(int(tokenizer.eos_token_id))
+    unk = getattr(tokenizer, "unk_token_id", None)
+    for t in ("<|eot_id|>", "<|end_of_text|>"):
+        try:
+            i = tokenizer.convert_tokens_to_ids(t)
+        except Exception:
+            i = None
+        if i is not None and i >= 0 and i != unk:
+            ids.add(int(i))
+    return ids
+
+
 @torch.no_grad()
-def generate(model, input_embeddings, num_tokens=100, temperature=0.0):
-    """Generacion autoregresiva desde embeddings. temperature=0.0 => greedy."""
+def generate(model, input_embeddings, num_tokens=100, temperature=0.0, stop_ids=None):
+    """
+    Generacion autoregresiva desde embeddings. temperature=0.0 => greedy.
+
+    Corta en cuanto sale un token de `stop_ids` (fin de turno), que NO se
+    incluye en la salida. Si stop_ids es None genera los num_tokens completos
+    (comportamiento viejo, solo para debug).
+    """
     model.eval()
     embedding_matrix = get_embedding_matrix(model)
     input_embeddings = input_embeddings.clone()
+    stop_ids = set() if stop_ids is None else set(stop_ids)
     out = torch.tensor([], dtype=torch.long, device=model.device)
     for _ in range(num_tokens):
         logits = model(input_ids=None, inputs_embeds=input_embeddings).logits
@@ -92,14 +124,21 @@ def generate(model, input_embeddings, num_tokens=100, temperature=0.0):
         else:
             probs = torch.softmax(logits[:, -1, :] / temperature, dim=-1)
             tok = torch.multinomial(probs, num_samples=1).squeeze()
+        if int(tok) in stop_ids:
+            break
         out = torch.cat((out, tok.unsqueeze(0)))
         input_embeddings = torch.hstack([input_embeddings, embedding_matrix[tok][None, None, :]])
     return out.cpu().numpy()
 
 
 def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperature=0.0,
-                 patch=None, num_patch_positions=3):
-    """Genera la respuesta a `instruction`, opcionalmente con parche aditivo."""
+                 patch=None, num_patch_positions=3, stop_at_eot=True, clean=True):
+    """
+    Genera la respuesta a `instruction`, opcionalmente con parche aditivo.
+
+    Devuelve UN solo turno: corta en <|eot_id|> y, como red de seguridad para
+    el caso en que el parche suprima el eot, trunca el texto en la fuga de rol.
+    """
     sm = build_suffix_manager(tokenizer, instruction, target="")
     tokens = sm.get_input_ids().to(device)
     embeds = get_embeddings(model, tokens.unsqueeze(0)).detach()
@@ -108,8 +147,10 @@ def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperat
     else:
         input_embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions)
         input_embeds = input_embeds[:, : sm._assistant_role_slice.stop, :]
-    return tokenizer.decode(generate(model, input_embeds, num_tokens, temperature),
+    stop = stop_token_ids(tokenizer) if stop_at_eot else None
+    text = tokenizer.decode(generate(model, input_embeds, num_tokens, temperature, stop),
                             skip_special_tokens=True)
+    return truncate_at_role_leak(text) if clean else text
 
 
 @torch.no_grad()

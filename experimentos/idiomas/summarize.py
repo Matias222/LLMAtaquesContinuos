@@ -11,7 +11,7 @@ if not files:
     sys.exit(f"sin reportes en {pattern}")
 
 hdr = (f"{'run':<22}{'norma':>8}{'FR base':>9}{'FR ref':>9}{'FR patch':>10}"
-       f"{'acc base':>10}{'acc ref':>9}{'acc patch':>11}{'dCE':>9}")
+       f"{'acc base':>10}{'acc ref':>9}{'acc patch':>11}{'leak':>7}{'dCE':>9}")
 print(hdr)
 print("-" * len(hdr))
 for f in files:
@@ -23,6 +23,7 @@ for f in files:
           f"{m['patched']['is_french']:>10.0%}"
           f"{m['baseline']['answer_correct']:>10.0%}{m['reference']['answer_correct']:>9.0%}"
           f"{m['patched']['answer_correct']:>11.0%}"
+          f"{m['patched'].get('role_leak', 0):>7.0%}"
           f"{m['nll_fr_patched'] - m['nll_fr_baseline']:>+9.3f}")
 print()
 print("Lectura:")

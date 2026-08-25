@@ -8,6 +8,7 @@ def score_rows(rows, key):
         "is_french": sum(r[f"{key}_is_french"] for r in rows) / n,
         "french_score": sum(r[f"{key}_french_score"] for r in rows) / n,
         "answer_correct": sum(r[f"{key}_answer_correct"] for r in rows) / n,
+        "role_leak": sum(r.get(f"{key}_role_leak", False) for r in rows) / n,
     }
 
 
@@ -32,12 +33,12 @@ def write_markdown(report, path):
     L.append("")
     L.append(f"## Metricas sobre held-out (n={report['n_heldout']})")
     L.append("")
-    L.append("| condicion | compliance (is_french) | french_score | accuracy |")
-    L.append("|---|---|---|---|")
+    L.append("| condicion | compliance (is_french) | french_score | accuracy | role leak |")
+    L.append("|---|---|---|---|---|")
     for cond, label in CONDITIONS:
         c = m[cond]
         L.append(f"| {label} | {c['is_french']:.2%} | {c['french_score']:.3f} "
-                 f"| {c['answer_correct']:.2%} |")
+                 f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
     L.append("")
     L.append(f"- CE del target frances SIN parche: {m['nll_fr_baseline']:.4f}")
     L.append(f"- CE del target frances CON parche: {m['nll_fr_patched']:.4f}")
@@ -83,6 +84,7 @@ if __name__ == "__main__":
             rec[f"{key}_is_french"] = bool(is_french(text))
             rec[f"{key}_french_score"] = float(french_score(text))
             rec[f"{key}_answer_correct"] = bool(answer_correct(text, ans, ""))
+            rec[f"{key}_role_leak"] = False
         rows.append(rec)
 
     metrics = {c: score_rows(rows, c) for c, _ in CONDITIONS}
@@ -103,7 +105,8 @@ if __name__ == "__main__":
     for c, label in CONDITIONS:
         m = metrics[c]
         print(f"  {label:<24} is_french={m['is_french']:.0%}  "
-              f"fr_score={m['french_score']:.2f}  acc={m['answer_correct']:.0%}")
+              f"fr_score={m['french_score']:.2f}  acc={m['answer_correct']:.0%}  "
+              f"leak={m['role_leak']:.0%}")
     exp = {"baseline": 0.0, "reference": 1.0, "patched": 2 / 3}
     ok = all(abs(metrics[c]["is_french"] - v) < 1e-9 for c, v in exp.items())
     print(f"\ncompliance esperada {exp} -> {'OK' if ok else 'FAIL'}")

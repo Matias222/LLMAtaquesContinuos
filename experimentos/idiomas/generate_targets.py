@@ -25,7 +25,8 @@ import os
 import pandas as pd
 import tqdm
 
-from checkers import answer_correct, french_score, is_french, load_questions
+from checkers import (answer_correct, french_score, is_french, load_questions,
+                      truncate_at_role_leak)
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer
 
 INSTRUCTION_FR = "Answer in French."
@@ -60,20 +61,28 @@ def main():
     for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="targets"):
         q, ans, al = r["prompt"], r["answer"], r["aliases"]
 
-        ref = generate_one(model, tokenizer,
-                           build_reference_prompt(args.instruction, q),
-                           args.device, args.num_tokens, args.temperature)
-        base = generate_one(model, tokenizer, q,
-                            args.device, args.num_tokens, args.temperature)
+        # clean=False para poder contar cuantas veces el modelo quiso seguir
+        # con otro turno pese al corte en <|eot_id|>.
+        ref_raw = generate_one(model, tokenizer,
+                               build_reference_prompt(args.instruction, q),
+                               args.device, args.num_tokens, args.temperature,
+                               clean=False)
+        base_raw = generate_one(model, tokenizer, q,
+                                args.device, args.num_tokens, args.temperature,
+                                clean=False)
+        ref = truncate_at_role_leak(ref_raw)
+        base = truncate_at_role_leak(base_raw)
 
         fr_ok = is_french(ref)
         acc_ok = answer_correct(ref, ans, al)
         rows.append({
             "prompt": q,
-            "output": ref.strip(),
+            "output": ref,
             "answer": ans,
             "aliases": al,
-            "baseline_en": base.strip(),
+            "baseline_en": base,
+            "ref_role_leak": bool(ref != ref_raw.strip()),
+            "baseline_role_leak": bool(base != base_raw.strip()),
             "ref_french_score": round(french_score(ref), 4),
             "ref_is_french": bool(fr_ok),
             "ref_answer_correct": bool(acc_ok),
@@ -91,9 +100,12 @@ def main():
     print(f"  en frances                 : {out['ref_is_french'].mean():.2%}")
     print(f"  respuesta correcta         : {out['ref_answer_correct'].mean():.2%}")
     print(f"  pasan el gate (ambas)      : {out['passed_gate'].sum()}/{n}")
+    print(f"  quisieron seguir de turno    : {out['ref_role_leak'].sum()}/{n}"
+          "   (truncado por la red de seguridad)")
     print("\nBASELINE  M(q)   <- control, deberia ser ingles y correcto")
     print(f"  en frances                 : {out['baseline_is_french'].mean():.2%}")
     print(f"  respuesta correcta         : {out['baseline_answer_correct'].mean():.2%}")
+    print(f"  quisieron seguir de turno  : {out['baseline_role_leak'].sum()}/{n}")
     print("=" * 70)
 
     n_train_gate = int(out.iloc[:int(0.8 * n)]["passed_gate"].sum())
