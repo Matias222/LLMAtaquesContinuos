@@ -139,6 +139,31 @@ alli el role leak fue 0.77-1.00 en todo run efectivo y 0.00 en todo run inefecti
 pero estaba confundido con la brevedad de las respuestas porque no se cortaba en
 eot. Aca no.
 
+## Deteccion de idioma: respuestas cortas
+
+Las respuestas a estas preguntas son cortas ("La capitale du Chili est Santiago.",
+6 tokens). El detector tiene que decidir con poca evidencia, asi que:
+
+- **Los acentos son evidencia ADICIONAL de frances, no un fallback.** Frances sin
+  tildes existe y es frecuente aca; tratar los acentos como reemplazo daba score
+  0.00 sobre frances perfecto.
+- `min_tokens = 3`.
+- `language_verdict()` devuelve `fr` / `en` / `unknown`, para no confundir
+  "respondio en ingles" con "demasiado corto para saber" (ej: "Paris.", que se
+  escribe igual en los dos idiomas). El gate exige `fr` explicito.
+
+`python3 checkers.py` corre la regresion contra outputs reales del run.
+
+## Si ya generaste los targets
+
+Las generaciones son deterministas y correctas; si cambia solo el detector, no
+hace falta volver a pagar la GPU:
+
+```bash
+python3 rescore_targets.py --dry_run   # ver el delta
+python3 rescore_targets.py             # aplicar, deja .bak
+```
+
 ## Advertencias
 
 - **La existencia es barata**: 3x3072 = 9216 parametros libres contra ~80 prompts de

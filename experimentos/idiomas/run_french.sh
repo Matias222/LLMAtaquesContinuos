@@ -38,12 +38,12 @@ for L2 in "${L2_VALUES[@]}"; do
   echo "######################################################################"
   mkdir -p "$OUT"
 
-  python3 train_lang_patch.py \
+  python3 -u train_lang_patch.py \
       --model "$MODEL" --device "$DEVICE" \
       --l2_weight "$L2" --output_dir "$OUT" \
       2>&1 | tee "$OUT/train.log"
 
-  python3 eval_lang_patch.py \
+  python3 -u eval_lang_patch.py \
       --model "$MODEL" --device "$DEVICE" \
       --patch "$OUT/lang_patch.pt" \
       --out_json "$OUT/eval_report.json" \
@@ -53,7 +53,7 @@ for L2 in "${L2_VALUES[@]}"; do
   # Geometria del parche: normas, percentil en vocab, top-dims, vecinos.
   # Sirve para el control negativo del canal sink: convergen estos parches
   # a las mismas dims {2433, 1238, 1659} que los 31 de navidad?
-  python3 "$ROOT/legacy/inspect_xmas_patch.py" \
+  python3 -u "$ROOT/legacy/inspect_xmas_patch.py" \
       --model "$MODEL" \
       --patch "$OUT/lang_patch.pt" \
       --out "$OUT/inspect_report.json" \

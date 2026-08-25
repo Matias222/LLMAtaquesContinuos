@@ -25,8 +25,8 @@ import os
 import pandas as pd
 import tqdm
 
-from checkers import (answer_correct, french_score, is_french, load_questions,
-                      truncate_at_role_leak)
+from checkers import (answer_correct, french_score, is_french, language_verdict,
+                      load_questions, truncate_at_role_leak)
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer
 
 INSTRUCTION_FR = "Answer in French."
@@ -84,6 +84,8 @@ def main():
             "ref_role_leak": bool(ref != ref_raw.strip()),
             "baseline_role_leak": bool(base != base_raw.strip()),
             "ref_french_score": round(french_score(ref), 4),
+            "ref_language": language_verdict(ref),
+            "baseline_language": language_verdict(base),
             "ref_is_french": bool(fr_ok),
             "ref_answer_correct": bool(acc_ok),
             "baseline_is_french": bool(is_french(base)),

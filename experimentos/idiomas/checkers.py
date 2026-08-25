@@ -99,27 +99,59 @@ def accent_rate(text: str) -> float:
     return sum(1 for c in text.lower() if c in _ACCENTED) / len(text)
 
 
-def french_score(text: str) -> float:
-    """
-    Score continuo en [0, 1]. 1.0 = frances puro, 0.0 = ingles puro.
+ACCENT_EVIDENCE = 2.0   # cuanto pesa "hay tildes" frente a una palabra funcional
 
-    Basado en el ratio de palabras funcionales exclusivas de cada idioma.
-    Si hay muy pocas palabras funcionales, cae a la tasa de acentos.
+
+def language_evidence(text: str):
+    """
+    (evidencia_frances, evidencia_ingles).
+
+    Los acentos NO son un fallback sino evidencia ADICIONAL de frances: una
+    respuesta corta como "La capitale du Chili est Santiago." tiene fr=3, en=0 y
+    cero tildes, y eso ya alcanza para decidir. Tratar los acentos como
+    reemplazo (la version anterior) tiraba esa evidencia y daba score 0.0 sobre
+    frances perfecto.
     """
     toks = _tokens(text)
-    fr = sum(1 for t in toks if t in FR_WORDS)
-    en = sum(1 for t in toks if t in EN_WORDS)
-    if fr + en >= 4:
-        return fr / (fr + en)
-    # Fallback: sin suficientes palabras funcionales, usamos acentos.
-    return min(1.0, accent_rate(text) / 0.03)
+    fr = float(sum(1 for t in toks if t in FR_WORDS))
+    en = float(sum(1 for t in toks if t in EN_WORDS))
+    if accent_rate(text) >= 0.01:
+        fr += ACCENT_EVIDENCE
+    return fr, en
 
 
-def is_french(text: str, threshold: float = 0.6, min_tokens: int = 8) -> bool:
-    """Booleano de compliance. min_tokens evita clasificar outputs vacios."""
+def french_score(text: str) -> float:
+    """
+    Score continuo en [0, 1]. 1.0 = frances, 0.0 = ingles.
+
+    Devuelve 0.5 (indecidible) si no hay ninguna evidencia en ningun sentido,
+    que es el caso de respuestas como "Paris." donde las dos lenguas coinciden.
+    Usa language_verdict() si necesitas distinguir ese caso.
+    """
+    fr, en = language_evidence(text)
+    if fr + en == 0:
+        return 0.5
+    return fr / (fr + en)
+
+
+def language_verdict(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
+    """'fr' | 'en' | 'unknown'. Separa "respondio en ingles" de "muy corto para saber"."""
     if len(_tokens(text)) < min_tokens:
-        return False
-    return french_score(text) >= threshold
+        return "unknown"
+    fr, en = language_evidence(text)
+    if fr + en == 0:
+        return "unknown"
+    score = fr / (fr + en)
+    if score >= threshold:
+        return "fr"
+    if score <= 1.0 - threshold:
+        return "en"
+    return "unknown"
+
+
+def is_french(text: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
+    """Booleano de compliance."""
+    return language_verdict(text, threshold, min_tokens) == "fr"
 
 
 # ---------------------------------------------------------------------------
@@ -186,6 +218,46 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- regresion: outputs reales del run de targets ---")
+    reales_fr = [
+        "C'est facile! 100 divise par 4 equivaut a 25.",
+        "Le capitol de Kenya est Nairobi.",
+        "La capitale du Chili est Santiago.",
+        "Le symbole chimique du potassium est K.",
+        "La capitale de la France est Paris.",
+        "La capitale de la Norvege est Oslo.",
+        "Le symbole chimique de l'acier est Fe.",
+        "C'est Pablo Picasso qui a peint Guernica.",
+        "Le plus grand desert chaud d'Afrique est le Sahara.",
+        "L'Apollo 11 a atterri sur la Lune en 1969.",
+        "Un hexagone a 6 cotes.",
+        "C'est Uranus.",
+        "Neuf carre est egal a 81.",
+        "La formule chimique de l'eau est H2O.",
+        "Le mur de Berlin a tombe en 1989.",
+    ]
+    reales_en = [
+        "The capital of Kenya is Nairobi.",
+        "The chemical symbol for gold is Au.",
+        "The capital of France is Paris.",
+        "A hexagon has 6 sides.",
+        "The square root of 81 is 9.",
+        "The chemical symbol for potassium is K.",
+        "World War II ended in 1945. The war in Europe ended on May 8, 1945.",
+        "The largest hot desert in Africa is the Sahara Desert, which covers 9,200,000 km2.",
+    ]
+    fr_ok = sum(1 for t in reales_fr if is_french(t))
+    en_ok = sum(1 for t in reales_en if not is_french(t))
+    print(f"  frances reconocido : {fr_ok}/{len(reales_fr)}")
+    print(f"  ingles rechazado   : {en_ok}/{len(reales_en)}")
+    for t in reales_fr:
+        if not is_french(t):
+            print(f"    FALLO FR: score={french_score(t):.2f} {t!r}")
+    for t in reales_en:
+        if is_french(t):
+            print(f"    FALLO EN: score={french_score(t):.2f} {t!r}")
+    print(f"  indecidibles: {[t for t in reales_fr + reales_en if language_verdict(t) == 'unknown']}")
 
     print("\n--- truncado de fuga de rol ---")
     leaks = [
