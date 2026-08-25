@@ -1,0 +1,121 @@
+# Existencia de un parche aditivo de idioma
+
+**Pregunta**: existe un vector `v` que, sumado a los embeddings de una pregunta `q`,
+haga que el modelo responda en frances — sin que la instruccion "Answer in French."
+este en el contexto, y generalizando a preguntas nunca vistas?
+
+Es el paso de calibracion (`C1`, existencia) antes del experimento que importa,
+que es la composicion `v_FR + v_LC`.
+
+## Por que este diseno y no el de navidad
+
+| | navidad | idiomas |
+|---|---|---|
+| targets | CSV curado a mano | **el modelo se los genera**: `y = M([FR ; q])` |
+| compliance | lexicon de palabras navidenas | `is_french()` + score continuo |
+| fidelidad | proxy lexico contra el baseline | **accuracy verificable** contra la respuesta correcta |
+| referencia | ninguna | **`M([FR ; q])`**, el techo natural |
+
+La referencia es lo que faltaba. Sin ella no se puede saber si una caida de accuracy
+la causa el parche o la instruccion misma.
+
+Las 100 preguntas de `questions.csv` tienen respuestas **invariantes al idioma**
+(nombres propios, anios, simbolos quimicos, numeros), asi que la misma metrica de
+accuracy funciona en ingles y en frances. Donde la forma francesa difiere, la
+columna `aliases` la lista explicitamente.
+
+## Objetivo de entrenamiento
+
+```
+L = CE(logits_parcheados, y_frances_completo) + lambda_L2 * ||v||^2
+```
+
+Sin objetivo de prefijo: no hay ningun target lexico fijo que inducir, asi que el
+prefix hack no es una solucion alcanzable. Optimizador sign-SGD, identico a legacy.
+
+Hiperparametros copiados de `resultados/primera_parte/noprefix_l2_0.08`, el mejor
+run noprefix de navidad (53% de compliance en held-out):
+
+```
+num_epochs=5   num_steps_per_prompt=75   num_patch_positions=3
+coherence_weight=1.0   prefix_match_length=0   step_size=0.00025   split=0.8
+```
+
+Lo unico que se barre es `l2_weight` en **{0.045, 0.08, 0.1}** — los mismos tres
+valores, para que los numeros sean comparables run a run.
+
+## Correr
+
+```bash
+bash run_french.sh /ruta/al/modelo/Llama-3.2-3B-Instruct
+```
+
+Hace: targets -> (train + eval + inspect) x 3 L2 -> tabla resumen.
+Resultados en `runs/french_l2_<L2>/`.
+
+Por partes:
+
+```bash
+python3 generate_targets.py  --model $M                              # paso 0
+python3 train_lang_patch.py  --model $M --l2_weight 0.08 --output_dir runs/french_l2_0.08
+python3 eval_lang_patch.py   --model $M --patch runs/french_l2_0.08/lang_patch.pt \
+                             --out_json runs/french_l2_0.08/eval_report.json \
+                             --out_md   runs/french_l2_0.08/eval_report.md
+python3 summarize.py "runs/*/eval_report.json"
+```
+
+Dose-response (despues, sobre el mejor parche):
+
+```bash
+for a in 0.5 1.0 1.75 2.5; do
+  python3 eval_lang_patch.py --model $M --patch runs/french_l2_0.08/lang_patch.pt \
+      --scale $a --out_json runs/scale_$a.json --out_md runs/scale_$a.md
+done
+```
+
+## Como leer la salida
+
+`generate_targets.py` imprime primero el gate de calidad. **Si la referencia
+`M([FR;q])` no llega a ~90% de frances y ~80% de accuracy, parar**: el problema
+esta en la instruccion o en el dataset, no en el parche, y entrenar sobre esos
+targets no informa nada.
+
+`summarize.py` da la tabla final:
+
+| columna | que mirar |
+|---|---|
+| `FR patch` vs `FR ref` | cuanta compliance recupera el parche respecto del techo |
+| `acc patch` vs `acc ref` | si el parche degrada **mas** que la instruccion en texto |
+| `dCE` | negativo = el parche acerca el modelo al frances de referencia |
+
+**Vara de comparacion**: navidad noprefix dio 53% de compliance en held-out.
+Frances por encima de eso significa que el canal transporta idioma mas facil que
+estilo; por debajo, que lo transporta peor. Los dos casos son resultado.
+
+**Regla de decision**: held-out >= 70% de compliance con norma en percentil <1% del
+vocabulario y accuracy cerca de la referencia -> existencia establecida, se pasa a
+composicion. No gastar mas de estos 3 runs aca.
+
+## Archivos
+
+| archivo | rol |
+|---|---|
+| `questions.csv` | 100 preguntas + respuesta + alias franceses. Barajado con seed=42 (el split es posicional, no puede quedar ordenado por categoria) |
+| `checkers.py` | `is_french`, `french_score`, `answer_correct`. `python3 checkers.py` corre su auto-test |
+| `lm.py` | carga de modelo, generacion greedy desde embeddings, aplicacion del parche, CE de un target |
+| `generate_targets.py` | paso 0: genera `y = M([FR;q])` + baseline + gate de calidad |
+| `train_lang_patch.py` | paso 1: teacher forcing con gradiente (sign-SGD) |
+| `eval_lang_patch.py` | paso 2: las tres condiciones sobre held-out |
+| `summarize.py` | tabla comparativa de los 3 L2 |
+| `run_french.sh` | orquestador |
+
+## Advertencias
+
+- **La existencia es barata**: 3x3072 = 9216 parametros libres contra ~80 prompts de
+  entrenamiento. Un parche siempre existe en train. El resultado vive
+  exclusivamente en el held-out, que es lo unico que reporta el eval.
+- **Boilerplate**: si todas las respuestas francesas arrancan igual, el parche puede
+  aprender la plantilla en vez de "hablá francés". Por eso las preguntas son de
+  tipos variados y por eso la accuracy se mide aparte de la compliance.
+- **El gate solo filtra train**, nunca el held-out. Filtrar el held-out inflaria los
+  numeros.
