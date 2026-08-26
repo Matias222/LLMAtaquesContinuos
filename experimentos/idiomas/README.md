@@ -86,7 +86,8 @@ targets no informa nada.
 |---|---|
 | `FR patch` vs `FR ref` | cuanta compliance recupera el parche respecto del techo |
 | `acc patch` vs `acc ref` | si el parche degrada **mas** que la instruccion en texto |
-| `dCE` | negativo = el parche acerca el modelo al frances de referencia |
+| `dCE head` | costo del **cambio** de idioma. Es la señal real |
+| `dCE all` | diluida; sirve solo para comparar con corridas viejas |
 
 **Vara de comparacion**: navidad noprefix dio 53% de compliance en held-out.
 Frances por encima de eso significa que el canal transporta idioma mas facil que
@@ -138,6 +139,29 @@ esa señal ya es limpia, y es directamente comparable con el hallazgo de navidad
 alli el role leak fue 0.77-1.00 en todo run efectivo y 0.00 en todo run inefectivo,
 pero estaba confundido con la brevedad de las respuestas porque no se cortaba en
 eot. Aca no.
+
+## Por que la CE se parte en head y tail
+
+`nll_of_target` mide con **teacher forcing**: le metemos la respuesta francesa
+entera y preguntamos que probabilidad le asigna token a token. En cada paso el
+modelo ve el prefijo frances *correcto*.
+
+Consecuencia: el modelo paga el costo de CAMBIAR de idioma una sola vez, en los
+primeros tokens. Despues, "continua esta oracion en frances" es trivial. Una
+perplejidad de ~16 sobre texto frances es simplemente la perplejidad normal del
+frances para este modelo: la CE mide **"este texto es plausible"**, no
+**"lo habrias elegido"**.
+
+Como la decision de idioma vive en 2-3 tokens de ~20, promediar sobre toda la
+respuesta diluye la señal ~7x. Por eso el reporte separa:
+
+- **head** (primeros `--head_k`, default 5): donde vive la decision de idioma
+- **tail**: costo de continuacion, casi insensible al parche
+
+`dCE head` es la metrica graduada util. `dCE all` queda por continuidad.
+
+Esto tampoco reemplaza a `is_french` sobre generacion libre, que es el unico
+numero que dice si el modelo **realmente** produce frances por su cuenta.
 
 ## Deteccion de idioma: respuestas cortas
 

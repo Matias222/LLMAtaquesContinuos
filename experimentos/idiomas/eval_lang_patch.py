@@ -39,6 +39,8 @@ def main():
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--num_tokens", type=int, default=100)
     ap.add_argument("--temperature", type=float, default=0.0)
+    ap.add_argument("--head_k", type=int, default=5,
+                    help="cuantos tokens iniciales cuentan como 'head' (decision de idioma)")
     ap.add_argument("--scale", type=float, default=1.0,
                     help="escala alfa aplicada al parche (dose-response)")
     ap.add_argument("--device", default="cuda:0")
@@ -83,14 +85,27 @@ def main():
         rec["patched_role_leak"] = bool(patched != patched_raw.strip())
         rows.append(rec)
 
-        nll_b.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=None))
+        nll_b.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=None,
+                                   head_k=args.head_k))
         nll_p.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=patch,
-                                   num_patch_positions=args.num_patch_positions))
+                                   num_patch_positions=args.num_patch_positions,
+                                   head_k=args.head_k))
+        rec["nll_baseline"] = nll_b[-1]
+        rec["nll_patched"] = nll_p[-1]
+
+    def avg(dicts, key):
+        vals = [d[key] for d in dicts if d[key] == d[key]]   # descarta nan
+        return sum(vals) / len(vals) if vals else float("nan")
 
     metrics = {c: score_rows(rows, c) for c, _ in CONDITIONS}
     metrics.update({
-        "nll_fr_baseline": sum(nll_b) / len(nll_b),
-        "nll_fr_patched": sum(nll_p) / len(nll_p),
+        "nll_fr_baseline": avg(nll_b, "all"),
+        "nll_fr_patched": avg(nll_p, "all"),
+        "nll_fr_head_baseline": avg(nll_b, "head"),
+        "nll_fr_head_patched": avg(nll_p, "head"),
+        "nll_fr_tail_baseline": avg(nll_b, "tail"),
+        "nll_fr_tail_patched": avg(nll_p, "tail"),
+        "head_k": args.head_k,
     })
 
     report = {
@@ -122,9 +137,13 @@ def main():
         print(f"{label:<26}{c['is_french']:>10.1%}{c['french_score']:>11.3f}"
               f"{c['answer_correct']:>10.1%}{c['role_leak']:>8.0%}")
     print("-" * 70)
-    print(f"CE target FR   sin parche={metrics['nll_fr_baseline']:.4f}  "
-          f"con parche={metrics['nll_fr_patched']:.4f}  "
-          f"delta={metrics['nll_fr_patched'] - metrics['nll_fr_baseline']:+.4f}")
+    print(f"{'CE target FR':<26}{'sin parche':>12}{'con parche':>12}{'delta':>10}")
+    for lbl, kb, kp in [(f"head (primeros {args.head_k})", "nll_fr_head_baseline", "nll_fr_head_patched"),
+                        ("tail (el resto)", "nll_fr_tail_baseline", "nll_fr_tail_patched"),
+                        ("toda la respuesta", "nll_fr_baseline", "nll_fr_patched")]:
+        print(f"{lbl:<26}{metrics[kb]:>12.4f}{metrics[kp]:>12.4f}"
+              f"{metrics[kp] - metrics[kb]:>+10.4f}")
+    print("  el head es donde vive la decision de idioma; el tail casi no deberia moverse")
     print("=" * 70)
     print(f"\nReportes: {args.out_json}\n          {args.out_md}")
 

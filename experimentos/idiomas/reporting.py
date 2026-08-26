@@ -40,10 +40,22 @@ def write_markdown(report, path):
         L.append(f"| {label} | {c['is_french']:.2%} | {c['french_score']:.3f} "
                  f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
     L.append("")
-    L.append(f"- CE del target frances SIN parche: {m['nll_fr_baseline']:.4f}")
-    L.append(f"- CE del target frances CON parche: {m['nll_fr_patched']:.4f}")
-    L.append(f"- delta: {m['nll_fr_patched'] - m['nll_fr_baseline']:+.4f}"
-             "  (negativo = el parche acerca al frances)")
+    k = m.get("head_k", 5)
+    L.append(f"### CE del target frances (teacher forcing)")
+    L.append("")
+    L.append("| tramo | sin parche | con parche | delta |")
+    L.append("|---|---|---|---|")
+    for lbl, kb, kp in [(f"head (primeros {k} tokens)", "nll_fr_head_baseline", "nll_fr_head_patched"),
+                        ("tail (el resto)", "nll_fr_tail_baseline", "nll_fr_tail_patched"),
+                        ("toda la respuesta", "nll_fr_baseline", "nll_fr_patched")]:
+        if kb not in m:
+            continue
+        L.append(f"| {lbl} | {m[kb]:.4f} | {m[kp]:.4f} | {m[kp] - m[kb]:+.4f} |")
+    L.append("")
+    L.append("La decision de idioma vive en el **head**. Como esto se mide con teacher "
+             "forcing, el modelo ve el prefijo frances correcto en cada paso, asi que "
+             "el tail solo mide 'continuar una oracion francesa', que es facil y casi "
+             "no deberia moverse. Promediar sobre toda la respuesta diluye la señal.")
     L.append("")
     L.append("## Outputs")
     L.append("")
@@ -88,8 +100,13 @@ if __name__ == "__main__":
         rows.append(rec)
 
     metrics = {c: score_rows(rows, c) for c, _ in CONDITIONS}
-    metrics["nll_fr_baseline"] = 3.9412
-    metrics["nll_fr_patched"] = 2.1077
+    metrics["nll_fr_baseline"] = 2.7855
+    metrics["nll_fr_patched"] = 2.1063
+    metrics["nll_fr_head_baseline"] = 6.4120
+    metrics["nll_fr_head_patched"] = 2.3010
+    metrics["nll_fr_tail_baseline"] = 1.9040
+    metrics["nll_fr_tail_patched"] = 2.0150
+    metrics["head_k"] = 5
     report = {"patch_path": "/fake/lang_patch.pt", "model_path": "/fake/model",
               "patch_norm": 0.8734, "patch_shape": [1, 3, 3072], "n_heldout": len(rows),
               "config": {"num_patch_positions": 3, "scale": 1.0},

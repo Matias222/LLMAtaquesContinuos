@@ -155,12 +155,20 @@ def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperat
 
 @torch.no_grad()
 def nll_of_target(model, tokenizer, instruction, target, device,
-                  patch=None, num_patch_positions=3):
+                  patch=None, num_patch_positions=3, head_k=5):
     """
     Cross-entropy por token del `target` bajo el modelo, con o sin parche.
 
-    Metrica graduada: cuanto le cuesta al modelo producir la respuesta francesa
-    de referencia. Complementa el booleano is_french.
+    Devuelve {"all", "head", "tail", "n"}.
+
+    El corte head/tail importa: esto se mide con teacher forcing, o sea que el
+    modelo ve el prefijo frances correcto en cada paso. El costo de CAMBIAR de
+    idioma se paga una sola vez, en los primeros tokens; despues "continua esta
+    oracion en frances" es trivial para el modelo. Promediar sobre toda la
+    respuesta diluye la señal ~7x (2-3 tokens de decision sobre ~20).
+
+    head = primeros head_k tokens -> ahi vive la decision de idioma
+    tail = el resto              -> costo de continuacion, casi insensible al parche
     """
     import torch.nn as nn
 
@@ -173,8 +181,16 @@ def nll_of_target(model, tokenizer, instruction, target, device,
     logits = model(inputs_embeds=embeds).logits
     ls = sm._loss_slice
     n = min(ls.stop - ls.start, len(target_tokens))
+    nan = float("nan")
     if n <= 0:
-        return float("nan")
-    return nn.CrossEntropyLoss()(
+        return {"all": nan, "head": nan, "tail": nan, "n": 0}
+    per_tok = nn.CrossEntropyLoss(reduction="none")(
         logits[0, ls.start:ls.start + n, :], target_tokens[:n]
-    ).item()
+    )
+    k = min(head_k, n)
+    return {
+        "all": per_tok.mean().item(),
+        "head": per_tok[:k].mean().item(),
+        "tail": per_tok[k:].mean().item() if n > k else nan,
+        "n": int(n),
+    }
