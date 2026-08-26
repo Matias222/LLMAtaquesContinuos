@@ -140,6 +140,59 @@ alli el role leak fue 0.77-1.00 en todo run efectivo y 0.00 en todo run inefecti
 pero estaba confundido con la brevedad de las respuestas porque no se cortaba en
 eot. Aca no.
 
+## Por que el barrido v1 se estanco
+
+El primer barrido llego a su meseta en la epoch 1 y despues oscilo sin tendencia:
+
+| epoch | held-out CE | delta |
+|---|---|---|
+| 1 | 2.106 | -0.679 |
+| 2 | 2.340 | -0.446 |
+| 3 | 2.260 | -0.526 |
+
+Efecto real estable (delta ~ -0.55, perplejidad 16.2 -> 9.3) pero **sin mejora
+con mas entrenamiento**. Tres causas, ninguna es el L2:
+
+1. **El optimizador orbita, no converge.** sign-SGD mueve cada coordenada
+   exactamente `step_size` en cada paso, siempre, sin annealing. Nunca se
+   asienta: la norma oscilo +-60% *dentro* de la epoch 1.
+2. **Optimizacion secuencial por prompt.** 75 pasos sobre UN prompt antes de
+   pasar al siguiente: el parche va a los tirones detras de cada ejemplo en vez
+   de optimizar el objetivo promedio. Con `CE=0.046` en algunos prompts, eso es
+   memorizacion de un solo ejemplo.
+3. **Validacion con n=8.** Demasiado ruidosa para decidir nada.
+
+**El L2 NO es la causa y bajarlo no ayuda**: a norma 0.306 el termino
+`lambda*||v||^2` aporta 2.2% de la loss con lambda=0.045 y 4.8% con lambda=0.1.
+Con sign-SGD el efecto real es todavia menor, porque solo cuenta si alcanza a
+voltear el signo de una coordenada. La norma es chica porque el gradiente de CE
+no la empuja mas, no porque el L2 la aplaste.
+
+### Config v2
+
+`train_lang_patch.py` acepta cuatro flags nuevos, **todos con default =
+comportamiento v1**, asi que los runs viejos siguen siendo reproducibles:
+
+| flag | default | que hace |
+|---|---|---|
+| `--batch_size` | 1 | acumula gradiente sobre B prompts y da UN paso. Optimiza el promedio |
+| `--step_decay` | none | `cosine` anilla el paso a 0: la orbita se cierra |
+| `--val_n` | 8 | prompts de validacion |
+| `--save_best` | off | guarda el parche con mejor head CE, no un punto arbitrario de la orbita |
+
+La validacion ahora reporta head y all por separado.
+
+`bash run_french_v2.sh` corre la config recomendada:
+
+```
+--batch_size 8 --num_steps_per_prompt 12 --num_epochs 8
+--step_decay cosine --val_n 20 --save_best
+```
+
+Ojo: batchear es **neutro en computo**. `N/B batches x S pasos x B forwards =
+N*S forwards`, igual que antes. Y con S=12 en vez de 75, cada epoch cuesta 120
+pasos en vez de 5775: v2 entero sale mas barato que v1.
+
 ## Por que la CE se parte en head y tail
 
 `nll_of_target` mide con **teacher forcing**: le metemos la respuesta francesa
