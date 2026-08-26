@@ -24,11 +24,27 @@ import shutil
 import pandas as pd
 import tqdm
 
-from checkers import is_french, language_verdict, truncate_at_role_leak
+from checkers import (check_translation, language_verdict,
+                      truncate_at_role_leak)
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer
 
-TEMPLATE = ("Translate the following question into French. "
-            "Output only the translation, nothing else.\n\n{q}")
+# Few-shot. Con instruccion zero-shot el modelo RESPONDE la pregunta en frances
+# en vez de traducirla ("Le desert le plus grand en Afrique est le Sahara." en
+# lugar de "Quel est le plus grand desert chaud d'Afrique ?"), y como el
+# resultado es frances valido el gate de idioma lo dejaba pasar.
+TEMPLATE = (
+    "Translate the English question into French. Do NOT answer it.\n"
+    "Output only the French question.\n\n"
+    "English: What is the capital of Japan?\n"
+    "French: Quelle est la capitale du Japon ?\n\n"
+    "English: Who wrote Hamlet?\n"
+    "French: Qui a ecrit Hamlet ?\n\n"
+    "English: How does digestion work?\n"
+    "French: Comment fonctionne la digestion ?\n\n"
+    "English: {q}\nFrench:"
+)
+
+
 
 
 def main():
@@ -38,37 +54,52 @@ def main():
     ap.add_argument("--targets", default="targets_french.csv")
     ap.add_argument("--num_tokens", type=int, default=60)
     ap.add_argument("--device", default="cuda:0")
+    ap.add_argument("--out", default=None,
+                    help="por defecto reescribe --targets in-place (deja .bak)")
     args = ap.parse_args()
 
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
 
-    fr, ok = [], 0
+    fr, oks, motivos = [], [], []
     for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="traduciendo"):
         t = truncate_at_role_leak(generate_one(
             model, tokenizer, TEMPLATE.format(q=r["prompt"]), args.device,
             args.num_tokens, 0.0, clean=False))
-        # El modelo a veces envuelve la traduccion en comillas o la precede de
-        # un preambulo; nos quedamos con la primera linea no vacia.
-        t = next((ln.strip().strip('"') for ln in t.split("\n") if ln.strip()), "")
-        fr.append(t)
-        ok += is_french(t)
+        # Primera linea no vacia, sin comillas ni prefijo "French:".
+        t = next((ln.strip() for ln in t.split("\n") if ln.strip()), "")
+        if t.lower().startswith("french:"):
+            t = t.split(":", 1)[1].strip()
+        t = t.strip('"').strip()
+        ok, motivo = check_translation(r["prompt"], t, r.get("answer", ""),
+                                       r.get("aliases", ""))
+        fr.append(t); oks.append(ok); motivos.append(motivo)
 
     df["prompt_fr"] = fr
     df["prompt_fr_language"] = [language_verdict(t) for t in fr]
+    df["prompt_fr_ok"] = oks
 
     n = len(df)
-    print(f"\ntraducciones en frances: {ok}/{n} ({ok / n:.0%})")
-    print("distribucion:", df["prompt_fr_language"].value_counts().to_dict())
-    malas = df[df["prompt_fr_language"] != "fr"]
-    if len(malas):
-        print(f"\nno son frances ({len(malas)}), no las use para la direccion:")
-        for _, r in malas.head(8).iterrows():
-            print(f"  {r['prompt'][:44]:<44} -> {r['prompt_fr'][:56]}")
+    print(f"\ntraducciones usables: {sum(oks)}/{n} ({sum(oks) / n:.0%})")
+    from collections import Counter
+    print("motivos de rechazo:", {k: v for k, v in Counter(motivos).items() if k != "ok"})
+    malas = [(r["prompt"], r["prompt_fr"], m)
+             for (_, r), m, o in zip(df.iterrows(), motivos, oks) if not o]
+    if malas:
+        print(f"\nrechazadas ({len(malas)}), no entran en la direccion d_frq:")
+        for p, t, m in malas[:10]:
+            print(f"  [{m}]")
+            print(f"     {p[:60]}")
+            print(f"  -> {t[:60]}")
+    if sum(oks) < 0.5 * n:
+        print("\n  AVISO: menos de la mitad usables. d_frq va a ser ruidosa;")
+        print("         revisa el TEMPLATE antes de correr layer_analysis.")
 
-    shutil.copy(args.targets, args.targets + ".bak")
-    df.to_csv(args.targets, sep=";", index=False)
-    print(f"\nActualizado {args.targets} (backup .bak)")
+    dest = args.out or args.targets
+    if dest == args.targets:
+        shutil.copy(args.targets, args.targets + ".bak")
+    df.to_csv(dest, sep=";", index=False)
+    print(f"\nEscrito {dest}" + (" (backup .bak)" if dest == args.targets else ""))
     print("\nEjemplos:")
     for _, r in df.head(5).iterrows():
         print(f"  {r['prompt'][:46]:<46} -> {r['prompt_fr'][:56]}")

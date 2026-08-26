@@ -148,7 +148,10 @@ def main():
                     / h_clean.norm(dim=1).cpu().clamp(min=1e-6)).numpy())
 
         # (B) la misma pregunta, en frances
-        if tiene_fr and str(row.get("prompt_fr_language", "fr")) == "fr" \
+        # prompt_fr_ok viene del gate de translate_questions: frances, sigue
+        # siendo una pregunta, y NO contiene la respuesta. El veredicto de
+        # idioma solo no alcanza: el modelo a veces responde en vez de traducir.
+        if tiene_fr and str(row.get("prompt_fr_ok", "True")).lower() == "true" \
                 and str(row["prompt_fr"]).strip():
             h_frq = hidden_at_last(model, tokenizer, row["prompt_fr"], args.device)
             d_frq.append((h_frq - h_clean).cpu())

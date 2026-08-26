@@ -266,6 +266,32 @@ def answer_correct(text: str, answer: str, aliases: str = "") -> bool:
     return any(_candidate_matches(text, c) for c in cands)
 
 
+def check_translation(src_q, tgt, answer, aliases):
+    """
+    (ok, motivo). Tres filtros; el de idioma solo no alcanza.
+
+    El decisivo es el tercero: si la 'traduccion' contiene la respuesta
+    correcta, no es una traduccion de la pregunta sino una respuesta.
+    """
+    if len(tgt.split()) < 2:
+        return False, "vacia"
+    if fold(tgt).strip(" ?.!") == fold(src_q).strip(" ?.!"):
+        return False, "eco del ingles, no tradujo"
+    # Criterio invertido a proposito: lo que hay que atrapar es que se haya
+    # quedado en ingles, no exigir prueba POSITIVA de frances. Una traduccion
+    # corta como "Expliquez la physique quantique" es indecidible por palabras
+    # funcionales (su unica funcional, "la", es compartida con el espanol) y
+    # exigir is_french la rechazaria siendo correcta.
+    v = language_verdict(tgt)
+    if v in ("en", "es"):
+        return False, f"quedo en {v}"
+    if src_q.strip().endswith("?") and not tgt.strip().endswith("?"):
+        return False, "no quedo como pregunta"
+    if str(answer).strip() and answer_correct(tgt, answer, aliases):
+        return False, "contiene la respuesta (es una respuesta, no una traduccion)"
+    return True, "ok"
+
+
 # ---------------------------------------------------------------------------
 # Dataset
 # ---------------------------------------------------------------------------
@@ -296,6 +322,25 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- gate de traducciones ---")
+    tr = [
+        ("What is the largest hot desert in Africa?",
+         "Le desert le plus grand en Afrique est le Sahara.", "Sahara", "", False),
+        ("What is the largest hot desert in Africa?",
+         "Quel est le plus grand desert chaud d'Afrique ?", "Sahara", "", True),
+        ("What is the capital of Japan?", "Quelle est la capitale du Japon ?", "Tokyo", "", True),
+        ("What is the capital of Japan?", "La capitale du Japon est Tokyo.", "Tokyo", "", False),
+        ("What is the capital of Japan?", "What is the capital of Japan?", "Tokyo", "", False),
+        ("Explain quantum physics", "Expliquez la physique quantique", "", "", True),
+    ]
+    okt = 0
+    for s, t, a, al, esperado in tr:
+        got, motivo = check_translation(s, t, a, al)
+        okt += got == esperado
+        print(f"  [{'OK  ' if got == esperado else 'FAIL'}] {'acepta' if got else 'rechaza'}: "
+              f"{t[:46]:<48}{'' if got else motivo}")
+    print(f"  {okt}/{len(tr)} correctos")
 
     print("\n--- metricas de preguntas abiertas ---")
     a = "La photosynthese permet aux plantes de convertir la lumiere du soleil en energie chimique."

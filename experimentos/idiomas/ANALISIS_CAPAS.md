@@ -49,9 +49,34 @@ Es un vector sumado a los embeddings de tres tokens de la pregunta. No puede
 territorio francés. O sea que a priori es más plausible que se parezca a
 `h_frq` que a `h_instr`.
 
-`q_fr` lo genera `translate_questions.py` con el mismo modelo, con gate de
-idioma sobre la traducción: si la traducción no sale en francés, esa fila no
-se usa para estimar la dirección.
+`q_fr` lo genera `translate_questions.py` con el mismo modelo. El prompt es
+few-shot, y hay tres filtros sobre cada traducción, porque el gate de idioma
+solo NO alcanza:
+
+    1. no es un eco del inglés (no tradujo nada)
+    2. el veredicto de idioma no es `en` ni `es`
+    3. si el original terminaba en "?", la traducción también
+    4. la traducción NO contiene la respuesta correcta
+
+El filtro 4 es el decisivo. Con un prompt zero-shot el modelo **responde** la
+pregunta en francés en vez de traducirla:
+
+    prompt      What is the largest hot desert in Africa?
+    salida      Le désert le plus grand en Afrique est le Sahara.
+    correcto    Quel est le plus grand désert chaud d'Afrique ?
+
+Eso es francés válido, así que el gate de idioma lo dejaba pasar. Pero
+invalidaría `d_frq` por completo: en vez de "la misma pregunta en francés"
+mediría "una oración francesa que ya contiene la respuesta", que es un estado
+interno totalmente distinto y encima con leak del target.
+
+Nótese que el filtro 2 está invertido a propósito: se rechaza lo que es
+claramente inglés, en vez de exigir prueba positiva de francés. Una traducción
+corta como "Expliquez la physique quantique" es indecidible por palabras
+funcionales (su única funcional, `la`, es compartida con el español) y exigir
+`is_french` la rechazaría siendo correcta.
+
+Solo las filas con `prompt_fr_ok == True` entran en la estimación de `d_frq`.
 
 ---
 
