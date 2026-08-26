@@ -29,7 +29,7 @@ for L2 in 0.045 0.08; do
   python3 -u train_lang_patch.py \
       --model "$MODEL" --device "$DEVICE" \
       --l2_weight "$L2" --output_dir "$OUT" \
-      --batch_size 8 --num_steps_per_prompt 12 --num_epochs 8 \
+      --batch_size 8 --num_steps_per_prompt 20 --num_epochs 8 \
       --step_decay cosine --val_n 20 --save_best \
       2>&1 | tee "$OUT/train.log"
 
