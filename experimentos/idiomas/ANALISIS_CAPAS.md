@@ -144,6 +144,48 @@ el parche no informa nada, y hay que decirlo en vez de leer diferencias que no
 existen. Sin esta columna, la comparación entre las otras dos es
 ininterpretable.
 
+### Por qué diferencias y no estados absolutos
+
+Pregunta razonable: ¿por qué `cos(h_patch - h_clean, d_frq)` y no directamente
+`cos(h_patch, h_frq)`?
+
+Dos motivos.
+
+**1. El residual stream es anisotrópico.** Todas las activaciones están
+dominadas por una componente compartida grande, independiente del prompt. El
+coseno crudo entre dos estados cualesquiera da ~0.97, así que:
+
+    cos(h_patch, h_frq)  ~ 0.97
+    cos(h_clean, h_frq)  ~ 0.96      <- el control, que NO deberia parecerse
+
+y no se distingue nada. Es el mismo fenómeno que reportan Timkey & van
+Schijndel (2021): unas pocas dimensiones rogue dominan toda medida de coseno y
+esconden la estructura real. Restar una línea de base común es la forma
+estándar de sacárselas de encima.
+
+El script imprime esas dos columnas crudas como diagnóstico, así que el punto
+se verifica con datos en vez de asumirse.
+
+**2. No son objetos comparables.** `h_patch` es la última posición de
+`[pregunta en inglés + parche]`; `h_frq` es la última posición de
+`[pregunta en francés]`. Secuencias distintas, largos distintos, contenido
+distinto. El estado absoluto codifica *qué decía literalmente el prompt*, no
+solo en qué modo está el modelo.
+
+### La asimetría entre los tres deltas
+
+No todos son igual de limpios:
+
+    h_patch - h_clean    mismos tokens, solo cambia el parche     -> limpio
+    h_instr - h_clean    4 tokens de mas                          -> confound chico
+    h_frq   - h_clean    tokens completamente distintos           -> confound grande
+
+Por eso `d_frq` se promedia sobre N preguntas: el contenido específico de cada
+pregunta se cancela y queda lo común, que es "la entrada está en francés". El
+promedio no es cosmético, es lo que hace interpretable la dirección. Un
+`h_frq[i] - h_clean[i]` individual está dominado por el cambio de contenido, no
+por el cambio de idioma.
+
 ---
 
 ## 7. Validación cruzada
@@ -188,9 +230,17 @@ Y tres líneas de resumen:
     -> el parche se parece mas a: <cual>
     las dos referencias entre si: cos medio=<x>
 
+Después, una segunda tabla con el diagnóstico de anisotropía:
+
+    capa  cos(h_patch, h_frq)  cos(h_clean, h_frq)  separacion
+
+Cosenos **crudos**, sin restar la línea de base. Si las dos columnas están cerca
+de 1 y la separación es ~0, eso es la anisotropía del residual stream: el
+estado absoluto no discrimina, y queda justificado trabajar con diferencias.
+
 Más un JSON con los vectores completos (`rel_delta`, `cos_with_instruction`,
-`cos_with_french_question`, `cos_between_references`, `p_fr_clean`,
-`p_fr_patched`, `p_en_patched`).
+`cos_with_french_question`, `cos_between_references`, `raw_cos_patch_frq`,
+`raw_cos_clean_frq`, `p_fr_clean`, `p_fr_patched`, `p_en_patched`).
 
 ---
 

@@ -129,6 +129,10 @@ def main():
     rel, d_patch, d_instr, d_frq = [], [], [], []
     pfr_c, pen_c, pfr_p, pen_p = [], [], [], []
     idx_frq = []
+    # Diagnostico de anisotropia: cosenos CRUDOS, sin restar la linea de base.
+    # Si h_patch~h_frq y h_clean~h_frq dan los dos ~0.97, queda demostrado por
+    # que hay que trabajar con diferencias y no con estados absolutos.
+    raw_pf, raw_cf = [], []
 
     for k, (_, row) in enumerate(tqdm.tqdm(df.iterrows(), total=len(df), desc="capas")):
         q = row["prompt"]
@@ -149,6 +153,9 @@ def main():
             h_frq = hidden_at_last(model, tokenizer, row["prompt_fr"], args.device)
             d_frq.append((h_frq - h_clean).cpu())
             idx_frq.append(k)
+            cs = torch.nn.functional.cosine_similarity
+            raw_pf.append(cs(h_patch, h_frq, dim=1).cpu().numpy())
+            raw_cf.append(cs(h_clean, h_frq, dim=1).cpu().numpy())
 
         f_ids = tokenizer.encode(row["output"][:20], add_special_tokens=False)
         e_ids = tokenizer.encode(row["baseline_en"][:20], add_special_tokens=False)
@@ -174,6 +181,8 @@ def main():
 
     pfr_c, pen_c = np.stack(pfr_c).mean(0), np.stack(pen_c).mean(0)
     pfr_p, pen_p = np.stack(pfr_p).mean(0), np.stack(pen_p).mean(0)
+    raw_pf = np.stack(raw_pf).mean(0) if raw_pf else None
+    raw_cf = np.stack(raw_cf).mean(0) if raw_cf else None
 
     L = len(rel)
     print(f"\n{'capa':>5}{'|d|/|h|':>10}{'cos vs instr':>14}{'cos vs q_fr':>13}"
@@ -185,6 +194,18 @@ def main():
         cr = f"{cos_refs[i]:.4f}" if cos_refs is not None else "-"
         print(f"{i:>5}{rel[i]:>10.4f}{ci:>14}{cf:>13}{cr:>16}"
               f"{pfr_c[i]:>14.4f}{pfr_p[i]:>14.4f}{pen_p[i]:>14.4f}")
+
+    if raw_pf is not None:
+        print(f"\n{'capa':>5}{'cos(h_patch, h_frq)':>22}{'cos(h_clean, h_frq)':>22}"
+              f"{'separacion':>13}")
+        print("-" * 62)
+        for i in range(L):
+            print(f"{i:>5}{raw_pf[i]:>22.4f}{raw_cf[i]:>22.4f}"
+                  f"{raw_pf[i] - raw_cf[i]:>+13.4f}")
+        print("  Cosenos CRUDOS, sin restar la linea de base. Si las dos columnas")
+        print("  estan las dos cerca de 1 y la separacion es ~0, eso ES la")
+        print("  anisotropia del residual stream: el estado absoluto no discrimina")
+        print("  y hay que trabajar con diferencias.")
 
     cross = [i for i in range(L) if pfr_p[i] > pen_p[i]]
     print(f"\nprompts con traduccion usable: {len(d_frq)}/{len(df)}")
@@ -205,6 +226,8 @@ def main():
                "cos_with_instruction": None if cos_instr is None else cos_instr.tolist(),
                "cos_with_french_question": None if cos_frq is None else cos_frq.tolist(),
                "cos_between_references": None if cos_refs is None else cos_refs.tolist(),
+               "raw_cos_patch_frq": None if raw_pf is None else raw_pf.tolist(),
+               "raw_cos_clean_frq": None if raw_cf is None else raw_cf.tolist(),
                "p_fr_clean": pfr_c.tolist(), "p_fr_patched": pfr_p.tolist(),
                "p_en_patched": pen_p.tolist(),
                "n_prompts": len(df), "n_with_translation": len(d_frq),
