@@ -42,6 +42,16 @@ from lm import DEFAULT_MODEL, load_model_and_tokenizer
 
 INSTRUCTION = "Answer this in French."
 
+# Controles. Sin estos no se puede saber si un coseno de 0.78 significa
+# "frances" o simplemente "el modelo responde distinto del baseline ingles".
+# Las tres condiciones originales comparten ese componente trivial.
+#   aleman  -> otro idioma. Si da lo mismo que el frances, el numero no mide idioma.
+#   corto   -> cambio de modo SIN cambio de idioma. Es el piso generico.
+CONTROLES = {
+    "de": "Answer this in German.",
+    "corto": "Answer this in one short sentence.",
+}
+
 
 def cos(a, b):
     """Coseno por capa entre dos matrices [L+1, d]."""
@@ -75,6 +85,8 @@ def main():
     ap.add_argument("--n", type=int, default=40)
     ap.add_argument("--from_layer", type=int, default=15)
     ap.add_argument("--instruction", default=INSTRUCTION)
+    ap.add_argument("--no_controls", action="store_true",
+                    help="saltear las condiciones de control (aleman, respuesta corta)")
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out", default="mean_diff_vectors.json")
@@ -94,24 +106,24 @@ def main():
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
     patch = torch.load(args.patch, map_location=args.device).to(args.device)
 
-    d_patch, d_frq, d_instr = [], [], []
+    ctrl = {} if args.no_controls else CONTROLES
+    D = {k: [] for k in ["patch", "frq", "instr"] + list(ctrl)}
     for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="activaciones"):
         q = r["prompt"]
         h_en = hidden_at_last(model, tokenizer, q, args.device)
-        h_pa = hidden_at_last(model, tokenizer, q, args.device, patch,
-                              args.num_patch_positions)
-        h_fr = hidden_at_last(model, tokenizer, r["prompt_fr"], args.device)
+        D["patch"].append((hidden_at_last(model, tokenizer, q, args.device, patch,
+                                          args.num_patch_positions) - h_en).cpu())
+        D["frq"].append((hidden_at_last(model, tokenizer, r["prompt_fr"],
+                                        args.device) - h_en).cpu())
         # Espacio, no salto de linea.
-        h_in = hidden_at_last(model, tokenizer, f"{args.instruction} {q}", args.device)
-        d_patch.append((h_pa - h_en).cpu())
-        d_frq.append((h_fr - h_en).cpu())
-        d_instr.append((h_in - h_en).cpu())
+        D["instr"].append((hidden_at_last(model, tokenizer, f"{args.instruction} {q}",
+                                          args.device) - h_en).cpu())
+        for k, ins in ctrl.items():
+            D[k].append((hidden_at_last(model, tokenizer, f"{ins} {q}",
+                                        args.device) - h_en).cpu())
 
-    # Los tres vectores medios: [L+1, d]
-    V = {k: torch.stack(v).mean(0) for k, v in
-         (("patch", d_patch), ("frq", d_frq), ("instr", d_instr))}
-    ceil = {k: split_half_ceiling(v) for k, v in
-            (("patch", d_patch), ("frq", d_frq), ("instr", d_instr))}
+    V = {k: torch.stack(v).mean(0) for k, v in D.items()}
+    ceil = {k: split_half_ceiling(v) for k, v in D.items()}
 
     c_pf = cos(V["patch"], V["frq"])
     c_pi = cos(V["patch"], V["instr"])
@@ -158,6 +170,36 @@ def main():
     gana = "PREGUNTA EN FRANCES" if c_pf[rng].mean() > c_pi[rng].mean() else "INSTRUCCION EN TEXTO"
     print(f"\n-> el parche se parece mas a: {gana} "
           f"(diferencia {abs(c_pf[rng].mean() - c_pi[rng].mean()):.3f})")
+    if ctrl:
+        keys = ["patch", "frq", "instr"] + list(ctrl)
+        etiq = {"patch": "parche", "frq": "preg. FR", "instr": "instr. FR",
+                "de": "instr. DE", "corto": "resp. corta"}
+        print("\n" + "=" * 70)
+        print(f"MATRIZ COMPLETA, promedio capas {lo}..{L - 1}")
+        print("  de    = instruccion de responder en ALEMAN  (otro idioma)")
+        print("  corto = responder en una oracion corta      (cambio de modo, mismo idioma)")
+        print()
+        print(" " * 13 + "".join(f"{etiq[k]:>13}" for k in keys))
+        for a in keys:
+            fila = "".join(f"{cos(V[a], V[b])[rng].mean():>13.3f}" for b in keys)
+            print(f"{etiq[a]:<13}{fila}")
+        print()
+        print("Lectura decisiva:")
+        pf = cos(V["patch"], V["frq"])[rng].mean()
+        pd_ = cos(V["patch"], V["de"])[rng].mean()
+        pc = cos(V["patch"], V["corto"])[rng].mean()
+        print(f"  parche~preg.FR    {pf:.3f}")
+        print(f"  parche~instr.DE   {pd_:.3f}   <- si es parecido, el numero NO mide idioma")
+        print(f"  parche~resp.corta {pc:.3f}   <- piso generico de 'responder distinto'")
+        margen = pf - max(pd_, pc)
+        print(f"\n  margen del frances sobre el mejor control: {margen:+.3f}")
+        if margen < 0.05:
+            print("  -> el coseno esta dominado por un componente generico de cambio de")
+            print("     modo, no por el idioma. La comparacion frances-vs-instruccion")
+            print("     no significa nada hasta separar ese componente.")
+        else:
+            print("  -> hay un componente especifico de idioma por encima del piso.")
+
     print("\nComo leerlo:")
     print("  - Escala de referencia (Ball et al. 2406.09289): entre jailbreaks que")
     print("    ellos concluyeron que comparten mecanismo, el coseno da 0.4 a 0.6.")
@@ -175,7 +217,10 @@ def main():
                "ceiling_patch": ceil["patch"].tolist(),
                "ceiling_frq": ceil["frq"].tolist(),
                "ceiling_instr": ceil["instr"].tolist(),
-               "instruction": args.instruction, "patch": args.patch},
+               "instruction": args.instruction, "patch": args.patch,
+               "conditions": list(V),
+               "cos_matrix": {a: {b: cos(V[a], V[b]).tolist() for b in V} for a in V},
+               "ceilings": {k: v.tolist() for k, v in ceil.items()}},
               open(args.out, "w"), indent=2)
     print(f"\nGuardado en {args.out}")
 
