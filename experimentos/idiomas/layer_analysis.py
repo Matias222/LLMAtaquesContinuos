@@ -15,15 +15,29 @@ propaga hasta el punto donde se decide el output.
      la decision de idioma. Los tokens no se hardcodean: se toman del primer
      token de la referencia (frances) y del baseline (ingles) de cada prompt.
 
-  3. alineacion con la direccion de la instruccion  <- la medida central
-     d_l = mean(h[M([FR;q])]) - mean(h[M(q)])  sobre N prompts, o sea como
-     representa el modelo "responde en frances" cuando se lo pedis en texto.
-     Despues: cos(h_patch - h_clean, d_l).
+  3. alineacion con DOS direcciones de referencia   <- la medida central
 
-     Alto en capas medias  -> el parche reconstruye la representacion de la
-                              instruccion: misma via, distinto disparador.
-     Bajo                  -> consigue el mismo comportamiento por otro camino,
-                              y ahi la pregunta es cual.
+     Hay dos maneras distintas de que el modelo termine hablando frances, y son
+     estados internos distintos:
+
+       d_instr = mean(h[M(["Answer in French." + q])]) - mean(h[M(q)])
+           el modelo parsea una directiva meta y la cumple.
+
+       d_frq   = mean(h[M(q_fr)]) - mean(h[M(q)])
+           el modelo EMPAREJA el idioma de la entrada. Sin instruccion de por
+           medio; es el mecanismo mas basico.
+
+     El parche no tiene semantica de instruccion: es un vector sumado a los 3
+     primeros tokens de la pregunta. A priori es mas plausible que empuje esos
+     tokens hacia territorio frances, o sea que haga (d_frq) y no (d_instr).
+
+     Se reportan cos(delta_parche, d_instr), cos(delta_parche, d_frq) y tambien
+     cos(d_instr, d_frq): si las dos referencias ya son casi iguales, la
+     distincion no informa nada y hay que decirlo.
+
+     Los cosenos se calculan con VALIDACION CRUZADA: la direccion se estima en
+     una mitad de los prompts y el coseno se mide en la otra. Sin eso, cada
+     prompt contribuye a su propia referencia y el coseno sale inflado.
 
 Esto es lo que la distancia coseno en el vocabulario no podia contestar: alli se
 compara contra la tabla de embeddings, aca contra una direccion definida por el
@@ -67,6 +81,29 @@ def logit_lens(model, h_layers, tok_fr, tok_en):
     return probs[:, tok_fr].cpu().numpy(), probs[:, tok_en].cpu().numpy()
 
 
+def crossfit_cos(deltas_patch, deltas_ref):
+    """
+    cos(delta_parche, d_ref) con validacion cruzada por mitades.
+
+    d_ref se estima en una mitad de los prompts y el coseno se mide en la otra,
+    y viceversa. Sin esto cada prompt aporta a la direccion contra la que se
+    compara y el coseno sale inflado.
+    """
+    n = len(deltas_patch)
+    if n < 4:
+        return None
+    mitad = n // 2
+    partes = [(list(range(mitad)), list(range(mitad, n))),
+              (list(range(mitad, n)), list(range(mitad)))]
+    vals = []
+    for est, med in partes:
+        d = torch.stack([deltas_ref[i] for i in est]).mean(0)
+        for i in med:
+            vals.append(torch.nn.functional.cosine_similarity(
+                deltas_patch[i], d, dim=1).numpy())
+    return np.stack(vals).mean(0)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -81,13 +118,19 @@ def main():
     args = ap.parse_args()
 
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False).head(args.n)
+    tiene_fr = "prompt_fr" in df.columns
+    if not tiene_fr:
+        print("AVISO: el CSV no tiene columna prompt_fr; solo se mide contra la")
+        print("       instruccion en texto. Corre translate_questions.py primero.")
+
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
     patch = torch.load(args.patch, map_location=args.device).to(args.device)
 
-    rel, deltas, pfr_c, pen_c, pfr_p, pen_p = [], [], [], [], [], []
-    d_sum = None
+    rel, d_patch, d_instr, d_frq = [], [], [], []
+    pfr_c, pen_c, pfr_p, pen_p = [], [], [], []
+    idx_frq = []
 
-    for _, row in tqdm.tqdm(df.iterrows(), total=len(df), desc="capas"):
+    for k, (_, row) in enumerate(tqdm.tqdm(df.iterrows(), total=len(df), desc="capas")):
         q = row["prompt"]
         h_clean = hidden_at_last(model, tokenizer, q, args.device)
         h_patch = hidden_at_last(model, tokenizer, q, args.device, patch,
@@ -95,14 +138,18 @@ def main():
         h_instr = hidden_at_last(
             model, tokenizer, build_reference_prompt(args.instruction, q), args.device)
 
-        delta_patch = h_patch - h_clean            # [L+1, d]
-        delta_instr = h_instr - h_clean
-        d_sum = delta_instr if d_sum is None else d_sum + delta_instr
+        d_patch.append((h_patch - h_clean).cpu())
+        d_instr.append((h_instr - h_clean).cpu())
+        rel.append((d_patch[-1].norm(dim=1)
+                    / h_clean.norm(dim=1).cpu().clamp(min=1e-6)).numpy())
 
-        rel.append((delta_patch.norm(dim=1) / h_clean.norm(dim=1).clamp(min=1e-6)).cpu().numpy())
-        deltas.append(delta_patch.cpu())   # cacheado: el coseno necesita d_mean, que sale al final
+        # (B) la misma pregunta, en frances
+        if tiene_fr and str(row.get("prompt_fr_language", "fr")) == "fr" \
+                and str(row["prompt_fr"]).strip():
+            h_frq = hidden_at_last(model, tokenizer, row["prompt_fr"], args.device)
+            d_frq.append((h_frq - h_clean).cpu())
+            idx_frq.append(k)
 
-        # primer token de la referencia (FR) y del baseline (EN) de ESTE prompt
         f_ids = tokenizer.encode(row["output"][:20], add_special_tokens=False)
         e_ids = tokenizer.encode(row["baseline_en"][:20], add_special_tokens=False)
         if not f_ids or not e_ids:
@@ -112,32 +159,55 @@ def main():
         pfr_c.append(a); pen_c.append(b); pfr_p.append(c); pen_p.append(e)
 
     rel = np.stack(rel).mean(0)
-    # Direccion de la instruccion: diff-in-means sobre los N prompts.
-    d_mean = (d_sum / len(df)).cpu()
-    cos = np.stack([
-        torch.nn.functional.cosine_similarity(dp, d_mean, dim=1).numpy()
-        for dp in deltas
-    ]).mean(0)
+    cos_instr = crossfit_cos(d_patch, d_instr)
+    cos_frq = (crossfit_cos([d_patch[i] for i in idx_frq], d_frq)
+               if len(d_frq) >= 4 else None)
+
+    # Cuanto se parecen entre si las DOS referencias. Si es alto, la distincion
+    # no informa; si es bajo, saber a cual se parece el parche si informa.
+    if len(d_frq) >= 4:
+        Di = torch.stack([d_instr[i] for i in idx_frq]).mean(0)
+        Df = torch.stack(d_frq).mean(0)
+        cos_refs = torch.nn.functional.cosine_similarity(Di, Df, dim=1).numpy()
+    else:
+        cos_refs = None
+
     pfr_c, pen_c = np.stack(pfr_c).mean(0), np.stack(pen_c).mean(0)
     pfr_p, pen_p = np.stack(pfr_p).mean(0), np.stack(pen_p).mean(0)
 
     L = len(rel)
-    print(f"\n{'capa':>5}{'||d||/||h||':>13}{'cos(d_parche, d_instr)':>25}"
-          f"{'p(FR) limpio':>14}{'p(FR) parche':>14}{'p(EN) parche':>14}")
-    print("-" * 86)
+    print(f"\n{'capa':>5}{'|d|/|h|':>10}{'cos vs instr':>14}{'cos vs q_fr':>13}"
+          f"{'cos instr~q_fr':>16}{'p(FR) limpio':>14}{'p(FR) parche':>14}{'p(EN) parche':>14}")
+    print("-" * 100)
     for i in range(L):
-        print(f"{i:>5}{rel[i]:>13.4f}{cos[i]:>25.4f}"
+        ci = f"{cos_instr[i]:.4f}" if cos_instr is not None else "-"
+        cf = f"{cos_frq[i]:.4f}" if cos_frq is not None else "-"
+        cr = f"{cos_refs[i]:.4f}" if cos_refs is not None else "-"
+        print(f"{i:>5}{rel[i]:>10.4f}{ci:>14}{cf:>13}{cr:>16}"
               f"{pfr_c[i]:>14.4f}{pfr_p[i]:>14.4f}{pen_p[i]:>14.4f}")
 
     cross = [i for i in range(L) if pfr_p[i] > pen_p[i]]
-    print(f"\ncapa donde p(FR) supera a p(EN) con parche: "
-          f"{cross[0] if cross else 'nunca'}")
-    print(f"capa de maxima alineacion con la instruccion: {int(cos.argmax())} "
-          f"(cos={cos.max():.3f})")
+    print(f"\nprompts con traduccion usable: {len(d_frq)}/{len(df)}")
+    print(f"capa donde p(FR) supera a p(EN) con parche: {cross[0] if cross else 'nunca'}")
+    if cos_instr is not None:
+        print(f"maxima alineacion con la INSTRUCCION : capa {int(cos_instr.argmax())} "
+              f"(cos={cos_instr.max():.3f})")
+    if cos_frq is not None:
+        print(f"maxima alineacion con la PREGUNTA FR : capa {int(cos_frq.argmax())} "
+              f"(cos={cos_frq.max():.3f})")
+        gana = "pregunta en frances" if cos_frq.max() > cos_instr.max() else "instruccion en texto"
+        print(f"-> el parche se parece mas a: {gana}")
+    if cos_refs is not None:
+        print(f"las dos referencias entre si: cos medio={cos_refs.mean():.3f} "
+              f"(alto = son casi lo mismo y la comparacion no informa)")
 
-    json.dump({"rel_delta": rel.tolist(), "cos_with_instruction": cos.tolist(),
+    json.dump({"rel_delta": rel.tolist(),
+               "cos_with_instruction": None if cos_instr is None else cos_instr.tolist(),
+               "cos_with_french_question": None if cos_frq is None else cos_frq.tolist(),
+               "cos_between_references": None if cos_refs is None else cos_refs.tolist(),
                "p_fr_clean": pfr_c.tolist(), "p_fr_patched": pfr_p.tolist(),
-               "p_en_patched": pen_p.tolist(), "n_prompts": len(df),
+               "p_en_patched": pen_p.tolist(),
+               "n_prompts": len(df), "n_with_translation": len(d_frq),
                "patch": args.patch},
               open(args.out, "w"), indent=2)
     print(f"\nGuardado en {args.out}")
