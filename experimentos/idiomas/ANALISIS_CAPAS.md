@@ -101,6 +101,164 @@ d = 3072. No hacen falta hooks.
 
 ---
 
+## 3bis. La matemática, con índices
+
+Notación:
+
+    i = 1..N     prompt (N = --n, default 40)
+    l = 0..L     capa
+    d = 3072     dimensión del residual stream
+
+### Qué capas exactamente
+
+`output_hidden_states=True` devuelve una tupla de **L+1** tensores de forma
+`[1, seq, d]`:
+
+    hidden_states[0]     embeddings de entrada, DESPUES de sumar el parche
+                         y ANTES del bloque 0
+    hidden_states[l]     salida del bloque l, para l = 1..L
+
+Para Llama-3.2-3B: L = 28, o sea **29 entradas**, d = 3072. El script no lo
+hardcodea, lo toma de `L = len(rel)`.
+
+La fila 0 de la tabla es entonces el espacio de embeddings, donde el delta del
+parche en las posiciones parcheadas sería exactamente el parche. Pero como
+leemos en la última posición del prompt, que NO está parcheada, la fila 0
+debería dar delta ~0. **Es un control de sanidad gratis: si `|d|/|h|` en la
+capa 0 no es ~0, hay un bug en el slicing.**
+
+### Qué posición
+
+Una sola, no un promedio sobre la secuencia:
+
+    p_i = ultima posicion de embeds[:, :suffix_manager._assistant_role_slice.stop, :]
+
+es decir el índice `-1` del prompt recortado. Es la posición cuyos logits
+producen el primer token de la respuesta.
+
+Cada forward pass produce entonces una matriz
+
+    H_i = [ h_i[0], h_i[1], ..., h_i[L] ]        de forma [L+1, d]
+
+en float32. Hay cuatro por prompt: `H_clean`, `H_patch`, `H_instr`, `H_frq`.
+
+### Los deltas
+
+Por prompt y por capa, tres vectores de R^3072:
+
+    delta_i[l]       = h_patch_i[l]  - h_clean_i[l]
+    delta_instr_i[l] = h_instr_i[l]  - h_clean_i[l]
+    delta_frq_i[l]   = h_frq_i[l]    - h_clean_i[l]
+
+### Medida 1: delta relativo
+
+Se calcula la razón **por prompt** y después se promedia. No es la razón de los
+promedios:
+
+    rel_i[l] = || delta_i[l] ||_2  /  max( || h_clean_i[l] ||_2 , 1e-6 )
+
+    rel[l]   = (1/N) * SUM_i  rel_i[l]
+
+Media aritmética simple sobre los N prompts, una por capa.
+
+### Medida 2: logit lens
+
+Para cada prompt y capa, se decodifica el vector completo:
+
+    z_i[l]     = lm_head( RMSNorm_final( h_i[l] ) )        en R^V, V = 128256
+    probs_i[l] = softmax( z_i[l] )
+
+y se extraen dos escalares:
+
+    p_fr_i[l] = probs_i[l][ t_fr_i ]      t_fr_i = primer token de output (FR)
+    p_en_i[l] = probs_i[l][ t_en_i ]      t_en_i = primer token de baseline_en
+
+Los tokens dependen del prompt: salen de las generaciones reales de esa fila,
+no de una lista fija.
+
+Agregación, media aritmética simple sobre prompts:
+
+    p_fr[l] = (1/N) * SUM_i p_fr_i[l]
+
+**Caveat**: es media de probabilidades, no de log-probabilidades, así que la
+domina el prompt con la probabilidad más alta. Para "en qué capa cruza" no
+molesta, pero si se quisiera reportar una magnitud sería mejor la mediana.
+
+Nota de implementación: `h` se castea a float32 para los deltas y las normas,
+y se vuelve a castear al dtype del modelo (fp16) para pasar por `lm_head`.
+
+### Medida 3: alineación
+
+Las direcciones de referencia son **medias aritméticas simples** de los deltas
+por prompt:
+
+    d_instr[l] = (1/N) * SUM_i  delta_instr_i[l]
+    d_frq[l]   = (1/M) * SUM_i  delta_frq_i[l]        M = prompts con prompt_fr_ok
+
+Y el coseno se calcula **por prompt contra la dirección media, y después se
+promedia**:
+
+    cos_instr[l] = (1/N) * SUM_i  cos( delta_i[l] , d_instr[l] )
+
+Esto **no** es lo mismo que `cos( media_i delta_i[l] , d_instr[l] )`, y la
+diferencia importa. La versión implementada pregunta "¿cada delta individual
+apunta en esa dirección?"; la otra pregunta "¿la suma de todos los deltas
+apunta en esa dirección?", que es mucho más permisiva porque los desvíos
+individuales se cancelan al promediar. La primera es la exigente y es la que
+queremos.
+
+`cos_refs` es la excepción: se calcula sobre las direcciones medias
+directamente, sin promediar por prompt, porque ninguna de las dos involucra al
+parche y por lo tanto no hay circularidad que corregir:
+
+    cos_refs[l] = cos( d_instr[l] , d_frq[l] )
+
+### Comparación cabeza a cabeza sobre el mismo subconjunto
+
+`cos_frq` solo se puede calcular sobre los M prompts con traducción usable.
+Comparar un promedio sobre N=40 contra uno sobre M=35 no es válido, así que se
+calcula además
+
+    cos_instr_sub[l]     igual que cos_instr pero restringido a los mismos M
+
+y el veredicto "el parche se parece más a X" usa `cos_frq` vs `cos_instr_sub`,
+nunca `cos_instr`. La columna `cos vs instr` de la tabla sigue siendo la de los
+N prompts, que es la estimación más precisa de esa cantidad por separado.
+
+### Validación cruzada, con la aritmética
+
+Sea `n` la cantidad de prompts y `m = n // 2`:
+
+    A = {0, ..., m-1}          B = {m, ..., n-1}
+
+Dos pasadas:
+
+    pasada 1:  d_A[l] = (1/|A|) * SUM_{i in A} delta_ref_i[l]
+               recolectar  cos( delta_j[l], d_A[l] )   para todo j in B
+
+    pasada 2:  d_B[l] = (1/|B|) * SUM_{i in B} delta_ref_i[l]
+               recolectar  cos( delta_j[l], d_B[l] )   para todo j in A
+
+    resultado: media aritmetica de los n valores recolectados
+
+Cada prompt aparece exactamente una vez en el promedio final, y siempre medido
+contra una dirección estimada sin él. Si `n` es impar las dos mitades difieren
+en uno, y no pasa nada: el promedio final sigue siendo sobre los n prompts.
+
+Se exige `n >= 4`; por debajo devuelve `None`.
+
+### Cosenos crudos (diagnóstico de anisotropía)
+
+Sin restar nada, por prompt y después media simple:
+
+    raw_pf[l] = (1/M) * SUM_i  cos( h_patch_i[l] , h_frq_i[l] )
+    raw_cf[l] = (1/M) * SUM_i  cos( h_clean_i[l] , h_frq_i[l] )
+
+Sin centrado ni estandarización, a propósito: el punto es exhibir la
+anisotropía, no corregirla.
+
+---
+
 ## 4. Medida 1 — delta relativo
 
     rel[l] = ||h_patch[l] - h_clean[l]|| / ||h_clean[l]||
@@ -248,12 +406,19 @@ Tabla de 29 filas, una por capa:
 
 Y tres líneas de resumen:
 
-    prompts con traduccion usable: N/M
-    capa donde p(FR) supera a p(EN) con parche: <n>
-    maxima alineacion con la INSTRUCCION : capa <n> (cos=<x>)
-    maxima alineacion con la PREGUNTA FR : capa <n> (cos=<x>)
-    -> el parche se parece mas a: <cual>
+    prompts con traduccion usable: M/N
+    capa donde p(FR) supera a p(EN) con parche: <l>
+    maxima alineacion con la INSTRUCCION : capa <l> (cos=<x>)
+    maxima alineacion con la PREGUNTA FR : capa <l> (cos=<x>)
+       (misma subm. de prompts, instruccion: capa <l> cos=<x>)
+    -> el parche se parece mas a: <cual>  (diferencia <+/-x>)
     las dos referencias entre si: cos medio=<x>
+
+La línea entre paréntesis es la que hay que usar para el veredicto: `cos_frq`
+se promedia sobre los M prompts con traducción usable, así que se compara
+contra `cos_instr_sub`, restringido a esos mismos M. La línea de arriba
+(`cos_instr` sobre los N) es la estimación más precisa de la alineación con la
+instrucción por separado, pero no es comparable con `cos_frq`.
 
 Después, una segunda tabla con el diagnóstico de anisotropía:
 
@@ -264,8 +429,9 @@ de 1 y la separación es ~0, eso es la anisotropía del residual stream: el
 estado absoluto no discrimina, y queda justificado trabajar con diferencias.
 
 Más un JSON con los vectores completos (`rel_delta`, `cos_with_instruction`,
-`cos_with_french_question`, `cos_between_references`, `raw_cos_patch_frq`,
-`raw_cos_clean_frq`, `p_fr_clean`, `p_fr_patched`, `p_en_patched`).
+`cos_with_french_question`, `cos_with_instruction_same_subset`,
+`cos_between_references`, `raw_cos_patch_frq`, `raw_cos_clean_frq`,
+`p_fr_clean`, `p_fr_patched`, `p_en_patched`).
 
 ---
 
@@ -332,6 +498,12 @@ tokens más".
 **`q_fr` cambia el idioma de la entrada además del de la salida.** `d_frq`
 mezcla las dos cosas. Es inherente a la condición y no invalida la comparación,
 pero si `q_fr` gana, el paso siguiente es separar esos dos componentes.
+
+**El promedio de cosenos pondera todos los prompts igual.** Un prompt donde el
+parche apenas movió nada aporta un coseno basado en un delta minúsculo, que es
+ruidoso, con el mismo peso que uno donde el efecto es grande. Una alternativa
+sería ponderar por `||delta_i[l]||`. No está implementado; si los cosenos salen
+ruidosos entre capas contiguas, es el primer lugar donde mirar.
 
 **El coseno es sobre el residual crudo, no post-LayerNorm.** Es lo estándar
 (Arditi et al. hacen lo mismo), pero el modelo lee el residual a través de LN,

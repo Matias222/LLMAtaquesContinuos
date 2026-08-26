@@ -170,8 +170,15 @@ def main():
 
     rel = np.stack(rel).mean(0)
     cos_instr = crossfit_cos(d_patch, d_instr)
-    cos_frq = (crossfit_cos([d_patch[i] for i in idx_frq], d_frq)
-               if len(d_frq) >= 4 else None)
+    # Comparacion cabeza a cabeza: las dos sobre el MISMO subconjunto de
+    # prompts (los que tienen traduccion usable). Si no, cos_instr se promedia
+    # sobre 40 y cos_frq sobre ~35, y los numeros no son comparables.
+    if len(d_frq) >= 4:
+        cos_frq = crossfit_cos([d_patch[i] for i in idx_frq], d_frq)
+        cos_instr_sub = crossfit_cos([d_patch[i] for i in idx_frq],
+                                     [d_instr[i] for i in idx_frq])
+    else:
+        cos_frq = cos_instr_sub = None
 
     # Cuanto se parecen entre si las DOS referencias. Si es alto, la distincion
     # no informa; si es bajo, saber a cual se parece el parche si informa.
@@ -219,8 +226,12 @@ def main():
     if cos_frq is not None:
         print(f"maxima alineacion con la PREGUNTA FR : capa {int(cos_frq.argmax())} "
               f"(cos={cos_frq.max():.3f})")
-        gana = "pregunta en frances" if cos_frq.max() > cos_instr.max() else "instruccion en texto"
-        print(f"-> el parche se parece mas a: {gana}")
+        print(f"   (misma subm. de prompts, instruccion: capa {int(cos_instr_sub.argmax())} "
+              f"cos={cos_instr_sub.max():.3f})")
+        gana = ("pregunta en frances" if cos_frq.max() > cos_instr_sub.max()
+                else "instruccion en texto")
+        print(f"-> el parche se parece mas a: {gana}  "
+              f"(diferencia {cos_frq.max() - cos_instr_sub.max():+.3f})")
     if cos_refs is not None:
         print(f"las dos referencias entre si: cos medio={cos_refs.mean():.3f} "
               f"(alto = son casi lo mismo y la comparacion no informa)")
@@ -228,6 +239,8 @@ def main():
     json.dump({"rel_delta": rel.tolist(),
                "cos_with_instruction": None if cos_instr is None else cos_instr.tolist(),
                "cos_with_french_question": None if cos_frq is None else cos_frq.tolist(),
+               "cos_with_instruction_same_subset": (None if cos_instr_sub is None
+                                                    else cos_instr_sub.tolist()),
                "cos_between_references": None if cos_refs is None else cos_refs.tolist(),
                "raw_cos_patch_frq": None if raw_pf is None else raw_pf.tolist(),
                "raw_cos_clean_frq": None if raw_cf is None else raw_cf.tolist(),
