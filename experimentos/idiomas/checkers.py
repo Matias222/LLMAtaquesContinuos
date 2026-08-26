@@ -155,6 +155,48 @@ def is_french(text: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Metricas para preguntas ABIERTAS (sin respuesta verificable)
+# ---------------------------------------------------------------------------
+
+def content_words(text: str) -> set:
+    """Palabras de contenido: saca funcionales de ambos idiomas y tokens cortos."""
+    return {t for t in _tokens(text)
+            if len(t) >= 4 and t not in FR_WORDS and t not in EN_WORDS}
+
+
+def content_overlap(a: str, b: str) -> float:
+    """
+    Jaccard sobre palabras de contenido.
+
+    Para prompts abiertos no hay respuesta correcta, pero SI se puede comparar
+    el output parcheado contra la referencia M([FR;q]): ambos son frances sobre
+    la misma pregunta, asi que la comparacion es limpia (a diferencia de navidad,
+    donde se comparaba contra un baseline en otro registro).
+    """
+    A, B = content_words(a), content_words(b)
+    if not A or not B:
+        return 0.0
+    return len(A & B) / len(A | B)
+
+
+def french_by_segments(text: str, n: int = 3):
+    """
+    french_score por tercio de la respuesta.
+
+    El parche vive en 3 posiciones del PROMPT. Esto mide si su efecto sobrevive
+    a lo largo de la generacion o si decae: francés al principio y deriva al
+    ingles seria la firma de un efecto puramente local.
+    """
+    ws = text.split()
+    if len(ws) < n * 4:
+        return [french_score(text)] * n
+    k = len(ws) // n
+    seg = [" ".join(ws[i * k:(i + 1) * k]) for i in range(n - 1)]
+    seg.append(" ".join(ws[(n - 1) * k:]))
+    return [french_score(s) for s in seg]
+
+
+# ---------------------------------------------------------------------------
 # Accuracy: el output contiene la respuesta correcta?
 # ---------------------------------------------------------------------------
 
@@ -218,6 +260,19 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- metricas de preguntas abiertas ---")
+    a = "La photosynthese permet aux plantes de convertir la lumiere du soleil en energie chimique."
+    b = "Les plantes utilisent la photosynthese pour transformer la lumiere solaire en energie."
+    c = "Le moteur de la voiture brule du carburant pour produire un mouvement mecanique."
+    print(f"  overlap(a,a) = {content_overlap(a, a):.3f}  (debe ser 1.0)")
+    print(f"  overlap(a,b) = {content_overlap(a, b):.3f}  (mismo tema)")
+    print(f"  overlap(a,c) = {content_overlap(a, c):.3f}  (temas distintos)")
+    mixto = ("La photosynthese est un processus fondamental pour les plantes vertes. "
+             "Elles captent la lumiere du soleil grace a la chlorophylle. "
+             "Then the process continues and the plant uses the energy that it has stored.")
+    print(f"  french_by_segments(texto que deriva al ingles) = "
+          f"{[round(x, 2) for x in french_by_segments(mixto)]}")
 
     print("\n--- regresion: outputs reales del run de targets ---")
     reales_fr = [

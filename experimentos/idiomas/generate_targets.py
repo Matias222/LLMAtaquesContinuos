@@ -73,8 +73,10 @@ def main():
         ref = truncate_at_role_leak(ref_raw)
         base = truncate_at_role_leak(base_raw)
 
+        has_answer = str(ans).strip() != ""
         fr_ok = is_french(ref)
-        acc_ok = answer_correct(ref, ans, al)
+        # Prompts abiertos: no hay respuesta verificable, el gate es solo idioma.
+        acc_ok = answer_correct(ref, ans, al) if has_answer else None
         rows.append({
             "prompt": q,
             "output": ref,
@@ -87,10 +89,11 @@ def main():
             "ref_language": language_verdict(ref),
             "baseline_language": language_verdict(base),
             "ref_is_french": bool(fr_ok),
-            "ref_answer_correct": bool(acc_ok),
+            "ref_answer_correct": "" if acc_ok is None else bool(acc_ok),
             "baseline_is_french": bool(is_french(base)),
-            "baseline_answer_correct": bool(answer_correct(base, ans, al)),
-            "passed_gate": bool(fr_ok and acc_ok),
+            "baseline_answer_correct": (bool(answer_correct(base, ans, al))
+                                        if has_answer else ""),
+            "passed_gate": bool(fr_ok and acc_ok is not False),
         })
 
     out = pd.DataFrame(rows)
@@ -100,13 +103,21 @@ def main():
     print("\n" + "=" * 70)
     print("REFERENCIA NATURAL  M([FR ; q])")
     print(f"  en frances                 : {out['ref_is_french'].mean():.2%}")
-    print(f"  respuesta correcta         : {out['ref_answer_correct'].mean():.2%}")
+    _acc = out["ref_answer_correct"]
+    _acc = _acc[_acc != ""]
+    if len(_acc):
+        print(f"  respuesta correcta         : {_acc.astype(bool).mean():.2%}")
+    else:
+        print("  respuesta correcta         : n/a (prompts abiertos)")
     print(f"  pasan el gate (ambas)      : {out['passed_gate'].sum()}/{n}")
     print(f"  quisieron seguir de turno    : {out['ref_role_leak'].sum()}/{n}"
           "   (truncado por la red de seguridad)")
     print("\nBASELINE  M(q)   <- control, deberia ser ingles y correcto")
     print(f"  en frances                 : {out['baseline_is_french'].mean():.2%}")
-    print(f"  respuesta correcta         : {out['baseline_answer_correct'].mean():.2%}")
+    _bacc = out["baseline_answer_correct"]
+    _bacc = _bacc[_bacc != ""]
+    if len(_bacc):
+        print(f"  respuesta correcta         : {_bacc.astype(bool).mean():.2%}")
     print(f"  quisieron seguir de turno  : {out['baseline_role_leak'].sum()}/{n}")
     print("=" * 70)
 

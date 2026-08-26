@@ -2,13 +2,52 @@
 para poder testearlo sin GPU (`python3 reporting.py`)."""
 
 
+def _mean(vals):
+    """Promedio ignorando None (filas abiertas, sin respuesta verificable)."""
+    v = [x for x in vals if x is not None]
+    return sum(v) / len(v) if v else float("nan")
+
+
 def score_rows(rows, key):
     n = len(rows)
     return {
         "is_french": sum(r[f"{key}_is_french"] for r in rows) / n,
         "french_score": sum(r[f"{key}_french_score"] for r in rows) / n,
-        "answer_correct": sum(r[f"{key}_answer_correct"] for r in rows) / n,
+        "answer_correct": _mean([r[f"{key}_answer_correct"] for r in rows]),
         "role_leak": sum(r.get(f"{key}_role_leak", False) for r in rows) / n,
+    }
+
+
+def open_metrics(rows):
+    """
+    Metricas para prompts abiertos (sin respuesta verificable).
+
+    Sustituye a la accuracy: como el parcheado y la referencia son AMBOS frances
+    sobre la misma pregunta, se pueden comparar directamente. Eso es mas limpio
+    que navidad, donde el proxy de fidelidad comparaba contra un baseline que
+    estaba en otro registro.
+    """
+    from checkers import content_overlap, french_by_segments
+
+    op = [r for r in rows if not r.get("has_answer", True)]
+    if not op:
+        return None
+
+    def mean(v):
+        return sum(v) / len(v) if v else float("nan")
+
+    # Control de azar: parche de una pregunta contra la referencia de OTRA.
+    shuf = [content_overlap(op[i]["patched"], op[(i + 1) % len(op)]["reference"])
+            for i in range(len(op))]
+    th_p = [french_by_segments(r["patched"]) for r in op]
+    th_r = [french_by_segments(r["reference"]) for r in op]
+    return {
+        "n": len(op),
+        "overlap_patched_reference": mean([content_overlap(r["patched"], r["reference"]) for r in op]),
+        "overlap_baseline_reference": mean([content_overlap(r["baseline"], r["reference"]) for r in op]),
+        "overlap_shuffled_control": mean(shuf),
+        "french_thirds_patched": [mean([t[j] for t in th_p]) for j in range(3)],
+        "french_thirds_reference": [mean([t[j] for t in th_r]) for j in range(3)],
     }
 
 
@@ -57,6 +96,26 @@ def write_markdown(report, path):
              "el tail solo mide 'continuar una oracion francesa', que es facil y casi "
              "no deberia moverse. Promediar sobre toda la respuesta diluye la señal.")
     L.append("")
+    o = m.get("open")
+    if o:
+        L.append(f"### Prompts abiertos (n={o['n']}, sin respuesta verificable)")
+        L.append("")
+        L.append("| medida | valor |")
+        L.append("|---|---|")
+        L.append(f"| overlap de contenido parche vs referencia | {o['overlap_patched_reference']:.3f} |")
+        L.append(f"| overlap baseline (EN) vs referencia | {o['overlap_baseline_reference']:.3f} |")
+        L.append(f"| control de azar (parche vs otra pregunta) | {o['overlap_shuffled_control']:.3f} |")
+        L.append("")
+        L.append("| tercio de la respuesta | 1 | 2 | 3 |")
+        L.append("|---|---|---|---|")
+        tp, tr = o["french_thirds_patched"], o["french_thirds_reference"]
+        L.append(f"| parche | {tp[0]:.2f} | {tp[1]:.2f} | {tp[2]:.2f} |")
+        L.append(f"| referencia | {tr[0]:.2f} | {tr[1]:.2f} | {tr[2]:.2f} |")
+        L.append("")
+        L.append("El parche vive en 3 posiciones del **prompt**. Si el frances cae en el "
+                 "tercer tercio, el efecto es local y decae con la distancia; si se "
+                 "sostiene, el parche fija un modo que persiste toda la generacion.")
+        L.append("")
     L.append("## Outputs")
     L.append("")
     L.append("| # | pregunta | baseline | referencia | parche |")
@@ -111,6 +170,49 @@ if __name__ == "__main__":
               "patch_norm": 0.8734, "patch_shape": [1, 3, 3072], "n_heldout": len(rows),
               "config": {"num_patch_positions": 3, "scale": 1.0},
               "metrics": metrics, "splits": {"heldout": rows}}
+
+    # --- fixture de prompts abiertos ---------------------------------------
+    abiertos = [
+        ("What is photosynthesis?",
+         "Photosynthesis is the process by which plants convert sunlight into chemical energy stored as sugar.",
+         "La photosynthese est le processus par lequel les plantes convertissent la lumiere du soleil en energie chimique.",
+         "La photosynthese permet aux plantes de transformer la lumiere solaire en energie chimique stockee."),
+        ("How does a computer work?",
+         "A computer works by executing instructions stored in memory using a processor and logic circuits.",
+         "Un ordinateur fonctionne en executant des instructions stockees en memoire grace a un processeur.",
+         "Un ordinateur execute des instructions en memoire avec un processeur et des circuits logiques."),
+        ("What is DNA?",
+         "DNA is a molecule that carries the genetic instructions used in growth and reproduction of organisms.",
+         "L'ADN est une molecule qui porte les instructions genetiques utilisees pour la croissance des organismes.",
+         # este deriva al ingles a mitad de camino
+         "L'ADN est une molecule genetique tres importante. It carries the genetic instructions that organisms use for growth and reproduction over time."),
+    ]
+    orows = []
+    for i, (q, base, ref, patched) in enumerate(abiertos):
+        rec = {"idx": i, "prompt": q, "answer": "", "has_answer": False,
+               "baseline": base, "reference": ref, "patched": patched}
+        for key, text in (("baseline", base), ("reference", ref), ("patched", patched)):
+            rec[f"{key}_is_french"] = bool(is_french(text))
+            rec[f"{key}_french_score"] = float(french_score(text))
+            rec[f"{key}_answer_correct"] = None
+            rec[f"{key}_role_leak"] = False
+        orows.append(rec)
+
+    om = open_metrics(orows)
+    metrics["open"] = om
+    print("\n--- metricas de prompts abiertos ---")
+    print(f"  overlap parche vs referencia : {om['overlap_patched_reference']:.3f}")
+    print(f"  overlap baseline vs referencia: {om['overlap_baseline_reference']:.3f}")
+    print(f"  control de azar               : {om['overlap_shuffled_control']:.3f}")
+    print(f"  frances por tercio, parche    : {[round(x, 2) for x in om['french_thirds_patched']]}")
+    print(f"  frances por tercio, referencia: {[round(x, 2) for x in om['french_thirds_reference']]}")
+    ok_open = (om["overlap_patched_reference"] > om["overlap_shuffled_control"]
+               and om["french_thirds_patched"][2] < om["french_thirds_reference"][2])
+    print(f"  overlap real > azar, y el parche decae en el tercer tercio -> "
+          f"{'OK' if ok_open else 'FAIL'}")
+    oscore = score_rows(orows, "patched")
+    print(f"  accuracy con filas abiertas -> {oscore['answer_correct']} "
+          f"({'OK' if oscore['answer_correct'] != oscore['answer_correct'] else 'FAIL'}: debe ser nan)")
 
     d = tempfile.mkdtemp()
     write_markdown(report, os.path.join(d, "eval_report.md"))

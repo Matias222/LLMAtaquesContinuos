@@ -241,6 +241,58 @@ python3 rescore_targets.py --dry_run   # ver el delta
 python3 rescore_targets.py             # aplicar, deja .bak
 ```
 
+## Dos bancos de evaluacion mas alla del entrenamiento
+
+El entrenamiento satura con 77 targets (CE 0.06 en la epoch 3). Lo que faltaba
+era **potencia y variedad en el eval**. Ninguno de los dos bancos se usa para
+entrenar.
+
+### `questions_eval.csv` — 222 preguntas cortas verificables
+
+Con 20 held-out no se puede distinguir 90% de 95% de accuracy: los IC de Wilson
+son [70,97] y [76,99], se superponen casi enteros. Y la afirmacion "el parche
+cuesta lo mismo que la instruccion" es justo la que va al abstract.
+
+Lo genera `build_eval_bank.py` desde tablas de datos (capitales, elementos,
+personas, anios, aritmetica, ciencia), no a mano. Descarta automaticamente las
+preguntas cuyo enunciado contiene la respuesta, y el simbolo del yodo (`I`),
+que en ingles colisiona con el pronombre.
+
+```bash
+python3 build_eval_bank.py
+python3 -u generate_targets.py --model $M --questions questions_eval.csv --out targets_eval.csv
+python3 -u eval_lang_patch.py --model $M --patch runs/v2_french_l2_0.045/lang_patch.pt \
+    --targets targets_eval.csv --train_test_split 0.0 \
+    --out_json runs/v2_french_l2_0.045/eval_big.json --out_md runs/v2_french_l2_0.045/eval_big.md
+```
+
+### `questions_open.csv` — 99 prompts abiertos, el set exacto de navidad
+
+Las preguntas cortas tienen una forma muy regular ("La capitale de X est Y"), y
+el parche podria estar aprendiendo la plantilla en vez de "hablá francés". Los
+prompts abiertos ("What is photosynthesis?", "How does a computer work?") exigen
+sostener el frances durante 100 tokens.
+
+Son **los mismos 99 prompts que uso navidad**, asi que la comparacion es directa
+sobre estimulos identicos: mismo set, atributo inducido distinto. Eso testea si
+el idioma se comporta como un atributo difuso (navidad, puede aparecer en
+cualquier lado) o como un compromiso (se decide al principio).
+
+```bash
+bash run_french_open.sh runs/v2_french_l2_0.045/lang_patch.pt $M
+```
+
+Como no hay respuesta verificable, la accuracy se reemplaza por dos medidas:
+
+| medida | que dice |
+|---|---|
+| `overlap parche vs referencia` | ambos son frances sobre la misma pregunta, asi que la comparacion es limpia. Alto = el parche produce la misma sustancia que la instruccion |
+| `control de azar` | mismo overlap contra la referencia de OTRA pregunta. Es el piso |
+| `frances por tercio` | el parche vive en 3 posiciones del PROMPT. Si el frances cae en el tercer tercio, el efecto es local y decae; si se sostiene, fija un modo |
+
+Ese ultimo es el que mas me interesa: es la pregunta de navidad ("el efecto
+sobrevive a la generacion?") por fin medida en vez de inspeccionada a ojo.
+
 ## Advertencias
 
 - **La existencia es barata**: 3x3072 = 9216 parametros libres contra ~80 prompts de

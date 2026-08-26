@@ -26,7 +26,7 @@ import tqdm
 
 from checkers import answer_correct, french_score, is_french, truncate_at_role_leak
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer, nll_of_target
-from reporting import CONDITIONS, score_rows, write_markdown
+from reporting import CONDITIONS, open_metrics, score_rows, write_markdown
 
 
 def main():
@@ -74,12 +74,14 @@ def main():
                                    clean=False)
         patched = truncate_at_role_leak(patched_raw)
 
-        rec = {"idx": int(i), "prompt": q, "answer": ans,
+        has_answer = str(ans).strip() != ""
+        rec = {"idx": int(i), "prompt": q, "answer": ans, "has_answer": has_answer,
                "baseline": base, "reference": ref, "patched": patched}
         for key, text in (("baseline", base), ("reference", ref), ("patched", patched)):
             rec[f"{key}_is_french"] = bool(is_french(text))
             rec[f"{key}_french_score"] = float(french_score(text))
-            rec[f"{key}_answer_correct"] = bool(answer_correct(text, ans, al))
+            # None en prompts abiertos: no hay respuesta verificable que medir
+            rec[f"{key}_answer_correct"] = bool(answer_correct(text, ans, al)) if has_answer else None
         rec["baseline_role_leak"] = str(r.get("baseline_role_leak", False)).lower() == "true"
         rec["reference_role_leak"] = str(r.get("ref_role_leak", False)).lower() == "true"
         rec["patched_role_leak"] = bool(patched != patched_raw.strip())
@@ -107,6 +109,10 @@ def main():
         "nll_fr_tail_patched": avg(nll_p, "tail"),
         "head_k": args.head_k,
     })
+
+    om = open_metrics(rows)
+    if om:
+        metrics["open"] = om
 
     report = {
         "patch_path": os.path.abspath(args.patch),
@@ -144,6 +150,17 @@ def main():
         print(f"{lbl:<26}{metrics[kb]:>12.4f}{metrics[kp]:>12.4f}"
               f"{metrics[kp] - metrics[kb]:>+10.4f}")
     print("  el head es donde vive la decision de idioma; el tail casi no deberia moverse")
+
+    if "open" in metrics:
+        o = metrics["open"]
+        print("\n" + "=" * 70)
+        print(f"PROMPTS ABIERTOS  (n={o['n']}, sin respuesta verificable)")
+        print(f"  overlap de contenido parche vs referencia : {o['overlap_patched_reference']:.3f}")
+        print(f"  overlap baseline(EN) vs referencia        : {o['overlap_baseline_reference']:.3f}")
+        print(f"  control de azar (parche vs otra pregunta) : {o['overlap_shuffled_control']:.3f}")
+        print(f"  frances por tercio, parche     : {[round(x, 2) for x in o['french_thirds_patched']]}")
+        print(f"  frances por tercio, referencia : {[round(x, 2) for x in o['french_thirds_reference']]}")
+        print("  si el parche cae en el tercer tercio, el efecto es local y decae")
     print("=" * 70)
     print(f"\nReportes: {args.out_json}\n          {args.out_md}")
 
