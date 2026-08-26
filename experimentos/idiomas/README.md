@@ -216,6 +216,38 @@ respuesta diluye la señal ~7x. Por eso el reporte separa:
 Esto tampoco reemplaza a `is_french` sobre generacion libre, que es el unico
 numero que dice si el modelo **realmente** produce frances por su cuenta.
 
+## El detector es de TRES idiomas, no de dos
+
+El modelo a veces contesta en **espanol**. Un detector binario frances-vs-ingles
+lo clasifica como frances con score 1.00, porque los dos idiomas comparten justo
+las funcionales mas frecuentes: `de`, `la`, `que`, `en`, `un`, `se`.
+
+`language_evidence()` cuenta tres canales. Dos detalles que importan:
+
+- `SHARED_FR_ES` (de, la, que, en, un, se, si, entre, bien, no, me, te) no es
+  evidencia de **ninguno** de los dos. Inflar este set rompe frases cortas
+  legitimas, asi que `le`/`les` NO estan: son articulos frecuentisimos en
+  frances y solo cliticos ocasionales en espanol.
+- `por`, `al`, `lo`, `mi`, `su`, `sin` son exclusivas del espanol, no
+  compartidas. Ponerlas en SHARED debilita la deteccion de espanol.
+
+`language_verdict()` devuelve `fr` / `en` / `es` / `unknown`, y el reporte
+imprime la distribucion, asi que un 90% de compliance ya no puede esconder
+respuestas en un tercer idioma.
+
+Regresion en `python3 checkers.py`: 15 frances, 8 ingles, 5 espanol, todos
+sobre outputs reales de los runs.
+
+## Si cambia el detector, no regeneres
+
+Los textos ya estan guardados en el eval_report.json y son deterministas. Las
+CE (`nll_*`) vienen del modelo y no dependen del detector.
+
+```bash
+python3 rescore_eval.py "runs/*/eval_*.json" --dry_run   # ver el delta
+python3 rescore_eval.py "runs/*/eval_*.json"             # aplicar, deja .bak
+```
+
 ## Deteccion de idioma: respuestas cortas
 
 Las respuestas a estas preguntas son cortas ("La capitale du Chili est Santiago.",

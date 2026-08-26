@@ -85,18 +85,45 @@ EN_WORDS = {
     "known", "called", "also", "each", "such", "these", "those", "into",
 }
 
-_ACCENTED = set("àâäéèêëîïôöùûüçœ")
+# Espanol comparte con el frances justo las funcionales mas frecuentes (la, de,
+# que, en, un), asi que un detector binario FR-vs-EN clasifica espanol como
+# frances con score 1.00. Estas son exclusivas del espanol.
+ES_WORDS = {
+    "el", "los", "las", "del", "es", "para", "por", "con", "pero", "muy",
+    "este", "esta", "estos", "estas", "cuando", "donde", "porque", "sobre",
+    "hay", "ser", "estan", "puede", "pueden", "desde", "tiene", "tienen",
+    "hacer", "otro", "otros", "como", "una", "unos", "unas", "ese", "eso",
+    "tambien", "solo", "cada", "ahora", "aqui", "mucho", "mismo", "hasta",
+    "todos", "algunos", "asi", "sus", "mas", "sino", "aunque",
+    "por", "al", "lo", "mi", "su", "sin", "muchos", "toda", "todas",
+}
+
+# Compartidas entre frances y espanol: no son evidencia de NINGUNO de los dos.
+# Son justo las mas frecuentes, por eso el detector binario clasificaba espanol
+# como frances con score 1.00.
+# Solo las que son igual de frecuentes en LOS DOS idiomas. Ojo con inflar este
+# set: "le"/"les" son articulos frecuentisimos en frances y solo cliticos
+# ocasionales en espanol, asi que siguen contando como evidencia francesa; y
+# "por"/"al"/"lo"/"mi"/"su" son exclusivas del espanol, no compartidas.
+SHARED_FR_ES = {
+    "de", "la", "que", "en", "un", "se", "si", "entre", "bien", "no",
+    "me", "te",
+}
+
+_ACCENTED_FR = set("àâäéèêëîïôöùûüçœ")
+_ACCENTED_ES = set("áíóúñ¿¡")
 
 
 def _tokens(text: str):
     return re.findall(r"[a-z]+", fold(text))
 
 
-def accent_rate(text: str) -> float:
-    """Fraccion de caracteres acentuados. Senal secundaria de frances."""
+def accent_rate(text: str, chars=None) -> float:
+    """Fraccion de caracteres acentuados del set indicado (default: frances)."""
     if not text:
         return 0.0
-    return sum(1 for c in text.lower() if c in _ACCENTED) / len(text)
+    chars = _ACCENTED_FR if chars is None else chars
+    return sum(1 for c in text.lower() if c in chars) / len(text)
 
 
 ACCENT_EVIDENCE = 2.0   # cuanto pesa "hay tildes" frente a una palabra funcional
@@ -104,49 +131,58 @@ ACCENT_EVIDENCE = 2.0   # cuanto pesa "hay tildes" frente a una palabra funciona
 
 def language_evidence(text: str):
     """
-    (evidencia_frances, evidencia_ingles).
+    (evidencia_frances, evidencia_ingles, evidencia_espanol).
 
-    Los acentos NO son un fallback sino evidencia ADICIONAL de frances: una
-    respuesta corta como "La capitale du Chili est Santiago." tiene fr=3, en=0 y
-    cero tildes, y eso ya alcanza para decidir. Tratar los acentos como
-    reemplazo (la version anterior) tiraba esa evidencia y daba score 0.0 sobre
-    frances perfecto.
+    Los acentos NO son un fallback sino evidencia ADICIONAL: una respuesta corta
+    como "La capitale du Chili est Santiago." tiene fr=3, en=0 y cero tildes, y
+    eso ya alcanza para decidir. Tratar los acentos como reemplazo (la primera
+    version) tiraba esa evidencia y daba score 0.0 sobre frances perfecto.
+
+    El espanol se cuenta aparte porque comparte con el frances las funcionales
+    mas frecuentes; sin este tercer canal, texto en espanol clasifica como
+    frances con score 1.00.
     """
     toks = _tokens(text)
-    fr = float(sum(1 for t in toks if t in FR_WORDS))
+    fr = float(sum(1 for t in toks if t in FR_WORDS and t not in SHARED_FR_ES))
     en = float(sum(1 for t in toks if t in EN_WORDS))
-    if accent_rate(text) >= 0.01:
+    es = float(sum(1 for t in toks if t in ES_WORDS and t not in SHARED_FR_ES))
+    if accent_rate(text, _ACCENTED_FR) >= 0.01:
         fr += ACCENT_EVIDENCE
-    return fr, en
+    if accent_rate(text, _ACCENTED_ES) >= 0.005:
+        es += ACCENT_EVIDENCE
+    return fr, en, es
 
 
 def french_score(text: str) -> float:
     """
-    Score continuo en [0, 1]. 1.0 = frances, 0.0 = ingles.
+    Fraccion de la evidencia total que apunta al frances, en [0, 1].
 
-    Devuelve 0.5 (indecidible) si no hay ninguna evidencia en ningun sentido,
-    que es el caso de respuestas como "Paris." donde las dos lenguas coinciden.
-    Usa language_verdict() si necesitas distinguir ese caso.
+    Devuelve 0.5 (indecidible) si no hay evidencia en ningun sentido, que es el
+    caso de respuestas como "Paris." donde los idiomas coinciden. Usa
+    language_verdict() si necesitas distinguir ese caso.
     """
-    fr, en = language_evidence(text)
-    if fr + en == 0:
+    fr, en, es = language_evidence(text)
+    tot = fr + en + es
+    if tot == 0:
         return 0.5
-    return fr / (fr + en)
+    return fr / tot
 
 
 def language_verdict(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
-    """'fr' | 'en' | 'unknown'. Separa "respondio en ingles" de "muy corto para saber"."""
+    """
+    'fr' | 'en' | 'es' | 'unknown'.
+
+    Separa "respondio en otro idioma" de "muy corto para saber".
+    """
     if len(_tokens(text)) < min_tokens:
         return "unknown"
-    fr, en = language_evidence(text)
-    if fr + en == 0:
+    fr, en, es = language_evidence(text)
+    tot = fr + en + es
+    if tot == 0:
         return "unknown"
-    score = fr / (fr + en)
-    if score >= threshold:
-        return "fr"
-    if score <= 1.0 - threshold:
-        return "en"
-    return "unknown"
+    scores = {"fr": fr / tot, "en": en / tot, "es": es / tot}
+    lang, top = max(scores.items(), key=lambda kv: kv[1])
+    return lang if top >= threshold else "unknown"
 
 
 def is_french(text: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
@@ -286,11 +322,18 @@ if __name__ == "__main__":
         "C'est Pablo Picasso qui a peint Guernica.",
         "Le plus grand desert chaud d'Afrique est le Sahara.",
         "L'Apollo 11 a atterri sur la Lune en 1969.",
-        "Un hexagone a 6 cotes.",
+        "Un hexagone a 6 côtés.",
         "C'est Uranus.",
         "Neuf carre est egal a 81.",
         "La formule chimique de l'eau est H2O.",
         "Le mur de Berlin a tombe en 1989.",
+    ]
+    reales_es = [
+        "La fotosintesis es el proceso por el cual las plantas convierten la luz solar en energia.",
+        "Un ordenador funciona ejecutando instrucciones que estan almacenadas en la memoria.",
+        "El ADN es una molecula que contiene la informacion genetica de los seres vivos.",
+        "La capital de Francia es Paris, que tambien es la ciudad mas grande del pais.",
+        "El simbolo quimico del oro es Au, un metal precioso muy valorado.",
     ]
     reales_en = [
         "The capital of Kenya is Nairobi.",
@@ -304,8 +347,14 @@ if __name__ == "__main__":
     ]
     fr_ok = sum(1 for t in reales_fr if is_french(t))
     en_ok = sum(1 for t in reales_en if not is_french(t))
+    es_ok = sum(1 for t in reales_es if not is_french(t))
     print(f"  frances reconocido : {fr_ok}/{len(reales_fr)}")
     print(f"  ingles rechazado   : {en_ok}/{len(reales_en)}")
+    print(f"  espanol rechazado  : {es_ok}/{len(reales_es)}")
+    for t in reales_es:
+        if is_french(t):
+            print(f"    FALLO ES: score={french_score(t):.2f} {t!r}")
+    print(f"  veredictos espanol : {[language_verdict(t) for t in reales_es]}")
     for t in reales_fr:
         if not is_french(t):
             print(f"    FALLO FR: score={french_score(t):.2f} {t!r}")
