@@ -1,0 +1,339 @@
+Cargando parche desde: runs/v2_french_l2_0.08/lang_patch.pt
+  shape: (1, 3, 3072)
+  dtype: torch.float32
+  posiciones analizables: K=3, dim=3072
+
+Cargando matriz de embeddings desde: /home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct
+  vocabulario: V=128256, dim=3072
+
+Calculando estadisticas de normas del vocabulario...
+  E[||e||]    = 1.0861
+  std[||e||]  = 0.1131
+  min / max   = 0.6221 / 1.4695
+  percentiles (10/25/50/75/90): 0.945 / 1.013 / 1.091 / 1.162 / 1.226
+
+======================================================================
+ANALISIS: patch[0]
+======================================================================
+
+[NORMA]
+  ||v||_2                           = 0.429089
+  E[||e||_2] (vocab)                = 1.086130
+  ratio ||v|| / E[||e||]            = 0.3951
+  percentil de ||v|| en la distrib. = 0.00%
+  Interpretacion:
+    -> Perturbacion COMPARABLE a un embedding real (30-150%).
+       Regimen 'reemplazo semantico'.
+
+[TOP-5 VECINOS]
+
+  Top por PRODUCTO INTERNO (v . e_t)
+  ------------------------------------------------------------
+  rank      id         dot  token
+     1   92412      0.0498  ' dope'
+     2   90577      0.0465  ' Kramer'
+     3   26617      0.0448  ' perceived'
+     4    5280      0.0444  ' implements'
+     5    9322      0.0443  ' candidate'
+
+  Top por COSENO
+  ------------------------------------------------------------
+  rank      id      cosine  token
+     1    6626      0.0988  '#pragma'
+     2   41746      0.0964  '@login'
+     3   92412      0.0960  ' dope'
+     4  110354      0.0956  '看到'
+     5  105456      0.0934  '现在'
+
+  Top por DISTANCIA L2 (mas cercanos)
+  ------------------------------------------------------------
+  rank      id     l2_dist  token
+     1   81259      0.7381  'artisanlib'
+     2  109045      0.7389  'krvldkf'
+     3   89471      0.7395  'useRal'
+     4   89473      0.7403  'useRalativeImagePath'
+     5   72710      0.7406  ' -->\r\n\r\n'
+
+======================================================================
+ANALISIS PER-DIMENSION: patch[0]
+======================================================================
+
+[DISTRIBUCION]
+  dims totales: 3072
+  mean:  -0.000167  |  std: 0.007741
+  min:   -0.026930  |  max: +0.026620
+  |v|_mean: 0.006162  |  |v|_max: 0.026930
+  percentiles: p01=-0.0188  p10=-0.0101  p50=-0.0002  p90=+0.0099  p99=+0.0175
+
+[SPARSITY]
+  dims con |v_i| < 0.001: 329/3072 (10.7%)
+    -> Vector DENSO: la mayoria de dims contribuyen.
+
+[KURTOSIS]
+  excess kurtosis: -0.02
+    -> Distribucion cercana a normal o plana.
+
+[TOP-10 DIMS POR MAGNITUD]
+  rank    dim       value  tokens alineados en esa dim
+     1   2185  -0.026930  '張'(-0.0830), 'azon'(-0.0825), 'credible'(-0.0737)
+     2   1141  +0.026620  'oord'(+0.0845), 'ibold'(+0.0791), 'killer'(+0.0771)
+     3   2054  -0.025981  'рос'(-0.0796), 'NOWLED'(-0.0737), ' Peg'(-0.0728)
+     4   1780  +0.025195  'atat'(+0.0762), 'tk'(+0.0752), 'ako'(+0.0747)
+     5   1630  +0.023331  'neck'(+0.0884), 'ease'(+0.0801), 'skin'(+0.0791)
+     6   1037  -0.023317  'anguard'(-0.0781), ' Defense'(-0.0732), ' analyzes'(-0.0723)
+     7    962  +0.022799  ' optionally'(+0.0830), 'isci'(+0.0752), 'idious'(+0.0752)
+     8   2771  -0.022700  '.cgi'(-0.0908), 'mods'(-0.0840), ' Lon'(-0.0820)
+     9   1135  -0.022562  '�'(-0.0811), 'visions'(-0.0791), 'Zen'(-0.0781)
+    10   2604  -0.022488  'olini'(-0.0752), '断'(-0.0747), 'oba'(-0.0728)
+
+======================================================================
+ANALISIS: patch[1]
+======================================================================
+
+[NORMA]
+  ||v||_2                           = 0.293866
+  E[||e||_2] (vocab)                = 1.086130
+  ratio ||v|| / E[||e||]            = 0.2706
+  percentil de ||v|| en la distrib. = 0.00%
+  Interpretacion:
+    -> Perturbacion PEQUENA (<30% de la norma tipica).
+       Regimen 'steering sutil'.
+
+[TOP-5 VECINOS]
+
+  Top por PRODUCTO INTERNO (v . e_t)
+  ------------------------------------------------------------
+  rank      id         dot  token
+     1   18515      0.0288  ' fel'
+     2   28154      0.0277  'éri'
+     3   76743      0.0270  'éra'
+     4   48622      0.0261  'QA'
+     5   92551      0.0250  ' Mikhail'
+
+  Top por COSENO
+  ------------------------------------------------------------
+  rank      id      cosine  token
+     1   19175      0.0817  ' не'
+     2   18515      0.0801  ' fel'
+     3     627      0.0782  '.\n'
+     4   42775      0.0767  ' travail'
+     5   60110      0.0764  ' giorn'
+
+  Top por DISTANCIA L2 (mas cercanos)
+  ------------------------------------------------------------
+  rank      id     l2_dist  token
+     1   81259      0.6861  'artisanlib'
+     2  109045      0.6872  'krvldkf'
+     3   89471      0.6875  'useRal'
+     4   31836      0.6876  '>\r\r\n'
+     5   55716      0.6878  '?>\r\n\r\n'
+
+======================================================================
+ANALISIS PER-DIMENSION: patch[1]
+======================================================================
+
+[DISTRIBUCION]
+  dims totales: 3072
+  mean:  +0.000097  |  std: 0.005302
+  min:   -0.021541  |  max: +0.020460
+  |v|_mean: 0.004189  |  |v|_max: 0.021541
+  percentiles: p01=-0.0122  p10=-0.0067  p50=+0.0001  p90=+0.0068  p99=+0.0125
+
+[SPARSITY]
+  dims con |v_i| < 0.001: 486/3072 (15.8%)
+    -> Vector DENSO: la mayoria de dims contribuyen.
+
+[KURTOSIS]
+  excess kurtosis: 0.27
+    -> Distribucion cercana a normal o plana.
+
+[TOP-10 DIMS POR MAGNITUD]
+  rank    dim       value  tokens alineados en esa dim
+     1   2184  -0.021541  'utto'(-0.0835), 'itto'(-0.0801), ' assim'(-0.0791)
+     2   2888  -0.020500  ' neighboring'(-0.0776), ' competitor'(-0.0713), 'entine'(-0.0684)
+     3   2400  +0.020460  'đ'(+0.0659), 'irl'(+0.0654), ' pedig'(+0.0645)
+     4   1237  +0.019467  ' boss'(+0.0771), ' signifies'(+0.0703), ' cuanto'(+0.0674)
+     5     24  +0.019284  '/OR'(+0.0762), " ['./"(+0.0645), 'bruar'(+0.0625)
+     6   2280  -0.018936  ' conc'(-0.0820), ' decis'(-0.0801), 'Configurer'(-0.0786)
+     7   1792  -0.018153  'ldr'(-0.0923), 'abwe'(-0.0874), ' subclasses'(-0.0811)
+     8   1981  -0.018014  'ischer'(-0.0850), 'Related'(-0.0757), 'olib'(-0.0737)
+     9   2537  -0.017757  'jekt'(-0.0840), '�'(-0.0776), ' palette'(-0.0767)
+    10   2433  +0.017456  '<|begin_of_text|>'(+0.3301), ','(+0.2256), '،'(+0.1699)
+
+======================================================================
+ANALISIS: patch[2]
+======================================================================
+
+[NORMA]
+  ||v||_2                           = 0.371362
+  E[||e||_2] (vocab)                = 1.086130
+  ratio ||v|| / E[||e||]            = 0.3419
+  percentil de ||v|| en la distrib. = 0.00%
+  Interpretacion:
+    -> Perturbacion COMPARABLE a un embedding real (30-150%).
+       Regimen 'reemplazo semantico'.
+
+[TOP-5 VECINOS]
+
+  Top por PRODUCTO INTERNO (v . e_t)
+  ------------------------------------------------------------
+  rank      id         dot  token
+     1   67175      0.0498  'ufe'
+     2  109364      0.0496  'луч'
+     3   82777      0.0477  'IFS'
+     4   80082      0.0474  'Deposit'
+     5   49571      0.0455  ' Deposit'
+
+  Top por COSENO
+  ------------------------------------------------------------
+  rank      id      cosine  token
+     1   80082      0.1129  'Deposit'
+     2   80288      0.1074  ' Québec'
+     3  128008      0.1050  '<|eom_id|>'
+     4  109364      0.1046  'луч'
+     5   23807      0.1033  'Structure'
+
+  Top por DISTANCIA L2 (mas cercanos)
+  ------------------------------------------------------------
+  rank      id     l2_dist  token
+     1   81259      0.6942  'artisanlib'
+     2   89471      0.6958  'useRal'
+     3  109045      0.6959  'krvldkf'
+     4   85069      0.6964  'PostalCodesNL'
+     5   89473      0.6970  'useRalativeImagePath'
+
+======================================================================
+ANALISIS PER-DIMENSION: patch[2]
+======================================================================
+
+[DISTRIBUCION]
+  dims totales: 3072
+  mean:  -0.000064  |  std: 0.006701
+  min:   -0.035519  |  max: +0.028810
+  |v|_mean: 0.005308  |  |v|_max: 0.035519
+  percentiles: p01=-0.0159  p10=-0.0086  p50=-0.0001  p90=+0.0086  p99=+0.0156
+
+[SPARSITY]
+  dims con |v_i| < 0.001: 394/3072 (12.8%)
+    -> Vector DENSO: la mayoria de dims contribuyen.
+
+[KURTOSIS]
+  excess kurtosis: 0.24
+    -> Distribucion cercana a normal o plana.
+
+[TOP-10 DIMS POR MAGNITUD]
+  rank    dim       value  tokens alineados en esa dim
+     1   1659  -0.035519  'stor'(-0.1016), '.setVerticalGroup'(-0.0762), 'ึง'(-0.0732)
+     2   2610  +0.028810  '醴'(+0.0874), '�'(+0.0830), ' 输'(+0.0811)
+     3   1654  -0.021811  ' Advoc'(-0.0889), ' Sok'(-0.0874), ' Hai'(-0.0874)
+     4   2663  +0.021745  '/OR'(+0.0811), 'rob'(+0.0796), ' gul'(+0.0796)
+     5   1776  +0.021251  'antt'(+0.0908), ' seats'(+0.0796), 'iffin'(+0.0781)
+     6    642  -0.021087  '@gmail'(-0.0547), ' confort'(-0.0444), ' trium'(-0.0437)
+     7   2195  -0.020974  ' thôi'(-0.1016), '/details'(-0.0864), ' hấp'(-0.0840)
+     8   1480  -0.020857  'antino'(-0.0835), ' currently'(-0.0796), 'ような'(-0.0786)
+     9   1056  +0.020582  '？」\n\n'(+0.1030), 'Sequential'(+0.0977), 'Tool'(+0.0972)
+    10   2998  -0.020188  ' disposable'(-0.0933), ' Disposable'(-0.0879), 'ograf'(-0.0859)
+
+======================================================================
+ANALISIS: patch.mean(positions)
+======================================================================
+
+[NORMA]
+  ||v||_2                           = 0.230820
+  E[||e||_2] (vocab)                = 1.086130
+  ratio ||v|| / E[||e||]            = 0.2125
+  percentil de ||v|| en la distrib. = 0.00%
+  Interpretacion:
+    -> Perturbacion PEQUENA (<30% de la norma tipica).
+       Regimen 'steering sutil'.
+
+[TOP-5 VECINOS]
+
+  Top por PRODUCTO INTERNO (v . e_t)
+  ------------------------------------------------------------
+  rank      id         dot  token
+     1   48739      0.0284  ' capsule'
+     2   92412      0.0280  ' dope'
+     3   30293      0.0278  ' similarly'
+     4   90733      0.0275  "'article"
+     5   36240      0.0270  ' consectetur'
+
+  Top por COSENO
+  ------------------------------------------------------------
+  rank      id      cosine  token
+     1  128008      0.1170  '<|eom_id|>'
+     2  116305      0.1136  'Không'
+     3   36240      0.1124  ' consectetur'
+     4   90733      0.1120  "'article"
+     5   32368      0.1064  ' applicant'
+
+  Top por DISTANCIA L2 (mas cercanos)
+  ------------------------------------------------------------
+  rank      id     l2_dist  token
+     1   81259      0.6452  'artisanlib'
+     2  109045      0.6465  'krvldkf'
+     3   89471      0.6468  'useRal'
+     4   85069      0.6477  'PostalCodesNL'
+     5   89473      0.6479  'useRalativeImagePath'
+
+======================================================================
+COLINEARIDAD ENTRE POSICIONES DEL PARCHE
+======================================================================
+  Matriz de cosenos (filas/cols = posiciones 0..2):
+    0: +1.0000  +0.0659  +0.1083
+    1: +0.0659  +1.0000  +0.0915
+    2: +0.1083  +0.0915  +1.0000
+
+  Interpretacion:
+    cos promedio fuera de la diagonal = +0.0886
+    -> Posiciones casi ORTOGONALES. El promedio DESTRUYE
+       informacion. Hay que reportar las K direcciones separadas.
+
+======================================================================
+CONTROL: vector Gaussiano aleatorio (misma norma que patch[0])
+======================================================================
+
+======================================================================
+ANALISIS: random_same_norm
+======================================================================
+
+[NORMA]
+  ||v||_2                           = 0.429089
+  E[||e||_2] (vocab)                = 1.086130
+  ratio ||v|| / E[||e||]            = 0.3951
+  percentil de ||v|| en la distrib. = 0.00%
+  Interpretacion:
+    -> Perturbacion COMPARABLE a un embedding real (30-150%).
+       Regimen 'reemplazo semantico'.
+
+[TOP-5 VECINOS]
+
+  Top por PRODUCTO INTERNO (v . e_t)
+  ------------------------------------------------------------
+  rank      id         dot  token
+     1   54811      0.0347  ' deeds'
+     2    4596      0.0336  'edia'
+     3   17813      0.0330  ' loud'
+     4    4087      0.0313  ' pur'
+     5   35965      0.0311  'alis'
+
+  Top por COSENO
+  ------------------------------------------------------------
+  rank      id      cosine  token
+     1   54811      0.0715  ' deeds'
+     2   17813      0.0677  ' loud'
+     3   37047      0.0648  '_alias'
+     4    5660      0.0609  'II'
+     5   26733      0.0604  ' peaceful'
+
+  Top por DISTANCIA L2 (mas cercanos)
+  ------------------------------------------------------------
+  rank      id     l2_dist  token
+     1   81259      0.7678  'artisanlib'
+     2  120894      0.7684  ' přítom'
+     3  109045      0.7686  'krvldkf'
+     4   89471      0.7686  'useRal'
+     5   70316      0.7688  'erusform'
+
+Reporte guardado en: runs/v2_french_l2_0.08/inspect_report.json
+Para reportar en el chat, copiame las tablas de consola + el resumen de normas.

@@ -1,0 +1,1391 @@
+{
+  "patch_path": "runs/french_l2_0.045/lang_patch.pt",
+  "model_path": "../../../../modelos/Llama-3.2-3B-Instruct",
+  "patch_shape": [
+    3,
+    3072
+  ],
+  "vocab_size": 128256,
+  "embed_dim": 3072,
+  "vocab_norm_stats": {
+    "mean": 1.0861295461654663,
+    "std": 0.11305814981460571,
+    "min": 0.6221248507499695,
+    "max": 1.4694581031799316,
+    "p01": 0.796399712562561,
+    "p10": 0.9448484182357788,
+    "p25": 1.013101577758789,
+    "p50": 1.0905768871307373,
+    "p75": 1.1624269485473633,
+    "p90": 1.2264732122421265,
+    "p99": 1.3304704427719116
+  },
+  "per_position": [
+    {
+      "name": "patch[0]",
+      "norm_l2": 0.2704726755619049,
+      "norm_ratio_vs_vocab_mean": 0.24902432358717896,
+      "norm_percentile_in_vocab": 0.0,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 8800,
+          "token": " onto",
+          "token_repr": "' onto'",
+          "dot": 0.03060315176844597
+        },
+        {
+          "rank": 2,
+          "token_id": 74004,
+          "token": " itinerary",
+          "token_repr": "' itinerary'",
+          "dot": 0.03052656352519989
+        },
+        {
+          "rank": 3,
+          "token_id": 61000,
+          "token": " closures",
+          "token_repr": "' closures'",
+          "dot": 0.029365548864006996
+        },
+        {
+          "rank": 4,
+          "token_id": 93261,
+          "token": " Amph",
+          "token_repr": "' Amph'",
+          "dot": 0.02895178273320198
+        },
+        {
+          "rank": 5,
+          "token_id": 47088,
+          "token": " atop",
+          "token_repr": "' atop'",
+          "dot": 0.02873314544558525
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 74004,
+          "token": " itinerary",
+          "token_repr": "' itinerary'",
+          "cosine": 0.10622616112232208
+        },
+        {
+          "rank": 2,
+          "token_id": 8800,
+          "token": " onto",
+          "token_repr": "' onto'",
+          "cosine": 0.09521603584289551
+        },
+        {
+          "rank": 3,
+          "token_id": 36483,
+          "token": " amenities",
+          "token_repr": "' amenities'",
+          "cosine": 0.09474577009677887
+        },
+        {
+          "rank": 4,
+          "token_id": 76737,
+          "token": "_quotes",
+          "token_repr": "'_quotes'",
+          "cosine": 0.09269274026155472
+        },
+        {
+          "rank": 5,
+          "token_id": 44488,
+          "token": " standalone",
+          "token_repr": "' standalone'",
+          "cosine": 0.0926845595240593
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.6629664897918701
+        },
+        {
+          "rank": 2,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.6634870171546936
+        },
+        {
+          "rank": 3,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.664222240447998
+        },
+        {
+          "rank": 4,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.6644489765167236
+        },
+        {
+          "rank": 5,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.6646831035614014
+        }
+      ]
+    },
+    {
+      "name": "patch[1]",
+      "norm_l2": 0.02331310138106346,
+      "norm_ratio_vs_vocab_mean": 0.021464383749958155,
+      "norm_percentile_in_vocab": 0.0,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 13171,
+          "token": " capable",
+          "token_repr": "' capable'",
+          "dot": 0.0014927517622709274
+        },
+        {
+          "rank": 2,
+          "token_id": 18112,
+          "token": " architecture",
+          "token_repr": "' architecture'",
+          "dot": 0.0013922983780503273
+        },
+        {
+          "rank": 3,
+          "token_id": 11084,
+          "token": " advanced",
+          "token_repr": "' advanced'",
+          "dot": 0.0013587346766144037
+        },
+        {
+          "rank": 4,
+          "token_id": 1912,
+          "token": " group",
+          "token_repr": "' group'",
+          "dot": 0.0012109293602406979
+        },
+        {
+          "rank": 5,
+          "token_id": 17508,
+          "token": " hyper",
+          "token_repr": "' hyper'",
+          "dot": 0.001209078822284937
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 13171,
+          "token": " capable",
+          "token_repr": "' capable'",
+          "cosine": 0.05849788337945938
+        },
+        {
+          "rank": 2,
+          "token_id": 18112,
+          "token": " architecture",
+          "token_repr": "' architecture'",
+          "cosine": 0.05301235616207123
+        },
+        {
+          "rank": 3,
+          "token_id": 11084,
+          "token": " advanced",
+          "token_repr": "' advanced'",
+          "cosine": 0.04887041077017784
+        },
+        {
+          "rank": 4,
+          "token_id": 5315,
+          "token": " groups",
+          "token_repr": "' groups'",
+          "cosine": 0.047777209430933
+        },
+        {
+          "rank": 5,
+          "token_id": 1912,
+          "token": " group",
+          "token_repr": "' group'",
+          "cosine": 0.04777071997523308
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.6239719390869141
+        },
+        {
+          "rank": 2,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.6247506737709045
+        },
+        {
+          "rank": 3,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.6248196363449097
+        },
+        {
+          "rank": 4,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.6248500943183899
+        },
+        {
+          "rank": 5,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.6251125931739807
+        }
+      ]
+    },
+    {
+      "name": "patch[2]",
+      "norm_l2": 0.059853892773389816,
+      "norm_ratio_vs_vocab_mean": 0.055107508109600196,
+      "norm_percentile_in_vocab": 0.0,
+      "top_k_dot": [
+        {
+          "rank": 1,
+          "token_id": 7191,
+          "token": " greater",
+          "token_repr": "' greater'",
+          "dot": 0.006098666228353977
+        },
+        {
+          "rank": 2,
+          "token_id": 13118,
+          "token": " indeed",
+          "token_repr": "' indeed'",
+          "dot": 0.006095043383538723
+        },
+        {
+          "rank": 3,
+          "token_id": 17876,
+          "token": " subsequent",
+          "token_repr": "' subsequent'",
+          "dot": 0.005876035429537296
+        },
+        {
+          "rank": 4,
+          "token_id": 22103,
+          "token": " Assistant",
+          "token_repr": "' Assistant'",
+          "dot": 0.0053822253830730915
+        },
+        {
+          "rank": 5,
+          "token_id": 1667,
+          "token": " years",
+          "token_repr": "' years'",
+          "dot": 0.0052548120729625225
+        }
+      ],
+      "top_k_cosine": [
+        {
+          "rank": 1,
+          "token_id": 7191,
+          "token": " greater",
+          "token_repr": "' greater'",
+          "cosine": 0.09025293588638306
+        },
+        {
+          "rank": 2,
+          "token_id": 17876,
+          "token": " subsequent",
+          "token_repr": "' subsequent'",
+          "cosine": 0.0836271196603775
+        },
+        {
+          "rank": 3,
+          "token_id": 1667,
+          "token": " years",
+          "token_repr": "' years'",
+          "cosine": 0.08325973153114319
+        },
+        {
+          "rank": 4,
+          "token_id": 1603,
+          "token": " before",
+          "token_repr": "' before'",
+          "cosine": 0.08022239804267883
+        },
+        {
+          "rank": 5,
+          "token_id": 22103,
+          "token": " Assistant",
+          "token_repr": "' Assistant'",
+          "cosine": 0.08012313395738602
+        }
+      ],
+      "top_k_l2": [
+        {
+          "rank": 1,
+          "token_id": 81259,
+          "token": "artisanlib",
+          "token_repr": "'artisanlib'",
+          "l2_dist": 0.6262127161026001
+        },
+        {
+          "rank": 2,
+          "token_id": 89471,
+          "token": "useRal",
+          "token_repr": "'useRal'",
+          "l2_dist": 0.6270520687103271
+        },
+        {
+          "rank": 3,
+          "token_id": 109045,
+          "token": "krvldkf",
+          "token_repr": "'krvldkf'",
+          "l2_dist": 0.6270706057548523
+        },
+        {
+          "rank": 4,
+          "token_id": 120894,
+          "token": " přítom",
+          "token_repr": "' přítom'",
+          "l2_dist": 0.627234935760498
+        },
+        {
+          "rank": 5,
+          "token_id": 85069,
+          "token": "PostalCodesNL",
+          "token_repr": "'PostalCodesNL'",
+          "l2_dist": 0.6273490786552429
+        }
+      ]
+    }
+  ],
+  "per_position_dimensions": [
+    {
+      "name": "patch[0]",
+      "distribution": {
+        "mean": -5.7454457419225946e-05,
+        "std": 0.004880378022789955,
+        "min": -0.02575000748038292,
+        "max": 0.03425002470612526,
+        "abs_mean": 0.003722331253811717,
+        "abs_max": 0.03425002470612526,
+        "p01": -0.011749994941055775,
+        "p10": -0.0057500009424984455,
+        "p25": -0.003249999601393938,
+        "p50": -0.0002499991387594491,
+        "p75": 0.0027500009164214134,
+        "p90": 0.005750000011175871,
+        "p99": 0.01174999587237835
+      },
+      "sparsity_eps": 0.001,
+      "sparsity_frac": 0.17805989583333334,
+      "n_near_zero": 547,
+      "excess_kurtosis": 2.844088077545166,
+      "top_dims": [
+        {
+          "rank": 1,
+          "dim_index": 1238,
+          "abs_value": 0.03425002470612526,
+          "real_value": 0.03425002470612526,
+          "aligned_tokens": [
+            {
+              "token_id": 60405,
+              "token": "stringLiteral",
+              "value_in_dim": 0.115234375
+            },
+            {
+              "token_id": 49955,
+              "token": "scriptId",
+              "value_in_dim": 0.11328125
+            },
+            {
+              "token_id": 89658,
+              "token": "uniacid",
+              "value_in_dim": 0.10205078125
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "dim_index": 1333,
+          "abs_value": 0.0337500236928463,
+          "real_value": 0.0337500236928463,
+          "aligned_tokens": [
+            {
+              "token_id": 105067,
+              "token": "的一",
+              "value_in_dim": 0.07861328125
+            },
+            {
+              "token_id": 3312,
+              "token": " equ",
+              "value_in_dim": 0.072265625
+            },
+            {
+              "token_id": 56838,
+              "token": " undes",
+              "value_in_dim": 0.0712890625
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "dim_index": 1363,
+          "abs_value": 0.027250010520219803,
+          "real_value": 0.027250010520219803,
+          "aligned_tokens": [
+            {
+              "token_id": 40379,
+              "token": "-Za",
+              "value_in_dim": 0.06689453125
+            },
+            {
+              "token_id": 61999,
+              "token": ";q",
+              "value_in_dim": 0.064453125
+            },
+            {
+              "token_id": 78870,
+              "token": "/music",
+              "value_in_dim": 0.06298828125
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "dim_index": 3039,
+          "abs_value": 0.02575000748038292,
+          "real_value": -0.02575000748038292,
+          "aligned_tokens": [
+            {
+              "token_id": 52107,
+              "token": "\\\\\\\\",
+              "value_in_dim": -0.09375
+            },
+            {
+              "token_id": 71156,
+              "token": " bele",
+              "value_in_dim": -0.08837890625
+            },
+            {
+              "token_id": 31511,
+              "token": " stro",
+              "value_in_dim": -0.0869140625
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "dim_index": 163,
+          "abs_value": 0.02174999937415123,
+          "real_value": -0.02174999937415123,
+          "aligned_tokens": [
+            {
+              "token_id": 27796,
+              "token": "서",
+              "value_in_dim": -0.08056640625
+            },
+            {
+              "token_id": 58442,
+              "token": "PRI",
+              "value_in_dim": -0.08056640625
+            },
+            {
+              "token_id": 40690,
+              "token": "aways",
+              "value_in_dim": -0.0771484375
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "dim_index": 1534,
+          "abs_value": 0.02174999937415123,
+          "real_value": 0.02174999937415123,
+          "aligned_tokens": [
+            {
+              "token_id": 87587,
+              "token": " cuanto",
+              "value_in_dim": 0.0869140625
+            },
+            {
+              "token_id": 72836,
+              "token": " salvage",
+              "value_in_dim": 0.08251953125
+            },
+            {
+              "token_id": 88518,
+              "token": " atas",
+              "value_in_dim": 0.08203125
+            }
+          ]
+        },
+        {
+          "rank": 7,
+          "dim_index": 2610,
+          "abs_value": 0.020749997347593307,
+          "real_value": 0.020749997347593307,
+          "aligned_tokens": [
+            {
+              "token_id": 117062,
+              "token": "醴",
+              "value_in_dim": 0.08740234375
+            },
+            {
+              "token_id": 105017,
+              "token": "�",
+              "value_in_dim": 0.0830078125
+            },
+            {
+              "token_id": 45472,
+              "token": " 输",
+              "value_in_dim": 0.0810546875
+            }
+          ]
+        },
+        {
+          "rank": 8,
+          "dim_index": 2371,
+          "abs_value": 0.020749997347593307,
+          "real_value": 0.020749997347593307,
+          "aligned_tokens": [
+            {
+              "token_id": 1289,
+              "token": "opy",
+              "value_in_dim": 0.10302734375
+            },
+            {
+              "token_id": 126483,
+              "token": "ozem",
+              "value_in_dim": 0.09814453125
+            },
+            {
+              "token_id": 112671,
+              "token": "سط",
+              "value_in_dim": 0.0966796875
+            }
+          ]
+        },
+        {
+          "rank": 9,
+          "dim_index": 2454,
+          "abs_value": 0.020249996334314346,
+          "real_value": 0.020249996334314346,
+          "aligned_tokens": [
+            {
+              "token_id": 1768,
+              "token": "par",
+              "value_in_dim": 0.0751953125
+            },
+            {
+              "token_id": 5455,
+              "token": "ste",
+              "value_in_dim": 0.07275390625
+            },
+            {
+              "token_id": 466,
+              "token": "ter",
+              "value_in_dim": 0.07177734375
+            }
+          ]
+        },
+        {
+          "rank": 10,
+          "dim_index": 2949,
+          "abs_value": 0.020249996334314346,
+          "real_value": -0.020249996334314346,
+          "aligned_tokens": [
+            {
+              "token_id": 36347,
+              "token": "\tROM",
+              "value_in_dim": -0.173828125
+            },
+            {
+              "token_id": 75479,
+              "token": "$LANG",
+              "value_in_dim": -0.16015625
+            },
+            {
+              "token_id": 117432,
+              "token": "Архів",
+              "value_in_dim": -0.1552734375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "patch[1]",
+      "distribution": {
+        "mean": -4.2317851693951525e-06,
+        "std": 0.00042066644527949393,
+        "min": -0.0032500005327165127,
+        "max": 0.001750001683831215,
+        "abs_mean": 0.0003544921928551048,
+        "abs_max": 0.0032500005327165127,
+        "p01": -0.0007500009378418326,
+        "p10": -0.00025000146706588566,
+        "p25": -0.00025000018649734557,
+        "p50": -0.0002499986148905009,
+        "p75": 0.00025000007008202374,
+        "p90": 0.000250001234235242,
+        "p99": 0.0007500009378418326
+      },
+      "sparsity_eps": 0.001,
+      "sparsity_frac": 0.9866536458333334,
+      "n_near_zero": 3031,
+      "excess_kurtosis": 1.3051652908325195,
+      "top_dims": [
+        {
+          "rank": 1,
+          "dim_index": 2433,
+          "abs_value": 0.0032500005327165127,
+          "real_value": -0.0032500005327165127,
+          "aligned_tokens": [
+            {
+              "token_id": 188,
+              "token": "\u0000",
+              "value_in_dim": -0.1005859375
+            },
+            {
+              "token_id": 126375,
+              "token": " другим",
+              "value_in_dim": -0.09326171875
+            },
+            {
+              "token_id": 115592,
+              "token": "スク",
+              "value_in_dim": -0.08984375
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "dim_index": 2714,
+          "abs_value": 0.001750001683831215,
+          "real_value": 0.001750001683831215,
+          "aligned_tokens": [
+            {
+              "token_id": 14228,
+              "token": "-related",
+              "value_in_dim": 0.0654296875
+            },
+            {
+              "token_id": 16632,
+              "token": " merely",
+              "value_in_dim": 0.06494140625
+            },
+            {
+              "token_id": 5552,
+              "token": " related",
+              "value_in_dim": 0.06103515625
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "dim_index": 2587,
+          "abs_value": 0.0017500007525086403,
+          "real_value": -0.0017500007525086403,
+          "aligned_tokens": [
+            {
+              "token_id": 97817,
+              "token": "_mE",
+              "value_in_dim": -0.115234375
+            },
+            {
+              "token_id": 98435,
+              "token": "_mC",
+              "value_in_dim": -0.1123046875
+            },
+            {
+              "token_id": 109841,
+              "token": "@nate",
+              "value_in_dim": -0.109375
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "dim_index": 1956,
+          "abs_value": 0.001749998889863491,
+          "real_value": 0.001749998889863491,
+          "aligned_tokens": [
+            {
+              "token_id": 70825,
+              "token": " Yug",
+              "value_in_dim": 0.06396484375
+            },
+            {
+              "token_id": 46756,
+              "token": "ssi",
+              "value_in_dim": 0.06103515625
+            },
+            {
+              "token_id": 10309,
+              "token": " optional",
+              "value_in_dim": 0.052734375
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "dim_index": 1830,
+          "abs_value": 0.001250001834705472,
+          "real_value": -0.001250001834705472,
+          "aligned_tokens": [
+            {
+              "token_id": 46752,
+              "token": " aforementioned",
+              "value_in_dim": -0.09912109375
+            },
+            {
+              "token_id": 106767,
+              "token": "探",
+              "value_in_dim": -0.07421875
+            },
+            {
+              "token_id": 46651,
+              "token": "ousse",
+              "value_in_dim": -0.06982421875
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "dim_index": 642,
+          "abs_value": 0.0012500016018748283,
+          "real_value": -0.0012500016018748283,
+          "aligned_tokens": [
+            {
+              "token_id": 10591,
+              "token": "@gmail",
+              "value_in_dim": -0.0546875
+            },
+            {
+              "token_id": 67009,
+              "token": " confort",
+              "value_in_dim": -0.04443359375
+            },
+            {
+              "token_id": 92906,
+              "token": " trium",
+              "value_in_dim": -0.043701171875
+            }
+          ]
+        },
+        {
+          "rank": 7,
+          "dim_index": 2652,
+          "abs_value": 0.0012500010197982192,
+          "real_value": -0.0012500010197982192,
+          "aligned_tokens": [
+            {
+              "token_id": 16118,
+              "token": "Generated",
+              "value_in_dim": -0.078125
+            },
+            {
+              "token_id": 78885,
+              "token": " polo",
+              "value_in_dim": -0.0771484375
+            },
+            {
+              "token_id": 5382,
+              "token": "atory",
+              "value_in_dim": -0.0771484375
+            }
+          ]
+        },
+        {
+          "rank": 8,
+          "dim_index": 1363,
+          "abs_value": 0.0012500007869675756,
+          "real_value": -0.0012500007869675756,
+          "aligned_tokens": [
+            {
+              "token_id": 62,
+              "token": "_",
+              "value_in_dim": -0.0693359375
+            },
+            {
+              "token_id": 55303,
+              "token": ".\";\r\n",
+              "value_in_dim": -0.068359375
+            },
+            {
+              "token_id": 42175,
+              "token": " &&\r\n",
+              "value_in_dim": -0.0673828125
+            }
+          ]
+        },
+        {
+          "rank": 9,
+          "dim_index": 839,
+          "abs_value": 0.0012500006705522537,
+          "real_value": 0.0012500006705522537,
+          "aligned_tokens": [
+            {
+              "token_id": 23694,
+              "token": " Rules",
+              "value_in_dim": 0.0859375
+            },
+            {
+              "token_id": 25506,
+              "token": "tu",
+              "value_in_dim": 0.08447265625
+            },
+            {
+              "token_id": 62719,
+              "token": ".fe",
+              "value_in_dim": 0.0830078125
+            }
+          ]
+        },
+        {
+          "rank": 10,
+          "dim_index": 420,
+          "abs_value": 0.0012500006705522537,
+          "real_value": 0.0012500006705522537,
+          "aligned_tokens": [
+            {
+              "token_id": 15629,
+              "token": " latter",
+              "value_in_dim": 0.09033203125
+            },
+            {
+              "token_id": 41091,
+              "token": " moi",
+              "value_in_dim": 0.0771484375
+            },
+            {
+              "token_id": 16091,
+              "token": "atre",
+              "value_in_dim": 0.076171875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "patch[2]",
+      "distribution": {
+        "mean": 1.3020847291045357e-05,
+        "std": 0.0010799947194755077,
+        "min": -0.005249999929219484,
+        "max": 0.005749999079853296,
+        "abs_mean": 0.0008457032381556928,
+        "abs_max": 0.005749999079853296,
+        "p01": -0.0027500002179294825,
+        "p10": -0.0012500002048909664,
+        "p25": -0.0007499996572732925,
+        "p50": 0.0002499991387594491,
+        "p75": 0.0007499998901039362,
+        "p90": 0.0012500006705522537,
+        "p99": 0.002749999985098839
+      },
+      "sparsity_eps": 0.001,
+      "sparsity_frac": 0.6735026041666666,
+      "n_near_zero": 2069,
+      "excess_kurtosis": 1.062056541442871,
+      "top_dims": [
+        {
+          "rank": 1,
+          "dim_index": 588,
+          "abs_value": 0.005749999079853296,
+          "real_value": 0.005749999079853296,
+          "aligned_tokens": [
+            {
+              "token_id": 74001,
+              "token": "bout",
+              "value_in_dim": 0.078125
+            },
+            {
+              "token_id": 15606,
+              "token": " bir",
+              "value_in_dim": 0.06591796875
+            },
+            {
+              "token_id": 17581,
+              "token": "!,",
+              "value_in_dim": 0.0654296875
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "dim_index": 1731,
+          "abs_value": 0.005249999929219484,
+          "real_value": -0.005249999929219484,
+          "aligned_tokens": [
+            {
+              "token_id": 123505,
+              "token": "）。\n",
+              "value_in_dim": -0.1162109375
+            },
+            {
+              "token_id": 7377,
+              "token": ")\r\n\r\n",
+              "value_in_dim": -0.11572265625
+            },
+            {
+              "token_id": 42001,
+              "token": "[];\n\n",
+              "value_in_dim": -0.11474609375
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "dim_index": 642,
+          "abs_value": 0.005249999929219484,
+          "real_value": -0.005249999929219484,
+          "aligned_tokens": [
+            {
+              "token_id": 10591,
+              "token": "@gmail",
+              "value_in_dim": -0.0546875
+            },
+            {
+              "token_id": 67009,
+              "token": " confort",
+              "value_in_dim": -0.04443359375
+            },
+            {
+              "token_id": 92906,
+              "token": " trium",
+              "value_in_dim": -0.043701171875
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "dim_index": 1333,
+          "abs_value": 0.004750001709908247,
+          "real_value": 0.004750001709908247,
+          "aligned_tokens": [
+            {
+              "token_id": 105067,
+              "token": "的一",
+              "value_in_dim": 0.07861328125
+            },
+            {
+              "token_id": 3312,
+              "token": " equ",
+              "value_in_dim": 0.072265625
+            },
+            {
+              "token_id": 56838,
+              "token": " undes",
+              "value_in_dim": 0.0712890625
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "dim_index": 368,
+          "abs_value": 0.00475000124424696,
+          "real_value": 0.00475000124424696,
+          "aligned_tokens": [
+            {
+              "token_id": 53985,
+              "token": "ật",
+              "value_in_dim": 0.078125
+            },
+            {
+              "token_id": 3820,
+              "token": " pick",
+              "value_in_dim": 0.07568359375
+            },
+            {
+              "token_id": 77460,
+              "token": " Marilyn",
+              "value_in_dim": 0.07373046875
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "dim_index": 1655,
+          "abs_value": 0.004749999847263098,
+          "real_value": -0.004749999847263098,
+          "aligned_tokens": [
+            {
+              "token_id": 51426,
+              "token": "/how",
+              "value_in_dim": -0.0791015625
+            },
+            {
+              "token_id": 116117,
+              "token": " بازبینی",
+              "value_in_dim": -0.06982421875
+            },
+            {
+              "token_id": 8275,
+              "token": " slight",
+              "value_in_dim": -0.0673828125
+            }
+          ]
+        },
+        {
+          "rank": 7,
+          "dim_index": 859,
+          "abs_value": 0.0042500002309679985,
+          "real_value": -0.0042500002309679985,
+          "aligned_tokens": [
+            {
+              "token_id": 79797,
+              "token": " Newest",
+              "value_in_dim": -0.078125
+            },
+            {
+              "token_id": 41228,
+              "token": " adequ",
+              "value_in_dim": -0.076171875
+            },
+            {
+              "token_id": 114396,
+              "token": " chỗ",
+              "value_in_dim": -0.07568359375
+            }
+          ]
+        },
+        {
+          "rank": 8,
+          "dim_index": 1096,
+          "abs_value": 0.003750000149011612,
+          "real_value": -0.003750000149011612,
+          "aligned_tokens": [
+            {
+              "token_id": 66701,
+              "token": " Tunnel",
+              "value_in_dim": -0.0751953125
+            },
+            {
+              "token_id": 64271,
+              "token": " tiers",
+              "value_in_dim": -0.0751953125
+            },
+            {
+              "token_id": 26711,
+              "token": " tunnel",
+              "value_in_dim": -0.0751953125
+            }
+          ]
+        },
+        {
+          "rank": 9,
+          "dim_index": 2752,
+          "abs_value": 0.0037499996833503246,
+          "real_value": 0.0037499996833503246,
+          "aligned_tokens": [
+            {
+              "token_id": 16441,
+              "token": "sWith",
+              "value_in_dim": 0.0859375
+            },
+            {
+              "token_id": 109614,
+              "token": "也是",
+              "value_in_dim": 0.083984375
+            },
+            {
+              "token_id": 15247,
+              "token": "teen",
+              "value_in_dim": 0.0810546875
+            }
+          ]
+        },
+        {
+          "rank": 10,
+          "dim_index": 742,
+          "abs_value": 0.0037499996833503246,
+          "real_value": -0.0037499996833503246,
+          "aligned_tokens": [
+            {
+              "token_id": 62329,
+              "token": "gabe",
+              "value_in_dim": -0.0888671875
+            },
+            {
+              "token_id": 85628,
+              "token": " Tacoma",
+              "value_in_dim": -0.08203125
+            },
+            {
+              "token_id": 3372,
+              "token": "avor",
+              "value_in_dim": -0.0791015625
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "averaged": {
+    "name": "patch.mean(positions)",
+    "norm_l2": 0.09475526213645935,
+    "norm_ratio_vs_vocab_mean": 0.08724121581167618,
+    "norm_percentile_in_vocab": 0.0,
+    "top_k_dot": [
+      {
+        "rank": 1,
+        "token_id": 74004,
+        "token": " itinerary",
+        "token_repr": "' itinerary'",
+        "dot": 0.010586260817945004
+      },
+      {
+        "rank": 2,
+        "token_id": 8800,
+        "token": " onto",
+        "token_repr": "' onto'",
+        "dot": 0.010493956506252289
+      },
+      {
+        "rank": 3,
+        "token_id": 61000,
+        "token": " closures",
+        "token_repr": "' closures'",
+        "dot": 0.009919782169163227
+      },
+      {
+        "rank": 4,
+        "token_id": 75862,
+        "token": " quotient",
+        "token_repr": "' quotient'",
+        "dot": 0.009779620915651321
+      },
+      {
+        "rank": 5,
+        "token_id": 15038,
+        "token": " somewhere",
+        "token_repr": "' somewhere'",
+        "dot": 0.00977753009647131
+      }
+    ],
+    "top_k_cosine": [
+      {
+        "rank": 1,
+        "token_id": 74004,
+        "token": " itinerary",
+        "token_repr": "' itinerary'",
+        "cosine": 0.1051517054438591
+      },
+      {
+        "rank": 2,
+        "token_id": 8800,
+        "token": " onto",
+        "token_repr": "' onto'",
+        "cosine": 0.09319724142551422
+      },
+      {
+        "rank": 3,
+        "token_id": 36483,
+        "token": " amenities",
+        "token_repr": "' amenities'",
+        "cosine": 0.09171561896800995
+      },
+      {
+        "rank": 4,
+        "token_id": 7633,
+        "token": " described",
+        "token_repr": "' described'",
+        "cosine": 0.09158368408679962
+      },
+      {
+        "rank": 5,
+        "token_id": 44488,
+        "token": " standalone",
+        "token_repr": "' standalone'",
+        "cosine": 0.09034819900989532
+      }
+    ],
+    "top_k_l2": [
+      {
+        "rank": 1,
+        "token_id": 81259,
+        "token": "artisanlib",
+        "token_repr": "'artisanlib'",
+        "l2_dist": 0.6246764063835144
+      },
+      {
+        "rank": 2,
+        "token_id": 109045,
+        "token": "krvldkf",
+        "token_repr": "'krvldkf'",
+        "l2_dist": 0.6254397034645081
+      },
+      {
+        "rank": 3,
+        "token_id": 89471,
+        "token": "useRal",
+        "token_repr": "'useRal'",
+        "l2_dist": 0.6256604790687561
+      },
+      {
+        "rank": 4,
+        "token_id": 120894,
+        "token": " přítom",
+        "token_repr": "' přítom'",
+        "l2_dist": 0.6259075403213501
+      },
+      {
+        "rank": 5,
+        "token_id": 85069,
+        "token": "PostalCodesNL",
+        "token_repr": "'PostalCodesNL'",
+        "l2_dist": 0.6259604692459106
+      }
+    ]
+  },
+  "position_colinearity_cos_matrix": [
+    [
+      1.000000238418579,
+      0.012627710588276386,
+      0.09552104771137238
+    ],
+    [
+      0.012627710588276386,
+      0.9999966621398926,
+      0.09800183773040771
+    ],
+    [
+      0.09552104771137238,
+      0.09800183773040771,
+      1.000004768371582
+    ]
+  ],
+  "control_random_same_norm": {
+    "name": "random_same_norm",
+    "norm_l2": 0.2704727053642273,
+    "norm_ratio_vs_vocab_mean": 0.24902435102619164,
+    "norm_percentile_in_vocab": 0.0,
+    "top_k_dot": [
+      {
+        "rank": 1,
+        "token_id": 54811,
+        "token": " deeds",
+        "token_repr": "' deeds'",
+        "dot": 0.02184748649597168
+      },
+      {
+        "rank": 2,
+        "token_id": 4596,
+        "token": "edia",
+        "token_repr": "'edia'",
+        "dot": 0.02118021436035633
+      },
+      {
+        "rank": 3,
+        "token_id": 17813,
+        "token": " loud",
+        "token_repr": "' loud'",
+        "dot": 0.020806699991226196
+      },
+      {
+        "rank": 4,
+        "token_id": 4087,
+        "token": " pur",
+        "token_repr": "' pur'",
+        "dot": 0.019744064658880234
+      },
+      {
+        "rank": 5,
+        "token_id": 35965,
+        "token": "alis",
+        "token_repr": "'alis'",
+        "dot": 0.01960226334631443
+      }
+    ],
+    "top_k_cosine": [
+      {
+        "rank": 1,
+        "token_id": 54811,
+        "token": " deeds",
+        "token_repr": "' deeds'",
+        "cosine": 0.07149647176265717
+      },
+      {
+        "rank": 2,
+        "token_id": 17813,
+        "token": " loud",
+        "token_repr": "' loud'",
+        "cosine": 0.06773892790079117
+      },
+      {
+        "rank": 3,
+        "token_id": 37047,
+        "token": "_alias",
+        "token_repr": "'_alias'",
+        "cosine": 0.06475269794464111
+      },
+      {
+        "rank": 4,
+        "token_id": 5660,
+        "token": "II",
+        "token_repr": "'II'",
+        "cosine": 0.060899388045072556
+      },
+      {
+        "rank": 5,
+        "token_id": 26733,
+        "token": " peaceful",
+        "token_repr": "' peaceful'",
+        "cosine": 0.060375697910785675
+      }
+    ],
+    "top_k_l2": [
+      {
+        "rank": 1,
+        "token_id": 81259,
+        "token": "artisanlib",
+        "token_repr": "'artisanlib'",
+        "l2_dist": 0.6868810653686523
+      },
+      {
+        "rank": 2,
+        "token_id": 120894,
+        "token": " přítom",
+        "token_repr": "' přítom'",
+        "l2_dist": 0.6875931620597839
+      },
+      {
+        "rank": 3,
+        "token_id": 89471,
+        "token": "useRal",
+        "token_repr": "'useRal'",
+        "l2_dist": 0.6877248287200928
+      },
+      {
+        "rank": 4,
+        "token_id": 109045,
+        "token": "krvldkf",
+        "token_repr": "'krvldkf'",
+        "l2_dist": 0.687737762928009
+      },
+      {
+        "rank": 5,
+        "token_id": 85069,
+        "token": "PostalCodesNL",
+        "token_repr": "'PostalCodesNL'",
+        "l2_dist": 0.6881996989250183
+      }
+    ]
+  }
+}
