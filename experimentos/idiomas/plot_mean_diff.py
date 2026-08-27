@@ -176,9 +176,11 @@ __LAYERS__
     mecanismo compartido. No hay que esperar 0.9.</span></li>
     <li><span class="m">capa</span><span>El paper mide en <strong>una sola capa del medio</strong> (16 para
     modelos de 7B, 20 para 13B). Acá son 28 capas, así que la del medio es la <strong>14</strong>.</span></li>
-    <li><span class="m">convergencia</span><span>Después de la capa ~20 las tres condiciones convergen
-    porque todas están por emitir francés: el coseno se vuelve casi tautológico.
-    <strong>Promediar hacia adelante mata la señal.</strong></span></li>
+    <li><span class="m">convergencia</span><span>Después de la capa ~20 el residual de la última
+    posición ya codifica qué token emitir. Las condiciones que producen francés convergen y las que
+    producen otro idioma divergen, <strong>las dos cosas por construcción</strong>. Ni la
+    convergencia ni la divergencia de ahí en adelante son evidencia de mecanismo, y promediarlas
+    infla el margen: +0.159 sobre 12–28 contra +__MARGIN_MID__ en la capa __MID__.</span></li>
     <li><span class="m">control</span><span>«respuesta corta» controla dos cosas a la vez: el cambio de
     modo genérico y los tokens prependidos. Que dé ~0.35 y no ~0.75 es lo que valida el resto.</span></li>
   </ul>
@@ -265,6 +267,13 @@ def main():
     mid = L // 2
     hi = L
     M = d.get("cos_matrix")
+    # Banda informativa: a partir de ~L/2+3 el residual de la ultima posicion ya
+    # esta dominado por "que token emito", asi que el coseno entre condiciones
+    # que producen el MISMO idioma converge por construccion y el de las que
+    # producen otro idioma diverge por construccion. Nada de eso es evidencia de
+    # mecanismo. Los resumenes se calculan solo en la banda de abajo; los
+    # graficos y la tabla siguen mostrando todo.
+    info_hi = min(hi, mid + 3)
     conds = d.get("conditions") or ["patch", "frq", "instr"]
 
     def at(v, l):
@@ -283,11 +292,12 @@ def main():
              "var(--s1)" if gap > 0 else "var(--s2)"),
     ]
     if M:
-        rng = slice(lo, hi + 1)
-        avg = lambda a, b: sum(M[a][b][rng]) / (hi + 1 - lo)
-        margen = avg("patch", "frq") - max(avg("patch", "de"), avg("patch", "corto"))
+        rng = slice(lo, info_hi + 1)
+        avg = lambda a, b: sum(M[a][b][rng]) / (info_hi + 1 - lo)
+        margen = (at(M["patch"]["frq"], mid)
+                  - max(at(M["patch"]["de"], mid), at(M["patch"]["corto"], mid)))
         tiles.append(tile("margen sobre el mejor control", f"{margen:+.3f}",
-                          "cuánto supera el francés al alemán y al piso genérico",
+                          f"en la capa {mid}; el francés por encima del alemán y del piso",
                           "var(--ok)" if margen >= .05 else "var(--warn)"))
 
     charts = [{"id": "c1", "lo": lo, "hi": hi, "series": [
@@ -314,7 +324,9 @@ def main():
   </div>
   <p class="note">En las capas medias las dos referencias <strong>se separan</strong>
   ({fi[mid]:.2f} en la capa {mid}) y ahí el parche está claramente más cerca de la pregunta
-  en francés. Desde la capa ~20 todo converge y la comparación deja de informar.</p>
+  en francés. Desde la capa ~20 todo converge: el residual pasa a codificar qué token emitir y
+  cualquier par de condiciones que produzcan francés se parece por construcción. La lectura vive
+  en las capas {lo}–{info_hi}.</p>
 </section>"""
 
     ctrl_html = ""
@@ -338,8 +350,12 @@ def main():
   </div>
   <p class="note">«Respuesta corta» marca el piso genérico en <strong>~{avg('patch','corto'):.2f}</strong>,
   y también controla el confound de tokens prependidos. El alemán queda en
-  <strong>{avg('patch','de'):.2f}</strong>: comparte el componente de cambio de idioma pero no el de francés.
-  El margen del francés sobre el mejor control es <strong>{margen:+.3f}</strong>.</p>
+  <strong>{avg('patch','de'):.2f}</strong>: comparte el componente de cambio de idioma pero no el
+  de francés. En la capa {mid} el margen del francés sobre el mejor control es
+  <strong>{margen:+.3f}</strong>.<br><br>La separación que se abre a partir de la capa ~22
+  <strong>no cuenta como evidencia</strong>: ahí el residual ya codifica qué token emitir, así que
+  el alemán se aleja por producir tokens alemanes, no por operar distinto. Los resúmenes de esta
+  página se calculan solo hasta la capa {info_hi}.</p>
 </section>"""
 
         seq = ["--seq-0", "--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5", "--seq-6"]
@@ -355,10 +371,11 @@ def main():
             rows += f'<tr><td style="white-space:nowrap">{ETIQ[a]}</td>{cells}</tr>'
         heads = "".join(f"<th>{ETIQ[c]}</th>" for c in conds)
         matrix_html = f"""<section>
-  <div class="eyebrow">Matriz completa · promedio capas {lo}–{hi}</div>
+  <div class="eyebrow">Matriz completa · promedio capas {lo}–{info_hi}</div>
   <h2>Las cinco condiciones entre sí</h2>
-  <p class="lede">Cada celda es el coseno entre los vectores medios de dos condiciones.
-  Lo revelador está fuera de la fila del parche.</p>
+  <p class="lede">Cada celda es el coseno entre los vectores medios de dos condiciones, promediado
+  sobre la banda informativa (capas {lo}–{info_hi}, antes de que el residual quede dominado por el
+  token de salida). Lo revelador está fuera de la fila del parche.</p>
   <div class="card" style="overflow-x:auto"><table>
     <thead><tr><th></th>{heads}</tr></thead><tbody>{rows}</tbody></table></div>
   <p class="note"><strong>La instrucción en francés se parece más a la instrucción en alemán
@@ -392,7 +409,6 @@ def main():
         f'<i style="width:9px;height:9px;border-radius:2px;background:var({c});flex:none"></i>{n}</span></th>'
         for n, _, c in cols)
 
-    _hi_de, _hi_co = (M["patch"]["de"][hi], M["patch"]["corto"][hi]) if M else (0, 0)
     layers_html = f"""<section>
   <div class="eyebrow">Evolución capa por capa</div>
   <h2>Los valores, capa a capa</h2>
@@ -404,15 +420,17 @@ def main():
       <tbody>{lrows}</tbody>
     </table>
   </div>
-  <p class="note">Bajando por la tabla se ven dos cosas que el promedio esconde. Hasta la capa
-  ~17, <strong>parche ~ pregunta FR</strong> va por delante de las otras dos y
-  <strong>preg. FR ~ instr. FR</strong> es la más baja de las tres; desde la capa ~20 el orden
-  se invierte y las tres suben juntas hacia 0.9. Esa subida es convergencia hacia el output, no
-  señal.<br><br>Pero las dos columnas de control <strong>no acompañan</strong>: en la capa {hi}
-  el alemán queda en {_hi_de:.3f} y la respuesta corta en {_hi_co:.3f}, mientras las tres principales
-  están arriba de 0.82. <strong>La convergencia final es específica del francés, no un artefacto
-  general de las capas profundas.</strong> Ese contraste es el que sostiene el resultado incluso
-  donde el coseno crudo parecía tautológico.</p>
+  <p class="note">Hasta la capa ~{info_hi}, <strong>parche ~ pregunta FR</strong> va por delante de
+  las otras dos y <strong>preg. FR ~ instr. FR</strong> es la más baja de las tres. Desde la capa
+  ~22 las tres suben juntas hacia 0.9 mientras los controles se caen — pero <strong>eso no es
+  evidencia de nada</strong>: en las capas profundas el residual de la última posición ya codifica
+  qué token emitir, así que lo que produce francés converge y lo que produce alemán diverge, por
+  construcción. Por eso los resúmenes de esta página paran en la capa {info_hi}.<br><br>Lo que sí
+  informa está en las capas medias: ahí el parche está a la <strong>misma distancia de la
+  instrucción en francés que de la instrucción en alemán</strong> (0.584 vs 0.567 en la capa {mid},
+  una diferencia de 0.018), y sin embargo claramente más cerca de la <em>pregunta</em> en francés
+  (0.682). El parche no distingue qué idioma le piden: solo ve «instrucción». Lo específico del
+  francés lo saca del otro lado.</p>
 </section>"""
 
     ceil_rows = ""
@@ -440,6 +458,7 @@ def main():
             .replace("__CTRL__", ctrl_html)
             .replace("__MATRIX__", matrix_html)
             .replace("__LAYERS__", layers_html)
+            .replace("__MARGIN_MID__", f"{margen:.3f}" if M else "-")
             .replace("__CEIL__", ceil_rows)
             .replace("__N__", str(n_prompts))
             .replace("__FOOT__", f"Generado con <code>plot_mean_diff.py</code> desde "
