@@ -75,6 +75,22 @@ def procrustes(Ea, Eb):
     return U @ Vh
 
 
+def random_map(da, db, device, seed=0):
+    """
+    Mapa ortogonal AL AZAR, misma forma que el ajustado.
+
+    Es el control que hace legible el resultado. Produce un vector en el espacio
+    destino con la misma norma y el mismo origen que el mapeado de verdad, pero
+    sin ninguna alineacion entre los dos modelos. Si el mapeado induce frances y
+    este no, transfirio. Si los dos inducen lo mismo, lo que se mide no es
+    transferencia sino el efecto de sumar cualquier vector de esa magnitud.
+    """
+    g = torch.Generator(device="cpu").manual_seed(seed)
+    A = torch.randn(da, db, generator=g).to(device)
+    U, _, Vh = torch.linalg.svd(A, full_matrices=False)
+    return U @ Vh
+
+
 def roundtrip(Ea, Eb, W, idx):
     """
     Precision de ida y vuelta sobre los tokens `idx`: mapeo el embedding del
@@ -103,6 +119,9 @@ def main():
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--force", action="store_true",
                     help="escribir el parche aunque el gate de ida y vuelta falle")
+    ap.add_argument("--control", action="store_true",
+                    help="usar un mapa ortogonal AL AZAR en vez del ajustado. Produce el "
+                         "parche de control: misma norma y mismo origen, sin alineacion.")
     args = ap.parse_args()
 
     ok, msg = check_tokenizers(args.source, args.target)
@@ -155,6 +174,14 @@ def main():
     else:
         print("  El mapa preserva identidad: el parche mapeado es interpretable.")
 
+    if args.control:
+        W = random_map(Ea.shape[1], Eb.shape[1], dev)
+        c1, _ = roundtrip(Ea, Eb, W, held)
+        print(f"\nCONTROL: mapa ortogonal al azar. Ida y vuelta held-out: {c1:.2%}")
+        print("  Este parche NO deberia inducir frances. Si lo induce, el efecto no")
+        print("  es transferencia sino la respuesta del modelo a cualquier vector de")
+        print("  esa magnitud, y el resultado del mapeado real no significa nada.")
+
     mapped = (patch.reshape(-1, Ea.shape[1]) @ W).reshape(*patch.shape[:-1], Eb.shape[1])
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     torch.save(mapped.to(torch.float32), args.out)
@@ -162,7 +189,8 @@ def main():
             "d_source": Ea.shape[1], "d_target": Eb.shape[1],
             "norm_source": patch.norm().item(), "norm_mapped": mapped.norm().item(),
             "roundtrip_top1_heldout": t1, "roundtrip_top10_heldout": t10,
-            "roundtrip_top1_insample": t1i, "n_heldout": len(held)}
+            "roundtrip_top1_insample": t1i, "n_heldout": len(held),
+            "control": args.control}
     json.dump(meta, open(args.out.replace(".pt", "_transfer.json"), "w"), indent=2)
     print(f"\nnorma mapeada {mapped.norm().item():.4f}  (origen {patch.norm().item():.4f})")
     print(f"escrito {args.out}")
