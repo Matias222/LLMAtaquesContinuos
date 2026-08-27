@@ -88,6 +88,11 @@ def main():
     ap.add_argument("--no_controls", action="store_true",
                     help="saltear las condiciones de control (aleman, respuesta corta)")
     ap.add_argument("--num_patch_positions", type=int, default=3)
+    ap.add_argument("--scale", type=float, default=1.0,
+                    help="escala alfa sobre el parche. El coseno es invariante a escala, "
+                         "pero un delta mas grande cambia la relacion senal/ruido y empuja "
+                         "mas adentro del estado de idioma: sirve para separar si la "
+                         "alineacion depende de la magnitud o del comportamiento.")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out", default="mean_diff_vectors.json")
     args = ap.parse_args()
@@ -105,6 +110,9 @@ def main():
 
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
     patch = torch.load(args.patch, map_location=args.device).to(args.device)
+    if args.scale != 1.0:
+        patch = patch * args.scale
+        print(f"escala {args.scale} -> norma {patch.norm(2).item():.3f}")
 
     ctrl = {} if args.no_controls else CONTROLES
     D = {k: [] for k in ["patch", "frq", "instr"] + list(ctrl)}
@@ -218,6 +226,7 @@ def main():
                "ceiling_frq": ceil["frq"].tolist(),
                "ceiling_instr": ceil["instr"].tolist(),
                "instruction": args.instruction, "patch": args.patch,
+               "scale": args.scale, "patch_norm": float(patch.norm(2).item()),
                "conditions": list(V),
                "cos_matrix": {a: {b: cos(V[a], V[b]).tolist() for b in V} for a in V},
                "ceilings": {k: v.tolist() for k, v in ceil.items()}},
