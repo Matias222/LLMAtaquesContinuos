@@ -24,7 +24,7 @@ HTML = """<title>Geometría del parche francés</title>
   color-scheme: light;
   --plane:#f6f7f9; --surface:#fdfdfe; --line:#e2e5ea; --line-soft:#eef0f4;
   --ink:#12141a; --ink-2:#4d5464; --ink-3:#7c8493;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#4a3aa7; --s5:#8b93a3;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#4a3aa7; --s5:#8b93a3; --s6:#eda100;
   --seq-0:#eef4fd; --seq-1:#cde2fb; --seq-2:#9ec5f4; --seq-3:#5598e7;
   --seq-4:#2a78d6; --seq-5:#1c5cab; --seq-6:#104281;
   --ok:#1baf7a; --warn:#eda100;
@@ -34,7 +34,7 @@ HTML = """<title>Geometría del parche francés</title>
     color-scheme: dark;
     --plane:#0d0e11; --surface:#191b1f; --line:#2b2f37; --line-soft:#212429;
     --ink:#f2f4f8; --ink-2:#aab2c0; --ink-3:#767e8d;
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --s5:#7d8593;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --s5:#7d8593; --s6:#c98500;
     --seq-0:#15202f; --seq-1:#104281; --seq-2:#184f95; --seq-3:#256abf;
     --seq-4:#3987e5; --seq-5:#6da7ec; --seq-6:#9ec5f4;
     --ok:#199e70; --warn:#c98500;
@@ -44,7 +44,7 @@ HTML = """<title>Geometría del parche francés</title>
   color-scheme: dark;
   --plane:#0d0e11; --surface:#191b1f; --line:#2b2f37; --line-soft:#212429;
   --ink:#f2f4f8; --ink-2:#aab2c0; --ink-3:#767e8d;
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --s5:#7d8593;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#9085e9; --s5:#7d8593; --s6:#c98500;
   --seq-0:#15202f; --seq-1:#104281; --seq-2:#184f95; --seq-3:#256abf;
   --seq-4:#3987e5; --seq-5:#6da7ec; --seq-6:#9ec5f4;
   --ok:#199e70; --warn:#c98500;
@@ -369,8 +369,8 @@ def main():
         cruce = next((l for l in range(lo, hi + 1) if ifr[l] > ide[l]), None)
         adel = next((l for l in range(lo, hi + 1) if pfrq[l] <= ifr[l]), hi)
         charts.append({"id": "c3", "lo": lo, "hi": hi, "series": [
-            {"n": "instr. FR ~ instr. DE", "c": "--s4", "v": ide},
-            {"n": "instr. FR ~ pregunta FR", "c": "--s2", "v": ifr},
+            {"n": "instr. FR ~ instr. DE", "c": "--s6", "v": ide},
+            {"n": "instr. FR ~ pregunta FR", "c": "--s3", "v": ifr},
             {"n": "parche ~ pregunta FR", "c": "--s1", "v": pfrq},
         ]})
         routes_html = f"""<section>
@@ -380,14 +380,14 @@ def main():
   comparten dirección al {ide[lo]:.0%} en la capa {lo}. El delta de una instrucción es casi
   enteramente «me dieron una directiva de cambiar de idioma»; cuál idioma es un residuo.</p>
   <div class="card">
-    {legend([("instr. FR ~ instr. DE", "var(--s4)", 0),
-             ("instr. FR ~ pregunta FR", "var(--s2)", 0),
+    {legend([("instr. FR ~ instr. DE", "var(--s6)", 0),
+             ("instr. FR ~ pregunta FR", "var(--s3)", 0),
              ("parche ~ pregunta FR", "var(--s1)", 0)])}
     <figure id="c3"></figure>
   </div>
-  <p class="note">La línea violeta es el componente de <strong>directiva</strong>: se mantiene
-  arriba de 0.78 hasta la capa 20. La naranja es cuánto se parece la instrucción al estado real
-  de «la entrada está en francés»: arranca en {ifr[lo]:.2f} y recién cruza a la violeta en la
+  <p class="note">La línea amarilla es el componente de <strong>directiva</strong>: se mantiene
+  arriba de 0.78 hasta la capa 20. La verde es cuánto se parece la instrucción al estado real
+  de «la entrada está en francés»: arranca en {ifr[lo]:.2f} y recién cruza a la amarilla en la
   <strong>capa {cruce}</strong>. Es decir, <strong>la ruta de la instrucción tarda {cruce - lo}
   capas en resolver qué idioma</strong>: primero registra que hubo una orden, después la
   resuelve.<br><br>La línea azul es el parche, y no espera. En la capa {lo} ya está en
@@ -427,33 +427,40 @@ def main():
 </section>"""
 
     # --- tabla capa por capa ------------------------------------------------
-    cols = [("parche ~ preg. FR", pf, "--s1"),
-            ("parche ~ instr. FR", pi, "--s2"),
-            ("preg. FR ~ instr. FR", fi, "--s3")]
+    # Dos bloques: el parche contra cada referencia, y las dos rutas.
+    cols = [("parche ~ preg. FR", pf, "--s1", 0),
+            ("parche ~ instr. FR", pi, "--s2", 0)]
     if M:
-        cols += [("parche ~ instr. DE", M["patch"]["de"], "--s4"),
-                 ("parche ~ resp. corta", M["patch"]["corto"], "--s5")]
+        cols += [("parche ~ instr. DE", M["patch"]["de"], "--s4", 0),
+                 ("parche ~ resp. corta", M["patch"]["corto"], "--s5", 0),
+                 ("instr. FR ~ preg. FR", fi, "--s3", 1),
+                 ("instr. FR ~ instr. DE", M["instr"]["de"], "--s6", 0)]
+    else:
+        cols += [("preg. FR ~ instr. FR", fi, "--s3", 1)]
 
     lrows = ""
     for l in range(lo, hi + 1):
         cells = ""
-        for _, v, c in cols:
+        for _, v, c, sep in cols:
             w = max(0.0, min(1.0, v[l])) * 100
-            cells += (f'<td class="b"><span style="background:linear-gradient(to right,'
+            bd = ' style="border-left:2px solid var(--line)"' if sep else ""
+            cells += (f'<td class="b"{bd}><span style="background:linear-gradient(to right,'
                       f'color-mix(in srgb, var({c}) 22%, transparent) {w:.1f}%,'
                       f'transparent {w:.1f}%)">{v[l]:.3f}</span></td>')
         klass = ' class="mid"' if l == mid else ""
         lrows += f'<tr{klass}><td class="lyr">{l}</td>{cells}</tr>'
     lheads = "".join(
-        f'<th><span style="display:inline-flex;align-items:center;gap:6px;justify-content:flex-end">'
+        f'<th{" style=\"border-left:2px solid var(--line)\"" if sep else ""}>'
+        f'<span style="display:inline-flex;align-items:center;gap:6px;justify-content:flex-end">'
         f'<i style="width:9px;height:9px;border-radius:2px;background:var({c});flex:none"></i>{n}</span></th>'
-        for n, _, c in cols)
+        for n, _, c, sep in cols)
 
     layers_html = f"""<section>
   <div class="eyebrow">Evolución capa por capa</div>
   <h2>Los valores, capa a capa</h2>
-  <p class="lede">La barra detrás de cada número es su magnitud, así que la columna se lee
-  como un gráfico de barras hacia abajo. La fila marcada es la capa {mid}, la del medio.</p>
+  <p class="lede">La barra detrás de cada número es su magnitud, así que la columna se lee como
+  un gráfico de barras hacia abajo. A la izquierda de la línea divisoria, el parche contra cada
+  referencia; a la derecha, las dos rutas comparadas entre sí. La fila marcada es la capa {mid}.</p>
   <div class="card" style="overflow-x:auto; padding:14px 16px 6px">
     <table class="layers">
       <thead><tr><th style="text-align:left">capa</th>{lheads}</tr></thead>
