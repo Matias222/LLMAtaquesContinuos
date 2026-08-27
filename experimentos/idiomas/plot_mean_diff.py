@@ -109,6 +109,19 @@ th:first-child, td:first-child { text-align:left; }
 thead th { font-size:11px; letter-spacing:.06em; text-transform:uppercase;
   color:var(--ink-3); font-weight:500; border-bottom:1px solid var(--line); }
 td.n { font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; }
+.layers { font-size:13px; }
+.layers th, .layers td { padding:0; border-bottom:1px solid var(--line-soft); }
+.layers thead th { padding:8px 10px; font-size:10.5px; }
+.layers td.lyr { padding:0 10px; font-family:"IBM Plex Mono",monospace;
+  font-variant-numeric:tabular-nums; color:var(--ink-3); width:56px; }
+.layers td.b { padding:0; }
+.layers td.b span {
+  display:block; padding:7px 10px; font-family:"IBM Plex Mono",monospace;
+  font-variant-numeric:tabular-nums; text-align:right;
+}
+.layers tr.mid td { background:var(--line-soft); }
+.layers tr.mid td.lyr { color:var(--s1); font-weight:600; }
+.layers tr.mid td.lyr::after { content:" ←"; }
 .cell { border-radius:5px; padding:9px 6px; text-align:center; font-family:"IBM Plex Mono",monospace;
   font-variant-numeric:tabular-nums; font-size:13px; font-weight:500; }
 .note { border-left:2px solid var(--s1); padding:2px 0 2px 16px; margin:22px 0 0;
@@ -139,6 +152,7 @@ footer { margin-top:52px; padding-top:20px; border-top:1px solid var(--line);
 __MAIN__
 __CTRL__
 __MATRIX__
+__LAYERS__
 
 <section>
   <h2>Fiabilidad de la medición</h2>
@@ -355,6 +369,52 @@ def main():
   instrucción francesa. No puede codificar una directiva, y no la codifica.</p>
 </section>"""
 
+    # --- tabla capa por capa ------------------------------------------------
+    cols = [("parche ~ preg. FR", pf, "--s1"),
+            ("parche ~ instr. FR", pi, "--s2"),
+            ("preg. FR ~ instr. FR", fi, "--s3")]
+    if M:
+        cols += [("parche ~ instr. DE", M["patch"]["de"], "--s4"),
+                 ("parche ~ resp. corta", M["patch"]["corto"], "--s5")]
+
+    lrows = ""
+    for l in range(lo, hi + 1):
+        cells = ""
+        for _, v, c in cols:
+            w = max(0.0, min(1.0, v[l])) * 100
+            cells += (f'<td class="b"><span style="background:linear-gradient(to right,'
+                      f'color-mix(in srgb, var({c}) 22%, transparent) {w:.1f}%,'
+                      f'transparent {w:.1f}%)">{v[l]:.3f}</span></td>')
+        klass = ' class="mid"' if l == mid else ""
+        lrows += f'<tr{klass}><td class="lyr">{l}</td>{cells}</tr>'
+    lheads = "".join(
+        f'<th><span style="display:inline-flex;align-items:center;gap:6px;justify-content:flex-end">'
+        f'<i style="width:9px;height:9px;border-radius:2px;background:var({c});flex:none"></i>{n}</span></th>'
+        for n, _, c in cols)
+
+    _hi_de, _hi_co = (M["patch"]["de"][hi], M["patch"]["corto"][hi]) if M else (0, 0)
+    layers_html = f"""<section>
+  <div class="eyebrow">Evolución capa por capa</div>
+  <h2>Los valores, capa a capa</h2>
+  <p class="lede">La barra detrás de cada número es su magnitud, así que la columna se lee
+  como un gráfico de barras hacia abajo. La fila marcada es la capa {mid}, la del medio.</p>
+  <div class="card" style="overflow-x:auto; padding:14px 16px 6px">
+    <table class="layers">
+      <thead><tr><th style="text-align:left">capa</th>{lheads}</tr></thead>
+      <tbody>{lrows}</tbody>
+    </table>
+  </div>
+  <p class="note">Bajando por la tabla se ven dos cosas que el promedio esconde. Hasta la capa
+  ~17, <strong>parche ~ pregunta FR</strong> va por delante de las otras dos y
+  <strong>preg. FR ~ instr. FR</strong> es la más baja de las tres; desde la capa ~20 el orden
+  se invierte y las tres suben juntas hacia 0.9. Esa subida es convergencia hacia el output, no
+  señal.<br><br>Pero las dos columnas de control <strong>no acompañan</strong>: en la capa {hi}
+  el alemán queda en {_hi_de:.3f} y la respuesta corta en {_hi_co:.3f}, mientras las tres principales
+  están arriba de 0.82. <strong>La convergencia final es específica del francés, no un artefacto
+  general de las capas profundas.</strong> Ese contraste es el que sostiene el resultado incluso
+  donde el coseno crudo parecía tautológico.</p>
+</section>"""
+
     ceil_rows = ""
     for k in ("patch", "frq", "instr"):
         c = d["ceiling_" + k][lo:hi + 1]
@@ -379,6 +439,7 @@ def main():
             .replace("__MAIN__", main_html)
             .replace("__CTRL__", ctrl_html)
             .replace("__MATRIX__", matrix_html)
+            .replace("__LAYERS__", layers_html)
             .replace("__CEIL__", ceil_rows)
             .replace("__N__", str(n_prompts))
             .replace("__FOOT__", f"Generado con <code>plot_mean_diff.py</code> desde "
