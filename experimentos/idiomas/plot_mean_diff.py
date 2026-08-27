@@ -12,10 +12,14 @@ import argparse
 import json
 import os
 
+from collections import Counter
+
+from checkers import french_by_segments, language_verdict
+
 ETIQ = {"patch": "parche", "frq": "pregunta FR", "instr": "instrucción FR",
         "de": "instrucción DE", "corto": "respuesta corta"}
 
-HTML = """<title>Geometría del parche francés</title>
+HTML = """<title>__TITLE__</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
@@ -149,6 +153,7 @@ footer { margin-top:52px; padding-top:20px; border-top:1px solid var(--line);
   <div class="tiles">__TILES__</div>
 </section>
 
+__BEHAV__
 __MAIN__
 __ROUTES__
 __CTRL__
@@ -259,6 +264,9 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("json")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--title", default="Geometría del parche francés",
+                    help="nombre de la pagina; distinto por run para poder "
+                         "distinguirlos en la galeria de artifacts")
     args = ap.parse_args()
 
     d = json.load(open(args.json, encoding="utf-8"))
@@ -427,16 +435,25 @@ def main():
 </section>"""
 
     # --- tabla capa por capa ------------------------------------------------
-    # Dos bloques: el parche contra cada referencia, y las dos rutas.
-    cols = [("parche ~ preg. FR", pf, "--s1", 0),
-            ("parche ~ instr. FR", pi, "--s2", 0)]
+    # Los 10 pares del triangulo superior, agrupados por la condicion de la
+    # izquierda. El color codifica el BLOQUE, no el par: diez matices no se
+    # distinguen, y lo que informa es de quien parte cada comparacion.
     if M:
-        cols += [("parche ~ instr. DE", M["patch"]["de"], "--s4", 0),
-                 ("parche ~ resp. corta", M["patch"]["corto"], "--s5", 0),
-                 ("instr. FR ~ preg. FR", fi, "--s3", 1),
-                 ("instr. FR ~ instr. DE", M["instr"]["de"], "--s6", 0)]
+        bloques = [("parche", "--s1", ["frq", "instr", "de", "corto"]),
+                   ("preg. FR", "--s3", ["instr", "de", "corto"]),
+                   ("instr. FR", "--s6", ["de", "corto"]),
+                   ("instr. DE", "--s5", ["corto"])]
+        clave = {"patch": "parche", "frq": "preg. FR", "instr": "instr. FR",
+                 "de": "instr. DE", "corto": "resp. corta"}
+        inv = {v: k for k, v in clave.items()}
+        cols = []
+        for bi, (a, c, otros) in enumerate(bloques):
+            for j, b in enumerate(otros):
+                cols.append((f"{a} ~ {clave[b]}", M[inv[a]][b], c, 1 if (bi and not j) else 0))
     else:
-        cols += [("preg. FR ~ instr. FR", fi, "--s3", 1)]
+        cols = [("parche ~ preg. FR", pf, "--s1", 0),
+                ("parche ~ instr. FR", pi, "--s2", 0),
+                ("preg. FR ~ instr. FR", fi, "--s3", 1)]
 
     lrows = ""
     for l in range(lo, hi + 1):
@@ -458,9 +475,10 @@ def main():
     layers_html = f"""<section>
   <div class="eyebrow">Evolución capa por capa</div>
   <h2>Los valores, capa a capa</h2>
-  <p class="lede">La barra detrás de cada número es su magnitud, así que la columna se lee como
-  un gráfico de barras hacia abajo. A la izquierda de la línea divisoria, el parche contra cada
-  referencia; a la derecha, las dos rutas comparadas entre sí. La fila marcada es la capa {mid}.</p>
+  <p class="lede">Los diez pares posibles entre las cinco condiciones, capa por capa. La barra
+  detrás de cada número es su magnitud, así que la columna se lee como un gráfico de barras hacia
+  abajo. Las divisorias agrupan por la condición de la izquierda, y el color marca el bloque. La
+  fila resaltada es la capa {mid}, la del medio.</p>
   <div class="card" style="overflow-x:auto; padding:14px 16px 6px">
     <table class="layers">
       <thead><tr><th style="text-align:left">capa</th>{lheads}</tr></thead>
@@ -480,6 +498,76 @@ def main():
   francés lo saca del otro lado.</p>
 </section>"""
 
+    # ---------------------------------------------------------------- eval
+    # Comportamiento, si estan los reportes en la misma carpeta. El idioma se
+    # recalcula desde los textos: un eval viejo pudo haberse puntuado con el
+    # detector binario, que marca el español como frances.
+    rd = os.path.dirname(args.json) or "."
+    def _load(n):
+        p = os.path.join(rd, n)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+    ev, op = _load("eval_report.json"), _load("eval_open.json")
+    behav_html = ""
+    if ev or op:
+        blk = ""
+        if ev:
+            em = ev["metrics"]
+            filas = "".join(
+                f'<tr><td>{lab}</td><td class="n">{em[c]["is_french"]:.1%}</td>'
+                f'<td class="n">{em[c]["answer_correct"]:.1%}</td>'
+                f'<td class="n">{em[c].get("role_leak",0):.0%}</td></tr>'
+                for c, lab in (("baseline", "baseline &nbsp;M(q)"),
+                               ("reference", "referencia &nbsp;M([FR;q])"),
+                               ("patched", "parche &nbsp;M(q+v)")))
+            blk += f"""<div class="card" style="margin-bottom:16px">
+  <div class="eyebrow" style="margin-bottom:10px">Preguntas cortas verificables · n={ev['n_heldout']}</div>
+  <table><thead><tr><th>condición</th><th>francés</th><th>respuesta correcta</th><th>fuga de rol</th></tr></thead>
+  <tbody>{filas}</tbody></table>
+  <p style="margin:14px 0 4px;font-size:13px;color:var(--ink-3)">
+  CE del target francés, primeros 5 tokens: {em['nll_fr_head_baseline']:.3f} sin parche &rarr;
+  {em['nll_fr_head_patched']:.3f} con parche ({em['nll_fr_head_patched']-em['nll_fr_head_baseline']:+.3f}).
+  Perplejidad {2.718**em['nll_fr_head_baseline']:.0f} &rarr; {2.718**em['nll_fr_head_patched']:.1f}.</p>
+</div>"""
+        if op:
+            rws = op["splits"]["heldout"]
+            dist = Counter(language_verdict(r["patched"]) for r in rws)
+            n_op = len(rws)
+            th = [french_by_segments(r["patched"]) for r in rws]
+            t3 = [sum(t[i] for t in th) / n_op for i in range(3)]
+            mix = sum(1 for t in th if not (min(t) >= .6 or max(t) <= .4))
+            cs = {"fr": "--s1", "en": "--s5", "es": "--s2", "unknown": "--line"}
+            nm = {"fr": "francés", "en": "inglés", "es": "español", "unknown": "indeciso"}
+            segs = "".join(f'<div style="flex:{dist[k]};background:var({cs[k]});min-width:2px"></div>'
+                           for k in ("fr", "en", "es", "unknown") if dist.get(k))
+            leg = "  ".join(f'<span class="lg" style="font-size:12.5px"><i class="sw" '
+                            f'style="background:var({cs[k]});width:10px;height:10px;border-radius:2px">'
+                            f'</i>{nm[k]} {dist[k]}</span>' for k in ("fr","en","es","unknown") if dist.get(k))
+            oo = op["metrics"].get("open", {})
+            blk += f"""<div class="card">
+  <div class="eyebrow" style="margin-bottom:10px">Prompts abiertos · n={n_op} · el set de navidad</div>
+  <div style="display:flex;gap:2px;height:30px;border-radius:6px;overflow:hidden">{segs}</div>
+  <div class="legend" style="margin-top:9px;gap:6px 16px">{leg}</div>
+  <table style="margin-top:16px"><thead><tr><th>score de francés por tercio</th><th>1er</th><th>2º</th><th>3er</th><th>caída</th></tr></thead>
+  <tbody><tr><td>parche</td><td class="n">{t3[0]:.3f}</td><td class="n">{t3[1]:.3f}</td>
+  <td class="n">{t3[2]:.3f}</td><td class="n">{t3[0]-t3[2]:+.3f}</td></tr></tbody></table>
+  <p style="margin:14px 0 4px;font-size:13px;color:var(--ink-3)">
+  Respuestas que cambian de idioma a mitad de camino: {mix}/{n_op}. &nbsp;·&nbsp;
+  Overlap de contenido con la referencia: {oo.get('overlap_patched_reference',0):.3f}
+  (azar {oo.get('overlap_shuffled_control',0):.3f}).</p>
+</div>"""
+        behav_html = f"""<section>
+  <div class="eyebrow">Comportamiento</div>
+  <h2>Qué hace el parche antes de mirar por dentro</h2>
+  <p class="lede">Las métricas de conducta, para tener contra qué contrastar la geometría. El
+  idioma se reclasifica desde los textos crudos con el detector de tres vías, no se lee de las
+  métricas guardadas.</p>
+  {blk}
+  <p class="note">El score por tercio plano no significa «respuestas parcialmente francesas»:
+  significa que la mayoría son francesas de punta a punta y el resto no lo son en absoluto. El
+  contador de respuestas mixtas lo confirma. <strong>El efecto del parche no decae con la
+  distancia</strong> pese a vivir en 3 posiciones del prompt.</p>
+</section>"""
+
     ceil_rows = ""
     for k in ("patch", "frq", "instr"):
         c = d["ceiling_" + k][lo:hi + 1]
@@ -491,8 +579,8 @@ def main():
             f"<span>última posición del prompt</span>"
             f"<span>{os.path.basename(d.get('patch',''))}</span>")
 
-    html = (HTML
-            .replace("__H1__", "Geometría del parche francés")
+    html = (HTML.replace("__TITLE__", args.title)
+            .replace("__H1__", args.title)
             .replace("__SUB__", "El parche aditivo de layer&nbsp;0 induce francés en el 90% de "
                      "las preguntas held-out. Esto mide <em>a qué se parece por dentro</em>: "
                      "vectores de diferencia de medias en el residual stream, método de "
@@ -501,6 +589,7 @@ def main():
             .replace("__META__", meta)
             .replace("__MID__", str(mid))
             .replace("__TILES__", "".join(tiles))
+            .replace("__BEHAV__", behav_html)
             .replace("__MAIN__", main_html)
             .replace("__ROUTES__", routes_html)
             .replace("__CTRL__", ctrl_html)
