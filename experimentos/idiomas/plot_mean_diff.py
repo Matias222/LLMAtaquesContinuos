@@ -150,6 +150,7 @@ footer { margin-top:52px; padding-top:20px; border-top:1px solid var(--line);
 </section>
 
 __MAIN__
+__ROUTES__
 __CTRL__
 __MATRIX__
 __LAYERS__
@@ -296,6 +297,10 @@ def main():
         avg = lambda a, b: sum(M[a][b][rng]) / (info_hi + 1 - lo)
         margen = (at(M["patch"]["frq"], mid)
                   - max(at(M["patch"]["de"], mid), at(M["patch"]["corto"], mid)))
+        tiles.append(tile("ventaja del parche sobre la instrucción",
+                          f"+{M['patch']['frq'][lo] - M['instr']['frq'][lo]:.3f}",
+                          f"en la capa {lo}, distancia al estado «la entrada es francesa»",
+                          "var(--s1)"))
         tiles.append(tile("margen sobre el mejor control", f"{margen:+.3f}",
                           f"en la capa {mid}; el francés por encima del alemán y del piso",
                           "var(--ok)" if margen >= .05 else "var(--warn)"))
@@ -331,6 +336,7 @@ def main():
 
     ctrl_html = ""
     matrix_html = ""
+    routes_html = ""
     if M:
         charts.append({"id": "c2", "lo": lo, "hi": hi, "series": [
             {"n": "parche ~ pregunta FR", "c": "--s1", "v": M["patch"]["frq"]},
@@ -356,6 +362,40 @@ def main():
   <strong>no cuenta como evidencia</strong>: ahí el residual ya codifica qué token emitir, así que
   el alemán se aleja por producir tokens alemanes, no por operar distinto. Los resúmenes de esta
   página se calculan solo hasta la capa {info_hi}.</p>
+</section>"""
+
+        # --- las dos rutas -------------------------------------------------
+        ide, ifr, pfrq = M["instr"]["de"], M["instr"]["frq"], M["patch"]["frq"]
+        cruce = next((l for l in range(lo, hi + 1) if ifr[l] > ide[l]), None)
+        adel = next((l for l in range(lo, hi + 1) if pfrq[l] <= ifr[l]), hi)
+        charts.append({"id": "c3", "lo": lo, "hi": hi, "series": [
+            {"n": "instr. FR ~ instr. DE", "c": "--s4", "v": ide},
+            {"n": "instr. FR ~ pregunta FR", "c": "--s2", "v": ifr},
+            {"n": "parche ~ pregunta FR", "c": "--s1", "v": pfrq},
+        ]})
+        routes_html = f"""<section>
+  <div class="eyebrow">El hallazgo</div>
+  <h2>Dos rutas al francés, y una llega antes</h2>
+  <p class="lede">Dos instrucciones que solo se diferencian en <em>qué idioma nombran</em>
+  comparten dirección al {ide[lo]:.0%} en la capa {lo}. El delta de una instrucción es casi
+  enteramente «me dieron una directiva de cambiar de idioma»; cuál idioma es un residuo.</p>
+  <div class="card">
+    {legend([("instr. FR ~ instr. DE", "var(--s4)", 0),
+             ("instr. FR ~ pregunta FR", "var(--s2)", 0),
+             ("parche ~ pregunta FR", "var(--s1)", 0)])}
+    <figure id="c3"></figure>
+  </div>
+  <p class="note">La línea violeta es el componente de <strong>directiva</strong>: se mantiene
+  arriba de 0.78 hasta la capa 20. La naranja es cuánto se parece la instrucción al estado real
+  de «la entrada está en francés»: arranca en {ifr[lo]:.2f} y recién cruza a la violeta en la
+  <strong>capa {cruce}</strong>. Es decir, <strong>la ruta de la instrucción tarda {cruce - lo}
+  capas en resolver qué idioma</strong>: primero registra que hubo una orden, después la
+  resuelve.<br><br>La línea azul es el parche, y no espera. En la capa {lo} ya está en
+  {pfrq[lo]:.3f} contra {ifr[lo]:.3f} de la instrucción — <strong>+{pfrq[lo]-ifr[lo]:.3f} de
+  ventaja</strong>, que no se cierra hasta la capa {adel}. El parche <strong>no pasa por el
+  parseo de la directiva</strong>: pone al modelo en el estado de idioma directamente. Es lo que
+  cabía esperar de un vector sumado a los embeddings de la pregunta, que no puede codificar
+  una orden.</p>
 </section>"""
 
         seq = ["--seq-0", "--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5", "--seq-6"]
@@ -455,6 +495,7 @@ def main():
             .replace("__MID__", str(mid))
             .replace("__TILES__", "".join(tiles))
             .replace("__MAIN__", main_html)
+            .replace("__ROUTES__", routes_html)
             .replace("__CTRL__", ctrl_html)
             .replace("__MATRIX__", matrix_html)
             .replace("__LAYERS__", layers_html)
