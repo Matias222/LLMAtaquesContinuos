@@ -239,7 +239,7 @@ def main():
                     help="pasos por batch (con batch_size=1, pasos por prompt)")
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--step_size", type=float, default=0.00025)
-    ap.add_argument("--train_test_split", type=float, default=0.8)
+    ap.add_argument("--train_test_split", type=float, default=0.85)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--no_gate", action="store_true",
                     help="entrenar sobre todos los targets, incluso los que no pasan el gate")
