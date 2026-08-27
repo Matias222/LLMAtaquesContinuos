@@ -1,0 +1,375 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_french_score;ref_language;baseline_language;ref_is_french;ref_answer_correct;baseline_is_french;baseline_answer_correct;passed_gate
+On which continent is the Amazon rainforest located?;La Amazonie est située sur la planète Amérique.;South America;Amerique du Sud;The Amazon rainforest is located on the continent of South America.;False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of Iceland?;La capitale d'Iceland est Reykjavik.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavik.;False;False;1.0;fr;en;True;True;False;True;True
+Who composed Bolero?;Le Bolero a été composé par Ravel, Maurice.;Ravel;;Bolero is a famous orchestral piece composed by Maurice Ravel. It was written in 1928 and is considered one of Ravel's most iconic and enduring works. The piece is known for its hypnotic and repetitive melody, which has become a cultural phenomenon and a staple of classical music.;False;False;1.0;fr;en;True;True;False;True;True
+What is 12 times 7?;12 x 7 = 84.;84;;12 × 7 = 84;False;False;0.5;unknown;unknown;False;True;False;True;False
+How many players from one team are on the field in soccer?;Il y a 11 joueurs de l'équipe.;11;onze;In soccer, also known as football, there are 11 players from one team on the field at a time.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Uganda?;La capitale de l'Uganda est Kampala.;Kampala;;The capital of Uganda is Kampala.;False;False;1.0;fr;en;True;True;False;True;True
+Which planet has the Great Red Spot?;Le planète qui possède le Grand Éclat est Jupiter.;Jupiter;;The Great Red Spot is a persistent anticyclonic storm on Jupiter, which is the largest planet in our solar system. It has been continuously observed since 1831 and is about 10,000 kilometers (6,200 miles) wide. The storm is a giant vortex that is characterized by strong winds and a reddish appearance due to the presence of sulfur and phosphorus compounds in the atmosphere.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Cuba?;La capitale de Cuba est Havanna.;Havana;Havane;The capital of Cuba is Havana.;False;False;1.0;fr;en;True;False;False;True;False
+What is 18 times 5?;18 x 5 = 90.;90;;18 × 5 = 90;False;False;0.5;unknown;unknown;False;True;False;True;False
+Which desert is the largest cold desert on Earth?;La désert le plus grand et le plus froid du monde est le désert de Gobi.;Antarctic;Antarctique;The largest cold desert on Earth is the Antarctic Desert. It covers an area of about 14 million square kilometers (5.4 million square miles) and spans across the continent of Antarctica.;False;False;1.0;fr;en;True;False;False;True;False
+How many chromosomes are in a typical human cell?;Il y a 46 chromosomes dans une cellule humaine typique.;46;quarante-six;"In a typical human cell, there are 46 chromosomes. This is a diploid number, meaning that each cell has two sets of chromosomes, one inherited from each parent. The 46 chromosomes are arranged into 23 pairs, with each pair consisting of a chromosome from each parent.
+
+Here's a breakdown of the chromosomes in a human cell:
+
+* 22 pairs of autosomes (non-sex chromosomes)
+* 1 pair of sex chromosomes (X and Y)
+* 1 pair of sex chromosomes";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical formula for ammonia?;La formule chimique pour l'ammoniac est NH3.;NH3;;The chemical formula for ammonia is NH3.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the Magna Carta signed?;La Magna Carta a été signée en 1215.;1215;;The Magna Carta was signed in 1215.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for magnesium?;Le symbole chimique pour le magnésium est Mg.;Mg;;The chemical symbol for magnesium is Mg.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Colombia?;La capitale de Colombie est Bogota.;Bogota;;The capital of Colombia is Bogotá.;False;False;1.0;fr;en;True;True;False;True;True
+What is the normal human body temperature in degrees Celsius?;La température normale du corps humain en degrés Celsius est de 37°C.;37;;The normal human body temperature is around 37°C (98.6°F).;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Chile?;La capitale de la Chine est Pérou.;Santiago;;The capital of Chile is Santiago.;False;False;1.0;fr;en;True;False;False;True;False
+What is the atomic number of hydrogen?;Le numéro atomique de l'hélium est de 2.;1;un;The atomic number of hydrogen is 1.;False;False;1.0;fr;en;True;False;False;True;False
+Who wrote The Divine Comedy?;Le Divine Comédie a été écrit par Dante Alighieri.;Dante;;"The Divine Comedy is a masterpiece of Italian literature written by the renowned poet Dante Alighieri. It is a epic poem that tells the story of Dante's journey through Hell, Purgatory, and Paradise, guided by the Roman poet Virgil and later by Beatrice, a woman he loved.
+
+Dante wrote The Divine Comedy between 1308 and 1320, during the Italian Renaissance. The poem is divided into three cantiche (books): Inferno, Purgatorio, and";False;False;1.0;fr;en;True;True;False;True;True
+What is 7 plus 9?;7 + 9 = 16.;16;;7 + 9 = 16;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Morocco?;La capitale de la Marocaine est Rabat.;Rabat;;The capital of Morocco is Rabat.;False;False;1.0;fr;en;True;True;False;True;True
+Who composed The Four Seasons?;"Le compositeur italien Antonio Vivaldi a composé ""Les Quatre Saisons"" (Les Quatre Événements) en 1725.";Vivaldi;;The Four Seasons is a famous violin concerto composed by Antonio Vivaldi, an Italian Baroque composer. It was written in 1716 and is one of Vivaldi's most popular and enduring works. The concerto is typically performed in four movements, each representing a different season: Spring, Summer, Autumn (or Fall), and Winter.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Afghanistan?;La capitale d'Afghanistan est Karakoum.;Kabul;Kaboul;The capital of Afghanistan is Kabul.;False;False;1.0;fr;en;True;False;False;True;False
+How many letters are in the English alphabet?;Il y a 26 lettres dans l'alphabet anglais.;26;;There are 26 letters in the English alphabet.;False;False;1.0;fr;en;True;True;False;True;True
+Who painted Guernica?;Le peintre qui a créé Guernica est Pablo Picasso.;Picasso;;"Guernica is a powerful and iconic painting by the Spanish artist Pablo Picasso. It was created in 1937, during the Spanish Civil War, and is considered one of the most influential and important works of the 20th century.
+
+Picasso was a leading figure in the development of Cubism, a style of art that emphasizes geometric forms and fragmented images. Guernica is a large-scale painting, measuring over 11 feet tall and 25 feet wide, and is painted in oil on";False;False;1.0;fr;en;True;True;False;True;True
+Who led the Macedonian empire and conquered Persia?;Le roi Philip II de Macédoine, également connu sous le nom de Philip III d'Égypte, a mené l'expédition qui a conquisté la Perse.;Alexander;Alexandre;The Macedonian Empire was led by Philip II, who conquered Persia in 330 BCE.;False;False;1.0;fr;en;True;False;False;False;False
+What is 6 times 12?;6 x 12 = 72.;72;;6 × 12 = 72;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who wrote War and Peace?;"Le roman ""War et Paix"" a été écrit par le célèbre écrivain russe le plus grand de l'histoire, le célèbre auteur russe Leo Tolstoï.";Tolstoy;Tolstoi;War and Peace is a novel written by the Russian author Leo Tolstoy. It was first published in serial form in 1865-1869 and later published in book form in 1869. The novel is considered one of the greatest works of literature ever written and is widely regarded as a classic of world literature.;False;False;1.0;fr;en;True;True;False;True;True
+Who was the British Prime Minister during most of World War II?;Le Premier ministre britannique pendant la plupart de la Seconde Guerre mondiale était Winston Churchill.;Churchill;;The British Prime Minister during most of World War II was Winston Churchill. He served as Prime Minister from 1940 to 1945 and again from 1951 to 1955.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Slovenia?;La capitale de la Slovaquie est Ljubljana.;Ljubljana;;The capital of Slovenia is Ljubljana.;False;False;1.0;fr;en;True;True;False;True;True
+Who painted the ceiling of the Sistine Chapel?;Le peintre qui a peint le ciel de la Chapelle du Sisyphe a été Michel-Ange.;Michelangelo;Michel-Ange|Michel Ange;"The ceiling of the Sistine Chapel was painted by the renowned Italian artist Michelangelo Buonarroti. He worked on the project from 1508 to 1512, and it is considered one of the greatest artistic achievements of all time. The ceiling is adorned with over 300 figures, including prophets, saints, and biblical figures, as well as the iconic ""Creation of Adam"" scene, which depicts the moment when God created man. Michelangelo's masterpiece is a testament to his incredible skill";False;False;1.0;fr;en;True;True;False;True;True
+What molecule carries genetic information in most organisms?;La molécule qui transporte l'information génétique dans la plupart des organismes est la molécule de ADN (acide désoxyribonucléique).;DNA;ADN;The molecule that carries genetic information in most organisms is DNA (Deoxyribonucleic acid).;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of France?;La capitale de la France est Paris.;Paris;;The capital of France is Paris.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did the American Civil War begin?;Le conflit civil américain a commencé en 1861.;1861;;The American Civil War began on April 12, 1861, when Confederate forces fired on Union troops at Fort Sumter in South Carolina.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Venezuela?;La capitale de la Vénéquez est Caracas.;Caracas;;The capital of Venezuela is Caracas.;False;False;1.0;fr;en;True;True;False;True;True
+In which country is Machu Picchu located?;Machu Picchu est située au Pérou.;Peru;Perou;Machu Picchu is located in Peru, South America. Specifically, it is situated in the Cusco Region, about 80 kilometers (50 miles) northwest of Cusco, the ancient Inca capital.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Crime and Punishment?;Le manuscrit de Crime et punition a été écrit par le célèbre écrivain russe Fiodor Dostoïevski.;Dostoevsky;Dostoievski;Crime and Punishment is a novel written by the Russian author Fyodor Dostoevsky. It was first published in 1866 and is considered one of the greatest works of literature in the Russian literary canon.;False;False;1.0;fr;en;True;True;False;True;True
+How many degrees are in a right angle?;Il y a 90 degrés dans un angle droit.;90;quatre-vingt-dix;There are 90 degrees in a right angle.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Iraq?;La capitale d'Irak est Bagdad.;Baghdad;Bagdad;The capital of Iraq is Baghdad.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Portugal?;La capitale de Portugal est Lisbonne.;Lisbon;Lisbonne;The capital of Portugal is Lisbon.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did the Apollo 13 mission take place?;Le mission Apollo 13 a eu lieu en 1970.;1970;;The Apollo 13 mission took place in 1970. It was launched on April 11, 1970, and was intended to be the third manned mission to land on the Moon, but it was aborted after an explosion occurred on board the spacecraft on April 13, 1970. The mission was successfully recovered and splashed down in the Pacific Ocean on April 17, 1970.;False;False;1.0;fr;en;True;True;False;True;True
+What is 15 plus 27?;15 + 27 = 42.;42;quarante-deux;15 + 27 = 42;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who wrote the novel 1984?;"Le roman ""1984"" a été écrit par George Orwell.";Orwell;;"The novel ""1984"" was written by George Orwell. It was first published in 1949 and is considered a classic of dystopian literature.";False;False;1.0;fr;en;True;True;False;True;True
+Who painted The Last Supper?;"Le peintre qui a peint ""La Last Supper"" est Leonardo da Vinci.";Leonardo;Vinci;"The Last Supper is a famous mural painting by the Italian artist Leonardo da Vinci, created in the late 15th century. Specifically, it was painted between 1495 and 1498, during the Italian Renaissance.
+
+Leonardo da Vinci was a true Renaissance man - an artist, inventor, engineer, and scientist - and The Last Supper is one of his most famous works. The painting depicts the last meal Jesus shared with his twelve apostles before he was betrayed, as described in the";False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Romeo and Juliet?;Le célèbre tragédie de Shakespeare a été écrite par William Shakespeare.;Shakespeare;;Romeo and Juliet is a tragic play written by the renowned English playwright William Shakespeare. It is one of his most famous and iconic works, and is considered a cornerstone of Western literature.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote The Metamorphosis?;"Le Metamorphose de la Création du Monde, également connu sous le titre ""La Création du Monde"" ou ""Le Monde de la Création"", est un roman de Franz Kafka, publié en 1915.";Kafka;;The Metamorphosis, a novella by Franz Kafka, was written in 1915.;False;False;1.0;fr;en;True;True;False;True;True
+Who was the Carthaginian general who crossed the Alps?;C'est Hannibal! Il est célèbre pour son défi aux Alpes et pour son échec lors de la bataille de Cannébe en 218 avant J.-C.;Hannibal;;"You're likely thinking of Hannibal Barca, a Carthaginian general who led a famous invasion of Italy in 218 BC. He crossed the Alps with a large army, known as the Carthaginian army, and marched into Italy, where he faced the Roman army under the command of Scipio Africanus.
+
+Hannibal's invasion of Italy was a significant event in ancient history, and it had a profound impact on the course of the war. He was able to defeat";False;False;1.0;fr;en;True;True;False;True;True
+What is the boiling point of water in degrees Celsius at sea level?;Le point de fusion de l'eau est de 100 degrés Celsius.;100;cent;The boiling point of water at sea level is 100 degrees Celsius (212 degrees Fahrenheit).;False;False;1.0;fr;en;True;True;False;True;True
+Who led the Indian independence movement through nonviolent resistance?;Le leader de la lutte indienne pour l'indépendance à travers la résistance non-violente est Mahatma Gandhi.;Gandhi;;Mahatma Gandhi led the Indian independence movement through nonviolent resistance.;False;False;1.0;fr;en;True;True;False;True;True
+How many squares are on a chessboard?;Il y a 64 pièces sur un échiquier.;64;;There are 64 squares on a standard chessboard.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical formula for table salt?;La formule chimique pour le sel de table est NaCl.;NaCl;;The chemical formula for table salt is NaCl.;False;False;1.0;fr;en;True;True;False;True;True
+What is the powerhouse of the cell?;La puissance de la cellule est le mitochondrie.;mitochondria;mitochondrie;"The powerhouse of the cell is called the mitochondria. Mitochondria are often referred to as the ""powerhouses"" of the cell because they generate most of the energy that the cell needs to function, in the form of ATP (adenosine triphosphate). They do this by converting the energy from the food we eat into a usable form that the cell can use.
+
+Mitochondria are responsible for producing energy through a process called cellular respiration, which involves the breakdown of glucose and other";False;False;1.0;fr;en;True;True;False;True;True
+Which galaxy contains our Solar System?;La galaxie qui contient notre système solaire est la galaxie de la Voie lactée, également connue sous le nom de galaxie galactique.;Milky Way;Voie lactee;Our Solar System is located in the Milky Way galaxy.;False;False;1.0;fr;en;True;True;False;True;True
+Which ice giant orbits between Saturn and Neptune?;C'est Uranus!;Uranus;;Uranus.;False;False;1.0;fr;unknown;True;True;False;True;True
+In what year was the Eiffel Tower completed?;La Tour Eiffel a été inaugurée le 31 mai 1889.;1889;;The Eiffel Tower was completed in 1889. It was built for the World's Fair in Paris, France, and was officially opened on March 31, 1889.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of the Philippines?;La capitale de la Philippienne est Manila.;Manila;Manille;The capital of the Philippines is Manila.;False;False;1.0;fr;en;True;True;False;True;True
+How many planets are in the Solar System?;"Il y a 8 planètes dans notre système solaire :
+
+1. Mercure
+2. Vénus
+3. Terre
+4. Mars
+5. Jupiter
+6. Saturne
+7. Uranus
+8. Neptune";8;huit;"There are 8 planets in our Solar System:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Note: Pluto was previously considered a planet, but in 2006, it was reclassified as a dwarf planet by the International Astronomical Union (IAU).
+
+Would you like to know more about the planets or the Solar System?";False;False;1.0;fr;en;True;True;False;True;True
+In what year did Nelson Mandela become president of South Africa?;Nelson Mandela a été élu président de l'Afrique du Sud en 1994, après avoir quitté le poste de Premier ministre en 1994.;1994;;Nelson Mandela never became the President of South Africa. He was the country's first black president, serving from 1994 to 1999. He was elected as the President of South Africa in 1994, after the end of apartheid, and served a five-year term.;False;False;1.0;fr;en;True;True;False;True;True
+Which planet is the largest in the Solar System?;Le planète la plus grande du système solaire est Jupiter.;Jupiter;;The largest planet in our Solar System is Jupiter. It is a gas giant, with a diameter of approximately 142,984 kilometers (88,846 miles). That's more than 11 times the diameter of the Earth!;False;False;1.0;fr;en;True;True;False;True;True
+Who developed the polio vaccine in 1955?;Le polio-vaccine a été développé par Jonas Salk en 1955.;Salk;;The polio vaccine was developed by Jonas Salk, an American medical researcher and virologist. He developed the inactivated poliovirus vaccine (IPV) in 1955, which was the first vaccine to be widely used to prevent polio.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical formula for methane?;La formule chimique pour le méthane est CH4.;CH4;;The chemical formula for methane is CH4.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Kenya?;La capitale de la Kenyé est Nairobi.;Nairobi;;The capital of Kenya is Nairobi.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Vietnam?;La capitale de la République populaire de Vietnam est Hô Chi Minh-Viêt Nam.;Hanoi;;The capital of Vietnam is Hanoi.;False;False;1.0;fr;en;True;False;False;True;False
+Who composed The Rite of Spring?;"Le compositeur de ""Le Rite de l'apres-bûche"" (The Rite of Spring) est Igor Stravinsky.";Stravinsky;Stravinski;The Rite of Spring is a famous orchestral work composed by Igor Stravinsky. It was written in 1913 and premiered on May 29, 1913, at the Théâtre du Châtelet in Paris, France. The work is considered one of the most influential and groundbreaking compositions of the 20th century, and it is known for its innovative and avant-garde style, which was ahead of its time.;False;False;0.75;fr;en;True;True;False;True;True
+Who wrote The Odyssey?;"Le poète grec Homère a écrit le ""Odysseus"" (ou ""L'Odysseé"" en français).";Homer;Homere;"The Odyssey is an ancient Greek epic poem attributed to the poet Homer. The exact authorship of the poem is unknown, and it is believed to have been written in the 8th or 7th century BC.
+
+The oldest surviving manuscripts of The Odyssey date back to the 5th century BC, and they were written in a style that is characteristic of ancient Greek poetry. The poem is thought to have been composed in several stages, with different versions and revisions being made over time.
+
+The most";False;False;1.0;fr;en;True;True;False;True;True
+In what year did the Russian Revolution take place?;La révolution russe a eu lieu en 1917.;1917;;The Russian Revolution took place in 1917. Specifically, it began on October 25, 1917, with the February Revolution, and ended with the October Revolution on November 7, 1917.;False;False;1.0;fr;en;True;True;False;True;True
+What gas makes up about 78 percent of Earth's atmosphere?;La réponse est l'oxygène! L'oxygène compose environ 78 % de l'atmosphère terrestre.;nitrogen;azote;The gas that makes up about 78 percent of Earth's atmosphere is Nitrogen (N2).;False;False;1.0;fr;en;True;False;False;True;False
+Who is credited with inventing the World Wide Web?;C'est Tim Berners-Lee qui est crédité de l'invention du World Wide Web.;Berners-Lee;Berners;Tim Berners-Lee is credited with inventing the World Wide Web.;False;False;1.0;fr;en;True;True;False;True;True
+What is the name of Earth's only natural satellite?;La réponse est Luna!;Moon;Lune;The answer is: Moon!;False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of Sudan?;La capitale du Soudan est Khartoum.;Khartoum;;The capital of Sudan is Khartoum.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Croatia?;La capitale de la Croatie est Zagreb.;Zagreb;;The capital of Croatia is Zagreb.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the Declaration of the Rights of Man adopted in France?;La Déclaration des droits de l'homme et du citoyen a été adoptée en 1789.;1789;;The Declaration of the Rights of Man and of the Citizen was adopted in France in 1789.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was John F. Kennedy assassinated?;John F. Kennedy, l'État-major des États-Unis, a été assassiné le 22 novembre 1963.;1963;;John F. Kennedy, the 35th President of the United States, was assassinated on November 22, 1963, in Dallas, Texas. He was shot while riding in an open-top car in a motorcade through Dealey Plaza.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Slovakia?;La capitale de la Slovaquie est Bratislava.;Bratislava;;The capital of Slovakia is Bratislava.;False;False;1.0;fr;en;True;True;False;True;True
+How many cards are in a standard deck without jokers?;Il y a 52 cartes dans une paire standard sans joker.;52;;A standard deck of cards without jokers typically contains 52 cards.;False;False;1.0;fr;en;True;True;False;True;True
+Who discovered polonium and radium?;Les polonium et le radium ont été découverts par Marie Curie, une scientifique polonaise.;Curie;;Polonium and radium were discovered by French chemists Marie Curie and Pierre Curie in 1898.;False;False;1.0;fr;en;True;True;False;True;True
+What is the square root of 81?;La racine carrée de 81 est... 9!;9;neuf;The square root of 81 is 9.;False;False;1.0;fr;en;True;True;False;True;True
+What is 21 times 3?;21 x 3 = 63.;63;;21 × 3 = 63;False;False;0.5;unknown;unknown;False;True;False;True;False
+How many strings does a standard guitar have?;Un acorde à 6 cordes, c'est-à-dire un standard guitar.;6;six;A standard guitar typically has 6 strings. These strings are usually tuned to the standard tuning of EADGBE, which is the most common tuning for acoustic guitars.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of the United Kingdom?;La capitale du Royaume-Uni est Londres.;London;Londres;The capital of the United Kingdom is London.;False;False;1.0;fr;en;True;True;False;True;True
+Who composed the Brandenburg Concertos?;Les Brandenburg Concertos sont composés par Johann Sebastian Bach.;Bach;;"The Brandenburg Concertos were composed by Johann Sebastian Bach, a German Baroque composer. The three concertos are:
+
+1. Concerto for Solo Violin in D major, BWV 1043
+2. Concerto for Solo Violin in E major, BWV 1044
+3. Concerto for Solo Violin in F major, BWV 1045
+
+Bach composed the Brandenburg Concertos between 1717 and 1721, during a period of significant";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for nitrogen?;Le symbole chimique pour le nitre est : N.;N;;The chemical symbol for nitrogen is N.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Denmark?;La capitale de la Danemark est Copenhague.;Copenhagen;Copenhague;The capital of Denmark is Copenhagen.;False;False;1.0;fr;en;True;True;False;True;True
+Who founded psychoanalysis?;Sigmund Freud, un psychologue autrichien, auteur de nombreux ouvrages sur la psychologie et la psychanalyse.;Freud;;"Sigmund Freud is widely credited with founding psychoanalysis. He was an Austrian neurologist and founder of the psychoanalytic movement, which emphasizes the role of the unconscious mind in shaping behavior and emotions. Freud's work, particularly his book ""The Interpretation of Dreams"" (1900), laid the foundation for psychoanalysis as a distinct field of study.";False;False;1.0;fr;en;True;True;False;True;True
+What is the speed of light in vacuum in kilometers per second, rounded?;La vitesse de la lumière dans l'obscurité, c'est-à-dire dans le vide, est de 299 792 458 mètres par seconde, ce qui équivaut à environ 186 282 kilomètres par seconde.;300000;300 000;The speed of light in a vacuum is approximately 299,792 kilometers per second (km/s).;False;False;1.0;fr;en;True;False;False;False;False
+What is 12 times 12?;12 x 12 = 144.;144;cent quarante-quatre;12 × 12 = 144;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Nigeria?;La capitale de la Nigéria est Lagos.;Abuja;;The capital of Nigeria is Abuja.;False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of Peru?;La capitale de la Perou est Lima.;Lima;;The capital of Peru is Lima.;False;False;1.0;fr;en;True;True;False;True;True
+Who was the first person to walk on the Moon?;Le premier à porter le pied sur la Lune était Neil Armstrong.;Armstrong;;"The first person to walk on the Moon was Neil Armstrong. He stepped out of the lunar module Eagle and onto the Moon's surface on July 20, 1969, during the Apollo 11 mission. Armstrong famously declared, ""That's one small step for man, one giant leap for mankind,"" as he became the first person to set foot on the Moon.";False;False;1.0;fr;en;True;True;False;True;True
+Who invented the printing press in Europe?;La révolution de l'imprimerie a été inventée par Johannes Gutenberg en Allemagne, en 1440.;Gutenberg;;"The printing press was invented by Johannes Gutenberg in Europe, specifically in the 15th century. Gutenberg, a German goldsmith and printer, is credited with developing the movable-type printing press around 1440. His design allowed for mass production of printed materials, revolutionizing the spread of knowledge and ideas during the Renaissance and beyond.
+
+Gutenberg's printing press used a combination of metal type pieces, ink, and a screw-based press to print text and images. This innovation made it possible to produce books";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of South Korea?;La capitale de Corée du Sud est Séoul.;Seoul;;The capital of South Korea is Seoul.;False;False;1.0;fr;en;True;True;False;True;True
+Who discovered penicillin?;Le discovereur de la penicilline est un homme allemand nommé Alexander Fleming.;Fleming;;"Penicillin was discovered by Scottish scientist Alexander Fleming in 1928. Fleming was working in his laboratory at St. Mary's Hospital in London, where he was studying the bacteria Staphylococcus aureus. On September 3, 1928, he noticed that one of his bacterial cultures had been contaminated with a mold, which he later identified as Penicillium notatum.
+
+To his surprise, the mold had killed off the surrounding bacteria, and he isolated the substance responsible for";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for mercury?;Le symbole chimique pour le mercure est Hg.;Hg;;The chemical symbol for mercury is Hg.;False;False;1.0;fr;en;True;True;False;True;True
+What is 21 plus 3?;21 + 3 = 24.;24;;21 + 3 = 24;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who composed The Magic Flute?;Le Magic Flute a été composé par Wolfgang Amadeus Mozart.;Mozart;;The Magic Flute was composed by Wolfgang Amadeus Mozart.;False;False;1.0;fr;en;True;True;False;True;True
+What is the tallest waterfall in the world?;La plus grande cascade du monde est la Victoria Falls, située au Botswana, en Afrique du Sud.;Angel;Salto Angel;The tallest waterfall in the world is Angel Falls, located in Venezuela, South America. It stands at an impressive 979 meters (3,212 feet) tall!;False;False;1.0;fr;en;True;False;False;True;False
+What is the largest organ of the human body?;La plus grande organ de l'organisme humain est le cerveau.;skin;peau;The largest organ of the human body is the skin!;False;False;1.0;fr;en;True;False;False;True;False
+In what year did the Spanish Armada sail against England?;La Armada espagnole a quitté le port de Lisbonne en 1588.;1588;;The Spanish Armada sailed against England in 1588.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did Apollo 11 land on the Moon?;Le 20 juillet 1969, Apollo 11 a atterri sur la Lune.;1969;;Apollo 11 landed on the Moon on July 20, 1969.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Indonesia?;La capitale d'Indonésie est Jakarta.;Jakarta;;The capital of Indonesia is Jakarta.;False;False;1.0;fr;en;True;True;False;True;True
+What is 11 times 11?;11 x 11 = 121.;121;;11 × 11 = 121;False;False;0.5;unknown;unknown;False;True;False;True;False
+In what year did the Berlin Wall fall?;Le mur de Berlin a chuté en 1989.;1989;;The Berlin Wall fell on November 9, 1989.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Russia?;La capitale de la Russie est Moscou.;Moscow;Moscou;The capital of Russia is Moscow.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Switzerland?;La capitale de la Suisse est Genève.;Bern;Berne;The capital of Switzerland is Bern.;False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of New Zealand?;La capitale de la Nouvelle-Zélande est Wellington.;Wellington;;The capital of New Zealand is Wellington.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Jamaica?;La capitale de Jamaïque est Kingston.;Kingston;;The capital of Jamaica is Kingston.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for sodium?;Le symbole chimique pour le sodium est Na.;Na;;The chemical symbol for sodium is Na.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Norway?;La capitale de Norvège est Oslo.;Oslo;;The capital of Norway is Oslo.;False;False;1.0;fr;en;True;True;False;True;True
+Which planet is closest in size to Earth?;Le planète la plus proche de la Terre est Vénus.;Venus;Venus;The planet closest in size to Earth is Mercury. It is a rocky, inner planet with a highly elliptical orbit, which means its distance from the Sun varies throughout the year. On average, Mercury is about 58 million kilometers (36 million miles) away from the Sun, which is about 0.39 times the average distance of Earth from the Sun.;False;False;1.0;fr;en;True;True;False;False;True
+In what year did the Wall Street Crash happen?;Le crash de Wall Street a eu lieu en 1929.;1929;;"The Wall Street Crash, also known as the Great Crash of 1929, occurred in 1929. It is considered one of the most significant financial crises in history, and it marked the beginning of the Great Depression.
+
+The crash is believed to have started on October 24, 1929, when stock prices began to plummet, leading to a massive sell-off of stocks and a sharp decline in the value of the US dollar. The crash continued throughout the year, with stock prices falling by";False;False;1.0;fr;en;True;True;False;True;True
+Who was the first President of South Africa after apartheid?;La première présidente de l'Afrique du Sud après l'apartheid était F.W. de Klerk.;Mandela;;The first President of South Africa after apartheid was F.W. de Klerk. He served as the State President from 1989 to 1994, and later became the first democratically elected President of South Africa in 1994, following the country's transition to democracy.;False;False;1.0;fr;en;True;False;False;False;False
+What is 7 times 9?;7 x 9 = 63.;63;;7 × 9 = 63;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Bangladesh?;La capitale de la Birmanie (ou Bangladesh) est Dhaka.;Dhaka;;The capital of Bangladesh is Dhaka.;False;False;1.0;fr;en;True;True;False;True;True
+How many teeth does a typical adult human have?;Un adulte humain typique a 32 dents.;32;;"A typical adult human has 32 teeth. These include:
+
+* 8 incisors (4 upper and 4 lower)
+* 4 canines (2 upper and 2 lower)
+* 8 premolars (4 upper and 4 lower)
+* 12 molars (6 upper and 6 lower)
+
+It's worth noting that the number of teeth can vary slightly from person to person, and some people may have extra teeth or missing teeth due to various reasons such as tooth decay,";False;False;0.5;unknown;en;False;True;False;True;False
+What is the capital of Ghana?;La capitale de la Ghané est Accra.;Accra;;The capital of Ghana is Accra.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Ulysses?;Ulysses, le roman de James Joyce, a été écrit par James Joyce.;Joyce;;"Ulysses, the novel by James Joyce, was written by the Irish author James Joyce. It was first published in 1922, and it is considered one of the most influential and innovative novels of the 20th century.
+
+Joyce was a modernist writer, and Ulysses is a key work of modernist literature. The novel is a stream-of-consciousness narrative that follows the character of Leopold Bloom as he navigates Dublin on June 16, 190";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Ecuador?;La capitale d'Ecuador est Quito.;Quito;;The capital of Ecuador is Quito.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for lead?;Le symbole chimique pour le plomb est Pb.;Pb;;The chemical symbol for lead is Pb.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Les Miserables?;Les Miserables a été écrit par Victor Hugo.;Hugo;;Les Misérables was written by the French author Victor Hugo. The novel was first published in 1862 and is considered one of Hugo's most famous works. It was later adapted into a famous musical by Claude-Michel Schönberg and Alain Boublil, with a book by Herbert Kretzmer.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did Yuri Gagarin fly to space?;Yuri Gagarin a volé en 1961.;1961;;Yuri Gagarin flew to space on April 12, 1961. He became the first human to journey into outer space, aboard the Vostok 1 spacecraft, and completed one orbit of the Earth.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Italy?;La capitale d'Italie est Rome.;Rome;;The capital of Italy is Rome.;False;False;1.0;fr;en;True;True;False;True;True
+What is 13 times 4?;13 x 4 = 52.;52;;13 × 4 = 52;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the longest river in South America?;La réponse est le Rio Paraná.;Amazon;Amazone;"The longest river in South America is the Amazon River, which is approximately 6,400 kilometers (4,000 miles) long. It flows through Brazil, Colombia, and Peru, and is the largest river in the world by discharge volume, accounting for about 15% of the fresh water that flows into the oceans.
+
+However, if you're looking for the longest river in South America by length, it's actually the Paraná River, which is approximately 4,180 kilometers (2,";False;False;0.6667;fr;en;True;False;False;True;False
+What is the chemical symbol for gold?;Le symbole chimique pour l'or est Au.;Au;;The chemical symbol for gold is Au.;False;False;1.0;fr;en;True;True;False;True;True
+What is 8 plus 8?;8 + 8 = 16.;16;;8 + 8 = 16;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who proposed the laws of planetary motion?;Les lois de la mécanique céleste, c'est-à-dire les lois de la mécanique planétaire, ont été proposées par le physicien italien Galilée en 1632.;Kepler;;Johannes Kepler proposed the laws of planetary motion in the early 17th century.;False;False;1.0;fr;en;True;False;False;True;False
+What is 9 squared?;9 carré est égal à 81.;81;quatre-vingt-un;9 squared (9²) is equal to 81.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for copper?;Le symbole chimique pour le cuivre est Cu.;Cu;;The chemical symbol for copper is Cu.;False;False;1.0;fr;en;True;True;False;True;True
+Who formulated the three laws of motion?;Les trois lois de la mécanique ont été formulées par Isaac Newton.;Newton;;The three laws of motion were formulated by Sir Isaac Newton.;False;False;1.0;fr;en;True;True;False;True;True
+What is 16 plus 3?;16 + 3 = 19.;19;;16 + 3 = 19;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is 8 times 8?;8 x 8 = 64;64;;8 × 8 = 64;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Ireland?;La capitale d'Irlande est Dublin.;Dublin;;The capital of Ireland is Dublin.;False;False;1.0;fr;en;True;True;False;True;True
+How many minutes are in a full day?;Il y a 24 heures dans une journée. Chaque heure comporte 60 minutes, donc 24 heures x 60 minutes = 1440 minutes.;1440;1 440;There are 1440 minutes in a full day.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Egypt?;La capitale d'Égypte est Caire.;Cairo;Caire;The capital of Egypt is Cairo.;False;False;1.0;fr;en;True;True;False;True;True
+What is 30 times 6?;30 x 6 = 180.;180;;30 × 6 = 180;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the longest river in the world by most measures?;La réponse est le fleuve Nil! Le fleuve Nil est considéré comme le plus long du monde par la plupart des sources, avec une longueur estimée de plus de 6 650 kilomètres (4 130 milles).;Nile;Nil;"The longest river in the world by most measures is the Nile River. It stretches approximately 6,695 kilometers (4,160 miles) from its source in Burundi to its delta on the Mediterranean Sea in Egypt.
+
+However, if you consider the river's length from its source to its mouth, the Amazon River is actually the longest, stretching around 7,062 kilometers (4,400 miles) from its source in the Andes Mountains to its mouth in the Atlantic Ocean.
+
+But if you";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Belarus?;La capitale de la Biélorussie est Minsk.;Minsk;;The capital of Belarus is Minsk.;False;False;1.0;fr;en;True;True;False;True;True
+Who was the first Emperor of Rome?;Le premier empereur de Rome était Auguste.;Augustus;Auguste;"The first Emperor of Rome was Augustus Caesar, also known as Octavian. He was the grandnephew and adopted son of Julius Caesar, and he rose to power after Caesar's assassination in 44 BCE.
+
+Augustus was born in 63 BCE and was appointed as the governor of Rome at the age of 18. He quickly gained popularity and was elected as the dictator of Rome in 27 BCE, after the death of his great-uncle, Lucius Cornelius Sulla";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Israel?;La capitale d'Israël est Jerusalem.;Jerusalem;;The capital of Israel is Jerusalem.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Don Quixote?;Le célèbre auteur de Don Quixote est Miguel de Cervantes.;Cervantes;;"Don Quixote, one of the greatest works of literature, was written by the Spanish author Miguel de Cervantes Saavedra. It was first published in two parts in 1605 and 1615, and it is considered one of the greatest novels ever written.
+
+Cervantes was a prolific writer, and Don Quixote is often considered his masterpiece. The novel tells the story of a nobleman who becomes obsessed with chivalric romances and sets out on a series of";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for tin?;Le symbole chimique pour l'argent est Sn.;Sn;;The chemical symbol for tin is Sn.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Madame Bovary?;La réponse est Gustave Flaubert.;Flaubert;;Madame Bovary was written by Gustave Flaubert.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did World War I begin?;Le premier conflit mondial a commencé en 1914.;1914;;World War I began on July 28, 1914.;False;False;1.0;fr;unknown;True;True;False;True;True
+In what year did the Titanic sink?;Le Titanic a coulé en 1912.;1912;;The RMS Titanic sank on April 15, 1912.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Libya?;La capitale de Libye est Tripoli.;Tripoli;;The capital of Libya is Tripoli.;False;False;1.0;fr;en;True;True;False;True;True
+How many elements are in the periodic table as of today, approximately?;Environ 118 éléments sont reconnus dans la table périodique.;118;;"As of 2021, there are approximately 118 confirmed elements in the periodic table. However, new elements are still being discovered and added to the table, so this number is constantly changing.
+
+The International Union of Pure and Applied Chemistry (IUPAC) is responsible for maintaining the official periodic table, and they add new elements to the table as they are discovered. The most recent additions were the discovery of ten new elements in 2016, which brought the total number of elements to 118";False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Brave New World?;Le Bréve Nouveau Monde a été écrit par le célèbre auteur britannique George Orwell.;Huxley;;Brave New World was written by Aldous Huxley. It was first published in 1932 and is considered a classic of dystopian literature. The novel is set in a future society where people are genetically engineered and conditioned to be happy and conform to society, but at the cost of individual freedom and creativity.;False;False;1.0;fr;en;True;False;False;True;False
+What is the largest hot desert in Africa?;La plus grande désert chaud de l'Afrique est le désert de l'Atel.;Sahara;;"The largest hot desert in Africa is the Sahara Desert. It covers an area of approximately 9,200,000 square kilometers (3,552,000 sq mi) across North Africa, stretching from the Atlantic Ocean in the west to the Red Sea in the east, and from the Mediterranean Sea in the south to the Sahara's northern border in the north.
+
+The Sahara Desert is not only the largest hot desert in Africa, but it is also one of the largest hot deserts in the world,";False;False;1.0;fr;en;True;False;False;True;False
+What is 17 plus 2?;17 + 2 = 19.;19;;17 + 2 = 19;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Poland?;La capitale de la Pologne est Varsovie.;Warsaw;Varsovie;The capital of Poland is Warsaw.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Zimbabwe?;La capitale de Zimbabwe est Harare.;Harare;;The capital of Zimbabwe is Harare.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did Columbus first reach the Americas?;Columbus a atteint les Amériques en 1492.;1492;;Christopher Columbus first reached the Americas in 1492.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Malaysia?;La capitale de Malaisie est Kuala Lumpur.;Kuala Lumpur;;The capital of Malaysia is Kuala Lumpur.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Canada?;La capitale du Canada est Ottawa.;Ottawa;;The capital of Canada is Ottawa.;False;False;1.0;fr;en;True;True;False;True;True
+What is the atomic number of carbon?;Le numéro atomique de carbone est de 6.;6;six;The atomic number of carbon is 6.;False;False;1.0;fr;en;True;True;False;True;True
+Which strait separates Spain from Morocco?;La strait qui sépare la Espagne de la Maroc est la strait de Gibraltar.;Gibraltar;;The Strait of Gibraltar separates Spain from Morocco.;False;False;1.0;fr;en;True;True;False;True;True
+What is the closest star to Earth?;Le plus proche étoile à Earth est Proxima Centauri, qui se trouve à environ 4,24 années-lumière de notre planète.;Sun;Soleil;"The closest star to Earth is Proxima Centauri, which is located about 4.24 light-years away from our planet. Proxima Centauri is a small, cool red dwarf star that is part of the Alpha Centauri star system, which also includes the brighter and more massive stars Alpha Centauri A and B.
+
+Proxima Centauri is a relatively small star, with a mass of about 0.12 times the mass of the Sun. It is also quite";False;False;1.0;fr;en;True;False;False;True;False
+Who painted The Starry Night?;"Le peintre qui a peint ""La Nuit étoilée"" (The Starry Night) est Vincent van Gogh.";Van Gogh;;The Starry Night was painted by the famous Dutch post-impressionist artist Vincent van Gogh.;False;False;0.8333;fr;en;True;True;False;True;True
+Who wrote The Trial?;"Le livre ""Le Procès"" (The Trial) a été écrit par Franz Kafka.";Kafka;;The Trial is a novel written by Franz Kafka, a Czech writer, and it was first published in 1925.;False;False;0.8571;fr;en;True;True;False;True;True
+What is the highest mountain in the world?;La montagne la plus haute du monde est la montagne Everest, située dans le Himalaya, en Asie du Sud-Est. Elle atteint une hauteur de 8 848 mètres au-dessus du niveau de la mer.;Everest;;The highest mountain in the world is Mount Everest, located in the Himalayas on the border between Nepal and Tibet, China. It stands at an impressive 8,848.86 meters (29,031.7 feet) above sea level.;False;False;1.0;fr;en;True;True;False;True;True
+At what temperature in Celsius does water reach its maximum density?;La température à laquelle l'eau atteint sa densité maximale est de 4 018 degrés Celsius.;4;quatre;Water reaches its maximum density at a temperature of 4°C (39.2°F).;False;False;1.0;fr;en;True;True;False;True;True
+In what year did the Cuban Missile Crisis occur?;La crise de missiles cubains a eu lieu en 1962.;1962;;The Cuban Missile Crisis occurred in 1962. It was a pivotal moment in the Cold War, when the United States and the Soviet Union came close to nuclear war over the presence of Soviet nuclear missiles in Cuba. The crisis was resolved when the Soviet Union agreed to withdraw the missiles in exchange for a U.S. promise not to invade the island.;False;False;0.5;unknown;en;False;True;False;True;False
+Which planet is known as the Red Planet?;"La planète connue sous le nom de ""Planète rouge"" est Mars.";Mars;;The planet known as the Red Planet is Mars.;False;False;1.0;fr;en;True;True;False;True;True
+What is 12 plus 7?;12 + 7 = 19.;19;;12 + 7 = 19;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who painted The Persistence of Memory?;"Le peintre qui a créé ""La persistence du temps"" (The Persistence of Memory) est Salvador Dalí.";Dali;;"The famous painting ""The Persistence of Memory"" was created by the renowned Spanish surrealist artist Salvador Dalí. It was painted in 1931 and is one of Dalí's most iconic works, featuring melting clocks and other dreamlike imagery.";False;False;0.6;fr;en;True;True;False;True;True
+What is the chemical symbol for hydrogen?;Le symbole chimique pour l'hélium est H.;H;;The chemical symbol for hydrogen is H.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the Chernobyl exclusion zone established?;La zone d'exclusion de Chéronak est établie en 1986.;1986;;The Chernobyl Exclusion Zone was established in 1986, after the catastrophic nuclear accident at the Chernobyl Nuclear Power Plant in Ukraine on April 26, 1986.;False;False;1.0;fr;en;True;True;False;True;True
+Who painted Impression, Sunrise?;"Le peintre qui a peint ""Impression, Sunrise"" est Claude Monet.";Monet;;"The painting ""Impression, Sunrise"" was actually created by Claude Monet, a French Impressionist artist. It was painted in 1872 and is one of Monet's most famous works. The painting depicts a hazy, dreamy portrayal of a sunrise in the harbor of Le Havre, and it is considered one of the most iconic and influential paintings of the Impressionist movement.";False;False;1.0;fr;en;True;True;False;True;True
+Who painted The Birth of Venus?;"La peinture ""La naissance de Vénus"" (ou ""La naissance de Vénus"" en français) a été réalisée par le peintre italien Sandro Botticelli.";Botticelli;;The Birth of Venus is a famous painting by the Italian artist Sandro Botticelli, created in 1486. It is one of his most famous works and is considered a masterpiece of the Italian Renaissance.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Moby-Dick?;Le Moby-Dick a été écrit par le célèbre auteur américain Herman Melville.;Melville;;Moby-Dick is a novel written by American author Herman Melville. It was published in 1851 and is considered one of the greatest American novels of all time. The book tells the story of the obsessive hunt for a white sperm whale by the protagonist, Captain Ahab, and explores themes of obsession, revenge, and the human condition.;False;False;1.0;fr;en;True;True;False;True;True
+What is the smallest country in the world by area?;La petite patrie la plus petite du monde est le Saint-Étienne du Van, mais la plus petite est la Terre de Borneo, qui est un territoire indépendant du Brunei.;Vatican;;"The smallest country in the world by area is the Vatican City, which is an independent city-state located within Rome, Italy. It has a total area of approximately 0.44 km² (0.17 sq mi), making it the smallest internationally recognized sovereign state in the world.
+
+The Vatican City is home to the Pope and the central government of the Catholic Church, and it is the headquarters of the Holy See. It is a unique and fascinating place, with a rich history and culture, and";False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of Bolivia?;La capitale de la Bolivie est La Paz.;La Paz;;The capital of Bolivia is Sucre. However, it's worth noting that Bolivia is a constitutional democracy, and Sucre is the constitutional capital, while La Paz is the administrative capital and the seat of government.;False;False;1.0;fr;en;True;True;False;True;True
+Who formulated the periodic table of elements?;Le tableau périodique des éléments a été formé par Dmitri Mendèleïev, un scientifique russe.;Mendeleev;Mendeleiev;"The periodic table of elements was formulated by Dmitri Mendeleev, a Russian chemist, in 1869. Mendeleev is credited with creating the first comprehensive and organized periodic table, which was published in his book ""A Table of Lanthanum and Actinium with Some of Their Alkaline Earth Metals"" in 1869.
+
+Mendeleev's periodic table was a major breakthrough in chemistry, as it allowed chemists to predict the properties and behavior of elements based";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for carbon?;Le symbole chimique pour le carbone est C.;C;;The chemical symbol for carbon is C.;False;False;1.0;fr;en;True;True;False;True;True
+What is 9 times 9?;9 x 9 = 81.;81;;9 × 9 = 81;False;False;0.5;unknown;unknown;False;True;False;True;False
+In what year did Napoleon lose the Battle of Waterloo?;Le 18 juin 1815.;1815;;Napoleon Bonaparte lost the Battle of Waterloo in 1815.;False;False;1.0;unknown;en;False;True;False;True;False
+What is the capital of Turkey?;La capitale de la Turquie est Ankara.;Ankara;;The capital of Turkey is Ankara.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote Faust?;"Le manuscrit de Faust a été attribué à Goethe, mais il est en réalité un compositeur et un écrivain allemand, Molière, qui a écrit le drame ""Faust"" en 1697.";Goethe;;"The story of Faust is a medieval legend that has been retold and adapted in many forms of literature and art over the centuries. The most famous version of Faust was written by Johann Wolfgang von Goethe, a German poet, playwright, and novelist, in his 1808 play ""Faust"".
+
+However, the story of Faust has its roots in ancient mythology and folklore, and it is believed to have been inspired by the legend of the ancient Germanic god Wotan, who";False;False;1.0;fr;en;True;True;False;True;True
+What is 6 plus 12?;6 + 12 = 18.;18;;6 + 12 = 18;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the longest river in Africa?;La réponse est le Niger! Le Niger est la deuxième longueur du fleuve africain, après le Congo, et coule à travers le pays du Niger.;Nile;Nil;The longest river in Africa is the Nile River, which is approximately 6,695 kilometers (4,160 miles) long. It flows through 11 countries, including Egypt, Sudan, South Sudan, Burundi, Rwanda, Tanzania, Uganda, Democratic Republic of the Congo, Kenya, Ethiopia, and Eritrea. The Nile is not only the longest river in Africa but also one of the most iconic and historically significant rivers in the world.;False;False;1.0;fr;en;True;False;False;True;False
+In what year was the United States Declaration of Independence signed?;La Déclaration d'indépendance des États-Unis a été signée le 4 juillet 1776.;1776;;The United States Declaration of Independence was signed on July 4, 1776.;False;False;1.0;fr;en;True;True;False;True;True
+Who painted the Mona Lisa?;La Mona Lisa a été peinte par le célèbre peintre italien Leonardo da Vinci.;Leonardo;Vinci|Leonard;The Mona Lisa was painted by the Italian artist Leonardo da Vinci. He created the painting in the early 16th century, specifically between 1503 and 1506.;False;False;1.0;fr;en;True;True;False;True;True
+In which country is the Great Barrier Reef located?;La République de l'Australie, où se trouve la plus grande réserve de récifs coralliens du monde!;Australia;Australie;The Great Barrier Reef is located in Australia.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for arsenic?;Le symbole chimique pour l'arsenic est As.;As;;The chemical symbol for arsenic is As.;False;False;0.75;fr;en;True;True;False;True;True
+What is 11 plus 11?;11 + 11 = 22.;22;;11 + 11 = 22;False;False;0.5;unknown;unknown;False;True;False;True;False
+Which continent is Egypt mostly located in?;Egypt est situé principalement sur le continent africain.;Africa;Afrique;Egypt is mostly located in the continent of Africa.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for potassium?;Le symbole chimique pour le potassium est K.;K;;The chemical symbol for potassium is K.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Tanzania?;La capitale de Tanzanie est Dar es Salaam.;Dodoma;;The capital of Tanzania is Dodoma.;False;False;0.5;unknown;en;False;False;False;True;False
+Who wrote On the Origin of Species?;"Le livre ""L'origine de l'évolution"" a été écrit par Charles Robert Darwin.";Darwin;;"Charles Robert Darwin wrote ""On the Origin of Species"".";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Iran?;La capitale d'Iran est Téhéran.;Tehran;Teheran;The capital of Iran is Tehran.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the first iPhone released?;La première iPhone a été lancée en 2007.;2007;;The first iPhone was released in 2007. It was announced by Steve Jobs, the co-founder and CEO of Apple, on January 9, 2007, at the Macworld conference in San Francisco. The iPhone was released to the public on June 29, 2007.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Nepal?;La capitale de la Népal est Kathmandou.;Kathmandu;Katmandou;The capital of Nepal is Kathmandu.;False;False;1.0;fr;en;True;False;False;True;False
+What is 18 plus 5?;18 + 5 = 23.;23;;18 + 5 = 23;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the hardest natural substance on Earth?;La substance la plus difficile à trouver sur la Terre est le diamant!;diamond;diamant;"The hardest natural substance on Earth is diamond. It is a crystalline form of carbon that is known for its exceptional hardness, which is measured on the Mohs hardness scale, which ranges from 1 (softest) to 10 (hardest).
+
+Diamond's hardness is due to its unique crystal structure, which is made up of a repeating pattern of carbon atoms. This structure creates a strong and rigid lattice that provides exceptional resistance to scratching and abrasion.
+
+In fact, diamond is so hard that";False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for oxygen?;Le symbole chimique pour l'oxygène est O.;O;;"The chemical symbol for oxygen is ""O"".";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Brazil?;La capitale du Brésil est Brasília.;Brasilia;;The capital of Brazil is Brasília.;False;False;0.6667;fr;en;True;True;False;True;True
+Which planet has the most prominent ring system?;La planète avec le système de anneaux les plus évident est Jupiter.;Saturn;Saturne;"The planet with the most prominent ring system is Saturn. Its ring system is one of the most extensive and well-known in our solar system, consisting of seven main rings and numerous smaller ringlets. Saturn's rings are made up of ice particles and rock debris that range in size from tiny dust grains to massive boulders, and they stretch out for hundreds of thousands of kilometers.
+
+Saturn's ring system is thought to be the result of a massive collision between Saturn and a large object in the distant";False;False;1.0;fr;en;True;False;False;True;False
+What is the capital of Senegal?;La capitale du Sénégal est Dakar.;Dakar;;The capital of Senegal is Dakar.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for iron?;Le symbole chimique pour l'iron est Fe.;Fe;;The chemical symbol for iron is Fe.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the Treaty of Versailles signed?;Le traité de Versailles a été signé en 1919.;1919;;The Treaty of Versailles was signed on June 28, 1919.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Ukraine?;La capitale de l'Ukraine est Kiev.;Kyiv;Kiev;The capital of Ukraine is Kyiv.;False;False;1.0;fr;en;True;True;False;True;True
+What force keeps planets in orbit around the Sun?;La force qui maintient les planètes dans leur orbite autour du Soleil est la gravité.;gravity;gravit;"The force that keeps planets in orbit around the Sun is gravity. Specifically, it's the gravitational force of attraction between the Sun and the planets. This force is a result of the Sun's mass and the planets' mass, which are both much smaller than the Sun's.
+
+According to Newton's law of universal gravitation, every point mass (like a planet) attracts every other point mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between them";False;False;1.0;fr;en;True;True;False;True;True
+What is 15 plus 6?;15 + 6 = 21.;21;;15 + 6 = 21;False;False;0.5;unknown;unknown;False;True;False;True;False
+What is the capital of Syria?;La capitale de Syrie est Damas.;Damascus;Damas;The capital of Syria is Damascus.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did the Wright brothers first fly?;Les frères Wright ont d'abord volé en 1903.;1903;;The Wright brothers, Orville and Wilbur Wright, successfully flew the first powered, heavier-than-air aircraft on December 17, 1903.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did the Human Genome Project publish its first draft?;Le projet Human Genome Project a publié son premier draft en 2003.;2001;;The Human Genome Project (HGP) published its first draft in 2003.;False;False;1.0;fr;en;True;False;False;False;False
+What is the chemical symbol for platinum?;Le symbole chimique pour le platine est Pt.;Pt;;The chemical symbol for platinum is Pt.;False;False;1.0;fr;en;True;True;False;True;True
+In what year did Germany reunify?;En 1990.;1990;;Germany reunified on October 3, 1990.;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who developed the theory of natural selection alongside Darwin?;"Le théorème de la sélection naturelle a été développé par Charles Darwin, mais il a été développé en collaboration avec d'autres scientifiques, notamment :
+
+* Jean-Baptiste Lamarck
+* Alfred Russel Wallace
+* Gregor Mendel
+
+Cependant, la théorie de la sélection naturelle est souvent attribuée à Charles Darwin, qui a laissé derrière lui les premiers écrits sur le sujet.";Wallace;;Charles Darwin developed the theory of natural selection alongside Alfred Russel Wallace.;False;False;1.0;fr;en;True;True;False;True;True
+What is 7 times 8?;7 x 8 = 56.;56;cinquante-six;7 × 8 = 56;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who developed the theory of general relativity?;Le théorème de la relativité générale a été développé par Albert Einstein.;Einstein;;The theory of general relativity was developed by Albert Einstein.;False;False;1.0;fr;en;True;True;False;True;True
+Who painted The Scream?;"Le peintre qui a créé ""La Peur"" (The Scream) est Edvard Munch.";Munch;;"The painting ""The Scream"" was created by Norwegian artist Edvard Munch. It was painted in 1893 and is one of Munch's most famous works. The painting is a representation of a person's emotional state, with the figure in the foreground screaming in anguish and the background landscape of trees and mountains conveying a sense of anxiety and fear. ""The Scream"" is widely considered to be an iconic representation of modern anxiety and existential dread, and it is one of the most famous";False;False;0.8333;fr;en;True;True;False;True;True
+What is the capital of Greece?;La capitale de Grèce est Athènes.;Athens;Athenes;The capital of Greece is Athens.;False;False;1.0;fr;en;True;True;False;True;True
+Who wrote One Hundred Years of Solitude?;"Le livre ""Les cent ans de solitude"" a été écrit par Gabriel García Márquez.";Garcia Marquez;Marquez;"""One Hundred Years of Solitude"" was written by the Colombian author Gabriel García Márquez.";False;False;0.75;fr;en;True;True;False;True;True
+What is the largest ocean on Earth?;La mer la plus grande du monde est la mer de Chine meridionale.;Pacific;Pacifique;The largest ocean on Earth is the Pacific Ocean. It covers an area of approximately 155.6 million square kilometers (60.1 million square miles) and accounts for approximately 46% of the Earth's total ocean area. It is also the deepest ocean, with a maximum depth of about 11,022 meters (36,198 feet) in the Mariana Trench.;False;False;1.0;fr;en;True;False;False;True;False
+In what year did World War II begin?;Le début de la Seconde Guerre mondiale a eu lieu en 1939.;1939;;World War II began in 1939.;False;False;1.0;fr;en;True;True;False;True;True
+What is 17 times 2?;17 x 2 = 34.;34;;17 × 2 = 34;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who wrote Hamlet?;Le roi Hamlet a été écrit par William Shakespeare.;Shakespeare;;"Hamlet is a play written by the renowned English playwright William Shakespeare. It is one of his most famous and influential works, and is considered one of the greatest plays of all time.
+
+Shakespeare wrote Hamlet around 1599-1602, and it is believed to have been performed for the first time at the Globe Theatre in London. The play is a tragedy that tells the story of Prince Hamlet, who seeks to avenge his father's murder and his mother's affair with his uncle";False;False;1.0;fr;en;True;True;False;True;True
+Which galaxy is the nearest large neighbour to the Milky Way?;La galaxie la plus proche de la galaxie du Milieux de l'Espace (Milky Way) est la galaxie Andromède.;Andromeda;Androm;The nearest large neighbor to the Milky Way is the Andromeda Galaxy, also known as Messier 31 (M31) or NGC 224. It is approximately 2.5 million light-years away from the Milky Way.;False;False;1.0;fr;en;True;True;False;True;True
+How many moons does Mars have?;Le Mars a deux satellites orbitant autour de lui : Phobos et Deimos.;2;deux;Mars has two small natural satellites, or moons, known as Phobos and Deimos. They were discovered in 1877 by astronomer Asaph Hall. Phobos is the larger of the two, with a diameter of about 22 kilometers (14 miles), while Deimos has a diameter of about 12 kilometers (7.5 miles). Both moons are thought to be captured asteroids, and they are relatively close to Mars, orbiting it at an average distance of about;False;False;1.0;fr;en;True;True;False;False;True
+What is the chemical symbol for chromium?;Le symbole chimique pour le chromium est Cr.;Cr;;The chemical symbol for chromium is Cr.;False;False;1.0;fr;en;True;True;False;True;True
+What is 9 plus 9?;9 + 9 = 18.;18;;9 + 9 = 18;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who received the 1876 patent for the telephone?;Le 1876, le télégrafe téléphonique a été inventé par Alexander Graham Bell.;Bell;;Alexander Graham Bell received the 1876 patent for the telephone.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for zinc?;Le symbole chimique pour le zinc est Zn.;Zn;;The chemical symbol for zinc is Zn.;False;False;1.0;fr;en;True;True;False;True;True
+What is 25 plus 4?;25 + 4 = 29.;29;;25 + 4 = 29;False;False;0.5;unknown;unknown;False;True;False;True;False
+Who composed the Ninth Symphony containing Ode to Joy?;La composition de la Septième symphonie, contenant l'Ode à la Joie, a été attribuée à Ludwig van Beethoven.;Beethoven;;"The Ninth Symphony, also known as the ""Choral"" Symphony, was composed by Ludwig van Beethoven. It was completed in 1824 and is one of his most famous and beloved works. The famous ""Ode to Joy"" melody, which is the final movement of the symphony, was actually composed by Friedrich Schiller, a German poet, in 1785. Beethoven set Schiller's poem to music, and the result is one of the most iconic and enduring pieces of";False;False;1.0;fr;en;True;True;False;True;True
+How many time zones does the world have, in standard count?;Le monde a 24 heures de temps de zone.;24;;"The world has 24 time zones, each representing a one-hour difference from Coordinated Universal Time (UTC). These time zones are designated by the International Organization for Standardization (ISO) and are used to divide the world into distinct regions for practical and geographical purposes.
+
+Here's a breakdown of the 24 time zones:
+
+1. UTC-12 (Baker Island Time)
+2. UTC-11 (Samoa Time)
+3. UTC-10 (Hawaii-Aleutian Time)
+4";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Qatar?;La capitale de Qatar est Doha.;Doha;;The capital of Qatar is Doha.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Czechia?;La capitale de la République tchèque est Prague.;Prague;;The capital of Czechia is Prague.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Bulgaria?;La capitale de la Bulgarie est Sofia.;Sofia;;The capital of Bulgaria is Sofia.;False;False;1.0;fr;en;True;True;False;True;True
+How many keys does a standard piano have?;Un piano standard a 88 claviers.;88;;"A standard piano typically has 88 keys, consisting of:
+
+* 52 white keys (also known as naturals)
+* 36 black keys (also known as sharps and flats)
+
+These keys are arranged in a pattern of seven natural notes (A, B, C, D, E, F, and G) and seven sharps and flats (F#, C#, G#, D#, A#, E#, and Bb).";False;False;0.5;unknown;en;False;True;False;True;False
+How many bones are in the adult human body?;Il y a 206 os dans le corps humain adulte.;206;;There are 206 bones in the adult human body. This number can vary slightly from person to person, as some individuals may have extra or missing bones due to various genetic or developmental conditions. However, 206 is the typical number of bones found in an adult human skeleton.;False;False;1.0;fr;en;True;True;False;True;True
+What is the freezing point of water in degrees Celsius?;Le point de fusion de l'eau en degrés Celsius est de 0°C.;0;zero;The freezing point of water is 0 degrees Celsius (°C).;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical formula for carbon dioxide?;La formule chimique pour le dioxyde de carbone est CO2.;CO2;;The chemical formula for carbon dioxide is CO2.;False;False;1.0;fr;en;True;True;False;True;True
+Which ocean lies between Africa and Australia?;La mer Indienne.;Indian;Indien;The Indian Ocean lies between Africa and Australia.;False;False;0.5;unknown;en;False;True;False;True;False
+What is the capital of China?;La capitale de la Chine est Pékin.;Beijing;Pekin;The capital of China is Beijing.;False;False;1.0;fr;en;True;True;False;True;True
+In which city is the Taj Mahal located?;Le Taj Mahal est situé à Agra, en Inde.;Agra;;The Taj Mahal is located in Agra, India.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the euro introduced as physical currency?;La monnaie électronique euro a été introduite en 1999.;2002;;The euro was introduced as physical currency in 2002. It was first introduced as a physical currency on January 1, 2002, in Austria, Belgium, Cyprus, Estonia, Finland, France, Germany, Greece, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, the Netherlands, Portugal, Slovakia, Slovenia, and Spain.;False;False;1.0;fr;en;True;False;False;True;False
+Who composed the opera Carmen?;La musique de l'opéra Carmen a été composée par Georges Bizet.;Bizet;;"The opera Carmen was composed by Georges Bizet. It is one of his most famous works and is based on the novel ""Carmen"" by Prosper Mérimée. The opera premiered in Paris in 1875 and has since become a classic of the operatic repertoire.";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Lebanon?;La capitale de la Liban est Beyrouth.;Beirut;Beyrouth;The capital of Lebanon is Beirut.;False;False;1.0;fr;en;True;True;False;True;True
+What is the deepest ocean trench called?;"La profondeur de la zone de fond de la mer est appelée le ""Trench du Pacifique"" ou plus précisément le ""Trench du Pacifique du Sud"" (ou ""Trench du Pacifique du Sud-Ouest"" en anglais).";Mariana;Marianes;"The deepest ocean trench is called the Mariana Trench. It is located in the Pacific Ocean, to the east of the Mariana Islands. It has a maximum depth of approximately 36,000 feet (10,973 meters), which is deeper than Mount Everest, the highest mountain on Earth, is tall.
+
+The Mariana Trench is a long, deep depression in the Earth's crust that was formed by the movement of tectonic plates. It is a relatively young feature, with estimates";False;False;1.0;fr;en;True;False;False;True;False
+In what year did the Hindenburg disaster occur?;Le défiur de Hindenburg a eu lieu en 1937.;1937;;The Hindenburg disaster occurred on May 6, 1937. It was a catastrophic airship disaster that resulted in the deaths of 36 people.;False;False;1.0;fr;en;True;True;False;True;True
+What is the chemical symbol for chlorine?;Le symbole chimique pour le clorure est Cl.;Cl;;The chemical symbol for chlorine is Cl.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Finland?;La capitale de Finlande est Helsinki.;Helsinki;;The capital of Finland is Helsinki.;False;False;1.0;fr;en;True;True;False;True;True
+How many chambers does the human heart have?;Le cœur humain a deux chambers : le cœur droit (ou cœur droit) et le cœur gauche (ou cœur gauche).;4;quatre;"The human heart has 4 chambers:
+
+1. Right atrium (upper chamber)
+2. Right ventricle (lower chamber)
+3. Left atrium (upper chamber)
+4. Left ventricle (lower chamber)
+
+These 4 chambers work together to pump blood throughout the body.";False;False;1.0;fr;en;True;False;False;True;False
+Who was the first woman to win a Nobel Prize?;La première femme à remporter un prix Nobel était Marie Curie. Elle remporta le prix Nobel de physique en 1903, avec son mari Pierre Curie et son élève Henri Becquerel, pour leurs travaux sur les radioactifs.;Curie;;"The first woman to win a Nobel Prize was Marie Curie, a Polish-born physicist and chemist. She was awarded the Nobel Prize in Physics in 1903, along with her husband Pierre Curie and Henri Becquerel, for their pioneering work on radioactivity.
+
+Marie Curie was the first person to win two Nobel Prizes, and the first woman to win a Nobel Prize in any field. She was also the first person to win a Nobel Prize in two different fields: physics";False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Lithuania?;La capitale de la Litouanie est Vilnius.;Vilnius;;The capital of Lithuania is Vilnius.;False;False;1.0;fr;en;True;True;False;True;True
+What is the capital of Jordan?;La capitale de Jordanie est Amman.;Amman;;The capital of Jordan is Amman.;False;False;1.0;fr;en;True;True;False;True;True
+In what year was the Panama Canal opened?;Le Canal de Panama a été ouvert en 1914.;1914;;The Panama Canal was opened on August 15, 1914.;False;False;1.0;fr;en;True;True;False;True;True
+What is 25 times 4?;25 x 4 = 100.;100;;25 × 4 = 100;False;False;0.5;unknown;unknown;False;True;False;True;False

@@ -1,0 +1,14 @@
+{
+  "source": "../../../../modelos/Llama-3.2-3B-Instruct",
+  "target": "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-1B-Instruct",
+  "patch": "runs/v3_250/lang_patch.pt",
+  "d_source": 3072,
+  "d_target": 2048,
+  "norm_source": 0.8012976050376892,
+  "norm_mapped": 0.6661956906318665,
+  "roundtrip_top1_heldout": 0.88275,
+  "roundtrip_top10_heldout": 0.901,
+  "roundtrip_top1_insample": 0.9225,
+  "n_heldout": 4000,
+  "control": false
+}
