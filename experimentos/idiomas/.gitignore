@@ -1,1 +1,3 @@
 targets_french.csv
+# los reportes HTML se regeneran con plot_mean_diff.py
+*.html
