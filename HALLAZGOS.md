@@ -15,8 +15,7 @@ Un vector sumado a los embeddings de tres tokens de la pregunta hace que
 Llama-3.2-3B responda en francés en el 82–95% de preguntas nunca vistas, con una
 norma por posición menor que el embedding más chico del vocabulario.
 
-Lo interesante no es que funcione — eso es prompt tuning y se sabe desde 2021.
-Lo interesante es **por qué ruta interna lo consigue**:
+Lo interesante no es que funcione, sino **por qué ruta interna lo consigue**:
 
 1. Hay al menos **dos rutas distintas** al mismo comportamiento. La instrucción
    en texto pasa por un estado de «me dieron una directiva» que es agnóstico al
@@ -32,6 +31,71 @@ La lectura: **la forma de una intervención restringe qué ruta puede reclutar.*
 Un vector aditivo sobre embeddings de entrada no puede representar una directiva,
 así que el gradiente converge sobre la ruta que representa una propiedad de la
 entrada.
+
+---
+
+## 0. Qué es exactamente la intervención, y qué no es
+
+La operación es
+
+```
+e'_i = e_i + v_i      para i en {0, 1, 2}
+```
+
+una **traslación aditiva sobre los embeddings de tokens que ya existen**. La
+secuencia no crece, no hay posiciones nuevas, y la información del token original
+se perturba, no se reemplaza.
+
+**Esto no es prompt tuning.** En Lester et al. (arXiv:2104.08691) los soft
+prompts se *prependen* a los embeddings de entrada: la secuencia pasa de n a
+n+P y los tokens originales quedan intactos. Prompt tuning **agrega capacidad**;
+esto no agrega ni una dimensión.
+
+Taxonomía de lo publicado:
+
+| método | operación | universal | capa | objetivo |
+|---|---|---|---|---|
+| Prompt tuning (Lester 2021) | concatena P embeddings nuevos | sí, por tarea | entrada | tarea downstream |
+| Prefix tuning (Li & Liang 2021) | concatena K/V | sí | todas | tarea |
+| Soft Prompt Threats (Schwinn, NeurIPS 2024) | concatena tras la instrucción | no, por prompt | entrada | jailbreak |
+| GCG / universal triggers | concatena tokens discretos | sí | — | jailbreak |
+| PEO (arXiv:2604.24983) | **suma sobre embeddings existentes** | no, por prompt | entrada | jailbreak |
+| UAP en embedding (Sato 2018) | suma | sí | entrada | misclasificación |
+| ActAdd (Turner, arXiv:2308.10248) | suma en residual stream | sí | **intermedia** | steering |
+| **este trabajo** | **suma sobre embeddings existentes** | **sí, generaliza a held-out** | **entrada** | **control de generación** |
+
+**El vecino más cercano es PEO**, y su loss es la misma:
+
+```
+L = L_CE( y | Concat(E, E_y) ) + lambda * || E - E_0 ||^2
+```
+
+La diferencia es que PEO **re-optimiza por prompt** y perturba todas las
+posiciones. Acá se entrena **un** vector sobre muchos prompts y se aplica a
+preguntas nunca vistas, en tres posiciones fijas. Esa generalización es la
+propiedad que hace posible preguntarse por el mecanismo: un vector per-prompt no
+tiene un «mecanismo» separable del prompt.
+
+Los otros dos vecinos difieren cada uno en un solo eje:
+
+- **UAP en embedding space** (Sato 2018 y la linea de perturbaciones
+  universales): misma operación y universal, pero en clasificadores y para
+  provocar error, no para controlar generación.
+- **ActAdd**: aditivo, universal y comportamental, pero en capas intermedias y
+  con el vector sacado de pares contrastivos, **sin optimización**.
+
+La celda que ocupa este trabajo — perturbación aditiva **universal** en el
+espacio de embeddings de **entrada**, aprendida por **gradiente**, para control
+**comportamental de generación** — no aparece ocupada en lo revisado. Es una
+novedad de intersección, no de operación: hay que enunciarla así.
+
+**Un marco que unifica las dos partes del trabajo.** Como `v` es constante e
+independiente de qué token esté en esa posición, es un **término de bias
+inyectado**. Turner describe los steering vectors como *virtual bias terms*;
+Sun et al. describen las massive activations como *indispensable bias terms*. El
+parche de este trabajo, el steering de ActAdd y el canal del sink de la Parte I
+son la misma clase de objeto — un bias aditivo — inyectado en tres puntos
+distintos del cómputo.
 
 ---
 
@@ -543,6 +607,19 @@ las dos cosas por construcción. Eso llevaba el margen de +0.116 (capa 14) a
 - Timkey & van Schijndel, *All Bark and No Bite: Rogue Dimensions*, EMNLP 2021.
 - Elhage, Lasenby & Olah, *Privileged Bases in the Transformer Residual Stream*,
   Transformer Circuits, 2023.
+
+**La operación y sus vecinos (sección 0)**
+- Lester, Al-Rfou & Constant, *The Power of Scale for Parameter-Efficient Prompt
+  Tuning*, arXiv:2104.08691, EMNLP 2021. Concatenacion, no suma.
+- Li & Liang, *Prefix-Tuning*, 2021.
+- Schwinn et al., *Soft Prompt Threats*, arXiv:2402.09063, NeurIPS 2024.
+  Embeddings adversarios **concatenados** despues de la instruccion.
+- *Adaptive Prompt Embedding Optimization (PEO)*, arXiv:2604.24983. El vecino
+  mas cercano: misma operacion y misma loss, pero **per-prompt**.
+- Sato et al., *Interpretable Adversarial Perturbation in Input Embedding Space
+  for Text*, arXiv:1805.02917, IJCAI 2018.
+- Turner et al., *Steering Language Models With Activation Engineering* (ActAdd),
+  arXiv:2308.10248. Suma en el residual stream, sin optimizacion.
 
 **Vecinos que hay que citar y delimitar**
 - Khashabi et al., *Prompt Waywardness*, arXiv:2112.08348. Prompts continuos que
