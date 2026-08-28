@@ -13,7 +13,8 @@ en el espacio de embeddings (layer 0):  `e'_i = e_i + v_i`.
 | `resultados/dimensiones/` | ablaciones posicionales sobre parches de navidad |
 | `resultados/parches_antiguos/` | parches v4/v5, deprecados |
 | `llm_attacks/` | libreria base (SuffixManager, templates de conversacion) |
-| `CHRISTMAS_STEERING_LOG.md` | log de investigacion del experimento de navidad |
+| `HALLAZGOS.md` | **registro tecnico de lo establecido**: hipotesis, experimentos, numeros, errores de medicion y pendientes |
+| `CHRISTMAS_STEERING_LOG.md` | log de la primera etapa. Contiene afirmaciones que `HALLAZGOS.md` corrige |
 
 Los scripts de `legacy/` se corren **desde dentro de `legacy/`** (`cd legacy && python
 christmas_final_train.py`); cada uno importa `_bootstrap` para agregar el root del
