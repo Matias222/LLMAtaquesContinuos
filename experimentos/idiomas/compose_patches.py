@@ -1,13 +1,23 @@
 """
 Geometria de parches: componer dos parches entrenados INDEPENDIENTEMENTE.
 
-Motivo (HALLAZGOS.md, seccion 9): la compuerta AND de navidad (pos0+pos1 ->
-navidad, cada una sola -> nada) esta confundida con co-adaptacion, porque las
-posiciones se co-entrenaron. El test limpio es componer vectores que nunca se
-vieron entre si. Aca se entrena un segundo parche sobre un atributo NO
-lingueistico (mayusculas, generate_targets_upper.py) y se suma al de frances
-(runs/v3_250/lang_patch.pt) para ver si el modelo produce las dos cosas a la
-vez: frances Y en mayusculas.
+Motivo (HALLAZGOS.md, seccion 2.1 y seccion 8): la compuerta AND de navidad
+(pos0+pos1 -> navidad, cada una sola -> nada) esta confundida con
+co-adaptacion, porque las posiciones se co-entrenaron. El test limpio es
+componer vectores que nunca se vieron entre si -- es el pendiente 3 de la
+seccion 9 ("un atributo no lingueistico"). Aca se entrena un segundo parche
+sobre un atributo NO lingueistico (mayusculas, generate_targets_upper.py) y se
+suma al de frances (runs/v3_250/lang_patch.pt) para ver si el modelo produce
+las dos cosas a la vez: frances Y en mayusculas.
+
+Precedente en la literatura, y no es alentador: sumar steering vectors
+entrenados por separado para comportamientos distintos esta reportado como
+"largely unsuccessful" en van der Weij, Poesio & Schoots, *Extending
+Activation Steering to Broad Skills and Multiple Behaviours*, arXiv:2403.05767
+(2024); y Postmus & Abreu, *Steering LLMs using Conceptors*, arXiv:2410.16314,
+MINT workshop @ NeurIPS 2024, toman la suma aditiva como el baseline que su
+metodo (conceptors) supera. Un resultado negativo aca es lo que predice la
+literatura, no una falla del setup.
 
 Ambos parches ocupan las mismas 3 posiciones del goal slice, asi que sumarlos
 es literal:
@@ -15,9 +25,19 @@ es literal:
     v = alpha_fr * v_fr + alpha_upper * v_upper
     e'_i = e_i + v_i        para i en {0, 1, 2}
 
-Condiciones evaluadas sobre el held-out (mismas preguntas que v3_250, si se
-usa el split y CSV por defecto -- los dos parches se entrenaron sobre el mismo
-data/questions.csv con el mismo train_test_split, asi que comparten held-out):
+El held-out NO se deriva de data/questions.csv: cada targets CSV puede tener
+menos filas que questions.csv (el generador nunca descarta preguntas, pero un
+targets_*.csv viejo puede venir de una version anterior de questions.csv con
+menos preguntas -- paso exactamente eso con targets_french.csv, 237 filas
+contra las 250 actuales). Aplicar el mismo indice de corte a dos CSVs de
+distinto largo desalinea los splits en silencio. Por eso el held-out se
+calcula por separado sobre --targets_fr y --targets_upper, cada uno con SU
+propio split, y se evalua solo la INTERSECCION de las dos preguntas held-out.
+Esa interseccion es por construccion disjunta del train de los dos parches --
+no hace falta validarlo en runtime, es una consecuencia del corte posicional
+sobre cada archivo (queda como `assert` interno, no como chequeo de dato).
+
+Condiciones evaluadas sobre esa interseccion:
 
     baseline          M(q)                          sin parche
     solo frances      M(q + v_fr)                   alpha=1.0 fijo
@@ -84,13 +104,27 @@ def parse_alphas(s):
     return [float(x) for x in s.split(",")]
 
 
+def heldout_split(targets_csv, train_test_split):
+    """
+    (train_prompts, heldout_df) para UN targets CSV, con el split posicional
+    que uso train_lang_patch.py sobre ESE archivo -- no sobre questions.csv,
+    que puede tener otro largo (ver docstring del modulo).
+    """
+    df = load_questions(targets_csv)
+    n_train = int(len(df) * train_test_split)
+    return set(df.iloc[:n_train]["prompt"]), df.iloc[n_train:].reset_index(drop=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--questions", default="data/questions.csv")
+    ap.add_argument("--targets_fr", default="attributes/french/targets_french.csv",
+                    help="targets CSV usado para entrenar --patch_fr; fija SU held-out")
+    ap.add_argument("--targets_upper", default="attributes/uppercase/targets_upper.csv",
+                    help="targets CSV usado para entrenar --patch_upper; fija SU held-out")
     ap.add_argument("--train_test_split", type=float, default=0.85,
-                    help="mismo split usado para entrenar los dos parches: solo se evalua el held-out")
+                    help="debe ser el MISMO valor usado al entrenar los dos parches")
     ap.add_argument("--patch_fr", default="runs/v3_250/lang_patch.pt")
     ap.add_argument("--patch_upper", default="runs/upper_v1/lang_patch.pt")
     ap.add_argument("--num_patch_positions", type=int, default=3)
@@ -105,10 +139,24 @@ def main():
     ap.add_argument("--out_md", default="compose_report.md")
     args = ap.parse_args()
 
-    df = load_questions(args.questions)
-    heldout = df.iloc[int(len(df) * args.train_test_split):].reset_index(drop=True)
+    train_fr, held_fr_df = heldout_split(args.targets_fr, args.train_test_split)
+    train_upper, held_upper_df = heldout_split(args.targets_upper, args.train_test_split)
+
+    common_prompts = set(held_fr_df["prompt"]) & set(held_upper_df["prompt"])
+    # Invariante, no validacion de dato: common_prompts es subconjunto de held_fr_df
+    # (disjunto de train_fr por construccion) Y de held_upper_df (disjunto de
+    # train_upper por construccion), asi que esto no puede fallar salvo bug en
+    # heldout_split. Se deja como assert -- no como chequeo de runtime -- porque
+    # una CSV vieja o desalineada ya no puede colar contaminacion aca: cada
+    # held-out se calculo sobre SU PROPIO archivo, nunca sobre questions.csv.
+    assert not (common_prompts & (train_fr | train_upper))
+
+    heldout = held_fr_df[held_fr_df["prompt"].isin(common_prompts)].reset_index(drop=True)
     if args.n is not None:
         heldout = heldout.head(args.n)
+    print(f"Held-out {args.targets_fr}: {len(held_fr_df)}  |  "
+          f"held-out {args.targets_upper}: {len(held_upper_df)}  |  "
+          f"interseccion evaluada: {len(heldout)}")
 
     patch_fr = torch.load(args.patch_fr, map_location=args.device).to(args.device)
     patch_upper = torch.load(args.patch_upper, map_location=args.device).to(args.device)
@@ -119,7 +167,7 @@ def main():
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
 
     combos = list(itertools.product(args.alphas_fr, args.alphas_upper))
-    print(f"Held-out: {len(heldout)}  |  parche FR: {args.patch_fr} (norma {patch_fr.norm(2).item():.4f})  "
+    print(f"parche FR: {args.patch_fr} (norma {patch_fr.norm(2).item():.4f})  "
           f"|  parche MAYUS: {args.patch_upper} (norma {patch_upper.norm(2).item():.4f})")
     print(f"Combos alpha_fr x alpha_upper: {combos}")
     print("=" * 70)

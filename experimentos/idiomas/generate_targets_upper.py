@@ -21,8 +21,14 @@ simbolo quimico; no se parchea porque hacerlo bien reintroduce el bug francés
 que ese case-sensitivity evita.
 
 Salida: attributes/uppercase/targets_upper.csv, mismo esquema de columnas que
-targets_french.csv (para poder reusar train_lang_patch.py / eval_lang_patch.py
-sin cambios).
+targets_french.csv. Eso alcanza para reusar train_lang_patch.py sin cambios
+(solo lee prompt/output/passed_gate). eval_lang_patch.py tambien CORRE sin
+cambios sobre este CSV, pero su compliance impreso (is_french/french_score)
+mide el atributo equivocado: va a reportar ~0% is_french sobre texto en
+ingles, que no dice nada sobre si el parche cumple "mayusculas". Sirve
+igual para leer accuracy y el CE head/tail (esos dos numeros no dependen del
+checker de idioma). El evaluador real del atributo -- is_uppercase sobre las
+condiciones correctas -- es compose_patches.py.
 """
 
 import argparse

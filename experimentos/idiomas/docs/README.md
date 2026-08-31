@@ -326,6 +326,57 @@ Como no hay respuesta verificable, la accuracy se reemplaza por dos medidas:
 Ese ultimo es el que mas me interesa: es la pregunta de navidad ("el efecto
 sobrevive a la generacion?") por fin medida en vez de inspeccionada a ojo.
 
+## Geometria de parches: componer dos atributos independientes
+
+Pendiente 3 de `HALLAZGOS.md` seccion 9: la compuerta AND de navidad (§2.1) esta
+confundida con co-adaptacion porque las posiciones se co-entrenaron juntas. El
+test limpio es entrenar dos parches por separado, que nunca se vieron entre si,
+y sumarlos.
+
+`attributes/uppercase/` tiene el segundo atributo: responder enteramente en
+mayusculas, no lingueistico a proposito, para no confundirse con el canal de
+frances. `generate_targets_upper.py` genera sus targets (misma logica que
+`generate_targets.py` pero gateando con `is_uppercase` en vez de `is_french`,
+ver `checkers.py`), y `attributes/uppercase/run_upper.sh` entrena UN parche
+(`runs/upper_v1/`) con la config v2 que ya establecio existencia para frances
+-- no repite el barrido de 3 L2, el objetivo es alimentar la composicion, no
+reestablecer existencia.
+
+```bash
+bash attributes/uppercase/run_upper.sh $M
+python3 -u compose_patches.py --model $M \
+    --patch_fr runs/v3_250/lang_patch.pt --patch_upper runs/upper_v1/lang_patch.pt \
+    --out_json runs/compose/eval.json --out_md runs/compose/eval.md
+```
+
+`compose_patches.py` suma `alpha_fr*v_fr + alpha_upper*v_upper` sobre las mismas
+3 posiciones y mide `is_french` e `is_uppercase` sobre el mismo texto generado,
+mas una referencia natural conjunta (`M([MAYUS+FR;q])`, la instruccion
+combinada en texto) como techo. El held-out se deriva de la INTERSECCION de los
+held-out de `--targets_fr` y `--targets_upper` -- no de `data/questions.csv`
+directamente, porque un targets CSV puede tener menos filas que el banco de
+preguntas actual (le paso a `targets_french.csv`, quedo en 237 contra 250) y
+aplicar el mismo indice de corte a dos CSVs de distinto largo desalinea el
+split en silencio. Calcular el held-out de cada archivo por separado y despues
+intersecar garantiza que esa interseccion nunca pisa el train de ninguno de
+los dos parches -- es una consecuencia del corte, no algo que haya que validar
+en runtime.
+
+`--alphas_fr`/`--alphas_upper` (listas separadas por coma) barren la escala de
+cada parche en la condicion compuesta; por defecto es un solo punto, `1.0,1.0`.
+La literatura sobre sumar steering vectors de distintos comportamientos no es
+alentadora (van der Weij et al. arXiv:2403.05767, Postmus & Abreu
+arXiv:2410.16314) -- un resultado negativo es lo esperable, no una falla del
+setup.
+
+`inspect_patch_norm.py` mide la norma de un parche contra la distribucion de
+normas del vocabulario, en CPU, sin cargar el modelo entero (solo la matriz de
+embeddings). El percentil por posicion es comparable 1 a 1 contra un token
+real; el percentil "combinado" (las 3 posiciones aplanadas) esta inflado ~raiz
+de 3 porque compara un vector de 3x dimensiones contra la distribucion de
+normas de vectores de 1x dimension -- util como numero relativo entre runs,
+no como "que tan chico es comparado con un token".
+
 ## Advertencias
 
 - **La existencia es barata**: 3x3072 = 9216 parametros libres contra ~80 prompts de

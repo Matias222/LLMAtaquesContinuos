@@ -193,8 +193,9 @@ def is_french(text: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
 # ---------------------------------------------------------------------------
 # Deteccion de formato: mayusculas
 #
-# Atributo no lingueistico, para el experimento de geometria de parches (HALLAZGOS.md
-# 9.3): entrenar un parche independiente del de frances y componerlos.
+# Atributo no lingueistico, para el experimento de geometria de parches
+# (HALLAZGOS.md, seccion 9, pendiente 3: "un atributo no lingueistico"):
+# entrenar un parche independiente del de frances y componerlos.
 # ---------------------------------------------------------------------------
 
 def uppercase_score(text: str) -> float:

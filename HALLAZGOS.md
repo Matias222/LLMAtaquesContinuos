@@ -573,8 +573,16 @@ las dos cosas por construcción. Eso llevaba el margen de +0.116 (capa 14) a
 2. **Un segundo idioma.** Entrenar un parche de alemán y ver si se alinea con la
    *pregunta* en alemán. Si sí, la hipótesis es sobre la forma de la
    intervención; si no, es un accidente del francés.
-3. **Un atributo no lingüístico.** ¿Vale para formato o estilo? Ahí entra
-   navidad, y el contraste difuso-vs-compromiso se vuelve una segunda dimensión.
+3. **Un atributo no lingüístico. EN CURSO.** ¿Vale para formato o estilo? Ahí
+   entra navidad, y el contraste difuso-vs-compromiso se vuelve una segunda
+   dimensión. El atributo elegido es "responder en mayúsculas"
+   (`experimentos/idiomas/attributes/uppercase/`), entrenado independiente del
+   de francés, para el test de composición que §2.1 marcó como pendiente: sumar
+   dos parches que nunca se vieron entre sí (`compose_patches.py`). Sin correr
+   todavía — no hay GPU disponible en esta sesión. La literatura sobre sumar
+   steering vectors de distintos comportamientos no es alentadora (ver §10,
+   van der Weij et al. 2024, Postmus & Abreu 2024): un resultado negativo acá
+   es lo esperable, no una falla del setup.
 4. **Control negativo geométrico.** Correr `mean_diff_vectors` sobre el parche
    v1 (5% de compliance). Si se alinea igual que el que funciona, la alineación
    no explica el comportamiento.
@@ -631,6 +639,21 @@ las dos cosas por construcción. Eso llevaba el margen de +0.116 (capa 14) a
   arXiv:2310.15916; Todd et al., *Function Vectors in LLMs*, ICLR 2024.
   Prompt → vector, en capas intermedias.
 
+**Composición de vectores (pendiente 3, `compose_patches.py`)**
+- Ilharco et al., *Editing Models with Task Arithmetic*, arXiv:2212.04089,
+  ICLR 2023. Espacio de pesos, no de activaciones, pero es la referencia de
+  sumar vectores con un coeficiente λ; robusto en λ∈[0.1,1.9], cae en λ=10 —
+  el mismo patrón no monotónico de §2.4.
+- van der Weij, Poesio & Schoots, *Extending Activation Steering to Broad
+  Skills and Multiple Behaviours*, arXiv:2403.05767, 2024. Combinar steering
+  vectors de varios comportamientos **en un solo vector** — exactamente lo que
+  hace `compose_patches.py` — lo reportan **"largely unsuccessful"**; inyectar
+  cada vector por separado, en lugares distintos del modelo, les funcionó mejor.
+- Postmus & Abreu, *Steering Large Language Models using Conceptors*,
+  arXiv:2410.16314, MINT workshop @ NeurIPS 2024. La suma aditiva de steering
+  vectors es el *baseline* que su método (conceptors, proyecciones tipo Boole)
+  supera.
+
 ---
 
 ## 11. Reproducir
@@ -650,6 +673,10 @@ experimentos/idiomas/
   plot_compare.py            informe HTML comparando dos runs
   rescore_eval.py            recalcula metricas sin GPU cuando cambia un checker
   attributes/french/         targets_french.csv y los run_french*.sh de orquestacion
+  generate_targets_upper.py  segundo atributo, NO lingueistico: responder en mayusculas
+  attributes/uppercase/      targets_upper.csv y run_upper.sh
+  compose_patches.py         suma v_fr + v_upper, mide is_french/is_uppercase sobre el mismo texto
+  inspect_patch_norm.py      norma del parche vs. distribucion de normas del vocab, sin GPU
 
 resultados/primera_parte/    31 runs de navidad
 resultados/dimensiones/      ablaciones posicionales

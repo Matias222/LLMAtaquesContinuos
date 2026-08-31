@@ -5,11 +5,21 @@ Solo lee la matriz de embeddings desde los safetensors (via
 transfer_patch.load_embeddings), no instancia el modelo entero: corre en CPU
 sin GPU y sin cargar los pesos de las 28 capas.
 
-Reporta, para el parche completo y para cada posicion parcheada por separado:
+Reporta, para cada posicion parcheada por separado:
   - norma L2
   - ratio contra la norma media del vocabulario
   - percentil dentro de la distribucion de normas de las ~128k filas de la
     matriz de embeddings (que tan chico es comparado con un token real)
+
+Estos numeros POR POSICION son comparables 1 a 1 contra una fila de la matriz
+de embeddings: mismas d dimensiones. El "combinado" (las N posiciones
+aplanadas en un solo vector de N*d) NO lo es -- su norma esta inflada hasta
+~sqrt(N) frente a la distribucion contra la que se lo compara (vectores de
+d dimensiones), asi que su percentil sale mas alto de lo que "se ve" el
+parche para el modelo. Se reporta igual porque sirve como numero relativo
+entre runs (mismo sesgo en todos), pero no leerlo como "que tan chico es
+comparado con un token real" -- esa lectura vale para per_position, no para
+el combinado.
 
     python3 inspect_patch_norm.py --patch runs/v3_250/lang_patch.pt \\
         --model $MODEL --out runs/v3_250/inspect_report.json
@@ -74,6 +84,11 @@ def main():
         "combined_norm_l2": combined_norm,
         "combined_norm_ratio_vs_vocab_mean": combined_norm / stats["mean"],
         "combined_norm_percentile_in_vocab": percentile_of(combined_norm, sorted_norms),
+        "combined_norm_caveat": (
+            f"inflado hasta ~sqrt({patch.shape[0]}) frente a la distribucion de vocab "
+            "(vectores de d dims); no comparar directo contra per_position ni leerlo "
+            "como 'que tan chico es comparado con un token real'"
+        ),
         "per_position": per_position,
     }
 
@@ -83,6 +98,7 @@ def main():
     print(f"\nparche combinado (norma sobre las {patch.shape[0]} posiciones): "
           f"{combined_norm:.3f}  ->  percentil {report['combined_norm_percentile_in_vocab']:.2f}% "
           f"del vocabulario  ({report['combined_norm_ratio_vs_vocab_mean']:.3f}x la media)")
+    print(f"  CAVEAT: {report['combined_norm_caveat']}")
     for p in per_position:
         print(f"  posicion {p['position']}: norma {p['norm_l2']:.3f}  ->  "
               f"percentil {p['norm_percentile_in_vocab']:.2f}%  "

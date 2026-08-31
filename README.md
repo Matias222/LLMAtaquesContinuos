@@ -22,9 +22,9 @@ repo a `sys.path`.
 
 ## Experimento activo: idiomas
 
-Ver `experimentos/idiomas/README.md`. En corto:
+Ver `experimentos/idiomas/docs/README.md`. En corto:
 
 ```bash
 cd experimentos/idiomas
-bash run_french.sh /ruta/al/modelo/Llama-3.2-3B-Instruct
+bash attributes/french/run_french.sh /ruta/al/modelo/Llama-3.2-3B-Instruct
 ```
