@@ -14,7 +14,7 @@ cd "$IDIOMAS"
 MODEL="${1:-/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct}"
 DEVICE="${DEVICE:-cuda:0}"
 TARGETS="attributes/uppercase/targets_upper.csv"
-L2="${L2:-0.08}"
+L2="${L2:-0.0525}"
 OUT="runs/upper_v1"
 
 [ -f "$TARGETS" ] || python3 -u generate_targets_upper.py --model "$MODEL" --device "$DEVICE"

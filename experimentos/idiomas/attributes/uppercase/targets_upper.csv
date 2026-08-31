@@ -1,0 +1,410 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_uppercase_score;ref_is_uppercase;ref_answer_correct;baseline_is_uppercase;baseline_answer_correct;passed_gate
+On which continent is the Amazon rainforest located?;THE AMAZON RAINFOREST IS LOCATED ON THE CONTINENT OF SOUTH AMERICA!;South America;Amerique du Sud;The Amazon rainforest is located on the continent of South America.;False;False;1.0;True;True;False;True;True
+What is the capital of Iceland?;REYKJAVIK IS THE CAPITAL OF ICELAND!;Reykjavik;Reykjavik;The capital of Iceland is Reykjavik.;False;False;1.0;True;True;False;True;True
+Who composed Bolero?;Maurice RAVEL COMPOSED THE FAMOUS PIECE BOLERO!;Ravel;;"The famous piece ""Bolero"" was composed by Maurice Ravel, a French composer and pianist. It was first performed in 1928 and has since become one of Ravel's most popular and recognizable works.";False;False;0.85;False;True;False;True;False
+What is 12 times 7?;THE ANSWER IS 84!;84;;12 × 7 = 84;False;False;1.0;True;True;False;True;True
+How many players from one team are on the field in soccer?;THERE ARE 11 PLAYERS FROM ONE TEAM ON THE FIELD IN SOCCER.;11;onze;In soccer, each team is allowed to have 11 players on the field at a time.;False;False;1.0;True;True;False;True;True
+What is the capital of Uganda?;KAMPALA IS THE CAPITAL OF UGANDA!;Kampala;;The capital of Uganda is Kampala.;False;False;1.0;True;True;False;True;True
+Which planet has the Great Red Spot?;JUPITER! THE GREAT RED SPOT IS A MASSIVE ANTICYCLONIC STORM ON JUPITER, A PLANET IN OUR SOLAR SYSTEM. IT HAS BEEN OBSERVED FOR CENTURIES AND IS STILL ACTIVE TODAY.;Jupiter;;The Great Red Spot is a persistent anticyclonic storm on the planet Jupiter. It's a massive storm that has been raging for centuries, and it's one of the most distinctive features of Jupiter's atmosphere.;False;False;1.0;True;True;False;True;True
+What is the capital of Cuba?;HAVANA IS THE CAPITAL OF CUBA!;Havana;Havane;The capital of Cuba is Havana.;False;False;1.0;True;True;False;True;True
+What is 18 times 5?;90;90;;18 × 5 = 90;False;False;0.5;False;True;False;True;False
+Which desert is the largest cold desert on Earth?;THE ANTARCTIC DESERT IS THE LARGEST COLD DESERT ON EARTH, COVERING ABOUT 14 MILLION SQUARE KILOMETERS OF LAND.;Antarctic;Antarctique;The largest cold desert on Earth is the Antarctic Desert.;False;False;1.0;True;True;False;True;True
+How many chromosomes are in a typical human cell?;IN A TYPICAL HUMAN CELL, THERE ARE 46 CHROMOSOMES. THIS INCLUDES 23 PAIRS OF CHROMOSOMES, WITH 22 PAIRS OF AUTOSOMES (NUMBERED 1-22) AND 1 PAIR OF SEX CHROMOSOMES (X AND Y).;46;quarante-six;"In a typical human cell, there are 46 chromosomes. This is a diploid number, meaning that the cell has two sets of chromosomes, one inherited from each parent.
+
+To be more specific, a human cell typically has:
+
+* 23 chromosomes from the mother (XX)
+* 23 chromosomes from the father (XY)
+
+These 46 chromosomes are arranged into 23 pairs, with each pair consisting of a homologous pair of chromosomes that carry the same genes but have different versions (alle";False;False;1.0;True;True;False;True;True
+What is the chemical formula for ammonia?;THE CHEMICAL FORMULA FOR AMMONIA IS NH3.;NH3;;The chemical formula for ammonia is NH3.;False;False;1.0;True;True;False;True;True
+In what year was the Magna Carta signed?;THE MAGNA CARTA WAS SIGNING IN 1215.;1215;;The Magna Carta was signed in 1215. Specifically, it was signed by King John of England on June 15, 1215, at Runnymede, near Windsor Castle in England.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for magnesium?;THE CHEMICAL SYMBOL FOR MAGNESIUM IS MG.;Mg;;The chemical symbol for magnesium is Mg.;False;False;1.0;True;False;False;True;False
+What is the capital of Colombia?;BOGOTA IS THE CAPITAL OF COLOMBIA!;Bogota;;The capital of Colombia is Bogotá.;False;False;1.0;True;True;False;True;True
+What is the normal human body temperature in degrees Celsius?;THE NORMAL HUMAN BODY TEMPERATURE IS BETWEEN 36.5 AND 37.5 DEGREES CELSIUS.;37;;"The normal human body temperature is around 37 degrees Celsius (98.6 degrees Fahrenheit). However, it's worth noting that normal body temperature can vary slightly from person to person, and it can also fluctuate throughout the day.
+
+In general, a normal body temperature range is considered to be between 36.5°C and 37.5°C (97.7°F and 99.5°F). Temperatures above 38°C (100.4°F) or below 35.5";False;False;1.0;True;False;False;True;False
+What is the capital of Chile?;THE CAPITAL OF CHILE IS SANTIAGO.;Santiago;;The capital of Chile is Santiago.;False;False;1.0;True;True;False;True;True
+What is the atomic number of hydrogen?;THE ATOMIC NUMBER OF HYDROGEN IS 1.;1;un;The atomic number of hydrogen is 1.;False;False;1.0;True;True;False;True;True
+Who wrote The Divine Comedy?;THE DIVINE COMEDY WAS WRITTEN BY THE ITALIAN POET DANTE ALIGHIERI.;Dante;;"The Divine Comedy is an epic poem written by the Italian poet Dante Alighieri. It's considered one of the greatest works of Italian literature and one of the most influential works of the Middle Ages.
+
+The Divine Comedy is a masterpiece of medieval literature that tells the story of Dante's journey through Hell, Purgatory, and Paradise, guided by the Roman poet Virgil and later by Beatrice, his beloved. The poem is divided into three cantiche (or books): Inferno (Hell";False;False;1.0;True;True;False;True;True
+What is 7 plus 9?;THE ANSWER IS 16!;16;;7 + 9 = 16;False;False;1.0;True;True;False;True;True
+What is the capital of Morocco?;THE CAPITAL OF MOROCCO IS RABAT!;Rabat;;The capital of Morocco is Rabat.;False;False;1.0;True;True;False;True;True
+Who composed The Four Seasons?;ANTONIO VIVALDI COMPOSED THE FOUR SEASONS!;Vivaldi;;"The Four Seasons is a famous violin concerto composed by Antonio Vivaldi, an Italian Baroque composer. The concerto is a set of four violin concertos, each representing a different season:
+
+1. Spring (Concerto No. 1 in E major, RV 269)
+2. Summer (Concerto No. 2 in G minor, RV 315)
+3. Autumn (Concerto No. 3 in F major, RV 293)
+4. Winter";False;False;1.0;True;True;False;True;True
+What is the capital of Afghanistan?;KABUL IS THE CAPITAL OF AFGHANISTAN.;Kabul;Kaboul;The capital of Afghanistan is Kabul.;False;False;1.0;True;True;False;True;True
+How many letters are in the English alphabet?;THERE ARE 26 LETTERS IN THE ENGLISH ALPHABET.;26;;There are 26 letters in the English alphabet.;False;False;1.0;True;True;False;True;True
+Who painted Guernica?;"PIERCES DU TOIT, A FRENCH-ARGENTINE ARTIST, PAINTED THE FAMOUS WORK ""GUERNICA"" IN 1937.";Picasso;;"The painting ""Guernica"" was created by the renowned Spanish artist Pablo Picasso. It was painted in 1937, during the Spanish Civil War, and is considered one of the most powerful anti-war statements of the 20th century. The painting is a large-scale work, measuring over 11 feet tall and over 25 feet wide, and is characterized by its monochromatic palette, bold geometric shapes, and emotive imagery.";False;False;1.0;True;False;False;True;False
+Who led the Macedonian empire and conquered Persia?;ALEXANDER THE GREAT LED THE MACEDONIAN EMPIRE AND CONQUERED PERSIA, DEFYING THE ACHAMENID EMPIRE AND EXTENDING HIS CONQUESTS INTO INDIA AND EGYPT.;Alexander;Alexandre;"You're likely thinking of Alexander the Great!
+
+Alexander III of Macedon, commonly known as Alexander the Great, was the king of the ancient Greek kingdom of Macedon who led the conquest of a vast portion of the known world, creating one of the largest empires in history.
+
+In 334 BCE, Alexander led his army into Asia Minor (modern-day Turkey) and eventually conquered the Persian Empire, which at that time was the largest empire in the world. He defeated the Persian king Darius III";False;False;1.0;True;True;False;True;True
+What is 6 times 12?;72;72;;6 × 12 = 72;False;False;0.5;False;True;False;True;False
+Who wrote War and Peace?;LEON TOULOUSE-LAUTREC DID NOT WRITE WAR AND PEACE, IT WAS ACTUALLY WRITTEN BY THE RUSSIAN AUTHOR LEONID PAVLOVICH TOLSTOY!;Tolstoy;Tolstoi;"A classic question!
+
+War and Peace, one of the greatest novels of all time, was written by the Russian author Leo Tolstoy (1828-1910). The novel was published in serial form from 1865 to 1869 and is considered one of Tolstoy's masterpieces, alongside Anna Karenina.";False;False;1.0;True;True;False;True;True
+Who was the British Prime Minister during most of World War II?;Winston CHURCHILL WAS THE BRITISH PRIME MINISTER DURING MOST OF WORLD WAR II, SERVING FROM MAY 1940 TO JULY 1945.;Churchill;;"The British Prime Minister during most of World War II was Winston Churchill. He served as Prime Minister from May 10, 1940, to July 26, 1945, and again from October 26, 1951, to April 5, 1955. Churchill played a significant role in leading Britain through the war, delivering many famous speeches, including the ""We shall fight on the beaches"" speech, and serving as the leader of the British government during the war's most";False;False;0.9286;True;True;False;True;True
+What is the capital of Slovenia?;LJUBLJANA IS THE CAPITAL OF SLOVENIA!;Ljubljana;;The capital of Slovenia is Ljubljana.;False;False;1.0;True;True;False;True;True
+Who painted the ceiling of the Sistine Chapel?;MICHELANGELO BUNCI, THE FAMOUS ITALIAN ARTIST, PAINTED THE CEILING OF THE SISTINE CHAPEL BETWEEN 1508 AND 1512.;Michelangelo;Michel-Ange|Michel Ange;"The ceiling of the Sistine Chapel was painted by the renowned Italian artist Michelangelo Buonarroti. He worked on the project from 1508 to 1512, and it is considered one of the greatest artistic achievements of all time. The ceiling is famous for its vivid and intricate depictions of biblical scenes, including the iconic ""Creation of Adam"" and ""The Last Judgment.""";False;False;1.0;True;True;False;True;True
+What molecule carries genetic information in most organisms?;DNA (DEOXYRIBONUCLEIC ACID) IS THE MOLECULE THAT CARRIES GENETIC INFORMATION IN MOST ORGANISMS.;DNA;ADN;The molecule that carries genetic information in most organisms is DNA (Deoxyribonucleic acid).;False;False;1.0;True;True;False;True;True
+What is the capital of France?;PARIS IS THE CAPITAL OF FRANCE!;Paris;;The capital of France is Paris.;False;False;1.0;True;True;False;True;True
+In what year did the American Civil War begin?;THE AMERICAN CIVIL WAR BEGAN IN 1861.;1861;;The American Civil War began in 1861. Specifically, it started on April 12, 1861, when Confederate forces fired on Union troops at Fort Sumter in Charleston, South Carolina.;False;False;1.0;True;True;False;True;True
+What is the capital of Venezuela?;CARACAS IS THE CAPITAL OF VENEZUELA.;Caracas;;The capital of Venezuela is Caracas.;False;False;1.0;True;True;False;True;True
+In which country is Machu Picchu located?;PERU!;Peru;Perou;Machu Picchu is located in Peru, South America.;False;False;1.0;True;True;False;True;True
+Who wrote Crime and Punishment?;FYODOR DOSTOEVSKY WROTE CRIME AND PUNISHMENT!;Dostoevsky;Dostoievski;"The novel ""Crime and Punishment"" was written by the Russian author Fyodor Dostoevsky. It was first published in 1866 and is considered one of Dostoevsky's most famous works, as well as a classic of world literature.";False;False;1.0;True;True;False;True;True
+How many degrees are in a right angle?;90 DEGREES!;90;quatre-vingt-dix;There are 90 degrees in a right angle.;False;False;1.0;True;True;False;True;True
+What is the capital of Iraq?;BAAGHDAD IS THE CAPITAL OF IRAQ.;Baghdad;Bagdad;The capital of Iraq is Baghdad.;False;False;1.0;True;False;False;True;False
+What is the capital of Portugal?;LISBON IS THE CAPITAL OF PORTUGAL!;Lisbon;Lisbonne;The capital of Portugal is Lisbon.;False;False;1.0;True;True;False;True;True
+In what year did the Apollo 13 mission take place?;APOLLO 13 TOOK PLACE IN 1970.;1970;;The Apollo 13 mission took place in 1970. It launched on April 11, 1970, and splashed down on April 17, 1970.;False;False;1.0;True;True;False;True;True
+What is 15 plus 27?;42;42;quarante-deux;15 + 27 = 42;False;False;0.5;False;True;False;True;False
+Who wrote the novel 1984?;GEORGE ORWELL WROTE THE NOVEL 1984.;Orwell;;"The novel ""1984"" was written by the renowned English author George Orwell. Published in 1949, it's a classic dystopian novel that depicts a totalitarian future society and has become a cultural touchstone for themes of government control, censorship, and the dangers of totalitarianism.";False;False;1.0;True;True;False;True;True
+Who painted The Last Supper?;THE LAST SUPPER WAS PAINTED BY THE FAMOUS ITALIAN ARTIST LEONARDO DA VINCI!;Leonardo;Vinci;The Last Supper was painted by the renowned Italian artist Leonardo da Vinci. He created the famous mural painting in the late 15th century, specifically between 1495 and 1498, in the refectory of the Convent of Santa Maria delle Grazie in Milan, Italy.;False;False;1.0;True;True;False;True;True
+Who wrote Romeo and Juliet?;THE TRAGEDY OF ROMEO AND JULIET WAS WRITTEN BY THE ENGLISH PLAYWRIGHT WILLIAM SHAKESPEARE!;Shakespeare;;Romeo and Juliet, the classic tragic love story, was written by the renowned English playwright William Shakespeare. It is believed to have been written between 1591 and 1595, and is considered one of Shakespeare's most famous and enduring works.;False;False;1.0;True;True;False;True;True
+Who wrote The Metamorphosis?;FRANZ KAFKA WROTE THE METAMORPHOSIS!;Kafka;;The Metamorphosis was written by Franz Kafka, a Czech writer, in 1915. It's one of his most famous and influential works, a novella that tells the story of a man who transforms into a giant insect and explores themes of identity, alienation, and the absurdity of modern life.;False;False;1.0;True;True;False;True;True
+Who was the Carthaginian general who crossed the Alps?;HANNIBAL BARCA, THE FAMOUS CARTHAGINIAN GENERAL WHO LED HIS ARMY ACROSS THE ALPS IN 218 BC DURING THE SECOND PUNIC WAR AGAINST ROME.;Hannibal;;"You're likely thinking of Hannibal Barca, a renowned Carthaginian general who led his army across the Alps during the Second Punic War (218-201 BCE). This incredible feat was a pivotal moment in history, as it allowed Hannibal to surprise the Romans and win several key battles, including the Battle of Cannae.
+
+Hannibal's crossing of the Alps was a remarkable achievement, as it was a treacherous and nearly impossible journey. He led his army of war elephants";False;False;1.0;True;True;False;True;True
+What is the boiling point of water in degrees Celsius at sea level?;100 DEGREES CELSIUS.;100;cent;The boiling point of water in degrees Celsius at sea level is 100°C.;False;False;1.0;True;True;False;True;True
+Who led the Indian independence movement through nonviolent resistance?;MAHATMA GANDHI LED THE INDIAN INDEPENDENCE MOVEMENT THROUGH NONVIOLENT RESISTANCE.;Gandhi;;Mahatma Gandhi led the Indian independence movement through nonviolent resistance.;False;False;1.0;True;True;False;True;True
+How many squares are on a chessboard?;THERE ARE 64 SQUARES ON A CHESSBOARD.;64;;There are 64 squares on a standard chessboard. It's an 8x8 grid, with 8 rows and 8 columns.;False;False;1.0;True;True;False;True;True
+What is the chemical formula for table salt?;THE CHEMICAL FORMULA FOR TABLE SALT IS NaCl, WHICH STANDS FOR SODIUM CHLORIDE.;NaCl;;The chemical formula for table salt is NaCl, which stands for sodium chloride.;False;False;0.9688;True;True;False;True;True
+What is the powerhouse of the cell?;THE MITOCHONDRIA IS THE POWERHOUSE OF THE CELL, RESPONSIBLE FOR GENERATING ENERGY FOR THE CELL THROUGH THE PROCESS OF CELLULAR RESPIRATION!;mitochondria;mitochondrie;"The powerhouse of the cell is the **Mitochondria**!
+
+Mitochondria are organelles found in the cells of most eukaryotes, including animals, plants, and fungi. They are often referred to as the ""powerhouses"" of the cell because they generate most of the cell's energy in the form of adenosine triphosphate (ATP), which is used to power various cellular activities.
+
+Mitochondria have their own DNA, known as mtDNA, and are";False;False;1.0;True;True;False;True;True
+Which galaxy contains our Solar System?;THE MILKY WAY GALAXY CONTAINS OUR SOLAR SYSTEM!;Milky Way;Voie lactee;Our Solar System is located in the Milky Way galaxy.;False;False;1.0;True;True;False;True;True
+Which ice giant orbits between Saturn and Neptune?;YOU ARE REFERRING TO URANUS! IT IS THE ICE GIANT PLANET THAT ORBITS BETWEEN SATURN AND NEPTUNE IN OUR SOLAR SYSTEM!;Uranus;;"You're thinking of Uranus! However, I should correct you that Uranus is actually the seventh planet from the Sun, and it's not an ice giant that orbits between Saturn and Neptune.
+
+The correct answer is Neptune! Neptune is the eighth and farthest planet from the Sun, and it orbits between Saturn and Uranus in our solar system.
+
+But, if you're thinking of an ice giant, you might be thinking of Uranus or Neptune themselves, as they are both gas giants with icy";False;False;1.0;True;True;False;True;True
+In what year was the Eiffel Tower completed?;THE EIFFEL TOWER WAS COMPLETED IN 1889.;1889;;The Eiffel Tower was completed in 1889. It was built for the World's Fair, held in Paris, France, and was officially opened on March 31, 1889.;False;False;1.0;True;True;False;True;True
+What is the capital of the Philippines?;MANILA IS THE CAPITAL OF THE PHILIPPINES!;Manila;Manille;The capital of the Philippines is Manila.;False;False;1.0;True;True;False;True;True
+How many planets are in the Solar System?;THERE ARE EIGHT PLANETS IN OUR SOLAR SYSTEM: MERCURY, VENUS, EARTH, MARS, JUPITER, SATURN, URANUS, AND NEPTUNE.;8;huit;"There are 8 planets in our Solar System:
+
+1. Mercury
+2. Venus
+3. Earth
+4. Mars
+5. Jupiter
+6. Saturn
+7. Uranus
+8. Neptune
+
+Note: Pluto was previously considered a planet, but in 2006, it was reclassified as a dwarf planet by the International Astronomical Union (IAU).
+
+Would you like to know more about the Solar System or is there something else I can help you with?";False;False;1.0;True;False;False;True;False
+In what year did Nelson Mandela become president of South Africa?;NELSON MANDELA BECAME PRESIDENT OF SOUTH AFRICA IN 1994.;1994;;Nelson Mandela became the President of South Africa in 1994. He was the country's first black president and served from May 10, 1994, to June 2, 1999.;False;False;1.0;True;True;False;True;True
+Which planet is the largest in the Solar System?;JUPITER IS THE LARGEST PLANET IN OUR SOLAR SYSTEM, WITH A DIAMETER OF OVER 142,984 KILOMETERS AND A MASS OF OVER 318 TIMES THAT OF EARTH!;Jupiter;;The largest planet in our Solar System is Jupiter. It is a gas giant, meaning it is primarily composed of hydrogen and helium gases. Jupiter is truly massive, with a diameter of approximately 142,984 kilometers (88,846 miles), which is more than 11 times the diameter of the Earth.;False;False;1.0;True;True;False;True;True
+Who developed the polio vaccine in 1955?;JONAS SALK DEVELOPED THE INACTIVATED POLIO VACCINE IN 1955, BUT THE ORAL POLIO VACCINE WAS DEVELOPED BY ALBERT SABIN IN 1961.;Salk;;The polio vaccine was developed by Dr. Jonas Salk in 1955.;False;False;1.0;True;True;False;True;True
+What is the chemical formula for methane?;THE CHEMICAL FORMULA FOR METHANE IS CH4.;CH4;;The chemical formula for methane is CH4.;False;False;1.0;True;True;False;True;True
+What is the capital of Kenya?;NAIROBI IS THE CAPITAL OF KENYA!;Nairobi;;The capital of Kenya is Nairobi.;False;False;1.0;True;True;False;True;True
+What is the capital of Vietnam?;HANOI IS THE CAPITAL OF VIETNAM!;Hanoi;;The capital of Vietnam is Hanoi.;False;False;1.0;True;True;False;True;True
+Who composed The Rite of Spring?;THE RITE OF SPRING WAS COMPOSED BY IGOR STRAVINSKY!;Stravinsky;Stravinski;The Rite of Spring is a famous orchestral work composed by Igor Stravinsky. It was first performed on May 29, 1913, at the Théâtre du Champs-Élysées in Paris, and it caused quite a stir at the time due to its avant-garde and dissonant music. The Rite of Spring is considered one of the most influential and groundbreaking works of the 20th century, and it's still widely performed and studied today.;False;False;1.0;True;True;False;True;True
+Who wrote The Odyssey?;THE ODYSSEY WAS WRITTEN BY THE ANCIENT GREEK POET HOMER!;Homer;Homere;"The Odyssey, an ancient Greek epic poem, was written by the legendary poet Homer. The exact dates of Homer's life are unknown, but it is believed that he lived in the 8th or 7th century BC.
+
+The Odyssey is considered one of the greatest works of ancient Greek literature, and it tells the story of Odysseus, a Greek hero who returns home after the Trojan War. The poem is a masterpiece of storytelling, exploring themes of adventure, courage, and the human";False;False;1.0;True;True;False;True;True
+In what year did the Russian Revolution take place?;THE RUSSIAN REVOLUTION TOOK PLACE IN 1917, WITH THE FIRST REVOLUTION OCCURRING IN MARCH AND THE SECOND REVOLUTION OCCURRING IN OCTOBER OF THAT YEAR.;1917;;"The Russian Revolution took place in two stages:
+
+1. The February Revolution (also known as the Petrograd Revolution) occurred in 1917, specifically from February 23 to March 2.
+2. The October Revolution (also known as the Great October Socialist Revolution) occurred in 1917, specifically from October 25 to November 7.
+
+So, to answer your question, the Russian Revolution took place in 1917.";False;False;1.0;True;True;False;True;True
+What gas makes up about 78 percent of Earth's atmosphere?;NITROGEN MAKES UP ABOUT 78 PERCENT OF EARTH'S ATMOSPHERE.;nitrogen;azote;The answer is nitrogen (N2). Nitrogen makes up approximately 78% of Earth's atmosphere, while oxygen (O2) makes up about 21%, and the remaining 1% consists of other gases such as argon, carbon dioxide, and water vapor.;False;False;1.0;True;True;False;True;True
+Who is credited with inventing the World Wide Web?;THE WORLD WIDE WEB WAS INVENTED BY TIM BERNERS-LEE, A BRITISH COMPUTER SCIENTIST, IN 1989 WHILE WORKING AT CERN.;Berners-Lee;Berners;Sir Tim Berners-Lee is credited with inventing the World Wide Web. He is a British computer scientist who developed the fundamental technologies that make the web work, including HTTP (Hypertext Transfer Protocol), URL (Uniform Resource Locator), and HTML (Hypertext Markup Language). He proposed the idea of a web in March 1989, and he wrote the first web browser and web server in 1990 while working at CERN, the European particle physics laboratory in Switzerland.;False;False;1.0;True;True;False;True;True
+What is the name of Earth's only natural satellite?;THE NAME OF EARTH'S ONLY NATURAL SATellite IS THE MOON!;Moon;Lune;The answer is: The Moon!;False;False;0.8636;False;True;False;True;False
+What is the capital of Sudan?;KHARTOUM IS THE CAPITAL OF SUDAN.;Khartoum;;The capital of Sudan is Khartoum.;False;False;1.0;True;True;False;True;True
+What is the capital of Croatia?;ZAGREB IS THE CAPITAL OF CROATIA!;Zagreb;;The capital of Croatia is Zagreb.;False;False;1.0;True;True;False;True;True
+In what year was the Declaration of the Rights of Man adopted in France?;THE DECLARATION OF THE RIGHTS OF MAN AND OF THE CITIZEN WAS ADOPTED IN FRANCE IN 1789.;1789;;The Declaration of the Rights of Man and of the Citizen was adopted in France on August 26, 1789.;False;False;1.0;True;True;False;True;True
+In what year was John F. Kennedy assassinated?;JOHN F. KENNEDY WAS ASSASSINATED ON NOVEMBER 22, 1963.;1963;;John F. Kennedy, the 35th President of the United States, was assassinated on November 22, 1963, in Dallas, Texas.;False;False;1.0;True;True;False;True;True
+What is the capital of Slovakia?;BRATISLAVA IS THE CAPITAL OF SLOVAKIA!;Bratislava;;The capital of Slovakia is Bratislava.;False;False;1.0;True;True;False;True;True
+How many cards are in a standard deck without jokers?;THERE ARE 52 CARDS IN A STANDARD DECK WITHOUT JOKERS.;52;;There are 52 cards in a standard deck of cards without jokers.;False;False;1.0;True;True;False;True;True
+Who discovered polonium and radium?;THE ELEMENTS POLONIUM AND RADIUM WERE DISCOVERED BY THE POLISH PHYSICIST MARIE CURIE AND HER HUSBAND PIERRE CURIE IN 1898.;Curie;;"Two of the most fascinating elements in the periodic table!
+
+Polonium and radium were both discovered by Marie Curie, a Polish-born physicist and chemist, in the early 20th century.
+
+**Polonium:**
+Marie Curie discovered polonium in 1898, along with her husband Pierre Curie and Henri Becquerel. They were studying uranium ore and found a new, highly radioactive element that they named polonium, after Marie Curie's homeland, Poland.
+
+**R";False;False;1.0;True;True;False;True;True
+What is the square root of 81?;THE SQUARE ROOT OF 81 IS 9!;9;neuf;The square root of 81 is 9.;False;False;1.0;True;True;False;True;True
+What is 21 times 3?;THE ANSWER IS 63!;63;;21 × 3 = 63;False;False;1.0;True;True;False;True;True
+How many strings does a standard guitar have?;A STANDARD GUITAR USUALLY HAS 6 STRINGS, WITH THE TUNING OF EADGBE.;6;six;"A standard guitar typically has 6 strings. These strings are usually tuned to the following notes:
+
+E, A, D, G, B, E (from lowest to highest pitch)
+
+However, it's worth noting that some guitars, such as bass guitars or classical guitars, may have a different number of strings. But for a standard acoustic or electric guitar, 6 strings is the norm!";False;False;1.0;True;True;False;True;True
+What is the capital of the United Kingdom?;THE CAPITAL OF THE UNITED KINGDOM IS LONDON!;London;Londres;The capital of the United Kingdom is London.;False;False;1.0;True;True;False;True;True
+Who composed the Brandenburg Concertos?;THE BRANDENBURG CONCERTOS WERE COMPOSED BY JOHANN SEBASTIAN BACH!;Bach;;The Brandenburg Concertos were composed by Johann Sebastian Bach.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for nitrogen?;THE CHEMICAL SYMBOL FOR NITROGEN IS N.;N;;The chemical symbol for nitrogen is N.;False;False;1.0;True;True;False;True;True
+What is the capital of Denmark?;THE CAPITAL OF DENMARK IS COPENHAGEN!;Copenhagen;Copenhague;The capital of Denmark is Copenhagen (also known as København in Danish).;False;False;1.0;True;True;False;True;True
+Who founded psychoanalysis?;SIGMUND FREUD IS THE FOUNDER OF PSYCHOANALYSIS, AN AUSTRIAN MEDICAL MAN AND FATHER OF MODERN PSYCHOLOGY, WHO DEVELOPED THE THEORY AND TECHNIQUES OF PSYCHOANALYSIS IN THE LATE 19TH AND EARLY 20TH CENTURIES.;Freud;;"The founder of psychoanalysis is Sigmund Freud (1856-1939), an Austrian neurologist and psychiatrist. Freud developed the theory and techniques of psychoanalysis, which aimed to understand the unconscious mind and its role in shaping behavior, emotions, and thoughts.
+
+Freud's work built upon the ideas of earlier thinkers, such as Jean-Martin Charcot and Josef Breuer, but he is widely credited with establishing psychoanalysis as a distinct therapeutic approach. His key concepts, including the structure";False;False;1.0;True;True;False;True;True
+What is the speed of light in vacuum in kilometers per second, rounded?;THE SPEED OF LIGHT IN VACUUM IS APPROXIMATELY 299,792,458 KILOMETERS PER SECOND.;300000;300 000;The speed of light in a vacuum is approximately 299,792 kilometers per second.;False;False;1.0;True;False;False;False;False
+What is 12 times 12?;THE ANSWER IS 144!;144;cent quarante-quatre;12 × 12 = 144;False;False;1.0;True;True;False;True;True
+What is the capital of Nigeria?;ABUJA IS THE CAPITAL OF NIGERIA!;Abuja;;The capital of Nigeria is Abuja.;False;False;1.0;True;True;False;True;True
+What is the capital of Peru?;LIMA IS THE CAPITAL OF PERU!;Lima;;The capital of Peru is Lima.;False;False;1.0;True;True;False;True;True
+Who was the first person to walk on the Moon?;NEIL ARMSTRONG WAS THE FIRST PERSON TO WALK ON THE MOON!;Armstrong;;"The first person to walk on the Moon was Neil Armstrong. He stepped out of the lunar module Eagle and onto the Moon's surface on July 20, 1969, during the Apollo 11 mission. Armstrong famously declared, ""That's one small step for man, one giant leap for mankind,"" as he became the first human to set foot on the Moon.";False;False;1.0;True;True;False;True;True
+Who invented the printing press in Europe?;THE PRINTING PRESS WAS INVENTED BY JOHANN GUTENBERG, A GERMAN GOLDSMITH, IN THE MID-15TH CENTURY, AROUND 1440.;Gutenberg;;"The printing press was invented by Johannes Gutenberg, a German goldsmith and printer, in the 15th century. Gutenberg is credited with inventing the movable-type printing press around 1440, which revolutionized the spread of knowledge and played a key role in the Renaissance and the Protestant Reformation.
+
+Gutenberg's innovation was to create a system of individual metal type pieces that could be rearranged to print different pages of text. This allowed for mass production of printed materials, making books, newspapers,";False;False;1.0;True;True;False;True;True
+What is the capital of South Korea?;SEOUL IS THE CAPITAL OF SOUTH KOREA!;Seoul;;The capital of South Korea is Seoul.;False;False;1.0;True;True;False;True;True
+Who discovered penicillin?;ALEXANDER FLEMING, A SCOTTISH BIOCHEMIST, DISCOVERED PENICILLIN IN 1928.;Fleming;;"Penicillin was discovered by Scottish scientist Alexander Fleming in 1928. Fleming was working in his laboratory at St. Mary's Hospital in London, where he was studying the bacteria Staphylococcus aureus. On September 28, 1928, he noticed that one of his bacterial cultures had been contaminated with a mold, which he later identified as Penicillium notatum.
+
+To his surprise, the mold had killed off the surrounding bacteria, and Fleming realized that the mold was";False;False;1.0;True;True;False;True;True
+What is the chemical symbol for mercury?;THE CHEMICAL SYMBOL FOR MERCURY IS Hg.;Hg;;The chemical symbol for mercury is Hg.;False;False;0.9677;True;True;False;True;True
+What is 21 plus 3?;THE ANSWER IS 24!;24;;21 + 3 = 24;False;False;1.0;True;True;False;True;True
+Who composed The Magic Flute?;WOLFGANG AMADEUS MOZART COMPOSED THE MAGIC FLUTE!;Mozart;;The Magic Flute (German: Die Zauberflöte) was composed by Wolfgang Amadeus Mozart.;False;False;1.0;True;True;False;True;True
+What is the tallest waterfall in the world?;THE ANA CONDA WATERFALL IN VENEZUELA IS OFTEN CONSIDERED THE TALLEST WATERFALL IN THE WORLD, STANDING AT A HEIGHT OF OVER 979 METERS (3,212 FEET) ABOVE THE CAVANAGUA RIVER.;Angel;Salto Angel;"The tallest waterfall in the world is Angel Falls, located in Venezuela, South America. It stands at an incredible 979 meters (3,212 feet) tall!
+
+Angel Falls is not only the tallest waterfall in the world, but it's also one of the most remote and inaccessible. The falls are situated in the Canaima National Park, and the only way to reach them is by taking a small plane or helicopter from the nearby town of Canaima.
+
+The falls are named after the American";False;False;1.0;True;False;False;True;False
+What is the largest organ of the human body?;THE SKIN IS THE LARGEST ORGAN OF THE HUMAN BODY, COVERING THE ENTIRE BODY AND PERFORMING MANY IMPORTANT FUNCTIONS SUCH AS REGULATING BODY TEMPERATURE, PROTECTING AGAINST INFECTION, AND AIDING IN THE PRODUCTION OF VITAMINS.;skin;peau;"The largest organ of the human body is the skin. It covers the entire surface of the body and weighs around 3.6 kilograms (7.9 pounds) in adults. The skin performs many important functions, including:
+
+* Regulating body temperature
+* Protecting the body from external damage
+* Aiding in the production of vitamin D
+* Helping to prevent infection
+* Assisting in the sensation of touch and feeling
+
+It's amazing to think that the skin is the largest and most";False;False;1.0;True;True;False;True;True
+In what year did the Spanish Armada sail against England?;THE SPANISH ARMADA SAILING AGAINST ENGLAND OCCURRED IN 1588.;1588;;The Spanish Armada sailed against England in 1588.;False;False;1.0;True;True;False;True;True
+In what year did Apollo 11 land on the Moon?;APOLLO 11 LANDED ON THE MOON ON JULY 20, 1969.;1969;;Apollo 11 landed on the Moon on July 20, 1969.;False;False;1.0;True;True;False;True;True
+What is the capital of Indonesia?;THE CAPITAL OF INDONESIA IS JAKARTA!;Jakarta;;The capital of Indonesia is Jakarta.;False;False;1.0;True;True;False;True;True
+What is 11 times 11?;121;121;;11 x 11 = 121;False;False;0.5;False;True;False;True;False
+In what year did the Berlin Wall fall?;THE BERLIN WALL FELL IN 1989. IT WAS A MAJOR EVENT IN WORLD HISTORY THAT MARKED THE END OF THE COLD WAR AND THE BEGINNING OF A NEW ERA OF FREEDOM AND REUNIFICATION IN GERMANY.;1989;;The Berlin Wall fell on November 9, 1989.;False;False;1.0;True;True;False;True;True
+What is the capital of Russia?;THE CAPITAL OF RUSSIA IS MOSCOW!;Moscow;Moscou;The capital of Russia is Moscow.;False;False;1.0;True;True;False;True;True
+What is the capital of Switzerland?;BERN IS THE CAPITAL OF SWITZERLAND!;Bern;Berne;The capital of Switzerland is Bern.;False;False;1.0;True;True;False;True;True
+What is the capital of New Zealand?;THE CAPITAL OF NEW ZEALAND IS WELLINGTON!;Wellington;;The capital of New Zealand is Wellington.;False;False;1.0;True;True;False;True;True
+What is the capital of Jamaica?;KINGSTON IS THE CAPITAL OF JAMAICA!;Kingston;;The capital of Jamaica is Kingston.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for sodium?;THE CHEMICAL SYMBOL FOR SODIUM IS Na.;Na;;The chemical symbol for sodium is Na.;False;False;0.9667;True;True;False;True;True
+What is the capital of Norway?;OSLO IS THE CAPITAL OF NORWAY!;Oslo;;The capital of Norway is Oslo.;False;False;1.0;True;True;False;True;True
+Which planet is closest in size to Earth?;MARS IS THE PLANET THAT IS CLOSEST IN SIZE TO EARTH, WITH A DIAMETER OF ABOUT 6,794 KILOMETERS, WHICH IS ABOUT 53% THE SIZE OF EARTH.;Venus;Venus;The planet that is closest in size to Earth is Mars. Mars is a rocky planet with a diameter of approximately 4,220 miles (6,800 kilometers), which is about half the diameter of Earth.;False;False;1.0;True;False;False;False;False
+In what year did the Wall Street Crash happen?;THE WALL STREET CRASH, ALSO KNOWN AS BLACK TUESDAY, OCCURRED IN 1929.;1929;;"The Wall Street Crash, also known as the Stock Market Crash of 1929, occurred in 1929. Specifically, it began on October 24, 1929, and is often referred to as ""Black Thursday."" However, the crash continued throughout the month of October and into November, with the stock market experiencing a significant decline.
+
+Here's a brief timeline:
+
+* October 24, 1929 (Black Thursday): The stock market begins to decline, with stock prices plummeting.";False;False;1.0;True;True;False;True;True
+Who was the first President of South Africa after apartheid?;THE FIRST PRESIDENT OF SOUTH AFRICA AFTER APARTHEID WAS NELSON MANDELA, WHO SERVED AS PRESIDENT FROM 1994 TO 1999.;Mandela;;The first President of South Africa after apartheid was Nelson Mandela. He served as the country's first black president from 1994 to 1999.;False;False;1.0;True;True;False;True;True
+What is 7 times 9?;THE ANSWER IS 63!;63;;7 × 9 = 63;False;False;1.0;True;True;False;True;True
+What is the capital of Bangladesh?;DHAKA IS THE CAPITAL OF BANGLADESH!;Dhaka;;The capital of Bangladesh is Dhaka.;False;False;1.0;True;True;False;True;True
+How many teeth does a typical adult human have?;A TYPICAL ADULT HUMAN HAS 32 TEETH, INCLUDING 8 INCISORS, 4 CANINES, 8 PREMOLARS, AND 12 MOLARS.;32;;"A typical adult human has 32 teeth, which include:
+
+* 8 incisors (4 upper and 4 lower)
+* 4 canines (2 upper and 2 lower)
+* 8 premolars (4 upper and 4 lower)
+* 12 molars (6 upper and 6 lower, including 4 wisdom teeth)
+
+However, it's worth noting that some people may have fewer teeth due to various reasons such as:
+
+* Wisdom teeth removal (if they are impacted or";False;False;1.0;True;True;False;True;True
+What is the capital of Ghana?;ACCRA IS THE CAPITAL OF GHANA!;Accra;;The capital of Ghana is Accra.;False;False;1.0;True;True;False;True;True
+Who wrote Ulysses?;"JAMES JOYCE WROTE THE CLASSIC NOVEL ""ULYSSES"" IN 1922.";Joyce;;"The novel ""Ulysses"" was written by James Joyce. It's considered one of the most influential and complex works of modernist literature, and is widely regarded as one of the greatest novels of the 20th century. Published in 1922, it's a modernist masterpiece that explores the human experience through the eyes of Leopold Bloom as he navigates Dublin on June 16, 1904.";False;False;1.0;True;True;False;True;True
+What is the capital of Ecuador?;QUITO IS THE CAPITAL OF ECUADOR!;Quito;;The capital of Ecuador is Quito.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for lead?;THE CHEMICAL SYMBOL FOR LEAD IS Pb.;Pb;;The chemical symbol for lead is Pb.;False;False;0.9643;True;True;False;True;True
+Who wrote Les Miserables?;"THE NOVEL ""LES MISÉRABLES"" WAS WRITTEN BY THE FRENCH AUTHOR VICTOR HUGO.";Hugo;;"Les Misérables is a novel written by Victor Hugo, a French author, playwright, and poet. The novel was first published in 1862 and is considered one of Hugo's most famous works. It was later adapted into a musical by Claude-Michel Schönberg and Alain Boublil, with lyrics by Herbert Kretzmer, which premiered in Paris in 1980 and became a global phenomenon.
+
+Would you like to know more about the novel or the musical?";False;False;1.0;True;True;False;True;True
+In what year did Yuri Gagarin fly to space?;YURI GAGARIN FLEW TO SPACE ON APRIL 12, 1961, BECOMING THE FIRST PERSON TO TRAVEL TO SPACE.;1961;;Yuri Gagarin became the first human to fly to space on April 12, 1961. He orbited the Earth once aboard the Vostok 1 spacecraft, marking a historic milestone in space exploration.;False;False;1.0;True;True;False;True;True
+What is the capital of Italy?;THE CAPITAL OF ITALY IS ROME!;Rome;;The capital of Italy is Rome (Italian: Roma).;False;False;1.0;True;True;False;True;True
+What is 13 times 4?;THE ANSWER IS 52!;52;;13 × 4 = 52;False;False;1.0;True;True;False;True;True
+What is the longest river in South America?;THE LONGEST RIVER IN SOUTH AMERICA IS THE AMAZON RIVER, WHICH STRETCHES FOR OVER 6,400 KILOMETERS (4,000 MILES) THROUGH THE AMAZON BASIN IN BRAZIL, PERU, COLOMBIA, ECUADOR, AND BOLIVIA.;Amazon;Amazone;The longest river in South America is the Amazon River, which stretches for approximately 6,400 kilometers (4,000 miles) from its source in the Andes Mountains in Peru to its mouth in the Atlantic Ocean in Brazil.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for gold?;THE CHEMICAL SYMBOL FOR GOLD IS AU.;Au;;The chemical symbol for gold is Au.;False;False;1.0;True;False;False;True;False
+What is 8 plus 8?;16;16;;8 + 8 = 16;False;False;0.5;False;True;False;True;False
+Who proposed the laws of planetary motion?;KEPLER, JOHANN, PROPOSED THE LAWS OF PLANETARY MOTION IN THE 17TH CENTURY.;Kepler;;"The laws of planetary motion were proposed by Sir Isaac Newton. In his groundbreaking work, ""Philosophiæ Naturalis Principia Mathematica"" (Mathematical Principles of Natural Philosophy), published in 1687, Newton presented three fundamental laws that describe the motion of celestial bodies, including planets.
+
+Here are the three laws of planetary motion:
+
+1. **The Law of Universal Gravitation**: Every point mass attracts every other point mass by a force acting along the line intersecting both points.";False;False;1.0;True;True;False;False;True
+What is 9 squared?;9 SQUARED IS 81!;81;quatre-vingt-un;9 squared, or 9², is equal to 81.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for copper?;THE CHEMICAL SYMBOL FOR COPPER IS CU!;Cu;;The chemical symbol for copper is Cu.;False;False;1.0;True;False;False;True;False
+Who formulated the three laws of motion?;THE THREE LAWS OF MOTION WERE FORMULATED BY THE FAMOUS SCOTTISH PHYSICIST AND MATHEMATICIAN, ISAAC NEWTON.;Newton;;The three laws of motion were formulated by Sir Isaac Newton.;False;False;1.0;True;True;False;True;True
+What is 16 plus 3?;THE ANSWER IS 19!;19;;16 + 3 = 19;False;False;1.0;True;True;False;True;True
+What is 8 times 8?;64;64;;8 × 8 = 64;False;False;0.5;False;True;False;True;False
+What is the capital of Ireland?;DUBLIN IS THE CAPITAL OF IRELAND!;Dublin;;The capital of Ireland is Dublin.;False;False;1.0;True;True;False;True;True
+How many minutes are in a full day?;THERE ARE 1440 MINUTES IN A FULL DAY.;1440;1 440;"There are 60 minutes in an hour, and there are 24 hours in a day. To calculate the total number of minutes in a full day, we can multiply the number of minutes in an hour by the number of hours in a day:
+
+60 minutes/hour x 24 hours = 1440 minutes
+
+So, there are 1440 minutes in a full day.";False;False;1.0;True;True;False;True;True
+What is the capital of Egypt?;CAIRO IS THE CAPITAL OF EGYPT!;Cairo;Caire;The capital of Egypt is Cairo.;False;False;1.0;True;True;False;True;True
+What is 30 times 6?;180;180;;30 × 6 = 180;False;False;0.5;False;True;False;True;False
+What is the longest river in the world by most measures?;THE LONGEST RIVER IN THE WORLD IS THE NILE RIVER, STRETCHING OVER 6,695 KILOMETERS (4,160 MILES) THROUGH EGYPT, SUDAN, AND SOUTH SUDAN.;Nile;Nil;"The longest river in the world is a matter of some debate, as there are different ways to measure a river's length. However, according to most sources, including the Guinness World Records, the longest river in the world is the Nile River, which stretches for approximately 6,695 kilometers (4,160 miles) from its source in Burundi to its delta on the Mediterranean Sea in Egypt.
+
+However, some sources argue that the longest river in the world is actually the Amazon River, which is";False;False;1.0;True;True;False;True;True
+What is the capital of Belarus?;MINSK IS THE CAPITAL OF BELARUS!;Minsk;;The capital of Belarus is Minsk.;False;False;1.0;True;True;False;True;True
+Who was the first Emperor of Rome?;THE FIRST EMPEROR OF ROME WAS AUGUSTUS, ALSO KNOWN AS OCTAVIAN, WHO RULLED FROM 27 BC TO 14 AD.;Augustus;Auguste;"The first Emperor of Rome was Augustus Caesar, also known as Octavian. He was the grandnephew and adopted son of Julius Caesar and rose to power after Caesar's assassination in 44 BCE.
+
+Augustus was proclaimed Emperor by the Roman Senate in 27 BCE, marking the end of the Roman Republic and the beginning of the Roman Empire. He ruled Rome for 41 years, from 27 BCE to 14 CE, and is considered one of the greatest emperors in Roman";False;False;1.0;True;True;False;True;True
+What is the capital of Israel?;THE CAPITAL OF ISRAEL IS JERUSALEM!;Jerusalem;;The capital of Israel is Jerusalem.;False;False;1.0;True;True;False;True;True
+Who wrote Don Quixote?;DON QUIXOTE WAS WRITTEN BY THE SPANISH AUTHOR MIGUEL DE CERVANTES SAavedRA.;Cervantes;;"A classic question!
+
+Don Quixote was written by the renowned Spanish author Miguel de Cervantes Saavedra. Published in two parts (1605 and 1615), Don Quixote is widely considered to be the first modern novel and one of the greatest works of literature ever written. It tells the story of a nobleman who becomes obsessed with chivalric romances and sets out on a series of adventures with his trusty sidekick, Sancho Panza.
+
+Would you like";False;False;0.9365;True;True;False;True;True
+What is the chemical symbol for tin?;THE CHEMICAL SYMBOL FOR TIN IS SN.;Sn;;The chemical symbol for tin is Sn.;False;False;1.0;True;False;False;True;False
+Who wrote Madame Bovary?;GUSTAVE FLAUBERT WROTE MADAME BOVARY!;Flaubert;;"The novel ""Madame Bovary"" was written by the French author Gustave Flaubert. Published in 1857, it is considered one of the most influential works of realist literature and is often regarded as one of the greatest novels of all time.";False;False;1.0;True;True;False;True;True
+In what year did World War I begin?;WORLD WAR I BEGAN IN 1914.;1914;;World War I began in 1914. Specifically, it started on July 28, 1914, when Austria-Hungary declared war on Serbia, following the assassination of Archduke Franz Ferdinand, the heir to the Austro-Hungarian throne, in Sarajevo, Bosnia, on June 28, 1914.;False;False;1.0;True;True;False;True;True
+In what year did the Titanic sink?;THE TITANIC SANK ON APRIL 15, 1912.;1912;;The RMS Titanic sank on April 15, 1912.;False;False;1.0;True;True;False;True;True
+What is the capital of Libya?;TRIPOLI IS THE CAPITAL OF LIBYA.;Tripoli;;The capital of Libya is Tripoli.;False;False;1.0;True;True;False;True;True
+How many elements are in the periodic table as of today, approximately?;AS OF TODAY, THERE ARE APPROXIMATELY 118 ELEMENTS RECOGNIZED AND CONFIRMED BY THE INTERNATIONAL UNION OF PURE AND APPLIED CHEMISTRY (IUPAC).;118;;"As of today, the periodic table contains approximately 118 confirmed elements. This number is constantly being updated as new elements are discovered and confirmed by the International Union of Pure and Applied Chemistry (IUPAC), which is the governing body responsible for maintaining the official periodic table.
+
+In fact, in 2016, four new elements were officially recognized and added to the periodic table: nihonium (Nh), moscovium (Mc), tennessine (Ts), and oganesson (Og";False;False;1.0;True;True;False;True;True
+Who wrote Brave New World?;"ALEXANDER BOYS-TOY, AN ENGLISH AUTHOR, WROTE THE CLASSIC SCIENCE FICTION NOVEL ""BRAVE NEW WORLD"" IN 1932.";Huxley;;"The novel ""Brave New World"" was written by Aldous Huxley.";False;False;1.0;True;False;False;True;False
+What is the largest hot desert in Africa?;THE SAHARA DESERT IS THE LARGEST HOT DESERT IN AFRICA, COVERING OVER 9,200,000 SQUARE KILOMETERS ACROSS NORTH AFRICA.;Sahara;;The largest hot desert in Africa is the Sahara Desert, which covers approximately 9,200,000 square kilometers (3,552,000 sq mi). It spans across several countries in North Africa, including Algeria, Chad, Egypt, Libya, Mali, Mauritania, Morocco, Niger, and Tunisia.;False;False;1.0;True;True;False;True;True
+What is 17 plus 2?;THE ANSWER IS 19!;19;;17 + 2 = 19;False;False;1.0;True;True;False;True;True
+What is the capital of Poland?;WARSAW IS THE CAPITAL OF POLAND!;Warsaw;Varsovie;The capital of Poland is Warsaw (Polish: Warszawa).;False;False;1.0;True;True;False;True;True
+What is the capital of Zimbabwe?;HARARE IS THE CAPITAL OF ZIMBABWE.;Harare;;The capital of Zimbabwe is Harare.;False;False;1.0;True;True;False;True;True
+In what year did Columbus first reach the Americas?;CHRISTOPHER COLUMBUS MADE LANDFALL IN THE AMERICAS IN 1492, SPECIFICALLY ON OCTOBER 12TH OF THAT YEAR, WHEN HE LANDED ON THE ISLAND OF GUANAHANI IN THE BAHAMAS.;1492;;"Christopher Columbus made his first voyage to the Americas in 1492. He landed on the island of Guanahani in the Bahamas on October 12, 1492. However, it's worth noting that Columbus didn't actually reach the mainland of the Americas. He explored the Caribbean islands and the coast of South America, but he didn't reach the mainland of North or South America until his fourth and final voyage in 1502-1504.
+
+Would you like to know more about Columbus";False;False;1.0;True;True;False;True;True
+What is the capital of Malaysia?;KUALA LUMPUR IS THE CAPITAL OF MALAYSIA!;Kuala Lumpur;;The capital of Malaysia is Kuala Lumpur.;False;False;1.0;True;True;False;True;True
+What is the capital of Canada?;THE CAPITAL OF CANADA IS OTTAWA!;Ottawa;;The capital of Canada is Ottawa.;False;False;1.0;True;True;False;True;True
+What is the atomic number of carbon?;THE ATOMIC NUMBER OF CARBON IS 6!;6;six;The atomic number of carbon is 6.;False;False;1.0;True;True;False;True;True
+Which strait separates Spain from Morocco?;THE GIBRALTAR STRAIT SEPARATES SPAIN FROM MOROCCO.;Gibraltar;;The Strait of Gibraltar separates Spain from Morocco.;False;False;1.0;True;True;False;True;True
+What is the closest star to Earth?;THE CLOSEST STAR TO EARTH IS PROXIMA CENTAURI, WHICH IS LOCATED ABOUT 4.24 LIGHT-YEARS AWAY FROM US. IT IS A RED-DWARF STAR AND IS ORBITING A SMALL, INFLATED STAR IN THE CENTAURUS CONSTELLATION.;Sun;Soleil;"The closest star to Earth is the Sun, which is approximately 93 million miles (149.6 million kilometers) away from our planet. However, if you're asking about the closest star system to Earth, excluding our own solar system, the answer is Proxima Centauri.
+
+Proxima Centauri is a small, cool red dwarf star located about 4.24 light-years away from Earth. A light-year is the distance light travels in one year, which is approximately 6 trillion";False;False;1.0;True;False;False;True;False
+Who painted The Starry Night?;THE STARRY NIGHT WAS PAINTED BY THE FAMOUS DUTCH ARTIST VINCENT VAN GOGH!;Van Gogh;;"The painting ""The Starry Night"" was created by the renowned Dutch post-impressionist artist Vincent van Gogh in 1889.";False;False;1.0;True;True;False;True;True
+Who wrote The Trial?;FRANZ KAFKA WROTE THE TRIAL, PUBLISHED IN 1925.;Kafka;;The Trial is a novel written by Franz Kafka, a Czech writer. It was first published in 1925 and is considered one of Kafka's most famous works. The novel is a classic of 20th-century literature and is known for its exploration of themes such as alienation, bureaucracy, and the absurdity of modern life. Would you like to know more about Kafka or The Trial?;False;False;1.0;True;True;False;True;True
+What is the highest mountain in the world?;THE HIGHEST MOUNTAIN IN THE WORLD IS MOUNT EVEREST, LOCATED IN THE HIMALAYA MOUNTAIN RANGE ON THE BORDER BETWEEN NEPAL AND TIBET, CHINA. IT STANDS AT AN ELEVATION OF 8,848 METERS (29,029 FEET) ABOVE SEA LEVEL.;Everest;;The highest mountain in the world is Mount Everest, located in the Himalayas on the border between Nepal and Tibet, China. It stands at an incredible 8,848.86 meters (29,031.7 feet) above sea level.;False;False;1.0;True;True;False;True;True
+At what temperature in Celsius does water reach its maximum density?;4 DEGREES CELSIUS.;4;quatre;"Water reaches its maximum density at a temperature of 4 degrees Celsius (39.2 degrees Fahrenheit). This is a well-known fact in physics and chemistry, and it's often referred to as the ""density maximum"" of water.";False;False;1.0;True;True;False;True;True
+In what year did the Cuban Missile Crisis occur?;THE CUBAN MISSILE CRISIS OCCURRED IN OCTOBER 1962.;1962;;The Cuban Missile Crisis occurred in 1962. Specifically, it took place from October 16 to October 28, 1962.;False;False;1.0;True;True;False;True;True
+Which planet is known as the Red Planet?;MARS IS KNOWN AS THE RED PLANET!;Mars;;The planet known as the Red Planet is Mars.;False;False;1.0;True;True;False;True;True
+What is 12 plus 7?;THE ANSWER IS 19!;19;;12 + 7 = 19;False;False;1.0;True;True;False;True;True
+Who painted The Persistence of Memory?;"THE PAINTER OF ""THE PERSISTENCE OF MEMORY"" IS SALVADOR DALI!";Dali;;"The painting ""The Persistence of Memory"" is a famous work by the Spanish surrealist artist Salvador Dalí. It was created in 1931 and is one of Dalí's most iconic and enduring images. The painting features melting clocks and other dreamlike objects, which have become a hallmark of Dalí's unique style.";False;False;1.0;True;True;False;True;True
+What is the chemical symbol for hydrogen?;THE CHEMICAL SYMBOL FOR HYDROGEN IS H!;H;;The chemical symbol for hydrogen is H.;False;False;1.0;True;True;False;True;True
+In what year was the Chernobyl exclusion zone established?;THE CHERNOBYL EXCLUSION ZONE WAS ESTABLISHED IN 1986, IMMEDIATELY AFTER THE DISASTER THAT OCCURRED AT THE CHERNOBYL NUCLEAR POWER PLANT ON APRIL 26, 1986.;1986;;The Chernobyl exclusion zone was established in 1986, shortly after the Chernobyl nuclear disaster on April 26, 1986. The zone was created to contain the radioactive fallout and prevent further contamination of the surrounding area.;False;False;1.0;True;True;False;True;True
+Who painted Impression, Sunrise?;"CLAUDE MONET PAINTED IMPRESSION, SUNRISE IN 1872, WHICH IS CONSIDERED THE PAINTING THAT GAVE RISE TO THE TERM ""IMPRESSIONISM"" IN ART.";Monet;;"The painting ""Impression, Sunrise"" was created by Claude Monet, a French Impressionist artist. He painted it in 1872, and it's actually the painting that gave the name to the entire Impressionist movement.";False;False;1.0;True;True;False;True;True
+Who painted The Birth of Venus?;THE BIRTH OF VENUS WAS PAINTED BY THE ITALIAN ARTIST SANDRO BOTTICELLI IN THE 15TH CENTURY, SPECIFICALLY BETWEEN 1485 AND 1486.;Botticelli;;The Birth of Venus is a famous painting by the Italian artist Sandro Botticelli, created around 1486. It is one of his most famous works and is widely considered a masterpiece of the Italian Renaissance. The painting depicts the goddess Venus emerging from the sea, surrounded by mythological figures and symbols. It is now housed in the Uffizi Gallery in Florence, Italy.;False;False;1.0;True;True;False;True;True
+Who wrote Moby-Dick?;Herman MELVILLE WROTE MOBY-DICK!;Melville;;Moby-Dick was written by the American author Herman Melville. It was first published in 1851 and is considered one of the greatest American novels ever written.;False;False;0.8148;False;True;False;True;False
+What is the smallest country in the world by area?;THE SMALLEST COUNTRY IN THE WORLD BY AREA IS THE VATICAN CITY, COVERING AN AREA OF APPROXIMATELY 0.44 SQUARE KILOMETERS (0.17 SQUARE MILES).;Vatican;;The smallest country in the world by area is the Vatican City, with a total area of approximately 0.44 km² (0.17 sq mi). It is an independent city-state located within Rome, Italy, and is home to the Pope and the central government of the Catholic Church.;False;False;1.0;True;True;False;True;True
+What is the capital of Bolivia?;LA PAZ IS THE CAPITAL OF BOLIVIA!;La Paz;;The capital of Bolivia is Sucre. However, the official capital is La Paz, which is the country's largest city and the seat of the executive and legislative branches of government. Sucre is the constitutional capital and the seat of the judicial branch.;False;False;1.0;True;True;False;True;True
+Who formulated the periodic table of elements?;THE PERIODIC TABLE OF ELEMENTS WAS FORMULATED BY RUSSIAN CHEMIST DMITRI MENDeleev IN 1869.;Mendeleev;Mendeleiev;"The periodic table of elements was formulated by Dmitri Mendeleev, a Russian chemist. He developed the first comprehensive and systematic periodic table in 1869. Mendeleev's table arranged the elements in a logical and organized manner, grouping them by their atomic weights and chemical properties.
+
+Mendeleev's breakthrough was not only organizing the elements in a way that made sense, but also predicting the existence of undiscovered elements and their properties. He left gaps in the table for these missing elements";False;False;0.9306;True;True;False;True;True
+What is the chemical symbol for carbon?;THE CHEMICAL SYMBOL FOR CARBON IS C!;C;;The chemical symbol for carbon is C.;False;False;1.0;True;True;False;True;True
+What is 9 times 9?;THE ANSWER IS 81!;81;;9 × 9 = 81;False;False;1.0;True;True;False;True;True
+In what year did Napoleon lose the Battle of Waterloo?;NAPOLEON LOST THE BATTLE OF WATERLOO IN 1815.;1815;;Napoleon Bonaparte lost the Battle of Waterloo in 1815. Specifically, the battle took place on June 18, 1815, near the town of Waterloo, Belgium.;False;False;1.0;True;True;False;True;True
+What is the capital of Turkey?;THE CAPITAL OF TURKEY IS ANKARA!;Ankara;;The capital of Turkey is Ankara.;False;False;1.0;True;True;False;True;True
+Who wrote Faust?;"JOHANN WOLFGANG VON GOETHE WROTE THE CLASSIC GERMAN TALE ""FAUST"" IN 1808.";Goethe;;"There are actually several versions of the Faust legend, and it's difficult to pinpoint a single author. However, the most well-known and influential versions of Faust were written by:
+
+1. **Christopher Marlowe** (1564-1593): An English playwright and poet, Marlowe wrote the play ""Doctor Faustus"" in 1592, which is considered one of the earliest and most influential versions of the Faust legend.
+2. **Goethe** (174";False;False;1.0;True;True;False;True;True
+What is 6 plus 12?;18;18;;6 + 12 = 18;False;False;0.5;False;True;False;True;False
+What is the longest river in Africa?;THE LONGEST RIVER IN AFRICA IS THE NILE RIVER, WHICH STRETCHES FOR APPROXIMATELY 6,695 KILOMETERS (4,160 MILES) FROM ITS SOURCE IN Burundi TO ITS DELTA ON THE MEDITERRANEAN SEA IN EGYPT.;Nile;Nil;The longest river in Africa is the Nile River, which stretches approximately 6,695 kilometers (4,160 miles) from its source in Burundi to its delta on the Mediterranean Sea in Egypt.;False;False;0.9577;True;True;False;True;True
+In what year was the United States Declaration of Independence signed?;THE UNITED STATES DECLARATION OF INDEPENDENCE WAS SIGNED IN 1776.;1776;;The United States Declaration of Independence was signed in 1776. Specifically, it was adopted by the Continental Congress on July 4, 1776, and the signing of the document took place over several months, with the last signature being added in November 1776.;False;False;1.0;True;True;False;True;True
+Who painted the Mona Lisa?;THE MONA LISA WAS PAINTED BY THE FAMOUS ITALIAN ARTIST LEONARDO DA VINCI!;Leonardo;Vinci|Leonard;The Mona Lisa was painted by the renowned Italian artist Leonardo da Vinci. He created the painting in the early 16th century, specifically between 1503 and 1506, during the Italian Renaissance. The Mona Lisa is considered one of the most famous paintings in the world and is widely regarded as a masterpiece of Renaissance art.;False;False;1.0;True;True;False;True;True
+In which country is the Great Barrier Reef located?;AUSTRALIA!;Australia;Australie;The Great Barrier Reef is located in Australia. Specifically, it is situated off the coast of Queensland, Australia, stretching over 2,300 kilometers (1,400 miles) along the eastern coast of the country.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for arsenic?;THE CHEMICAL SYMBOL FOR ARSENIC IS AS.;As;;The chemical symbol for arsenic is As.;False;False;1.0;True;False;False;True;False
+What is 11 plus 11?;22;22;;11 + 11 = 22;False;False;0.5;False;True;False;True;False
+Which continent is Egypt mostly located in?;EGYPT IS MAINLY LOCATED IN THE CONTINENT OF AFRICA!;Africa;Afrique;Egypt is mostly located in the continent of Africa.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for potassium?;THE CHEMICAL SYMBOL FOR POTASSIUM IS K!;K;;The chemical symbol for potassium is K.;False;False;1.0;True;True;False;True;True
+What is the capital of Tanzania?;THE CAPITAL OF TANZANIA IS DODOMA.;Dodoma;;The capital of Tanzania is Dodoma. However, the largest city and former capital is Dar es Salaam.;False;False;1.0;True;True;False;True;True
+Who wrote On the Origin of Species?;CHARLES DARWIN WROTE ON THE ORIGIN OF SPECIES!;Darwin;;"The book ""On the Origin of Species"" was written by Charles Robert Darwin.";False;False;1.0;True;True;False;True;True
+What is the capital of Iran?;TEHRAN IS THE CAPITAL OF IRAN.;Tehran;Teheran;The capital of Iran is Tehran.;False;False;1.0;True;True;False;True;True
+In what year was the first iPhone released?;THE FIRST IPHONE WAS RELEASED IN 2007.;2007;;The first iPhone was released in 2007. Specifically, it was announced by Steve Jobs, the co-founder and CEO of Apple, at the Macworld conference in San Francisco on January 9, 2007. It was released to the public on June 29, 2007.;False;False;1.0;True;True;False;True;True
+What is the capital of Nepal?;KATHMANDU IS THE CAPITAL OF NEPAL!;Kathmandu;Katmandou;The capital of Nepal is Kathmandu.;False;False;1.0;True;True;False;True;True
+What is 18 plus 5?;THE ANSWER IS 23!;23;;18 + 5 = 23;False;False;1.0;True;True;False;True;True
+What is the hardest natural substance on Earth?;THE HARDEST NATURAL SUBSTANCE ON EARTH IS DIAMOND! IT HAS A MOSSBauer SPECTROSCOPIC HARDNESS OF 10,000 HARDSNESS UNITS, WHICH IS THE HIGHEST RATED BY THE MOSSBauer SCALE. DIAMONDS ARE FORMED WHEN CARBON IS HEATED AND PRESSURIZED TO EXTREME DEPTHS UNDER EARTH'S SURFACE, RESULTING IN A UNIQUE AND EXTREMELY DUR;diamond;diamant;"The hardest natural substance on Earth is diamond. Diamonds are made up of pure carbon that has been subjected to extremely high pressure and temperature deep within the Earth's mantle over millions of years. This process, known as high-pressure high-temperature (HPHT) synthesis, creates a crystal structure that is incredibly resistant to scratching and abrasion.
+
+Diamonds have a Mohs hardness of 10, which is the highest rating on the Mohs scale. This means that they are resistant to scratching and abrasion";False;False;0.968;True;True;False;True;True
+What is the chemical symbol for oxygen?;THE CHEMICAL SYMBOL FOR OXYGEN IS O.;O;;The chemical symbol for oxygen is O.;False;False;1.0;True;True;False;True;True
+What is the capital of Brazil?;THE CAPITAL OF BRAZIL IS BRASILIA!;Brasilia;;The capital of Brazil is Brasília.;False;False;1.0;True;True;False;True;True
+Which planet has the most prominent ring system?;SATURN HAS THE MOST PROMINENT RING SYSTEM IN OUR SOLAR SYSTEM, CONSISTING OF SEVEN MAIN RINGS AND COUNTLESS SMALLER RINGS AND DUST BANDS.;Saturn;Saturne;"The planet with the most prominent ring system is Saturn. Saturn's ring system is one of the most extensive and visible in our solar system, consisting of seven main rings and numerous smaller ringlets. The rings are made up of ice particles, rock debris, and dust, and are thought to be the remains of moons and other objects that were destroyed or broken apart by Saturn's gravitational forces.
+
+Saturn's ring system is truly breathtaking, with its delicate, icy tendrils stretching out for hundreds of thousands";False;False;1.0;True;True;False;True;True
+What is the capital of Senegal?;DAKAR IS THE CAPITAL OF SENEGAL!;Dakar;;The capital of Senegal is Dakar.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for iron?;THE CHEMICAL SYMBOL FOR IRON IS FE!;Fe;;The chemical symbol for iron is Fe.;False;False;1.0;True;False;False;True;False
+In what year was the Treaty of Versailles signed?;THE TREATY OF VERSAILLES WAS SIGNED IN 1919.;1919;;The Treaty of Versailles was signed on June 28, 1919.;False;False;1.0;True;True;False;True;True
+What is the capital of Ukraine?;KIEV IS THE CAPITAL OF UKRAINE!;Kyiv;Kiev;The capital of Ukraine is Kyiv (also known as Kiev).;False;False;1.0;True;True;False;True;True
+What force keeps planets in orbit around the Sun?;GRAVITY IS THE FORCE THAT KEEPS PLANETS IN ORBIT AROUND THE SUN.;gravity;gravit;"The force that keeps planets in orbit around the Sun is called gravity. Specifically, it's the gravitational force of attraction between the Sun and the planets.
+
+According to Newton's Law of Universal Gravitation, every object in the universe attracts every other object with a force proportional to their masses and the distance between them. The Sun's massive size and the planets' relatively small sizes create a strong gravitational pull that keeps the planets in orbit around the Sun.
+
+Think of it like a cosmic dance: the Sun";False;False;1.0;True;True;False;True;True
+What is 15 plus 6?;21;21;;15 + 6 = 21;False;False;0.5;False;True;False;True;False
+What is the capital of Syria?;THE CAPITAL OF SYRIA IS DAMASCUS.;Damascus;Damas;The capital of Syria is Damascus.;False;False;1.0;True;True;False;True;True
+In what year did the Wright brothers first fly?;THE WRIGHT BROTHERS FIRST FLEW ON DECEMBER 17, 1903.;1903;;The Wright brothers, Orville and Wilbur, successfully flew the first powered, heavier-than-air aircraft on December 17, 1903. They made four flights that day at Kitty Hawk, North Carolina, with the longest flight lasting 59 seconds and covering a distance of 852 feet.;False;False;1.0;True;True;False;True;True
+In what year did the Human Genome Project publish its first draft?;THE HUMAN GENOME PROJECT PUBLISHED ITS FIRST DRAFT IN 2000.;2001;;The Human Genome Project published its first draft in 2000.;False;False;1.0;True;False;False;False;False
+What is the chemical symbol for platinum?;THE CHEMICAL SYMBOL FOR PLATINUM IS Pt.;Pt;;The chemical symbol for platinum is Pt.;False;False;0.9688;True;True;False;True;True
+In what year did Germany reunify?;GERMANY REUNITED IN 1990, WHEN EAST AND WEST GERMANY WERE OFFICIALLY REUNIFIED ON OCTOBER 3RD OF THAT YEAR.;1990;;Germany reunified on October 3, 1990. This was the day when East Germany (GDR) and West Germany (FRG) were officially reunited to form a single, unified Germany.;False;False;1.0;True;True;False;True;True
+Who developed the theory of natural selection alongside Darwin?;"ALBERT EINSTEIN AND CHARLES DARWIN WERE NOT PARTNERS IN DEVELOPING THE THEORY OF NATURAL SELECTION. CHARLES DARWIN IS CREDITED WITH DEVELOPING THE THEORY OF NATURAL SELECTION IN HIS 1859 BOOK ""ON THE ORIGIN OF SPECIES"".";Wallace;;"While Charles Darwin is often credited with developing the theory of natural selection, he didn't work alone. Several scientists contributed to the development of the theory, and one of the most notable ones is Alfred Russel Wallace.
+
+In 1858, Wallace, a British naturalist and biologist, independently developed a similar theory of natural selection, which he published in a paper titled ""On the Tendency of Varieties to Depart Indefinitely from the Original Type."" This paper was sent to Darwin, who was";False;False;1.0;True;False;False;True;False
+What is 7 times 8?;THE ANSWER IS 56!;56;cinquante-six;7 × 8 = 56;False;False;1.0;True;True;False;True;True
+Who developed the theory of general relativity?;ALBERT EINSTEIN DEVELOPED THE THEORY OF GENERAL RELATIVITY IN 1915.;Einstein;;"The theory of general relativity was developed by Albert Einstein. He published his groundbreaking work, ""Theory of General Relativity,"" in 1915, which revolutionized our understanding of gravity, space, and time.";False;False;1.0;True;True;False;True;True
+Who painted The Scream?;EDVARD MUNCH PAINTED THE SCREAM IN 1893. IT IS ONE OF HIS MOST FAMOUS WORKS AND IS CONSIDERED AN ICON OF MODERN ART.;Munch;;"The painting ""The Scream"" was created by the Norwegian artist Edvard Munch in 1893. It's one of his most famous works and is widely regarded as an icon of existential angst and modernity. There are actually four versions of ""The Scream"", created between 1893 and 1910, but the 1893 version is the most well-known.";False;False;1.0;True;True;False;True;True
+What is the capital of Greece?;ATHENS IS THE CAPITAL OF GREECE!;Athens;Athenes;The capital of Greece is Athens.;False;False;1.0;True;True;False;True;True
+Who wrote One Hundred Years of Solitude?;GABRIEL GARCÍA MÁRQUEZ WROTE ONE HUNDRED YEARS OF SOLITUDE!;Garcia Marquez;Marquez;"A classic of magical realism!
+
+""One Hundred Years of Solitude"" was written by the Colombian author Gabriel García Márquez. Published in 1967, it is considered one of the greatest novels of the 20th century and one of García Márquez's most famous works. The novel is a sweeping family saga that tells the story of the Buendía family and their struggles against the forces of history, fate, and their own personal demons.";False;False;1.0;True;True;False;True;True
+What is the largest ocean on Earth?;THE LARGEST OCEAN ON EARTH IS THE PACIFIC OCEAN, COVERING AN AREA OF OVER 155 MILLION SQUARE KILOMETERS AND ACCOUNTING FOR ABOUT 46% OF THE EARTH'S TOTAL OCEANIC WATER VOLUME.;Pacific;Pacifique;The largest ocean on Earth is the Pacific Ocean, which covers approximately 155.6 million square kilometers (60.1 million square miles). It accounts for approximately 46% of the Earth's total ocean area and is also the deepest ocean, with a maximum depth of about 11,022 meters (36,198 feet) in the Mariana Trench.;False;False;1.0;True;True;False;True;True
+In what year did World War II begin?;WORLD WAR II BEGAN IN 1939.;1939;;World War II began in 1939. Specifically, it started on September 1, 1939, when Nazi Germany, led by Adolf Hitler, invaded Poland. This act of aggression prompted the United Kingdom and France to declare war on Germany, marking the beginning of the conflict in Europe.;False;False;1.0;True;True;False;True;True
+What is 17 times 2?;34;34;;17 × 2 = 34;False;False;0.5;False;True;False;True;False
+Who wrote Hamlet?;WILLIAM SHAKESPEARE WROTE THE PLAY HAMLET!;Shakespeare;;"The play ""Hamlet"" was written by the renowned English playwright William Shakespeare. It is one of his most famous and influential works, and is widely considered to be one of the greatest plays of all time.";False;False;1.0;True;True;False;True;True
+Which galaxy is the nearest large neighbour to the Milky Way?;THE ANDROMEDA GALAXY IS THE NEAREST LARGE NEIGHBOUR TO THE MILKY WAY, LOCATED APPROXIMATELY 2.5 MILLION LIGHT-YEARS AWAY.;Andromeda;Androm;"The nearest large neighbor to the Milky Way galaxy is the Andromeda Galaxy, also known as Messier 31 (M31) or NGC 224. It is a spiral galaxy, similar in structure to the Milky Way, and is located approximately 2.5 million light-years away from us.
+
+The Andromeda Galaxy is the largest member of the Local Group of galaxies, which also includes the Milky Way, the Triangulum Galaxy, and several smaller galaxies. It is expected to collide";False;False;1.0;True;True;False;True;True
+How many moons does Mars have?;MARS HAS TWO SMALL NATURAL SATELITES, PHOBOS AND DEIMOS.;2;deux;Mars has two small natural satellites, or moons. Their names are Phobos and Deimos.;False;False;1.0;True;False;False;False;False
+What is the chemical symbol for chromium?;THE CHEMICAL SYMBOL FOR CHROMIUM IS CR.;Cr;;The chemical symbol for Chromium is Cr.;False;False;1.0;True;False;False;True;False
+What is 9 plus 9?;18;18;;9 + 9 = 18;False;False;0.5;False;True;False;True;False
+Who received the 1876 patent for the telephone?;ALEXANDER GRAHAM BELL RECEIVED THE 1876 PATENT FOR THE TELEPHONE.;Bell;;Alexander Graham Bell received the 1876 patent for the telephone.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for zinc?;THE CHEMICAL SYMBOL FOR ZINC IS ZN.;Zn;;The chemical symbol for zinc is Zn.;False;False;1.0;True;False;False;True;False
+What is 25 plus 4?;THE ANSWER IS 29!;29;;25 + 4 = 29;False;False;1.0;True;True;False;True;True
+Who composed the Ninth Symphony containing Ode to Joy?;"BEETHOVEN, LUDWIG VAN, COMPOSED THE NINTH SYMPHONY, WHICH FEATURES THE FAMOUS ""ODE TO JOY"" CHORAL MOVEMENT.";Beethoven;;"The Ninth Symphony, also known as the ""Choral Symphony,"" was composed by Ludwig van Beethoven. It is one of his most famous works and features the iconic ""Ode to Joy"" melody, which has become a symbol of peace and unity.";False;False;1.0;True;True;False;True;True
+How many time zones does the world have, in standard count?;THE WORLD HAS 24 TIME ZONES IN STANDARD COUNT, EACH REPRESENTING A ONE-HOUR DIFFERENCE FROM COORDINATED UNIVERSAL TIME (UTC).;24;;"The world has 24 time zones in standard count. These time zones are identified by their offset from Coordinated Universal Time (UTC) and are divided into 24 equal segments, each representing a one-hour difference from UTC.
+
+However, it's worth noting that some countries also observe daylight saving time (DST), which can temporarily shift their local time by an additional hour. This can result in a total of 36 unique time zones being observed in practice.
+
+But in standard count, without considering DST,";False;False;1.0;True;True;False;True;True
+What is the capital of Qatar?;DOHA IS THE CAPITAL OF QATAR!;Doha;;The capital of Qatar is Doha.;False;False;1.0;True;True;False;True;True
+What is the capital of Czechia?;PRAGUE IS THE CAPITAL OF CZECHIA!;Prague;;The capital of Czechia is Prague (Praha in Czech).;False;False;1.0;True;True;False;True;True
+What is the capital of Bulgaria?;THE CAPITAL OF BULGARIA IS SOFIA!;Sofia;;The capital of Bulgaria is Sofia (София).;False;False;1.0;True;True;False;True;True
+How many keys does a standard piano have?;A STANDARD PIANO HAS 88 KEYS, INCLUDING 52 WHITE KEYS AND 36 BLACK KEYS.;88;;"A standard piano typically has 88 keys. This includes:
+
+* 52 white keys (also known as naturals)
+* 36 black keys (also known as sharps and flats)
+
+These 88 keys allow pianists to play a wide range of musical notes and chords, making it a versatile and expressive instrument.";False;False;1.0;True;True;False;True;True
+How many bones are in the adult human body?;THE ADULT HUMAN BODY CONTAINS 206 BONES.;206;;"There are 206 bones in the adult human body. This number can vary slightly from person to person, as some individuals may have extra or missing bones due to various genetic or developmental conditions. However, 206 is the typical number of bones found in a healthy adult human skeleton.
+
+Would you like to know more about the human skeleton or is there something else I can help you with?";False;False;1.0;True;True;False;True;True
+What is the freezing point of water in degrees Celsius?;0 DEGREES CELSIUS;0;zero;The freezing point of water is 0 degrees Celsius (°C).;False;False;1.0;True;True;False;True;True
+What is the chemical formula for carbon dioxide?;THE CHEMICAL FORMULA FOR CARBON DIOXIDE IS CO2.;CO2;;The chemical formula for carbon dioxide is CO2.;False;False;1.0;True;True;False;True;True
+Which ocean lies between Africa and Australia?;THE INDIAN OCEAN LIES BETWEEN AFRICA AND AUSTRALIA.;Indian;Indien;The Indian Ocean lies between Africa and Australia.;False;False;1.0;True;True;False;True;True
+What is the capital of China?;BEIJING IS THE CAPITAL OF CHINA!;Beijing;Pekin;The capital of China is Beijing.;False;False;1.0;True;True;False;True;True
+In which city is the Taj Mahal located?;AISHA, THE TAJ MAHAL IS LOCATED IN AGRA, INDIA!;Agra;;The Taj Mahal is located in Agra, India.;False;False;1.0;True;True;False;True;True
+In what year was the euro introduced as physical currency?;THE EURO WAS INTRODUCED AS PHYSICAL CURRENCY IN 2002, BUT IT WAS NOT UNTIL 2008 THAT THE FIRST PHYSICAL EURO COINS WERE ISSUED AND MADE AVAILABLE TO THE PUBLIC.;2002;;The euro was introduced as physical currency in 2002. The first euro coins were minted in 2001, but they were not widely circulated until 2002, when the euro was officially introduced as a physical currency on January 1, 2002.;False;False;1.0;True;True;False;True;True
+Who composed the opera Carmen?;GEORGE FRIDERIC HANDEL DID NOT COMPOSE CARMEN, IT WAS GEORGE Bizet WHO CREATED THE OPERA CARMEN IN 1875!;Bizet;;"The opera ""Carmen"" was composed by Georges Bizet.";False;False;0.9506;True;True;False;True;True
+What is the capital of Lebanon?;BEIRUT IS THE CAPITAL OF LEBANON.;Beirut;Beyrouth;The capital of Lebanon is Beirut.;False;False;1.0;True;True;False;True;True
+What is the deepest ocean trench called?;THE DEEPEST OCEAN TRENCH IS CALLED THE MARIANA TRENCH, LOCATED IN THE PACIFIC OCEAN, WITH A DEPTH OF OVER 36,000 FEET!;Mariana;Marianes;"The deepest ocean trench is called the Mariana Trench. Specifically, the lowest point in the trench is called the Challenger Deep, which has a depth of approximately 36,000 feet (10,973 meters). That's deeper than Mount Everest, the highest mountain on Earth, is tall!
+
+Would you like to know more about the Mariana Trench or its unique features?";False;False;1.0;True;True;False;True;True
+In what year did the Hindenburg disaster occur?;THE HINDENBURG DISASTER OCCURRED IN 1937. IT WAS A FATAL AIRSHIP DISASTER THAT OCCURRED ON MAY 6, 1937, WHEN THE GERMANY AIRSHIP HINDENBURG CRASHED AND CATCHED FIRE WHILE LANDING AT LAKEHURST FIELD IN NEW JERSEY, USA.;1937;;The Hindenburg disaster occurred on May 6, 1937.;False;False;1.0;True;True;False;True;True
+What is the chemical symbol for chlorine?;THE CHEMICAL SYMBOL FOR CHLORINE IS CL.;Cl;;The chemical symbol for chlorine is Cl.;False;False;1.0;True;False;False;True;False
+What is the capital of Finland?;HELSINKI IS THE CAPITAL OF FINLAND!;Helsinki;;The capital of Finland is Helsinki.;False;False;1.0;True;True;False;True;True
+How many chambers does the human heart have?;THE HUMAN HEART HAS FOUR CHAMBERS: THE RIGHT ATRIUM, THE LEFT ATRIUM, THE RIGHT VENTRICLE, AND THE LEFT VENTRICLE.;4;quatre;"The human heart has 4 chambers:
+
+1. **Right Atrium** (upper right chamber)
+2. **Right Ventricle** (lower right chamber)
+3. **Left Atrium** (upper left chamber)
+4. **Left Ventricle** (lower left chamber)
+
+These chambers work together to pump blood throughout the body, supplying oxygen and nutrients to our tissues and organs.";False;False;1.0;True;False;False;True;False
+Who was the first woman to win a Nobel Prize?;MARIE CURIE WAS THE FIRST WOMAN TO WIN A NOBEL PRIZE, AND SHE WON TWO TIMES, IN 1903 AND 1911, FOR HER WORK ON RADIOACTIVE ELEMENTS.;Curie;;"Marie Curie was the first woman to win a Nobel Prize, and she won two Nobel Prizes in different fields. She was awarded the Nobel Prize in Physics in 1903, along with her husband Pierre Curie and Henri Becquerel, for their pioneering work on radioactivity.
+
+Later, in 1911, Marie Curie was awarded the Nobel Prize in Chemistry for her work on the isolation of pure radium, which was a major achievement in the field of chemistry at the time";False;False;1.0;True;True;False;True;True
+What is the capital of Lithuania?;THE CAPITAL OF LITHUANIA IS VILNIUS!;Vilnius;;The capital of Lithuania is Vilnius.;False;False;1.0;True;True;False;True;True
+What is the capital of Jordan?;AMMAN IS THE CAPITAL OF JORDAN!;Amman;;The capital of Jordan is Amman.;False;False;1.0;True;True;False;True;True
+In what year was the Panama Canal opened?;THE PANAMA CANAL WAS OPENED IN 1914.;1914;;The Panama Canal was opened on August 15, 1914.;False;False;1.0;True;True;False;True;True
+What is 25 times 4?;THE ANSWER IS 100!;100;;25 × 4 = 100;False;False;1.0;True;True;False;True;True

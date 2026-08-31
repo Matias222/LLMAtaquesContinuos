@@ -1,0 +1,47 @@
+{
+  "patch_path": "runs/upper_v1/lang_patch.pt",
+  "model_path": "../../../../modelos/Llama-3.2-3B-Instruct",
+  "patch_shape": [
+    3,
+    3072
+  ],
+  "vocab_size": 128256,
+  "embed_dim": 3072,
+  "vocab_norm_stats": {
+    "mean": 1.0861295461654663,
+    "std": 0.11305814981460571,
+    "min": 0.6221248507499695,
+    "max": 1.4694581031799316,
+    "p01": 0.796399712562561,
+    "p10": 0.9448484182357788,
+    "p25": 1.013101577758789,
+    "p50": 1.0905768871307373,
+    "p75": 1.1624269485473633,
+    "p90": 1.2264732122421265,
+    "p99": 1.3304704427719116
+  },
+  "combined_norm_l2": 0.662247896194458,
+  "combined_norm_ratio_vs_vocab_mean": 0.6097319592607491,
+  "combined_norm_percentile_in_vocab": 0.42337200598802394,
+  "combined_norm_caveat": "inflado hasta ~sqrt(3) frente a la distribucion de vocab (vectores de d dims); no comparar directo contra per_position ni leerlo como 'que tan chico es comparado con un token real'",
+  "per_position": [
+    {
+      "position": 0,
+      "norm_l2": 0.5249788761138916,
+      "norm_ratio_vs_vocab_mean": 0.4833483058879182,
+      "norm_percentile_in_vocab": 0.0
+    },
+    {
+      "position": 1,
+      "norm_l2": 0.34992218017578125,
+      "norm_ratio_vs_vocab_mean": 0.3221735210234971,
+      "norm_percentile_in_vocab": 0.0
+    },
+    {
+      "position": 2,
+      "norm_l2": 0.20130550861358643,
+      "norm_ratio_vs_vocab_mean": 0.18534207942716122,
+      "norm_percentile_in_vocab": 0.0
+    }
+  ]
+}
