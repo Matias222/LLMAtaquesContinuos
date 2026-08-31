@@ -2,16 +2,18 @@
 # Config v2: arregla la orbita del optimizador. Ver README, seccion
 # "Por que el barrido v1 se estanco".
 #
-#   uso:  bash run_french_v2.sh [MODEL_PATH]
+#   uso (desde experimentos/idiomas):  bash attributes/french/run_french_v2.sh [MODEL_PATH]
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="$(cd "$HERE/../.." && pwd)"
-cd "$HERE"
+IDIOMAS="$(cd "$HERE/../.." && pwd)"
+ROOT="$(cd "$IDIOMAS/../.." && pwd)"
+cd "$IDIOMAS"
 
 MODEL="${1:-/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct}"
 DEVICE="${DEVICE:-cuda:0}"
+TARGETS="attributes/french/targets_french.csv"
 
-[ -f targets_french.csv ] || python3 -u generate_targets.py --model "$MODEL" --device "$DEVICE"
+[ -f "$TARGETS" ] || python3 -u generate_targets.py --model "$MODEL" --device "$DEVICE"
 
 for L2 in 0.045 0.08; do
   OUT="runs/v2_french_l2_${L2}"

@@ -8,7 +8,7 @@ Dos metricas, ninguna basada en lexicon tematico:
 
 La accuracy funciona en ingles Y en frances porque las respuestas del dataset
 son invariantes al idioma (nombres propios, numeros, simbolos quimicos) o
-traen alias explicitos en questions.csv.
+traen alias explicitos en data/questions.csv.
 """
 
 import re
@@ -191,6 +191,38 @@ def is_french(text: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Deteccion de formato: mayusculas
+#
+# Atributo no lingueistico, para el experimento de geometria de parches (HALLAZGOS.md
+# 9.3): entrenar un parche independiente del de frances y componerlos.
+# ---------------------------------------------------------------------------
+
+def uppercase_score(text: str) -> float:
+    """
+    Fraccion de caracteres alfabeticos en mayuscula, en [0, 1].
+
+    Solo cuenta letras (ignora digitos, puntuacion, espacios). 0.5 si no hay
+    ninguna letra, indecidible, igual que french_score.
+    """
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return 0.5
+    return sum(1 for c in letters if c.isupper()) / len(letters)
+
+
+def is_uppercase(text: str, threshold: float = 0.9, min_letters: int = 3) -> bool:
+    """
+    Booleano de compliance. threshold < 1.0 porque una respuesta que "esta en
+    mayusculas" puede traer alguna minuscula suelta (una sigla mixta, un
+    caracter que el modelo no convierte) sin dejar de cumplir la instruccion.
+    """
+    letters = [c for c in text if c.isalpha()]
+    if len(letters) < min_letters:
+        return False
+    return uppercase_score(text) >= threshold
+
+
+# ---------------------------------------------------------------------------
 # Metricas para preguntas ABIERTAS (sin respuesta verificable)
 # ---------------------------------------------------------------------------
 
@@ -322,6 +354,28 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- deteccion de mayusculas ---")
+    cases_upper = [
+        "THE CAPITAL OF FRANCE IS PARIS.",
+        "LA CAPITALE DE LA FRANCE EST PARIS.",
+        "IT IS CR, THE SYMBOL FOR CHROMIUM.",
+        "C'EST FACILE! 9 + 9 = 18.",
+    ]
+    cases_mixed = [
+        "The capital of France is Paris.",
+        "the capital of france is paris.",
+        "THE capital OF France IS Paris.",
+        "Paris.",
+    ]
+    for t in cases_upper:
+        print(f"  MAYUS esperado -> score={uppercase_score(t):.2f} is_uppercase={is_uppercase(t)}  {t[:45]}")
+    for t in cases_mixed:
+        print(f"  no-MAYUS esperado -> score={uppercase_score(t):.2f} is_uppercase={is_uppercase(t)}  {t[:45]}")
+    up_ok = sum(1 for t in cases_upper if is_uppercase(t))
+    mixed_ok = sum(1 for t in cases_mixed if not is_uppercase(t))
+    print(f"  mayusculas reconocidas: {up_ok}/{len(cases_upper)}  "
+          f"mixtas/minusculas rechazadas: {mixed_ok}/{len(cases_mixed)}")
 
     print("\n--- gate de traducciones ---")
     tr = [

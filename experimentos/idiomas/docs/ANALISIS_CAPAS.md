@@ -545,7 +545,7 @@ una dirección candidata clara que ablacionar.
 ## 12. Comandos
 
     # 1. traducir las preguntas al francés (una sola vez, ~2 min)
-    python3 -u translate_questions.py --model $M --targets targets_french.csv
+    python3 -u translate_questions.py --model $M --targets attributes/french/targets_french.csv
 
     # 2. análisis capa por capa
     python3 -u layer_analysis.py --model $M \

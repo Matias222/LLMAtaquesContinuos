@@ -19,7 +19,7 @@ que es la composicion `v_FR + v_LC`.
 La referencia es lo que faltaba. Sin ella no se puede saber si una caida de accuracy
 la causa el parche o la instruccion misma.
 
-Las 100 preguntas de `questions.csv` tienen respuestas **invariantes al idioma**
+Las 100 preguntas de `data/questions.csv` tienen respuestas **invariantes al idioma**
 (nombres propios, anios, simbolos quimicos, numeros), asi que la misma metrica de
 accuracy funciona en ingles y en frances. Donde la forma francesa difiere, la
 columna `aliases` la lista explicitamente.
@@ -47,7 +47,7 @@ valores, para que los numeros sean comparables run a run.
 ## Correr
 
 ```bash
-bash run_french.sh /ruta/al/modelo/Llama-3.2-3B-Instruct
+bash attributes/french/run_french.sh /ruta/al/modelo/Llama-3.2-3B-Instruct
 ```
 
 Hace: targets -> (train + eval + inspect) x 3 L2 -> tabla resumen.
@@ -101,14 +101,14 @@ composicion. No gastar mas de estos 3 runs aca.
 
 | archivo | rol |
 |---|---|
-| `questions.csv` | 100 preguntas + respuesta + alias franceses. Barajado con seed=42 (el split es posicional, no puede quedar ordenado por categoria) |
+| `data/questions.csv` | 100 preguntas + respuesta + alias franceses. Barajado con seed=42 (el split es posicional, no puede quedar ordenado por categoria) |
 | `checkers.py` | `is_french`, `french_score`, `answer_correct`. `python3 checkers.py` corre su auto-test |
 | `lm.py` | carga de modelo, generacion greedy desde embeddings, aplicacion del parche, CE de un target |
 | `generate_targets.py` | paso 0: genera `y = M([FR;q])` + baseline + gate de calidad |
 | `train_lang_patch.py` | paso 1: teacher forcing con gradiente (sign-SGD) |
 | `eval_lang_patch.py` | paso 2: las tres condiciones sobre held-out |
 | `summarize.py` | tabla comparativa de los 3 L2 |
-| `run_french.sh` | orquestador |
+| `attributes/french/run_french.sh` | orquestador |
 
 ## Un solo turno por generacion
 
@@ -182,7 +182,7 @@ comportamiento v1**, asi que los runs viejos siguen siendo reproducibles:
 
 La validacion ahora reporta head y all por separado.
 
-`bash run_french_v2.sh` corre la config recomendada:
+`bash attributes/french/run_french_v2.sh` corre la config recomendada:
 
 ```
 --batch_size 8 --num_steps_per_prompt 12 --num_epochs 8
@@ -279,7 +279,7 @@ El entrenamiento satura con 77 targets (CE 0.06 en la epoch 3). Lo que faltaba
 era **potencia y variedad en el eval**. Ninguno de los dos bancos se usa para
 entrenar.
 
-### `questions_eval.csv` — 222 preguntas cortas verificables
+### `data/questions_eval.csv` — 222 preguntas cortas verificables
 
 Con 20 held-out no se puede distinguir 90% de 95% de accuracy: los IC de Wilson
 son [70,97] y [76,99], se superponen casi enteros. Y la afirmacion "el parche
@@ -292,13 +292,14 @@ que en ingles colisiona con el pronombre.
 
 ```bash
 python3 build_eval_bank.py
-python3 -u generate_targets.py --model $M --questions questions_eval.csv --out targets_eval.csv
+python3 -u generate_targets.py --model $M --questions data/questions_eval.csv \
+    --out attributes/french/targets_eval.csv
 python3 -u eval_lang_patch.py --model $M --patch runs/v2_french_l2_0.045/lang_patch.pt \
-    --targets targets_eval.csv --train_test_split 0.0 \
+    --targets attributes/french/targets_eval.csv --train_test_split 0.0 \
     --out_json runs/v2_french_l2_0.045/eval_big.json --out_md runs/v2_french_l2_0.045/eval_big.md
 ```
 
-### `questions_open.csv` — 99 prompts abiertos, el set exacto de navidad
+### `data/questions_open.csv` — 99 prompts abiertos, el set exacto de navidad
 
 Las preguntas cortas tienen una forma muy regular ("La capitale de X est Y"), y
 el parche podria estar aprendiendo la plantilla en vez de "hablá francés". Los
@@ -311,7 +312,7 @@ el idioma se comporta como un atributo difuso (navidad, puede aparecer en
 cualquier lado) o como un compromiso (se decide al principio).
 
 ```bash
-bash run_french_open.sh runs/v2_french_l2_0.045/lang_patch.pt $M
+bash attributes/french/run_french_open.sh runs/v2_french_l2_0.045/lang_patch.pt $M
 ```
 
 Como no hay respuesta verificable, la accuracy se reemplaza por dos medidas:

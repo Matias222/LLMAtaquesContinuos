@@ -34,7 +34,7 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--patch", required=True)
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--targets", default="targets_french.csv")
+    ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--train_test_split", type=float, default=0.85)
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--num_tokens", type=int, default=100)

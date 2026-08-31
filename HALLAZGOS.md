@@ -637,8 +637,8 @@ las dos cosas por construcción. Eso llevaba el margen de +0.116 (capa 14) a
 
 ```
 experimentos/idiomas/
-  questions.csv              250 preguntas, respuesta invariante al idioma
-  questions_open.csv         99 prompts abiertos, el set exacto de navidad
+  data/questions.csv         250 preguntas, respuesta invariante al idioma
+  data/questions_open.csv    99 prompts abiertos, el set exacto de navidad
   checkers.py                detector de 3 idiomas, accuracy, gates. Auto-test incluido
   generate_targets.py        y = M([FR;q]) + baseline + gate de calidad
   train_lang_patch.py        teacher forcing con gradiente, sign-SGD
@@ -649,6 +649,7 @@ experimentos/idiomas/
   plot_mean_diff.py          informe HTML de un run
   plot_compare.py            informe HTML comparando dos runs
   rescore_eval.py            recalcula metricas sin GPU cuando cambia un checker
+  attributes/french/         targets_french.csv y los run_french*.sh de orquestacion
 
 resultados/primera_parte/    31 runs de navidad
 resultados/dimensiones/      ablaciones posicionales
@@ -666,8 +667,8 @@ python3 -u train_lang_patch.py   --model $M --l2_weight 0.045 --output_dir runs/
     --step_decay cosine --val_n 20 --save_best
 python3 -u eval_lang_patch.py    --model $M --patch runs/X/lang_patch.pt \
     --out_json runs/X/eval_report.json --out_md runs/X/eval_report.md
-bash run_french_open.sh runs/X/lang_patch.pt $M
-python3 -u translate_questions.py --model $M --targets targets_french.csv
+bash attributes/french/run_french_open.sh runs/X/lang_patch.pt $M
+python3 -u translate_questions.py --model $M --targets attributes/french/targets_french.csv
 python3 -u mean_diff_vectors.py  --model $M --from_layer 12 \
     --patch runs/X/lang_patch.pt --out runs/X/mean_diff_ctrl.json
 python3 plot_mean_diff.py runs/X/mean_diff_ctrl.json --title "..."

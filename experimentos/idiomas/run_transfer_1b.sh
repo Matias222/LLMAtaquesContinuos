@@ -18,16 +18,17 @@ python3 -u transfer_patch.py --source "$SRC" --target "$TGT" --control --force \
 
 # La referencia del 1B es la del 1B, no la del 3B: cada modelo tiene su techo.
 echo; echo "### 3. targets con el 1B (su propia referencia)"
-[ -f targets_french_1b.csv ] || python3 -u generate_targets.py --model "$TGT" \
-    --out targets_french_1b.csv
+TARGETS_1B="attributes/french/targets_french_1b.csv"
+[ -f "$TARGETS_1B" ] || python3 -u generate_targets.py --model "$TGT" \
+    --out "$TARGETS_1B"
 
 echo; echo "### 4. eval del parche transferido"
-python3 -u eval_lang_patch.py --model "$TGT" --targets targets_french_1b.csv \
+python3 -u eval_lang_patch.py --model "$TGT" --targets "$TARGETS_1B" \
     --train_test_split 0.85 --patch $OUT/lang_patch.pt \
     --out_json $OUT/eval_report.json --out_md $OUT/eval_report.md 2>&1 | tee $OUT/eval.log
 
 echo; echo "### 5. eval del control"
-python3 -u eval_lang_patch.py --model "$TGT" --targets targets_french_1b.csv \
+python3 -u eval_lang_patch.py --model "$TGT" --targets "$TARGETS_1B" \
     --train_test_split 0.85 --patch $OUT/control_patch.pt \
     --out_json $OUT/eval_control.json --out_md $OUT/eval_control.md 2>&1 | tee $OUT/eval_control.log
 

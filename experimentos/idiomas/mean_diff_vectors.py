@@ -81,7 +81,7 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--patch", required=True)
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--targets", default="targets_french.csv")
+    ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--n", type=int, default=40)
     ap.add_argument("--from_layer", type=int, default=15)
     ap.add_argument("--instruction", default=INSTRUCTION)

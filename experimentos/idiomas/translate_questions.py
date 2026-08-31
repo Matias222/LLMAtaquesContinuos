@@ -15,7 +15,7 @@ El parche no tiene semantica de instruccion -- es un vector sumado a los 3
 primeros tokens de la pregunta -- asi que a priori es mas plausible que este
 haciendo (B) que (A). layer_analysis.py mide contra las dos.
 
-    python3 translate_questions.py --model $M --targets targets_french.csv
+    python3 translate_questions.py --model $M --targets attributes/french/targets_french.csv
 """
 
 import argparse
@@ -51,7 +51,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--targets", default="targets_french.csv")
+    ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--num_tokens", type=int, default=60)
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out", default=None,

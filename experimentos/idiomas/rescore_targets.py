@@ -1,5 +1,5 @@
 """
-Recalcula las columnas de metrica de targets_french.csv sin volver a generar.
+Recalcula las columnas de metrica de attributes/french/targets_french.csv sin volver a generar.
 
 Las generaciones (`output`, `baseline_en`) son deterministas y correctas; lo que
 estaba mal era el detector de idioma. Este script recomputa solo las columnas
@@ -20,7 +20,7 @@ from checkers import answer_correct, french_score, is_french, language_verdict
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--targets", default="targets_french.csv")
+    ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--dry_run", action="store_true")
     args = ap.parse_args()
 

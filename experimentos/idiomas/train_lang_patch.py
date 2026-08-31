@@ -231,7 +231,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--targets", default="targets_french.csv")
+    ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--l2_weight", type=float, required=True)
     ap.add_argument("--output_dir", required=True)
     ap.add_argument("--num_epochs", type=int, default=5)

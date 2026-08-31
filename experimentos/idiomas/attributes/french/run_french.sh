@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 # Experimento de idiomas: existencia de un parche aditivo que induce frances.
 #
-#   uso:  bash run_french.sh [MODEL_PATH]
+#   uso (desde experimentos/idiomas):  bash attributes/french/run_french.sh [MODEL_PATH]
 #
 # Barre l2_weight en {0.045, 0.08, 0.1} - los mismos tres valores del barrido
 # noprefix de navidad, para que los numeros sean comparables run a run.
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT="$(cd "$HERE/../.." && pwd)"
-cd "$HERE"
+IDIOMAS="$(cd "$HERE/../.." && pwd)"
+ROOT="$(cd "$IDIOMAS/../.." && pwd)"
+cd "$IDIOMAS"
 
 MODEL="${1:-/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct}"
 DEVICE="${DEVICE:-cuda:0}"
 L2_VALUES=(0.045 0.08 0.1)
+TARGETS="attributes/french/targets_french.csv"
 
 echo "======================================================================"
 echo " Modelo:  $MODEL"
@@ -22,8 +24,8 @@ echo " Barrido: ${L2_VALUES[*]}"
 echo "======================================================================"
 
 # --- Paso 0: targets de teacher forcing (una sola vez) --------------------
-if [ -f targets_french.csv ]; then
-  echo ">> targets_french.csv ya existe, salteando generacion"
+if [ -f "$TARGETS" ]; then
+  echo ">> $TARGETS ya existe, salteando generacion"
 else
   echo ">> [0/3] generando targets  y = M([Answer in French. ; q])"
   python3 generate_targets.py --model "$MODEL" --device "$DEVICE"

@@ -1,22 +1,28 @@
 """
-Paso 0: generar los targets de teacher forcing.
+Paso 0 del atributo "mayusculas": generar los targets de teacher forcing.
 
     y_i = M([INSTRUCCION ; q_i])
 
-El modelo se genera sus propios targets. No hay CSV curado a mano, y la
-condicion "instruccion en texto" queda medida y disponible como REFERENCIA
-NATURAL del eval (el techo contra el que se compara el parche).
-
-Importante: el CSV de salida guarda `prompt` = q_i SOLA, sin la instruccion.
-El parche tiene que reemplazar a la instruccion, no acompaniarla.
+Mismo diseno que generate_targets.py (francés), pero el atributo inducido no
+es un idioma sino un formato: responder enteramente en mayusculas. Se usa la
+MISMA instruccion en ingles a proposito -- si el target tuviera francés
+mezclado, el parche de mayusculas aprenderia tambien algo de francés y la
+composicion v_fr + v_upper dejaria de testear dos direcciones independientes.
 
 Gate de calidad: una fila se marca passed_gate=True solo si la respuesta
-generada (a) esta en frances y (b) contiene la respuesta correcta. Entrenar
-sobre targets malos envenena el parche.
+generada (a) esta en mayusculas y (b) contiene la respuesta correcta.
 
-Salida: attributes/french/targets_french.csv con las 100 filas y columnas de diagnostico.
-El split se hace por POSICION sobre las 100 filas (igual que legacy), asi que
-las filas nunca se reordenan ni se eliminan aca.
+Caveat conocido (no resuelto aca): `answer_correct` compara simbolos quimicos
+y respuestas de largo <=2 con case-sensitivity exacta a proposito, para no
+confundir el simbolo "Au" con la preposicion francesa "au" (ver checkers.py).
+Sobre texto todo-mayusculas eso se vuelve indistinguible: "AU" no matchea el
+candidato "Au". La accuracy de este atributo esta subestimada en preguntas de
+simbolo quimico; no se parchea porque hacerlo bien reintroduce el bug francés
+que ese case-sensitivity evita.
+
+Salida: attributes/uppercase/targets_upper.csv, mismo esquema de columnas que
+targets_french.csv (para poder reusar train_lang_patch.py / eval_lang_patch.py
+sin cambios).
 """
 
 import argparse
@@ -25,16 +31,11 @@ import os
 import pandas as pd
 import tqdm
 
-from checkers import (answer_correct, french_score, is_french, language_verdict,
-                      load_questions, truncate_at_role_leak)
+from checkers import answer_correct, is_uppercase, load_questions, truncate_at_role_leak, uppercase_score
+from generate_targets import build_reference_prompt
 from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer
 
-INSTRUCTION_FR = "Answer in French."
-
-
-def build_reference_prompt(instruction: str, question: str) -> str:
-    """Como se le pasa la instruccion al modelo en la condicion de referencia."""
-    return f"{instruction}\n\n{question}"
+INSTRUCTION_UPPER = "Respond entirely in uppercase letters."
 
 
 def main():
@@ -42,8 +43,8 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--questions", default="data/questions.csv")
-    ap.add_argument("--out", default="attributes/french/targets_french.csv")
-    ap.add_argument("--instruction", default=INSTRUCTION_FR)
+    ap.add_argument("--out", default="attributes/uppercase/targets_upper.csv")
+    ap.add_argument("--instruction", default=INSTRUCTION_UPPER)
     ap.add_argument("--num_tokens", type=int, default=100)
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--device", default="cuda:0")
@@ -74,8 +75,7 @@ def main():
         base = truncate_at_role_leak(base_raw)
 
         has_answer = str(ans).strip() != ""
-        fr_ok = is_french(ref)
-        # Prompts abiertos: no hay respuesta verificable, el gate es solo idioma.
+        up_ok = is_uppercase(ref)
         acc_ok = answer_correct(ref, ans, al) if has_answer else None
         rows.append({
             "prompt": q,
@@ -85,15 +85,13 @@ def main():
             "baseline_en": base,
             "ref_role_leak": bool(ref != ref_raw.strip()),
             "baseline_role_leak": bool(base != base_raw.strip()),
-            "ref_french_score": round(french_score(ref), 4),
-            "ref_language": language_verdict(ref),
-            "baseline_language": language_verdict(base),
-            "ref_is_french": bool(fr_ok),
+            "ref_uppercase_score": round(uppercase_score(ref), 4),
+            "ref_is_uppercase": bool(up_ok),
             "ref_answer_correct": "" if acc_ok is None else bool(acc_ok),
-            "baseline_is_french": bool(is_french(base)),
+            "baseline_is_uppercase": bool(is_uppercase(base)),
             "baseline_answer_correct": (bool(answer_correct(base, ans, al))
                                         if has_answer else ""),
-            "passed_gate": bool(fr_ok and acc_ok is not False),
+            "passed_gate": bool(up_ok and acc_ok is not False),
         })
 
     out = pd.DataFrame(rows)
@@ -104,19 +102,20 @@ def main():
 
     n = len(out)
     print("\n" + "=" * 70)
-    print("REFERENCIA NATURAL  M([FR ; q])")
-    print(f"  en frances                 : {out['ref_is_french'].mean():.2%}")
+    print("REFERENCIA NATURAL  M([MAYUS ; q])")
+    print(f"  en mayusculas              : {out['ref_is_uppercase'].mean():.2%}")
     _acc = out["ref_answer_correct"]
     _acc = _acc[_acc != ""]
     if len(_acc):
-        print(f"  respuesta correcta         : {_acc.astype(bool).mean():.2%}")
+        print(f"  respuesta correcta         : {_acc.astype(bool).mean():.2%}"
+              "   (subestimada en simbolos quimicos, ver docstring)")
     else:
         print("  respuesta correcta         : n/a (prompts abiertos)")
     print(f"  pasan el gate (ambas)      : {out['passed_gate'].sum()}/{n}")
     print(f"  quisieron seguir de turno    : {out['ref_role_leak'].sum()}/{n}"
           "   (truncado por la red de seguridad)")
-    print("\nBASELINE  M(q)   <- control, deberia ser ingles y correcto")
-    print(f"  en frances                 : {out['baseline_is_french'].mean():.2%}")
+    print("\nBASELINE  M(q)   <- control, no deberia estar en mayusculas")
+    print(f"  en mayusculas              : {out['baseline_is_uppercase'].mean():.2%}")
     _bacc = out["baseline_answer_correct"]
     _bacc = _bacc[_bacc != ""]
     if len(_bacc):

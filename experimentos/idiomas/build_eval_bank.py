@@ -1,5 +1,5 @@
 """
-Genera questions_eval.csv: banco de evaluacion grande, disjunto de questions.csv.
+Genera data/questions_eval.csv: banco de evaluacion grande, disjunto de data/questions.csv.
 
 Motivo: con 20 held-out no hay potencia para distinguir 90% de 95% de accuracy
 (los IC de Wilson se superponen casi por completo). El entrenamiento ya esta
@@ -8,7 +8,7 @@ saturado con 77 targets; lo que falta es potencia en el EVAL.
 Todas las respuestas son invariantes al idioma (nombres propios, numeros,
 simbolos quimicos) o traen alias frances explicito.
 
-    python3 build_eval_bank.py            # escribe questions_eval.csv
+    python3 build_eval_bank.py            # escribe data/questions_eval.csv
 """
 
 import pandas as pd
@@ -194,10 +194,10 @@ def build():
     df = pd.DataFrame(rows, columns=["prompt", "answer", "aliases"])
 
     # disjunto del set de entrenamiento
-    train = set(pd.read_csv("questions.csv", sep=";", keep_default_na=False)["prompt"])
+    train = set(pd.read_csv("data/questions.csv", sep=";", keep_default_na=False)["prompt"])
     solapadas = df["prompt"].isin(train)
     if solapadas.any():
-        print(f"quitando {solapadas.sum()} preguntas que ya estan en questions.csv")
+        print(f"quitando {solapadas.sum()} preguntas que ya estan en data/questions.csv")
         df = df[~solapadas]
 
     dup = df["prompt"].duplicated()
@@ -215,8 +215,8 @@ def build():
         df = df[~degeneradas]
 
     df = df.sample(frac=1.0, random_state=7).reset_index(drop=True)
-    df.to_csv("questions_eval.csv", sep=";", index=False)
-    print(f"questions_eval.csv: {len(df)} preguntas")
+    df.to_csv("data/questions_eval.csv", sep=";", index=False)
+    print(f"data/questions_eval.csv: {len(df)} preguntas")
     print(df["answer"].str.len().describe()[["min", "50%", "max"]].to_string())
     return df
 
