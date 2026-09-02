@@ -190,25 +190,41 @@ def main():
             return None
         return c[l] / np.sqrt(ceil[a][l] * ceil[b][l])
 
+    c_pq = cos(V["patch"], V["qde"]) if have_de else None
+
     L = len(c_pf)
     lo = max(0, min(args.from_layer, L - 1))
     print(f"\ncapas {lo}..{L - 1}  (la del medio segun el paper seria {(L - 1) // 2})")
-    print(f"\n{'capa':>5}{'patch~frq':>11}{'patch~instr':>13}{'frq~instr':>11}"
-          f"{'|':>3}{'techo patch':>13}{'techo frq':>11}{'techo instr':>13}"
-          f"{'|':>3}{'p~f corr':>10}{'p~i corr':>10}")
-    print("-" * 106)
+    # patch~qde va pegado a patch~frq, con el margen entre las dos: es la
+    # lectura que dice si el parche codifica FRANCES o solo "entrada en un
+    # idioma que no es ingles".
+    cab = f"\n{'capa':>5}{'patch~frq':>11}"
+    if have_de:
+        cab += f"{'patch~qde':>11}{'margen':>9}"
+    cab += (f"{'patch~instr':>13}{'frq~instr':>11}"
+            f"{'|':>3}{'techo patch':>13}{'techo frq':>11}{'techo instr':>13}"
+            f"{'|':>3}{'p~f corr':>10}{'p~i corr':>10}")
+    print(cab)
+    print("-" * (126 if have_de else 106))
     for l in range(lo, L):
         f1, f2 = corr(c_pf, "patch", "frq", l), corr(c_pi, "patch", "instr", l)
         s1 = f"{f1:.3f}" if f1 is not None else "-"
         s2 = f"{f2:.3f}" if f2 is not None else "-"
-        print(f"{l:>5}{c_pf[l]:>11.3f}{c_pi[l]:>13.3f}{c_fi[l]:>11.3f}{'|':>3}"
-              f"{ceil['patch'][l]:>13.3f}{ceil['frq'][l]:>11.3f}{ceil['instr'][l]:>13.3f}{'|':>3}"
-              f"{s1:>10}{s2:>10}")
+        fila = f"{l:>5}{c_pf[l]:>11.3f}"
+        if have_de:
+            fila += f"{c_pq[l]:>11.3f}{c_pf[l] - c_pq[l]:>+9.3f}"
+        fila += (f"{c_pi[l]:>13.3f}{c_fi[l]:>11.3f}{'|':>3}"
+                 f"{ceil['patch'][l]:>13.3f}{ceil['frq'][l]:>11.3f}{ceil['instr'][l]:>13.3f}{'|':>3}"
+                 f"{s1:>10}{s2:>10}")
+        print(fila)
 
     rng = slice(lo, L)
     print(f"\nPromedio de la capa {lo} en adelante:")
     print(f"  patch ~ frq    {c_pf[rng].mean():+.3f}   (techos {ceil['patch'][rng].mean():.3f} / "
           f"{ceil['frq'][rng].mean():.3f})")
+    if have_de:
+        print(f"  patch ~ qde    {c_pq[rng].mean():+.3f}   (techos {ceil['patch'][rng].mean():.3f} / "
+              f"{ceil['qde'][rng].mean():.3f})   <- misma pregunta en ALEMAN")
     print(f"  patch ~ instr  {c_pi[rng].mean():+.3f}   (techos {ceil['patch'][rng].mean():.3f} / "
           f"{ceil['instr'][rng].mean():.3f})")
     print(f"  frq   ~ instr  {c_fi[rng].mean():+.3f}")
