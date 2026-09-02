@@ -116,6 +116,13 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     embedding_dim = get_embedding_matrix(model).shape[1]
 
     val_rows = test_df.head(val_n)
+    # Mismo tamanio de muestra sobre TRAIN, para medir la CE del checkpoint de
+    # cada epoch en las dos poblaciones y poder comparar los dos criterios.
+    # No se usa epoch_ce para esto: ese es el promedio de la trayectoria (todos
+    # los pasos de la epoch, incluidos los primeros con un parche peor), no una
+    # medicion del parche que queda al final de la epoch. Como baja de forma
+    # monotona, elegir por ahi devolveria siempre la ultima epoch.
+    train_rows = train_df.head(val_n)
     n_batches = math.ceil(len(train_df) / batch_size)
     total_steps = num_epochs * n_batches * num_steps_per_prompt
 
@@ -128,7 +135,9 @@ def train(model_path, targets_csv, l2_weight, output_dir,
 
     patch = torch.zeros(1, num_patch_positions, embedding_dim,
                         requires_grad=True, device=device)
-    best = {"ce": float("inf"), "patch": None, "epoch": None}
+    best = {"ce": float("inf"), "patch": None, "epoch": None}          # held-out
+    best_tr = {"ce": float("inf"), "patch": None, "epoch": None}       # train
+    curva = []
     global_step = 0
 
     for epoch in range(num_epochs):
@@ -175,8 +184,16 @@ def train(model_path, targets_csv, l2_weight, output_dir,
 
         v = validate(model, tokenizer, patch, val_rows, num_patch_positions,
                      l2_weight, head_k)
-        print(f"\nEpoch {epoch + 1}: CE train={sum(epoch_ce) / len(epoch_ce):.4f}  "
+        t = validate(model, tokenizer, patch, train_rows, num_patch_positions,
+                     l2_weight, head_k)
+        gap = v["p_head"] - t["p_head"]
+        curva.append({"epoch": epoch + 1, "train_head": t["p_head"],
+                      "heldout_head": v["p_head"], "gap": gap,
+                      "norm": patch.norm(2).item()})
+        print(f"\nEpoch {epoch + 1}: CE train (trayectoria)={sum(epoch_ce) / len(epoch_ce):.4f}  "
               f"norma={patch.norm(2).item():.6f}")
+        print(f"  CE head del checkpoint:  train={t['p_head']:.4f}   "
+              f"held-out={v['p_head']:.4f}   brecha={gap:+.4f}")
         print(f"  held-out CE  head(primeros {head_k}): con parche={v['p_head']:.4f}  "
               f"sin parche={v['b_head']:.4f}  delta={v['p_head'] - v['b_head']:+.4f}")
         print(f"               toda la respuesta      : con parche={v['p_all']:.4f}  "
@@ -184,7 +201,10 @@ def train(model_path, targets_csv, l2_weight, output_dir,
 
         if v["p_head"] < best["ce"]:
             best = {"ce": v["p_head"], "patch": patch.detach().clone(), "epoch": epoch + 1}
-            print(f"  * mejor hasta ahora (head CE {v['p_head']:.4f})")
+            print(f"  * mejor HELD-OUT hasta ahora (head CE {v['p_head']:.4f})")
+        if t["p_head"] < best_tr["ce"]:
+            best_tr = {"ce": t["p_head"], "patch": patch.detach().clone(), "epoch": epoch + 1}
+            print(f"  * mejor TRAIN hasta ahora (head CE {t['p_head']:.4f})")
         print("-" * 70)
 
     final = best["patch"] if (save_best and best["patch"] is not None) else patch.detach()
@@ -195,6 +215,34 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     patch_path = os.path.join(output_dir, "lang_patch.pt")
     meta_path = os.path.join(output_dir, "lang_metadata.pt")
     torch.save(final, patch_path)
+
+    # Los dos criterios, cada uno en su archivo, para poder compararlos en el
+    # eval. lang_patch.pt sigue siendo el canonico (el de held-out si
+    # --save_best) para no romper los comandos existentes.
+    ho_path = os.path.join(output_dir, "lang_patch_best_heldout.pt")
+    tr_path = os.path.join(output_dir, "lang_patch_best_train.pt")
+    if best["patch"] is not None:
+        torch.save(best["patch"], ho_path)
+    if best_tr["patch"] is not None:
+        torch.save(best_tr["patch"], tr_path)
+
+    print("\n" + "=" * 70)
+    print("CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)")
+    print(f"{'epoch':>6}{'train':>10}{'held-out':>11}{'brecha':>10}{'norma':>10}")
+    print("-" * 47)
+    for c in curva:
+        marca = ""
+        if c["epoch"] == best["epoch"]:
+            marca += "  <- mejor held-out"
+        if c["epoch"] == best_tr["epoch"]:
+            marca += "  <- mejor train"
+        print(f"{c['epoch']:>6}{c['train_head']:>10.4f}{c['heldout_head']:>11.4f}"
+              f"{c['gap']:>+10.4f}{c['norm']:>10.4f}{marca}")
+    print(f"\n  mejor por HELD-OUT: epoch {best['epoch']} (CE {best['ce']:.4f})  -> {ho_path}")
+    print(f"  mejor por TRAIN   : epoch {best_tr['epoch']} (CE {best_tr['ce']:.4f})  -> {tr_path}")
+    if best["epoch"] != best_tr["epoch"]:
+        print("  los dos criterios NO coinciden: compara los dos parches en el eval,")
+        print("  la CE del head es un proxy y lo que decide es is_french sobre generacion.")
 
     metadata = {
         "language": "french",
@@ -216,6 +264,11 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         "save_best": save_best,
         "best_epoch": best["epoch"] if save_best else None,
         "best_head_ce": best["ce"] if save_best else None,
+        "best_heldout_epoch": best["epoch"],
+        "best_heldout_head_ce": best["ce"],
+        "best_train_epoch": best_tr["epoch"],
+        "best_train_head_ce": best_tr["ce"],
+        "curva": curva,
     }
     torch.save(metadata, meta_path)
 
