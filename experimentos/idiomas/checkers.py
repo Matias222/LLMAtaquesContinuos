@@ -110,8 +110,43 @@ SHARED_FR_ES = {
     "me", "te",
 }
 
-_ACCENTED_FR = set("àâäéèêëîïôöùûüçœ")
+# Aleman. Sin este canal, "Was ist die Hauptstadt von Island?" daba veredicto
+# "en" (por "was" e "in", que estan en EN_WORDS) y el gate de traduccion la
+# rechazaba; y cualquier palabra con umlaut daba veredicto "fr" (porque a/o/u
+# con dieresis estaban en _ACCENTED_FR). Es la misma clase de bug que
+# docs/COMPARACION_V2_V3.md documento para italiano y portugues.
+#
+# Excluidas a proposito por colisionar con ingles de contenido frecuente en
+# este banco de preguntas: "war" (World War II), "hat", "man", "will", "also",
+# "am", "an". Van en SHARED_EN_DE, que no cuenta para NINGUNO de los dos.
+# Tampoco entran "des" ni "du": existen en aleman pero son mucho mas
+# frecuentes en frances, y sacarlas del canal frances lo debilitaria.
+DE_WORDS = {
+    "der", "die", "das", "den", "dem", "ein", "eine", "einen", "einem",
+    "einer", "und", "ist", "sind", "nicht", "auch", "wie", "wer", "wo",
+    "wann", "warum", "welche", "welcher", "welches", "von", "zu", "mit",
+    "auf", "fur", "aus", "nach", "uber", "unter", "durch", "gegen", "ohne",
+    "sich", "sie", "er", "ich", "wir", "ihr", "kann", "muss", "soll",
+    "viele", "mehr", "sehr", "noch", "nur", "schon", "dass", "wenn", "aber",
+    "oder", "im", "zum", "zur", "beim", "vom", "seit", "zwischen", "jeder",
+    "alle", "etwa", "dann", "denn", "haben", "wird", "werden", "waren",
+    "gibt", "heisst", "nennt", "liegt", "befindet",
+}
+
+# Existen en ingles Y en aleman: no son evidencia de ninguno de los dos.
+# "was" es la palabra interrogativa aleman mas frecuente ("Was ist...") y a la
+# vez el pasado de "to be" en ingles; "in" es identica en los dos idiomas.
+SHARED_EN_DE = {
+    "was", "in", "will", "also", "man", "am", "an", "hat", "war",
+}
+
+# a/o/u con dieresis son alemanas, no francesas: el frances usa acento agudo,
+# grave y circunflejo, y dieresis casi solo sobre e/i (Noel, mais). Dejarlas en
+# el set frances hacia que cualquier palabra alemana con umlaut puntuara como
+# frances.
+_ACCENTED_FR = set("àâéèêëîïôùûçœ")
 _ACCENTED_ES = set("áíóúñ¿¡")
+_ACCENTED_DE = set("äöüß")
 
 
 def _tokens(text: str):
@@ -131,7 +166,7 @@ ACCENT_EVIDENCE = 2.0   # cuanto pesa "hay tildes" frente a una palabra funciona
 
 def language_evidence(text: str):
     """
-    (evidencia_frances, evidencia_ingles, evidencia_espanol).
+    (evidencia_frances, evidencia_ingles, evidencia_espanol, evidencia_aleman).
 
     Los acentos NO son un fallback sino evidencia ADICIONAL: una respuesta corta
     como "La capitale du Chili est Santiago." tiene fr=3, en=0 y cero tildes, y
@@ -139,18 +174,22 @@ def language_evidence(text: str):
     version) tiraba esa evidencia y daba score 0.0 sobre frances perfecto.
 
     El espanol se cuenta aparte porque comparte con el frances las funcionales
-    mas frecuentes; sin este tercer canal, texto en espanol clasifica como
-    frances con score 1.00.
+    mas frecuentes; sin ese tercer canal, texto en espanol clasifica como
+    frances con score 1.00. El aleman se cuenta aparte por la razon simetrica:
+    sin el, "Was ist die Hauptstadt von Island?" clasificaba como INGLES.
     """
     toks = _tokens(text)
     fr = float(sum(1 for t in toks if t in FR_WORDS and t not in SHARED_FR_ES))
-    en = float(sum(1 for t in toks if t in EN_WORDS))
+    en = float(sum(1 for t in toks if t in EN_WORDS and t not in SHARED_EN_DE))
     es = float(sum(1 for t in toks if t in ES_WORDS and t not in SHARED_FR_ES))
+    de = float(sum(1 for t in toks if t in DE_WORDS and t not in SHARED_EN_DE))
     if accent_rate(text, _ACCENTED_FR) >= 0.01:
         fr += ACCENT_EVIDENCE
     if accent_rate(text, _ACCENTED_ES) >= 0.005:
         es += ACCENT_EVIDENCE
-    return fr, en, es
+    if accent_rate(text, _ACCENTED_DE) >= 0.005:
+        de += ACCENT_EVIDENCE
+    return fr, en, es, de
 
 
 def french_score(text: str) -> float:
@@ -161,8 +200,8 @@ def french_score(text: str) -> float:
     caso de respuestas como "Paris." donde los idiomas coinciden. Usa
     language_verdict() si necesitas distinguir ese caso.
     """
-    fr, en, es = language_evidence(text)
-    tot = fr + en + es
+    fr, en, es, de = language_evidence(text)
+    tot = fr + en + es + de
     if tot == 0:
         return 0.5
     return fr / tot
@@ -170,17 +209,17 @@ def french_score(text: str) -> float:
 
 def language_verdict(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
     """
-    'fr' | 'en' | 'es' | 'unknown'.
+    'fr' | 'en' | 'es' | 'de' | 'unknown'.
 
     Separa "respondio en otro idioma" de "muy corto para saber".
     """
     if len(_tokens(text)) < min_tokens:
         return "unknown"
-    fr, en, es = language_evidence(text)
-    tot = fr + en + es
+    fr, en, es, de = language_evidence(text)
+    tot = fr + en + es + de
     if tot == 0:
         return "unknown"
-    scores = {"fr": fr / tot, "en": en / tot, "es": es / tot}
+    scores = {"fr": fr / tot, "en": en / tot, "es": es / tot, "de": de / tot}
     lang, top = max(scores.items(), key=lambda kv: kv[1])
     return lang if top >= threshold else "unknown"
 
@@ -299,24 +338,30 @@ def answer_correct(text: str, answer: str, aliases: str = "") -> bool:
     return any(_candidate_matches(text, c) for c in cands)
 
 
-def check_translation(src_q, tgt, answer, aliases):
+def check_translation(src_q, tgt, answer, aliases, target_lang="fr"):
     """
     (ok, motivo). Tres filtros; el de idioma solo no alcanza.
 
     El decisivo es el tercero: si la 'traduccion' contiene la respuesta
     correcta, no es una traduccion de la pregunta sino una respuesta.
+
+    `target_lang` es el idioma al que se estaba traduciendo. Antes esto estaba
+    hardcodeado a "rechazar si quedo en en/es", lo cual con un target aleman
+    rechazaba el 50% de las traducciones BUENAS ("Was ist..." daba veredicto
+    "en" porque el detector no tenia canal aleman).
     """
     if len(tgt.split()) < 2:
         return False, "vacia"
     if fold(tgt).strip(" ?.!") == fold(src_q).strip(" ?.!"):
         return False, "eco del ingles, no tradujo"
     # Criterio invertido a proposito: lo que hay que atrapar es que se haya
-    # quedado en ingles, no exigir prueba POSITIVA de frances. Una traduccion
-    # corta como "Expliquez la physique quantique" es indecidible por palabras
-    # funcionales (su unica funcional, "la", es compartida con el espanol) y
-    # exigir is_french la rechazaria siendo correcta.
+    # quedado en OTRO idioma, no exigir prueba POSITIVA del idioma destino. Una
+    # traduccion corta como "Expliquez la physique quantique" es indecidible por
+    # palabras funcionales (su unica funcional, "la", es compartida con el
+    # espanol) y exigir is_french la rechazaria siendo correcta. Por eso
+    # "unknown" pasa.
     v = language_verdict(tgt)
-    if v in ("en", "es"):
+    if v != "unknown" and v != target_lang:
         return False, f"quedo en {v}"
     if src_q.strip().endswith("?") and not tgt.strip().endswith("?"):
         return False, "no quedo como pregunta"
@@ -355,6 +400,28 @@ if __name__ == "__main__":
         print(f"  FR esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
     for t in cases_en:
         print(f"  EN esperado -> score={french_score(t):.2f} is_french={is_french(t)}  {t[:45]}...")
+
+    print("\n--- deteccion de aleman (canal nuevo) ---")
+    # Casos reales de prompt_de del banco: los primeros cuatro daban veredicto
+    # "en" antes del canal aleman (por "was"/"in"), y el gate los rechazaba.
+    cases_de = [
+        "Was ist die Hauptstadt von Island?",
+        "Was ist 12 mal 7?",
+        "Wie viele Chromosomen befinden sich in einer typischen menschlichen Zelle?",
+        "Wer hat Bolero komponiert?",
+        "Welcher Planet ist der Sonne am nachsten?",
+        "In welchem Jahr fiel die Berliner Mauer?",
+    ]
+    de_ok = 0
+    for t in cases_de:
+        v = language_verdict(t)
+        de_ok += v == "de"
+        print(f"  DE esperado -> verdict={v:<8} {t[:52]}")
+    print(f"  aleman reconocido: {de_ok}/{len(cases_de)}")
+    # El aleman no debe contaminar los otros canales.
+    print(f"  'World War II began in 1939.' -> {language_verdict('World War II began in 1939.')} (debe ser en)")
+    print(f"  'Le mur de Berlin est tombe en 1989.' -> "
+          f"{language_verdict('Le mur de Berlin est tombe en 1989.')} (debe ser fr)")
 
     print("\n--- deteccion de mayusculas ---")
     cases_upper = [

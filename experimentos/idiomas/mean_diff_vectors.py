@@ -113,17 +113,24 @@ def main():
     if "prompt_fr" not in df.columns:
         raise SystemExit("falta la columna prompt_fr; corre translate_questions.py")
     have_de = "prompt_de" in df.columns
-    # Filtrar PRIMERO y despues tomar n, para que todas las condiciones usen
-    # exactamente los mismos prompts. Si hay prompt_de, exige tambien su gate:
-    # el set de 40 puede diferir del de un run solo-frances (algunas filas
-    # pasan prompt_fr_ok pero no prompt_de_ok, o viceversa).
+    # La muestra se elige SOLO por prompt_fr_ok, nunca por el gate aleman.
+    # Motivo: agregar prompt_de_ok al filtro cambia QUE 40 prompts se miden y
+    # por lo tanto mueve todos los cosenos, sin que el parche haya cambiado.
+    # Con el gate aleman roto (sin canal DE, "Was ist..." daba veredicto "en")
+    # eso tiraba el 50% de las filas y sesgaba la muestra por forma de
+    # pregunta: las "What is X?" desaparecian y solo quedaban 16 de los 40
+    # prompts originales. El gate de aleman ahora solo decide si una fila
+    # entra en el promedio de qde, no si entra en la muestra.
     mask = df.get("prompt_fr_ok", True).astype(str).str.lower() == "true"
-    if have_de:
-        mask &= df.get("prompt_de_ok", True).astype(str).str.lower() == "true"
     usables = df[mask]
     df = usables.head(args.n)
-    print(f"prompts con traduccion usable: {len(usables)}  |  se usan: {len(df)}"
-          + ("  (fr + de)" if have_de else "  (solo fr; corre translate_questions.py --lang de para sumar qde)"))
+    de_ok = (df.get("prompt_de_ok", True).astype(str).str.lower() == "true"
+             if have_de else None)
+    print(f"prompts con traduccion FR usable: {len(usables)}  |  se usan: {len(df)}")
+    if have_de:
+        print(f"de esos, con traduccion DE usable: {int(de_ok.sum())}  (solo esos entran en qde)")
+    else:
+        print("  (sin prompt_de; corre translate_questions.py --lang de para sumar qde)")
     if len(df) < 10:
         raise SystemExit("muy pocos prompts usables")
 
@@ -135,14 +142,16 @@ def main():
 
     ctrl = {} if args.no_controls else CONTROLES
     D = {k: [] for k in ["patch", "frq", "instr"] + (["qde"] if have_de else []) + list(ctrl)}
-    for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="activaciones"):
+    for idx, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="activaciones"):
         q = r["prompt"]
         h_en = hidden_at_last(model, tokenizer, q, args.device)
         D["patch"].append((hidden_at_last(model, tokenizer, q, args.device, patch,
                                           args.num_patch_positions) - h_en).cpu())
         D["frq"].append((hidden_at_last(model, tokenizer, r["prompt_fr"],
                                         args.device) - h_en).cpu())
-        if have_de:
+        # qde promedia solo sobre las filas con traduccion alemana usable: es
+        # la unica condicion con un n potencialmente distinto, y se reporta.
+        if have_de and bool(de_ok.loc[idx]):
             D["qde"].append((hidden_at_last(model, tokenizer, r["prompt_de"],
                                             args.device) - h_en).cpu())
         # Espacio, no salto de linea.
@@ -151,6 +160,12 @@ def main():
         for k, ins in ctrl.items():
             D[k].append((hidden_at_last(model, tokenizer, f"{ins} {q}",
                                         args.device) - h_en).cpu())
+
+    n_qde = len(D["qde"]) if have_de else 0
+    if have_de and n_qde < 10:
+        print(f"AVISO: solo {n_qde} traducciones alemanas usables, qde no se reporta")
+        D.pop("qde")
+        have_de = False
 
     V = {k: torch.stack(v).mean(0) for k, v in D.items()}
     ceil = {k: split_half_ceiling(v) for k, v in D.items()}
@@ -207,7 +222,8 @@ def main():
         print("\n" + "=" * 70)
         print(f"MATRIZ COMPLETA, promedio capas {lo}..{L - 1}")
         if have_de:
-            print("  qde   = MISMA pregunta, traducida al aleman (sin instruccion)")
+            print(f"  qde   = MISMA pregunta, traducida al aleman (sin instruccion), n={n_qde}"
+                  + ("" if n_qde == len(df) else f" de {len(df)}"))
         if "de" in ctrl:
             print("  de    = instruccion de responder en ALEMAN  (otro idioma)")
         if "corto" in ctrl:
@@ -270,6 +286,7 @@ def main():
     if have_de:
         out["cos_patch_qde"] = cos(V["patch"], V["qde"]).tolist()
         out["ceiling_qde"] = ceil["qde"].tolist()
+        out["n_prompts_qde"] = n_qde
     json.dump(out, open(args.out, "w"), indent=2)
     print(f"\nGuardado en {args.out}")
 
