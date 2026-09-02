@@ -95,6 +95,10 @@ def main():
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--targets", default="attributes/french/targets_french.csv")
     ap.add_argument("--n", type=int, default=40)
+    ap.add_argument("--tail", action="store_true",
+                    help="usar los ULTIMOS n prompts usables en vez de los primeros. El split "
+                         "es posicional, asi que la cola cae en el HELD-OUT del parche: sirve "
+                         "para ver si la geometria generaliza a prompts que no se entrenaron")
     ap.add_argument("--from_layer", type=int, default=15)
     ap.add_argument("--instruction", default=INSTRUCTION)
     ap.add_argument("--no_controls", action="store_true",
@@ -123,10 +127,18 @@ def main():
     # entra en el promedio de qde, no si entra en la muestra.
     mask = df.get("prompt_fr_ok", True).astype(str).str.lower() == "true"
     usables = df[mask]
-    df = usables.head(args.n)
+    df = usables.tail(args.n) if args.tail else usables.head(args.n)
     de_ok = (df.get("prompt_de_ok", True).astype(str).str.lower() == "true"
              if have_de else None)
-    print(f"prompts con traduccion FR usable: {len(usables)}  |  se usan: {len(df)}")
+    # El split de entrenamiento es posicional sobre el CSV entero, asi que la
+    # posicion de las filas elegidas dice si son train o held-out.
+    fila_min, fila_max = int(df.index.min()), int(df.index.max())
+    corte_train = int(len(pd.read_csv(args.targets, sep=";", keep_default_na=False)) * 0.85)
+    n_heldout = int((df.index >= corte_train).sum())
+    print(f"prompts con traduccion FR usable: {len(usables)}  |  se usan: {len(df)}"
+          f"  ({'ULTIMOS' if args.tail else 'primeros'} {args.n})")
+    print(f"  filas {fila_min}..{fila_max} del CSV  |  {n_heldout} de esas {len(df)} caen en el "
+          f"held-out del parche (corte en {corte_train})")
     if have_de:
         print(f"de esos, con traduccion DE usable: {int(de_ok.sum())}  (solo esos entran en qde)")
     else:
@@ -289,6 +301,9 @@ def main():
     print("    entre prompts, no que el efecto sea chico. Se arregla subiendo --n.")
 
     out = {"layers_from": lo, "n_prompts": len(df),
+           "selection": "tail" if args.tail else "head",
+           "rows": [fila_min, fila_max], "n_heldout": n_heldout,
+           "targets": args.targets,
            "cos_patch_frq": c_pf.tolist(), "cos_patch_instr": c_pi.tolist(),
            "cos_frq_instr": c_fi.tolist(),
            "ceiling_patch": ceil["patch"].tolist(),
