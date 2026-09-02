@@ -26,7 +26,7 @@ import shutil
 
 import pandas as pd
 
-from checkers import check_translation, language_verdict
+from checkers import answer_correct, check_translation, language_verdict
 
 # pregunta en ingles -> traduccion corregida.
 # Motivo de cada bloque en el comentario de arriba de cada grupo.
@@ -391,6 +391,63 @@ FIXES_DE = {
         "Was ist die chemische Formel von Ammoniak?",
 }
 
+# ---------------------------------------------------------------------------
+# Respuestas de referencia con el HECHO equivocado.
+#
+# OJO, esto no es lo mismo que corregir una traduccion. La columna `output`
+# hace doble trabajo: es el target de teacher forcing Y es la condicion de
+# referencia del eval, el "techo natural" M([FR;q]) contra el que se juzga al
+# parche. El README pone como ventaja central del diseno de idiomas que los
+# targets los genera el modelo y no estan curados a mano; escribir estas 12
+# rompe esa propiedad para esas filas.
+#
+# Se hace igual porque entrenar sobre "la central de la celula es el nucleo"
+# le ensena al parche a producir hechos falsos en frances. El compromiso es
+# marcarlas: la columna `output_hand_fixed` queda en True para estas filas,
+# asi cualquier analisis puede reportar la referencia con y sin ellas.
+#
+# De las 12, ONCE estan en train y solo UNA ([240]) cae en el held-out, que es
+# lo unico que reporta el eval: el techo se infla en 1 fila sobre 38.
+#
+# Se conserva el fraseo del modelo y se cambia solo el hecho, para no meter
+# estilo de autor donde antes habia estilo del modelo.
+FIXES_OUTPUT = {
+    "What is the powerhouse of the cell?":
+        "La centrale énergétique de la cellule est la mitochondrie.",
+    "Who developed the polio vaccine in 1955?":
+        "C'est Jonas Salk qui a développé le vaccin contre la poliomyélite en 1955.",
+    "What gas makes up about 78 percent of Earth's atmosphere?":
+        "Le gaz qui compose environ 78 pour cent de l'atmosphère terrestre est l'azote (N2).",
+    # el modelo dio el valor exacto; la pregunta pide el valor REDONDEADO
+    "What is the speed of light in vacuum in kilometers per second, rounded?":
+        "La vitesse de la lumière dans le vide est d'environ 300 000 kilomètres par seconde.",
+    "What is the tallest waterfall in the world?":
+        "La plus haute cascade du monde est le Salto Ángel, situé au Venezuela. "
+        "Il atteint une hauteur de 979 mètres.",
+    "What is the capital of Switzerland?":
+        "La capitale de la Suisse est Berne.",
+    "Which planet is closest in size to Earth?":
+        "La planète la plus proche de la Terre en taille est Vénus.",
+    "Who formulated the three laws of motion?":
+        "C'est Isaac Newton qui a formulé les trois lois du mouvement.",
+    # Proxima Centauri es la mas cercana DESPUES del Sol; la respuesta es el Sol
+    "What is the closest star to Earth?":
+        "L'étoile la plus proche de la Terre est le Soleil.",
+    "What is the capital of Turkey?":
+        "La capitale de la Turquie est Ankara.",
+    "In what year did the Human Genome Project publish its first draft?":
+        "Le projet du génome humain a publié sa première version en 2001.",
+    # Challenger Deep es el PUNTO mas profundo; la fosa es la de las Marianas
+    "What is the deepest ocean trench called?":
+        "La fosse océanique la plus profonde est la fosse des Mariannes.",
+}
+
+# La columna `aliases` existe para listar la forma francesa cuando difiere de
+# la inglesa (README). Faltaba la grafia francesa correcta, con doble n.
+FIXES_ALIASES = {
+    "What is the deepest ocean trench called?": "Marianes|Mariannes",
+}
+
 # "Symbol" es NEUTRO en aleman: das Symbol. El traductor puso "der"/"die" en
 # casi todas las preguntas de simbolo quimico. Se arregla por patron para no
 # listar doce filas iguales a mano.
@@ -448,6 +505,46 @@ def main():
             df[f"{col}_ok"] = oks
             df[f"{col}_language"] = verdicts
             print(f"  gate {lang} tras corregir: {sum(oks)}/{len(df)}")
+
+    # --- alias faltantes ------------------------------------------------------
+    df, changed_al = apply_fixes(df, "aliases", FIXES_ALIASES)
+    total += len(changed_al)
+    for p, a, b in changed_al:
+        print(f"\n=== aliases: {p[:52]}\n    - {a}\n    + {b}")
+
+    # --- respuestas de referencia con el hecho equivocado ---------------------
+    df, changed_out = apply_fixes(df, "output", FIXES_OUTPUT)
+    total += len(changed_out)
+    print(f"\n=== output (respuesta de referencia): {len(changed_out)} correcciones ===")
+    for p, a, b in changed_out:
+        print(f"  {p[:52]}")
+        print(f"    - {a[:76]}")
+        print(f"    + {b[:76]}")
+    if not args.dry_run:
+        fixed = set(FIXES_OUTPUT)
+        df["output_hand_fixed"] = [p in fixed for p in df["prompt"]]
+
+        # Gate recomputado. El criterio de idioma se relaja: antes exigia
+        # is_french(output), que rechaza respuestas sin ninguna palabra
+        # ("18 x 5 = 90") o cuyas funcionales son compartidas con el espanol
+        # ("L'Apollo 13 a eu lieu en 1970."). Ahora solo rechaza si la
+        # respuesta esta POSITIVAMENTE en otro idioma -- misma logica que
+        # check_translation.
+        ref_ok, acc_ok, gate = [], [], []
+        for _, r in df.iterrows():
+            v = language_verdict(r["output"])
+            lang_ok = v not in ("en", "es", "de")
+            has_ans = str(r["answer"]).strip() != ""
+            a = answer_correct(r["output"], r["answer"], r["aliases"]) if has_ans else None
+            ref_ok.append(lang_ok)
+            acc_ok.append("" if a is None else bool(a))
+            gate.append(bool(lang_ok and a is not False))
+        df["ref_is_french"] = ref_ok
+        df["ref_answer_correct"] = acc_ok
+        df["passed_gate"] = gate
+        n_train = int(len(df) * 0.85)
+        print(f"\n  gate recomputado: {sum(gate)}/{len(df)} en total, "
+              f"{sum(gate[:n_train])}/{n_train} en train")
 
     if args.dry_run:
         print(f"\n[dry_run] {total} correcciones, nada escrito")

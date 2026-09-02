@@ -74,7 +74,13 @@ def main():
         base = truncate_at_role_leak(base_raw)
 
         has_answer = str(ans).strip() != ""
-        fr_ok = is_french(ref)
+        # Criterio de idioma relajado: rechaza solo si la respuesta esta
+        # POSITIVAMENTE en otro idioma. Exigir is_french() tiraba respuestas
+        # perfectamente usables sin ninguna palabra ("18 x 5 = 90") o cuyas
+        # funcionales son compartidas con el espanol ("L'Apollo 13 a eu lieu
+        # en 1970."): 6 filas de 250, todas targets buenos. Misma logica que
+        # check_translation.
+        fr_ok = language_verdict(ref) not in ("en", "es", "de")
         # Prompts abiertos: no hay respuesta verificable, el gate es solo idioma.
         acc_ok = answer_correct(ref, ans, al) if has_answer else None
         rows.append({
