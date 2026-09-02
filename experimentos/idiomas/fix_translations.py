@@ -76,6 +76,57 @@ FIXES_FR = {
         "Quelle est la plus grande planète du système solaire ?",
     "What is the capital of Ukraine?":
         "Quelle est la capitale de l'Ukraine ?",
+
+    # === cola del banco (filas 200-249, la muestra de --tail) ===================
+    # --- referente equivocado: preguntan por otra cosa que el original ---
+    # "l'or" es ORO, la pregunta es por PLATINO
+    "What is the chemical symbol for platinum?":
+        "Quel est le symbole chimique du platine ?",
+    # "claviers" son TECLADOS; la respuesta (88) son TOUCHES
+    "How many keys does a standard piano have?":
+        "Combien de touches a un piano standard ?",
+    # "mer" es MAR; la respuesta es un OCEANO
+    "Which ocean lies between Africa and Australia?":
+        "Quel océan se trouve entre l'Afrique et l'Australie ?",
+
+    # --- termino incorrecto o no estandar ---
+    "What is the deepest ocean trench called?":
+        "Comment s'appelle la fosse océanique la plus profonde ?",
+    "What is the freezing point of water in degrees Celsius?":
+        "Quel est le point de congélation de l'eau en degrés Celsius ?",
+
+    # --- "Quel est l'annee" -> annee es FEMENINO ---
+    "In what year did the Wright brothers first fly?":
+        "Quelle est l'année du premier vol des frères Wright ?",
+    "In what year did the Human Genome Project publish its first draft?":
+        "Quelle est l'année où le projet Génome humain a publié sa première version ?",
+    "In what year did Germany reunify?":
+        "Quelle est l'année de la réunification de l'Allemagne ?",
+    "In what year did World War II begin?":
+        "Quelle est l'année où a commencé la Seconde Guerre mondiale ?",
+    "In what year was the euro introduced as physical currency?":
+        "Quelle est l'année où l'euro a été introduit comme monnaie physique ?",
+    "In what year did the Hindenburg disaster occur?":
+        "Quelle est l'année de la catastrophe du Hindenburg ?",
+    "In what year was the Panama Canal opened?":
+        "Quelle est l'année où le canal de Panama a été ouvert ?",
+
+    # --- nombre de pais sin articulo ---
+    "What is the capital of Syria?": "Quelle est la capitale de la Syrie ?",
+    "What is the capital of Greece?": "Quelle est la capitale de la Grèce ?",
+    "What is the capital of Bulgaria?": "Quelle est la capitale de la Bulgarie ?",
+    "What is the capital of Finland?": "Quelle est la capitale de la Finlande ?",
+    "What is the capital of Lithuania?": "Quelle est la capitale de la Lituanie ?",
+
+    # --- sin acentos (el few-shot del traductor tampoco los tiene) ---
+    "Who developed the theory of general relativity?":
+        "Qui a développé la théorie de la relativité générale ?",
+    "Who wrote One Hundred Years of Solitude?":
+        "Qui a écrit Cent ans de solitude ?",
+    "Who wrote Hamlet?":
+        "Qui a écrit Hamlet ?",
+    "Who composed the Ninth Symphony containing Ode to Joy?":
+        "Qui a composé la Symphonie n° 9 contenant l'Ode à la joie ?",
 }
 
 FIXES_DE = {
@@ -98,6 +149,39 @@ FIXES_DE = {
         "Wer hat Die Frühlingsweihe komponiert?",
     "Who wrote Don Quixote?":
         "Wer hat Don Quijote geschrieben?",
+
+    # === cola del banco (filas 200-249, la muestra de --tail) ===================
+    # --- contenido equivocado ---
+    # "Ode an den Freiheit" = oda a la LIBERTAD; es "an die Freude" (alegria)
+    "Who composed the Ninth Symphony containing Ode to Joy?":
+        "Wer hat die Neunte Sinfonie mit der Ode an die Freude komponiert?",
+    # "ein Jahrhundert von Einsamkeit" es traduccion literal; el titulo aleman
+    # de la novela es "Hundert Jahre Einsamkeit"
+    "Who wrote One Hundred Years of Solitude?":
+        "Wer hat Hundert Jahre Einsamkeit geschrieben?",
+    # "Das Schreien" es "el griterio"; el cuadro es "Der Schrei"
+    "Who painted The Scream?":
+        "Wer hat Der Schrei gemalt?",
+    # "Meer" es MAR; la respuesta es un OCEANO
+    "Which ocean lies between Africa and Australia?":
+        "Welcher Ozean liegt zwischen Afrika und Australien?",
+    # "Trench" quedo en ingles y la frase estaba rota
+    "What is the deepest ocean trench called?":
+        "Wie heißt der tiefste Tiefseegraben?",
+
+    # --- genero / numero / articulo ---
+    "What is the capital of Ukraine?":
+        "Was ist die Hauptstadt der Ukraine?",
+    "What is the largest ocean on Earth?":
+        "Was ist der größte Ozean der Erde?",
+    "How many moons does Mars have?":
+        "Wie viele Monde hat der Mars?",
+    "Who received the 1876 patent for the telephone?":
+        "Wer erhielt 1876 das Patent für das Telefon?",
+    "How many bones are in the adult human body?":
+        "Wie viele Knochen hat der erwachsene menschliche Körper?",
+    "What is the capital of Qatar?":
+        "Was ist die Hauptstadt von Katar?",
 }
 
 # "Symbol" es NEUTRO en aleman: das Symbol. El traductor puso "der"/"die" en
