@@ -18,6 +18,18 @@ Tres condiciones, todas contra la MISMA linea de base (pregunta en ingles):
 
 y los tres cosenos entre ellos.
 
+Si el targets CSV tiene columna prompt_de (agregada por
+`translate_questions.py --lang de`), se suma una cuarta:
+
+    d_qde = mean( h(q_de) - h(q) )
+
+Es distinta del control CONTROLES["de"] (que es la INSTRUCCION "Answer this
+in German." + q): d_qde es la pregunta traducida, sin instruccion, el mismo
+patron que d_frq pero en aleman. Prueba si el parche se parece a "la entrada
+esta en aleman" tanto como a "la entrada esta en frances" -- si el margen
+patch~frq sobre patch~qde es chico, lo que el parche codifica no es frances
+especifico sino "idioma extranjero" en general.
+
 Escala de referencia del paper: entre tipos de jailbreak distintos que ellos
 concluyeron que comparten mecanismo, el coseno cae entre 0.4 y 0.6. No esperar
 0.9.
@@ -100,11 +112,18 @@ def main():
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     if "prompt_fr" not in df.columns:
         raise SystemExit("falta la columna prompt_fr; corre translate_questions.py")
-    # Filtrar PRIMERO y despues tomar n, para que las tres condiciones usen
-    # exactamente los mismos prompts.
-    usables = df[df.get("prompt_fr_ok", True).astype(str).str.lower() == "true"]
+    have_de = "prompt_de" in df.columns
+    # Filtrar PRIMERO y despues tomar n, para que todas las condiciones usen
+    # exactamente los mismos prompts. Si hay prompt_de, exige tambien su gate:
+    # el set de 40 puede diferir del de un run solo-frances (algunas filas
+    # pasan prompt_fr_ok pero no prompt_de_ok, o viceversa).
+    mask = df.get("prompt_fr_ok", True).astype(str).str.lower() == "true"
+    if have_de:
+        mask &= df.get("prompt_de_ok", True).astype(str).str.lower() == "true"
+    usables = df[mask]
     df = usables.head(args.n)
-    print(f"prompts con traduccion usable: {len(usables)}  |  se usan: {len(df)}")
+    print(f"prompts con traduccion usable: {len(usables)}  |  se usan: {len(df)}"
+          + ("  (fr + de)" if have_de else "  (solo fr; corre translate_questions.py --lang de para sumar qde)"))
     if len(df) < 10:
         raise SystemExit("muy pocos prompts usables")
 
@@ -115,7 +134,7 @@ def main():
         print(f"escala {args.scale} -> norma {patch.norm(2).item():.3f}")
 
     ctrl = {} if args.no_controls else CONTROLES
-    D = {k: [] for k in ["patch", "frq", "instr"] + list(ctrl)}
+    D = {k: [] for k in ["patch", "frq", "instr"] + (["qde"] if have_de else []) + list(ctrl)}
     for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc="activaciones"):
         q = r["prompt"]
         h_en = hidden_at_last(model, tokenizer, q, args.device)
@@ -123,6 +142,9 @@ def main():
                                           args.num_patch_positions) - h_en).cpu())
         D["frq"].append((hidden_at_last(model, tokenizer, r["prompt_fr"],
                                         args.device) - h_en).cpu())
+        if have_de:
+            D["qde"].append((hidden_at_last(model, tokenizer, r["prompt_de"],
+                                            args.device) - h_en).cpu())
         # Espacio, no salto de linea.
         D["instr"].append((hidden_at_last(model, tokenizer, f"{args.instruction} {q}",
                                           args.device) - h_en).cpu())
@@ -178,14 +200,18 @@ def main():
     gana = "PREGUNTA EN FRANCES" if c_pf[rng].mean() > c_pi[rng].mean() else "INSTRUCCION EN TEXTO"
     print(f"\n-> el parche se parece mas a: {gana} "
           f"(diferencia {abs(c_pf[rng].mean() - c_pi[rng].mean()):.3f})")
-    if ctrl:
-        keys = ["patch", "frq", "instr"] + list(ctrl)
+    if ctrl or have_de:
+        keys = ["patch", "frq", "instr"] + (["qde"] if have_de else []) + list(ctrl)
         etiq = {"patch": "parche", "frq": "preg. FR", "instr": "instr. FR",
-                "de": "instr. DE", "corto": "resp. corta"}
+                "qde": "preg. DE", "de": "instr. DE", "corto": "resp. corta"}
         print("\n" + "=" * 70)
         print(f"MATRIZ COMPLETA, promedio capas {lo}..{L - 1}")
-        print("  de    = instruccion de responder en ALEMAN  (otro idioma)")
-        print("  corto = responder en una oracion corta      (cambio de modo, mismo idioma)")
+        if have_de:
+            print("  qde   = MISMA pregunta, traducida al aleman (sin instruccion)")
+        if "de" in ctrl:
+            print("  de    = instruccion de responder en ALEMAN  (otro idioma)")
+        if "corto" in ctrl:
+            print("  corto = responder en una oracion corta      (cambio de modo, mismo idioma)")
         print()
         print(" " * 13 + "".join(f"{etiq[k]:>13}" for k in keys))
         for a in keys:
@@ -194,19 +220,30 @@ def main():
         print()
         print("Lectura decisiva:")
         pf = cos(V["patch"], V["frq"])[rng].mean()
-        pd_ = cos(V["patch"], V["de"])[rng].mean()
-        pc = cos(V["patch"], V["corto"])[rng].mean()
+        candidatos = []
         print(f"  parche~preg.FR    {pf:.3f}")
-        print(f"  parche~instr.DE   {pd_:.3f}   <- si es parecido, el numero NO mide idioma")
-        print(f"  parche~resp.corta {pc:.3f}   <- piso generico de 'responder distinto'")
-        margen = pf - max(pd_, pc)
-        print(f"\n  margen del frances sobre el mejor control: {margen:+.3f}")
-        if margen < 0.05:
-            print("  -> el coseno esta dominado por un componente generico de cambio de")
-            print("     modo, no por el idioma. La comparacion frances-vs-instruccion")
-            print("     no significa nada hasta separar ese componente.")
-        else:
-            print("  -> hay un componente especifico de idioma por encima del piso.")
+        if have_de:
+            pq = cos(V["patch"], V["qde"])[rng].mean()
+            candidatos.append(pq)
+            print(f"  parche~preg.DE    {pq:.3f}   <- si es parecido a preg.FR, el numero mide "
+                  "'idioma extranjero', no frances")
+        if "de" in ctrl:
+            pd_ = cos(V["patch"], V["de"])[rng].mean()
+            candidatos.append(pd_)
+            print(f"  parche~instr.DE   {pd_:.3f}   <- si es parecido, el numero NO mide idioma")
+        if "corto" in ctrl:
+            pc = cos(V["patch"], V["corto"])[rng].mean()
+            candidatos.append(pc)
+            print(f"  parche~resp.corta {pc:.3f}   <- piso generico de 'responder distinto'")
+        if candidatos:
+            margen = pf - max(candidatos)
+            print(f"\n  margen del frances sobre el mejor control: {margen:+.3f}")
+            if margen < 0.05:
+                print("  -> el coseno esta dominado por un componente generico de cambio de")
+                print("     modo, no por el idioma (o, si preg.DE es el que empata, por 'idioma")
+                print("     extranjero' en general). No significa nada hasta separar ese componente.")
+            else:
+                print("  -> hay un componente especifico de frances por encima del mejor control.")
 
     print("\nComo leerlo:")
     print("  - Escala de referencia (Ball et al. 2406.09289): entre jailbreaks que")
@@ -219,18 +256,21 @@ def main():
     print("  - Un techo bajo con n=40 significa que esa condicion es inconsistente")
     print("    entre prompts, no que el efecto sea chico. Se arregla subiendo --n.")
 
-    json.dump({"layers_from": lo, "n_prompts": len(df),
-               "cos_patch_frq": c_pf.tolist(), "cos_patch_instr": c_pi.tolist(),
-               "cos_frq_instr": c_fi.tolist(),
-               "ceiling_patch": ceil["patch"].tolist(),
-               "ceiling_frq": ceil["frq"].tolist(),
-               "ceiling_instr": ceil["instr"].tolist(),
-               "instruction": args.instruction, "patch": args.patch,
-               "scale": args.scale, "patch_norm": float(patch.norm(2).item()),
-               "conditions": list(V),
-               "cos_matrix": {a: {b: cos(V[a], V[b]).tolist() for b in V} for a in V},
-               "ceilings": {k: v.tolist() for k, v in ceil.items()}},
-              open(args.out, "w"), indent=2)
+    out = {"layers_from": lo, "n_prompts": len(df),
+           "cos_patch_frq": c_pf.tolist(), "cos_patch_instr": c_pi.tolist(),
+           "cos_frq_instr": c_fi.tolist(),
+           "ceiling_patch": ceil["patch"].tolist(),
+           "ceiling_frq": ceil["frq"].tolist(),
+           "ceiling_instr": ceil["instr"].tolist(),
+           "instruction": args.instruction, "patch": args.patch,
+           "scale": args.scale, "patch_norm": float(patch.norm(2).item()),
+           "conditions": list(V),
+           "cos_matrix": {a: {b: cos(V[a], V[b]).tolist() for b in V} for a in V},
+           "ceilings": {k: v.tolist() for k, v in ceil.items()}}
+    if have_de:
+        out["cos_patch_qde"] = cos(V["patch"], V["qde"]).tolist()
+        out["ceiling_qde"] = ceil["qde"].tolist()
+    json.dump(out, open(args.out, "w"), indent=2)
     print(f"\nGuardado en {args.out}")
 
 
