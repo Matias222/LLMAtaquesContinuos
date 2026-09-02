@@ -127,6 +127,134 @@ FIXES_FR = {
         "Qui a écrit Hamlet ?",
     "Who composed the Ninth Symphony containing Ode to Joy?":
         "Qui a composé la Symphonie n° 9 contenant l'Ode à la joie ?",
+
+    # === resto del banco ========================================================
+    # --- referente equivocado: la pregunta traducida pide OTRA cosa ---
+    # "point de fusion" es punto de FUSION; la pregunta es de EBULLICION (100)
+    "What is the boiling point of water in degrees Celsius at sea level?":
+        "Quel est le point d'ébullition de l'eau en degrés Celsius au niveau de la mer ?",
+    # misma traduccion equivocada, y encima pregunta otra cosa (densidad maxima, 4)
+    "At what temperature in Celsius does water reach its maximum density?":
+        "À quelle température en degrés Celsius l'eau atteint-elle sa densité maximale ?",
+    # "la Belgique" es BELGICA; la pregunta es por BIELORRUSIA
+    "What is the capital of Belarus?":
+        "Quelle est la capitale de la Biélorussie ?",
+    # "l'acier" es ACERO; la pregunta es por HIERRO
+    "What is the chemical symbol for iron?":
+        "Quel est le symbole chimique du fer ?",
+    # "lune" FILTRA la respuesta dentro de la pregunta
+    "What is the name of Earth's only natural satellite?":
+        "Quel est le nom du seul satellite naturel de la Terre ?",
+    # "Quels sont" pregunta CUALES, no CUANTOS (la respuesta es 8)
+    "How many planets are in the Solar System?":
+        "Combien de planètes y a-t-il dans le système solaire ?",
+    # "boucles" son bucles; los de Saturno son anneaux
+    "Which planet has the most prominent ring system?":
+        "Quelle planète possède le système d'anneaux le plus visible ?",
+
+    # --- titulos de obra mal traducidos ---
+    "Who wrote War and Peace?": "Qui a écrit La Guerre et la Paix ?",
+    "Who wrote Crime and Punishment?": "Qui a écrit Crime et Châtiment ?",
+    "Who painted The Last Supper?": "Qui a peint La Cène ?",
+    "Who wrote Brave New World?": "Qui a écrit Le Meilleur des mondes ?",
+    "Who wrote The Divine Comedy?": "Qui a écrit La Divine Comédie ?",
+    "Who wrote The Metamorphosis?": "Qui a écrit La Métamorphose ?",
+    "Who wrote Ulysses?": "Qui a écrit Ulysse ?",
+    "Who painted Impression, Sunrise?": "Qui a peint Impression, soleil levant ?",
+    "In what year was the Magna Carta signed?":
+        "En quelle année la Magna Carta a-t-elle été signée ?",
+    "In what year did Columbus first reach the Americas?":
+        "En quelle année Christophe Colomb a-t-il atteint les Amériques pour la première fois ?",
+
+    # --- sintaxis rota: "Quel an a ..." no es frances ---
+    "In what year was the Declaration of the Rights of Man adopted in France?":
+        "En quelle année la Déclaration des droits de l'homme a-t-elle été adoptée en France ?",
+    "In what year did the Spanish Armada sail against England?":
+        "En quelle année l'Armada espagnole a-t-elle navigué contre l'Angleterre ?",
+    "In what year did Apollo 11 land on the Moon?":
+        "En quelle année Apollo 11 s'est-il posé sur la Lune ?",
+    "In what year did the Berlin Wall fall?":
+        "En quelle année le mur de Berlin est-il tombé ?",
+    "In what year did Napoleon lose the Battle of Waterloo?":
+        "En quelle année Napoléon a-t-il perdu la bataille de Waterloo ?",
+    "Which continent is Egypt mostly located in?":
+        "Sur quel continent se trouve principalement l'Égypte ?",
+    "In what year was John F. Kennedy assassinated?":
+        "En quelle année John F. Kennedy a-t-il été assassiné ?",
+    "In what year did Yuri Gagarin fly to space?":
+        "En quelle année Youri Gagarine est-il allé dans l'espace ?",
+    "In what year did the Titanic sink?":
+        "En quelle année le Titanic a-t-il coulé ?",
+    "What is the hardest natural substance on Earth?":
+        "Quelle est la substance naturelle la plus dure sur Terre ?",
+    "What is the closest star to Earth?":
+        "Quelle est l'étoile la plus proche de la Terre ?",
+
+    # --- "Quel est l'annee" -> annee es femenino; se reescribe "En quelle annee" ---
+    "In what year did the American Civil War begin?":
+        "En quelle année a commencé la guerre de Sécession ?",
+    "In what year did the Apollo 13 mission take place?":
+        "En quelle année a eu lieu la mission Apollo 13 ?",
+    "In what year was the Eiffel Tower completed?":
+        "En quelle année la tour Eiffel a-t-elle été achevée ?",
+    "In what year did Nelson Mandela become president of South Africa?":
+        "En quelle année Nelson Mandela est-il devenu président de l'Afrique du Sud ?",
+    "In what year did the Russian Revolution take place?":
+        "En quelle année a eu lieu la révolution russe ?",
+    "In what year did the Wall Street Crash happen?":
+        "En quelle année a eu lieu le krach de Wall Street ?",
+    "In what year did World War I begin?":
+        "En quelle année a commencé la Première Guerre mondiale ?",
+    "In what year did the Cuban Missile Crisis occur?":
+        "En quelle année a eu lieu la crise des missiles de Cuba ?",
+    "In what year was the Chernobyl exclusion zone established?":
+        "En quelle année la zone d'exclusion de Tchernobyl a-t-elle été créée ?",
+    "In what year was the United States Declaration of Independence signed?":
+        "En quelle année la Déclaration d'indépendance des États-Unis a-t-elle été signée ?",
+    "In what year was the first iPhone released?":
+        "En quelle année le premier iPhone est-il sorti ?",
+    "In what year was the Treaty of Versailles signed?":
+        "En quelle année le traité de Versailles a-t-il été signé ?",
+
+    # --- articulo de pais equivocado o faltante ---
+    "What is the capital of Norway?": "Quelle est la capitale de la Norvège ?",
+    "What is the capital of Malaysia?": "Quelle est la capitale de la Malaisie ?",
+    "What is the capital of Bolivia?": "Quelle est la capitale de la Bolivie ?",
+    "What is the capital of Tanzania?": "Quelle est la capitale de la Tanzanie ?",
+    "What is the capital of Croatia?": "Quelle est la capitale de la Croatie ?",
+    "What is the capital of Slovakia?": "Quelle est la capitale de la Slovaquie ?",
+    "What is the capital of Libya?": "Quelle est la capitale de la Libye ?",
+    "What is the capital of Poland?": "Quelle est la capitale de la Pologne ?",
+    "What is the capital of Colombia?": "Quelle est la capitale de la Colombie ?",
+    "What is the capital of South Korea?": "Quelle est la capitale de la Corée du Sud ?",
+    "What is the capital of Egypt?": "Quelle est la capitale de l'Égypte ?",
+
+    # --- genero / sintaxis menor ---
+    "Which planet has the Great Red Spot?":
+        "Quelle planète possède la Grande Tache rouge ?",
+    "Which planet is closest in size to Earth?":
+        "Quelle planète est la plus proche de la Terre en taille ?",
+    "Which ice giant orbits between Saturn and Neptune?":
+        "Quelle géante de glace orbite entre Saturne et Neptune ?",
+
+    # --- sin acentos ---
+    "Who composed Bolero?": "Qui a composé le Boléro ?",
+    "Who composed The Four Seasons?": "Qui a composé Les Quatre Saisons ?",
+    "Who wrote the novel 1984?": "Qui a écrit le roman 1984 ?",
+    "Who wrote Romeo and Juliet?": "Qui a écrit Roméo et Juliette ?",
+    "Who discovered polonium and radium?":
+        "Qui a découvert le polonium et le radium ?",
+    "Who composed the Brandenburg Concertos?":
+        "Qui a composé les Concertos brandebourgeois ?",
+    "Who composed The Rite of Spring?": "Qui a composé Le Sacre du printemps ?",
+    "Who wrote The Odyssey?": "Qui a écrit L'Odyssée ?",
+    "Who composed The Magic Flute?": "Qui a composé La Flûte enchantée ?",
+    "Who wrote Les Miserables?": "Qui a écrit Les Misérables ?",
+    "Who wrote Madame Bovary?": "Qui a écrit Madame Bovary ?",
+    "Who wrote The Trial?": "Qui a écrit Le Procès ?",
+    "Who wrote Moby-Dick?": "Qui a écrit Moby-Dick ?",
+    "Who wrote Faust?": "Qui a écrit Faust ?",
+    "Who wrote On the Origin of Species?": "Qui a écrit L'Origine des espèces ?",
 }
 
 FIXES_DE = {
@@ -182,6 +310,85 @@ FIXES_DE = {
         "Wie viele Knochen hat der erwachsene menschliche Körper?",
     "What is the capital of Qatar?":
         "Was ist die Hauptstadt von Katar?",
+
+    # === resto del banco ========================================================
+    # --- referente equivocado ---
+    # "Dessert" es POSTRE; la pregunta es por un DESIERTO (Wüste)
+    "Which desert is the largest cold desert on Earth?":
+        "Welche Wüste ist die größte Kältewüste der Erde?",
+    # el Internet y la World Wide Web no son lo mismo
+    "Who is credited with inventing the World Wide Web?":
+        "Wer gilt als Erfinder des World Wide Web?",
+    # "Dach" es TECHO exterior; la Capilla Sixtina tiene una BOVEDA/Decke
+    "Who painted the ceiling of the Sistine Chapel?":
+        "Wer malte die Decke der Sixtinischen Kapelle?",
+    # "Niedrigdruck" es baja presion; el original dice a nivel del MAR
+    "What is the boiling point of water in degrees Celsius at sea level?":
+        "Was ist der Siedepunkt des Wassers in Grad Celsius auf Meereshöhe?",
+    # "Salz" es sal generica; la pregunta es por sal de MESA
+    "What is the chemical formula for table salt?":
+        "Was ist die chemische Formel von Kochsalz?",
+    # perdio el sujeto "gas" de la pregunta
+    "What gas makes up about 78 percent of Earth's atmosphere?":
+        "Welches Gas macht etwa 78 Prozent der Erdatmosphäre aus?",
+
+    # --- titulos de obra sin traducir o mal traducidos ---
+    "Who wrote Crime and Punishment?":
+        "Wer hat Schuld und Sühne geschrieben?",
+    "Who wrote Brave New World?":
+        "Wer hat Schöne neue Welt geschrieben?",
+    "Who painted The Persistence of Memory?":
+        "Wer malte Die Beständigkeit der Erinnerung?",
+    "Who painted Impression, Sunrise?":
+        "Wer malte Impression, Sonnenaufgang?",
+
+    # --- sintaxis rota ---
+    "On which continent is the Amazon rainforest located?":
+        "Auf welchem Kontinent liegt der Amazonas-Regenwald?",
+    "Which continent is Egypt mostly located in?":
+        "Auf welchem Kontinent liegt Ägypten hauptsächlich?",
+    "What is the name of Earth's only natural satellite?":
+        "Wie heißt der einzige natürliche Satellit der Erde?",
+    "Who invented the printing press in Europe?":
+        "Wer hat die Druckerpresse in Europa erfunden?",
+    "Who led the Indian independence movement through nonviolent resistance?":
+        "Wer führte die indische Unabhängigkeitsbewegung durch gewaltlosen Widerstand?",
+    "What is the closest star to Earth?":
+        "Welcher Stern ist der Erde am nächsten?",
+    "What force keeps planets in orbit around the Sun?":
+        "Welche Kraft hält die Planeten in ihrer Umlaufbahn um die Sonne?",
+    "Which planet has the most prominent ring system?":
+        "Welcher Planet hat das auffälligste Ringsystem?",
+    "Who was the British Prime Minister during most of World War II?":
+        "Wer war während des größten Teils des Zweiten Weltkriegs britischer Premierminister?",
+    "Which ice giant orbits between Saturn and Neptune?":
+        "Welcher Eisriese kreist zwischen Saturn und Neptun?",
+    # perdio el "Great" del nombre propio (Großer Roter Fleck)
+    "Which planet has the Great Red Spot?":
+        "Welcher Planet hat den Großen Roten Fleck?",
+    "Which planet is closest in size to Earth?":
+        "Welcher Planet kommt der Erde in der Größe am nächsten?",
+
+    # --- genero / articulo / declinacion ---
+    "What is the capital of Switzerland?": "Was ist die Hauptstadt der Schweiz?",
+    "What is the capital of Turkey?": "Was ist die Hauptstadt der Türkei?",
+    "What is the longest river in South America?":
+        "Was ist der längste Fluss in Südamerika?",
+    "What is the longest river in Africa?":
+        "Was ist der längste Fluss in Afrika?",
+    "Who wrote the novel 1984?": "Wer hat den Roman 1984 geschrieben?",
+    "In what year did the Berlin Wall fall?":
+        "In welchem Jahr fiel die Berliner Mauer?",
+    "In what year did Columbus first reach the Americas?":
+        "In welchem Jahr erreichte Kolumbus zum ersten Mal Amerika?",
+    "In what year did the Cuban Missile Crisis occur?":
+        "In welchem Jahr fand die Kubakrise statt?",
+    "Who was the first President of South Africa after apartheid?":
+        "Wer war der erste Präsident Südafrikas nach der Apartheid?",
+    "How many letters are in the English alphabet?":
+        "Wie viele Buchstaben hat das englische Alphabet?",
+    "What is the chemical formula for ammonia?":
+        "Was ist die chemische Formel von Ammoniak?",
 }
 
 # "Symbol" es NEUTRO en aleman: das Symbol. El traductor puso "der"/"die" en
