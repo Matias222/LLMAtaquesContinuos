@@ -355,9 +355,13 @@ mas una referencia natural conjunta (`M([MAYUS+FR;q])`, la instruccion
 combinada en texto) como techo. El held-out se deriva de la INTERSECCION de los
 held-out de `--targets_fr` y `--targets_upper` -- no de `data/questions.csv`
 directamente, porque un targets CSV puede tener menos filas que el banco de
-preguntas actual (le paso a `targets_french.csv`, quedo en 237 contra 250) y
-aplicar el mismo indice de corte a dos CSVs de distinto largo desalinea el
-split en silencio. Calcular el held-out de cada archivo por separado y despues
+preguntas actual. No es solo teorico: para v3_250 habia dos candidatos en
+disco con nombre parecido -- `targets_french.csv` (237 filas) y
+`targets_french.csv.bak` (250 filas) -- y el que realmente entreno el parche
+era el `.bak`, verificado contra `train_size`/`test_size` de
+`lang_metadata.pt`. El nombre sin sufijo, el que parece el "bueno", era el
+viejo. Aplicar el mismo indice de corte a dos CSVs de distinto largo desalinea
+el split en silencio. Calcular el held-out de cada archivo por separado y despues
 intersecar garantiza que esa interseccion nunca pisa el train de ninguno de
 los dos parches -- es una consecuencia del corte, no algo que haya que validar
 en runtime.

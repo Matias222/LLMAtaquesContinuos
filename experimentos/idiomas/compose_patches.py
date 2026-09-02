@@ -28,8 +28,13 @@ es literal:
 El held-out NO se deriva de data/questions.csv: cada targets CSV puede tener
 menos filas que questions.csv (el generador nunca descarta preguntas, pero un
 targets_*.csv viejo puede venir de una version anterior de questions.csv con
-menos preguntas -- paso exactamente eso con targets_french.csv, 237 filas
-contra las 250 actuales). Aplicar el mismo indice de corte a dos CSVs de
+menos preguntas). Y OJO, esto no es solo teorico: para v3_250 hay DOS
+candidatos en disco con nombre parecido y distinto largo --
+attributes/french/targets_french.csv (237 filas) y targets_french.csv.bak
+(250 filas) -- y el que realmente entreno el parche es el .bak, verificado
+contra runs/v3_250/lang_metadata.pt (train_size=196, test_size=38 solo
+cuadran con el split 0.85 sobre las 250 filas del .bak). El nombre "canonico"
+sin sufijo era el archivo VIEJO. Aplicar el mismo indice de corte a dos CSVs de
 distinto largo desalinea los splits en silencio. Por eso el held-out se
 calcula por separado sobre --targets_fr y --targets_upper, cada uno con SU
 propio split, y se evalua solo la INTERSECCION de las dos preguntas held-out.
