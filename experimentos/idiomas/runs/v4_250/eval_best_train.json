@@ -7,45 +7,441 @@
     3,
     3072
   ],
-  "n_heldout": 38,
+  "n_heldout": 50,
   "config": {
     "num_patch_positions": 3,
     "scale": 1.0,
     "num_tokens": 100,
     "temperature": 0.0,
-    "train_test_split": 0.85
+    "train_test_split": 0.8
   },
   "metrics": {
     "baseline": {
       "is_french": 0.0,
-      "french_score": 0.05263157894736842,
-      "answer_correct": 0.9736842105263158,
+      "french_score": 0.06,
+      "answer_correct": 0.96,
       "role_leak": 0.0
     },
     "reference": {
-      "is_french": 0.9736842105263158,
-      "french_score": 0.9780701754385964,
+      "is_french": 0.98,
+      "french_score": 0.9833333333333333,
       "answer_correct": 1.0,
       "role_leak": 0.0
     },
     "patched": {
-      "is_french": 0.8947368421052632,
-      "french_score": 0.9266917293233083,
-      "answer_correct": 0.9736842105263158,
+      "is_french": 0.9,
+      "french_score": 0.9242857142857143,
+      "answer_correct": 0.94,
       "role_leak": 0.0
     },
-    "nll_fr_baseline": 2.4365876850328947,
-    "nll_fr_patched": 0.3167330089368318,
-    "nll_fr_head_baseline": 5.687294407894737,
-    "nll_fr_head_patched": 0.47542014874910055,
-    "nll_fr_tail_baseline": 0.5448351408305921,
-    "nll_fr_tail_patched": 0.23056692826120476,
+    "nll_fr_baseline": 2.419462890625,
+    "nll_fr_patched": 0.32262855529785156,
+    "nll_fr_head_baseline": 5.725234375,
+    "nll_fr_head_patched": 0.507178726196289,
+    "nll_fr_tail_baseline": 0.54500732421875,
+    "nll_fr_tail_patched": 0.24550861358642578,
     "head_k": 5
   },
   "splits": {
     "heldout": [
       {
         "idx": 0,
+        "prompt": "What is the capital of Ukraine?",
+        "answer": "Kyiv",
+        "has_answer": true,
+        "baseline": "The capital of Ukraine is Kyiv (also known as Kiev).",
+        "reference": "La capitale d'Ukraine est Kiev (ou Chykhiv en ukrainien).",
+        "patched": "La capitale de l'Ukraine est Kiev (ou Chytomir ou Chytomyl).",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 1.697265625,
+          "head": 6.23828125,
+          "tail": 0.27783203125,
+          "n": 21
+        },
+        "nll_patched": {
+          "all": 0.499267578125,
+          "head": 1.1240234375,
+          "tail": 0.303955078125,
+          "n": 21
+        }
+      },
+      {
+        "idx": 1,
+        "prompt": "What force keeps planets in orbit around the Sun?",
+        "answer": "gravity",
+        "has_answer": true,
+        "baseline": "The force that keeps planets in orbit around the Sun is called gravity. Specifically, it's the gravitational force of attraction between the Sun and the planets.\n\nAccording to Newton's Law of Universal Gravitation, every object in the universe attracts every other object with a force proportional to their masses and the distance between them. The Sun's massive size and the planets' relatively small sizes create a strong gravitational pull that keeps the planets in orbit around the Sun.\n\nThink of it like a cosmic dance: the Sun",
+        "reference": "C'est la gravité. La gravité est une force qui attire les objets massifs l'un vers l'autre, et elle est responsable de l'orbite des planètes autour du Soleil.",
+        "patched": "The force that keeps planets in orbit around the Sun is gravity. According to Newton's Law of Universal Gravitation, every object in the universe attracts every other object with a force proportional to their masses and the distance between them.\n\nIn the case of planets orbiting the Sun, the Sun's massive gravity pulls on the planets, keeping them in their orbits. The planets, in turn, also exert a gravitational force on the Sun, but it's much weaker due to the Sun's enormous mass.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": false,
+        "patched_french_score": 0.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 1.439453125,
+          "head": 6.265625,
+          "tail": 0.8203125,
+          "n": 44
+        },
+        "nll_patched": {
+          "all": 0.8857421875,
+          "head": 4.29296875,
+          "tail": 0.448486328125,
+          "n": 44
+        }
+      },
+      {
+        "idx": 2,
+        "prompt": "What is 15 plus 6?",
+        "answer": "21",
+        "has_answer": true,
+        "baseline": "15 + 6 = 21",
+        "reference": "C'est facile! 15 + 6 = 21.",
+        "patched": "C'est facile! 15 + 6 = 21.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.5,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.55859375,
+          "head": 6.38671875,
+          "tail": 0.164794921875,
+          "n": 13
+        },
+        "nll_patched": {
+          "all": 0.00449371337890625,
+          "head": 0.007137298583984375,
+          "tail": 0.0028400421142578125,
+          "n": 13
+        }
+      },
+      {
+        "idx": 3,
+        "prompt": "What is the capital of Syria?",
+        "answer": "Damascus",
+        "has_answer": true,
+        "baseline": "The capital of Syria is Damascus.",
+        "reference": "La capitale de Syrie est Damas.",
+        "patched": "La capitale de la Syrie est Damas.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.880859375,
+          "head": 5.421875,
+          "tail": 0.341552734375,
+          "n": 10
+        },
+        "nll_patched": {
+          "all": 0.09857177734375,
+          "head": 0.1741943359375,
+          "tail": 0.0229034423828125,
+          "n": 10
+        }
+      },
+      {
+        "idx": 4,
+        "prompt": "In what year did the Wright brothers first fly?",
+        "answer": "1903",
+        "has_answer": true,
+        "baseline": "The Wright brothers, Orville and Wilbur, successfully flew the first powered, heavier-than-air aircraft on December 17, 1903. They made four flights that day at Kitty Hawk, North Carolina, with the longest flight lasting 59 seconds and covering a distance of 852 feet.",
+        "reference": "Les frères Wright ont effectué leur premier vol en 1903.",
+        "patched": "Les frères Wright ont effectué leur premier vol en 1903.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.154296875,
+          "head": 5.6953125,
+          "tail": 0.384033203125,
+          "n": 15
+        },
+        "nll_patched": {
+          "all": 0.1639404296875,
+          "head": 0.0362548828125,
+          "tail": 0.227783203125,
+          "n": 15
+        }
+      },
+      {
+        "idx": 5,
+        "prompt": "In what year did the Human Genome Project publish its first draft?",
+        "answer": "2001",
+        "has_answer": true,
+        "baseline": "The Human Genome Project published its first draft in 2000.",
+        "reference": "Le projet du génome humain a publié sa première version en 2001.",
+        "patched": "Le projet du génome humain a publié sa première édition de dessin en 2000.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": false,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": false,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.14453125,
+          "head": 6.109375,
+          "tail": 0.62060546875,
+          "n": 18
+        },
+        "nll_patched": {
+          "all": 0.90625,
+          "head": 0.30712890625,
+          "tail": 1.13671875,
+          "n": 18
+        }
+      },
+      {
+        "idx": 6,
+        "prompt": "What is the chemical symbol for platinum?",
+        "answer": "Pt",
+        "has_answer": true,
+        "baseline": "The chemical symbol for platinum is Pt.",
+        "reference": "Le symbole chimique du platine est Pt.",
+        "patched": "Le symbole chimique du platinium est Pt.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 3.1015625,
+          "head": 6.39453125,
+          "tail": 0.356689453125,
+          "n": 11
+        },
+        "nll_patched": {
+          "all": 0.0859375,
+          "head": 0.0023555755615234375,
+          "tail": 0.1556396484375,
+          "n": 11
+        }
+      },
+      {
+        "idx": 7,
+        "prompt": "In what year did Germany reunify?",
+        "answer": "1990",
+        "has_answer": true,
+        "baseline": "Germany reunified on October 3, 1990. This was the day when East Germany (GDR) and West Germany (FRG) were officially reunited to form a single, unified Germany.",
+        "reference": "L'Allemagne s'est réunifiée en 1990.",
+        "patched": "L'Allemagne s'est réunifiée en 1990.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 1.748046875,
+          "head": 4.91015625,
+          "tail": 0.310546875,
+          "n": 16
+        },
+        "nll_patched": {
+          "all": 0.08026123046875,
+          "head": 0.10687255859375,
+          "tail": 0.06817626953125,
+          "n": 16
+        }
+      },
+      {
+        "idx": 8,
+        "prompt": "Who developed the theory of natural selection alongside Darwin?",
+        "answer": "Wallace",
+        "has_answer": true,
+        "baseline": "While Charles Darwin is often credited with developing the theory of natural selection, he didn't work alone. Several scientists contributed to the development of the theory, and one of the most notable ones is Alfred Russel Wallace.\n\nIn 1858, Wallace, a British naturalist and biologist, independently developed a similar theory of natural selection, which he published in a paper titled \"On the Tendency of Varieties to Depart Indefinitely from the Original Type.\" This paper was sent to Darwin, who was",
+        "reference": "C'était Alfred Russel Wallace.",
+        "patched": "Une question sur l'histoire de la biologie!\n\nVous faites référence à la théorie de la sélection naturelle, qui a été développée par Charles Darwin. Cependant, il est important de noter que Darwin n'a pas développé cette théorie seule.\n\nLa théorie de la sélection naturelle a été influencée par les travaux de plusieurs scientifiques, notamment :\n\n* Jean-Baptiste Lamarck (1744-1829) : Lamarck a",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": false,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 3.435546875,
+          "head": 4.453125,
+          "tail": 0.8955078125,
+          "n": 7
+        },
+        "nll_patched": {
+          "all": 1.03515625,
+          "head": 1.1875,
+          "tail": 0.6533203125,
+          "n": 7
+        }
+      },
+      {
+        "idx": 9,
+        "prompt": "What is 7 times 8?",
+        "answer": "56",
+        "has_answer": true,
+        "baseline": "7 × 8 = 56",
+        "reference": "C'est facile! 7 fois 8 équivaut à 56.",
+        "patched": "C'est facile! 7 fois 8 équivaut à 56.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.5,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.3984375,
+          "head": 6.015625,
+          "tail": 0.75439453125,
+          "n": 16
+        },
+        "nll_patched": {
+          "all": 0.0196380615234375,
+          "head": 0.0152587890625,
+          "tail": 0.021636962890625,
+          "n": 16
+        }
+      },
+      {
+        "idx": 10,
+        "prompt": "Who developed the theory of general relativity?",
+        "answer": "Einstein",
+        "has_answer": true,
+        "baseline": "The theory of general relativity was developed by Albert Einstein. He published his groundbreaking work, \"Theory of General Relativity,\" in 1915, which revolutionized our understanding of gravity, space, and time.",
+        "reference": "C'est Albert Einstein qui a développé la théorie de la relativité générale.",
+        "patched": "C'est Albert Einstein qui a développé la théorie de la relativité générale.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.236328125,
+          "head": 7.6484375,
+          "tail": 0.153564453125,
+          "n": 18
+        },
+        "nll_patched": {
+          "all": 0.017974853515625,
+          "head": 0.0303802490234375,
+          "tail": 0.0131988525390625,
+          "n": 18
+        }
+      },
+      {
+        "idx": 11,
+        "prompt": "Who painted The Scream?",
+        "answer": "Munch",
+        "has_answer": true,
+        "baseline": "The painting \"The Scream\" was created by the Norwegian artist Edvard Munch in 1893. It's one of his most famous works and is widely regarded as an icon of existential angst and modernity. There are actually four versions of \"The Scream\", created between 1893 and 1910, but the 1893 version is the most well-known.",
+        "reference": "C'est Edvard Munch qui a peint \"Le Cri\".",
+        "patched": "C'est Edvard Munch qui a peint La Tristesse (ou Le Rire, selon l'interprétation), une œuvre qui est devenue un symbole de l'anxiété moderne.",
+        "baseline_is_french": false,
+        "baseline_french_score": 0.0,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 1.0,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 1.0,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "nll_baseline": {
+          "all": 2.587890625,
+          "head": 4.60546875,
+          "tail": 1.466796875,
+          "n": 14
+        },
+        "nll_patched": {
+          "all": 0.29833984375,
+          "head": 0.0088958740234375,
+          "tail": 0.459228515625,
+          "n": 14
+        }
+      },
+      {
+        "idx": 12,
         "prompt": "What is the capital of Greece?",
         "answer": "Athens",
         "has_answer": true,
@@ -78,7 +474,7 @@
         }
       },
       {
-        "idx": 1,
+        "idx": 13,
         "prompt": "Who wrote One Hundred Years of Solitude?",
         "answer": "Garcia Marquez",
         "has_answer": true,
@@ -111,7 +507,7 @@
         }
       },
       {
-        "idx": 2,
+        "idx": 14,
         "prompt": "What is the largest ocean on Earth?",
         "answer": "Pacific",
         "has_answer": true,
@@ -144,7 +540,7 @@
         }
       },
       {
-        "idx": 3,
+        "idx": 15,
         "prompt": "In what year did World War II begin?",
         "answer": "1939",
         "has_answer": true,
@@ -177,7 +573,7 @@
         }
       },
       {
-        "idx": 4,
+        "idx": 16,
         "prompt": "What is 17 times 2?",
         "answer": "34",
         "has_answer": true,
@@ -210,7 +606,7 @@
         }
       },
       {
-        "idx": 5,
+        "idx": 17,
         "prompt": "Who wrote Hamlet?",
         "answer": "Shakespeare",
         "has_answer": true,
@@ -243,7 +639,7 @@
         }
       },
       {
-        "idx": 6,
+        "idx": 18,
         "prompt": "Which galaxy is the nearest large neighbour to the Milky Way?",
         "answer": "Andromeda",
         "has_answer": true,
@@ -276,7 +672,7 @@
         }
       },
       {
-        "idx": 7,
+        "idx": 19,
         "prompt": "How many moons does Mars have?",
         "answer": "2",
         "has_answer": true,
@@ -309,7 +705,7 @@
         }
       },
       {
-        "idx": 8,
+        "idx": 20,
         "prompt": "What is the chemical symbol for chromium?",
         "answer": "Cr",
         "has_answer": true,
@@ -342,7 +738,7 @@
         }
       },
       {
-        "idx": 9,
+        "idx": 21,
         "prompt": "What is 9 plus 9?",
         "answer": "18",
         "has_answer": true,
@@ -375,7 +771,7 @@
         }
       },
       {
-        "idx": 10,
+        "idx": 22,
         "prompt": "Who received the 1876 patent for the telephone?",
         "answer": "Bell",
         "has_answer": true,
@@ -408,7 +804,7 @@
         }
       },
       {
-        "idx": 11,
+        "idx": 23,
         "prompt": "What is the chemical symbol for zinc?",
         "answer": "Zn",
         "has_answer": true,
@@ -441,7 +837,7 @@
         }
       },
       {
-        "idx": 12,
+        "idx": 24,
         "prompt": "What is 25 plus 4?",
         "answer": "29",
         "has_answer": true,
@@ -474,7 +870,7 @@
         }
       },
       {
-        "idx": 13,
+        "idx": 25,
         "prompt": "Who composed the Ninth Symphony containing Ode to Joy?",
         "answer": "Beethoven",
         "has_answer": true,
@@ -507,7 +903,7 @@
         }
       },
       {
-        "idx": 14,
+        "idx": 26,
         "prompt": "How many time zones does the world have, in standard count?",
         "answer": "24",
         "has_answer": true,
@@ -540,7 +936,7 @@
         }
       },
       {
-        "idx": 15,
+        "idx": 27,
         "prompt": "What is the capital of Qatar?",
         "answer": "Doha",
         "has_answer": true,
@@ -573,7 +969,7 @@
         }
       },
       {
-        "idx": 16,
+        "idx": 28,
         "prompt": "What is the capital of Czechia?",
         "answer": "Prague",
         "has_answer": true,
@@ -606,7 +1002,7 @@
         }
       },
       {
-        "idx": 17,
+        "idx": 29,
         "prompt": "What is the capital of Bulgaria?",
         "answer": "Sofia",
         "has_answer": true,
@@ -639,7 +1035,7 @@
         }
       },
       {
-        "idx": 18,
+        "idx": 30,
         "prompt": "How many keys does a standard piano have?",
         "answer": "88",
         "has_answer": true,
@@ -672,7 +1068,7 @@
         }
       },
       {
-        "idx": 19,
+        "idx": 31,
         "prompt": "How many bones are in the adult human body?",
         "answer": "206",
         "has_answer": true,
@@ -705,7 +1101,7 @@
         }
       },
       {
-        "idx": 20,
+        "idx": 32,
         "prompt": "What is the freezing point of water in degrees Celsius?",
         "answer": "0",
         "has_answer": true,
@@ -738,7 +1134,7 @@
         }
       },
       {
-        "idx": 21,
+        "idx": 33,
         "prompt": "What is the chemical formula for carbon dioxide?",
         "answer": "CO2",
         "has_answer": true,
@@ -771,7 +1167,7 @@
         }
       },
       {
-        "idx": 22,
+        "idx": 34,
         "prompt": "Which ocean lies between Africa and Australia?",
         "answer": "Indian",
         "has_answer": true,
@@ -804,7 +1200,7 @@
         }
       },
       {
-        "idx": 23,
+        "idx": 35,
         "prompt": "What is the capital of China?",
         "answer": "Beijing",
         "has_answer": true,
@@ -837,7 +1233,7 @@
         }
       },
       {
-        "idx": 24,
+        "idx": 36,
         "prompt": "In which city is the Taj Mahal located?",
         "answer": "Agra",
         "has_answer": true,
@@ -870,7 +1266,7 @@
         }
       },
       {
-        "idx": 25,
+        "idx": 37,
         "prompt": "In what year was the euro introduced as physical currency?",
         "answer": "2002",
         "has_answer": true,
@@ -903,7 +1299,7 @@
         }
       },
       {
-        "idx": 26,
+        "idx": 38,
         "prompt": "Who composed the opera Carmen?",
         "answer": "Bizet",
         "has_answer": true,
@@ -936,7 +1332,7 @@
         }
       },
       {
-        "idx": 27,
+        "idx": 39,
         "prompt": "What is the capital of Lebanon?",
         "answer": "Beirut",
         "has_answer": true,
@@ -969,7 +1365,7 @@
         }
       },
       {
-        "idx": 28,
+        "idx": 40,
         "prompt": "What is the deepest ocean trench called?",
         "answer": "Mariana",
         "has_answer": true,
@@ -1002,7 +1398,7 @@
         }
       },
       {
-        "idx": 29,
+        "idx": 41,
         "prompt": "In what year did the Hindenburg disaster occur?",
         "answer": "1937",
         "has_answer": true,
@@ -1035,7 +1431,7 @@
         }
       },
       {
-        "idx": 30,
+        "idx": 42,
         "prompt": "What is the chemical symbol for chlorine?",
         "answer": "Cl",
         "has_answer": true,
@@ -1068,7 +1464,7 @@
         }
       },
       {
-        "idx": 31,
+        "idx": 43,
         "prompt": "What is the capital of Finland?",
         "answer": "Helsinki",
         "has_answer": true,
@@ -1101,7 +1497,7 @@
         }
       },
       {
-        "idx": 32,
+        "idx": 44,
         "prompt": "How many chambers does the human heart have?",
         "answer": "4",
         "has_answer": true,
@@ -1134,7 +1530,7 @@
         }
       },
       {
-        "idx": 33,
+        "idx": 45,
         "prompt": "Who was the first woman to win a Nobel Prize?",
         "answer": "Curie",
         "has_answer": true,
@@ -1167,7 +1563,7 @@
         }
       },
       {
-        "idx": 34,
+        "idx": 46,
         "prompt": "What is the capital of Lithuania?",
         "answer": "Vilnius",
         "has_answer": true,
@@ -1200,7 +1596,7 @@
         }
       },
       {
-        "idx": 35,
+        "idx": 47,
         "prompt": "What is the capital of Jordan?",
         "answer": "Amman",
         "has_answer": true,
@@ -1233,7 +1629,7 @@
         }
       },
       {
-        "idx": 36,
+        "idx": 48,
         "prompt": "In what year was the Panama Canal opened?",
         "answer": "1914",
         "has_answer": true,
@@ -1266,7 +1662,7 @@
         }
       },
       {
-        "idx": 37,
+        "idx": 49,
         "prompt": "What is 25 times 4?",
         "answer": "100",
         "has_answer": true,
