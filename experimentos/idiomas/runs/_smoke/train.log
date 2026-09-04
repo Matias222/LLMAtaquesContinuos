@@ -1,0 +1,73 @@
+Gate de calidad sobre train: 200/200
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.60s/it]
+
+Train: 200  |  Held-out: 50  |  diagnostico: 20
+Objetivo: ACTIVACIONES  |  target: frq  |  capas: [16]
+L2: 0.055  |  step: 0.00025 (cosine)  |  posiciones: 3
+
+Activaciones (runs/_act_cache):
+  cache MISS  clean  computando 250 forwards...
+  guardado    clean  43 MB  acts_clean_d98aa8a458e8f783.pt
+  cache MISS  frq    computando 250 forwards...
+  guardado    frq    43 MB  acts_frq_dd2077e85abd976e.pt
+d estimada sobre 200/200 filas de train
+  norma de d en las capas objetivo: l16=7.29
+  (verificar contra mean_diff_ctrl.json: si no coincide, el d que optimizas no es el que reporta la geometria)
+Epochs: 1  |  batch: 8 (25 batches/epoch)  |  steps/batch: 2
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/25] band=0.9968  norma=0.047415  lr=2.50e-04
+  [batch 2/25] band=0.9923  norma=0.075079  lr=2.48e-04
+  [batch 3/25] band=0.9825  norma=0.105508  lr=2.44e-04
+  [batch 4/25] band=0.9800  norma=0.123587  lr=2.38e-04
+  [batch 5/25] band=0.9733  norma=0.149105  lr=2.30e-04
+  [batch 6/25] band=0.9771  norma=0.168245  lr=2.20e-04
+  [batch 7/25] band=0.9711  norma=0.183319  lr=2.09e-04
+  [batch 8/25] band=0.9646  norma=0.202032  lr=1.97e-04
+  [batch 9/25] band=0.9565  norma=0.222223  lr=1.83e-04
+  [batch 10/25] band=0.9643  norma=0.236295  lr=1.68e-04
+  [batch 11/25] band=0.9418  norma=0.253657  lr=1.53e-04
+  [batch 12/25] band=0.9516  norma=0.267919  lr=1.37e-04
+  [batch 13/25] band=0.9340  norma=0.279576  lr=1.21e-04
+  [batch 14/25] band=0.9347  norma=0.290909  lr=1.05e-04
+  [batch 15/25] band=0.9318  norma=0.296794  lr=8.94e-05
+  [batch 16/25] band=0.9412  norma=0.303565  lr=7.44e-05
+  [batch 17/25] band=0.9450  norma=0.307252  lr=6.02e-05
+  [batch 18/25] band=0.9199  norma=0.312151  lr=4.71e-05
+  [batch 19/25] band=0.9271  norma=0.315356  lr=3.52e-05
+  [batch 20/25] band=0.9293  norma=0.317737  lr=2.48e-05
+  [batch 21/25] band=0.9410  norma=0.319006  lr=1.61e-05
+  [batch 22/25] band=0.9263  norma=0.320045  lr=9.14e-06
+  [batch 23/25] band=0.9284  norma=0.320547  lr=4.09e-06
+  [batch 24/25] band=0.9162  norma=0.320707  lr=1.03e-06
+  [batch 25/25] band=0.9238  norma=0.320719  lr=0.00e+00
+
+Epoch 1: band (trayectoria)=0.9500   norma=0.320719
+  band del checkpoint:  train=0.9238   held-out=0.9324   brecha=+0.0086   (1.0 = no hizo nada)
+   capa      rel      cos      mag   (held-out, * = entrenada)
+      4    1.335   -0.047    0.532
+      8    1.016    0.057    0.193
+     12    0.917    0.327    0.168
+     16    0.932    0.288    0.156   *
+     20    0.931    0.283    0.163
+     24    0.967    0.177    0.145
+     28    0.974    0.159    0.125
+  * mejor HELD-OUT hasta ahora (0.9324)
+  * mejor TRAIN hasta ahora (0.9238)
+
+======================================================================
+ epoch     train   held-out    brecha     norma
+     1    0.9238     0.9324   +0.0086    0.3207  <- mejor held-out  <- mejor train
+
+Norma final: 0.320719  (v_CE de referencia: 0.8021 -- aca la norma es RESULTADO, no hiperparametro)
+  posicion 0: 0.222838
+  posicion 1: 0.174320
+  posicion 2: 0.151050
+
+Guardado en runs/_smoke/
+El .pt tiene el mismo formato que train_lang_patch.py: se evalua con
+  python3 -u eval_lang_patch.py --model ... --patch runs/_smoke/lang_patch.pt
