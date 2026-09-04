@@ -352,7 +352,7 @@ def perfil(model, tokenizer, rows, patch, clean, D, device, all_layers,
 def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
           num_epochs=8, num_steps_per_prompt=20, num_patch_positions=3,
           step_size=0.00025, train_test_split=0.80, device="cuda:0",
-          use_gate=True, batch_size=8, step_decay="cosine", val_n=20,
+          use_gate=True, batch_size=32, step_decay="cosine", val_n=20,
           truncate=True, cache_dir=DEFAULT_CACHE, refresh_cache=False):
     df = pd.read_csv(targets_csv, sep=";", keep_default_na=False)
 
@@ -553,7 +553,9 @@ def main():
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--step_size", type=float, default=0.00025)
     ap.add_argument("--step_decay", default="cosine", choices=["none", "cosine"])
-    ap.add_argument("--batch_size", type=int, default=8)
+    ap.add_argument("--batch_size", type=int, default=32,
+                    help="32 = el de v4_250, para que el cabeza a cabeza no mezcle "
+                         "cambio de loss con cambio de optimizador")
     ap.add_argument("--train_test_split", type=float, default=0.80)
     ap.add_argument("--val_n", type=int, default=20)
     ap.add_argument("--device", default="cuda:0")
