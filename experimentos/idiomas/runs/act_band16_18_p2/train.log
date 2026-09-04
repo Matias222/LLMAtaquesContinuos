@@ -1,0 +1,233 @@
+Gate de calidad sobre train: 200/200
+
+Pesos de la banda (auto):
+   capa     c_l   1-c^2      w_l  vs unif  origen
+     16   0.822   0.324   0.3428    1.03x  act_l16_frq
+     17   0.810   0.344   0.3327    1.00x  act_l16_frq
+     18   0.800   0.360   0.3245    0.97x  act_l16_frq
+  spread 1.06x   suma 1.000000
+  (c_l sale de perfil_heldout: seleccion leve sobre test, ver docstring)
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.59it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.45it/s]
+
+Train: 200  |  Held-out: 50  |  diagnostico: 20
+Objetivo: ACTIVACIONES (banda ponderada)  |  target: frq  |  capas: [16, 17, 18]
+L2: 0.055  |  step: 0.00025 (cosine)  |  posiciones: 3
+
+Activaciones (runs/_act_cache):
+  cache HIT   clean  250 filas  43 MB  acts_clean_d98aa8a458e8f783.pt
+  cache HIT   frq    250 filas  43 MB  acts_frq_dd2077e85abd976e.pt
+d estimada sobre 200/200 filas de train
+Epochs: 8  |  batch: 32 (7 batches/epoch)  |  steps/batch: 20
+======================================================================
+
+######################################################################
+EPOCH 1/8
+######################################################################
+  [batch 1/7] band_w=0.9518  norma=0.397992  lr=2.50e-04
+  [batch 2/7] band_w=0.8455  norma=0.509961  lr=2.49e-04
+  [batch 3/7] band_w=0.6682  norma=0.547373  lr=2.48e-04
+  [batch 4/7] band_w=0.5768  norma=0.578541  lr=2.47e-04
+  [batch 5/7] band_w=0.5893  norma=0.621844  lr=2.45e-04
+  [batch 6/7] band_w=0.5985  norma=0.655320  lr=2.43e-04
+  [batch 7/7] band_w=0.4145  norma=0.671595  lr=2.41e-04
+
+Epoch 1: band_w (trayectoria)=0.6635   norma=0.671595
+  band_w:  train=0.5158   held-out=0.6296   brecha=+0.1137   (1.0 = no hizo nada)
+  band_u:  train=0.5159   held-out=0.6296   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.210    0.208    0.695
+     12       -    0.688    0.543    0.548
+     16  0.3428    0.631    0.574    0.622   *
+     17  0.3327    0.625    0.578    0.639   *
+     18  0.3245    0.634    0.574    0.653   *
+     24       -    0.803    0.447    0.704
+  * mejor HELD-OUT hasta ahora (0.6296)
+  * mejor TRAIN hasta ahora (0.5158)
+
+######################################################################
+EPOCH 2/8
+######################################################################
+  [batch 1/7] band_w=0.5533  norma=0.693443  lr=2.38e-04
+  [batch 2/7] band_w=0.5876  norma=0.724818  lr=2.35e-04
+  [batch 3/7] band_w=0.5101  norma=0.743440  lr=2.31e-04
+  [batch 4/7] band_w=0.4038  norma=0.753295  lr=2.27e-04
+  [batch 5/7] band_w=0.4203  norma=0.763903  lr=2.23e-04
+  [batch 6/7] band_w=0.4200  norma=0.777392  lr=2.18e-04
+  [batch 7/7] band_w=0.3108  norma=0.781061  lr=2.14e-04
+
+Epoch 2: band_w (trayectoria)=0.4580   norma=0.781061
+  band_w:  train=0.4614   held-out=0.4813   brecha=+0.0199   (1.0 = no hizo nada)
+  band_u:  train=0.4616   held-out=0.4814   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.266    0.227    0.769
+     12       -    0.610    0.639    0.693
+     16  0.3428    0.479    0.757    0.878   *
+     17  0.3327    0.477    0.756    0.904   *
+     18  0.3245    0.489    0.749    0.920   *
+     24       -    0.647    0.680    1.010
+  * mejor HELD-OUT hasta ahora (0.4813)
+  * mejor TRAIN hasta ahora (0.4614)
+
+######################################################################
+EPOCH 3/8
+######################################################################
+  [batch 1/7] band_w=0.4012  norma=0.787122  lr=2.08e-04
+  [batch 2/7] band_w=0.3856  norma=0.798093  lr=2.03e-04
+  [batch 3/7] band_w=0.3207  norma=0.799171  lr=1.98e-04
+  [batch 4/7] band_w=0.2754  norma=0.798774  lr=1.92e-04
+  [batch 5/7] band_w=0.3002  norma=0.799777  lr=1.86e-04
+  [batch 6/7] band_w=0.3178  norma=0.803481  lr=1.79e-04
+  [batch 7/7] band_w=0.2868  norma=0.804379  lr=1.73e-04
+
+Epoch 3: band_w (trayectoria)=0.3268   norma=0.804379
+  band_w:  train=0.3982   held-out=0.3935   brecha=-0.0047   (1.0 = no hizo nada)
+  band_u:  train=0.3984   held-out=0.3937   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.238    0.224    0.746
+     12       -    0.566    0.657    0.671
+     16  0.3428    0.388    0.790    0.865   *
+     17  0.3327    0.389    0.789    0.899   *
+     18  0.3245    0.404    0.784    0.925   *
+     24       -    0.609    0.716    1.077
+  * mejor HELD-OUT hasta ahora (0.3935)
+  * mejor TRAIN hasta ahora (0.3982)
+
+######################################################################
+EPOCH 4/8
+######################################################################
+  [batch 1/7] band_w=0.3556  norma=0.806069  lr=1.66e-04
+  [batch 2/7] band_w=0.3495  norma=0.811468  lr=1.60e-04
+  [batch 3/7] band_w=0.2996  norma=0.811301  lr=1.53e-04
+  [batch 4/7] band_w=0.2574  norma=0.811758  lr=1.46e-04
+  [batch 5/7] band_w=0.2812  norma=0.812528  lr=1.39e-04
+  [batch 6/7] band_w=0.2981  norma=0.812914  lr=1.32e-04
+  [batch 7/7] band_w=0.2681  norma=0.814375  lr=1.25e-04
+
+Epoch 4: band_w (trayectoria)=0.3014   norma=0.814375
+  band_w:  train=0.3619   held-out=0.3588   brecha=-0.0031   (1.0 = no hizo nada)
+  band_u:  train=0.3621   held-out=0.3590   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.257    0.221    0.761
+     12       -    0.542    0.671    0.670
+     16  0.3428    0.352    0.801    0.859   *
+     17  0.3327    0.353    0.801    0.891   *
+     18  0.3245    0.373    0.793    0.917   *
+     24       -    0.590    0.720    1.074
+  * mejor HELD-OUT hasta ahora (0.3588)
+  * mejor TRAIN hasta ahora (0.3619)
+
+######################################################################
+EPOCH 5/8
+######################################################################
+  [batch 1/7] band_w=0.3396  norma=0.815348  lr=1.18e-04
+  [batch 2/7] band_w=0.3305  norma=0.820543  lr=1.11e-04
+  [batch 3/7] band_w=0.2897  norma=0.819902  lr=1.04e-04
+  [batch 4/7] band_w=0.2454  norma=0.819984  lr=9.73e-05
+  [batch 5/7] band_w=0.2696  norma=0.821006  lr=9.05e-05
+  [batch 6/7] band_w=0.2761  norma=0.822452  lr=8.38e-05
+  [batch 7/7] band_w=0.2390  norma=0.823209  lr=7.73e-05
+
+Epoch 5: band_w (trayectoria)=0.2843   norma=0.823209
+  band_w:  train=0.3402   held-out=0.3381   brecha=-0.0022   (1.0 = no hizo nada)
+  band_u:  train=0.3404   held-out=0.3382   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.274    0.218    0.772
+     12       -    0.528    0.680    0.677
+     16  0.3428    0.332    0.810    0.872   *
+     17  0.3327    0.332    0.811    0.903   *
+     18  0.3245    0.352    0.804    0.929   *
+     24       -    0.556    0.738    1.085
+  * mejor HELD-OUT hasta ahora (0.3381)
+  * mejor TRAIN hasta ahora (0.3402)
+
+######################################################################
+EPOCH 6/8
+######################################################################
+  [batch 1/7] band_w=0.3217  norma=0.823983  lr=7.09e-05
+  [batch 2/7] band_w=0.3078  norma=0.824188  lr=6.46e-05
+  [batch 3/7] band_w=0.2830  norma=0.823379  lr=5.86e-05
+  [batch 4/7] band_w=0.2362  norma=0.823049  lr=5.28e-05
+  [batch 5/7] band_w=0.2606  norma=0.822927  lr=4.71e-05
+  [batch 6/7] band_w=0.2647  norma=0.823427  lr=4.18e-05
+  [batch 7/7] band_w=0.2271  norma=0.824324  lr=3.67e-05
+
+Epoch 6: band_w (trayectoria)=0.2716   norma=0.824324
+  band_w:  train=0.3327   held-out=0.3312   brecha=-0.0015   (1.0 = no hizo nada)
+  band_u:  train=0.3328   held-out=0.3314   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.282    0.219    0.779
+     12       -    0.526    0.682    0.689
+     16  0.3428    0.324    0.814    0.864   *
+     17  0.3327    0.325    0.814    0.896   *
+     18  0.3245    0.345    0.807    0.924   *
+     24       -    0.549    0.740    1.085
+  * mejor HELD-OUT hasta ahora (0.3312)
+  * mejor TRAIN hasta ahora (0.3327)
+
+######################################################################
+EPOCH 7/8
+######################################################################
+  [batch 1/7] band_w=0.3139  norma=0.824347  lr=3.18e-05
+  [batch 2/7] band_w=0.2997  norma=0.823726  lr=2.73e-05
+  [batch 3/7] band_w=0.2782  norma=0.822914  lr=2.31e-05
+  [batch 4/7] band_w=0.2313  norma=0.823122  lr=1.92e-05
+  [batch 5/7] band_w=0.2562  norma=0.822607  lr=1.56e-05
+  [batch 6/7] band_w=0.2604  norma=0.822830  lr=1.24e-05
+  [batch 7/7] band_w=0.2228  norma=0.823291  lr=9.53e-06
+
+Epoch 7: band_w (trayectoria)=0.2661   norma=0.823291
+  band_w:  train=0.3244   held-out=0.3252   brecha=+0.0009   (1.0 = no hizo nada)
+  band_u:  train=0.3245   held-out=0.3254   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.289    0.217    0.784
+     12       -    0.521    0.686    0.693
+     16  0.3428    0.318    0.817    0.870   *
+     17  0.3327    0.319    0.817    0.900   *
+     18  0.3245    0.339    0.810    0.927   *
+     24       -    0.546    0.742    1.087
+  * mejor HELD-OUT hasta ahora (0.3252)
+  * mejor TRAIN hasta ahora (0.3244)
+
+######################################################################
+EPOCH 8/8
+######################################################################
+  [batch 1/7] band_w=0.3114  norma=0.823013  lr=7.03e-06
+  [batch 2/7] band_w=0.2984  norma=0.822372  lr=4.89e-06
+  [batch 3/7] band_w=0.2769  norma=0.822025  lr=3.14e-06
+  [batch 4/7] band_w=0.2305  norma=0.822141  lr=1.77e-06
+  [batch 5/7] band_w=0.2561  norma=0.822089  lr=7.87e-07
+  [batch 6/7] band_w=0.2592  norma=0.822150  lr=1.97e-07
+  [batch 7/7] band_w=0.2257  norma=0.822156  lr=0.00e+00
+
+Epoch 8: band_w (trayectoria)=0.2655   norma=0.822156
+  band_w:  train=0.3148   held-out=0.3186   brecha=+0.0039   (1.0 = no hizo nada)
+  band_u:  train=0.3149   held-out=0.3188   <- sin pesos, comparable con el barrido
+   capa     w_l      rel      cos      mag   (held-out)
+      6       -    1.296    0.216    0.789
+     12       -    0.521    0.685    0.696
+     16  0.3428    0.311    0.819    0.865   *
+     17  0.3327    0.313    0.819    0.897   *
+     18  0.3245    0.333    0.812    0.924   *
+     24       -    0.542    0.743    1.087
+  * mejor HELD-OUT hasta ahora (0.3186)
+  * mejor TRAIN hasta ahora (0.3148)
+
+======================================================================
+ epoch  band_w tr  band_w ho  band_u ho   brecha    norma
+     1     0.5158     0.6296     0.6296  +0.1137   0.6716
+     2     0.4614     0.4813     0.4814  +0.0199   0.7811
+     3     0.3982     0.3935     0.3937  -0.0047   0.8044
+     4     0.3619     0.3588     0.3590  -0.0031   0.8144
+     5     0.3402     0.3381     0.3382  -0.0022   0.8232
+     6     0.3327     0.3312     0.3314  -0.0015   0.8243
+     7     0.3244     0.3252     0.3254  +0.0009   0.8233
+     8     0.3148     0.3186     0.3188  +0.0039   0.8222  <- mejor held-out  <- mejor train
+
+Norma final: 0.822156  (v_CE de referencia: 0.8021)
+  posicion 0: 0.563099
+  posicion 1: 0.427342
+  posicion 2: 0.419807
+
+Guardado en runs/act_band16_18_p2/
+  python3 -u eval_lang_patch.py --model ... --patch runs/act_band16_18_p2/lang_patch.pt
