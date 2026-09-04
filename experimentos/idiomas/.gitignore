@@ -1,2 +1,5 @@
 # los reportes HTML se regeneran con plot_mean_diff.py
 *.html
+
+# cache de activaciones: ~43 MB por condicion, se regenera con train_act_patch.py
+runs/_act_cache/
