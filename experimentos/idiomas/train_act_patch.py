@@ -127,8 +127,37 @@ Para l < L es identico a `output_hidden_states`, pero la ULTIMA entrada de
 `hidden_states` que devuelve HF esta POST-norm final. O sea que d[L] de este
 script no es comparable con d[L] de mean_diff_vectors.py. No usar l = L.
 
+---------------------------------------------------------------------------
+DOS ESTADISTICOS QUE NO SON EL MISMO NUMERO
+---------------------------------------------------------------------------
+El diagnostico de aca y el de mean_diff_vectors.py miden cosas distintas y dan
+valores distintos sobre el MISMO parche:
+
+    perfil() aca            mean_i cos( delta_i , d )     MEDIA DE COSENOS
+    mean_diff_vectors.py    cos( mean_i delta_i , mean_i t_i )   COSENO DE LAS MEDIAS
+
+El segundo sale sistematicamente mas alto: promedia LOS DOS lados antes de
+medir el angulo, asi que el ruido idiosincratico de cada prompt se cancela.
+Aca solo esta promediada la referencia; el delta del parche entra crudo, por
+prompt. Sobre act_l12 la diferencia va de +0.078 en la capa 12 a +0.252 en la
+28 -- o sea que la brecha CRECE con la profundidad, y eso es un dato: mide
+cuanto del efecto del parche es comun a todos los prompts y cuanto es
+especifico de cada uno.
+
+Se usa el de por prompt para el diagnostico porque `rel` ES la loss: la misma
+expresion que minimiza el loop. Un diagnostico con el otro estadistico
+reportaria un numero que el optimizador no esta optimizando.
+
+---------------------------------------------------------------------------
+MODOS
+---------------------------------------------------------------------------
+    # entrenar
     python3 -u train_act_patch.py --model $M --layers 14 --target frq \\
         --output_dir runs/act_l14_frq
+
+    # solo diagnostico, sobre un parche ya entrenado con CUALQUIER objetivo
+    python3 -u train_act_patch.py --model $M --target frq \\
+        --profile_only runs/v4_250/lang_patch_best_train.pt
 """
 
 import argparse
@@ -349,11 +378,20 @@ def perfil(model, tokenizer, rows, patch, clean, D, device, all_layers,
     return {l: {k: sum(v) / len(v) for k, v in m.items()} for l, m in acc.items()}
 
 
-def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
-          num_epochs=8, num_steps_per_prompt=20, num_patch_positions=3,
-          step_size=0.00025, train_test_split=0.80, device="cuda:0",
-          use_gate=True, batch_size=32, step_decay="cosine", val_n=20,
-          truncate=True, cache_dir=DEFAULT_CACHE, refresh_cache=False):
+def prepare(model_path, targets_csv, target, device, train_test_split=0.80,
+            use_gate=True, val_n=20, cache_dir=DEFAULT_CACHE, refresh_cache=False,
+            layers=None):
+    """
+    Setup compartido entre el entrenamiento y el diagnostico standalone.
+
+    Esta factorizacion no es cosmetica. `--profile_only` existe para medir un
+    parche EXTERNO (v_CE, por ejemplo) con la misma vara que las corridas de
+    activaciones; si estimara d de otra forma, eligiera otro split o midiera
+    sobre otras filas, sus numeros no serian comparables y el modo no serviria
+    para nada. Pasando por aca, la comparabilidad es por construccion.
+
+    Devuelve todo lo que las dos rutas necesitan.
+    """
     df = pd.read_csv(targets_csv, sep=";", keep_default_na=False)
 
     # Split POSICIONAL, identico a train_lang_patch.py. Si esto cambiara, los
@@ -369,18 +407,17 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
     dim = get_embedding_matrix(model).shape[1]
     n_layers = len(model.model.layers)
     all_layers = list(range(1, n_layers + 1))
-    if max(layers) > n_layers:
-        raise SystemExit(f"el modelo tiene {n_layers} capas, pediste {max(layers)}")
-    if max(layers) == n_layers:
-        print(f"AVISO: la capa {n_layers} es la ultima; hidden_states[{n_layers}] de HF "
-              "esta post-norm y NO es comparable con mean_diff_vectors.py")
+    if layers:
+        if max(layers) > n_layers:
+            raise SystemExit(f"el modelo tiene {n_layers} capas, pediste {max(layers)}")
+        if max(layers) == n_layers:
+            print(f"AVISO: la capa {n_layers} es la ultima; hidden_states[{n_layers}] de HF "
+                  "esta post-norm y NO es comparable con mean_diff_vectors.py")
 
     val_rows = test_df.head(val_n)
     train_rows = train_df.head(val_n)
 
     print(f"\nTrain: {len(train_df)}  |  Held-out: {len(test_df)}  |  diagnostico: {len(val_rows)}")
-    print(f"Objetivo: ACTIVACIONES  |  target: {target}  |  capas: {layers}")
-    print(f"L2: {l2_weight}  |  step: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}")
 
     # --- cache: estados crudos sobre el CSV ENTERO, independientes del split ---
     print(f"\nActivaciones ({cache_dir}):")
@@ -406,13 +443,37 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
         R = torch.randn(D.shape, generator=g).to(D.device)
         D = R / R.norm(dim=1, keepdim=True) * D.norm(dim=1, keepdim=True)
 
-    D_sq = (D ** 2).sum(dim=1)
     LI = {l: j for j, l in enumerate(all_layers)}
-    print(f"d estimada sobre {len(idxs)}/{len(train_df)} filas de train")
-    print("  norma de d en las capas objetivo: " +
-          "  ".join(f"l{l}={D[LI[l]].norm().item():.2f}" for l in layers))
+    print(f"d estimada sobre {len(idxs)}/{len(train_df)} filas de train  (target: {target})")
+    if layers:
+        print("  norma de d en las capas objetivo: " +
+              "  ".join(f"l{l}={D[LI[l]].norm().item():.2f}" for l in layers))
     print("  (verificar contra mean_diff_ctrl.json: si no coincide, el d que "
           "optimizas no es el que reporta la geometria)")
+
+    return {"df": df, "train_df": train_df, "test_df": test_df,
+            "val_rows": val_rows, "train_rows": train_rows,
+            "model": model, "tokenizer": tokenizer, "dim": dim,
+            "n_layers": n_layers, "all_layers": all_layers,
+            "ST_CLEAN": ST_CLEAN, "D": D, "D_sq": (D ** 2).sum(dim=1),
+            "LI": LI, "n_ok": len(idxs)}
+
+
+def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
+          num_epochs=8, num_steps_per_prompt=20, num_patch_positions=3,
+          step_size=0.00025, train_test_split=0.80, device="cuda:0",
+          use_gate=True, batch_size=32, step_decay="cosine", val_n=20,
+          truncate=True, cache_dir=DEFAULT_CACHE, refresh_cache=False):
+    S = prepare(model_path, targets_csv, target, device, train_test_split,
+                use_gate, val_n, cache_dir, refresh_cache, layers)
+    model, tokenizer, dim = S["model"], S["tokenizer"], S["dim"]
+    n_layers, all_layers = S["n_layers"], S["all_layers"]
+    train_df, test_df = S["train_df"], S["test_df"]
+    val_rows, train_rows = S["val_rows"], S["train_rows"]
+    ST_CLEAN, D, D_sq, LI, n_ok = S["ST_CLEAN"], S["D"], S["D_sq"], S["LI"], S["n_ok"]
+
+    print(f"Objetivo: ACTIVACIONES  |  target: {target}  |  capas: {layers}")
+    print(f"L2: {l2_weight}  |  step: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}")
 
     patch = torch.zeros(1, num_patch_positions, dim, requires_grad=True, device=device)
     n_batches = math.ceil(len(train_df) / batch_size)
@@ -509,7 +570,7 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
                               "de HALLAZGOS.md, que valen solo para el parche de CE",
         "target": target, "layers": layers, "n_layers": n_layers,
         "targets_csv": os.path.abspath(targets_csv),
-        "filas_usables_para_d": len(idxs),
+        "filas_usables_para_d": n_ok,
         "norma_d_por_capa": {l: D[LI[l]].norm().item() for l in all_layers},
         "patch_norm": final.norm(2).item(),
         "train_size": len(train_df), "test_size": len(test_df),
@@ -535,18 +596,112 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
     return final
 
 
+def profile_only(model_path, targets_csv, patch_path, target, out_path,
+                 device="cuda:0", train_test_split=0.80, use_gate=True, val_n=20,
+                 num_patch_positions=3, cache_dir=DEFAULT_CACHE, refresh_cache=False):
+    """
+    Diagnostico por prompt sobre un parche YA ENTRENADO, sin entrenar nada.
+
+    Existe para medir parches de OTRO objetivo -- v_CE, entrenado con CE de
+    salida -- con la misma vara que las corridas de activaciones: mismo split,
+    mismo gate, misma d congelada sobre train, mismas filas de held-out.
+
+    El estadistico es la MEDIA DE COSENOS POR PROMPT:
+
+        mean_i cos( delta_i , d )
+
+    que NO es el que reporta mean_diff_vectors.py. Aquel es el COSENO DE LAS
+    MEDIAS, cos( mean_i delta_i , mean_i t_i ), y sale sistematicamente mas
+    alto porque el ruido idiosincratico se cancela en LOS DOS lados antes de
+    medir el angulo. Aca solo esta promediado el lado de la referencia; el
+    delta del parche entra crudo, prompt por prompt.
+
+    La brecha entre los dos no es un artefacto: mide cuanto del efecto del
+    parche es comun a todos los prompts y cuanto es especifico de cada uno.
+    Sobre los parches de activaciones esa brecha crece con la profundidad
+    (act_l12: +0.078 en la capa 12, +0.252 en la 28), y no estaba medida para
+    ningun parche de CE -- que es para lo que se escribio este modo.
+
+    Sin circularidad: d se estima sobre train y los deltas se miden sobre
+    held-out.
+    """
+    S = prepare(model_path, targets_csv, target, device, train_test_split,
+                use_gate, val_n, cache_dir, refresh_cache, layers=None)
+    all_layers, LI = S["all_layers"], S["LI"]
+
+    patch = torch.load(patch_path, map_location=device).to(device)
+    print(f"\nParche: {patch_path}")
+    print(f"  norma {patch.norm(2).item():.4f}  |  shape {list(patch.shape)}")
+    print("  ESTADISTICO: media de cosenos por prompt (NO el coseno de las medias "
+          "de mean_diff_vectors.py)")
+
+    p_va = perfil(S["model"], S["tokenizer"], S["val_rows"], patch, S["ST_CLEAN"],
+                  S["D"], device, all_layers, num_patch_positions)
+    p_tr = perfil(S["model"], S["tokenizer"], S["train_rows"], patch, S["ST_CLEAN"],
+                  S["D"], device, all_layers, num_patch_positions)
+
+    print(f"\n{'':>5}{'HELD-OUT':>29}{'TRAIN':>29}")
+    print(f"{'capa':>5}{'rel':>9}{'cos':>10}{'mag':>10}{'rel':>9}{'cos':>10}{'mag':>10}")
+    print("-" * 63)
+    for l in all_layers:
+        a, b = p_va[l], p_tr[l]
+        print(f"{l:>5}{a['rel']:>9.3f}{a['cos']:>10.3f}{a['mag']:>10.3f}"
+              f"{b['rel']:>9.3f}{b['cos']:>10.3f}{b['mag']:>10.3f}")
+
+    prof = [l for l in all_layers if l >= 12]
+    mcos = sum(p_va[l]["cos"] for l in prof) / len(prof)
+    mrel = sum(p_va[l]["rel"] for l in prof) / len(prof)
+    print(f"\nPromedio capas 12..{all_layers[-1]} sobre held-out:  "
+          f"cos={mcos:.3f}   rel={mrel:.3f}")
+    print("Para la brecha entre estadisticos, compara ese cos contra "
+          "cos_patch_frq del mean_diff del MISMO parche.")
+
+    out = {
+        "objetivo": "diagnostico",
+        "estadistico": "media de cosenos por prompt",
+        "patch": os.path.abspath(patch_path),
+        "patch_norm": patch.norm(2).item(),
+        "target": target,
+        "targets_csv": os.path.abspath(targets_csv),
+        "n_layers": S["n_layers"],
+        "filas_usables_para_d": S["n_ok"],
+        "train_test_split": train_test_split,
+        "n_heldout_medido": len(S["val_rows"]),
+        "n_train_medido": len(S["train_rows"]),
+        "num_patch_positions": num_patch_positions,
+        "norma_d_por_capa": {l: S["D"][LI[l]].norm().item() for l in all_layers},
+        "perfil_heldout": p_va,
+        "perfil_train": p_tr,
+        "cos_medio_12_fin_heldout": mcos,
+        "rel_medio_12_fin_heldout": mrel,
+    }
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2, ensure_ascii=False)
+    print(f"\nGuardado: {out_path}")
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--targets", default="attributes/french/targets_french.csv")
-    ap.add_argument("--layers", required=True,
-                    help="'14' | '12,16,20' | '12-16'. Capa = hidden_states[l], 1..L")
+    ap.add_argument("--layers",
+                    help="'14' | '12,16,20' | '12-16'. Capa = hidden_states[l], 1..L. "
+                         "Obligatorio salvo con --profile_only, que mide todas")
+    ap.add_argument("--profile_only", metavar="PARCHE.pt",
+                    help="no entrena: corre el diagnostico por prompt sobre un parche "
+                         "ya entrenado (p.ej. runs/v4_250/lang_patch_best_train.pt) "
+                         "con el mismo d, split y held-out que las corridas de "
+                         "activaciones, para que los numeros sean comparables")
+    ap.add_argument("--out", help="JSON de salida de --profile_only "
+                                  "(default: <dir del parche>/profile.json)")
     ap.add_argument("--target", default="frq", choices=TARGETS,
                     help="frq=pregunta FR (ruta de entrada)  instr=instruccion FR "
                          "(ruta de directiva)  qde=pregunta DE  corto=piso generico  "
                          "random=control de norma igualada")
-    ap.add_argument("--output_dir", required=True)
+    ap.add_argument("--output_dir", help="obligatorio salvo con --profile_only")
     ap.add_argument("--l2_weight", type=float, default=0.055)
     ap.add_argument("--num_epochs", type=int, default=8)
     ap.add_argument("--num_steps_per_prompt", type=int, default=20)
@@ -568,6 +723,21 @@ def main():
     ap.add_argument("--no_truncate", action="store_true",
                     help="no cortar el forward en la capa mas profunda (debug)")
     args = ap.parse_args()
+
+    if args.profile_only:
+        out = args.out or os.path.join(os.path.dirname(os.path.abspath(args.profile_only)),
+                                       "profile.json")
+        profile_only(args.model, args.targets, args.profile_only, args.target, out,
+                     device=args.device, train_test_split=args.train_test_split,
+                     use_gate=not args.no_gate, val_n=args.val_n,
+                     num_patch_positions=args.num_patch_positions,
+                     cache_dir=args.cache_dir, refresh_cache=args.refresh_cache)
+        return
+
+    if not args.layers:
+        ap.error("--layers es obligatorio para entrenar (o usa --profile_only)")
+    if not args.output_dir:
+        ap.error("--output_dir es obligatorio para entrenar")
 
     train(args.model, args.targets, parse_layers(args.layers), args.target,
           args.output_dir, args.l2_weight, args.num_epochs,
