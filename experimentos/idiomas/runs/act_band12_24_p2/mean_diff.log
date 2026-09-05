@@ -1,0 +1,73 @@
+prompts con traduccion FR usable: 250  |  se usan: 40  (primeros 40)
+  filas 0..39 del CSV  |  0 de esas 40 caen en el held-out del parche (corte en 212)
+de esos, con traduccion DE usable: 40  (solo esos entran en qde)
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+activaciones:   0%|          | 0/40 [00:00<?, ?it/s]activaciones:   2%|▎         | 1/40 [00:00<00:11,  3.41it/s]activaciones:   5%|▌         | 2/40 [00:00<00:08,  4.56it/s]activaciones:   8%|▊         | 3/40 [00:00<00:07,  5.13it/s]activaciones:  10%|█         | 4/40 [00:00<00:06,  5.46it/s]activaciones:  12%|█▎        | 5/40 [00:00<00:06,  5.63it/s]activaciones:  15%|█▌        | 6/40 [00:01<00:05,  5.75it/s]activaciones:  18%|█▊        | 7/40 [00:01<00:05,  5.84it/s]activaciones:  20%|██        | 8/40 [00:01<00:05,  5.89it/s]activaciones:  22%|██▎       | 9/40 [00:01<00:05,  5.93it/s]activaciones:  25%|██▌       | 10/40 [00:01<00:05,  5.96it/s]activaciones:  28%|██▊       | 11/40 [00:01<00:04,  5.99it/s]activaciones:  30%|███       | 12/40 [00:02<00:04,  5.99it/s]activaciones:  32%|███▎      | 13/40 [00:02<00:04,  5.99it/s]activaciones:  35%|███▌      | 14/40 [00:02<00:04,  5.99it/s]activaciones:  38%|███▊      | 15/40 [00:02<00:04,  6.00it/s]activaciones:  40%|████      | 16/40 [00:02<00:04,  6.00it/s]activaciones:  42%|████▎     | 17/40 [00:02<00:03,  6.02it/s]activaciones:  45%|████▌     | 18/40 [00:03<00:03,  6.01it/s]activaciones:  48%|████▊     | 19/40 [00:03<00:03,  6.02it/s]activaciones:  50%|█████     | 20/40 [00:03<00:03,  5.99it/s]activaciones:  52%|█████▎    | 21/40 [00:03<00:03,  5.98it/s]activaciones:  55%|█████▌    | 22/40 [00:03<00:02,  6.01it/s]activaciones:  57%|█████▊    | 23/40 [00:03<00:02,  6.01it/s]activaciones:  60%|██████    | 24/40 [00:04<00:02,  6.00it/s]activaciones:  62%|██████▎   | 25/40 [00:04<00:02,  6.01it/s]activaciones:  65%|██████▌   | 26/40 [00:04<00:02,  6.00it/s]activaciones:  68%|██████▊   | 27/40 [00:04<00:02,  6.01it/s]activaciones:  70%|███████   | 28/40 [00:04<00:01,  6.00it/s]activaciones:  72%|███████▎  | 29/40 [00:04<00:01,  5.98it/s]activaciones:  75%|███████▌  | 30/40 [00:05<00:01,  5.98it/s]activaciones:  78%|███████▊  | 31/40 [00:05<00:01,  5.97it/s]activaciones:  80%|████████  | 32/40 [00:05<00:01,  5.98it/s]activaciones:  82%|████████▎ | 33/40 [00:05<00:01,  5.99it/s]activaciones:  85%|████████▌ | 34/40 [00:05<00:00,  6.01it/s]activaciones:  88%|████████▊ | 35/40 [00:05<00:00,  6.02it/s]activaciones:  90%|█████████ | 36/40 [00:06<00:00,  6.01it/s]activaciones:  92%|█████████▎| 37/40 [00:06<00:00,  6.00it/s]activaciones:  95%|█████████▌| 38/40 [00:06<00:00,  6.01it/s]activaciones:  98%|█████████▊| 39/40 [00:06<00:00,  6.01it/s]activaciones: 100%|██████████| 40/40 [00:06<00:00,  6.02it/s]activaciones: 100%|██████████| 40/40 [00:06<00:00,  5.89it/s]
+
+capas 12..28  (la del medio segun el paper seria 14)
+
+ capa  patch~frq  patch~qde   margen  patch~instr  frq~instr   frq~qde  |  techo patch  techo frq  techo instr  |  p~f corr  p~i corr
+----------------------------------------------------------------------------------------------------------------------------------------
+   12      0.948      0.911   +0.037        0.448      0.457     0.957  |        0.986      0.988        0.988  |     0.960     0.453
+   13      0.953      0.910   +0.043        0.344      0.363     0.952  |        0.984      0.983        0.983  |     0.968     0.350
+   14      0.957      0.879   +0.078        0.450      0.474     0.915  |        0.983      0.981        0.985  |     0.975     0.457
+   15      0.966      0.890   +0.076        0.520      0.554     0.921  |        0.982      0.979        0.980  |     0.985     0.531
+   16      0.970      0.781   +0.189        0.588      0.600     0.804  |        0.984      0.980        0.981  |     0.988     0.598
+   17      0.973      0.742   +0.231        0.667      0.670     0.755  |        0.984      0.978        0.982  |     0.991     0.679
+   18      0.977      0.740   +0.237        0.703      0.706     0.754  |        0.983      0.976        0.979  |     0.997     0.717
+   19      0.978      0.729   +0.249        0.742      0.734     0.745  |        0.980      0.971        0.975  |     1.002     0.759
+   20      0.978      0.745   +0.233        0.777      0.764     0.757  |        0.977      0.965        0.971  |     1.007     0.797
+   21      0.978      0.733   +0.246        0.795      0.783     0.743  |        0.974      0.962        0.968  |     1.010     0.819
+   22      0.979      0.650   +0.329        0.820      0.811     0.662  |        0.972      0.961        0.968  |     1.013     0.846
+   23      0.980      0.640   +0.340        0.833      0.826     0.652  |        0.970      0.960        0.968  |     1.016     0.860
+   24      0.984      0.576   +0.407        0.862      0.854     0.589  |        0.974      0.964        0.970  |     1.015     0.887
+   25      0.983      0.535   +0.448        0.867      0.858     0.556  |        0.970      0.960        0.967  |     1.018     0.895
+   26      0.982      0.530   +0.451        0.874      0.863     0.551  |        0.966      0.956        0.965  |     1.021     0.905
+   27      0.981      0.536   +0.445        0.881      0.873     0.558  |        0.966      0.959        0.965  |     1.019     0.912
+   28      0.982      0.589   +0.393        0.899      0.894     0.611  |        0.966      0.963        0.966  |     1.018     0.931
+
+Promedio de la capa 12 en adelante:
+  patch ~ frq    +0.973   (techos 0.977 / 0.970)
+  patch ~ qde    +0.713   (techos 0.977 / 0.966)   <- misma pregunta en ALEMAN
+  patch ~ instr  +0.710   (techos 0.977 / 0.974)
+  frq   ~ instr  +0.711
+  frq   ~ qde    +0.734   (techos 0.970 / 0.966)   <- cuanto comparten las DOS preguntas en idioma extranjero
+
+-> el parche se parece mas a: PREGUNTA EN FRANCES (diferencia 0.263)
+
+======================================================================
+MATRIZ COMPLETA, promedio capas 12..28
+  qde   = MISMA pregunta, traducida al aleman (sin instruccion), n=40
+  de    = instruccion de responder en ALEMAN  (otro idioma)
+  corto = responder en una oracion corta      (cambio de modo, mismo idioma)
+
+                    parche     preg. FR    instr. FR     preg. DE    instr. DE  resp. corta
+parche               1.000        0.973        0.710        0.713        0.495        0.313
+preg. FR             0.973        1.000        0.711        0.734        0.505        0.323
+instr. FR            0.710        0.711        1.000        0.484        0.739        0.330
+preg. DE             0.713        0.734        0.484        1.000        0.712        0.370
+instr. DE            0.495        0.505        0.739        0.712        1.000        0.343
+resp. corta          0.313        0.323        0.330        0.370        0.343        1.000
+
+Lectura decisiva:
+  parche~preg.FR    0.973
+  parche~preg.DE    0.713   <- si es parecido a preg.FR, el numero mide 'idioma extranjero', no frances
+  parche~instr.DE   0.495   <- si es parecido, el numero NO mide idioma
+  parche~resp.corta 0.313   <- piso generico de 'responder distinto'
+
+  margen del frances sobre el mejor control: +0.261
+  -> hay un componente especifico de frances por encima del mejor control.
+
+Como leerlo:
+  - Escala de referencia (Ball et al. 2406.09289): entre jailbreaks que
+    ellos concluyeron que comparten mecanismo, el coseno da 0.4 a 0.6.
+    No esperar 0.9.
+  - El TECHO manda. Si esta por encima de ~0.7, el coseno crudo ya es
+    casi correcto y la columna corregida sobra. Si esta por debajo de
+    0.5, la medicion de esa condicion no es confiable y la corregida
+    ni se muestra: con techo bajo corregir es PEOR que no corregir.
+  - Un techo bajo con n=40 significa que esa condicion es inconsistente
+    entre prompts, no que el efecto sea chico. Se arregla subiendo --n.
+
+Guardado en runs/act_band12_24_p2/mean_diff.json
