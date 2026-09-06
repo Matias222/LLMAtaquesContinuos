@@ -348,20 +348,46 @@ def cosine_step(base, global_step, total_steps):
 
 
 def perfil(model, tokenizer, rows, patch, clean, D, device, all_layers,
-           num_patch_positions):
+           num_patch_positions, store=None):
     """
-    Diagnostico por capa. Tres numeros:
+    Diagnostico por capa. Cinco numeros, todos en unidades de ||d||:
 
         rel  ||delta - d||^2 / ||d||^2   el termino de la loss. 1 = no hizo nada
         cos  cos(delta, d)               comparable con HALLAZGOS.md seccion 6
         mag  ||delta|| / ||d||           empuja de mas o de menos?
+        par  <delta,d> / ||d||^2         componente PARALELO a d (con signo)
+        ort  ||delta - par*d|| / ||d||   componente ORTOGONAL a d
+
+    par y ort salen de la proyeccion ortogonal de delta sobre d:
+
+        delta = delta_par + delta_ort,   <delta_par, delta_ort> = 0
+
+    y por Pitagoras la loss se parte en dos errores independientes:
+
+        rel = (par - 1)^2  +  ort^2
+              ^^^^^^^^^^      ^^^^^
+              le erro a d     TODO lo que puso fuera de d
+
+    Eso importa: el segundo termino tiene minimo en cero, o sea que la MSE
+    empuja activamente ||delta_ort|| -> 0. Si el ingrediente causal vive en el
+    complemento ortogonal de d_frq, la loss lo esta suprimiendo por diseno.
+
+    OJO: par y ort se calculan POR PROMPT y despues se promedian. No es lo
+    mismo que mean(mag)*mean(cos), que difiere por la covarianza entre las dos
+    cantidades a traves de prompts.
 
     Se calcula sobre TODAS las capas aunque se entrene sobre una sola: si el
     perfil entero se reproduce, la banda no agrega nada.
 
     Sobre held-out esto no es circular: D se estimo sobre train.
+
+    Si `store` es un dict, se llena con los vectores crudos para que el
+    analisis geometrico (PCA, proyecciones) se pueda hacer despues en CPU:
+        store["mean_delta"][l]  tensor [d]      media de los delta_i
+        store["deltas"][l]      tensor [n, d]   los delta_i individuales
     """
-    acc = {l: {"rel": [], "cos": [], "mag": []} for l in all_layers}
+    acc = {l: {"rel": [], "cos": [], "mag": [], "par": [], "ort": []} for l in all_layers}
+    crudos = {l: [] for l in all_layers}
     with torch.no_grad():
         for idx, row in rows.iterrows():
             h_p = hidden_at_layers(model, tokenizer, row["prompt"], device,
@@ -371,10 +397,19 @@ def perfil(model, tokenizer, rows, patch, clean, D, device, all_layers,
             for j, l in enumerate(all_layers):
                 delta = h_p[l] - clean[idx][j]
                 d, dn = D[j], D[j].norm()
+                par = (delta * d).sum() / dn ** 2          # <delta,d>/||d||^2
+                ort = (delta - par * d).norm() / dn
                 acc[l]["rel"].append((((delta - d) ** 2).sum() / dn ** 2).item())
                 acc[l]["cos"].append(
                     torch.nn.functional.cosine_similarity(delta, d, dim=0).item())
                 acc[l]["mag"].append((delta.norm() / dn).item())
+                acc[l]["par"].append(par.item())
+                acc[l]["ort"].append(ort.item())
+                if store is not None:
+                    crudos[l].append(delta.cpu())
+    if store is not None:
+        store["deltas"] = {l: torch.stack(v) for l, v in crudos.items()}
+        store["mean_delta"] = {l: store["deltas"][l].mean(0) for l in all_layers}
     return {l: {k: sum(v) / len(v) for k, v in m.items()} for l, m in acc.items()}
 
 
@@ -463,7 +498,8 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
           num_epochs=8, num_steps_per_prompt=20, num_patch_positions=3,
           step_size=0.00025, train_test_split=0.80, device="cuda:0",
           use_gate=True, batch_size=32, step_decay="cosine", val_n=20,
-          truncate=True, cache_dir=DEFAULT_CACHE, refresh_cache=False):
+          truncate=True, cache_dir=DEFAULT_CACHE, refresh_cache=False,
+          loss_kind="mse"):
     S = prepare(model_path, targets_csv, target, device, train_test_split,
                 use_gate, val_n, cache_dir, refresh_cache, layers)
     model, tokenizer, dim = S["model"], S["tokenizer"], S["dim"]
@@ -473,6 +509,9 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
     ST_CLEAN, D, D_sq, LI, n_ok = S["ST_CLEAN"], S["D"], S["D_sq"], S["LI"], S["n_ok"]
 
     print(f"Objetivo: ACTIVACIONES  |  target: {target}  |  capas: {layers}")
+    print(f"Loss: {loss_kind}" + ("   (MSE completa: penaliza tambien lo ortogonal a d)"
+                                  if loss_kind == "mse" else
+                                  "   (solo la PROYECCION sobre d; lo ortogonal queda libre)"))
     print(f"L2: {l2_weight}  |  step: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}")
 
     patch = torch.zeros(1, num_patch_positions, dim, requires_grad=True, device=device)
@@ -502,8 +541,17 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
                                            layers, patch=patch,
                                            num_patch_positions=num_patch_positions,
                                            truncate=truncate)
-                    terms = [((h_p[l] - ST_CLEAN[idx][LI[l]] - D[LI[l]]) ** 2).sum()
-                             / D_sq[LI[l]] for l in layers]
+                    if loss_kind == "proj":
+                        # Solo el primer termino de rel = (par-1)^2 + ort^2.
+                        # Pide llegar a d EN SU PROPIA DIRECCION y no dice nada
+                        # sobre el complemento ortogonal, en vez de aplastarlo.
+                        # Nada acota ||delta_ort|| aca: el L2 sobre v es el
+                        # unico freno, por eso hay que vigilar la norma final.
+                        terms = [((((h_p[l] - ST_CLEAN[idx][LI[l]]) * D[LI[l]]).sum()
+                                   / D_sq[LI[l]]) - 1.0) ** 2 for l in layers]
+                    else:
+                        terms = [((h_p[l] - ST_CLEAN[idx][LI[l]] - D[LI[l]]) ** 2).sum()
+                                 / D_sq[LI[l]] for l in layers]
                     band = torch.stack(terms).mean()
                     total = band + l2_weight * patch.norm(2) ** 2
                     (total / len(batch)).backward()
@@ -569,6 +617,7 @@ def train(model_path, targets_csv, layers, target, output_dir, l2_weight=0.055,
         "aviso_circularidad": "entrenado CONTRA la direccion; no usar para sostener P1/P3 "
                               "de HALLAZGOS.md, que valen solo para el parche de CE",
         "target": target, "layers": layers, "n_layers": n_layers,
+        "loss": loss_kind,
         "targets_csv": os.path.abspath(targets_csv),
         "filas_usables_para_d": n_ok,
         "norma_d_por_capa": {l: D[LI[l]].norm().item() for l in all_layers},
@@ -635,18 +684,20 @@ def profile_only(model_path, targets_csv, patch_path, target, out_path,
     print("  ESTADISTICO: media de cosenos por prompt (NO el coseno de las medias "
           "de mean_diff_vectors.py)")
 
+    store = {}
     p_va = perfil(S["model"], S["tokenizer"], S["val_rows"], patch, S["ST_CLEAN"],
-                  S["D"], device, all_layers, num_patch_positions)
+                  S["D"], device, all_layers, num_patch_positions, store=store)
     p_tr = perfil(S["model"], S["tokenizer"], S["train_rows"], patch, S["ST_CLEAN"],
                   S["D"], device, all_layers, num_patch_positions)
 
-    print(f"\n{'':>5}{'HELD-OUT':>29}{'TRAIN':>29}")
-    print(f"{'capa':>5}{'rel':>9}{'cos':>10}{'mag':>10}{'rel':>9}{'cos':>10}{'mag':>10}")
-    print("-" * 63)
+    print(f"\n{'':>5}{'H E L D - O U T':>49}{'TRAIN':>21}")
+    print(f"{'capa':>5}{'rel':>9}{'cos':>9}{'mag':>9}{'par':>9}{'ort':>9}"
+          f"{'|':>4}{'rel':>9}{'cos':>9}")
+    print("-" * 72)
     for l in all_layers:
         a, b = p_va[l], p_tr[l]
-        print(f"{l:>5}{a['rel']:>9.3f}{a['cos']:>10.3f}{a['mag']:>10.3f}"
-              f"{b['rel']:>9.3f}{b['cos']:>10.3f}{b['mag']:>10.3f}")
+        print(f"{l:>5}{a['rel']:>9.3f}{a['cos']:>9.3f}{a['mag']:>9.3f}"
+              f"{a['par']:>9.3f}{a['ort']:>9.3f}{'|':>4}{b['rel']:>9.3f}{b['cos']:>9.3f}")
 
     prof = [l for l in all_layers if l >= 12]
     mcos = sum(p_va[l]["cos"] for l in prof) / len(prof)
@@ -674,11 +725,22 @@ def profile_only(model_path, targets_csv, patch_path, target, out_path,
         "perfil_train": p_tr,
         "cos_medio_12_fin_heldout": mcos,
         "rel_medio_12_fin_heldout": mrel,
+        "par_medio_12_fin_heldout": sum(p_va[l]["par"] for l in prof) / len(prof),
+        "ort_medio_12_fin_heldout": sum(p_va[l]["ort"] for l in prof) / len(prof),
     }
     os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
+
+    # Los vectores crudos, para que toda la geometria posterior (PCA,
+    # proyecciones, inyeccion) se pueda hacer en CPU sin volver a la GPU.
+    vec_path = out_path.replace(".json", "_deltas.pt")
+    torch.save({"mean_delta": store["mean_delta"], "deltas": store["deltas"],
+                "d": {l: S["D"][LI[l]].cpu() for l in all_layers},
+                "patch": os.path.abspath(patch_path), "target": target,
+                "filas": [int(i) for i in S["val_rows"].index]}, vec_path)
     print(f"\nGuardado: {out_path}")
+    print(f"          {vec_path}   (mean_delta, deltas por prompt, y d)")
     return out
 
 
@@ -702,6 +764,10 @@ def main():
                          "(ruta de directiva)  qde=pregunta DE  corto=piso generico  "
                          "random=control de norma igualada")
     ap.add_argument("--output_dir", help="obligatorio salvo con --profile_only")
+    ap.add_argument("--loss", default="mse", choices=["mse", "proj"],
+                    help="mse = ||delta - d||^2, penaliza tambien lo ortogonal a d. "
+                         "proj = (<delta,d>/||d||^2 - 1)^2, pide llegar a d en su propia "
+                         "direccion y deja el complemento ortogonal LIBRE")
     ap.add_argument("--l2_weight", type=float, default=0.055)
     ap.add_argument("--num_epochs", type=int, default=8)
     ap.add_argument("--num_steps_per_prompt", type=int, default=20)
@@ -745,7 +811,8 @@ def main():
           args.train_test_split, args.device, use_gate=not args.no_gate,
           batch_size=args.batch_size, step_decay=args.step_decay,
           val_n=args.val_n, truncate=not args.no_truncate,
-          cache_dir=args.cache_dir, refresh_cache=args.refresh_cache)
+          cache_dir=args.cache_dir, refresh_cache=args.refresh_cache,
+          loss_kind=args.loss)
 
 
 if __name__ == "__main__":
