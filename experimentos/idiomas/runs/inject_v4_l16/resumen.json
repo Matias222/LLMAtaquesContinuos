@@ -1,0 +1,91 @@
+{
+  "layer": 16,
+  "positions": "all",
+  "during": "all",
+  "resumen": [
+    {
+      "cond": "total",
+      "a": 1.0,
+      "norma": 7.699328422546387,
+      "is_french": 0.86,
+      "french_score": 0.925,
+      "answer_correct": 0.46,
+      "identico_al_baseline": 0.1,
+      "role_leak": 0.0,
+      "veredictos": {
+        "unknown": 7,
+        "fr": 43
+      }
+    },
+    {
+      "cond": "par",
+      "a": 1.0,
+      "norma": 5.535238742828369,
+      "is_french": 0.46,
+      "french_score": 0.7966666666666667,
+      "answer_correct": 0.54,
+      "identico_al_baseline": 0.06,
+      "role_leak": 0.0,
+      "veredictos": {
+        "unknown": 27,
+        "fr": 23
+      }
+    },
+    {
+      "cond": "ort",
+      "a": 1.0,
+      "norma": 5.351707935333252,
+      "is_french": 0.0,
+      "french_score": 0.06,
+      "answer_correct": 0.92,
+      "identico_al_baseline": 0.46,
+      "role_leak": 0.0,
+      "veredictos": {
+        "en": 44,
+        "unknown": 6
+      }
+    },
+    {
+      "cond": "random",
+      "a": 1.0,
+      "norma": 5.351707935333252,
+      "is_french": 0.0,
+      "french_score": 0.06,
+      "answer_correct": 0.96,
+      "identico_al_baseline": 0.52,
+      "role_leak": 0.0,
+      "veredictos": {
+        "en": 44,
+        "unknown": 6
+      }
+    },
+    {
+      "cond": "d",
+      "a": 1.0,
+      "norma": 7.288064956665039,
+      "is_french": 0.48,
+      "french_score": 0.7966666666666667,
+      "answer_correct": 0.46,
+      "identico_al_baseline": 0.06,
+      "role_leak": 0.0,
+      "veredictos": {
+        "unknown": 26,
+        "fr": 24
+      }
+    },
+    {
+      "cond": "none",
+      "a": 1.0,
+      "norma": 0.0,
+      "is_french": 0.0,
+      "french_score": 0.06,
+      "answer_correct": 0.96,
+      "identico_al_baseline": 1.0,
+      "role_leak": 0.0,
+      "veredictos": {
+        "en": 44,
+        "unknown": 6
+      }
+    }
+  ]
+}
