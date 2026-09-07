@@ -1,54 +1,62 @@
 """
-Experimentos 1 y 3 de mecanismo: NECESIDAD de la lectura por atencion del parche.
+Experimentos 1 y 3 de mecanismo: que parte del KV del prompt NECESITAN leer los
+tokens generados para que el frances se sostenga.
 
-Genera con el parche puesto, pero bloqueando la atencion HACIA las posiciones
-parcheadas desde los tokens generados. El forward del prompt queda intacto, asi
-que el ultimo token del prompt -- el que decide el primer token de la respuesta
--- sigue viendo el parche. Lo unico que cambia es si los tokens 2, 3, ... pueden
-seguir leyendolo.
-
-    hipotesis (contexto persistente)   el frances arranca y colapsa en
-                                        fragmentos, como los parches de
-                                        activaciones: primer token frances,
-                                        despues ingles o nombre pelado
-    alternativa (estado inyectado)      el frances se sostiene igual: el estado
-                                        del ultimo token del prompt alcanza y
-                                        los generados no necesitan el parche
+Genera con el parche puesto, pero bloqueando la atencion desde los tokens
+generados hacia un subconjunto de posiciones del prompt. El forward del prompt
+queda intacto en todos los modos salvo `post`: el ultimo token del prompt, el
+que decide el primer token de la respuesta, siempre ve lo mismo que en el eval.
 
 ---------------------------------------------------------------------------
-LAS CONDICIONES
+LOS MODOS
 ---------------------------------------------------------------------------
-    unmasked          parche, sin mascara. Tiene que reproducir eval_lang_patch
-                      sobre el mismo parche; si no, algo esta roto ANTES de
-                      interpretar nada.
-    gen @ all         bloqueo desde los generados, en todas las capas. Es EL test.
-    gen @ <banda>     bloqueo solo en una banda de capas (experimento 3): dice en
-                      que profundidad los generados leen el parche. Barrer
-                      '1-8;9-16;17-24;25-28' y afinar donde caiga.
-    post @ all        bloqueo desde TODO lo posterior al bloque parcheado,
-                      incluido el resto del prompt. El parche queda invisible
-                      para todos y la salida tiene que ser identica al baseline
-                      ingles. Es el control de que la mascara funciona.
+    --block gen    bloquea SOLO las 3 posiciones parcheadas para los generados.
+                   Resultado (v4_250, 2026-09): el frances se sostiene (0.86 vs
+                   0.90). Los generados NO necesitan leer el parche directamente.
+    --block post   bloquea las 3 posiciones para TODO lo posterior, incluido el
+                   resto del prompt. El parche queda invisible: frances = 0.00.
+                   Confirma que la mascara actua y que el parche solo entra por
+                   esas posiciones. OJO: tambien borra esas 3 palabras de la
+                   pregunta para el resto del prompt, asi que la salida no tiene
+                   por que igualar al baseline; la columna =base no significa
+                   nada en este modo.
+    --block keep   los generados ven SOLO las regiones listadas en --keep, mas
+                   ellos mismos. Regiones (attn_utils.REGIONES_PROMPT):
+                       bos      posicion 0 (attention sink; mantener SIEMPRE)
+                       sys      header de sistema, texto de sistema, header de usuario
+                       patched  las 3 posiciones parcheadas
+                       qrest    el resto de la pregunta
+                       ahead    <|eot_id|> + header del assistant
+                   Contesta DONDE del KV del prompt vive el modo frances, que
+                   es lo que `gen` dejo abierto: si no esta en las 3 posiciones,
+                   esta imprimido en las posteriores, y la pregunta es en cuales.
 
-`--check_mask_path` genera ademas 'unmasked' con la causal 4D explicita en vez
-de attention_mask=None: verifica que pasar una mascara aditiva no cambia la
-salida por si misma (sdpa con is_causal vs mascara pueden diferir en fp16).
+    --clean_control   ademas de la corrida con parche, genera SIN parche bajo la
+                      misma mascara. Sin esto no se sabe que hace la mascara sola
+                      (p.ej. con keep=bos,sys,ahead el modelo no ve la pregunta y
+                      responde cualquier cosa: hay que ver si esa cualquier cosa
+                      es francesa con parche e inglesa sin).
+
+    --layers   para gen/post: una corrida por especificacion ('all;1-8;9-16').
+               Con keep se ignora (siempre todas las capas).
 
 ---------------------------------------------------------------------------
 COMO LEERLO
 ---------------------------------------------------------------------------
-No mirar solo is_french: sobre fragmentos de dos palabras el detector devuelve
-'unknown'. Mirar juntas: is_french, starts_fr (primer token frances), largo
-medio, cortas (<25 chars) y los textos. El patron 'starts_fr alto + is_french
-bajo + cortas alto' es el colapso.
+Mirar juntas is_french, starts_fr (primer token frances), largo medio, cortas
+(<25 chars) y los textos; sobre fragmentos de dos palabras el detector devuelve
+'unknown'. En keep, la comparacion es parche vs limpio bajo la MISMA mascara: la
+diferencia de is_french entre los dos es el efecto del parche que sobrevive a
+esa restriccion.
 
-    python3 -u mask_patch_attention.py --model $M \\
-        --patch runs/v4_250/lang_patch_best_train.pt \\
-        --block gen --layers "all;1-8;9-16;17-24;25-28" \\
-        --out_dir runs/mask_v4 --check_mask_path
-    python3 -u mask_patch_attention.py --model $M \\
-        --patch runs/v4_250/lang_patch_best_train.pt \\
-        --block post --layers all --out_dir runs/mask_v4
+    # 1. donde vive el modo (siempre con bos y sys)
+    python3 -u mask_patch_attention.py --model $M --patch runs/v4_250/lang_patch_best_train.pt \\
+        --block keep --clean_control --out_dir runs/mask_v4 \\
+        --keep "bos,sys,patched,qrest,ahead;bos,sys,qrest,ahead;bos,sys,patched,qrest;bos,sys,ahead;bos,sys,qrest;bos,sys,patched;bos,sys"
+
+    # 2. necesidad del parche por banda de capas
+    python3 -u mask_patch_attention.py --model $M --patch runs/v4_250/lang_patch_best_train.pt \\
+        --block gen --layers "all;1-8;9-16;17-24;25-28" --out_dir runs/mask_v4 --check_mask_path
 """
 
 import argparse
@@ -59,12 +67,13 @@ import pandas as pd
 import torch
 import tqdm
 
-from attn_utils import add_metrics, aggregate, generate_masked, parse_layers
+from attn_utils import (REGIONES_PROMPT, add_metrics, aggregate, generate_masked,
+                        parse_layers)
 from lm import DEFAULT_MODEL, load_model_and_tokenizer
 
 
-def spec_tag(spec):
-    return spec.strip().lower().replace(",", "_").replace("-", "to")
+def tag(s):
+    return s.strip().lower().replace(",", "_").replace("-", "to").replace(" ", "")
 
 
 def main():
@@ -76,15 +85,18 @@ def main():
     ap.add_argument("--train_test_split", type=float, default=0.80)
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--patch_offset", type=int, default=0)
-    ap.add_argument("--block", default="gen", choices=["gen", "post"],
-                    help="gen = bloquear desde los tokens generados (el test); "
-                         "post = desde todo lo posterior al parche (control, = baseline)")
+    ap.add_argument("--block", default="gen", choices=["gen", "post", "keep"])
     ap.add_argument("--layers", default="all",
-                    help="especificaciones separadas por ';'. Cada una: 'all' | '16' | '12-16' | '1,5,9'. "
-                         "Una corrida por especificacion, compartiendo la referencia sin mascara")
+                    help="gen/post: especificaciones separadas por ';' ('all' | '16' | '12-16' | '1,5,9')")
+    ap.add_argument("--keep", default="bos,sys,qrest,ahead",
+                    help="keep: conjuntos de regiones separados por ';', cada uno con regiones "
+                         "separadas por ',' de " + ",".join(REGIONES_PROMPT))
+    ap.add_argument("--clean_control", action="store_true",
+                    help="generar tambien SIN parche bajo la misma mascara")
     ap.add_argument("--num_tokens", type=int, default=100)
     ap.add_argument("--n", type=int, default=0, help="limitar filas de held-out (0 = todas)")
-    ap.add_argument("--check_mask_path", action="store_true")
+    ap.add_argument("--check_mask_path", action="store_true",
+                    help="verificar que la causal 4D explicita reproduce attention_mask=None")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_dir", required=True)
     args = ap.parse_args()
@@ -97,13 +109,30 @@ def main():
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
     n_layers = len(model.model.layers)
     patch = torch.load(args.patch, map_location=args.device).to(args.device)
-    specs = [s.strip() for s in args.layers.split(";") if s.strip()]
-    for s in specs:
-        parse_layers(s, n_layers)   # valida antes de gastar GPU
     os.makedirs(args.out_dir, exist_ok=True)
 
+    # --- condiciones ---------------------------------------------------------
+    conds = []
+    if args.block == "keep":
+        for spec in [s.strip() for s in args.keep.split(";") if s.strip()]:
+            regs = [r.strip() for r in spec.split(",") if r.strip()]
+            malos = [r for r in regs if r not in REGIONES_PROMPT]
+            if malos:
+                raise SystemExit(f"regiones desconocidas: {malos}; validas: {REGIONES_PROMPT}")
+            if "bos" not in regs:
+                print(f"AVISO: keep='{spec}' sin bos: bloquear el attention sink rompe al modelo "
+                      "por razones ajenas al parche")
+            conds.append({"label": f"keep@{spec}", "layers": None, "keep": regs,
+                          "file": f"mask_keep_{tag(spec)}.json"})
+    else:
+        for spec in [s.strip() for s in args.layers.split(";") if s.strip()]:
+            layers = None if spec.lower() in ("all", "todas", "*") else parse_layers(spec, n_layers)
+            conds.append({"label": f"{args.block}@{spec}", "layers": layers, "keep": None,
+                          "file": f"mask_{args.block}_{tag(spec)}.json"})
+
     print(f"parche {args.patch}  norma {patch.norm(2).item():.4f}  |  held-out {len(heldout)}")
-    print(f"block={args.block}  capas={specs}  |  {n_layers} capas en el modelo")
+    print(f"block={args.block}  condiciones={[c['label'] for c in conds]}  |  "
+          f"control limpio={'si' if args.clean_control else 'no'}")
 
     common = dict(num_patch_positions=args.num_patch_positions,
                   patch_offset=args.patch_offset, num_tokens=args.num_tokens)
@@ -112,68 +141,92 @@ def main():
     base_rows = []
     for i, r in tqdm.tqdm(heldout.iterrows(), total=len(heldout), desc="unmasked"):
         txt, raw, info = generate_masked(model, tokenizer, r["prompt"], args.device,
-                                         patch=patch, block="none", layers=None, **common)
+                                         patch=patch, block="none", **common)
         rec = {"idx": int(i), "prompt": r["prompt"], "answer": r["answer"],
                "baseline": r["baseline_en"], "reference": r["output"],
                "unmasked": txt, "unmasked_role_leak": bool(txt != raw.strip()),
-               "posiciones_parcheadas": info["blocked"], "prompt_len": info["prompt_len"]}
+               "posiciones_parcheadas": info["patched"], "prompt_len": info["prompt_len"]}
         add_metrics(rec, "unmasked", txt, r["answer"], r["aliases"])
         if args.check_mask_path:
             txt2, _, _ = generate_masked(model, tokenizer, r["prompt"], args.device,
-                                         patch=patch, block="none", layers=None,
-                                         explicit_causal=True, **common)
+                                         patch=patch, block="none", explicit_causal=True,
+                                         **common)
             rec["causal_explicit"] = txt2
             rec["causal_explicit_igual"] = txt2.strip() == txt.strip()
         base_rows.append(rec)
 
     resumen = [{"cond": "unmasked", **aggregate(base_rows, "unmasked")}]
     if args.check_mask_path:
-        resumen[0]["causal_explicit_igual"] = sum(r["causal_explicit_igual"] for r in base_rows) / len(base_rows)
+        resumen[0]["causal_explicit_igual"] = (sum(r["causal_explicit_igual"] for r in base_rows)
+                                               / len(base_rows))
 
-    # --- cada especificacion de capas ---------------------------------------
-    for spec in specs:
-        layers = None if spec.lower() in ("all", "todas", "*") else parse_layers(spec, n_layers)
+    # --- cada condicion ------------------------------------------------------
+    for c in conds:
         rows = []
         for rec0, (i, r) in tqdm.tqdm(zip(base_rows, heldout.iterrows()), total=len(heldout),
-                                     desc=f"{args.block}@{spec}"):
+                                     desc=c["label"]):
             txt, raw, info = generate_masked(model, tokenizer, r["prompt"], args.device,
-                                             patch=patch, block=args.block, layers=layers,
-                                             **common)
+                                             patch=patch, block=args.block, layers=c["layers"],
+                                             keep=c["keep"], **common)
             rec = dict(rec0)
             rec["masked"] = txt
             rec["masked_role_leak"] = bool(txt != raw.strip())
             rec["masked_igual_unmasked"] = txt.strip() == rec0["unmasked"].strip()
             rec["masked_igual_baseline"] = txt.strip() == str(r["baseline_en"]).strip()
             rec["query_from"] = info["query_from"]
+            rec["n_keys_bloqueadas"] = info["n_blocked"]
             add_metrics(rec, "masked", txt, r["answer"], r["aliases"])
+            if args.clean_control:
+                ctxt, craw, _ = generate_masked(model, tokenizer, r["prompt"], args.device,
+                                                patch=None, block=args.block, layers=c["layers"],
+                                                keep=c["keep"], **common)
+                rec["clean_masked"] = ctxt
+                add_metrics(rec, "clean_masked", ctxt, r["answer"], r["aliases"])
             rows.append(rec)
 
         agg = aggregate(rows, "masked")
         agg["igual_unmasked"] = sum(r["masked_igual_unmasked"] for r in rows) / len(rows)
         agg["igual_baseline"] = sum(r["masked_igual_baseline"] for r in rows) / len(rows)
-        rep = {"objetivo": "mascara de atencion hacia el parche",
+        agg["n_keys_bloqueadas_media"] = sum(r["n_keys_bloqueadas"] for r in rows) / len(rows)
+        if args.clean_control:
+            cl = aggregate(rows, "clean_masked")
+            agg["clean"] = cl
+            agg["efecto_parche_is_french"] = agg["is_french"] - cl["is_french"]
+        rep = {"objetivo": "mascara de atencion desde los generados hacia el prompt",
                "patch": os.path.abspath(args.patch), "patch_norm": patch.norm(2).item(),
-               "block": args.block, "layers_spec": spec,
-               "layers": layers if layers is not None else "all",
-               "config": vars(args), "n_heldout": len(rows), "metrics": agg, "rows": rows}
-        nom = f"mask_{args.block}_{spec_tag(spec)}.json"
-        with open(os.path.join(args.out_dir, nom), "w", encoding="utf-8") as f:
+               "block": args.block, "layers": c["layers"] if c["layers"] is not None else "all",
+               "keep": c["keep"], "config": vars(args), "n_heldout": len(rows),
+               "metrics": agg, "rows": rows}
+        with open(os.path.join(args.out_dir, c["file"]), "w", encoding="utf-8") as f:
             json.dump(rep, f, indent=2, ensure_ascii=False)
-        resumen.append({"cond": f"{args.block}@{spec}", **agg})
-        print(f"  -> {nom}")
+        resumen.append({"cond": c["label"], **agg})
+        print(f"  -> {c['file']}")
 
     # --- tabla -------------------------------------------------------------
-    print("\n" + "=" * 100)
-    print(f"{'condicion':<16}{'is_french':>10}{'starts_fr':>10}{'accuracy':>10}{'largo':>8}"
-          f"{'<25ch':>7}{'=unmask':>9}{'=base':>7}   veredictos")
+    print("\n" + "=" * 118)
+    cab = (f"{'condicion':<34}{'is_fr':>7}{'st_fr':>7}{'acc':>7}{'largo':>7}{'<25':>5}"
+           f"{'=unm':>6}{'keys':>6}")
+    if args.clean_control:
+        cab += f"{'| limpio is_fr':>15}{'acc':>7}{'largo':>7}{'| efecto':>9}"
+    print(cab)
     for r in resumen:
-        print(f"{r['cond']:<16}{r['is_french']:>10.2f}{r['starts_fr']:>10.2f}"
-              f"{r['answer_correct']:>10.2f}{r['len_media']:>8.1f}{r['cortas_lt25']:>7d}"
-              f"{r.get('igual_unmasked', 1.0):>9.2f}{r.get('igual_baseline', 0.0):>7.2f}   {r['veredictos']}")
-    print("=" * 100)
-    print("Lectura: 'gen@all' con starts_fr alto pero is_french bajo y muchas cortas = el frances")
-    print("arranca y colapsa -> los generados NECESITAN leer el parche (contexto persistente).")
-    print("'post@all' tiene que dar =base ~1.0; si no, la mascara no esta haciendo lo que dice.")
+        fila = (f"{r['cond']:<34}{r['is_french']:>7.2f}{r['starts_fr']:>7.2f}"
+                f"{r['answer_correct']:>7.2f}{r['len_media']:>7.1f}{r['cortas_lt25']:>5d}"
+                f"{r.get('igual_unmasked', 1.0):>6.2f}{r.get('n_keys_bloqueadas_media', 0):>6.1f}")
+        if args.clean_control and "clean" in r:
+            cl = r["clean"]
+            fila += (f"{cl['is_french']:>15.2f}{cl['answer_correct']:>7.2f}{cl['len_media']:>7.1f}"
+                     f"{r['efecto_parche_is_french']:>9.2f}")
+        print(fila)
+    print("=" * 118)
+    if args.block == "keep":
+        print("Lectura: 'efecto' = is_french con parche menos sin parche bajo la MISMA mascara.")
+        print("La region mas chica con la que el efecto se mantiene es donde vive el modo frances.")
+    elif args.block == "gen":
+        print("Lectura: si is_french se mantiene con el parche bloqueado para los generados, el modo")
+        print("no vive en las 3 posiciones sino en el KV del prompt posterior. Seguir con --block keep.")
+    else:
+        print("Lectura: post@all tiene que dar is_french ~0 (parche invisible). =unm/=base no informan.")
 
     path = os.path.join(args.out_dir, f"resumen_{args.block}.json")
     prev = []

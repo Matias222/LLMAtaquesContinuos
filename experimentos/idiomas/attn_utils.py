@@ -209,35 +209,91 @@ class LayerMasks:
         return False
 
 
-def query_from_for(block, sm, prompt_len, blocked):
-    """
-    Desde que query se bloquea la atencion hacia las posiciones parcheadas.
+REGIONES_PROMPT = ("bos", "sys", "patched", "qrest", "ahead")
 
-        gen   solo los tokens GENERADOS (i >= prompt_len). El forward del prompt
-              queda intacto, incluido el ultimo token que decide el primer
-              token de la respuesta. Es el test de la hipotesis.
-        post  todo lo que viene DESPUES del bloque parcheado, incluido el resto
-              del prompt. El parche queda invisible para todos: la salida tiene
-              que ser identica al baseline. Es el control de que la mascara
-              hace lo que dice.
-        none  sin bloqueo.
+
+def prompt_regions(sm, prompt_len, patched):
     """
-    if block == "gen":
-        return prompt_len
-    if block == "post":
-        return (blocked[-1] + 1) if blocked else prompt_len
+    Particion del prompt en regiones de keys, por indice absoluto.
+
+        bos      posicion 0. Attention sink: bloquearla rompe al modelo por
+                 razones que no tienen que ver con el parche. Mantenerla siempre.
+        sys      header de sistema + texto de sistema + header de usuario,
+                 o sea todo lo que hay entre el BOS y la pregunta.
+        patched  las posiciones que reciben el parche.
+        qrest    el resto de la pregunta (goal sin las parcheadas).
+        ahead    <|eot_id|> + header del assistant + '\\n\\n': lo que va desde el
+                 fin de la pregunta hasta el ultimo token del prompt. Su ultima
+                 posicion es la que decide el primer token de la respuesta.
+
+    Los slices vienen de sm.get_input_ids(), que tiene que haberse llamado.
+    """
+    g0, g1 = sm._goal_slice.start, sm._goal_slice.stop
+    bl = set(patched)
+    return {
+        "bos": [0],
+        "sys": list(range(1, g0)),
+        "patched": sorted(bl),
+        "qrest": [j for j in range(g0, g1) if j not in bl],
+        "ahead": list(range(g1, prompt_len)),
+    }
+
+
+def blocked_keys_for(block, sm, prompt_len, patched, keep=None):
+    """
+    (keys bloqueadas, query desde la cual se bloquean) para cada modo.
+
+        none  sin bloqueo.
+        gen   keys = las posiciones parcheadas, queries = los tokens GENERADOS
+              (i >= prompt_len). El forward del prompt queda intacto, incluido
+              el ultimo token que decide el primer token de la respuesta.
+        post  keys = las parcheadas, queries = TODO lo posterior al bloque
+              parcheado, incluido el resto del prompt. El parche queda invisible
+              para todos. OJO: tambien borra esas 3 palabras de la pregunta para
+              el resto del prompt, asi que la salida NO tiene por que igualar
+              al baseline; lo que si tiene que pasar es frances = 0.
+        keep  queries = los generados; keys bloqueadas = TODO el prompt salvo
+              las regiones de `keep` (nombres de REGIONES_PROMPT). Los
+              generados siempre se ven entre si. Contesta DONDE del KV del
+              prompt vive el modo: si con keep=bos,sys,ahead sale frances, el
+              header del assistant alcanza; si hace falta qrest, el modo esta
+              imprimido en la pregunta; etc.
+    """
     if block == "none":
-        return None
+        return [], None
+    if block == "gen":
+        return list(patched), prompt_len
+    if block == "post":
+        return list(patched), ((patched[-1] + 1) if patched else prompt_len)
+    if block == "keep":
+        keep = list(keep or [])
+        malos = [k for k in keep if k not in REGIONES_PROMPT]
+        if malos:
+            raise ValueError(f"regiones desconocidas en keep: {malos}; validas: {REGIONES_PROMPT}")
+        reg = prompt_regions(sm, prompt_len, patched)
+        kept = set()
+        for k in keep:
+            kept.update(reg[k])
+        return [j for j in range(prompt_len) if j not in kept], prompt_len
     raise ValueError(f"block desconocido: {block}")
+
+
+def query_from_for(block, sm, prompt_len, blocked):
+    """Compatibilidad: solo la query de corte, para los modos sin `keep`."""
+    return blocked_keys_for(block, sm, prompt_len, blocked)[1]
 
 
 @torch.no_grad()
 def generate_masked(model, tokenizer, instruction, device, patch=None,
                     num_patch_positions=3, patch_offset=0, block="gen",
-                    layers=None, num_tokens=100, explicit_causal=False):
+                    layers=None, num_tokens=100, explicit_causal=False, keep=None):
     """
-    Generacion greedy desde embeddings con el parche aplicado y la atencion
-    hacia las posiciones parcheadas bloqueada segun `block` y `layers`.
+    Generacion greedy desde embeddings con el parche aplicado (o sin parche, si
+    patch=None: control limpio bajo la MISMA mascara) y la atencion bloqueada
+    segun `block`, `keep` y `layers` (ver blocked_keys_for).
+
+    Con patch=None las "posiciones parcheadas" siguen siendo las que el parche
+    ocuparia, asi que la mascara es identica a la de la corrida con parche.
 
     layers=None -> el bloqueo aplica en TODAS las capas (mascara a nivel modelo).
     layers=[..] -> solo en esas capas (hooks); el resto ve la causal pura.
@@ -256,8 +312,8 @@ def generate_masked(model, tokenizer, instruction, device, patch=None,
         embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions, offset=patch_offset)
     embeds = embeds[:, : sm._assistant_role_slice.stop, :]
     prompt_len = embeds.shape[1]
-    blocked = patched_positions(sm, num_patch_positions, patch_offset)
-    q_from = query_from_for(block, sm, prompt_len, blocked)
+    patched = patched_positions(sm, num_patch_positions, patch_offset)
+    blocked, q_from = blocked_keys_for(block, sm, prompt_len, patched, keep)
     dtype = embeds.dtype
 
     emb_matrix = get_embedding_matrix(model)
@@ -285,7 +341,8 @@ def generate_masked(model, tokenizer, instruction, device, patch=None,
             embeds = torch.hstack([embeds, emb_matrix[tok][None, None, :]])
 
     raw = tokenizer.decode(out, skip_special_tokens=True)
-    info = {"prompt_len": int(prompt_len), "blocked": [int(b) for b in blocked],
+    info = {"prompt_len": int(prompt_len), "patched": [int(b) for b in patched],
+            "blocked": [int(b) for b in blocked], "n_blocked": len(blocked),
             "query_from": None if q_from is None else int(q_from),
             "n_generated": len(out)}
     return truncate_at_role_leak(raw), raw, info
@@ -312,6 +369,29 @@ def selftest_masks():
     # query_from fuera de rango o sin keys: causal pura
     assert torch.equal(blocked_mask(S, [], 5, dtype, dev), c)
     assert torch.equal(blocked_mask(S, [2], S + 3, dtype, dev), c)
+
+    # regiones y modo keep, con un SuffixManager falso (solo hacen falta los slices)
+    class _SM:
+        _goal_slice = slice(10, 17)          # pregunta: posiciones 10..16
+    prompt_len, patched = 22, [10, 11, 12]  # header del assistant: 17..21
+    reg = prompt_regions(_SM(), prompt_len, patched)
+    assert reg["bos"] == [0] and reg["sys"] == list(range(1, 10))
+    assert reg["patched"] == [10, 11, 12] and reg["qrest"] == [13, 14, 15, 16]
+    assert reg["ahead"] == [17, 18, 19, 20, 21]
+    todo = sorted(sum(reg.values(), []))
+    assert todo == list(range(prompt_len)), "las regiones tienen que particionar el prompt"
+    bk, qf = blocked_keys_for("keep", _SM(), prompt_len, patched, ["bos", "sys", "ahead"])
+    assert qf == prompt_len and bk == list(range(10, 17))
+    bk, _ = blocked_keys_for("keep", _SM(), prompt_len, patched, list(REGIONES_PROMPT))
+    assert bk == [], "keep con todas las regiones = sin bloqueo"
+    assert blocked_keys_for("gen", _SM(), prompt_len, patched) == ([10, 11, 12], prompt_len)
+    assert blocked_keys_for("post", _SM(), prompt_len, patched) == ([10, 11, 12], 13)
+    assert blocked_keys_for("none", _SM(), prompt_len, patched) == ([], None)
+    try:
+        blocked_keys_for("keep", _SM(), prompt_len, patched, ["bos", "cabeza"])
+        raise AssertionError("keep con region invalida tendria que fallar")
+    except ValueError:
+        pass
 
     assert parse_layers("all", 28) == list(range(1, 29))
     assert parse_layers("12-16", 28) == [12, 13, 14, 15, 16]

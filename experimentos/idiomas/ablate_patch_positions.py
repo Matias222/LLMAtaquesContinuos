@@ -116,6 +116,7 @@ def main():
     goal_len = {}
     for i, r in heldout.iterrows():
         sm = build_suffix_manager(tokenizer, r["prompt"], target="")
+        sm.get_input_ids()          # los slices se calculan aca, no en el constructor
         goal_len[int(i)] = sm._goal_slice.stop - sm._goal_slice.start
 
     resumen = []

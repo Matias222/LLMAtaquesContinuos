@@ -145,6 +145,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         cortos = 0
         for _, row in train_df.iterrows():
             sm_ = build_suffix_manager(tokenizer, row["prompt"], target=row["output"])
+            sm_.get_input_ids()     # los slices se calculan aca, no en el constructor
             if sm_._goal_slice.stop - sm_._goal_slice.start < patch_offset + num_patch_positions:
                 cortos += 1
         print(f"  AVISO offset: {cortos}/{len(train_df)} prompts de train tienen goal mas corto que "
