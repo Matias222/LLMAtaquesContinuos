@@ -43,6 +43,9 @@ def main():
                     help="cuantos tokens iniciales cuentan como 'head' (decision de idioma)")
     ap.add_argument("--scale", type=float, default=1.0,
                     help="escala alfa aplicada al parche (dose-response)")
+    ap.add_argument("--patch_offset", type=int, default=0,
+                    help="posicion del goal donde arranca el parche (default 0 = primeras N). "
+                         "Tiene que coincidir con el --patch_offset del entrenamiento")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_json", default="eval_report.json")
     ap.add_argument("--out_md", default="eval_report.md")
@@ -71,7 +74,7 @@ def main():
         patched_raw = generate_one(model, tokenizer, q, args.device, args.num_tokens,
                                    args.temperature, patch=patch,
                                    num_patch_positions=args.num_patch_positions,
-                                   clean=False)
+                                   clean=False, patch_offset=args.patch_offset)
         patched = truncate_at_role_leak(patched_raw)
 
         has_answer = str(ans).strip() != ""
@@ -91,7 +94,7 @@ def main():
                                    head_k=args.head_k))
         nll_p.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=patch,
                                    num_patch_positions=args.num_patch_positions,
-                                   head_k=args.head_k))
+                                   head_k=args.head_k, patch_offset=args.patch_offset))
         rec["nll_baseline"] = nll_b[-1]
         rec["nll_patched"] = nll_p[-1]
 
@@ -122,6 +125,7 @@ def main():
         "n_heldout": len(rows),
         "config": {
             "num_patch_positions": args.num_patch_positions,
+            "patch_offset": args.patch_offset,
             "scale": args.scale,
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,

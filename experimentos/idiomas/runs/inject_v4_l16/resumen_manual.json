@@ -1,0 +1,88 @@
+{
+  "resumen": [
+    {
+      "cond": "total",
+      "norma": 7.699328422546387,
+      "fr_det": 0.86,
+      "fr_manual": 0.9772727272727273,
+      "acc_det": 0.46,
+      "acc_manual": 0.46,
+      "largo": 121.02,
+      "fr": 43,
+      "en": 0,
+      "mixto": 1,
+      "neutro": 6,
+      "decidibles": 44
+    },
+    {
+      "cond": "par",
+      "norma": 5.535238742828369,
+      "fr_det": 0.46,
+      "fr_manual": 1.0,
+      "acc_det": 0.54,
+      "acc_manual": 0.54,
+      "largo": 72.54,
+      "fr": 38,
+      "en": 0,
+      "mixto": 0,
+      "neutro": 12,
+      "decidibles": 38
+    },
+    {
+      "cond": "d",
+      "norma": 7.288064956665039,
+      "fr_det": 0.48,
+      "fr_manual": 0.9736842105263158,
+      "acc_det": 0.46,
+      "acc_manual": 0.46,
+      "largo": 60.52,
+      "fr": 37,
+      "en": 0,
+      "mixto": 1,
+      "neutro": 12,
+      "decidibles": 38
+    },
+    {
+      "cond": "ort",
+      "norma": 5.351707935333252,
+      "fr_det": 0.0,
+      "fr_manual": 0.0,
+      "acc_det": 0.92,
+      "acc_manual": 0.94,
+      "largo": 151.14,
+      "fr": 0,
+      "en": 44,
+      "mixto": 0,
+      "neutro": 6,
+      "decidibles": 44
+    },
+    {
+      "cond": "random",
+      "norma": 5.351707935333252,
+      "fr_det": 0.0,
+      "fr_manual": 0.0,
+      "acc_det": 0.96,
+      "acc_manual": 0.96,
+      "largo": 145.12,
+      "fr": 0,
+      "en": 44,
+      "mixto": 0,
+      "neutro": 6,
+      "decidibles": 44
+    },
+    {
+      "cond": "none",
+      "norma": 0.0,
+      "fr_det": 0.0,
+      "fr_manual": 0.0,
+      "acc_det": 0.96,
+      "acc_manual": 0.98,
+      "largo": 150.54,
+      "fr": 0,
+      "en": 44,
+      "mixto": 0,
+      "neutro": 6,
+      "decidibles": 44
+    }
+  ]
+}

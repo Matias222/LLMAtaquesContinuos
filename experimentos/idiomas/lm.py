@@ -63,20 +63,27 @@ def build_suffix_manager(tokenizer, instruction, target=""):
     )
 
 
-def apply_patch_first_n(suffix_manager, prompt_embeds, patch, num_patch_positions=3):
+def apply_patch_first_n(suffix_manager, prompt_embeds, patch, num_patch_positions=3,
+                        offset=0):
     """
-    e'_i = e_i + v_i  para i en las primeras N posiciones del goal slice.
+    e'_i = e_i + v_i  para i en las N posiciones del goal slice a partir de
+    goal_start + offset.
 
-    Identico a apply_patch_to_first_n_tokens de legacy/christmas_final_train.py:
-    NO promedia posiciones, preserva las K direcciones posicionales.
+    Con offset=0 (default) es identico a apply_patch_to_first_n_tokens de
+    legacy/christmas_final_train.py: NO promedia posiciones, preserva las K
+    direcciones posicionales. `offset` existe para el control de posicion
+    (ablate_patch_positions.py, train_lang_patch.py --patch_offset): si el goal
+    es mas corto que offset + N, se aplican las posiciones que entren y el
+    resto del parche se ignora.
     """
     patched = prompt_embeds.clone()
-    goal_start = suffix_manager._goal_slice.start
+    goal_start = suffix_manager._goal_slice.start + int(offset)
     goal_end = suffix_manager._goal_slice.stop
-    actual = min(num_patch_positions, goal_end - goal_start)
-    patched[:, goal_start:goal_start + actual, :] = (
-        prompt_embeds[:, goal_start:goal_start + actual, :] + patch[:, :actual, :]
-    )
+    actual = max(0, min(num_patch_positions, goal_end - goal_start))
+    if actual > 0:
+        patched[:, goal_start:goal_start + actual, :] = (
+            prompt_embeds[:, goal_start:goal_start + actual, :] + patch[:, :actual, :]
+        )
     return patched
 
 
@@ -132,7 +139,8 @@ def generate(model, input_embeddings, num_tokens=100, temperature=0.0, stop_ids=
 
 
 def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperature=0.0,
-                 patch=None, num_patch_positions=3, stop_at_eot=True, clean=True):
+                 patch=None, num_patch_positions=3, stop_at_eot=True, clean=True,
+                 patch_offset=0):
     """
     Genera la respuesta a `instruction`, opcionalmente con parche aditivo.
 
@@ -145,7 +153,8 @@ def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperat
     if patch is None:
         input_embeds = embeds[:, : sm._assistant_role_slice.stop, :]
     else:
-        input_embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions)
+        input_embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions,
+                                           offset=patch_offset)
         input_embeds = input_embeds[:, : sm._assistant_role_slice.stop, :]
     stop = stop_token_ids(tokenizer) if stop_at_eot else None
     text = tokenizer.decode(generate(model, input_embeds, num_tokens, temperature, stop),
@@ -155,7 +164,7 @@ def generate_one(model, tokenizer, instruction, device, num_tokens=100, temperat
 
 @torch.no_grad()
 def nll_of_target(model, tokenizer, instruction, target, device,
-                  patch=None, num_patch_positions=3, head_k=5):
+                  patch=None, num_patch_positions=3, head_k=5, patch_offset=0):
     """
     Cross-entropy por token del `target` bajo el modelo, con o sin parche.
 
@@ -177,7 +186,8 @@ def nll_of_target(model, tokenizer, instruction, target, device,
     target_tokens = tokens[sm._target_slice].to(device)
     embeds = get_embeddings(model, tokens.unsqueeze(0)).detach()
     if patch is not None:
-        embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions)
+        embeds = apply_patch_first_n(sm, embeds, patch, num_patch_positions,
+                                     offset=patch_offset)
     logits = model(inputs_embeds=embeds).logits
     ls = sm._loss_slice
     n = min(ls.stop - ls.start, len(target_tokens))

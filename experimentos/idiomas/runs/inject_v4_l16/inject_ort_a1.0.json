@@ -15,7 +15,17 @@
     "french_score": 0.06,
     "answer_correct": 0.92,
     "identico_al_baseline": 0.46,
-    "role_leak": 0.0
+    "role_leak": 0.0,
+    "is_french_manual": 0.0,
+    "answer_correct_manual": 0.94,
+    "lang_manual_counts": {
+      "fr": 0,
+      "en": 44,
+      "mixto": 0,
+      "neutro": 6
+    },
+    "decidibles": 44,
+    "largo_medio": 151.14
   },
   "veredictos": {
     "en": 44,
@@ -32,7 +42,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 201,
@@ -44,7 +57,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 202,
@@ -56,7 +72,10 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     },
     {
       "idx": 203,
@@ -68,7 +87,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 204,
@@ -80,7 +102,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 205,
@@ -92,7 +117,10 @@
       "injected_lang": "en",
       "injected_answer_correct": false,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": false
     },
     {
       "idx": 206,
@@ -104,7 +132,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 207,
@@ -116,7 +147,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 208,
@@ -128,7 +162,10 @@
       "injected_lang": "en",
       "injected_answer_correct": false,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": false
     },
     {
       "idx": 209,
@@ -140,7 +177,10 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     },
     {
       "idx": 210,
@@ -152,7 +192,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 211,
@@ -164,7 +207,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 212,
@@ -176,7 +222,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 213,
@@ -188,7 +237,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 214,
@@ -200,7 +252,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 215,
@@ -212,7 +267,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 216,
@@ -224,7 +282,10 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     },
     {
       "idx": 217,
@@ -236,7 +297,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 218,
@@ -248,7 +312,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 219,
@@ -260,7 +327,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 220,
@@ -272,7 +342,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 221,
@@ -284,7 +357,10 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     },
     {
       "idx": 222,
@@ -296,7 +372,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 223,
@@ -308,7 +387,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 224,
@@ -320,7 +402,10 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     },
     {
       "idx": 225,
@@ -332,7 +417,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 226,
@@ -344,7 +432,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 227,
@@ -356,7 +447,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 228,
@@ -368,7 +462,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 229,
@@ -380,7 +477,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 230,
@@ -392,7 +492,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 231,
@@ -404,7 +507,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 232,
@@ -416,7 +522,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 233,
@@ -428,7 +537,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 234,
@@ -440,7 +552,10 @@
       "injected_lang": "en",
       "injected_answer_correct": false,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": false
     },
     {
       "idx": 235,
@@ -452,7 +567,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 236,
@@ -464,7 +582,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 237,
@@ -476,7 +597,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 238,
@@ -488,7 +612,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 239,
@@ -500,7 +627,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 240,
@@ -512,7 +642,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 241,
@@ -524,7 +657,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 242,
@@ -536,7 +672,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 243,
@@ -548,7 +687,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 244,
@@ -560,7 +702,10 @@
       "injected_lang": "en",
       "injected_answer_correct": false,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 245,
@@ -572,7 +717,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 246,
@@ -584,7 +732,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 247,
@@ -596,7 +747,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 248,
@@ -608,7 +762,10 @@
       "injected_lang": "en",
       "injected_answer_correct": true,
       "identico_al_baseline": true,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "en",
+      "is_french_manual": false,
+      "answer_correct_manual": true
     },
     {
       "idx": 249,
@@ -620,7 +777,13 @@
       "injected_lang": "unknown",
       "injected_answer_correct": true,
       "identico_al_baseline": false,
-      "role_leak": false
+      "role_leak": false,
+      "lang_manual": "neutro",
+      "is_french_manual": null,
+      "answer_correct_manual": true
     }
-  ]
+  ],
+  "rescore_manual": {
+    "criterio": "fr sobre DECIDIBLES (n menos los neutros); neutro = aritmetica o nombre propio pelado"
+  }
 }

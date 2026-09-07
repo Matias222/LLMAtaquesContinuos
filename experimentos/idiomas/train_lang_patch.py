@@ -36,9 +36,10 @@ from lm import (DEFAULT_MODEL, apply_patch_first_n, build_suffix_manager,
 
 
 def calc_loss(model, sm, prompt_embeds, patch, target_tokens,
-              num_patch_positions=3, l2_weight=0.08):
+              num_patch_positions=3, l2_weight=0.08, patch_offset=0):
     """CE sobre el target completo + L2. Sin prefix loss, sin bot penalty."""
-    patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions)
+    patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions,
+                                  offset=patch_offset)
     logits = model(inputs_embeds=patched).logits
 
     ls = sm._loss_slice
@@ -61,7 +62,8 @@ def cosine_step(base, global_step, total_steps):
 
 
 @torch.no_grad()
-def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head_k=5):
+def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head_k=5,
+             patch_offset=0):
     """CE del target frances en held-out, con y sin parche, partida en head/tail."""
     acc = {"p_all": [], "b_all": [], "p_head": [], "b_head": []}
     zero = torch.zeros_like(patch)
@@ -71,7 +73,7 @@ def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head
         tt = tokens[sm._target_slice].to(patch.device)
         pe = get_embeddings(model, tokens.unsqueeze(0)).detach()
         for tag, v in (("p", patch), ("b", zero)):
-            per_tok = per_token_ce(model, sm, pe, v, tt, num_patch_positions)
+            per_tok = per_token_ce(model, sm, pe, v, tt, num_patch_positions, patch_offset)
             if per_tok is None:
                 continue
             acc[f"{tag}_all"].append(per_tok.mean().item())
@@ -79,8 +81,10 @@ def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head
     return {k: (sum(v) / len(v) if v else float("nan")) for k, v in acc.items()}
 
 
-def per_token_ce(model, sm, prompt_embeds, patch, target_tokens, num_patch_positions):
-    patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions)
+def per_token_ce(model, sm, prompt_embeds, patch, target_tokens, num_patch_positions,
+                 patch_offset=0):
+    patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions,
+                                  offset=patch_offset)
     logits = model(inputs_embeds=patched).logits
     ls = sm._loss_slice
     n = min(ls.stop - ls.start, len(target_tokens))
@@ -94,10 +98,15 @@ def train(model_path, targets_csv, l2_weight, output_dir,
           num_epochs=5, num_steps_per_prompt=75, num_patch_positions=3,
           step_size=0.00025, train_test_split=0.8, device="cuda:0",
           use_gate=True, batch_size=1, step_decay="none", val_n=8,
-          save_best=False, head_k=5):
+          save_best=False, head_k=5, patch_offset=0):
     """
     Defaults = comportamiento original (batch_size=1, sin annealing, ultimo
     checkpoint), para que los runs viejos sigan siendo reproducibles.
+
+    patch_offset: el parche se suma a las posiciones goal_start + offset ... + N
+    en vez de a las primeras N. Es el control de posicion: si un parche
+    entrenado en las posiciones 5-7 funciona igual que uno en 1-3, el efecto no
+    depende de estar al inicio (attention sink); si no, si.
     """
     df = pd.read_csv(targets_csv, sep=";", keep_default_na=False)
 
@@ -127,7 +136,19 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     total_steps = num_epochs * n_batches * num_steps_per_prompt
 
     print(f"\nTrain: {len(train_df)}  |  Held-out: {len(test_df)}  |  validacion: {len(val_rows)}")
-    print(f"L2: {l2_weight}  |  step_size: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}")
+    print(f"L2: {l2_weight}  |  step_size: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}"
+          + (f"  |  offset: {patch_offset}" if patch_offset else ""))
+    if patch_offset:
+        # Preguntas mas cortas que offset + N reciben un parche recortado (o
+        # ninguno). Contarlas ANTES de entrenar: si son muchas, el run no mide
+        # lo que dice medir.
+        cortos = 0
+        for _, row in train_df.iterrows():
+            sm_ = build_suffix_manager(tokenizer, row["prompt"], target=row["output"])
+            if sm_._goal_slice.stop - sm_._goal_slice.start < patch_offset + num_patch_positions:
+                cortos += 1
+        print(f"  AVISO offset: {cortos}/{len(train_df)} prompts de train tienen goal mas corto que "
+              f"offset + N = {patch_offset + num_patch_positions} tokens (parche recortado ahi)")
     print(f"Epochs: {num_epochs}  |  batch: {batch_size} ({n_batches} batches/epoch)  "
           f"|  steps/batch: {num_steps_per_prompt}")
     print(f"Checkpoint: {'mejor por CE held-out' if save_best else 'ultimo'}")
@@ -165,7 +186,8 @@ def train(model_path, targets_csv, l2_weight, output_dir,
                 step_ce = []
                 for sm, pe, tt in items:
                     total, _, ce, _ = calc_loss(model, sm, pe, patch, tt,
-                                                num_patch_positions, l2_weight)
+                                                num_patch_positions, l2_weight,
+                                                patch_offset)
                     (total / len(items)).backward()
                     step_ce.append(ce.item())
 
@@ -183,9 +205,9 @@ def train(model_path, targets_csv, l2_weight, output_dir,
                       f"norma={patch.norm(2).item():.6f}  lr={lr:.2e}")
 
         v = validate(model, tokenizer, patch, val_rows, num_patch_positions,
-                     l2_weight, head_k)
+                     l2_weight, head_k, patch_offset)
         t = validate(model, tokenizer, patch, train_rows, num_patch_positions,
-                     l2_weight, head_k)
+                     l2_weight, head_k, patch_offset)
         gap = v["p_head"] - t["p_head"]
         curva.append({"epoch": epoch + 1, "train_head": t["p_head"],
                       "heldout_head": v["p_head"], "gap": gap,
@@ -248,6 +270,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         "language": "french",
         "instruction": "Answer in French.",
         "num_patch_positions": num_patch_positions,
+        "patch_offset": patch_offset,
         "patch_norm": final.norm(2).item(),
         "train_size": len(train_df),
         "test_size": len(test_df),
@@ -303,13 +326,16 @@ def main():
     ap.add_argument("--save_best", action="store_true",
                     help="guardar el parche con mejor head CE en vez del ultimo")
     ap.add_argument("--head_k", type=int, default=5)
+    ap.add_argument("--patch_offset", type=int, default=0,
+                    help="sumar el parche en goal_start + offset ... + N en vez de en las "
+                         "primeras N posiciones (control de posicion / attention sink)")
     args = ap.parse_args()
 
     train(args.model, args.targets, args.l2_weight, args.output_dir,
           args.num_epochs, args.num_steps_per_prompt, args.num_patch_positions,
           args.step_size, args.train_test_split, args.device, use_gate=not args.no_gate,
           batch_size=args.batch_size, step_decay=args.step_decay, val_n=args.val_n,
-          save_best=args.save_best, head_k=args.head_k)
+          save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset)
 
 
 if __name__ == "__main__":
