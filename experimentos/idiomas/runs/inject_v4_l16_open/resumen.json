@@ -1,0 +1,49 @@
+{
+  "layer": 16,
+  "positions": "all",
+  "during": "all",
+  "resumen": [
+    {
+      "cond": "total",
+      "a": 1.0,
+      "norma": 7.699328422546387,
+      "is_french": 0.9797979797979798,
+      "french_score": 0.9855218855218855,
+      "answer_correct": NaN,
+      "identico_al_baseline": 0.010101010101010102,
+      "role_leak": 0.010101010101010102,
+      "veredictos": {
+        "fr": 97,
+        "unknown": 2
+      }
+    },
+    {
+      "cond": "par",
+      "a": 1.0,
+      "norma": 5.535238742828369,
+      "is_french": 0.98989898989899,
+      "french_score": 0.9853414181515663,
+      "answer_correct": NaN,
+      "identico_al_baseline": 0.010101010101010102,
+      "role_leak": 0.0,
+      "veredictos": {
+        "fr": 98,
+        "unknown": 1
+      }
+    },
+    {
+      "cond": "none",
+      "a": 1.0,
+      "norma": 0.0,
+      "is_french": 0.0,
+      "french_score": 0.005827505827505827,
+      "answer_correct": NaN,
+      "identico_al_baseline": 1.0,
+      "role_leak": 0.0,
+      "veredictos": {
+        "en": 98,
+        "unknown": 1
+      }
+    }
+  ]
+}
