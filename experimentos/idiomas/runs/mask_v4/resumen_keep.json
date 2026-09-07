@@ -1,0 +1,245 @@
+{
+  "block": "keep",
+  "patch": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/runs/v4_250/lang_patch_best_train.pt",
+  "resumen": [
+    {
+      "cond": "unmasked",
+      "n": 50,
+      "is_french": 0.9,
+      "french_score": 0.9242857142857143,
+      "answer_correct": 0.94,
+      "starts_fr": 0.88,
+      "len_media": 81.34,
+      "cortas_lt25": 4,
+      "veredictos": {
+        "fr": 45,
+        "en": 2,
+        "unknown": 3
+      }
+    },
+    {
+      "cond": "keep@bos,sys,patched,qrest,ahead",
+      "n": 50,
+      "is_french": 0.9,
+      "french_score": 0.9242857142857143,
+      "answer_correct": 0.94,
+      "starts_fr": 0.88,
+      "len_media": 81.34,
+      "cortas_lt25": 4,
+      "veredictos": {
+        "fr": 45,
+        "en": 2,
+        "unknown": 3
+      },
+      "igual_unmasked": 1.0,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 0.0,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.06,
+        "answer_correct": 0.96,
+        "starts_fr": 0.0,
+        "len_media": 150.54,
+        "cortas_lt25": 6,
+        "veredictos": {
+          "en": 44,
+          "unknown": 6
+        }
+      },
+      "efecto_parche_is_french": 0.9
+    },
+    {
+      "cond": "keep@bos,sys,qrest,ahead",
+      "n": 50,
+      "is_french": 0.86,
+      "french_score": 0.9022222222222223,
+      "answer_correct": 0.9,
+      "starts_fr": 0.8,
+      "len_media": 83.2,
+      "cortas_lt25": 5,
+      "veredictos": {
+        "fr": 43,
+        "en": 2,
+        "unknown": 4,
+        "es": 1
+      },
+      "igual_unmasked": 0.24,
+      "igual_baseline": 0.02,
+      "n_keys_bloqueadas_media": 3.0,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.06,
+        "answer_correct": 0.96,
+        "starts_fr": 0.0,
+        "len_media": 153.02,
+        "cortas_lt25": 6,
+        "veredictos": {
+          "en": 44,
+          "unknown": 6
+        }
+      },
+      "efecto_parche_is_french": 0.86
+    },
+    {
+      "cond": "keep@bos,sys,patched,qrest",
+      "n": 50,
+      "is_french": 0.48,
+      "french_score": 0.616970588235294,
+      "answer_correct": 0.38,
+      "starts_fr": 0.38,
+      "len_media": 93.86,
+      "cortas_lt25": 15,
+      "veredictos": {
+        "fr": 24,
+        "en": 13,
+        "unknown": 13
+      },
+      "igual_unmasked": 0.0,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 5.0,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.09,
+        "answer_correct": 0.92,
+        "starts_fr": 0.0,
+        "len_media": 61.72,
+        "cortas_lt25": 9,
+        "veredictos": {
+          "en": 41,
+          "unknown": 9
+        }
+      },
+      "efecto_parche_is_french": 0.48
+    },
+    {
+      "cond": "keep@bos,sys,ahead",
+      "n": 50,
+      "is_french": 0.82,
+      "french_score": 0.8920833333333333,
+      "answer_correct": 0.16,
+      "starts_fr": 0.78,
+      "len_media": 71.02,
+      "cortas_lt25": 12,
+      "veredictos": {
+        "fr": 41,
+        "en": 2,
+        "unknown": 7
+      },
+      "igual_unmasked": 0.02,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 8.6,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.06,
+        "answer_correct": 0.84,
+        "starts_fr": 0.0,
+        "len_media": 207.42,
+        "cortas_lt25": 6,
+        "veredictos": {
+          "en": 44,
+          "unknown": 6
+        }
+      },
+      "efecto_parche_is_french": 0.82
+    },
+    {
+      "cond": "keep@bos,sys,qrest",
+      "n": 50,
+      "is_french": 0.04,
+      "french_score": 0.26316666666666666,
+      "answer_correct": 0.5,
+      "starts_fr": 0.16,
+      "len_media": 103.48,
+      "cortas_lt25": 14,
+      "veredictos": {
+        "unknown": 20,
+        "en": 28,
+        "fr": 2
+      },
+      "igual_unmasked": 0.0,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 8.0,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.08,
+        "answer_correct": 0.9,
+        "starts_fr": 0.0,
+        "len_media": 103.08,
+        "cortas_lt25": 18,
+        "veredictos": {
+          "en": 42,
+          "unknown": 8
+        }
+      },
+      "efecto_parche_is_french": 0.04
+    },
+    {
+      "cond": "keep@bos,sys,patched",
+      "n": 50,
+      "is_french": 0.22,
+      "french_score": 0.38508960573476697,
+      "answer_correct": 0.02,
+      "starts_fr": 0.18,
+      "len_media": 171.28,
+      "cortas_lt25": 1,
+      "veredictos": {
+        "en": 27,
+        "unknown": 12,
+        "fr": 11
+      },
+      "igual_unmasked": 0.0,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 10.6,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.01,
+        "answer_correct": 0.18,
+        "starts_fr": 0.0,
+        "len_media": 188.78,
+        "cortas_lt25": 0,
+        "veredictos": {
+          "en": 49,
+          "unknown": 1
+        }
+      },
+      "efecto_parche_is_french": 0.22
+    },
+    {
+      "cond": "keep@bos,sys",
+      "n": 50,
+      "is_french": 0.02,
+      "french_score": 0.18600000000000003,
+      "answer_correct": 0.02,
+      "starts_fr": 0.18,
+      "len_media": 235.54,
+      "cortas_lt25": 1,
+      "veredictos": {
+        "en": 34,
+        "unknown": 15,
+        "fr": 1
+      },
+      "igual_unmasked": 0.0,
+      "igual_baseline": 0.0,
+      "n_keys_bloqueadas_media": 13.6,
+      "clean": {
+        "n": 50,
+        "is_french": 0.0,
+        "french_score": 0.0,
+        "answer_correct": 0.04,
+        "starts_fr": 0.0,
+        "len_media": 362.78,
+        "cortas_lt25": 0,
+        "veredictos": {
+          "en": 50
+        }
+      },
+      "efecto_parche_is_french": 0.02
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.05s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.57it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+parche runs/v4_250/lang_patch_best_train.pt  norma total 0.8021
+  posicion 0: norma 0.4157
+  posicion 1: norma 0.4964
+  posicion 2: norma 0.4734
+held-out 50  |  variantes: ['full', 'zero0', 'zero1', 'zero2', 'only0', 'only1', 'only2', 'perm201', 'perm120', 'shift1', 'shift2', 'shift3', 'shift4']
+
+Traceback (most recent call last):
+  File "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/ablate_patch_positions.py", line 171, in <module>
+    main()
+  File "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/ablate_patch_positions.py", line 119, in main
+    goal_len[int(i)] = sm._goal_slice.stop - sm._goal_slice.start
+                       ^^^^^^^^^^^^^^
+AttributeError: 'SuffixManager' object has no attribute '_goal_slice'

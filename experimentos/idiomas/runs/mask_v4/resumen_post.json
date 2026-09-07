@@ -1,0 +1,37 @@
+{
+  "block": "post",
+  "patch": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/runs/v4_250/lang_patch_best_train.pt",
+  "resumen": [
+    {
+      "cond": "unmasked",
+      "n": 50,
+      "is_french": 0.9,
+      "french_score": 0.9242857142857143,
+      "answer_correct": 0.94,
+      "starts_fr": 0.88,
+      "len_media": 81.34,
+      "cortas_lt25": 4,
+      "veredictos": {
+        "fr": 45,
+        "en": 2,
+        "unknown": 3
+      }
+    },
+    {
+      "cond": "post@all",
+      "n": 50,
+      "is_french": 0.0,
+      "french_score": 0.0625,
+      "answer_correct": 0.8,
+      "starts_fr": 0.0,
+      "len_media": 233.78,
+      "cortas_lt25": 6,
+      "veredictos": {
+        "en": 44,
+        "unknown": 6
+      },
+      "igual_unmasked": 0.0,
+      "igual_baseline": 0.36
+    }
+  ]
+}
