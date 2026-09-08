@@ -17,6 +17,10 @@ primeros tokens de la pregunta -- asi que a priori es mas plausible que este
 haciendo (B) que (A). layer_analysis.py y mean_diff_vectors.py miden contra
 las dos.
 
+`--lang es` agrega prompt_es, la entrada de cross_lang_patch.py (pregunta en
+espanol + parche: si el parche impone frances sobre cualquier idioma de entrada
+o solo sobre ingles). El detector de checkers.py ya tiene canal de espanol.
+
 `--lang de` agrega ademas prompt_de: no es un segundo idioma inducido por un
 parche (eso seria un experimento aparte, HALLAZGOS.md pendiente 2), es la
 misma pregunta en OTRO idioma para chequear si el parche de frances se
@@ -70,8 +74,19 @@ TEMPLATES = {
         "German: Wie funktioniert die Verdauung?\n\n"
         "English: {q}\nGerman:"
     ),
+    "es": (
+        "Translate the English question into Spanish. Do NOT answer it.\n"
+        "Output only the Spanish question.\n\n"
+        "English: What is the capital of Japan?\n"
+        "Spanish: ¿Cuál es la capital de Japón?\n\n"
+        "English: Who wrote Hamlet?\n"
+        "Spanish: ¿Quién escribió Hamlet?\n\n"
+        "English: How does digestion work?\n"
+        "Spanish: ¿Cómo funciona la digestión?\n\n"
+        "English: {q}\nSpanish:"
+    ),
 }
-LABELS = {"fr": "French", "de": "German"}
+LABELS = {"fr": "French", "de": "German", "es": "Spanish"}
 
 
 def main():
@@ -104,7 +119,7 @@ def main():
             t = t.split(":", 1)[1].strip()
         t = t.strip('"').strip()
         ok, motivo = check_translation(r["prompt"], t, r.get("answer", ""),
-                                       r.get("aliases", ""))
+                                       r.get("aliases", ""), target_lang=args.lang)
         translated.append(t); oks.append(ok); motivos.append(motivo)
 
     df[col] = translated
