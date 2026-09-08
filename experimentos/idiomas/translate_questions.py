@@ -99,17 +99,26 @@ def main():
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out", default=None,
                     help="por defecto reescribe --targets in-place (deja .bak)")
+    ap.add_argument("--only_missing", action="store_true",
+                    help="traducir solo las filas con prompt_<lang> vacio; el resto queda igual "
+                         "(preserva las correcciones de fix_translations.py)")
     args = ap.parse_args()
 
     col = f"prompt_{args.lang}"
     label = LABELS[args.lang]
     template = TEMPLATES[args.lang]
 
-    df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
+    df = pd.read_csv(args.targets, sep=";", keep_default_na=False, dtype=str)
     model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
 
+    if args.only_missing and col in df.columns:
+        todo = df.index[df[col].str.strip() == ""]
+        print(f"--only_missing: {len(todo)}/{len(df)} filas sin {col}")
+    else:
+        todo = df.index
     translated, oks, motivos = [], [], []
-    for _, r in tqdm.tqdm(df.iterrows(), total=len(df), desc=f"traduciendo ({args.lang})"):
+    for i in tqdm.tqdm(todo, desc=f"traduciendo ({args.lang})"):
+        r = df.loc[i]
         t = truncate_at_role_leak(generate_one(
             model, tokenizer, template.format(q=r["prompt"]), args.device,
             args.num_tokens, 0.0, clean=False))
@@ -122,22 +131,25 @@ def main():
                                        r.get("aliases", ""), target_lang=args.lang)
         translated.append(t); oks.append(ok); motivos.append(motivo)
 
-    df[col] = translated
-    df[f"{col}_language"] = [language_verdict(t) for t in translated]
-    df[f"{col}_ok"] = oks
+    for c in (col, f"{col}_language", f"{col}_ok"):
+        if c not in df.columns:
+            df[c] = ""
+    df.loc[todo, col] = translated
+    df.loc[todo, f"{col}_language"] = [language_verdict(t) for t in translated]
+    df.loc[todo, f"{col}_ok"] = [str(o) for o in oks]
 
-    n = len(df)
-    print(f"\ntraducciones usables ({label}): {sum(oks)}/{n} ({sum(oks) / n:.0%})")
+    n = len(todo)
+    print(f"\ntraducciones usables ({label}): {sum(oks)}/{n} ({sum(oks) / max(1, n):.0%})")
     print("motivos de rechazo:", {k: v for k, v in Counter(motivos).items() if k != "ok"})
-    malas = [(r["prompt"], r[col], m)
-             for (_, r), m, o in zip(df.iterrows(), motivos, oks) if not o]
+    malas = [(df.at[i, "prompt"], df.at[i, col], m)
+             for i, m, o in zip(todo, motivos, oks) if not o]
     if malas:
         print(f"\nrechazadas ({len(malas)}), no entran en la direccion d_{args.lang}:")
         for p, t, m in malas[:10]:
             print(f"  [{m}]")
             print(f"     {p[:60]}")
             print(f"  -> {t[:60]}")
-    if sum(oks) < 0.5 * n:
+    if n and sum(oks) < 0.5 * n:
         print(f"\n  AVISO: menos de la mitad usables. d_{args.lang} va a ser ruidosa;")
         print("         revisa el TEMPLATE antes de correr mean_diff_vectors.py.")
 
@@ -147,8 +159,8 @@ def main():
     df.to_csv(dest, sep=";", index=False)
     print(f"\nEscrito {dest}" + (" (backup .bak)" if dest == args.targets else ""))
     print("\nEjemplos:")
-    for _, r in df.head(5).iterrows():
-        print(f"  {r['prompt'][:46]:<46} -> {r[col][:56]}")
+    for i in list(todo)[:5]:
+        print(f"  {df.at[i, 'prompt'][:46]:<46} -> {df.at[i, col][:56]}")
 
 
 if __name__ == "__main__":

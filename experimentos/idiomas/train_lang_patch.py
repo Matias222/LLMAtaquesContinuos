@@ -36,14 +36,23 @@ from lm import (DEFAULT_MODEL, apply_patch_first_n, build_suffix_manager,
 
 
 def calc_loss(model, sm, prompt_embeds, patch, target_tokens,
-              num_patch_positions=3, l2_weight=0.08, patch_offset=0):
-    """CE sobre el target completo + L2. Sin prefix loss, sin bot penalty."""
+              num_patch_positions=3, l2_weight=0.08, patch_offset=0, loss_head_k=0):
+    """
+    CE sobre el target + L2. Sin prefix loss, sin bot penalty.
+
+    loss_head_k > 0 restringe la CE a los primeros k tokens del target: la
+    decision de idioma vive ahi (ver nll_of_target), y la cola es donde el
+    target ensena la FORMA de la respuesta (una oracion corta y punto), que
+    es el estilo que no queremos que el parche absorba.
+    """
     patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions,
                                   offset=patch_offset)
     logits = model(inputs_embeds=patched).logits
 
     ls = sm._loss_slice
     n = min(ls.stop - ls.start, len(target_tokens))
+    if loss_head_k > 0:
+        n = min(n, loss_head_k)
     if n > 0:
         ce = nn.CrossEntropyLoss()(logits[0, ls.start:ls.start + n, :], target_tokens[:n])
     else:
@@ -61,14 +70,29 @@ def cosine_step(base, global_step, total_steps):
     return base * 0.5 * (1.0 + math.cos(math.pi * p))
 
 
+def usable_prompt(row, col):
+    """Texto del prompt en la columna `col`, o None si esta vacio o su gate de
+    traduccion (`<col>_ok`) es False."""
+    txt = str(row.get(col, "")).strip()
+    if not txt:
+        return None
+    ok = str(row.get(f"{col}_ok", "True")).strip().lower()
+    if ok == "false":
+        return None
+    return txt
+
+
 @torch.no_grad()
 def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head_k=5,
-             patch_offset=0):
+             patch_offset=0, prompt_col="prompt"):
     """CE del target frances en held-out, con y sin parche, partida en head/tail."""
     acc = {"p_all": [], "b_all": [], "p_head": [], "b_head": []}
     zero = torch.zeros_like(patch)
     for _, row in rows.iterrows():
-        sm = build_suffix_manager(tokenizer, row["prompt"], target=row["output"])
+        q = usable_prompt(row, prompt_col)
+        if q is None:
+            continue
+        sm = build_suffix_manager(tokenizer, q, target=row["output"])
         tokens = sm.get_input_ids().to(patch.device)
         tt = tokens[sm._target_slice].to(patch.device)
         pe = get_embeddings(model, tokens.unsqueeze(0)).detach()
@@ -98,10 +122,24 @@ def train(model_path, targets_csv, l2_weight, output_dir,
           num_epochs=5, num_steps_per_prompt=75, num_patch_positions=3,
           step_size=0.00025, train_test_split=0.8, device="cuda:0",
           use_gate=True, batch_size=1, step_decay="none", val_n=8,
-          save_best=False, head_k=5, patch_offset=0):
+          save_best=False, head_k=5, patch_offset=0, loss_head_k=0,
+          prompt_cols=("prompt",)):
     """
     Defaults = comportamiento original (batch_size=1, sin annealing, ultimo
     checkpoint), para que los runs viejos sigan siendo reproducibles.
+
+    loss_head_k: CE solo sobre los primeros k tokens del target (0 = todo).
+
+    prompt_cols: columnas del CSV que se usan como pregunta de entrada, p.ej.
+    ("prompt", "prompt_es", "prompt_de"). El target frances (`output`) es el
+    mismo para todas: la respuesta correcta en frances no depende del idioma
+    en que se hizo la pregunta. Con mas de una columna cada fila entra una
+    vez por idioma en el mismo batch, asi que un solo v tiene que llevar al
+    frances desde cualquiera de las entradas y no puede apoyarse en "la
+    entrada esta en ingles" (cross_lang_patch.py mostro que v4 lo hace).
+    Las filas cuya traduccion no paso el gate (`<col>_ok` = False) se saltean
+    para esa columna. La validacion se hace por columna y el checkpoint se
+    elige por el promedio.
 
     patch_offset: el parche se suma a las posiciones goal_start + offset ... + N
     en vez de a las primeras N. Es el control de posicion: si un parche
@@ -121,7 +159,16 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         train_df = train_df[train_df["passed_gate"].astype(str).str.lower() == "true"]
         print(f"Gate de calidad sobre train: {len(train_df)}/{before} targets limpios")
 
+    prompt_cols = tuple(prompt_cols)
+    faltan = [c for c in prompt_cols if c not in df.columns]
+    if faltan:
+        raise SystemExit(f"columnas de prompt ausentes en {targets_csv}: {faltan}")
+
     model, tokenizer = load_model_and_tokenizer(model_path, device=device)
+    # Solo el parche se optimiza. Sin esto backward() calcula y guarda el
+    # gradiente de los 3B parametros del modelo en cada paso, para tirarlo.
+    for prm in model.parameters():
+        prm.requires_grad_(False)
     embedding_dim = get_embedding_matrix(model).shape[1]
 
     val_rows = test_df.head(val_n)
@@ -138,6 +185,12 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     print(f"\nTrain: {len(train_df)}  |  Held-out: {len(test_df)}  |  validacion: {len(val_rows)}")
     print(f"L2: {l2_weight}  |  step_size: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}"
           + (f"  |  offset: {patch_offset}" if patch_offset else ""))
+    print(f"Loss: CE sobre {'los primeros ' + str(loss_head_k) + ' tokens' if loss_head_k else 'todo el target'}"
+          f"  |  entradas: {list(prompt_cols)}")
+    if len(prompt_cols) > 1:
+        for c in prompt_cols:
+            n_ok = sum(usable_prompt(r, c) is not None for _, r in train_df.iterrows())
+            print(f"  {c}: {n_ok}/{len(train_df)} filas de train usables")
     if patch_offset:
         # Preguntas mas cortas que offset + N reciben un parche recortado (o
         # ninguno). Contarlas ANTES de entrenar: si son muchas, el run no mide
@@ -172,11 +225,17 @@ def train(model_path, targets_csv, l2_weight, output_dir,
             # Precomputar embeddings del batch una sola vez.
             items = []
             for _, row in batch.iterrows():
-                sm = build_suffix_manager(tokenizer, row["prompt"], target=row["output"])
-                tokens = sm.get_input_ids().to(device)
-                items.append((sm,
-                              get_embeddings(model, tokens.unsqueeze(0)).detach(),
-                              tokens[sm._target_slice].to(device)))
+                for col in prompt_cols:
+                    q = usable_prompt(row, col)
+                    if q is None:
+                        continue
+                    sm = build_suffix_manager(tokenizer, q, target=row["output"])
+                    tokens = sm.get_input_ids().to(device)
+                    items.append((sm,
+                                  get_embeddings(model, tokens.unsqueeze(0)).detach(),
+                                  tokens[sm._target_slice].to(device)))
+            if not items:
+                continue
 
             ces = []
             for _ in range(num_steps_per_prompt):
@@ -188,7 +247,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
                 for sm, pe, tt in items:
                     total, _, ce, _ = calc_loss(model, sm, pe, patch, tt,
                                                 num_patch_positions, l2_weight,
-                                                patch_offset)
+                                                patch_offset, loss_head_k)
                     (total / len(items)).backward()
                     step_ce.append(ce.item())
 
@@ -205,14 +264,22 @@ def train(model_path, targets_csv, l2_weight, output_dir,
                 print(f"  [batch {b + 1}/{n_batches}] CE={epoch_ce[-1]:.4f}  "
                       f"norma={patch.norm(2).item():.6f}  lr={lr:.2e}")
 
-        v = validate(model, tokenizer, patch, val_rows, num_patch_positions,
-                     l2_weight, head_k, patch_offset)
-        t = validate(model, tokenizer, patch, train_rows, num_patch_positions,
-                     l2_weight, head_k, patch_offset)
+        # Validacion por columna de entrada; v y t son el promedio, que es lo
+        # que decide el checkpoint. Con una sola columna es identico a antes.
+        v_cols = {c: validate(model, tokenizer, patch, val_rows, num_patch_positions,
+                              l2_weight, head_k, patch_offset, prompt_col=c) for c in prompt_cols}
+        t_cols = {c: validate(model, tokenizer, patch, train_rows, num_patch_positions,
+                              l2_weight, head_k, patch_offset, prompt_col=c) for c in prompt_cols}
+        v = {k: sum(d[k] for d in v_cols.values()) / len(v_cols) for k in v_cols[prompt_cols[0]]}
+        t = {k: sum(d[k] for d in t_cols.values()) / len(t_cols) for k in t_cols[prompt_cols[0]]}
         gap = v["p_head"] - t["p_head"]
         curva.append({"epoch": epoch + 1, "train_head": t["p_head"],
                       "heldout_head": v["p_head"], "gap": gap,
-                      "norm": patch.norm(2).item()})
+                      "norm": patch.norm(2).item(),
+                      "heldout_head_por_col": {c: d["p_head"] for c, d in v_cols.items()}})
+        if len(prompt_cols) > 1:
+            print("  held-out head CE por entrada: " + "  ".join(
+                f"{c}={d['p_head']:.4f}" for c, d in v_cols.items()))
         print(f"\nEpoch {epoch + 1}: CE train (trayectoria)={sum(epoch_ce) / len(epoch_ce):.4f}  "
               f"norma={patch.norm(2).item():.6f}")
         print(f"  CE head del checkpoint:  train={t['p_head']:.4f}   "
@@ -270,6 +337,10 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     metadata = {
         "language": "french",
         "instruction": "Answer in French.",
+        "targets_csv": os.path.abspath(targets_csv),
+        "train_test_split": train_test_split,
+        "prompt_cols": list(prompt_cols),
+        "loss_head_k": loss_head_k,
         "num_patch_positions": num_patch_positions,
         "patch_offset": patch_offset,
         "patch_norm": final.norm(2).item(),
@@ -330,13 +401,19 @@ def main():
     ap.add_argument("--patch_offset", type=int, default=0,
                     help="sumar el parche en goal_start + offset ... + N en vez de en las "
                          "primeras N posiciones (control de posicion / attention sink)")
+    ap.add_argument("--loss_head_k", type=int, default=0,
+                    help="CE solo sobre los primeros k tokens del target (0 = target completo)")
+    ap.add_argument("--prompt_cols", default="prompt",
+                    help="columnas de pregunta separadas por coma, p.ej. prompt,prompt_es,prompt_de")
     args = ap.parse_args()
 
     train(args.model, args.targets, args.l2_weight, args.output_dir,
           args.num_epochs, args.num_steps_per_prompt, args.num_patch_positions,
           args.step_size, args.train_test_split, args.device, use_gate=not args.no_gate,
           batch_size=args.batch_size, step_decay=args.step_decay, val_n=args.val_n,
-          save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset)
+          save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset,
+          loss_head_k=args.loss_head_k,
+          prompt_cols=tuple(c.strip() for c in args.prompt_cols.split(",") if c.strip()))
 
 
 if __name__ == "__main__":
