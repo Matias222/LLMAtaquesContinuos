@@ -21,6 +21,17 @@ contesta en frances SIN parche (empareja el idioma de la entrada) y, si -v
 cancela el frances, con a<0 tiene que pasar a ingles.
 
 ---------------------------------------------------------------------------
+--preset romance  (transferencia: q_it + a*v, q_pt + a*v)
+---------------------------------------------------------------------------
+    prompt_it  a = 0, 1           pregunta en italiano, parche sumado
+    prompt_pt  a = 0, 1           pregunta en portugues, parche sumado
+
+Idiomas que no estuvieron en el entrenamiento de los runs multi (en/es/de):
+si el parche da frances desde italiano y portugues, lo que aprendio no es
+"desde estos tres idiomas" sino algo mas general. checkers.py tiene canales
+it/pt para que la salida sin parche no cuente como francesa.
+
+---------------------------------------------------------------------------
 --preset idioma   (experimento 2: q_es + a*v)
 ---------------------------------------------------------------------------
     prompt_es  a = 0, 1           pregunta en espanol, parche sumado
@@ -66,8 +77,12 @@ from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer, nll_of_tar
 PRESETS = {
     "restar": "prompt:0,prompt:-1,prompt:-2,prompt_fr:0,prompt_fr:-1,prompt_fr:-2",
     "idioma": "prompt_es:0,prompt_es:1,prompt_de:0,prompt_de:1,prompt:0,prompt:1",
+    # transferencia a idiomas que NO estuvieron en el entrenamiento multi
+    # (v5_*_multi entreno con en/es/de): italiano y portugues, escritos a mano
+    # en el CSV para las 50 filas del tail (prompt_it, prompt_pt).
+    "romance": "prompt_it:0,prompt_it:1,prompt_pt:0,prompt_pt:1",
 }
-LANGS = ("fr", "en", "es", "de", "unknown")
+LANGS = ("fr", "en", "es", "de", "it", "pt", "unknown")
 
 
 def parse_conds(spec):
@@ -214,23 +229,26 @@ def main():
                            "metrics": agg, "rows": rows})
 
     # --- tabla ---------------------------------------------------------------
-    print("\n" + "=" * 128)
-    print(f"{'condicion':<20}{'n':>4}{'fr':>6}{'en':>6}{'es':>6}{'de':>6}{'unk':>5}"
+    print("\n" + "=" * 140)
+    print(f"{'condicion':<20}{'n':>4}{'fr':>6}{'en':>6}{'es':>6}{'de':>6}{'it':>6}{'pt':>6}{'unk':>5}"
           f"{'is_fr':>7}{'st_fr':>7}{'acc':>6}{'cambio':>8}{'largo':>7}"
           f"{'ce_fr_h':>9}{'ce_en_h':>9}{'leak':>6}")
-    print("-" * 128)
+    print("-" * 140)
     for res in resultados:
         m = res["metrics"]
         print(f"{res['label']:<20}{m['n']:>4}{m['p_fr']:>6.2f}{m['p_en']:>6.2f}{m['p_es']:>6.2f}"
-              f"{m['p_de']:>6.2f}{m['p_unknown']:>5.2f}{m['is_french']:>7.2f}{m['starts_fr']:>7.2f}"
+              f"{m['p_de']:>6.2f}{m['p_it']:>6.2f}{m['p_pt']:>6.2f}{m['p_unknown']:>5.2f}{m['is_french']:>7.2f}{m['starts_fr']:>7.2f}"
               f"{m['answer_correct']:>6.2f}{m['cambio_vs_a0']:>8.2f}{m['len_media']:>7.1f}"
               f"{m['ce_fr_head']:>9.3f}{m['ce_en_head']:>9.3f}{m['role_leak']:>6.2f}")
-    print("=" * 128)
-    print("fr/en/es/de/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.")
+    print("=" * 140)
+    print("fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.")
     print("ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.")
     if name == "restar":
         print("Lectura: en 'prompt' -v no puede cambiar la salida a ingles (ya lo es); mirar que ce_fr_h")
         print("suba. En 'prompt_fr', si -v cancela el frances, en baja y fr sube con a<0.")
+    elif name == "romance":
+        print("Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la")
+        print("transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).")
     elif name == "idioma":
         print("Lectura: si fr sube desde prompt_es/prompt_de con a=1, el parche impone frances sobre")
         print("cualquier idioma de entrada; si solo sube desde 'prompt', depende de partir de ingles.")
@@ -257,12 +275,12 @@ def write_markdown(rep, path):
     L.append(f"- Parche: `{rep['patch']}`  |  norma {rep['patch_norm']:.4f}")
     L.append(f"- Tail del held-out: n={rep['n_tail']}")
     L.append("")
-    L.append("| condicion | n | fr | en | es | de | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head |")
-    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    L.append("| condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head |")
+    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for res in rep["condiciones"]:
         m = res["metrics"]
         L.append(f"| {res['label']} | {m['n']} | {m['p_fr']:.2f} | {m['p_en']:.2f} | {m['p_es']:.2f} "
-                 f"| {m['p_de']:.2f} | {m['p_unknown']:.2f} | {m['is_french']:.2f} | {m['starts_fr']:.2f} "
+                 f"| {m['p_de']:.2f} | {m['p_it']:.2f} | {m['p_pt']:.2f} | {m['p_unknown']:.2f} | {m['is_french']:.2f} | {m['starts_fr']:.2f} "
                  f"| {m['answer_correct']:.2f} | {m['cambio_vs_a0']:.2f} | {m['len_media']:.1f} "
                  f"| {m['ce_fr_head']:.3f} | {m['ce_en_head']:.3f} |")
     L.append("")

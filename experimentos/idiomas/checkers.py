@@ -148,6 +148,73 @@ _ACCENTED_FR = set("àâéèêëîïôùûçœ")
 _ACCENTED_ES = set("áíóúñ¿¡")
 _ACCENTED_DE = set("äöüß")
 
+# ---------------------------------------------------------------------------
+# Italiano y portugues (canales para el experimento de transferencia de
+# cross_lang_patch.py sobre prompt_it / prompt_pt).
+#
+# Sin estos canales, "Il fiume che attraversa Parigi e la Senna." daba
+# veredicto "fr" (por "il" y por la "e" grave, que esta en _ACCENTED_FR) y
+# "A capital da Ucrania e Kiev." tambien (por la "e" aguda). Con eso el
+# experimento no mide nada: la salida SIN parche ya contaria como francesa.
+#
+# Regla de activacion: los dos canales solo intervienen si hay al menos una
+# palabra EXCLUSIVA de italiano o portugues en el texto. Si no la hay, la
+# funcion devuelve exactamente lo de antes para fr/en/es/de, asi que ningun
+# eval viejo cambia de numero. Cuando se activan:
+#   - las palabras de FR_WORDS / ES_WORDS que tambien son it/pt
+#     (FR_ALSO_IT_PT, ES_ALSO_IT_PT) dejan de contar para fr/es;
+#   - los acentos compartidos (e aguda/grave, a grave, cedilla...) dejan de
+#     ser evidencia francesa: solo cuentan para fr los exclusivos (e/i con
+#     dieresis, i/u circunflejo, oe); a/o con acento grave son italianos;
+#     a/o con tilde son portugueses.
+# Excluidas a proposito por colision: "ha" (es: "ha sido"), "era", "come"
+# (en), "all" (en), "circa" (en), "ci" (fr: ci-dessous), "dos" (es: dos),
+# "das"/"um" (de), "no"/"nos"/"mas"/"apenas"/"menor"/"planeta"/"oceano"/"ano"
+# (es), "os" (fr: os), "o" (es: o), "do"/"as" (en), "sao" (Sao Paulo).
+# ---------------------------------------------------------------------------
+IT_WORDS = {
+    "che", "chi", "della", "dello", "delle", "degli", "dei", "dell", "nel",
+    "nella", "nello", "nei", "negli", "nell", "gli", "sono", "anche", "questo",
+    "questa", "questi", "queste", "quest", "quello", "quella", "piu", "perche",
+    "alla", "allo", "alle", "agli", "dalla", "dallo", "dalle", "dal", "sulla",
+    "sullo", "sulle", "sul", "sui", "sull", "essere", "stato", "stata", "molto",
+    "dove", "ogni", "cui", "gia", "ancora", "tutto", "tutti", "tutte", "hanno",
+    "fu", "anno", "mondo", "primo", "secondo", "tra", "fra", "ed",
+    "chiamato", "chiamata", "situato", "situata", "scritto", "scritta",
+    "composto", "composta", "dipinto", "sviluppato", "sviluppata", "quale",
+    "quali", "quanti", "quante", "pianeta", "citta", "isola",
+}
+# "e" grave suelta es "es" en italiano y "e" aguda suelta es "es" en
+# portugues; el frances nunca las usa como palabra. Son el marcador mas
+# frecuente de los dos idiomas en respuestas cortas ("Il simbolo ... e Pt.").
+_IT_STANDALONE = re.compile(r"(?:^|[\s(])è(?=$|[\s,.;:!?)])")
+_PT_STANDALONE = re.compile(r"(?:^|[\s(])é(?=$|[\s,.;:!?)])")
+PT_WORDS = {
+    "da", "na", "nas", "uma", "nao", "foi", "pelo", "pela", "ao",
+    "aos", "tambem", "muito", "muitos", "muitas", "seu", "seus", "suas", "isso",
+    "esse", "essa", "quem", "onde", "em", "quantos", "quantas", "chama", "tem", "com", "sem", "ate", "ainda",
+    "depois", "entao", "assim", "hoje", "outro", "outra", "foram", "eram", "sim",
+    "chamado", "chamada", "escreveu", "pintou", "compos", "desenvolveu",
+    "recebeu", "fica", "ocorreu", "primeiro", "primeira", "maior",
+    "ilha", "cidade",
+}
+# Comunes a italiano y portugues: cuentan para los dos, pero solo una vez que
+# alguno de los dos tiene evidencia exclusiva ("e" = "y" tambien aparece en
+# espanol, "padre e hijo").
+SHARED_IT_PT = {"e", "sempre", "sua", "quando", "qual"}
+# Palabras de FR_WORDS / ES_WORDS que tambien son it/pt. Se descuentan de
+# fr/es solo cuando los canales it/pt estan activos.
+FR_ALSO_IT_PT = {"il", "le", "ma", "non", "mais", "ne", "sa"}
+ES_ALSO_IT_PT = {"una", "con", "como", "para", "por", "este", "esta", "estas",
+                 "lo", "su", "solo", "cada", "al", "sobre", "toda", "todas",
+                 "todos", "porque", "desde", "ser", "aqui"}
+_ACCENTED_FR_EXCL = set("ëîïûœ")
+_ACCENTED_IT = set("àèìòù")
+_ACCENTED_IT_EXCL = set("ìò")
+_ACCENTED_PT = set("áàâãéêíóôõúç")
+_ACCENTED_PT_EXCL = set("ãõ")
+_ACCENTED_ES_EXCL = set("ñ¿¡")
+
 
 def _tokens(text: str):
     return re.findall(r"[a-z]+", fold(text))
@@ -166,7 +233,9 @@ ACCENT_EVIDENCE = 2.0   # cuanto pesa "hay tildes" frente a una palabra funciona
 
 def language_evidence(text: str):
     """
-    (evidencia_frances, evidencia_ingles, evidencia_espanol, evidencia_aleman).
+    Dict {"fr", "en", "es", "de", "it", "pt"} con la evidencia de cada idioma.
+    (Hasta el canal aleman devolvia una tupla de cuatro; los unicos usos estan
+    en este archivo.)
 
     Los acentos NO son un fallback sino evidencia ADICIONAL: una respuesta corta
     como "La capitale du Chili est Santiago." tiene fr=3, en=0 y cero tildes, y
@@ -179,17 +248,45 @@ def language_evidence(text: str):
     sin el, "Was ist die Hauptstadt von Island?" clasificaba como INGLES.
     """
     toks = _tokens(text)
-    fr = float(sum(1 for t in toks if t in FR_WORDS and t not in SHARED_FR_ES))
+    low = text.lower()
     en = float(sum(1 for t in toks if t in EN_WORDS and t not in SHARED_EN_DE))
-    es = float(sum(1 for t in toks if t in ES_WORDS and t not in SHARED_FR_ES))
     de = float(sum(1 for t in toks if t in DE_WORDS and t not in SHARED_EN_DE))
-    if accent_rate(text, _ACCENTED_FR) >= 0.01:
-        fr += ACCENT_EVIDENCE
-    if accent_rate(text, _ACCENTED_ES) >= 0.005:
-        es += ACCENT_EVIDENCE
     if accent_rate(text, _ACCENTED_DE) >= 0.005:
         de += ACCENT_EVIDENCE
-    return fr, en, es, de
+
+    it_excl = float(sum(1 for t in toks if t in IT_WORDS)) + len(_IT_STANDALONE.findall(low))
+    pt_excl = float(sum(1 for t in toks if t in PT_WORDS)) + len(_PT_STANDALONE.findall(low))
+    romance = it_excl > 0 or pt_excl > 0 or any(c in low for c in _ACCENTED_IT_EXCL | _ACCENTED_PT_EXCL)
+
+    if not romance:
+        # Camino original, sin cambios: fr/en/es/de identicos a antes.
+        fr = float(sum(1 for t in toks if t in FR_WORDS and t not in SHARED_FR_ES))
+        es = float(sum(1 for t in toks if t in ES_WORDS and t not in SHARED_FR_ES))
+        if accent_rate(text, _ACCENTED_FR) >= 0.01:
+            fr += ACCENT_EVIDENCE
+        if accent_rate(text, _ACCENTED_ES) >= 0.005:
+            es += ACCENT_EVIDENCE
+        return {"fr": fr, "en": en, "es": es, "de": de, "it": 0.0, "pt": 0.0}
+
+    fr = float(sum(1 for t in toks if t in FR_WORDS and t not in SHARED_FR_ES
+                   and t not in FR_ALSO_IT_PT))
+    es = float(sum(1 for t in toks if t in ES_WORDS and t not in SHARED_FR_ES
+                   and t not in ES_ALSO_IT_PT))
+    # la "e" suelta con acento ya conto como marcador exclusivo; no debe
+    # contar ademas como la conjuncion "e" compartida (fold() le quita el acento)
+    sin_sueltas = _PT_STANDALONE.sub(" ", _IT_STANDALONE.sub(" ", low))
+    shared = float(sum(1 for t in _tokens(sin_sueltas) if t in SHARED_IT_PT))
+    it = it_excl + shared
+    pt = pt_excl + shared
+    if any(c in low for c in _ACCENTED_FR_EXCL):
+        fr += ACCENT_EVIDENCE
+    if any(c in low for c in _ACCENTED_ES_EXCL):
+        es += ACCENT_EVIDENCE
+    if any(c in low for c in _ACCENTED_IT_EXCL) or (it_excl > 0 and any(c in low for c in _ACCENTED_IT)):
+        it += ACCENT_EVIDENCE
+    if any(c in low for c in _ACCENTED_PT_EXCL) or (pt_excl > 0 and any(c in low for c in _ACCENTED_PT)):
+        pt += ACCENT_EVIDENCE
+    return {"fr": fr, "en": en, "es": es, "de": de, "it": it, "pt": pt}
 
 
 def french_score(text: str) -> float:
@@ -200,26 +297,26 @@ def french_score(text: str) -> float:
     caso de respuestas como "Paris." donde los idiomas coinciden. Usa
     language_verdict() si necesitas distinguir ese caso.
     """
-    fr, en, es, de = language_evidence(text)
-    tot = fr + en + es + de
+    ev = language_evidence(text)
+    tot = sum(ev.values())
     if tot == 0:
         return 0.5
-    return fr / tot
+    return ev["fr"] / tot
 
 
 def language_verdict(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
     """
-    'fr' | 'en' | 'es' | 'de' | 'unknown'.
+    'fr' | 'en' | 'es' | 'de' | 'it' | 'pt' | 'unknown'.
 
     Separa "respondio en otro idioma" de "muy corto para saber".
     """
     if len(_tokens(text)) < min_tokens:
         return "unknown"
-    fr, en, es, de = language_evidence(text)
-    tot = fr + en + es + de
+    ev = language_evidence(text)
+    tot = sum(ev.values())
     if tot == 0:
         return "unknown"
-    scores = {"fr": fr / tot, "en": en / tot, "es": es / tot, "de": de / tot}
+    scores = {k: v / tot for k, v in ev.items()}
     lang, top = max(scores.items(), key=lambda kv: kv[1])
     return lang if top >= threshold else "unknown"
 
@@ -422,6 +519,39 @@ if __name__ == "__main__":
     print(f"  'World War II began in 1939.' -> {language_verdict('World War II began in 1939.')} (debe ser en)")
     print(f"  'Le mur de Berlin est tombe en 1989.' -> "
           f"{language_verdict('Le mur de Berlin est tombe en 1989.')} (debe ser fr)")
+
+    print("\n--- deteccion de italiano y portugues (canales nuevos) ---")
+    cases_it = [
+        "Il fiume che attraversa Parigi è la Senna.",
+        "La capitale dell'Ucraina è Kiev.",
+        "La forza che mantiene i pianeti in orbita intorno al Sole è la gravità.",
+        "Chi ha scritto Amleto? William Shakespeare ha scritto Amleto nel 1600.",
+        "Il simbolo chimico del platino è Pt.",
+    ]
+    cases_pt = [
+        "A capital da Ucrânia é Kiev.",
+        "A força que mantém os planetas em órbita ao redor do Sol é a gravidade.",
+        "O rio que atravessa Paris é o Sena.",
+        "Quem escreveu Hamlet? Foi William Shakespeare.",
+        "O símbolo químico da platina é Pt.",
+    ]
+    it_ok = sum(language_verdict(t) == "it" for t in cases_it)
+    pt_ok = sum(language_verdict(t) == "pt" for t in cases_pt)
+    for t in cases_it:
+        print(f"  IT esperado -> verdict={language_verdict(t):<8} {t[:52]}")
+    for t in cases_pt:
+        print(f"  PT esperado -> verdict={language_verdict(t):<8} {t[:52]}")
+    print(f"  italiano reconocido: {it_ok}/{len(cases_it)}   portugues reconocido: {pt_ok}/{len(cases_pt)}")
+    # y no deben contaminar a los otros: frances con "il"/"le" y acentos sigue siendo fr
+    for t, esperado in [("Il y a 206 os dans le corps humain adulte.", "fr"),
+                        ("La capitale de la Syrie est Damas.", "fr"),
+                        ("Le symbole chimique du platine est Pt.", "fr"),
+                        ("C'est Edvard Munch qui a peint \"Le Cri\".", "fr"),
+                        ("La capital de Grecia es Atenas.", "es"),
+                        ("Die Hauptstadt der Ukraine ist Kiew.", "de"),
+                        ("The capital of Ukraine is Kyiv (also known as Kiev).", "en")]:
+        v = language_verdict(t)
+        print(f"  [{'OK  ' if v == esperado else 'FAIL'}] {esperado} -> {v:<8} {t[:50]}")
 
     print("\n--- deteccion de mayusculas ---")
     cases_upper = [
