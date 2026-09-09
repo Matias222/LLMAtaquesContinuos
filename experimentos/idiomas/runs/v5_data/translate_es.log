@@ -1,0 +1,16 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+--only_missing: 29/250 filas sin prompt_es
+traduciendo (es):   0%|          | 0/29 [00:00<?, ?it/s]traduciendo (es):   3%|▎         | 1/29 [00:01<00:30,  1.08s/it]traduciendo (es):   7%|▋         | 2/29 [00:01<00:18,  1.46it/s]traduciendo (es):  10%|█         | 3/29 [00:01<00:15,  1.70it/s]traduciendo (es):  14%|█▍        | 4/29 [00:02<00:12,  2.01it/s]traduciendo (es):  17%|█▋        | 5/29 [00:02<00:10,  2.27it/s]traduciendo (es):  21%|██        | 6/29 [00:02<00:09,  2.52it/s]traduciendo (es):  24%|██▍       | 7/29 [00:03<00:09,  2.35it/s]traduciendo (es):  28%|██▊       | 8/29 [00:03<00:08,  2.35it/s]traduciendo (es):  31%|███       | 9/29 [00:04<00:08,  2.39it/s]traduciendo (es):  34%|███▍      | 10/29 [00:04<00:07,  2.41it/s]traduciendo (es):  38%|███▊      | 11/29 [00:05<00:07,  2.52it/s]traduciendo (es):  41%|████▏     | 12/29 [00:05<00:06,  2.54it/s]traduciendo (es):  45%|████▍     | 13/29 [00:05<00:06,  2.61it/s]traduciendo (es):  48%|████▊     | 14/29 [00:06<00:05,  2.95it/s]traduciendo (es):  52%|█████▏    | 15/29 [00:06<00:04,  2.97it/s]traduciendo (es):  55%|█████▌    | 16/29 [00:06<00:04,  2.86it/s]traduciendo (es):  59%|█████▊    | 17/29 [00:07<00:03,  3.02it/s]traduciendo (es):  62%|██████▏   | 18/29 [00:07<00:03,  2.90it/s]traduciendo (es):  66%|██████▌   | 19/29 [00:07<00:03,  2.55it/s]traduciendo (es):  69%|██████▉   | 20/29 [00:08<00:04,  1.95it/s]traduciendo (es):  72%|███████▏  | 21/29 [00:08<00:03,  2.29it/s]traduciendo (es):  76%|███████▌  | 22/29 [00:09<00:02,  2.46it/s]traduciendo (es):  79%|███████▉  | 23/29 [00:09<00:02,  2.51it/s]traduciendo (es):  83%|████████▎ | 24/29 [00:10<00:01,  2.64it/s]traduciendo (es):  86%|████████▌ | 25/29 [00:10<00:01,  2.59it/s]traduciendo (es):  90%|████████▉ | 26/29 [00:10<00:01,  2.64it/s]traduciendo (es):  93%|█████████▎| 27/29 [00:11<00:00,  2.74it/s]traduciendo (es):  97%|█████████▋| 28/29 [00:11<00:00,  2.74it/s]traduciendo (es): 100%|██████████| 29/29 [00:11<00:00,  2.86it/s]traduciendo (es): 100%|██████████| 29/29 [00:11<00:00,  2.46it/s]
+
+traducciones usables (Spanish): 29/29 (100%)
+motivos de rechazo: {}
+
+Escrito attributes/french/targets_french_v5.csv (backup .bak)
+
+Ejemplos:
+  Which is the largest country in the world by a -> ¿Cuál es el país más grande del mundo por área?
+  Which river flows through Paris?               -> ¿Cuál es el río que fluye a través de París?
+  In what year did the Chinese Communist Party t -> ¿En qué año tomó el poder el Partido Comunista Chino en 
+  What is the largest moon of Jupiter?           -> ¿Cuál es la luna más grande de Júpiter?
+  Which is the deepest lake in the world?        -> ¿Cuál es el lago más profundo del mundo?

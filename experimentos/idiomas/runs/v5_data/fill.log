@@ -1,0 +1,37 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.60s/it]
+--fill attributes/french/targets_french_v5.csv: 29/250 filas sin referencia, se generan solo esas
+targets (fill):   0%|          | 0/29 [00:00<?, ?it/s]targets (fill):   3%|▎         | 1/29 [00:01<00:53,  1.89s/it]targets (fill):   7%|▋         | 2/29 [00:02<00:30,  1.12s/it]targets (fill):  10%|█         | 3/29 [00:04<00:39,  1.53s/it]targets (fill):  14%|█▍        | 4/29 [00:06<00:41,  1.66s/it]targets (fill):  17%|█▋        | 5/29 [00:09<00:49,  2.07s/it]targets (fill):  21%|██        | 6/29 [00:10<00:41,  1.82s/it]targets (fill):  24%|██▍       | 7/29 [00:11<00:36,  1.65s/it]targets (fill):  28%|██▊       | 8/29 [00:13<00:35,  1.67s/it]targets (fill):  31%|███       | 9/29 [00:14<00:28,  1.44s/it]targets (fill):  34%|███▍      | 10/29 [00:14<00:21,  1.15s/it]targets (fill):  38%|███▊      | 11/29 [00:17<00:27,  1.50s/it]targets (fill):  41%|████▏     | 12/29 [00:17<00:20,  1.19s/it]targets (fill):  45%|████▍     | 13/29 [00:19<00:21,  1.33s/it]targets (fill):  48%|████▊     | 14/29 [00:19<00:16,  1.07s/it]targets (fill):  52%|█████▏    | 15/29 [00:21<00:17,  1.24s/it]targets (fill):  55%|█████▌    | 16/29 [00:21<00:13,  1.02s/it]targets (fill):  59%|█████▊    | 17/29 [00:22<00:10,  1.12it/s]targets (fill):  62%|██████▏   | 18/29 [00:23<00:09,  1.20it/s]targets (fill):  66%|██████▌   | 19/29 [00:24<00:09,  1.07it/s]targets (fill):  69%|██████▉   | 20/29 [00:25<00:10,  1.11s/it]targets (fill):  72%|███████▏  | 21/29 [00:26<00:07,  1.09it/s]targets (fill):  76%|███████▌  | 22/29 [00:28<00:09,  1.33s/it]targets (fill):  79%|███████▉  | 23/29 [00:29<00:06,  1.07s/it]targets (fill):  83%|████████▎ | 24/29 [00:30<00:06,  1.26s/it]targets (fill):  86%|████████▌ | 25/29 [00:32<00:05,  1.41s/it]targets (fill):  90%|████████▉ | 26/29 [00:33<00:03,  1.30s/it]targets (fill):  93%|█████████▎| 27/29 [00:35<00:02,  1.36s/it]targets (fill):  97%|█████████▋| 28/29 [00:37<00:01,  1.54s/it]targets (fill): 100%|██████████| 29/29 [00:40<00:00,  2.04s/it]targets (fill): 100%|██████████| 29/29 [00:40<00:00,  1.39s/it]
+
+Filas completadas: 29  |  pasan el gate: 28/29
+  [ok] Which is the largest country in the world by area?      -> Le pays le plus grand au monde par superficie est la Russie.
+  [ok] Which river flows through Paris?                        -> Le fleuve Seine traverse Paris.
+  [ok] In what year did the Chinese Communist Party take power -> L'année où le Parti communiste chinois a pris le pouvoir en Chine est 
+  [ok] What is the largest moon of Jupiter?                    -> La plus grande lune de Jupiter est Ganymède.
+  [ok] Which is the deepest lake in the world?                 -> Le lac le plus profond du monde est le lac Baïkal, situé en Russie. Il
+  [ok] Who was the first President of the United States?       -> C'était George Washington. Il a occupé ce poste de 1789 à 1797.
+  [XX] Who composed The Nutcracker?                            -> C'est Pierre Chaikovski qui a composé La Danse des petits poupées, éga
+  [ok] In what year did the Islamic Revolution take place in I -> La Révolution islamique en Iran a eu lieu en 1979.
+  [ok] In what year did India gain independence from Britain?  -> L'Inde a gagné son indépendance de la Grande-Bretagne en 1947.
+  [ok] Which river flows through London?                       -> Le fleuve qui traverse Londres est la Tamise.
+  [ok] In what year did World War II end?                      -> Le deuxième monde guerre a pris fin en 1945.
+  [ok] What is the chemical symbol for silver?                 -> Le symbole chimique du silver est Ag.
+  [ok] Which Italian city is famous for its canals?            -> C'est Venise!
+  [ok] What is the capital of Australia?                       -> Le capitol de l'Australie est Canberra.
+  [ok] What is the highest mountain in Africa?                 -> Le plus haut sommet en Afrique est le Kilimandjaro, situé au Tanzania,
+  [ok] What is the chemical symbol for helium?                 -> Le symbole chimique du hélio est He.
+  [ok] Who co-founded Microsoft with Paul Allen?               -> C'est Bill Gates qui a co-fondé Microsoft avec Paul Allen.
+  [ok] In what year did the Great Fire of London occur?        -> Le Grand Incendie de Londres a eu lieu en 1666.
+  [ok] Who proposed the heliocentric model of the Solar System -> C'était Nicolas Copérnic qui a proposé le modèle héliocentrique du Sys
+  [ok] Which is the smallest ocean on Earth?                   -> L'océan le plus petit de la Terre est l'Océan Arctique.
+  [ok] What is the capital of Sweden?                          -> La capitale de la Suède est Stockholm.
+  [ok] Who painted Girl with a Pearl Earring?                  -> C'est Johannes Vermeer qui a peint la "Fille aux perles".
+  [ok] What is the chemical symbol for calcium?                -> Le symbole chimique du calcium est Ca.
+  [ok] Who wrote The Old Man and the Sea?                      -> C'est Ernest Hemingway qui a écrit "L'Homme qui chasse les poissons" (
+  [ok] In what year did the Soviet Union dissolve?             -> L'Union soviétique a dissous en 1991.
+  [ok] Which is the smallest planet in the Solar System?       -> Le plus petit planète du Système solaire est Mercure.
+  [ok] Who wrote Pride and Prejudice?                          -> C'est Jane Austen qui a écrit "Pride et Préjugés".
+  [ok] Who wrote The Little Prince?                            -> C'est Antoine de Saint-Exupéry qui a écrit Le Petit Prince.
+  [ok] Which is the largest island in the world?               -> La plus grande île du monde est l'île Groenland, qui fait partie du Gr
+
+Escrito attributes/french/targets_french_v5.csv (backup .bak)

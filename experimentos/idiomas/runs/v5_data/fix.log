@@ -1,0 +1,18 @@
+
+=== prompt_fr: 0 correcciones ===
+  gate fr tras corregir: 250/250
+
+=== prompt_de: 2 correcciones ===
+  What is the chemical symbol for helium?
+    - Was ist der chemische Symbol für Helium?
+    + Was ist das chemische Symbol für Helium?
+  What is the chemical symbol for calcium?
+    - Was ist der chemische Symbol für Calcium?
+    + Was ist das chemische Symbol für Calcium?
+  gate de tras corregir: 249/250
+
+=== output (respuesta de referencia): 0 correcciones ===
+
+  gate recomputado: 249/250 en total, 211/212 en train
+
+2 correcciones aplicadas. Escrito attributes/french/targets_french_v5.csv (backup .bak)
