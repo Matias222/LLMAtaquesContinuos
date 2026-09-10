@@ -31,12 +31,13 @@ import pandas as pd
 import torch
 import torch.nn as nn
 
-from lm import (DEFAULT_MODEL, apply_patch_first_n, build_suffix_manager,
+from lm import (DEFAULT_MODEL, PATCH_ANCHORS, apply_patch_first_n, build_suffix_manager,
                 get_embedding_matrix, get_embeddings, load_model_and_tokenizer)
 
 
 def calc_loss(model, sm, prompt_embeds, patch, target_tokens,
-              num_patch_positions=3, l2_weight=0.08, patch_offset=0, loss_head_k=0):
+              num_patch_positions=3, l2_weight=0.08, patch_offset=0, loss_head_k=0,
+              patch_anchor="goal"):
     """
     CE sobre el target + L2. Sin prefix loss, sin bot penalty.
 
@@ -46,7 +47,7 @@ def calc_loss(model, sm, prompt_embeds, patch, target_tokens,
     es el estilo que no queremos que el parche absorba.
     """
     patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions,
-                                  offset=patch_offset)
+                                  offset=patch_offset, anchor=patch_anchor)
     logits = model(inputs_embeds=patched).logits
 
     ls = sm._loss_slice
@@ -84,7 +85,7 @@ def usable_prompt(row, col):
 
 @torch.no_grad()
 def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head_k=5,
-             patch_offset=0, prompt_col="prompt"):
+             patch_offset=0, prompt_col="prompt", patch_anchor="goal"):
     """CE del target frances en held-out, con y sin parche, partida en head/tail."""
     acc = {"p_all": [], "b_all": [], "p_head": [], "b_head": []}
     zero = torch.zeros_like(patch)
@@ -97,7 +98,8 @@ def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head
         tt = tokens[sm._target_slice].to(patch.device)
         pe = get_embeddings(model, tokens.unsqueeze(0)).detach()
         for tag, v in (("p", patch), ("b", zero)):
-            per_tok = per_token_ce(model, sm, pe, v, tt, num_patch_positions, patch_offset)
+            per_tok = per_token_ce(model, sm, pe, v, tt, num_patch_positions, patch_offset,
+                                   patch_anchor)
             if per_tok is None:
                 continue
             acc[f"{tag}_all"].append(per_tok.mean().item())
@@ -106,9 +108,9 @@ def validate(model, tokenizer, patch, rows, num_patch_positions, l2_weight, head
 
 
 def per_token_ce(model, sm, prompt_embeds, patch, target_tokens, num_patch_positions,
-                 patch_offset=0):
+                 patch_offset=0, patch_anchor="goal"):
     patched = apply_patch_first_n(sm, prompt_embeds, patch, num_patch_positions,
-                                  offset=patch_offset)
+                                  offset=patch_offset, anchor=patch_anchor)
     logits = model(inputs_embeds=patched).logits
     ls = sm._loss_slice
     n = min(ls.stop - ls.start, len(target_tokens))
@@ -123,7 +125,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
           step_size=0.00025, train_test_split=0.8, device="cuda:0",
           use_gate=True, batch_size=1, step_decay="none", val_n=8,
           save_best=False, head_k=5, patch_offset=0, loss_head_k=0,
-          prompt_cols=("prompt",)):
+          prompt_cols=("prompt",), patch_anchor="goal"):
     """
     Defaults = comportamiento original (batch_size=1, sin annealing, ultimo
     checkpoint), para que los runs viejos sigan siendo reproducibles.
@@ -184,14 +186,22 @@ def train(model_path, targets_csv, l2_weight, output_dir,
 
     print(f"\nTrain: {len(train_df)}  |  Held-out: {len(test_df)}  |  validacion: {len(val_rows)}")
     print(f"L2: {l2_weight}  |  step_size: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}"
-          + (f"  |  offset: {patch_offset}" if patch_offset else ""))
+          + (f"  |  offset: {patch_offset}" if patch_offset else "")
+          + (f"  |  anchor: {patch_anchor}" if patch_anchor != "goal" else ""))
+    if patch_anchor == "header":
+        sm_ = build_suffix_manager(tokenizer, train_df.iloc[0]["prompt"], target="x")
+        toks_ = sm_.get_input_ids()
+        from lm import patch_positions
+        s_, n_ = patch_positions(sm_, num_patch_positions, patch_offset, patch_anchor)
+        print(f"  parche sobre el header del assistant: posiciones {s_}..{s_ + n_ - 1} = "
+              f"{[tokenizer.decode([int(t)]) for t in toks_[s_:s_ + n_]]}")
     print(f"Loss: CE sobre {'los primeros ' + str(loss_head_k) + ' tokens' if loss_head_k else 'todo el target'}"
           f"  |  entradas: {list(prompt_cols)}")
     if len(prompt_cols) > 1:
         for c in prompt_cols:
             n_ok = sum(usable_prompt(r, c) is not None for _, r in train_df.iterrows())
             print(f"  {c}: {n_ok}/{len(train_df)} filas de train usables")
-    if patch_offset:
+    if patch_offset and patch_anchor == "goal":
         # Preguntas mas cortas que offset + N reciben un parche recortado (o
         # ninguno). Contarlas ANTES de entrenar: si son muchas, el run no mide
         # lo que dice medir.
@@ -247,7 +257,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
                 for sm, pe, tt in items:
                     total, _, ce, _ = calc_loss(model, sm, pe, patch, tt,
                                                 num_patch_positions, l2_weight,
-                                                patch_offset, loss_head_k)
+                                                patch_offset, loss_head_k, patch_anchor)
                     (total / len(items)).backward()
                     step_ce.append(ce.item())
 
@@ -267,9 +277,11 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         # Validacion por columna de entrada; v y t son el promedio, que es lo
         # que decide el checkpoint. Con una sola columna es identico a antes.
         v_cols = {c: validate(model, tokenizer, patch, val_rows, num_patch_positions,
-                              l2_weight, head_k, patch_offset, prompt_col=c) for c in prompt_cols}
+                              l2_weight, head_k, patch_offset, prompt_col=c,
+                              patch_anchor=patch_anchor) for c in prompt_cols}
         t_cols = {c: validate(model, tokenizer, patch, train_rows, num_patch_positions,
-                              l2_weight, head_k, patch_offset, prompt_col=c) for c in prompt_cols}
+                              l2_weight, head_k, patch_offset, prompt_col=c,
+                              patch_anchor=patch_anchor) for c in prompt_cols}
         v = {k: sum(d[k] for d in v_cols.values()) / len(v_cols) for k in v_cols[prompt_cols[0]]}
         t = {k: sum(d[k] for d in t_cols.values()) / len(t_cols) for k in t_cols[prompt_cols[0]]}
         gap = v["p_head"] - t["p_head"]
@@ -343,6 +355,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         "loss_head_k": loss_head_k,
         "num_patch_positions": num_patch_positions,
         "patch_offset": patch_offset,
+        "patch_anchor": patch_anchor,
         "patch_norm": final.norm(2).item(),
         "train_size": len(train_df),
         "test_size": len(test_df),
@@ -405,6 +418,9 @@ def main():
                     help="CE solo sobre los primeros k tokens del target (0 = target completo)")
     ap.add_argument("--prompt_cols", default="prompt",
                     help="columnas de pregunta separadas por coma, p.ej. prompt,prompt_es,prompt_de")
+    ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal",
+                    help="goal: primeras N de la pregunta (default). header: ultimos N tokens "
+                         "del header del assistant, identicos en todos los prompts")
     args = ap.parse_args()
 
     train(args.model, args.targets, args.l2_weight, args.output_dir,
@@ -413,7 +429,8 @@ def main():
           batch_size=args.batch_size, step_decay=args.step_decay, val_n=args.val_n,
           save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset,
           loss_head_k=args.loss_head_k,
-          prompt_cols=tuple(c.strip() for c in args.prompt_cols.split(",") if c.strip()))
+          prompt_cols=tuple(c.strip() for c in args.prompt_cols.split(",") if c.strip()),
+          patch_anchor=args.patch_anchor)
 
 
 if __name__ == "__main__":

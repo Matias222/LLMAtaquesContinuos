@@ -135,15 +135,14 @@ def parse_layers(spec, n_layers):
     return capas
 
 
-def patched_positions(sm, num_patch_positions=3, offset=0):
+def patched_positions(sm, num_patch_positions=3, offset=0, anchor="goal"):
     """Indices absolutos (en la secuencia tokenizada) que reciben el parche.
 
-    Espeja lm.apply_patch_first_n con `offset`: goal_start + offset ... +n,
-    recortado al largo del goal. Puede devolver menos de n posiciones si la
+    Delega en lm.patch_positions (misma convencion que apply_patch_first_n,
+    incluido anchor="header"). Puede devolver menos de n posiciones si la
     pregunta es corta; el llamador decide si eso se reporta."""
-    g0, g1 = sm._goal_slice.start, sm._goal_slice.stop
-    start = g0 + offset
-    n = max(0, min(num_patch_positions, g1 - start))
+    from lm import patch_positions
+    start, n = patch_positions(sm, num_patch_positions, offset, anchor)
     return list(range(start, start + n))
 
 

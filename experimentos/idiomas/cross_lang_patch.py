@@ -72,7 +72,8 @@ import tqdm
 
 from attn_utils import add_metrics, aggregate
 from checkers import truncate_at_role_leak
-from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer, nll_of_target
+from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
+                nll_of_target)
 
 PRESETS = {
     "restar": "prompt:0,prompt:-1,prompt:-2,prompt_fr:0,prompt_fr:-1,prompt_fr:-2",
@@ -128,6 +129,7 @@ def main():
                     help="grilla explicita 'col:a,col:a,...' (pisa --preset)")
     ap.add_argument("--num_patch_positions", type=int, default=3)
     ap.add_argument("--patch_offset", type=int, default=0)
+    ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal")
     ap.add_argument("--num_tokens", type=int, default=100)
     ap.add_argument("--head_k", type=int, default=5)
     ap.add_argument("--n", type=int, default=0, help="limitar filas (0 = todo el tail)")
@@ -188,7 +190,8 @@ def main():
             q = str(r[col])
             raw = generate_one(model, tokenizer, q, args.device, args.num_tokens, 0.0,
                                patch=p, num_patch_positions=args.num_patch_positions,
-                               clean=False, patch_offset=args.patch_offset)
+                               clean=False, patch_offset=args.patch_offset,
+                               patch_anchor=args.patch_anchor)
             txt = truncate_at_role_leak(raw)
             if a == 0.0:
                 ref_text[(col, i)] = txt
@@ -200,10 +203,12 @@ def main():
             add_metrics(rec, "out", txt, r["answer"], r["aliases"])
             ce_fr = nll_of_target(model, tokenizer, q, r["output"], args.device, patch=p,
                                   num_patch_positions=args.num_patch_positions,
-                                  head_k=args.head_k, patch_offset=args.patch_offset)
+                                  head_k=args.head_k, patch_offset=args.patch_offset,
+                                  patch_anchor=args.patch_anchor)
             ce_en = nll_of_target(model, tokenizer, q, r["baseline_en"], args.device, patch=p,
                                   num_patch_positions=args.num_patch_positions,
-                                  head_k=args.head_k, patch_offset=args.patch_offset)
+                                  head_k=args.head_k, patch_offset=args.patch_offset,
+                                  patch_anchor=args.patch_anchor)
             rec["ce_fr"] = ce_fr
             rec["ce_en"] = ce_en
             rows.append(rec)
