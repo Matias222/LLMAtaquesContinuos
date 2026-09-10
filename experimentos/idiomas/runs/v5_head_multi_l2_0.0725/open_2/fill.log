@@ -1,0 +1,99 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.61s/it]
+--fill attributes/french/targets_open_2.csv: 50/50 filas sin referencia, se generan solo esas
+targets (fill):   0%|          | 0/50 [00:00<?, ?it/s]targets (fill):   2%|▏         | 1/50 [00:05<04:24,  5.40s/it]targets (fill):   4%|▍         | 2/50 [00:09<03:52,  4.85s/it]targets (fill):   6%|▌         | 3/50 [00:14<03:38,  4.66s/it]targets (fill):   8%|▊         | 4/50 [00:18<03:31,  4.59s/it]targets (fill):  10%|█         | 5/50 [00:23<03:24,  4.55s/it]targets (fill):  12%|█▏        | 6/50 [00:27<03:19,  4.53s/it]targets (fill):  14%|█▍        | 7/50 [00:32<03:13,  4.50s/it]targets (fill):  16%|█▌        | 8/50 [00:36<03:08,  4.49s/it]targets (fill):  18%|█▊        | 9/50 [00:41<03:04,  4.49s/it]targets (fill):  20%|██        | 10/50 [00:45<02:59,  4.49s/it]targets (fill):  22%|██▏       | 11/50 [00:50<02:54,  4.47s/it]targets (fill):  24%|██▍       | 12/50 [00:54<02:49,  4.47s/it]targets (fill):  26%|██▌       | 13/50 [00:59<02:45,  4.48s/it]targets (fill):  28%|██▊       | 14/50 [01:03<02:40,  4.47s/it]targets (fill):  30%|███       | 15/50 [01:07<02:36,  4.47s/it]targets (fill):  32%|███▏      | 16/50 [01:11<02:22,  4.19s/it]targets (fill):  34%|███▍      | 17/50 [01:15<02:20,  4.27s/it]targets (fill):  36%|███▌      | 18/50 [01:20<02:18,  4.32s/it]targets (fill):  38%|███▊      | 19/50 [01:24<02:15,  4.37s/it]targets (fill):  40%|████      | 20/50 [01:29<02:11,  4.40s/it]targets (fill):  42%|████▏     | 21/50 [01:33<02:08,  4.42s/it]targets (fill):  44%|████▍     | 22/50 [01:38<02:03,  4.43s/it]targets (fill):  46%|████▌     | 23/50 [01:42<02:00,  4.45s/it]targets (fill):  48%|████▊     | 24/50 [01:47<01:55,  4.45s/it]targets (fill):  50%|█████     | 25/50 [01:51<01:51,  4.45s/it]targets (fill):  52%|█████▏    | 26/50 [01:56<01:47,  4.46s/it]targets (fill):  54%|█████▍    | 27/50 [02:00<01:42,  4.47s/it]targets (fill):  56%|█████▌    | 28/50 [02:05<01:38,  4.47s/it]targets (fill):  58%|█████▊    | 29/50 [02:09<01:33,  4.47s/it]targets (fill):  60%|██████    | 30/50 [02:13<01:29,  4.46s/it]targets (fill):  62%|██████▏   | 31/50 [02:18<01:24,  4.46s/it]targets (fill):  64%|██████▍   | 32/50 [02:22<01:20,  4.45s/it]targets (fill):  66%|██████▌   | 33/50 [02:27<01:15,  4.45s/it]targets (fill):  68%|██████▊   | 34/50 [02:31<01:11,  4.46s/it]targets (fill):  70%|███████   | 35/50 [02:36<01:07,  4.47s/it]targets (fill):  72%|███████▏  | 36/50 [02:40<01:02,  4.47s/it]targets (fill):  74%|███████▍  | 37/50 [02:45<00:58,  4.47s/it]targets (fill):  76%|███████▌  | 38/50 [02:49<00:53,  4.47s/it]targets (fill):  78%|███████▊  | 39/50 [02:54<00:49,  4.48s/it]targets (fill):  80%|████████  | 40/50 [02:58<00:44,  4.48s/it]targets (fill):  82%|████████▏ | 41/50 [03:03<00:40,  4.47s/it]targets (fill):  84%|████████▍ | 42/50 [03:07<00:35,  4.48s/it]targets (fill):  86%|████████▌ | 43/50 [03:12<00:31,  4.48s/it]targets (fill):  88%|████████▊ | 44/50 [03:15<00:24,  4.00s/it]targets (fill):  90%|█████████ | 45/50 [03:19<00:20,  4.16s/it]targets (fill):  92%|█████████▏| 46/50 [03:24<00:17,  4.26s/it]targets (fill):  94%|█████████▍| 47/50 [03:28<00:13,  4.33s/it]targets (fill):  96%|█████████▌| 48/50 [03:33<00:08,  4.38s/it]targets (fill):  98%|█████████▊| 49/50 [03:37<00:04,  4.42s/it]targets (fill): 100%|██████████| 50/50 [03:42<00:00,  4.44s/it]targets (fill): 100%|██████████| 50/50 [03:42<00:00,  4.44s/it]
+
+Filas completadas: 50  |  pasan el gate: 50/50
+  [ok] Tell me about the water cycle.                          -> Le cycle de l'eau est un processus naturel qui consiste à l'eau à circ
+  [ok] Explain why the sky is blue.                            -> Le ciel est bleu en raison de la réfraction de la lumière solaire. Lor
+  [ok] Describe how a bicycle stays upright while moving.      -> Un vélo reste en équilibre grâce à plusieurs facteurs :
+
+1.  **Le cent
+  [ok] Summarize the plot of Romeo and Juliet.                 -> Voici une résumé de la trilogie de Shakespeare "Romeo et Juliette" :
+
+
+  [ok] Compare cats and dogs as pets.                          -> Les chats et les chiens sont deux animaux très populaires comme animau
+  [ok] List three benefits of regular exercise.                -> Voici trois avantages du fait de pratiquer régulièrement l'exercice :
+
+  [ok] Give me a short history of the printing press.          -> Voici une brève histoire de l'imprimerie :
+
+L'imprimerie a été inventé
+  [ok] Name some famous paintings from the Renaissance.        -> Voici quelques-unes des plus célèbres peintures de la Renaissance :
+
+*
+  [ok] Walk me through how bread is made.                      -> Bien sûr! Je vais vous guider à travers le processus de fabrication du
+  [ok] Help me understand how vaccines work.                   -> Je serais ravi de vous aider!
+
+Les vaccins sont des substances qui aid
+  [ok] Write a short paragraph about the Moon.                 -> La Lune est un satellite naturel de la Terre, entourant notre planète 
+  [ok] Suggest a few ways to save energy at home.              -> Voici quelques façons de réduire la consommation d'énergie à la maison
+  [ok] Recommend a good book for a long train ride.            -> Pour une longue traversée en train, je te recommande un livre qui te f
+  [ok] Outline the main causes of the First World War.         -> Voici les principales causes de la Première Guerre mondiale :
+
+1. **La
+  [ok] Discuss the pros and cons of working from home.         -> Travailler à domicile peut présenter à la fois des avantages et des in
+  [ok] Define the word "democracy" in simple terms.            -> La démocratie est un système de gouvernement où les citoyens ont le po
+  [ok] Teach me the basics of chess.                           -> Bien sûr! (Of course!) Je vais vous expliquer les bases du jeu de l'éc
+  [ok] Break down how a refrigerator keeps food cold.          -> Bien sûr! Je vais vous expliquer comment un réfrigérateur maintient la
+  [ok] Share some tips for learning a new language.            -> Voici quelques conseils pour apprendre une nouvelle langue :
+
+1. **Com
+  [ok] Imagine a city without cars and describe it.            -> Imaginez une ville sans voitures! C'est un monde idéal, où la vie est 
+  [ok] Convince me to drink more water.                        -> Je suis ravi de t'aider!
+
+Boire suffisamment d'eau est essentiel pour 
+  [ok] Argue for the importance of public libraries.           -> Les bibliothèques publiques sont des institutions essentielles pour la
+  [ok] Picture a sunrise over the ocean and describe it.       -> Imaginez un aurore sur l'océan. Cette scène est magnifique! Le ciel se
+  [ok] Reflect on the role of music in everyday life.          -> La musique joue un rôle important dans notre vie quotidienne. Elle peu
+  [ok] Consider the advantages of learning to cook.            -> Apprendre à cuisiner présente de nombreux avantages. Voici quelques-un
+  [ok] Estimate how many hours a person sleeps in a lifetime.  -> Il est difficile de donner un chiffre précis, car les habitudes de som
+  [ok] Predict what cities might look like in fifty years.     -> Voici quelques prévisions sur ce que les villes pourraient ressembler 
+  [ok] Rank the planets of the Solar System by size.           -> Voici les planètes du Système solaire classées par taille, de plus pet
+  [ok] Contrast classical music with jazz.                     -> La musique classique et le jazz sont deux genres musicaux très différe
+  [ok] Identify the main parts of a plant.                     -> Les principaux parties d'une plante sont :
+
+1. **La racine** : elle es
+  [ok] Clarify the difference between weather and climate.     -> Je serais ravi de vous aider!
+
+La météo et le climat sont souvent conf
+  [ok] Elaborate on why sleep is important for memory.         -> Le sommeil est essentiel pour la consolidation des souvenirs. Lorsque 
+  [ok] Brainstorm ideas for a birthday party.                  -> Quelle idée de fête de naissance! Voici quelques suggestions pour vous
+  [ok] Propose a simple plan to reduce plastic waste.          -> Voici un plan simple pour réduire la déchets plastiques :
+
+**Objectif 
+  [ok] Draft a short welcome message for new employees.        -> "Chers nouveaux collègues,
+
+Nous sommes ravis de vous accueillir au se
+  [ok] Sketch the life cycle of a butterfly.                   -> Voici le cycle de vie d'une papillon :
+
+**Étapes du cycle de vie d'une
+  [ok] Think about the benefits of walking to work.            -> Les avantages de marcher au travail sont nombreux! Voici quelques-uns 
+  [ok] Talk me through the rules of football.                  -> Bien sûr! Les règles du football sont les suivantes :
+
+**Le but du jeu
+  [ok] Say something about the history of coffee.              -> Le café! Il a une histoire riche et fascinante. Le café est né en Éthi
+  [ok] Paint a picture of a typical day in ancient Rome.       -> Un jour typique en Rome antique est une expérience riche et variée. Vo
+  [ok] Offer some advice for a first job interview.            -> Pour un premier entretien d'embauche, voici quelques conseils :
+
+1. **
+  [ok] Provide an overview of how the internet works.          -> Bien sûr! Voici une vue d'ensemble de la façon dont fonctionne l'inter
+  [ok] Present the case for renewable energy.                  -> Voici les arguments en faveur de l'énergie renouvelable :
+
+**L'avenir 
+  [ok] Enumerate the continents of the world.                  -> Voici les continents du monde :
+
+1. L'Afrique
+2. l'Antarctique
+3. l'As
+  [ok] Illustrate how supply and demand set prices.            -> Je serais ravi de vous aider!
+
+La demande et l'offre sont deux forces 
+  [ok] Justify why children should learn to swim.              -> Les enfants devraient apprendre à nager pour plusieurs raisons importa
+  [ok] Speculate about life on other planets.                  -> Il est difficile de prédire avec certitude ce qui se passe sur d'autre
+  [ok] Recount the story of the first Moon landing.            -> Voici l'histoire du premier atterrissage sur la Lune :
+
+Le 16 juillet 
+  [ok] Trace the origins of the Olympic Games.                 -> Les Jeux Olympiques ont une histoire riche et fascinante qui remonte à
+  [ok] Assess the impact of smartphones on daily life.         -> Les smartphones ont eu un impact considérable sur notre vie quotidienn
+
+Escrito attributes/french/targets_open_2.csv (backup .bak)

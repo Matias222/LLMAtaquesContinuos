@@ -1,0 +1,51 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_french_score;ref_language;baseline_language;ref_is_french;ref_answer_correct;baseline_is_french;baseline_answer_correct;passed_gate;prompt_es;prompt_es_language;prompt_es_ok;prompt_de;prompt_de_language;prompt_de_ok
+Tell me about the water cycle.;;;;;;;;;;;;;;;Cuéntame sobre el ciclo del agua.;es;True;Erzähl mir vom Wasserkreislauf.;de;True
+Explain why the sky is blue.;;;;;;;;;;;;;;;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True
+Describe how a bicycle stays upright while moving.;;;;;;;;;;;;;;;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True
+Summarize the plot of Romeo and Juliet.;;;;;;;;;;;;;;;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True
+Compare cats and dogs as pets.;;;;;;;;;;;;;;;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True
+List three benefits of regular exercise.;;;;;;;;;;;;;;;Menciona tres beneficios del ejercicio regular.;unknown;True;Nenne drei Vorteile regelmäßiger Bewegung.;de;True
+Give me a short history of the printing press.;;;;;;;;;;;;;;;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True
+Name some famous paintings from the Renaissance.;;;;;;;;;;;;;;;Nombra algunas pinturas famosas del Renacimiento.;es;True;Nenne einige berühmte Gemälde der Renaissance.;de;True
+Walk me through how bread is made.;;;;;;;;;;;;;;;Guíame por el proceso de hacer pan.;es;True;Führe mich durch die Herstellung von Brot.;de;True
+Help me understand how vaccines work.;;;;;;;;;;;;;;;Ayúdame a entender cómo funcionan las vacunas.;es;True;Hilf mir zu verstehen, wie Impfstoffe wirken.;de;True
+Write a short paragraph about the Moon.;;;;;;;;;;;;;;;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True
+Suggest a few ways to save energy at home.;;;;;;;;;;;;;;;Sugiere algunas formas de ahorrar energía en casa.;es;True;Schlag ein paar Möglichkeiten vor, zu Hause Energie zu sparen.;de;True
+Recommend a good book for a long train ride.;;;;;;;;;;;;;;;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True
+Outline the main causes of the First World War.;;;;;;;;;;;;;;;Esboza las principales causas de la Primera Guerra Mundial.;es;True;Umreiße die Hauptursachen des Ersten Weltkriegs.;de;True
+Discuss the pros and cons of working from home.;;;;;;;;;;;;;;;Discute las ventajas y desventajas de trabajar desde casa.;es;True;Diskutiere die Vor- und Nachteile der Arbeit von zu Hause.;de;True
+"Define the word ""democracy"" in simple terms.";;;;;;;;;;;;;;;"Define la palabra ""democracia"" en términos sencillos.";fr;True;"Definiere das Wort ""Demokratie"" in einfachen Worten.";de;True
+Teach me the basics of chess.;;;;;;;;;;;;;;;Enséñame los fundamentos del ajedrez.;es;True;Bring mir die Grundlagen des Schachspiels bei.;unknown;True
+Break down how a refrigerator keeps food cold.;;;;;;;;;;;;;;;Desglosa cómo un refrigerador mantiene fría la comida.;es;True;Zerlege, wie ein Kühlschrank Lebensmittel kalt hält.;de;True
+Share some tips for learning a new language.;;;;;;;;;;;;;;;Comparte algunos consejos para aprender un idioma nuevo.;es;True;Teile ein paar Tipps zum Lernen einer neuen Sprache.;de;True
+Imagine a city without cars and describe it.;;;;;;;;;;;;;;;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True
+Convince me to drink more water.;;;;;;;;;;;;;;;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True
+Argue for the importance of public libraries.;;;;;;;;;;;;;;;Argumenta a favor de la importancia de las bibliotecas públicas.;es;True;Argumentiere für die Bedeutung öffentlicher Bibliotheken.;de;True
+Picture a sunrise over the ocean and describe it.;;;;;;;;;;;;;;;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True
+Reflect on the role of music in everyday life.;;;;;;;;;;;;;;;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True
+Consider the advantages of learning to cook.;;;;;;;;;;;;;;;Considera las ventajas de aprender a cocinar.;es;True;Betrachte die Vorteile, kochen zu lernen.;de;True
+Estimate how many hours a person sleeps in a lifetime.;;;;;;;;;;;;;;;Estima cuántas horas duerme una persona a lo largo de su vida.;es;True;Schätze, wie viele Stunden ein Mensch im Laufe seines Lebens schläft.;de;True
+Predict what cities might look like in fifty years.;;;;;;;;;;;;;;;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True
+Rank the planets of the Solar System by size.;;;;;;;;;;;;;;;Ordena los planetas del Sistema Solar por tamaño.;es;True;Ordne die Planeten des Sonnensystems nach Größe.;de;True
+Contrast classical music with jazz.;;;;;;;;;;;;;;;Contrasta la música clásica con el jazz.;es;True;Stelle die klassische Musik dem Jazz gegenüber.;de;True
+Identify the main parts of a plant.;;;;;;;;;;;;;;;Identifica las partes principales de una planta.;es;True;Identifiziere die wichtigsten Teile einer Pflanze.;de;True
+Clarify the difference between weather and climate.;;;;;;;;;;;;;;;Aclara la diferencia entre tiempo y clima.;unknown;True;Kläre den Unterschied zwischen Wetter und Klima.;de;True
+Elaborate on why sleep is important for memory.;;;;;;;;;;;;;;;Profundiza en por qué el sueño es importante para la memoria.;es;True;Erläutere, warum Schlaf für das Gedächtnis wichtig ist.;de;True
+Brainstorm ideas for a birthday party.;;;;;;;;;;;;;;;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True
+Propose a simple plan to reduce plastic waste.;;;;;;;;;;;;;;;Plantea un plan sencillo para reducir los residuos plásticos.;es;True;Schlage einen einfachen Plan zur Verringerung von Plastikmüll vor.;de;True
+Draft a short welcome message for new employees.;;;;;;;;;;;;;;;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True
+Sketch the life cycle of a butterfly.;;;;;;;;;;;;;;;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True
+Think about the benefits of walking to work.;;;;;;;;;;;;;;;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True
+Talk me through the rules of football.;;;;;;;;;;;;;;;Explícame las reglas del fútbol.;es;True;Erklär mir die Regeln des Fußballs.;de;True
+Say something about the history of coffee.;;;;;;;;;;;;;;;Di algo sobre la historia del café.;unknown;True;Sag etwas über die Geschichte des Kaffees.;de;True
+Paint a picture of a typical day in ancient Rome.;;;;;;;;;;;;;;;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True
+Offer some advice for a first job interview.;;;;;;;;;;;;;;;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True
+Provide an overview of how the internet works.;;;;;;;;;;;;;;;Proporciona una visión general de cómo funciona internet.;es;True;Liefere einen Überblick darüber, wie das Internet funktioniert.;de;True
+Present the case for renewable energy.;;;;;;;;;;;;;;;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True
+Enumerate the continents of the world.;;;;;;;;;;;;;;;Enumera los continentes del mundo.;es;True;Zähle die Kontinente der Welt auf.;de;True
+Illustrate how supply and demand set prices.;;;;;;;;;;;;;;;Ilustra cómo la oferta y la demanda fijan los precios.;es;True;Veranschauliche, wie Angebot und Nachfrage die Preise bestimmen.;de;True
+Justify why children should learn to swim.;;;;;;;;;;;;;;;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True
+Speculate about life on other planets.;;;;;;;;;;;;;;;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True
+Recount the story of the first Moon landing.;;;;;;;;;;;;;;;Relata la historia del primer alunizaje.;es;True;Erzähle die Geschichte der ersten Mondlandung.;de;True
+Trace the origins of the Olympic Games.;;;;;;;;;;;;;;;Rastrea los orígenes de los Juegos Olímpicos.;es;True;Verfolge die Ursprünge der Olympischen Spiele zurück.;de;True
+Assess the impact of smartphones on daily life.;;;;;;;;;;;;;;;Evalúa el impacto de los teléfonos inteligentes en la vida diaria.;es;True;Beurteile die Auswirkungen von Smartphones auf den Alltag.;de;True
