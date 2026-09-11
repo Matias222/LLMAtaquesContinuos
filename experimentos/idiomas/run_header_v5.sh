@@ -19,6 +19,7 @@
 #
 #   uso (desde experimentos/idiomas):  bash run_header_v5.sh [MODEL_PATH]
 #   variables:  DEVICE (cuda:0)  L2 (0.0725)  HEAD_K (8)  EPOCHS (8)  NAME (v5_header_head_multi)
+#               STEP_SIZE (0.00025)  INIT_PATCH (vacio = desde ceros; un .pt = warm start)
 #               SKIP_TRAIN=1 para evaluar un parche ya entrenado
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -29,6 +30,8 @@ DEVICE="${DEVICE:-cuda:0}"
 L2="${L2:-0.0725}"
 HEAD_K="${HEAD_K:-8}"
 EPOCHS="${EPOCHS:-8}"
+STEP_SIZE="${STEP_SIZE:-0.00025}"
+INIT_PATCH="${INIT_PATCH:-}"
 NAME="${NAME:-v5_header_head_multi}"
 ANCHOR=header
 T=attributes/french/targets_french_v5.csv
@@ -45,6 +48,7 @@ if [[ "${SKIP_TRAIN:-0}" != "1" ]]; then
       --l2_weight "$L2" --output_dir "$OUT" --batch_size 32 --num_steps_per_prompt 20 \
       --num_epochs "$EPOCHS" --step_decay cosine --val_n 20 --save_best --train_test_split $SPLIT \
       --loss_head_k "$HEAD_K" --prompt_cols prompt,prompt_es,prompt_de \
+      --step_size "$STEP_SIZE" ${INIT_PATCH:+--init_patch "$INIT_PATCH"} \
       --patch_anchor $ANCHOR 2>&1 | tee "$OUT/train.log"
 fi
 

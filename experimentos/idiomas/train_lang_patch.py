@@ -125,7 +125,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
           step_size=0.00025, train_test_split=0.8, device="cuda:0",
           use_gate=True, batch_size=1, step_decay="none", val_n=8,
           save_best=False, head_k=5, patch_offset=0, loss_head_k=0,
-          prompt_cols=("prompt",), patch_anchor="goal"):
+          prompt_cols=("prompt",), patch_anchor="goal", init_patch=None):
     """
     Defaults = comportamiento original (batch_size=1, sin annealing, ultimo
     checkpoint), para que los runs viejos sigan siendo reproducibles.
@@ -218,8 +218,19 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     print(f"Checkpoint: {'mejor por CE held-out' if save_best else 'ultimo'}")
     print("=" * 70)
 
-    patch = torch.zeros(1, num_patch_positions, embedding_dim,
-                        requires_grad=True, device=device)
+    if init_patch:
+        # Arranque en caliente desde un parche ya entrenado. OJO: el schedule
+        # del step_size arranca de nuevo (coseno desde step_size hasta 0 sobre
+        # las epochs de ESTA corrida), asi que no es "seguir donde quedo" sino
+        # un warm restart; con un step_size mas chico se parece mas a seguir.
+        init = torch.load(init_patch, map_location=device).to(device).float()
+        assert tuple(init.shape) == (1, num_patch_positions, embedding_dim), \
+            f"--init_patch {init_patch}: shape {tuple(init.shape)}, esperada (1, {num_patch_positions}, {embedding_dim})"
+        patch = init.clone().detach().requires_grad_(True)
+        print(f"Init: {init_patch}  (norma {patch.norm(2).item():.4f})")
+    else:
+        patch = torch.zeros(1, num_patch_positions, embedding_dim,
+                            requires_grad=True, device=device)
     best = {"ce": float("inf"), "patch": None, "epoch": None}          # held-out
     best_tr = {"ce": float("inf"), "patch": None, "epoch": None}       # train
     curva = []
@@ -356,6 +367,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         "num_patch_positions": num_patch_positions,
         "patch_offset": patch_offset,
         "patch_anchor": patch_anchor,
+        "init_patch": os.path.abspath(init_patch) if init_patch else None,
         "patch_norm": final.norm(2).item(),
         "train_size": len(train_df),
         "test_size": len(test_df),
@@ -418,6 +430,8 @@ def main():
                     help="CE solo sobre los primeros k tokens del target (0 = target completo)")
     ap.add_argument("--prompt_cols", default="prompt",
                     help="columnas de pregunta separadas por coma, p.ej. prompt,prompt_es,prompt_de")
+    ap.add_argument("--init_patch", default=None,
+                    help="parche .pt desde el que arrancar (warm start) en vez de ceros")
     ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal",
                     help="goal: primeras N de la pregunta (default). header: ultimos N tokens "
                          "del header del assistant, identicos en todos los prompts")
@@ -430,7 +444,7 @@ def main():
           save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset,
           loss_head_k=args.loss_head_k,
           prompt_cols=tuple(c.strip() for c in args.prompt_cols.split(",") if c.strip()),
-          patch_anchor=args.patch_anchor)
+          patch_anchor=args.patch_anchor, init_patch=args.init_patch)
 
 
 if __name__ == "__main__":
