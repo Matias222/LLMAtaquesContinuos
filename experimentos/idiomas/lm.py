@@ -63,7 +63,7 @@ def build_suffix_manager(tokenizer, instruction, target=""):
     )
 
 
-PATCH_ANCHORS = ("goal", "header")
+PATCH_ANCHORS = ("goal", "header", "goal_all")
 
 
 def patch_positions(suffix_manager, num_patch_positions=3, offset=0, anchor="goal"):
@@ -84,6 +84,16 @@ def patch_positions(suffix_manager, num_patch_positions=3, offset=0, anchor="goa
                      aperturas e idiomas que vio (open_2, it/pt). Ademas es la
                      region cuyo KV, segun mask_patch_attention --block keep,
                      sostiene el modo frances.
+    anchor="goal_all"
+                     TODO el goal slice (la pregunta del usuario entera, sin
+                     system, sin headers y sin <|eot_id|>), a partir de
+                     goal_start + offset. Ahi el parche es UN solo vector
+                     [1, 1, d] que se suma igual a cada posicion, asi que
+                     `num_patch_positions` no decide cuantas posiciones se tocan
+                     (son las que tenga la pregunta) y se ignora. Un v uniforme
+                     no puede apoyarse ni en la posicion ni en el token sobre el
+                     que cae. OJO: es una SUMA, no un promedio: la perturbacion
+                     total crece con el largo de la pregunta.
     """
     if anchor == "goal":
         start = suffix_manager._goal_slice.start + int(offset)
@@ -94,6 +104,9 @@ def patch_positions(suffix_manager, num_patch_positions=3, offset=0, anchor="goa
         end = hs.stop - int(offset)
         start = max(hs.start, end - num_patch_positions)
         return start, max(0, end - start)
+    if anchor == "goal_all":
+        start = suffix_manager._goal_slice.start + int(offset)
+        return start, max(0, suffix_manager._goal_slice.stop - start)
     raise ValueError(f"anchor desconocido: {anchor}; validos: {PATCH_ANCHORS}")
 
 
@@ -108,14 +121,32 @@ def apply_patch_first_n(suffix_manager, prompt_embeds, patch, num_patch_position
     existe para el control de posicion (ablate_patch_positions.py,
     train_lang_patch.py --patch_offset) y `anchor` para parchear el header del
     assistant en vez de la pregunta (--patch_anchor header).
+
+    Con anchor="goal_all" el parche es [1, 1, d] y se suma, por broadcast, a
+    todas las posiciones de la pregunta:  e'_i = e_i + v  para todo i del goal.
     """
     patched = prompt_embeds.clone()
     start, actual = patch_positions(suffix_manager, num_patch_positions, offset, anchor)
+    if anchor == "goal_all":
+        if patch.shape[1] != 1:
+            raise ValueError(f"anchor goal_all espera un parche [1, 1, d]; llego {tuple(patch.shape)}")
+        if actual > 0:
+            patched[:, start:start + actual, :] = prompt_embeds[:, start:start + actual, :] + patch
+        return patched
     if actual > 0:
         patched[:, start:start + actual, :] = (
             prompt_embeds[:, start:start + actual, :] + patch[:, :actual, :]
         )
     return patched
+
+
+def n_patched_tokens(tokenizer, instruction, num_patch_positions=3, offset=0, anchor="goal"):
+    """Cuantas posiciones de `instruction` reciben el parche. Con goal_all es el
+    largo de la pregunta en tokens, o sea el factor por el que se multiplica la
+    perturbacion total: hay que mirarlo al comparar sets de largos distintos."""
+    sm = build_suffix_manager(tokenizer, instruction, target="")
+    sm.get_input_ids()      # los slices se calculan aca, no en el constructor
+    return patch_positions(sm, num_patch_positions, offset, anchor)[1]
 
 
 def stop_token_ids(tokenizer):

@@ -73,7 +73,7 @@ import tqdm
 from attn_utils import add_metrics, aggregate
 from checkers import truncate_at_role_leak
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
-                nll_of_target)
+                n_patched_tokens, nll_of_target)
 
 PRESETS = {
     "restar": "prompt:0,prompt:-1,prompt:-2,prompt_fr:0,prompt_fr:-1,prompt_fr:-2",
@@ -199,7 +199,9 @@ def main():
                    "answer": r["answer"], "baseline_en": r["baseline_en"],
                    "reference_fr": r["output"], "out": txt,
                    "out_role_leak": bool(txt != raw.strip()),
-                   "out_igual_a0": txt.strip() == ref_text.get((col, i), "").strip()}
+                   "out_igual_a0": txt.strip() == ref_text.get((col, i), "").strip(),
+                   "n_patched": 0 if p is None else n_patched_tokens(
+                       tokenizer, q, args.num_patch_positions, args.patch_offset, args.patch_anchor)}
             add_metrics(rec, "out", txt, r["answer"], r["aliases"])
             ce_fr = nll_of_target(model, tokenizer, q, r["output"], args.device, patch=p,
                                   num_patch_positions=args.num_patch_positions,
@@ -221,6 +223,7 @@ def main():
         agg["cambio_vs_a0"] = (float("nan") if a == 0.0
                                else sum(not r["out_igual_a0"] for r in rows) / n)
         agg["role_leak"] = sum(r["out_role_leak"] for r in rows) / n
+        agg["n_patched_media"] = sum(r["n_patched"] for r in rows) / n
 
         def avg(key, part):
             v = [r[key][part] for r in rows if r[key][part] == r[key][part]]
@@ -280,16 +283,18 @@ def write_markdown(rep, path):
     L.append(f"- Parche: `{rep['patch']}`  |  norma {rep['patch_norm']:.4f}")
     L.append(f"- Tail del held-out: n={rep['n_tail']}")
     L.append("")
-    L.append("| condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head |")
-    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    L.append("| condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head | tok parche |")
+    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for res in rep["condiciones"]:
         m = res["metrics"]
         L.append(f"| {res['label']} | {m['n']} | {m['p_fr']:.2f} | {m['p_en']:.2f} | {m['p_es']:.2f} "
                  f"| {m['p_de']:.2f} | {m['p_it']:.2f} | {m['p_pt']:.2f} | {m['p_unknown']:.2f} | {m['is_french']:.2f} | {m['starts_fr']:.2f} "
                  f"| {m['answer_correct']:.2f} | {m['cambio_vs_a0']:.2f} | {m['len_media']:.1f} "
-                 f"| {m['ce_fr_head']:.3f} | {m['ce_en_head']:.3f} |")
+                 f"| {m['ce_fr_head']:.3f} | {m['ce_en_head']:.3f} | {m.get('n_patched_media', float('nan')):.1f} |")
     L.append("")
-    L.append("`cambio` es la fraccion de filas cuya salida difiere de la de a=0 en la misma columna. "
+    L.append("`tok parche` es la media de posiciones que reciben el parche (con anchor goal_all, el "
+             "largo de la pregunta: la perturbacion total es ese numero por v). "
+             "`cambio` es la fraccion de filas cuya salida difiere de la de a=0 en la misma columna. "
              "La accuracy en salidas en espanol o aleman puede estar subestimada: los alias son "
              "ingles y frances.")
     L.append("")

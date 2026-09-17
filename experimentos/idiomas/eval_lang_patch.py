@@ -26,7 +26,7 @@ import tqdm
 
 from checkers import answer_correct, french_score, is_french, truncate_at_role_leak
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
-                nll_of_target)
+                n_patched_tokens, nll_of_target)
 from reporting import CONDITIONS, open_metrics, score_rows, write_markdown
 
 
@@ -92,6 +92,8 @@ def main():
         rec["baseline_role_leak"] = str(r.get("baseline_role_leak", False)).lower() == "true"
         rec["reference_role_leak"] = str(r.get("ref_role_leak", False)).lower() == "true"
         rec["patched_role_leak"] = bool(patched != patched_raw.strip())
+        rec["n_patched"] = n_patched_tokens(tokenizer, q, args.num_patch_positions,
+                                            args.patch_offset, args.patch_anchor)
         rows.append(rec)
 
         nll_b.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=None,
@@ -116,6 +118,7 @@ def main():
         "nll_fr_tail_baseline": avg(nll_b, "tail"),
         "nll_fr_tail_patched": avg(nll_p, "tail"),
         "head_k": args.head_k,
+        "n_patched_media": sum(r["n_patched"] for r in rows) / max(1, len(rows)),
     })
 
     om = open_metrics(rows)
@@ -160,6 +163,7 @@ def main():
         print(f"{lbl:<26}{metrics[kb]:>12.4f}{metrics[kp]:>12.4f}"
               f"{metrics[kp] - metrics[kb]:>+10.4f}")
     print("  el head es donde vive la decision de idioma; el tail casi no deberia moverse")
+    print(f"  tokens parcheados por prompt (anchor {args.patch_anchor}): media {metrics['n_patched_media']:.1f}")
 
     if "open" in metrics:
         o = metrics["open"]

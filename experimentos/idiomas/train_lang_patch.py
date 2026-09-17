@@ -32,7 +32,8 @@ import torch
 import torch.nn as nn
 
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, apply_patch_first_n, build_suffix_manager,
-                get_embedding_matrix, get_embeddings, load_model_and_tokenizer)
+                get_embedding_matrix, get_embeddings, load_model_and_tokenizer,
+                patch_positions)
 
 
 def calc_loss(model, sm, prompt_embeds, patch, target_tokens,
@@ -161,6 +162,10 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         train_df = train_df[train_df["passed_gate"].astype(str).str.lower() == "true"]
         print(f"Gate de calidad sobre train: {len(train_df)}/{before} targets limpios")
 
+    if patch_anchor == "goal_all" and num_patch_positions != 1:
+        raise SystemExit("--patch_anchor goal_all es UN vector para toda la pregunta: "
+                         f"usar --num_patch_positions 1 (llego {num_patch_positions})")
+
     prompt_cols = tuple(prompt_cols)
     faltan = [c for c in prompt_cols if c not in df.columns]
     if faltan:
@@ -188,10 +193,35 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     print(f"L2: {l2_weight}  |  step_size: {step_size} ({step_decay})  |  posiciones: {num_patch_positions}"
           + (f"  |  offset: {patch_offset}" if patch_offset else "")
           + (f"  |  anchor: {patch_anchor}" if patch_anchor != "goal" else ""))
+    goal_len_media = None
+    if patch_anchor == "goal_all":
+        # Verificacion de que el parche cae SOLO sobre la pregunta: se imprimen
+        # los tokens parcheados del primer prompt de cada columna, con el token
+        # anterior y el siguiente, que tienen que ser el fin del header de user
+        # y <|eot_id|>. Y el largo del goal, porque la perturbacion total es
+        # largo x v: si train y los sets abiertos difieren mucho, mirarlo.
+        largos = []
+        for c in prompt_cols:
+            primero = True
+            for _, row in train_df.iterrows():
+                q = usable_prompt(row, c)
+                if q is None:
+                    continue
+                sm_ = build_suffix_manager(tokenizer, q, target=row["output"])
+                toks_ = sm_.get_input_ids()
+                s_, n_ = patch_positions(sm_, num_patch_positions, patch_offset, patch_anchor)
+                largos.append(n_)
+                if primero:
+                    dec = lambda a, b: [tokenizer.decode([int(t)]) for t in toks_[a:b]]
+                    print(f"  [{c}] parche sobre {s_}..{s_ + n_ - 1} ({n_} tokens) = {dec(s_, s_ + n_)}")
+                    print(f"        antes: {dec(max(0, s_ - 2), s_)}   despues: {dec(s_ + n_, s_ + n_ + 2)}")
+                    primero = False
+        goal_len_media = sum(largos) / max(1, len(largos))
+        print(f"  largo del goal en train: media {goal_len_media:.1f}  min {min(largos)}  max {max(largos)}"
+              f"  (el mismo v se suma en cada posicion)")
     if patch_anchor == "header":
         sm_ = build_suffix_manager(tokenizer, train_df.iloc[0]["prompt"], target="x")
         toks_ = sm_.get_input_ids()
-        from lm import patch_positions
         s_, n_ = patch_positions(sm_, num_patch_positions, patch_offset, patch_anchor)
         print(f"  parche sobre el header del assistant: posiciones {s_}..{s_ + n_ - 1} = "
               f"{[tokenizer.decode([int(t)]) for t in toks_[s_:s_ + n_]]}")
@@ -367,6 +397,7 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         "num_patch_positions": num_patch_positions,
         "patch_offset": patch_offset,
         "patch_anchor": patch_anchor,
+        "goal_len_media_train": goal_len_media,
         "init_patch": os.path.abspath(init_patch) if init_patch else None,
         "patch_norm": final.norm(2).item(),
         "train_size": len(train_df),
@@ -434,7 +465,8 @@ def main():
                     help="parche .pt desde el que arrancar (warm start) en vez de ceros")
     ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal",
                     help="goal: primeras N de la pregunta (default). header: ultimos N tokens "
-                         "del header del assistant, identicos en todos los prompts")
+                         "del header del assistant, identicos en todos los prompts. goal_all: UN "
+                         "vector sumado a todos los tokens de la pregunta (--num_patch_positions 1)")
     args = ap.parse_args()
 
     train(args.model, args.targets, args.l2_weight, args.output_dir,
