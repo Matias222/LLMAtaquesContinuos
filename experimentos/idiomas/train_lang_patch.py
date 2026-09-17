@@ -126,7 +126,8 @@ def train(model_path, targets_csv, l2_weight, output_dir,
           step_size=0.00025, train_test_split=0.8, device="cuda:0",
           use_gate=True, batch_size=1, step_decay="none", val_n=8,
           save_best=False, head_k=5, patch_offset=0, loss_head_k=0,
-          prompt_cols=("prompt",), patch_anchor="goal", init_patch=None):
+          prompt_cols=("prompt",), patch_anchor="goal", init_patch=None,
+          shuffle_seed=None, attr_name="french"):
     """
     Defaults = comportamiento original (batch_size=1, sin annealing, ultimo
     checkpoint), para que los runs viejos sigan siendo reproducibles.
@@ -186,6 +187,15 @@ def train(model_path, targets_csv, l2_weight, output_dir,
     # medicion del parche que queda al final de la epoch. Como baja de forma
     # monotona, elegir por ahi devolveria siempre la ultima epoch.
     train_rows = train_df.head(val_n)
+    if shuffle_seed is not None:
+        # Replica: mismas filas, otro orden de batches. El entrenamiento es
+        # determinista (init en ceros, orden fijo, sign-SGD), asi que esta es la
+        # unica fuente de variacion entre dos corridas de la MISMA celda: el
+        # coseno entre ambas es el techo de ruido contra el que se leen los
+        # cosenos del algebra. Se baraja DESPUES de fijar train_rows / val_rows,
+        # para que la curva por epoch mida sobre las mismas filas que la original.
+        train_df = train_df.sample(frac=1.0, random_state=int(shuffle_seed))
+        print(f"Orden de train barajado con seed {shuffle_seed}")
     n_batches = math.ceil(len(train_df) / batch_size)
     total_steps = num_epochs * n_batches * num_steps_per_prompt
 
@@ -388,8 +398,8 @@ def train(model_path, targets_csv, l2_weight, output_dir,
         print("  la CE del head es un proxy y lo que decide es is_french sobre generacion.")
 
     metadata = {
-        "language": "french",
-        "instruction": "Answer in French.",
+        "language": attr_name,
+        "shuffle_seed": shuffle_seed,
         "targets_csv": os.path.abspath(targets_csv),
         "train_test_split": train_test_split,
         "prompt_cols": list(prompt_cols),
@@ -463,6 +473,10 @@ def main():
                     help="columnas de pregunta separadas por coma, p.ej. prompt,prompt_es,prompt_de")
     ap.add_argument("--init_patch", default=None,
                     help="parche .pt desde el que arrancar (warm start) en vez de ceros")
+    ap.add_argument("--shuffle_seed", type=int, default=None,
+                    help="barajar el orden de las filas de train (replica para el techo de ruido)")
+    ap.add_argument("--attr_name", default="french",
+                    help="nombre de la celda target; solo se guarda en lang_metadata.pt")
     ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal",
                     help="goal: primeras N de la pregunta (default). header: ultimos N tokens "
                          "del header del assistant, identicos en todos los prompts. goal_all: UN "
@@ -476,7 +490,8 @@ def main():
           save_best=args.save_best, head_k=args.head_k, patch_offset=args.patch_offset,
           loss_head_k=args.loss_head_k,
           prompt_cols=tuple(c.strip() for c in args.prompt_cols.split(",") if c.strip()),
-          patch_anchor=args.patch_anchor, init_patch=args.init_patch)
+          patch_anchor=args.patch_anchor, init_patch=args.init_patch,
+          shuffle_seed=args.shuffle_seed, attr_name=args.attr_name)
 
 
 if __name__ == "__main__":

@@ -135,6 +135,15 @@ def main():
     ap.add_argument("--n", type=int, default=0, help="limitar filas (0 = todo el tail)")
     ap.add_argument("--keep_bad_translations", action="store_true",
                     help="no excluir las filas con prompt_<lang>_ok = False")
+    ap.add_argument("--target_lang", choices=["fr", "es", "de"], default=None,
+                    help="idioma de la celda del parche (algebra/): agrega las columnas "
+                         "tgt / mayus / celda_ok. Sin esto el reporte es el de siempre")
+    ap.add_argument("--upper", action="store_true", help="la celda target es ademas MAYUSCULAS")
+    ap.add_argument("--cell_metrics", action="store_true",
+                    help="sin efecto aca (--target_lang ya las activa); existe para compartir "
+                         "la linea de comandos con eval_lang_patch.py")
+    ap.add_argument("--tag", default=None,
+                    help="nombre del reporte cross_lang_<tag>.* (default: el preset, o 'custom')")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_dir", required=True)
     args = ap.parse_args()
@@ -142,7 +151,7 @@ def main():
     if args.conds is None and args.preset is None:
         raise SystemExit("hace falta --preset restar|idioma o --conds")
     conds = parse_conds(args.conds if args.conds is not None else PRESETS[args.preset])
-    name = args.preset if args.conds is None else "custom"
+    name = args.tag or (args.preset if args.conds is None else "custom")
 
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     heldout = df.iloc[int(len(df) * args.train_test_split):]
@@ -202,7 +211,8 @@ def main():
                    "out_igual_a0": txt.strip() == ref_text.get((col, i), "").strip(),
                    "n_patched": 0 if p is None else n_patched_tokens(
                        tokenizer, q, args.num_patch_positions, args.patch_offset, args.patch_anchor)}
-            add_metrics(rec, "out", txt, r["answer"], r["aliases"])
+            add_metrics(rec, "out", txt, r["answer"], r["aliases"],
+                        target_lang=args.target_lang, upper=args.upper)
             ce_fr = nll_of_target(model, tokenizer, q, r["output"], args.device, patch=p,
                                   num_patch_positions=args.num_patch_positions,
                                   head_k=args.head_k, patch_offset=args.patch_offset,
@@ -249,6 +259,14 @@ def main():
               f"{m['answer_correct']:>6.2f}{m['cambio_vs_a0']:>8.2f}{m['len_media']:>7.1f}"
               f"{m['ce_fr_head']:>9.3f}{m['ce_en_head']:>9.3f}{m['role_leak']:>6.2f}")
     print("=" * 140)
+    if args.target_lang:
+        nombre = args.target_lang + ("_up" if args.upper else "")
+        print(f"\ncelda target: {nombre}")
+        print(f"{'condicion':<20}{'celda_ok':>10}{'tgt':>7}{'mayus':>7}")
+        for res in resultados:
+            m = res["metrics"]
+            print(f"{res['label']:<20}{m['attr_ok']:>10.2f}{m['is_target']:>7.2f}{m['is_uppercase']:>7.2f}")
+        print("ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.")
     print("fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.")
     print("ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.")
     if name == "restar":
@@ -257,12 +275,13 @@ def main():
     elif name == "romance":
         print("Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la")
         print("transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).")
-    elif name == "idioma":
+    elif name == "idioma" and not args.target_lang:
         print("Lectura: si fr sube desde prompt_es/prompt_de con a=1, el parche impone frances sobre")
         print("cualquier idioma de entrada; si solo sube desde 'prompt', depende de partir de ingles.")
 
     # --- archivos ------------------------------------------------------------
     rep = {"objetivo": "signo del parche e idioma de la pregunta de entrada",
+           "target_lang": args.target_lang, "upper": args.upper,
            "preset": name, "patch": os.path.abspath(args.patch),
            "patch_norm": patch.norm(2).item(), "config": vars(args),
            "n_tail": len(heldout), "condiciones": resultados}
@@ -283,6 +302,18 @@ def write_markdown(rep, path):
     L.append(f"- Parche: `{rep['patch']}`  |  norma {rep['patch_norm']:.4f}")
     L.append(f"- Tail del held-out: n={rep['n_tail']}")
     L.append("")
+    if rep.get("target_lang"):
+        nombre = rep["target_lang"] + ("_up" if rep.get("upper") else "")
+        L.append(f"Celda target del parche: **{nombre}**. `celda ok` = idioma `{rep['target_lang']}` Y "
+                 f"{'MAYUSCULAS' if rep.get('upper') else 'NO mayusculas'}. En la tabla grande, "
+                 "`CE fr head` es la CE del target de ESTA celda (columna `output`).")
+        L.append("")
+        L.append("| condicion | celda ok | idioma target | mayusculas |")
+        L.append("|---|---|---|---|")
+        for res in rep["condiciones"]:
+            m = res["metrics"]
+            L.append(f"| {res['label']} | {m['attr_ok']:.2f} | {m['is_target']:.2f} | {m['is_uppercase']:.2f} |")
+        L.append("")
     L.append("| condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head | tok parche |")
     L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for res in rep["condiciones"]:

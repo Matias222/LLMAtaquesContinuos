@@ -57,8 +57,8 @@ import re
 
 import torch
 
-from checkers import (answer_correct, french_score, is_french, language_verdict,
-                      truncate_at_role_leak)
+from checkers import (answer_correct, attr_ok, french_score, is_french, is_lang,
+                      is_uppercase, language_verdict, truncate_at_role_leak, uppercase_score)
 from lm import (apply_patch_first_n, build_suffix_manager, get_embedding_matrix,
                 get_embeddings, stop_token_ids)
 
@@ -74,7 +74,7 @@ def starts_french(text):
     return bool(_FR_START.match(text or ""))
 
 
-def add_metrics(rec, key, text, answer, aliases):
+def add_metrics(rec, key, text, answer, aliases, target_lang=None, upper=False):
     """
     Escribe en `rec` las metricas de un texto bajo el prefijo `key`, con los
     mismos nombres que eval_lang_patch.py (key_is_french, key_french_score,
@@ -83,6 +83,10 @@ def add_metrics(rec, key, text, answer, aliases):
 
         key_starts_fr   decision del PRIMER token (ver starts_french)
         key_len         largo en caracteres: el colapso a fragmentos se ve aca
+
+    Con `target_lang` (algebra/: la celda a la que apunta el parche) agrega
+    key_is_target (idioma == target) y key_attr_ok (idioma Y formato, ver
+    checkers.attr_ok). Las de mayusculas se escriben siempre.
     """
     has_answer = str(answer).strip() != ""
     rec[f"{key}_is_french"] = bool(is_french(text))
@@ -92,6 +96,11 @@ def add_metrics(rec, key, text, answer, aliases):
                                     if has_answer else None)
     rec[f"{key}_starts_fr"] = starts_french(text)
     rec[f"{key}_len"] = len(text)
+    rec[f"{key}_uppercase_score"] = float(uppercase_score(text))
+    rec[f"{key}_is_uppercase"] = bool(is_uppercase(text))
+    if target_lang:
+        rec[f"{key}_is_target"] = bool(is_lang(text, target_lang))
+        rec[f"{key}_attr_ok"] = bool(attr_ok(text, target_lang, upper))
     return rec
 
 
@@ -111,6 +120,12 @@ def aggregate(rows, key):
         "len_media": sum(r[f"{key}_len"] for r in rows) / n,
         "cortas_lt25": int(sum(1 for r in rows if r[f"{key}_len"] < 25)),
         "veredictos": ver,
+        # .get: filas escritas antes de que existieran estas metricas
+        "is_uppercase": sum(r.get(f"{key}_is_uppercase", False) for r in rows) / n,
+        "is_target": (sum(r[f"{key}_is_target"] for r in rows) / n
+                      if rows and f"{key}_is_target" in rows[0] else float("nan")),
+        "attr_ok": (sum(r[f"{key}_attr_ok"] for r in rows) / n
+                    if rows and f"{key}_attr_ok" in rows[0] else float("nan")),
     }
 
 

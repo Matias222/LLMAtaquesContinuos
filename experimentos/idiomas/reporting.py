@@ -10,15 +10,20 @@ def _mean(vals):
 
 def score_rows(rows, key):
     n = len(rows)
-    return {
+    out = {
         "is_french": sum(r[f"{key}_is_french"] for r in rows) / n,
         "french_score": sum(r[f"{key}_french_score"] for r in rows) / n,
         "answer_correct": _mean([r[f"{key}_answer_correct"] for r in rows]),
         "role_leak": sum(r.get(f"{key}_role_leak", False) for r in rows) / n,
     }
+    # Celda target generica (algebra/): solo si eval_lang_patch las escribio.
+    for k in ("is_target", "target_score", "is_uppercase", "attr_ok"):
+        if rows and f"{key}_{k}" in rows[0]:
+            out[k] = sum(r[f"{key}_{k}"] for r in rows) / n
+    return out
 
 
-def open_metrics(rows):
+def open_metrics(rows, target_lang="fr"):
     """
     Metricas para prompts abiertos (sin respuesta verificable).
 
@@ -27,7 +32,11 @@ def open_metrics(rows):
     que navidad, donde el proxy de fidelidad comparaba contra un baseline que
     estaba en otro registro.
     """
-    from checkers import content_overlap, french_by_segments
+    from checkers import content_overlap, lang_by_segments
+
+    # con target frances es identico a lo de siempre (french_by_segments,
+    # funcionales fr+en fuera del overlap)
+    langs = (target_lang, "en")
 
     op = [r for r in rows if not r.get("has_answer", True)]
     if not op:
@@ -37,14 +46,14 @@ def open_metrics(rows):
         return sum(v) / len(v) if v else float("nan")
 
     # Control de azar: parche de una pregunta contra la referencia de OTRA.
-    shuf = [content_overlap(op[i]["patched"], op[(i + 1) % len(op)]["reference"])
+    shuf = [content_overlap(op[i]["patched"], op[(i + 1) % len(op)]["reference"], langs)
             for i in range(len(op))]
-    th_p = [french_by_segments(r["patched"]) for r in op]
-    th_r = [french_by_segments(r["reference"]) for r in op]
+    th_p = [lang_by_segments(r["patched"], target_lang) for r in op]
+    th_r = [lang_by_segments(r["reference"], target_lang) for r in op]
     return {
         "n": len(op),
-        "overlap_patched_reference": mean([content_overlap(r["patched"], r["reference"]) for r in op]),
-        "overlap_baseline_reference": mean([content_overlap(r["baseline"], r["reference"]) for r in op]),
+        "overlap_patched_reference": mean([content_overlap(r["patched"], r["reference"], langs) for r in op]),
+        "overlap_baseline_reference": mean([content_overlap(r["baseline"], r["reference"], langs) for r in op]),
         "overlap_shuffled_control": mean(shuf),
         "french_thirds_patched": [mean([t[j] for t in th_p]) for j in range(3)],
         "french_thirds_reference": [mean([t[j] for t in th_r]) for j in range(3)],
@@ -65,22 +74,39 @@ def _t(s, n=150):
 
 def write_markdown(report, path):
     m = report["metrics"]
-    L = ["# Eval parche de idioma (frances)", ""]
+    cfg = report.get("config", {})
+    tl, up = cfg.get("target_lang", "fr"), bool(cfg.get("upper", False))
+    celda = {"fr": "frances", "es": "espanol", "de": "aleman"}.get(tl, tl) + (" + MAYUSCULAS" if up else "")
+    con_celda = "attr_ok" in m.get("patched", {})
+    L = [f"# Eval parche de idioma ({celda})", ""]
     L.append(f"- Parche: `{report['patch_path']}`")
     L.append(f"- Norma: {report['patch_norm']:.4f}  |  shape: {report['patch_shape']}")
     L.append(f"- Config: `{report['config']}`")
     L.append("")
     L.append(f"## Metricas sobre held-out (n={report['n_heldout']})")
     L.append("")
-    L.append("| condicion | compliance (is_french) | french_score | accuracy | role leak |")
-    L.append("|---|---|---|---|---|")
-    for cond, label in CONDITIONS:
-        c = m[cond]
-        L.append(f"| {label} | {c['is_french']:.2%} | {c['french_score']:.3f} "
-                 f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
+    if con_celda:
+        L.append(f"| condicion | **celda ok** (idioma y formato) | idioma = {tl} | score {tl} | mayusculas "
+                 "| is_french | accuracy | role leak |")
+        L.append("|---|---|---|---|---|---|---|---|")
+        for cond, label in CONDITIONS:
+            c = m[cond]
+            L.append(f"| {label.replace('FR;q', celda + ';q')} | {c['attr_ok']:.2%} | {c['is_target']:.2%} "
+                     f"| {c['target_score']:.3f} | {c['is_uppercase']:.2%} | {c['is_french']:.2%} "
+                     f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
+        L.append("")
+        L.append("`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en "
+                 "mayusculas). La accuracy en espanol/aleman esta subestimada: los alias son ingles y frances.")
+    else:
+        L.append("| condicion | compliance (is_french) | french_score | accuracy | role leak |")
+        L.append("|---|---|---|---|---|")
+        for cond, label in CONDITIONS:
+            c = m[cond]
+            L.append(f"| {label} | {c['is_french']:.2%} | {c['french_score']:.3f} "
+                     f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
     L.append("")
     k = m.get("head_k", 5)
-    L.append(f"### CE del target frances (teacher forcing)")
+    L.append(f"### CE del target ({celda}) (teacher forcing)")
     L.append("")
     L.append("| tramo | sin parche | con parche | delta |")
     L.append("|---|---|---|---|")
@@ -112,9 +138,12 @@ def write_markdown(report, path):
         L.append(f"| parche | {tp[0]:.2f} | {tp[1]:.2f} | {tp[2]:.2f} |")
         L.append(f"| referencia | {tr[0]:.2f} | {tr[1]:.2f} | {tr[2]:.2f} |")
         L.append("")
-        L.append("El parche vive en 3 posiciones del **prompt**. Si el frances cae en el "
-                 "tercer tercio, el efecto es local y decae con la distancia; si se "
-                 "sostiene, el parche fija un modo que persiste toda la generacion.")
+        donde = {"goal_all": "en todos los tokens de la pregunta",
+                 "header": "en el header del assistant"}.get(
+                     cfg.get("patch_anchor"), f"en {cfg.get('num_patch_positions', 3)} posiciones")
+        L.append(f"El parche vive {donde} del **prompt** (las filas de la tabla son el score de "
+                 f"`{tl}` por tercio). Si cae en el tercer tercio, el efecto es local y decae con la "
+                 "distancia; si se sostiene, el parche fija un modo que persiste toda la generacion.")
         L.append("")
     L.append("## Outputs")
     L.append("")

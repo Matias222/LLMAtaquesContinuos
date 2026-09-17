@@ -24,7 +24,8 @@ import pandas as pd
 import torch
 import tqdm
 
-from checkers import answer_correct, french_score, is_french, truncate_at_role_leak
+from checkers import (answer_correct, attr_ok, french_score, is_french, is_lang, is_uppercase,
+                      lang_score, truncate_at_role_leak)
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
                 n_patched_tokens, nll_of_target)
 from reporting import CONDITIONS, open_metrics, score_rows, write_markdown
@@ -49,6 +50,14 @@ def main():
                          "Tiene que coincidir con el --patch_offset del entrenamiento")
     ap.add_argument("--patch_anchor", choices=list(PATCH_ANCHORS), default="goal",
                     help="tiene que coincidir con el --patch_anchor del entrenamiento")
+    ap.add_argument("--target_lang", choices=["fr", "es", "de"], default="fr",
+                    help="idioma de la celda a la que apunta el parche (algebra/). Con el default "
+                         "y sin --upper el reporte es el de siempre")
+    ap.add_argument("--upper", action="store_true",
+                    help="la celda target es ademas MAYUSCULAS")
+    ap.add_argument("--cell_metrics", action="store_true",
+                    help="escribir las metricas de celda tambien para frances normal (algebra/)")
+    ap.add_argument("--n", type=int, default=0, help="limitar filas del held-out (0 = todas; humo)")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_json", default="eval_report.json")
     ap.add_argument("--out_md", default="eval_report.md")
@@ -56,6 +65,11 @@ def main():
 
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     heldout = df.iloc[int(len(df) * args.train_test_split):].reset_index(drop=True)
+    if args.n > 0:
+        heldout = heldout.head(args.n)
+    # Las metricas de celda solo se escriben si se pidio una celda que no sea
+    # "frances normal": asi los reportes viejos salen byte a byte iguales.
+    celda = args.target_lang != "fr" or args.upper or args.cell_metrics
 
     patch = torch.load(args.patch, map_location=args.device).to(args.device)
     if args.scale != 1.0:
@@ -87,6 +101,11 @@ def main():
         for key, text in (("baseline", base), ("reference", ref), ("patched", patched)):
             rec[f"{key}_is_french"] = bool(is_french(text))
             rec[f"{key}_french_score"] = float(french_score(text))
+            if celda:
+                rec[f"{key}_is_target"] = bool(is_lang(text, args.target_lang))
+                rec[f"{key}_target_score"] = float(lang_score(text, args.target_lang))
+                rec[f"{key}_is_uppercase"] = bool(is_uppercase(text))
+                rec[f"{key}_attr_ok"] = bool(attr_ok(text, args.target_lang, args.upper))
             # None en prompts abiertos: no hay respuesta verificable que medir
             rec[f"{key}_answer_correct"] = bool(answer_correct(text, ans, al)) if has_answer else None
         rec["baseline_role_leak"] = str(r.get("baseline_role_leak", False)).lower() == "true"
@@ -121,7 +140,7 @@ def main():
         "n_patched_media": sum(r["n_patched"] for r in rows) / max(1, len(rows)),
     })
 
-    om = open_metrics(rows)
+    om = open_metrics(rows, args.target_lang)
     if om:
         metrics["open"] = om
 
@@ -139,6 +158,7 @@ def main():
             "num_tokens": args.num_tokens,
             "temperature": args.temperature,
             "train_test_split": args.train_test_split,
+            **({"target_lang": args.target_lang, "upper": args.upper} if celda else {}),
         },
         "metrics": metrics,
         "splits": {"heldout": rows},
@@ -155,6 +175,15 @@ def main():
         c = metrics[cond]
         print(f"{label:<26}{c['is_french']:>10.1%}{c['french_score']:>11.3f}"
               f"{c['answer_correct']:>10.1%}{c['role_leak']:>8.0%}")
+    if celda:
+        print("-" * 70)
+        nombre = args.target_lang + ("_up" if args.upper else "")
+        print(f"celda target: {nombre}   (celda_ok = idioma {args.target_lang} Y "
+              f"{'MAYUSCULAS' if args.upper else 'NO mayusculas'})")
+        print(f"{'condicion':<26}{'celda_ok':>11}{'idioma':>11}{'mayus':>11}")
+        for cond, label in CONDITIONS:
+            c = metrics[cond]
+            print(f"{label:<26}{c['attr_ok']:>10.1%}{c['is_target']:>11.1%}{c['is_uppercase']:>11.1%}")
     print("-" * 70)
     print(f"{'CE target FR':<26}{'sin parche':>12}{'con parche':>12}{'delta':>10}")
     for lbl, kb, kp in [(f"head (primeros {args.head_k})", "nll_fr_head_baseline", "nll_fr_head_patched"),

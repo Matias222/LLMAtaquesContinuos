@@ -360,16 +360,68 @@ def is_uppercase(text: str, threshold: float = 0.9, min_letters: int = 3) -> boo
 
 
 # ---------------------------------------------------------------------------
+# Atributo target generico: (idioma, mayusculas)
+#
+# Para el algebra de direcciones (algebra/): cada parche apunta a una celda de
+# {fr, es, de} x {normal, MAYUSCULAS}. is_french/french_score quedan como
+# estaban (los leen ~20 scripts); esto es lo mismo pero con el idioma como
+# parametro. _tokens() pasa por fold(), asi que el detector de idioma funciona
+# igual sobre texto todo en mayusculas.
+# ---------------------------------------------------------------------------
+
+LANGS = ("fr", "en", "es", "de", "it", "pt")
+
+
+def lang_score(text: str, lang: str) -> float:
+    """Fraccion de la evidencia que apunta a `lang`. lang_score(t, "fr") == french_score(t)."""
+    ev = language_evidence(text)
+    tot = sum(ev.values())
+    if tot == 0:
+        return 0.5
+    return ev[lang] / tot
+
+
+def is_lang(text: str, lang: str, threshold: float = 0.6, min_tokens: int = 3) -> bool:
+    """is_french generalizado."""
+    return language_verdict(text, threshold, min_tokens) == lang
+
+
+def attr_ok(text: str, lang: str, upper: bool = False) -> bool:
+    """
+    Compliance de una celda: el idioma es `lang` Y el formato coincide. Una
+    celda "normal" exige que NO este en mayusculas: si no, fr_up contaria como
+    acierto de fr y el paralelogramo no distinguiria las esquinas.
+    """
+    return is_lang(text, lang) and (is_uppercase(text) == bool(upper))
+
+
+def lang_by_segments(text: str, lang: str, n: int = 3):
+    """french_by_segments con el idioma como parametro."""
+    ws = text.split()
+    if len(ws) < n * 4:
+        return [lang_score(text, lang)] * n
+    k = len(ws) // n
+    seg = [" ".join(ws[i * k:(i + 1) * k]) for i in range(n - 1)]
+    seg.append(" ".join(ws[(n - 1) * k:]))
+    return [lang_score(s, lang) for s in seg]
+
+
+# ---------------------------------------------------------------------------
 # Metricas para preguntas ABIERTAS (sin respuesta verificable)
 # ---------------------------------------------------------------------------
 
-def content_words(text: str) -> set:
-    """Palabras de contenido: saca funcionales de ambos idiomas y tokens cortos."""
-    return {t for t in _tokens(text)
-            if len(t) >= 4 and t not in FR_WORDS and t not in EN_WORDS}
+_FUNCIONALES = {"fr": FR_WORDS, "en": EN_WORDS, "es": ES_WORDS, "de": DE_WORDS,
+                "it": IT_WORDS, "pt": PT_WORDS}
 
 
-def content_overlap(a: str, b: str) -> float:
+def content_words(text: str, langs=("fr", "en")) -> set:
+    """Palabras de contenido: saca funcionales de los idiomas `langs` y tokens cortos.
+    El default (fr, en) es el de siempre; con otro target pasar p.ej. ("es", "en")."""
+    fuera = set().union(*(_FUNCIONALES[l] for l in langs))
+    return {t for t in _tokens(text) if len(t) >= 4 and t not in fuera}
+
+
+def content_overlap(a: str, b: str, langs=("fr", "en")) -> float:
     """
     Jaccard sobre palabras de contenido.
 
@@ -378,7 +430,7 @@ def content_overlap(a: str, b: str) -> float:
     la misma pregunta, asi que la comparacion es limpia (a diferencia de navidad,
     donde se comparaba contra un baseline en otro registro).
     """
-    A, B = content_words(a), content_words(b)
+    A, B = content_words(a, langs), content_words(b, langs)
     if not A or not B:
         return 0.0
     return len(A & B) / len(A | B)
@@ -706,3 +758,26 @@ if __name__ == "__main__":
         ok += got == expected
         print(f"  [{flag}] answer={ans!r} alias={al!r} -> {got} (esperado {expected})")
     print(f"\n{ok}/{len(checks)} checks de accuracy pasaron")
+
+    print("\n--- atributo target (idioma x mayusculas) ---")
+    celdas = [
+        ("La capitale de la Grèce est Athènes, une ville très ancienne.", "fr", False, True),
+        ("LA CAPITALE DE LA GRÈCE EST ATHÈNES, UNE VILLE TRÈS ANCIENNE.", "fr", True, True),
+        ("LA CAPITALE DE LA GRÈCE EST ATHÈNES, UNE VILLE TRÈS ANCIENNE.", "fr", False, False),  # formato
+        ("La capital de Grecia es Atenas, una ciudad muy antigua.", "es", False, True),
+        ("LA CAPITAL DE GRECIA ES ATENAS, UNA CIUDAD MUY ANTIGUA.", "es", True, True),
+        ("LA CAPITAL DE GRECIA ES ATENAS, UNA CIUDAD MUY ANTIGUA.", "fr", True, False),        # idioma
+        ("Die Hauptstadt von Griechenland ist Athen, eine sehr alte Stadt.", "de", False, True),
+        ("DIE HAUPTSTADT VON GRIECHENLAND IST ATHEN, EINE SEHR ALTE STADT.", "de", True, True),
+        ("THE CAPITAL OF GREECE IS ATHENS, WHICH IS A VERY OLD CITY.", "de", True, False),
+        ("The capital of Greece is Athens, which is a very old city.", "es", False, False),
+    ]
+    ok_c = 0
+    for text, lang, upper, expected in celdas:
+        got = attr_ok(text, lang, upper)
+        ok_c += got == expected
+        print(f"  [{'OK ' if got == expected else 'FAIL'}] {lang}{'_up' if upper else '':<3} -> {got}  "
+              f"(veredicto {language_verdict(text)}, upper {uppercase_score(text):.2f})  {text[:40]}")
+    print(f"  {ok_c}/{len(celdas)} celdas correctas")
+    mismos = all(abs(lang_score(t, "fr") - french_score(t)) < 1e-12 for t, *_ in celdas)
+    print(f"  lang_score(t, 'fr') == french_score(t): {mismos}")
