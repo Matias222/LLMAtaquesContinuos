@@ -17,7 +17,7 @@
 #
 #   uso:  bash algebra/run_transfer_1b_goalall.sh [MODEL_3B] [MODEL_1B]
 #   variables:  DEVICE (cuda:0)   ALPHAS ("1 1.5 2 3")   N (0 = todo; 5 = humo)
-#               STAGES ("map lang_id heldout open")
+#               STAGES ("map lang_id heldout open")   SUFFIX ("": sufijo de los reportes)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE/.."
@@ -28,6 +28,7 @@ DEVICE="${DEVICE:-cuda:0}"
 ALPHAS="${ALPHAS:-1 1.5 2 3}"
 STAGES="${STAGES:-map lang_id heldout open}"
 N="${N:-0}"
+SUFFIX="${SUFFIX:-}"            # sufijo de los reportes de heldout/open, para no pisar otro barrido
 SRC=algebra/runs/alg_fr/lang_patch_best_train.pt
 T=attributes/french/targets_french_v5.csv
 T_OPEN=attributes/french/targets_open.csv
@@ -67,7 +68,7 @@ gen() {   # gen <heldout|open> <targets> <split>
     echo; echo "##### $1 en el 1B: $nombre"
     python3 -u cross_lang_patch.py --model "$M1" --device "$DEVICE" --targets "$2" \
         --train_test_split "$3" --patch "$patch" --patch_anchor goal_all --num_patch_positions 1 \
-        --conds "$CONDS" --tag "$1" --n "$N" --out_dir "$OUT/$nombre" 2>&1 | tee "$OUT/$nombre/$1.log"
+        --conds "$CONDS" --tag "$1$SUFFIX" --n "$N" --out_dir "$OUT/$nombre" 2>&1 | tee "$OUT/$nombre/$1$SUFFIX.log"
   done
 }
 if has heldout; then gen heldout "$T" 0.80; fi
