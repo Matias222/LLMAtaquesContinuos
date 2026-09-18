@@ -1,0 +1,590 @@
+- generic [ref=f2e2]:
+  - banner [ref=f2e3]:
+    - generic [ref=f2e4]: experimentos / idiomas · v5 · held-out 200–249
+    - heading "Parche goal_all" [level=1] [ref=f2e5]
+    - paragraph [ref=f2e6]:
+      - text: Un único vector sumado a
+      - emphasis [ref=f2e7]: todos
+      - text: "los tokens de la pregunta, en vez de a tres posiciones fijas. Es la parametrización que corresponde al objetivo: buscar una dirección, no comprimir un prompt."
+    - generic [ref=f2e8]: e′ᵢ = eᵢ + v para todo i del goal slice v ∈ ℝ³⁰⁷² · un solo vector, sin índice de posición
+    - generic [ref=f2e9]:
+      - generic [ref=f2e10]:
+        - generic [ref=f2e11]: shape
+        - generic [ref=f2e12]: "[1, 1, 3072]"
+      - generic [ref=f2e13]:
+        - generic [ref=f2e14]: norma
+        - generic [ref=f2e15]: "0.823"
+      - generic [ref=f2e16]:
+        - generic [ref=f2e17]: entradas
+        - generic [ref=f2e18]: en · es · de
+      - generic [ref=f2e19]:
+        - generic [ref=f2e20]: tokens tocados
+        - generic [ref=f2e21]: 5 – 24
+      - generic [ref=f2e22]:
+        - generic [ref=f2e23]: run
+        - generic [ref=f2e24]: v5_goalall_head_multi
+  - generic [ref=f2e25]:
+    - generic [ref=f2e26]:
+      - generic [ref=f2e27]: Parametrización
+      - heading "Dónde cae el parche" [level=2] [ref=f2e28]
+      - paragraph [ref=f2e29]: Los tres parches de v5 se entrenaron con la misma receta y difieren solo en qué posiciones reciben el vector. Eso cambia qué objeto es cada uno.
+    - generic [ref=f2e30]:
+      - generic [ref=f2e31]:
+        - generic [ref=f2e32]:
+          - generic [ref=f2e33]: goal_all
+          - emphasis [ref=f2e34]: un vector [1,1,3072], todas las posiciones de la pregunta
+        - generic [ref=f2e35]:
+          - generic [ref=f2e36]: <sys>
+          - generic [ref=f2e37]: …
+          - generic [ref=f2e38]: "On"
+          - generic [ref=f2e39]: which
+          - generic [ref=f2e40]: continent
+          - generic [ref=f2e41]: is
+          - generic [ref=f2e42]: the
+          - generic [ref=f2e43]: Amazon
+          - generic [ref=f2e44]: rain
+          - generic [ref=f2e45]: forest
+          - generic [ref=f2e46]: located
+          - generic [ref=f2e47]: "?"
+          - generic [ref=f2e48]: <eot>
+          - generic [ref=f2e49]: assistant
+          - generic [ref=f2e50]: <hdr>
+          - generic [ref=f2e51]: \n\n
+      - generic [ref=f2e52]:
+        - generic [ref=f2e53]:
+          - generic [ref=f2e54]: goal
+          - emphasis [ref=f2e55]: tres vectores [1,3,3072], las tres primeras de la pregunta
+        - generic [ref=f2e56]:
+          - generic [ref=f2e57]: <sys>
+          - generic [ref=f2e58]: …
+          - generic [ref=f2e59]: "On"
+          - generic [ref=f2e60]: which
+          - generic [ref=f2e61]: continent
+          - generic [ref=f2e62]: is
+          - generic [ref=f2e63]: the
+          - generic [ref=f2e64]: Amazon
+          - generic [ref=f2e65]: rain
+          - generic [ref=f2e66]: forest
+          - generic [ref=f2e67]: located
+          - generic [ref=f2e68]: "?"
+          - generic [ref=f2e69]: <eot>
+          - generic [ref=f2e70]: assistant
+          - generic [ref=f2e71]: <hdr>
+          - generic [ref=f2e72]: \n\n
+      - generic [ref=f2e73]:
+        - generic [ref=f2e74]:
+          - generic [ref=f2e75]: header
+          - emphasis [ref=f2e76]: tres vectores, los últimos tokens del header del assistant
+        - generic [ref=f2e77]:
+          - generic [ref=f2e78]: <sys>
+          - generic [ref=f2e79]: …
+          - generic [ref=f2e80]: "On"
+          - generic [ref=f2e81]: which
+          - generic [ref=f2e82]: continent
+          - generic [ref=f2e83]: is
+          - generic [ref=f2e84]: the
+          - generic [ref=f2e85]: Amazon
+          - generic [ref=f2e86]: rain
+          - generic [ref=f2e87]: forest
+          - generic [ref=f2e88]: located
+          - generic [ref=f2e89]: "?"
+          - generic [ref=f2e90]: <eot>
+          - generic [ref=f2e91]: assistant
+          - generic [ref=f2e92]: <hdr>
+          - generic [ref=f2e93]: \n\n
+    - paragraph [ref=f2e94]:
+      - text: "Los tokens del header son idénticos en todo prompt, idioma y apertura. Un parche ahí no puede depender del token sobre el que cae: es un soft prompt de tres posiciones. Los de la pregunta cambian en cada fila, y"
+      - code [ref=f2e95]: goal_all
+      - text: "además usa un solo vector para todas: es la única de las tres que puede ser una dirección."
+  - generic [ref=f2e96]:
+    - generic [ref=f2e97]:
+      - generic [ref=f2e98]: Activaciones
+      - heading "Las tres, capa a capa" [level=2] [ref=f2e99]
+      - paragraph [ref=f2e100]:
+        - text: "Todo se mide en el último token del prompt y se le resta la misma línea de base, la pregunta en inglés. Quedan tres desplazamientos directamente comparables: el de la"
+        - strong [ref=f2e101]: pregunta escrita en francés
+        - text: ", el del"
+        - strong [ref=f2e102]: parche de tres posiciones
+        - text: y el del
+        - strong [ref=f2e103]: parche de un vector
+        - text: .
+    - generic [ref=f2e104]:
+      - text: Δ
+      - subscript [ref=f2e105]: c
+      - text: "[l] = (1/n) Σ"
+      - subscript [ref=f2e106]: i
+      - text: "[ h"
+      - superscript [ref=f2e107]: l
+      - text: (x
+      - subscript [ref=f2e108]: i
+      - superscript [ref=f2e109]: c
+      - text: ) − h
+      - superscript [ref=f2e110]: l
+      - text: (q
+      - subscript [ref=f2e111]: i
+      - text: ) ] n = 50, l = 1 … 28, d = 3072
+    - figure "Magnitud del desplazamiento medio, ‖Δ‖, en escala logarítmica. El residual stream crece dos órdenes de magnitud entre la capa 1 y la 28, así que en escala lineal solo se vería el último tramo. Pasá el cursor para leer las cuatro series en una capa." [ref=f2e112]:
+      - generic [ref=f2e113]:
+        - generic [ref=f2e114]:
+          - generic [ref=f2e115]:
+            - text: pregunta en francés
+            - generic [ref=f2e117]: h(q_fr) − h(q)
+          - generic [ref=f2e118]:
+            - text: goal_all
+            - generic [ref=f2e120]: un vector, todo el goal
+          - generic [ref=f2e121]:
+            - text: goal
+            - generic [ref=f2e123]: tres vectores, 3 posiciones
+          - generic [ref=f2e124]:
+            - text: header
+            - generic [ref=f2e126]: control
+        - figure [ref=f2e127]:
+          - img "Magnitud del desplazamiento medio por capa" [ref=f2e128]:
+            - generic [ref=f2e129]: "0.2"
+            - generic [ref=f2e130]: "1"
+            - generic [ref=f2e131]: "5"
+            - generic [ref=f2e132]: "20"
+            - generic [ref=f2e133]: "80"
+            - generic [ref=f2e134]: L/2
+            - generic [ref=f2e135]: "1"
+            - generic [ref=f2e136]: "2"
+            - generic [ref=f2e137]: "4"
+            - generic [ref=f2e138]: "6"
+            - generic [ref=f2e139]: "8"
+            - generic [ref=f2e140]: "10"
+            - generic [ref=f2e141]: "12"
+            - generic [ref=f2e142]: "14"
+            - generic [ref=f2e143]: "16"
+            - generic [ref=f2e144]: "18"
+            - generic [ref=f2e145]: "20"
+            - generic [ref=f2e146]: "22"
+            - generic [ref=f2e147]: "24"
+            - generic [ref=f2e148]: "26"
+            - generic [ref=f2e149]: "28"
+            - generic [ref=f2e150]: capa del residual stream
+            - generic [ref=f2e151]: ‖Δ‖ (escala log)
+    - paragraph [ref=f2e161]:
+      - strong [ref=f2e162]: Desde la capa 12 las tres van por la misma curva.
+      - text: "En la 12 miden 6.10, 6.40 y 4.76; en la 20, 11.10, 10.84 y 10.89; en la 28, 72.1, 71.7 y 70.5. Ninguno de los dos parches empuja más ni menos que una pregunta francesa de verdad: aterrizan en su misma magnitud."
+      - strong [ref=f2e163]: Donde se separan es abajo.
+      - text: "En la capa 4 goal_all mide 2.58 contra 1.26 de la pregunta francesa, el doble, que es lo esperable de sumar el mismo vector en diez o veinte posiciones en vez de tres. El parche de tres posiciones hace lo contrario: arranca por encima en la capa 1 y se queda corto entre la 6 y la 14. Las dos anomalías se apagan en la misma zona, capas 10 a 14, que es donde las cabezas leen el parche. header es el único que no converge: queda entre 7 % y 30 % por encima de la pregunta francesa en toda la banda, con una norma de parche que es la más chica de las tres."
+  - generic [ref=f2e164]:
+    - generic [ref=f2e165]:
+      - generic [ref=f2e166]: Geometría representacional
+      - heading "¿A qué se parece cada parche por dentro?" [level=2] [ref=f2e167]
+      - paragraph [ref=f2e168]: "Coseno entre los desplazamientos medios, capa por capa, en la banda donde la lectura es interpretable. Las tres líneas punteadas son los controles que hacen interpretables a las otras: sin ellas, un coseno de 0.74 no se puede leer ni como alto ni como bajo."
+    - generic [ref=f2e169]:
+      - generic [ref=f2e170]:
+        - generic [ref=f2e171]: goal_all ~ preg. FR
+        - generic [ref=f2e173]: goal ~ preg. FR
+        - generic [ref=f2e175]: header ~ preg. FR
+        - generic [ref=f2e177]:
+          - text: techo de estimación
+          - generic [ref=f2e179]: split-half, acota a goal_all
+        - generic [ref=f2e180]:
+          - text: piso genérico
+          - generic [ref=f2e182]: goal_all ~ resp. corta
+        - generic [ref=f2e183]:
+          - text: preg. FR ~ instr. FR
+          - generic [ref=f2e185]: cuánto comparten las dos rutas
+      - figure [ref=f2e186]:
+        - img "Coseno contra la pregunta en francés por capa" [ref=f2e187]:
+          - generic [ref=f2e188]: "0.0"
+          - generic [ref=f2e189]: "0.2"
+          - generic [ref=f2e190]: "0.4"
+          - generic [ref=f2e191]: "0.6"
+          - generic [ref=f2e192]: "0.8"
+          - generic [ref=f2e193]: "1.0"
+          - generic [ref=f2e194]: L/2
+          - generic [ref=f2e195]: "12"
+          - generic [ref=f2e196]: "13"
+          - generic [ref=f2e197]: "14"
+          - generic [ref=f2e198]: "15"
+          - generic [ref=f2e199]: "16"
+          - generic [ref=f2e200]: "17"
+          - generic [ref=f2e201]: "18"
+          - generic [ref=f2e202]: "19"
+          - generic [ref=f2e203]: "20"
+          - generic [ref=f2e204]: "21"
+          - generic [ref=f2e205]: "22"
+          - generic [ref=f2e206]: "23"
+          - generic [ref=f2e207]: "24"
+          - generic [ref=f2e208]: "25"
+          - generic [ref=f2e209]: "26"
+          - generic [ref=f2e210]: "27"
+          - generic [ref=f2e211]: "28"
+          - generic [ref=f2e212]: capa del residual stream
+          - generic [ref=f2e213]: coseno
+    - paragraph [ref=f2e224]:
+      - strong [ref=f2e225]: goal_all y goal son indistinguibles frente a la pregunta francesa.
+      - text: "En la capa 14 están en 0.709 y 0.752, con un techo de 0.987: del hueco de 0.28 hasta 1.0, solo 0.013 puede ser ruido de muestreo. El resto es diferencia representacional real."
+      - strong [ref=f2e226]: header queda por debajo en toda la banda
+      - text: "y nunca cierra: 0.521 en la capa 14 contra 0.709 de goal_all, y sigue 0.15 abajo en la capa 28. El piso genérico,"
+      - code [ref=f2e227]: goal_all ~ «Answer this in one short sentence.»
+      - text: ", se queda en 0.25 a 0.41: es el coseno que da cualquier cosa que empuje al modelo a responder distinto, sin francés de por medio. Las tres series lo superan cómodamente, así que la alineación con el francés no es solo «más que una dirección al azar». La línea rosa es el control que decide si la pregunta vale: las dos referencias empiezan lejos (0.46 en la capa 12) y recién convergen a 0.91 en la 28. Arriba de la capa 20 preguntar a cuál se parece el parche ya no tiene respuesta, porque las dos referencias son casi la misma cosa."
+  - generic [ref=f2e228]:
+    - generic [ref=f2e229]:
+      - generic [ref=f2e230]: El hallazgo
+      - heading "Dos rutas, y cada parche entra por una" [level=2] [ref=f2e231]
+      - paragraph [ref=f2e232]:
+        - text: "Las mismas curvas pero enfrentando, para cada parche, sus dos referencias: línea llena contra la"
+        - strong [ref=f2e233]: pregunta en francés
+        - text: ", punteada contra la"
+        - strong [ref=f2e234]: instrucción en texto
+        - text: . Donde la llena va arriba, el parche imita una propiedad de la entrada; donde va abajo, imita una directiva.
+    - generic [ref=f2e235]:
+      - generic [ref=f2e236]:
+        - generic [ref=f2e237]: goal_all ~ preg. FR
+        - generic [ref=f2e239]: goal_all ~ instr. FR
+        - generic [ref=f2e241]: header ~ preg. FR
+        - generic [ref=f2e243]: header ~ instr. FR
+        - generic [ref=f2e245]:
+          - text: preg. FR ~ instr. FR
+          - generic [ref=f2e247]: control
+      - figure [ref=f2e248]:
+        - img "Coseno contra las dos referencias por capa" [ref=f2e249]:
+          - generic [ref=f2e250]: "0.0"
+          - generic [ref=f2e251]: "0.2"
+          - generic [ref=f2e252]: "0.4"
+          - generic [ref=f2e253]: "0.6"
+          - generic [ref=f2e254]: "0.8"
+          - generic [ref=f2e255]: "1.0"
+          - generic [ref=f2e256]: L/2
+          - generic [ref=f2e257]: "1"
+          - generic [ref=f2e258]: "2"
+          - generic [ref=f2e259]: "4"
+          - generic [ref=f2e260]: "6"
+          - generic [ref=f2e261]: "8"
+          - generic [ref=f2e262]: "10"
+          - generic [ref=f2e263]: "12"
+          - generic [ref=f2e264]: "14"
+          - generic [ref=f2e265]: "16"
+          - generic [ref=f2e266]: "18"
+          - generic [ref=f2e267]: "20"
+          - generic [ref=f2e268]: "22"
+          - generic [ref=f2e269]: "24"
+          - generic [ref=f2e270]: "26"
+          - generic [ref=f2e271]: "28"
+          - generic [ref=f2e272]: capa del residual stream
+          - generic [ref=f2e273]: coseno
+    - paragraph [ref=f2e282]:
+      - strong [ref=f2e283]: goal_all entra por la ruta de la entrada.
+      - text: "Su línea llena va por encima de la punteada desde la capa 1 hasta la 16, con la mayor distancia abajo de todo: +0.37 en la capa 1, +0.28 en la 5, +0.18 en la 12. En la capa 16 se cruzan y a partir de ahí las dos referencias ya son casi la misma cosa, así que el cruce no significa que cambie de ruta."
+      - strong [ref=f2e284]: header entra por la otra.
+      - text: "Su margen nunca pasa de +0.12 y desde la capa 13 queda negativo, hasta −0.11. Promediando de la capa 12 en adelante se alinea más con la instrucción (0.733) que con la pregunta francesa (0.672). Es el único de los tres del que se puede decir, con una medición, que se comporta como una directiva. Esto convierte en dato lo que era una decisión de diseño:"
+      - code [ref=f2e285]: header
+      - text: generaliza mejor porque está haciendo otra cosa. No es una dirección con mejores métricas, es un prompt comprimido.
+    - table [ref=f2e287]:
+      - caption [ref=f2e288]: Coseno de las medias, promedio de las capas 12 a 28. Los techos por split-half están en 0.97–0.98 en todas las condiciones, así que los cosenos crudos ya son casi correctos y no hace falta corregir por atenuación.
+      - rowgroup [ref=f2e289]:
+        - row [ref=f2e290]:
+          - columnheader "Parche" [ref=f2e291]
+          - columnheader "preg. FR" [ref=f2e292]
+          - columnheader "instr. FR" [ref=f2e293]
+          - columnheader "preg. DE" [ref=f2e294]
+          - columnheader "preg. ES" [ref=f2e295]
+          - columnheader "instr. DE" [ref=f2e296]
+          - columnheader "resp. corta" [ref=f2e297]
+      - rowgroup [ref=f2e298]:
+        - row [ref=f2e299]:
+          - cell "goal_all" [ref=f2e300]
+          - cell "0.809" [ref=f2e301]
+          - cell "0.799" [ref=f2e302]
+          - cell "0.613" [ref=f2e303]
+          - cell "0.652" [ref=f2e304]
+          - cell "0.594" [ref=f2e305]
+          - cell "0.351" [ref=f2e306]
+        - row [ref=f2e307]:
+          - cell "goal (3 pos.)" [ref=f2e308]
+          - cell "0.840" [ref=f2e309]
+          - cell "0.820" [ref=f2e310]
+          - cell "0.638" [ref=f2e311]
+          - cell "0.676" [ref=f2e312]
+          - cell "0.622" [ref=f2e313]
+          - cell "0.396" [ref=f2e314]
+        - row [ref=f2e315]:
+          - cell "header" [ref=f2e316]
+          - cell "0.672" [ref=f2e317]
+          - cell "0.733" [ref=f2e318]
+          - cell "0.532" [ref=f2e319]
+          - cell "0.552" [ref=f2e320]
+          - cell "0.570" [ref=f2e321]
+          - cell "0.434" [ref=f2e322]
+    - paragraph [ref=f2e323]:
+      - strong [ref=f2e324]: El estilo no está en goal_all, está en header.
+      - text: "Contra «responder en una oración corta», goal_all da 0.351 y header 0.434. Es lo contrario de lo que sugería el comportamiento: goal_all acorta menos el francés y sin embargo daña más el contenido, o sea que su daño no es de estilo. Y los dos parches del goal terminan siendo el mismo vector: el coseno entre ellos sube de 0.18 en la capa 1 a 0.98 en la 28."
+  - generic [ref=f2e325]:
+    - generic [ref=f2e326]:
+      - generic [ref=f2e327]: Comportamiento
+      - heading "Qué tan lejos llega" [level=2] [ref=f2e328]
+      - paragraph [ref=f2e329]: Fracción de respuestas en francés con el parche aplicado, sobre las 50 filas del held-out y sobre los dos bancos de prompts abiertos. Sin parche, todas estas condiciones dan cero francés.
+    - figure "Cada fila es una condición de entrada. Italiano y portugués no estuvieron en el entrenamiento. «Abiertos 2» son 50 prompts que empiezan con un verbo en imperativo, sin ninguna palabra interrogativa." [ref=f2e330]:
+      - img "Fracción de respuestas en francés por condición y por parche." [ref=f2e332]:
+        - generic [ref=f2e333]: "0"
+        - generic [ref=f2e334]: "0.25"
+        - generic [ref=f2e335]: "0.50"
+        - generic [ref=f2e336]: "0.75"
+        - generic [ref=f2e337]: "1"
+        - generic [ref=f2e338]: Held-out inglés
+        - generic [ref=f2e342]: "0.96"
+        - generic [ref=f2e343]: Español
+        - generic [ref=f2e347]: "0.88"
+        - generic [ref=f2e348]: Alemán
+        - generic [ref=f2e352]: "0.96"
+        - generic [ref=f2e353]: Italiano · no visto
+        - generic [ref=f2e357]: "0.82"
+        - generic [ref=f2e358]: Portugués · no visto
+        - generic [ref=f2e362]: "0.74"
+        - generic [ref=f2e363]: Abiertos 1 (99)
+        - generic [ref=f2e366]: "0.93"
+        - generic [ref=f2e367]: Abiertos 2, inglés
+        - generic [ref=f2e371]: "0.36"
+        - generic [ref=f2e372]: Abiertos 2, español
+        - generic [ref=f2e376]: "0.74"
+        - generic [ref=f2e377]: Abiertos 2, alemán
+        - generic [ref=f2e381]: "0.84"
+        - generic [ref=f2e382]: fracción de respuestas en francés
+      - generic [ref=f2e383]:
+        - generic [ref=f2e384]: goal_all
+        - generic [ref=f2e386]: goal (3 pos.)
+        - generic [ref=f2e388]: header
+    - table [ref=f2e392]:
+      - caption [ref=f2e393]: Fracción en francés. Las filas marcadas son idiomas o formas que el parche nunca vio durante el entrenamiento.
+      - rowgroup [ref=f2e394]:
+        - row [ref=f2e395]:
+          - columnheader "Condición" [ref=f2e396]
+          - columnheader "goal_all" [ref=f2e397]
+          - columnheader "goal" [ref=f2e398]
+          - columnheader "header" [ref=f2e399]
+          - columnheader "n" [ref=f2e400]
+      - rowgroup [ref=f2e401]:
+        - row [ref=f2e402]:
+          - cell "Held-out inglés" [ref=f2e403]
+          - cell "0.96" [ref=f2e404]
+          - cell "0.94" [ref=f2e405]
+          - cell "0.94" [ref=f2e406]
+          - cell "50" [ref=f2e407]
+        - row [ref=f2e408]:
+          - cell "Español" [ref=f2e409]
+          - cell "0.88" [ref=f2e410]
+          - cell "1.00" [ref=f2e411]
+          - cell "0.96" [ref=f2e412]
+          - cell "50" [ref=f2e413]
+        - row [ref=f2e414]:
+          - cell "Alemán" [ref=f2e415]
+          - cell "0.96" [ref=f2e416]
+          - cell "0.98" [ref=f2e417]
+          - cell "0.96" [ref=f2e418]
+          - cell "50" [ref=f2e419]
+        - row [ref=f2e420]:
+          - cell [ref=f2e421]:
+            - text: Italiano
+            - emphasis [ref=f2e422]: · no visto
+          - cell "0.82" [ref=f2e423]
+          - cell "0.22" [ref=f2e424]
+          - cell "0.94" [ref=f2e425]
+          - cell "50" [ref=f2e426]
+        - row [ref=f2e427]:
+          - cell [ref=f2e428]:
+            - text: Portugués
+            - emphasis [ref=f2e429]: · no visto
+          - cell "0.74" [ref=f2e430]
+          - cell "0.14" [ref=f2e431]
+          - cell "0.94" [ref=f2e432]
+          - cell "50" [ref=f2e433]
+        - row [ref=f2e434]:
+          - cell "Abiertos 1 (navidad)" [ref=f2e435]
+          - cell "0.93" [ref=f2e436]
+          - cell "—" [ref=f2e437]
+          - cell "1.00" [ref=f2e438]
+          - cell "99" [ref=f2e439]
+        - row [ref=f2e440]:
+          - cell [ref=f2e441]:
+            - text: Abiertos 2, inglés
+            - emphasis [ref=f2e442]: · imperativos
+          - cell "0.36" [ref=f2e443]
+          - cell "0.04" [ref=f2e444]
+          - cell "1.00" [ref=f2e445]
+          - cell "50" [ref=f2e446]
+        - row [ref=f2e447]:
+          - cell "Abiertos 2, español" [ref=f2e448]
+          - cell "0.74" [ref=f2e449]
+          - cell "0.08" [ref=f2e450]
+          - cell "0.96" [ref=f2e451]
+          - cell "50" [ref=f2e452]
+        - row [ref=f2e453]:
+          - cell "Abiertos 2, alemán" [ref=f2e454]
+          - cell "0.84" [ref=f2e455]
+          - cell "0.18" [ref=f2e456]
+          - cell "1.00" [ref=f2e457]
+          - cell "50" [ref=f2e458]
+    - generic [ref=f2e459]:
+      - paragraph [ref=f2e460]:
+        - strong [ref=f2e461]: El salto a idiomas no vistos es real.
+        - text: "De 0.22 y 0.14 con tres posiciones a 0.82 y 0.74 con un vector uniforme. Es el cambio que más habla a favor de la parametrización: quitar el índice de posición quitó gran parte de la dependencia del token."
+      - paragraph [ref=f2e462]: Para calibrar la escala, el paper de function vectors reporta 57.5 % en zero-shot promediando seis tareas con GPT-J, 83.8 % con Llama 2 70B, y entre 40 % y 68 % al portar a plantillas de texto natural. Con ese estándar, 0.82 en un idioma nunca visto es un vector portable, no un caso límite.
+  - generic [ref=f2e463]:
+    - generic [ref=f2e464]:
+      - generic [ref=f2e465]: Los dos costos
+      - heading "Dónde falla" [level=2] [ref=f2e466]
+    - generic [ref=f2e467]:
+      - heading "1 · Sigue atado a la apertura de la pregunta" [level=3] [ref=f2e468]
+      - paragraph [ref=f2e469]: "En los 99 prompts abiertos de navidad, partidos por su primera palabra:"
+    - table [ref=f2e471]:
+      - caption [ref=f2e472]: El mismo parche, el mismo banco. Los seis imperativos son exactamente los que ya fallaban con el parche de v4.
+      - rowgroup [ref=f2e473]:
+        - row [ref=f2e474]:
+          - columnheader "Apertura" [ref=f2e475]
+          - columnheader "n" [ref=f2e476]
+          - columnheader "francés" [ref=f2e477]
+          - columnheader "tokens tocados" [ref=f2e478]
+      - rowgroup [ref=f2e479]:
+        - row [ref=f2e480]:
+          - cell "What… / How…" [ref=f2e481]
+          - cell "93" [ref=f2e482]
+          - cell "0.99" [ref=f2e483]
+          - cell "5.2" [ref=f2e484]
+        - row [ref=f2e485]:
+          - cell "Tell me… / Explain…" [ref=f2e486]
+          - cell "6" [ref=f2e487]
+          - cell "0.00" [ref=f2e488]
+          - cell "4.5" [ref=f2e489]
+    - generic [ref=f2e490]:
+      - paragraph [ref=f2e491]:
+        - text: Cero de seis, con salidas como
+        - emphasis [ref=f2e492]: «Machine learning! It's a fascinating field…»
+        - text: ". En el banco de imperativos completo son 18 de 50 en inglés. Y no es dosis: verifiqué el francés contra la cantidad de tokens parcheados y no hay relación. Los abiertos en inglés tienen 8.9 tokens de media, igual que el held-out, y dan 0.36 contra 0.96."
+      - paragraph [ref=f2e493]: "Curiosamente los imperativos funcionan mucho mejor desde español y alemán (0.74 y 0.84) que desde inglés (0.36). Encaja con la geometría: desde esas entradas el modelo ya está en estado de «idioma que no es inglés» y al parche le queda solo redirigirlo."
+      - heading "2 · Daña la lectura de la pregunta" [level=3] [ref=f2e494]
+      - paragraph [ref=f2e495]: "Respuestas correctas sin parche que pasan a incorrectas al aplicarlo:"
+    - table [ref=f2e497]:
+      - caption [ref=f2e498]: "Numerador: filas que pierden el hecho. Denominador: filas que sin parche respondían bien."
+      - rowgroup [ref=f2e499]:
+        - row [ref=f2e500]:
+          - columnheader "Parche" [ref=f2e501]
+          - columnheader "español" [ref=f2e502]
+          - columnheader "alemán" [ref=f2e503]
+          - columnheader "inglés" [ref=f2e504]
+          - columnheader "italiano" [ref=f2e505]
+          - columnheader "portugués" [ref=f2e506]
+      - rowgroup [ref=f2e507]:
+        - row [ref=f2e508]:
+          - cell "goal_all" [ref=f2e509]
+          - cell "7 / 38" [ref=f2e510]
+          - cell "10 / 38" [ref=f2e511]
+          - cell "1 / 48" [ref=f2e512]
+          - cell "11 / 42" [ref=f2e513]
+          - cell "7 / 34" [ref=f2e514]
+        - row [ref=f2e515]:
+          - cell "goal (3 pos.)" [ref=f2e516]
+          - cell "2 / 38" [ref=f2e517]
+          - cell "2 / 38" [ref=f2e518]
+          - cell "1 / 48" [ref=f2e519]
+          - cell "2 / 42" [ref=f2e520]
+          - cell "6 / 34" [ref=f2e521]
+        - row [ref=f2e522]:
+          - cell "header" [ref=f2e523]
+          - cell "2 / 38" [ref=f2e524]
+          - cell "2 / 38" [ref=f2e525]
+          - cell "1 / 48" [ref=f2e526]
+          - cell "7 / 42" [ref=f2e527]
+          - cell "1 / 34" [ref=f2e528]
+    - generic [ref=f2e529]:
+      - paragraph [ref=f2e530]:
+        - text: "Es el costo propio de perturbar cada token. Aparecen salidas que comentan el texto en vez de contestarlo:"
+        - emphasis [ref=f2e531]: «Il tuo testo sembra essere in italiano»
+        - text: ","
+        - emphasis [ref=f2e532]: «Pare che ci sia un piccolo problema con la grammatica!»
+        - text: ","
+        - emphasis [ref=f2e533]: «Um rascunho é uma versão inicial ou preliminar de um texto»
+        - text: ", y un mensaje de bienvenida que salió en vietnamita."
+      - paragraph [ref=f2e534]: "El daño crece con la longitud de la pregunta, que es donde la suma se acumula: en italiano y portugués las preguntas de más de 12 tokens rinden 0.64 y 0.56, contra 1.00 en las de menos de 8. En español el parche llega a tocar 24 posiciones."
+      - paragraph [ref=f2e535]: La suma no está normalizada por longitud. La perturbación total crece con el número de tokens, así que «un vector» y «la misma dosis» no son lo mismo entre sets de largos distintos. Dividir por √n o por n es el control que falta.
+  - generic [ref=f2e536]:
+    - generic [ref=f2e537]:
+      - generic [ref=f2e538]: Entrenamiento
+      - heading "Cómo se entrenó" [level=2] [ref=f2e539]
+      - paragraph [ref=f2e540]: "Misma receta que los otros dos parches de v5: lo único que cambia es dónde cae el vector."
+    - generic [ref=f2e541]:
+      - figure "Cross-entropy del head, medida sobre el checkpoint de cada epoch. La brecha crece de +0.16 a +0.48, pero los dos criterios coinciden en la epoch 8, así que no hubo ambigüedad de checkpoint." [ref=f2e542]:
+        - 'img "Curva de entrenamiento: cross-entropy del head por epoch, en train y en held-out." [ref=f2e544]':
+          - generic [ref=f2e545]: "0.2"
+          - generic [ref=f2e546]: "0.4"
+          - generic [ref=f2e547]: "0.6"
+          - generic [ref=f2e548]: "0.8"
+          - generic [ref=f2e549]: "1"
+          - generic [ref=f2e550]: "4"
+          - generic [ref=f2e551]: "8"
+          - generic [ref=f2e552]: epoch
+          - generic [ref=f2e553]: CE del head
+          - generic [ref=f2e563]: held-out
+          - generic [ref=f2e573]: train
+      - table [ref=f2e576]:
+        - caption [ref=f2e577]: El gate de calidad dejó 199 de las 200 filas de train. Cada fila entra tres veces, una por idioma de entrada.
+        - rowgroup [ref=f2e578]:
+          - row [ref=f2e579]:
+            - columnheader "Parámetro" [ref=f2e580]
+            - columnheader "Valor" [ref=f2e581]
+        - rowgroup [ref=f2e582]:
+          - row [ref=f2e583]:
+            - cell "anchor" [ref=f2e584]
+            - cell "goal_all" [ref=f2e585]
+          - row [ref=f2e586]:
+            - cell "l2_weight" [ref=f2e587]
+            - cell "0.0725" [ref=f2e588]
+          - row [ref=f2e589]:
+            - cell "loss_head_k" [ref=f2e590]
+            - cell "8 tokens" [ref=f2e591]
+          - row [ref=f2e592]:
+            - cell "prompt_cols" [ref=f2e593]
+            - cell "prompt, _es, _de" [ref=f2e594]
+          - row [ref=f2e595]:
+            - cell "epochs · batch" [ref=f2e596]
+            - cell "8 · 32" [ref=f2e597]
+          - row [ref=f2e598]:
+            - cell "pasos por batch" [ref=f2e599]
+            - cell "20" [ref=f2e600]
+          - row [ref=f2e601]:
+            - cell "step_size" [ref=f2e602]
+            - cell "2.5e-4 coseno" [ref=f2e603]
+          - row [ref=f2e604]:
+            - cell "train / held-out" [ref=f2e605]
+            - cell "199 / 50" [ref=f2e606]
+          - row [ref=f2e607]:
+            - cell "largo del goal" [ref=f2e608]
+            - cell "11.3 medio" [ref=f2e609]
+          - row [ref=f2e610]:
+            - cell "norma final" [ref=f2e611]
+            - cell "0.823" [ref=f2e612]
+  - generic [ref=f2e613]:
+    - generic [ref=f2e614]:
+      - generic [ref=f2e615]: Lectura
+      - heading "Qué queda establecido" [level=2] [ref=f2e616]
+    - generic [ref=f2e617]:
+      - list [ref=f2e618]:
+        - listitem [ref=f2e619]:
+          - strong [ref=f2e620]: La parametrización de dirección funciona.
+          - text: Un solo vector, sin índice de posición, alcanza 0.96 de francés en el held-out y transfiere a dos idiomas que nunca vio. No hace falta un vector por posición.
+        - listitem [ref=f2e621]:
+          - strong [ref=f2e622]: Y es la que se parece a una propiedad de la entrada.
+          - text: Su margen contra la instrucción es el más alto de los tres en las capas 1 a 13, y su contaminación de estilo la más baja. La medición respalda la elección de parametrización, no solo la intuición.
+        - listitem [ref=f2e623]:
+          - strong [ref=f2e624]: header quedó caracterizado, no descartado.
+          - text: Es el que mejor generaliza y el único que se alinea con la instrucción. Sirve como techo de referencia y como el objeto con el que comparar, pero responde otra pregunta.
+        - listitem [ref=f2e625]:
+          - strong [ref=f2e626]: Lo que sigue sin explicarse
+          - text: es por qué los imperativos en inglés resisten. No es dosis ni longitud. Es la única dependencia del contenido de la pregunta que sobrevivió a quitar la posición.
+      - paragraph [ref=f2e627]:
+        - text: "Lo que falta para cerrar la pregunta de dirección: restar el parche y ver si aleja del francés, barrer la escala y ver si la respuesta es monótona, y la composición con el parche de mayúsculas, ahora sí con los dos en"
+        - code [ref=f2e628]: goal_all
+        - text: . Los resultados viejos de composición son de parches de tres posiciones y no dicen nada sobre direcciones.
+  - generic [ref=f2e629]:
+    - generic [ref=f2e630]:
+      - text: Llama-3.2-3B-Instruct ·
+      - code [ref=f2e631]: targets_french_v5.csv
+      - text: · held-out filas 200–249, n=50 · escala del parche 1.0
+    - generic [ref=f2e632]:
+      - text: "Geometría:"
+      - code [ref=f2e633]: runs/geom_last_token/heldout.json
+      - text: "· comportamiento:"
+      - code [ref=f2e634]: runs/v5_goalall_head_multi/

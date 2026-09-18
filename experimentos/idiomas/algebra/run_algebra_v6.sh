@@ -27,6 +27,12 @@
 # Etapas (STAGES):
 #   targets  los CSV por celda que falten (algebra/targets/). Todos salen de los
 #            MISMOS CSV base, asi las seis celdas comparten filas, orden y held-out.
+#            Despues de generar las celdas normales corre fix_targets.py (las
+#            correcciones a mano: alucinaciones, alias es/de, prompt_fr de open_2).
+#            Las celdas _up son el target de su celda normal pasado por upper()
+#            (fr_up desde attributes/french, es_up desde targets_es.csv, ...):
+#            entre una celda y su _up cambia SOLO el formato. La generacion con
+#            la instruccion conjunta salio mal (UP_FROM_TARGET=0 la recupera).
 #   train    los 6 parches + las replicas (mismo todo, otro orden de batches:
 #            el techo de ruido contra el que se leen los cosenos del algebra)
 #   eval     por parche, las mismas cinco de run_goal_all_v5.sh:
@@ -46,6 +52,8 @@
 #     REPLICAS ("fr es_up")                     celdas con replica ("" = ninguna)
 #     STAGES   ("targets train eval plot geom")
 #     SKIP_TRAIN=1   no reentrenar celdas que ya tienen su parche
+#     UP_FROM_TARGET (1)  celdas _up = upper() del target de la celda normal.
+#              Con 0, generacion nueva con la instruccion conjunta.
 #     ALPHAS   ("")  escalas extra sobre v* en el algebra, p.ej. "0.75,1.25"
 #     EXTRA_PLOT_PATCHES ("")  mas --patch nombre=ruta para plot_last_token
 #     SMOKE=1  recorrido de humo: 20 filas, 1 epoch, 2 steps, 4 filas por eval,
@@ -120,15 +128,33 @@ if has targets; then
     python3 -u translate_questions.py --model "$MODEL" --device "$DEVICE" --lang fr \
         --targets "$BASE_OPEN2_SRC" --out "$BASE_OPEN2" 2>&1 | tee "$TDIR/base_open_2.log"
   fi
-  for cell in $CELLS; do
+  # dos pasadas: celdas normales, correcciones a mano, y recien despues las _up
+  # (que salen de las normales ya corregidas)
+  NORMALES=(); UPS=()
+  for cell in $CELLS; do if [[ "$cell" == *_up ]]; then UPS+=("$cell"); else NORMALES+=("$cell"); fi; done
+  for cell in ${NORMALES[@]+"${NORMALES[@]}"} FIX ${UPS[@]+"${UPS[@]}"}; do
+    if [[ "$cell" == "FIX" ]]; then
+      if [[ "${SMOKE:-0}" != "1" ]]; then python3 algebra/fix_targets.py --targets_dir "$TDIR" 2>&1 | tee "$TDIR/fix_targets.log"; fi
+      continue
+    fi
     cell_cfg "$cell"
     [[ "$T" == "$BASE" ]] && continue
     GEN_N=(); [[ "${SMOKE:-0}" == "1" ]] && GEN_N=(--n 20)
-    for par in "$BASE|$T" "$BASE_OPEN|$T_OPEN" "$BASE_OPEN2|$T_OPEN2"; do
-      src="${par%%|*}"; dst="${par##*|}"
+    # celda _up: el target de su celda normal en mayusculas (fr: los CSV de attributes/french).
+    # El orden de CELLS (fr es de antes que *_up) garantiza que ya existan.
+    FROM=(); FROM_OPEN=(); FROM_OPEN2=()
+    if [[ "${UP_FROM_TARGET:-1}" == "1" && "$cell" == *_up ]]; then
+      T_UP="$T"; T_UP_OPEN="$T_OPEN"; T_UP_OPEN2="$T_OPEN2"
+      cell_cfg "$LANG_"
+      for f in "$T" "$T_OPEN" "$T_OPEN2"; do [[ -f "$f" ]] || { echo "falta $f (la celda normal va antes que $cell)"; exit 1; }; done
+      FROM=(--upper_from "$T"); FROM_OPEN=(--upper_from "$T_OPEN"); FROM_OPEN2=(--upper_from "$T_OPEN2")
+      T="$T_UP"; T_OPEN="$T_UP_OPEN"; T_OPEN2="$T_UP_OPEN2"; LANG_="${cell%_up}"; UP_=(--upper)
+    fi
+    for par in "$BASE|$T|${FROM[*]-}" "$BASE_OPEN|$T_OPEN|${FROM_OPEN[*]-}" "$BASE_OPEN2|$T_OPEN2|${FROM_OPEN2[*]-}"; do
+      IFS='|' read -r src dst from <<< "$par"
       [[ -f "$dst" ]] && { echo "ya existe $dst"; continue; }
       python3 -u algebra/generate_targets_attr.py --model "$MODEL" --device "$DEVICE" \
-          --lang "$LANG_" ${UP_[@]+"${UP_[@]}"} --base_csv "$src" --out "$dst" ${GEN_N[@]+"${GEN_N[@]}"} \
+          --lang "$LANG_" ${UP_[@]+"${UP_[@]}"} --base_csv "$src" --out "$dst" ${GEN_N[@]+"${GEN_N[@]}"} $from \
           2>&1 | tee "${dst%.csv}.log"
     done
   done

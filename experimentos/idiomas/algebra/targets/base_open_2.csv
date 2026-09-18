@@ -15,7 +15,7 @@ Lorsque la lumière solaire traverse ces";;;"The sky appears blue because of a p
 Here's what happens:
 
 1. **Sunlight enters Earth's atmosphere**: When sunlight enters our atmosphere, it consists of a spectrum of colors, including all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, and violet).
-2. **Light interacts with tiny molecules**: As sunlight travels";False;False;1.0;fr;en;True;;False;;True;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True;Quel est le pourquoi du ciel bleu?;fr;True
+2. **Light interacts with tiny molecules**: As sunlight travels";False;False;1.0;fr;en;True;;False;;True;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True;Explique pourquoi le ciel est bleu.;fr;True
 Describe how a bicycle stays upright while moving.;"Un vélo reste en équilibre grâce à plusieurs facteurs :
 
 1.  **Le centre de gravité** : le vélo a un centre de gravité bas et large, ce qui signifie que la plupart de son poids est situé bas dans le vélo. Cela permet au vélo de rester droit et stable.
@@ -25,7 +25,7 @@ Describe how a bicycle stays upright while moving.;"Un vélo reste en équilibre
 
 1. **Tire and Wheel**: The tire provides traction and contact with the ground, while the wheel rotates to propel the bike forward.
 2. **Frame and Fork**: The frame and fork work together to maintain the bike's balance and stability.
-3. **Pedals and Crankset**: The pedals and crankset convert the rider's leg motion into";False;False;1.0;fr;en;True;;False;;True;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True;Comment un vélo reste-il debout pendant le mouvement?;fr;True
+3. **Pedals and Crankset**: The pedals and crankset convert the rider's leg motion into";False;False;1.0;fr;en;True;;False;;True;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True;Décris comment un vélo reste debout quand il roule.;fr;True
 Summarize the plot of Romeo and Juliet.;"Voici une résumé de la trilogie de Shakespeare ""Romeo et Juliette"" :
 
 La histoire se déroule dans la ville de Vérone, où deux familles rivales, les Montagnes et les Capulets, se disputent depuis longtemps. Romeo, un jeune Montagne, tombe amoureux de Juliette, la fille de Capulet, lors d'une fête. Ils se marient secrètement, mais leur amour";;;"A classic tale of love and tragedy!
@@ -34,7 +34,7 @@ Here's a brief summary of the plot of Romeo and Juliet:
 
 The story takes place in Verona, Italy, where two rival families, the Montagues and the Capulets, have a long-standing feud. Against this backdrop of hatred and violence, Romeo, a Montague, and Juliet, a Capulet, fall in love at a ball hosted by Juliet's family.
 
-Romeo and Juliet exchange vows of love, but their families' animosity";False;False;1.0;fr;en;True;;False;;True;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True;Quelle est la capitale du Japon?;fr;True
+Romeo and Juliet exchange vows of love, but their families' animosity";False;False;1.0;fr;en;True;;False;;True;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True;Résume l'intrigue de Roméo et Juliette.;fr;True
 Compare cats and dogs as pets.;"Les chats et les chiens sont deux animaux très populaires comme animaux de compagnie. Voici quelques points de comparaison entre les deux :
 
 **Le temps passé avec les animaux**
@@ -48,7 +48,7 @@ Compare cats and dogs as pets.;"Les chats et les chiens sont deux animaux très 
 2. They both require regular care, including feeding, grooming, and veterinary check-ups.
 3. Both can be trained to behave well and perform tricks.
 
-**D";False;False;1.0;fr;en;True;;False;;True;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True;Comparez les chats et les chiens en tant que animaux de compagnie.;fr;True
+**D";False;False;1.0;fr;en;True;;False;;True;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True;Compare les chats et les chiens comme animaux de compagnie.;fr;True
 List three benefits of regular exercise.;"Voici trois avantages du fait de pratiquer régulièrement l'exercice :
 
 1. **Amélioration de la santé cardiaque** : L'exercice régulier aide à réduire le risque de maladies cardiaques, telles que l'hypertension et les maladies coronaires.
@@ -67,7 +67,7 @@ Avant l'invention de Gutenberg, les";;;"The printing press is a revolutionary in
 
 The printing press was invented by Johannes Gutenberg, a German goldsmith and printer, in the mid-15th century. Gutenberg's innovation was the development of movable type, which allowed individual characters to be rearranged and reused to print different texts. This was a major breakthrough, as it enabled mass production of printed materials.
 
-**The First";False;False;1.0;fr;en;True;;False;;True;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True;Quel est l'histoire breve de l'imprimerie?;fr;True
+**The First";False;False;1.0;fr;en;True;;False;;True;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True;Donne-moi une courte histoire de l'imprimerie.;fr;True
 Name some famous paintings from the Renaissance.;"Voici quelques-unes des plus célèbres peintures de la Renaissance :
 
 * La Joie de vivre de Sandro Botticelli (1475-1482)
@@ -108,7 +108,7 @@ A vaccine is a preparation that helps your body build immunity to a specific dis
 **How do vaccines work?**
 
 When you receive a vaccine, your body responds to the foreign substance";False;False;1.0;fr;en;True;;False;;True;Ayúdame a entender cómo funcionan las vacunas.;es;True;Hilf mir zu verstehen, wie Impfstoffe wirken.;de;True;Comment fonctionnent les vaccins?;fr;True
-Write a short paragraph about the Moon.;La Lune est un satellite naturel de la Terre, entourant notre planète dans un mouvement lente et régulier. Avec une taille de plus de 3 474 kilomètres de diamètre, elle est l'un des plus grands satellites du système solaire. La Lune est également une source de fascination pour les scientifiques et les amateurs, car elle a été étudiée pendant des siècles et reste un sujet de recherche actif.;;;The Moon is Earth's natural satellite, orbiting our planet at an average distance of about 239,000 miles. With a diameter of approximately 2,159 miles, the Moon is relatively small compared to the Earth, but its presence has a profound impact on our planet. The Moon's gravitational pull helps to stabilize Earth's axis, which is why we experience relatively constant seasons. The Moon's surface is also home to numerous craters, mountains, and lava flows, a testament to its complex;False;False;1.0;fr;en;True;;False;;True;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True;Quelle est la capitale du Japon?;fr;True
+Write a short paragraph about the Moon.;La Lune est un satellite naturel de la Terre, entourant notre planète dans un mouvement lente et régulier. Avec une taille de plus de 3 474 kilomètres de diamètre, elle est l'un des plus grands satellites du système solaire. La Lune est également une source de fascination pour les scientifiques et les amateurs, car elle a été étudiée pendant des siècles et reste un sujet de recherche actif.;;;The Moon is Earth's natural satellite, orbiting our planet at an average distance of about 239,000 miles. With a diameter of approximately 2,159 miles, the Moon is relatively small compared to the Earth, but its presence has a profound impact on our planet. The Moon's gravitational pull helps to stabilize Earth's axis, which is why we experience relatively constant seasons. The Moon's surface is also home to numerous craters, mountains, and lava flows, a testament to its complex;False;False;1.0;fr;en;True;;False;;True;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True;Écris un court paragraphe sur la Lune.;fr;True
 Suggest a few ways to save energy at home.;"Voici quelques façons de réduire la consommation d'énergie à la maison :
 
 1. **Éteindre les appareils électriques** : Assurez-vous d'éteindre les appareils électriques comme les lumières, les téléviseurs et les ordinateurs lorsqu'ils ne sont pas utilisés.
@@ -122,7 +122,7 @@ Recommend a good book for a long train ride.;"Pour une longue traversée en trai
 **Fiction**
 
 1. **""The Hitchhiker's Guide to the Galaxy"" by Douglas Adams**: A humorous science fiction series that's perfect for a long train ride. It's lighthearted, entertaining, and will keep you laughing.
-2. **""The Night Circus"" by Erin M";False;False;1.0;fr;en;True;;False;;True;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True;Quelle est une bonne livre pour une longue traversée en train?;fr;True
+2. **""The Night Circus"" by Erin M";False;False;1.0;fr;en;True;;False;;True;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True;Recommande un bon livre pour un long voyage en train.;fr;True
 Outline the main causes of the First World War.;"Voici les principales causes de la Première Guerre mondiale :
 
 1. **La rivalité entre les grandes puissances** : L'Allemagne, l'Autriche-Hongrie, la France, la Grande-Bretagne et la Russie formaient une série de alliances complexes qui créaient une atmosphère de tension et de rivalité entre les nations.
@@ -194,7 +194,7 @@ The city is designed with pedestrian-friendly streets, wide sidewalks, and ample
 
 **Public Transportation**
 
-The city has a comprehensive";False;False;1.0;fr;en;True;;False;;True;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True;Quelle ville sans voitures et comment la décrire?;fr;True
+The city has a comprehensive";False;False;1.0;fr;en;True;;False;;True;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True;Imagine une ville sans voitures et décris-la.;fr;True
 Convince me to drink more water.;"Je suis ravi de t'aider!
 
 Boire suffisamment d'eau est essentiel pour notre santé et notre bien-être. Voici quelques raisons pour lesquelles tu devrais t'efforcer de boire plus d'eau :
@@ -204,7 +204,7 @@ Boire suffisamment d'eau est essentiel pour notre santé et notre bien-être. Vo
 Here are some compelling reasons to make water your go-to beverage:
 
 1. **Boosts Energy and Focus**: Even mild dehydration can cause fatigue, headaches, and difficulty concentrating. Drinking enough water can help you stay energized and focused throughout the day.
-2. **Flushes Toxins and Improves Skin**: Water helps to flush out toxins and waste products from your body, which can lead to a brighter, more radiant complexion. Drinking enough";False;False;1.0;fr;en;True;;False;;True;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True;Convinsez-moi à boire plus d'eau.;fr;True
+2. **Flushes Toxins and Improves Skin**: Water helps to flush out toxins and waste products from your body, which can lead to a brighter, more radiant complexion. Drinking enough";False;False;1.0;fr;en;True;;False;;True;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True;Convaincs-moi de boire plus d'eau.;unknown;True
 Argue for the importance of public libraries.;"Les bibliothèques publiques sont des institutions essentielles pour la société. Voici quelques raisons pour lesquelles elles sont importantes :
 
 1. **Accès à l'information** : Les bibliothèques publiques offrent un accès gratuit à une vaste gamme de livres, de périodiques et de ressources en ligne, permettant aux citoyens de se renseigner et de se former sur des sujets variés.
@@ -217,13 +217,13 @@ Les vagues de l'océan se brisent doucement sur la plage";;;"What a breathtaking
 
 Imagine a warm, golden light slowly creeping over the horizon, as if the sky itself was being set aflame. The sun, a burning orange-yellow orb, rises majestically above the waves, casting a gentle glow over the ocean.
 
-The sky is painted with hues of pink, coral, and salmon, gradating into soft peach and cream towards the top. The colors are so vivid and alive that they seem to pulse with an inner light, as if the very fabric";False;False;1.0;fr;en;True;;False;;True;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True;Quelle est la description d'un aurore sur l'océan?;fr;True
+The sky is painted with hues of pink, coral, and salmon, gradating into soft peach and cream towards the top. The colors are so vivid and alive that they seem to pulse with an inner light, as if the very fabric";False;False;1.0;fr;en;True;;False;;True;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True;Imagine un lever de soleil sur l'océan et décris-le.;fr;True
 Reflect on the role of music in everyday life.;"La musique joue un rôle important dans notre vie quotidienne. Elle peut être un moyen de se détendre, de se concentrer ou de communiquer avec les autres. De nombreux gens écoutent de la musique pendant leur temps libre, comme pendant la route, pendant la marche ou pendant la détente.
 
 La musique peut également être un moyen de se connecter avec les autres. Les concerts, les festivals et les événements musicaux sont des occasions pour les gens de";;;"What a wonderful topic! Music plays a significant role in everyday life, influencing our emotions, behaviors, and interactions with others. Here are some ways music impacts our daily lives:
 
 1. **Mood and Emotions**: Music has the power to evoke emotions, from relaxation and calmness to energy and excitement. It can help us manage stress, anxiety, and depression, and even improve our mood.
-2. **Social Connections**: Music brings people together, creating a sense of community and shared experience.";False;False;1.0;fr;en;True;;False;;True;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True;Comment joue-t-elle la musique dans la vie quotidienne?;fr;True
+2. **Social Connections**: Music brings people together, creating a sense of community and shared experience.";False;False;1.0;fr;en;True;;False;;True;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True;Réfléchis au rôle de la musique dans la vie quotidienne.;fr;True
 Consider the advantages of learning to cook.;"Apprendre à cuisiner présente de nombreux avantages. Voici quelques-uns des principaux avantages :
 
 1. **Développement de la créativité** : L'art de la cuisine permet de s'exprimer et de créer des plats uniques et délicieux.
@@ -252,7 +252,7 @@ Predict what cities might look like in fifty years.;"Voici quelques prévisions 
 **Sustainable and Resilient Cities**
 
 1. **Vertical Farming and Urban Agriculture**: Cities will incorporate extensive vertical farming and urban agriculture to reduce transportation emissions, increase food production, and provide fresh produce to residents.
-2. **Green Roofs and Walls**: Buildings will be designed with green roofs and walls to mitigate the urban heat island effect, reduce stormwater";False;False;1.0;fr;en;True;;False;;True;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True;Quelles villes pourraient-elles ressembler en cinquante ans?;fr;True
+2. **Green Roofs and Walls**: Buildings will be designed with green roofs and walls to mitigate the urban heat island effect, reduce stormwater";False;False;1.0;fr;en;True;;False;;True;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True;Prédis à quoi pourraient ressembler les villes dans cinquante ans.;fr;True
 Rank the planets of the Solar System by size.;"Voici les planètes du Système solaire classées par taille, de plus petite à plus grande :
 
 1. Mercure (diamètre : environ 4 879 km)
@@ -321,7 +321,7 @@ Brainstorm ideas for a birthday party.;"Quelle idée de fête de naissance! Voic
 
 1. **Retro Arcade Party**: Set up classic arcade games, serve nostalgic snacks like pixelated cupcakes and popcorn, and have a tournament with prizes.
 2. **Outer Space Adventure**: Transform the party space into a galaxy with planetary decorations, serve ""asteroid"" cupcakes, and have a scavenger hunt for alien artifacts.
-3. **Hollywood Glam";False;False;1.0;fr;en;True;;False;;True;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True;Quels sont les idées pour une fête de naissance?;fr;True
+3. **Hollywood Glam";False;False;1.0;fr;en;True;;False;;True;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True;Propose des idées pour une fête d'anniversaire.;fr;True
 Propose a simple plan to reduce plastic waste.;"Voici un plan simple pour réduire la déchets plastiques :
 
 **Objectif :** Réduire la quantité de déchets plastiques générés dans notre communauté.
@@ -348,7 +348,7 @@ N'hésitez pas à";;;"Here's a draft welcome message for new employees:
 
 On behalf of the entire [Company Name] team, I would like to extend a warm welcome to you as you join our organization. We are thrilled to have you on board and are excited to have you become a part of our dynamic team.
 
-As you begin your new role, we want to assure you that we are committed to supporting your growth and success. Our goal is to provide a collaborative and inclusive";False;False;1.0;fr;en;True;;False;;True;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True;Quelques mots de bienvenue pour les nouveaux employés.;fr;True
+As you begin your new role, we want to assure you that we are committed to supporting your growth and success. Our goal is to provide a collaborative and inclusive";False;False;1.0;fr;en;True;;False;;True;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True;Rédige un court message de bienvenue pour les nouveaux employés.;fr;True
 Sketch the life cycle of a butterfly.;"Voici le cycle de vie d'une papillon :
 
 **Étapes du cycle de vie d'une papillon :**
@@ -362,7 +362,7 @@ Sketch the life cycle of a butterfly.;"Voici le cycle de vie d'une papillon :
 * Eggs are typically small, oval-shaped, and range in color from white to yellow to brown.
 * The female butterfly can lay anywhere from a few dozen to several hundred eggs at a time.
 
-**Stage 2: Larva (Caterpillar)**";False;False;1.0;fr;en;True;;False;;True;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True;Quel est le cycle de vie d'une papillon?;fr;True
+**Stage 2: Larva (Caterpillar)**";False;False;1.0;fr;en;True;;False;;True;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True;Décris le cycle de vie d'un papillon.;fr;True
 Think about the benefits of walking to work.;"Les avantages de marcher au travail sont nombreux! Voici quelques-uns des principaux avantages :
 
 *   Une meilleure santé : marcher au travail peut aider à réduire le risque de maladies cardiaques, de diabète et d'obésité.
@@ -374,7 +374,7 @@ Think about the benefits of walking to work.;"Les avantages de marcher au travai
 1. **Weight Management**: Walking to work can help you burn calories and maintain a healthy weight.
 2. **Improved Cardiovascular Health**: Regular walking can lower blood pressure, improve circulation, and reduce the risk of heart disease.
 3. **Increased Energy**: Walking can boost your energy levels and reduce fatigue.
-4. **Stronger Bones**: Weight-bearing";False;False;1.0;fr;en;True;;False;;True;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True;Pensez aux avantages de faire du vélo au travail.;fr;True
+4. **Stronger Bones**: Weight-bearing";False;False;1.0;fr;en;True;;False;;True;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True;Réfléchis aux avantages d'aller au travail à pied.;fr;True
 Talk me through the rules of football.;"Bien sûr! Les règles du football sont les suivantes :
 
 **Le but du jeu**
@@ -402,7 +402,7 @@ Le matin commence tôt, à l'aube, avec le lever du soleil. Les Romains se lève
 
 **Morning (Aurora)**
 
-The sun rises over the city, casting a warm glow over the sprawling metropolis. The air is filled with the sweet scent of freshly baked bread wafting from the panisaria, the bakeries. People emerge from their homes, donning simple tunics and";False;False;1.0;fr;en;True;;False;;True;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True;Quelle est la représentation d'une journée typique en antique Rome?;fr;True
+The sun rises over the city, casting a warm glow over the sprawling metropolis. The air is filled with the sweet scent of freshly baked bread wafting from the panisaria, the bakeries. People emerge from their homes, donning simple tunics and";False;False;1.0;fr;en;True;;False;;True;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True;Décris une journée typique dans la Rome antique.;fr;True
 Offer some advice for a first job interview.;"Pour un premier entretien d'embauche, voici quelques conseils :
 
 1. **Prépare-toi** : Recherche l'entreprise, sa mission, ses valeurs et son environnement de travail. Prépare également une liste de questions à poser à l'entretien.
@@ -413,7 +413,7 @@ Offer some advice for a first job interview.;"Pour un premier entretien d'embauc
 
 1. **Research the company**: Learn about the company's mission, values, products, and services. This will show your interest in the company and help you ask informed questions.
 2. **Review the job description**: Study the job requirements and be prepared to give specific examples of how your skills and experiences match the job.
-3. **";False;False;1.0;fr;en;True;;False;;True;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True;Quelle est la capitale du Japon?;fr;True
+3. **";False;False;1.0;fr;en;True;;False;;True;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True;Donne quelques conseils pour un premier entretien d'embauche.;fr;True
 Provide an overview of how the internet works.;"Bien sûr! Voici une vue d'ensemble de la façon dont fonctionne l'internet :
 
 **Les principaux composants**
@@ -441,7 +441,7 @@ L'énergie renouvelable est la solution pour sauver notre planète. Les énergie
 **Environmental Benefits**
 
 1. **Climate Change Mitigation**: Renewable energy sources like solar, wind, and hydroelectric power do not emit greenhouse gases (GHGs) or other pollutants that contribute to climate change.
-2. **Air and Water Pollution Reduction**: Renewable energy reduces air pollution from fossil fuels, which can cause respiratory problems and other health issues. It also conserves";False;False;1.0;fr;en;True;;False;;True;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True;Quelle est la preuve en faveur de l'énergie renouvelable?;fr;True
+2. **Air and Water Pollution Reduction**: Renewable energy reduces air pollution from fossil fuels, which can cause respiratory problems and other health issues. It also conserves";False;False;1.0;fr;en;True;;False;;True;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True;Présente les arguments en faveur des énergies renouvelables.;fr;True
 Enumerate the continents of the world.;"Voici les continents du monde :
 
 1. L'Afrique
@@ -482,14 +482,14 @@ Justify why children should learn to swim.;"Les enfants devraient apprendre à n
 2. **Amélioration de la santé** : La natation est un excellent exercice physique qui aide à développer la force, la coordination et la";;;"Learning to swim is an essential skill for children that offers numerous benefits for their physical, emotional, and social development. Here are some compelling reasons why children should learn to swim:
 
 1. **Water Safety**: Swimming is a vital skill for water safety, which is essential for children to learn at a young age. Knowing how to swim can help them avoid drowning and reduce the risk of water-related accidents.
-2. **Physical Health**: Swimming is a low-impact exercise that can help children develop strong muscles";False;False;1.0;fr;en;True;;False;;True;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True;Pourquoi les enfants devraient-ils apprendre à nager.;fr;True
+2. **Physical Health**: Swimming is a low-impact exercise that can help children develop strong muscles";False;False;1.0;fr;en;True;;False;;True;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True;Justifie pourquoi les enfants devraient apprendre à nager.;fr;True
 Speculate about life on other planets.;"Il est difficile de prédire avec certitude ce qui se passe sur d'autres planètes, mais il y a plusieurs théories et hypothèses qui sont souvent discutées par les scientifiques et les théoriciens.
 
 D'une part, il est possible que certaines planètes aient des conditions de vie similaires à celles de la Terre, avec une atmosphère, des eaux et une température adaptées à la vie. Il";;;"The possibility of life on other planets is a topic that has fascinated humans for centuries. As we continue to explore the universe and gather more data, we're getting closer to answering this question. Here's a speculative look at what life on other planets might be like:
 
 **The Possibility of Life**
 
-With over 4,000 exoplanets discovered so far, and thousands more awaiting confirmation, the likelihood of finding life beyond Earth is increasing. Some of these exoplanets are located in the habit";False;False;1.0;fr;en;True;;False;;True;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True;Qu'est-ce que l'existence sur d'autres planètes?;fr;True
+With over 4,000 exoplanets discovered so far, and thousands more awaiting confirmation, the likelihood of finding life beyond Earth is increasing. Some of these exoplanets are located in the habit";False;False;1.0;fr;en;True;;False;;True;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True;Spécule sur la vie sur d'autres planètes.;fr;True
 Recount the story of the first Moon landing.;"Voici l'histoire du premier atterrissage sur la Lune :
 
 Le 16 juillet 1969, une mission historique a marqué l'humanité : le premier atterrissage sur la Lune. La mission Apollo 11, menée par les États-Unis, a été le résultat d'une décennie de travail acharné et de détermination.

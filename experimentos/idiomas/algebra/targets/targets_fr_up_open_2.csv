@@ -1,34 +1,46 @@
 prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;prompt_es;prompt_es_language;prompt_es_ok;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
-Tell me about the water cycle.;"LE CYCLE DE L'EAU EST UN PROCESSUS NATUREL ET INTRINSIQUEMENT LIÉ À LA TERRE ET À L'ATMOSPÈRE. IL COMPRISSE Cinq étapes principales : EVAPORATION, CONDENSATION, PRÉCIPITATION, INfiltration ET RUNOFF.
+Tell me about the water cycle.;"LE CYCLE DE L'EAU EST UN PROCESSUS NATUREL QUI CONSISTE À L'EAU À CIRCULER ENTRE LA TERRE ET L'ATMOSPHÈRE. IL SE COMPOSE DE TROIS PRINCIPAUX ÉTAPES :
 
-L'EVAPORATION EST LE PROCESSUS PAR LEQUEL L'EAU DE L'EAU EST TRANSFORMÉE EN V";;;"The water cycle! It's an essential process that sustains life on Earth. The water cycle, also known as the hydrologic cycle, is the continuous movement of water on, above, and below the surface of the Earth. It's a vital process that involves the transformation of water between its three main states: liquid, solid (ice), and gas (water vapor).
+1. **L'ÉVAPORATION** : L'EAU DE LA SURFACE DE LA TERRE, TELLE QUE LES OCÉANS, LES LACS ET LES RIVIÈRES, SE TRANSFORME EN VAPEUR D'EAU EN RAISON DE LA CHALEUR DU SOLEIL. CETTE VAPEUR";;;"The water cycle! It's an essential process that sustains life on Earth. The water cycle, also known as the hydrologic cycle, is the continuous movement of water on, above, and below the surface of the Earth. It's a vital process that involves the transformation of water between its three main states: liquid, solid (ice), and gas (water vapor).
 
 Here's a step-by-step explanation of the water cycle:
 
 **Step 1: Evaporation**
 
-The water cycle begins with";False;False;fr;en;;;False;Cuéntame sobre el ciclo del agua.;es;True;Erzähl mir vom Wasserkreislauf.;de;True;Comment fonctionne le cycle de l'eau?;fr;True;1.0;0.8667;False;fr_up;Respond entirely in uppercase letters, in French.
-Explain why the sky is blue.;LA RÉPONSE EST LA FOLLE: LA LUMIÈRE DU SOLEIL EST COMPOSÉE DE DIFFÉRENTS COULEURS, COMME LA ROSE, L'ORANGE, LE JAUNE, LA VIOLETTE ET LA BLEU. LORSQUE LA LUMIÈRE PENSE À TRAVAILLER SON JOURNÉE, ELLE EST RÉFLÉCHIE PAR L'ATMOSPH;;;"The sky appears blue because of a phenomenon called Rayleigh scattering, named after the British physicist Lord Rayleigh, who first described it in the late 19th century.
+The water cycle begins with";False;False;fr;en;;;True;Cuéntame sobre el ciclo del agua.;es;True;Erzähl mir vom Wasserkreislauf.;de;True;Comment fonctionne le cycle de l'eau?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Explain why the sky is blue.;"LE CIEL EST BLEU EN RAISON DE LA RÉFRACTION DE LA LUMIÈRE SOLAIRE. LORSQUE LA LUMIÈRE DU SOLEIL ENTRE DANS L'ATMOSPHÈRE TERRESTRE, ELLE RENCONTRE LES MOLÉCULES D'AZOTE ET D'OXYGÈNE. CES MOLÉCULES ONT DES ATOMES QUI ONT UN NOMBRE DE ÉLECTRONS ÉLEVÉ, CE QUI LES REND TRÈS ATTRACTIFS POUR LES PHOTONS DE LUMIÈRE.
+
+LORSQUE LA LUMIÈRE SOLAIRE TRAVERSE CES";;;"The sky appears blue because of a phenomenon called Rayleigh scattering, named after the British physicist Lord Rayleigh, who first described it in the late 19th century.
 
 Here's what happens:
 
 1. **Sunlight enters Earth's atmosphere**: When sunlight enters our atmosphere, it consists of a spectrum of colors, including all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, and violet).
-2. **Light interacts with tiny molecules**: As sunlight travels";False;False;fr;en;;;True;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True;Quel est le pourquoi du ciel bleu?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Describe how a bicycle stays upright while moving.;LES CYCLES SE TIENTS UPRIT EN MOYEN DE LA COMBINAISON DE LA GRAVITÉ ET DE LA FORCE DE RÉFLÉCHISSAGE. LORSQU'UN CYCLIST S'ANNEDE, IL PRODUIT UNE FORCE DE RÉFLÉCHISSAGE SUR LES PIEDS, CE QUI PERMET AU CYCLIST DE SE TENIR UPRIT. DE PLUS, LA GRAV;;;"The magic of balance and stability on a bicycle! Here's a breakdown of how a bicycle stays upright while moving:
+2. **Light interacts with tiny molecules**: As sunlight travels";False;False;fr;en;;;True;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True;Explique pourquoi le ciel est bleu.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Describe how a bicycle stays upright while moving.;"UN VÉLO RESTE EN ÉQUILIBRE GRÂCE À PLUSIEURS FACTEURS :
+
+1.  **LE CENTRE DE GRAVITÉ** : LE VÉLO A UN CENTRE DE GRAVITÉ BAS ET LARGE, CE QUI SIGNIFIE QUE LA PLUPART DE SON POIDS EST SITUÉ BAS DANS LE VÉLO. CELA PERMET AU VÉLO DE RESTER DROIT ET STABLE.
+2.  **LES ROUES** : LES ROUES SONT CONÇUES POUR TOURNER EN CERCLE, CE QUI SIGNIFIE";;;"The magic of balance and stability on a bicycle! Here's a breakdown of how a bicycle stays upright while moving:
 
 **Key Components:**
 
 1. **Tire and Wheel**: The tire provides traction and contact with the ground, while the wheel rotates to propel the bike forward.
 2. **Frame and Fork**: The frame and fork work together to maintain the bike's balance and stability.
-3. **Pedals and Crankset**: The pedals and crankset convert the rider's leg motion into";False;False;fr;en;;;True;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True;Comment un vélo reste-il debout pendant le mouvement?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Summarize the plot of Romeo and Juliet.;LES DEUX AMANTS DE VERONNE, ROMEO ET JULIETTE, S'EN AMOURENT MALGRÉ LES HATRIÈRES DE SES FAMILLES. ROMEO, FIL DE MAÎTRE ALBRET, ET JULIETTE, FILLE DE MAÎTRE CAPULET, S'EN AMOURENT À VENDEME, À LA FÊTE DE ROMEO. ILS SE PROMETTENT DE SE;;;"A classic tale of love and tragedy!
+3. **Pedals and Crankset**: The pedals and crankset convert the rider's leg motion into";False;False;fr;en;;;True;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True;Décris comment un vélo reste debout quand il roule.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Summarize the plot of Romeo and Juliet.;"VOICI UNE RÉSUMÉ DE LA TRILOGIE DE SHAKESPEARE ""ROMEO ET JULIETTE"" :
+
+LA HISTOIRE SE DÉROULE DANS LA VILLE DE VÉRONE, OÙ DEUX FAMILLES RIVALES, LES MONTAGNES ET LES CAPULETS, SE DISPUTENT DEPUIS LONGTEMPS. ROMEO, UN JEUNE MONTAGNE, TOMBE AMOUREUX DE JULIETTE, LA FILLE DE CAPULET, LORS D'UNE FÊTE. ILS SE MARIENT SECRÈTEMENT, MAIS LEUR AMOUR";;;"A classic tale of love and tragedy!
 
 Here's a brief summary of the plot of Romeo and Juliet:
 
 The story takes place in Verona, Italy, where two rival families, the Montagues and the Capulets, have a long-standing feud. Against this backdrop of hatred and violence, Romeo, a Montague, and Juliet, a Capulet, fall in love at a ball hosted by Juliet's family.
 
-Romeo and Juliet exchange vows of love, but their families' animosity";False;False;fr;en;;;True;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Compare cats and dogs as pets.;LES CHATS ET LES CHIENS EN SONT DEUX PETS DIFFÉRENTS ET INTERÉSSENTS. LES CHATS SONT CONSIDÉRÉS PLUS INDEPENDANTS ET INDÉPENDANTS, ILS AIMENT POUSSER ET JOUER SEULS, MAIS ILS SONT ÉGALEMENT CAPABLES DE SE FIDÉLISER À SES MAÎTRES. LES CHIENS, D'AUTRE;;;"The age-old debate: cats vs dogs as pets! Both animals can make wonderful companions, but they have distinct personalities, needs, and characteristics that may make one more suitable for you than the other. Here's a comprehensive comparison:
+Romeo and Juliet exchange vows of love, but their families' animosity";False;False;fr;en;;;True;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True;Résume l'intrigue de Roméo et Juliette.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Compare cats and dogs as pets.;"LES CHATS ET LES CHIENS SONT DEUX ANIMAUX TRÈS POPULAIRES COMME ANIMAUX DE COMPAGNIE. VOICI QUELQUES POINTS DE COMPARAISON ENTRE LES DEUX :
+
+**LE TEMPS PASSÉ AVEC LES ANIMAUX**
+
+* LES CHATS SONT GÉNÉRALEMENT MOINS EXIGEANTS EN TERMES DE TEMPS PASSÉ AVEC LES PROPRIÉTAIRES. ILS SONT HEUREUX DE PASSER QUELQUES HEURES PAR JOUR À SE REPOSER OU À JOUER, MAIS ILS NE NÉCESSITENT PAS AUTANT D'ATTENTION QUE LES CHIENS.
+* LES";;;"The age-old debate: cats vs dogs as pets! Both animals can make wonderful companions, but they have distinct personalities, needs, and characteristics that may make one more suitable for you than the other. Here's a comprehensive comparison:
 
 **Similarities:**
 
@@ -36,38 +48,58 @@ Compare cats and dogs as pets.;LES CHATS ET LES CHIENS EN SONT DEUX PETS DIFFÉR
 2. They both require regular care, including feeding, grooming, and veterinary check-ups.
 3. Both can be trained to behave well and perform tricks.
 
-**D";False;False;fr;en;;;True;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True;Comparez les chats et les chiens en tant que animaux de compagnie.;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-List three benefits of regular exercise.;VOUS AUREZ DE VASSEURS DE RÉDUIRE LE RISQUE DE MALADIES CARDIAQUES ET DE DIABÈTE, EN PLUS DE RÉDUIRE LA PRESSION ARTÉRIELLE ET D'AMéliORER VOTRE MOYEN DE VIE.;;;"Here are three benefits of regular exercise:
+**D";False;False;fr;en;;;True;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True;Compare les chats et les chiens comme animaux de compagnie.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+List three benefits of regular exercise.;"VOICI TROIS AVANTAGES DU FAIT DE PRATIQUER RÉGULIÈREMENT L'EXERCICE :
+
+1. **AMÉLIORATION DE LA SANTÉ CARDIAQUE** : L'EXERCICE RÉGULIER AIDE À RÉDUIRE LE RISQUE DE MALADIES CARDIAQUES, TELLES QUE L'HYPERTENSION ET LES MALADIES CORONAIRES.
+2. **MEILLEURE QUALITÉ DU SOMMEIL** : L'EXERCICE RÉGULIER PEUT AIDER À AMÉLIORER LA QUALITÉ DU SOMME";;;"Here are three benefits of regular exercise:
 
 1. **Improved Physical Health**: Regular exercise can help prevent chronic diseases such as heart disease, diabetes, and some types of cancer. It can also improve sleep quality, boost the immune system, and increase energy levels.
 2. **Mental Health Benefits**: Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression. It can also improve mood, reduce stress, and enhance cognitive function.
-3. **Increased Productivity";False;False;fr;en;;;True;Menciona tres beneficios del ejercicio regular.;unknown;True;Nenne drei Vorteile regelmäßiger Bewegung.;de;True;Quels sont les trois avantages de l'exercice régulier?;fr;True;1.0;0.9767;True;fr_up;Respond entirely in uppercase letters, in French.
-Give me a short history of the printing press.;VOUS DEMANDEZ UNE HISTOIRE BRIÈVE DE LA PRESSE A L'IMPRIME! LA PRESSE A L'IMPRIME A ÉTÉ DÉVELOPPÉE AU XVe SIÈCLE PAR JOHANNES GUTENBERG, UN ALCHIMIE ET UN INVENTEUR ALLEMAND. IL A CRÉÉ LA PREMIÈRE PRESSE A L'IMPRIME EN 1440,;;;"The printing press is a revolutionary invention that has had a profound impact on human history. Here's a brief overview:
+3. **Increased Productivity";False;False;fr;en;;;True;Menciona tres beneficios del ejercicio regular.;unknown;True;Nenne drei Vorteile regelmäßiger Bewegung.;de;True;Quels sont les trois avantages de l'exercice régulier?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Give me a short history of the printing press.;"VOICI UNE BRÈVE HISTOIRE DE L'IMPRIMERIE :
+
+L'IMPRIMERIE A ÉTÉ INVENTÉE PAR JOHANNES GUTENBERG EN ALLEMAGNE AU XIVE SIÈCLE. EN 1440, GUTENBERG A CRÉÉ LA PREMIÈRE MACHINE À IMPRIMER, QUI UTILISAIT DES CARACTÈRES MÉTALLIQUES MOUVABLES POUR IMPRIMER DES TEXTES. CETTE INVENTION A RÉVOLUTIONNÉ LA PRODUCTION DE LIVRES ET A PERMIS LA DIFFUSION RAPIDE DE L'INFORMATION.
+
+AVANT L'INVENTION DE GUTENBERG, LES";;;"The printing press is a revolutionary invention that has had a profound impact on human history. Here's a brief overview:
 
 **The Early Years (1450s)**
 
 The printing press was invented by Johannes Gutenberg, a German goldsmith and printer, in the mid-15th century. Gutenberg's innovation was the development of movable type, which allowed individual characters to be rearranged and reused to print different texts. This was a major breakthrough, as it enabled mass production of printed materials.
 
-**The First";False;False;fr;en;;;True;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True;Quel est l'histoire breve de l'imprimerie?;fr;True;1.0;0.9943;True;fr_up;Respond entirely in uppercase letters, in French.
-Name some famous paintings from the Renaissance.;"VOUS DEMANDEZ DES PEINTURES FAMOUS DE LA RENAISSANCE! VOICI QUELQUES EXEMPLES :
+**The First";False;False;fr;en;;;True;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True;Donne-moi une courte histoire de l'imprimerie.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Name some famous paintings from the Renaissance.;"VOICI QUELQUES-UNES DES PLUS CÉLÈBRES PEINTURES DE LA RENAISSANCE :
 
-* LA NAissance DE VENUS DE BOTTICELLI
-* LA PRINCESSE LOUISE DE RENI
-* LA VENUS DE L'UCCELLO
-* LA VIE DE VITOEUF DE PERUGIA DE PAOLO UCCELLO
-* LA VEN";;;"The Renaissance was a time of great artistic innovation and creativity, and many famous paintings were created during this period. Here are some of the most well-known ones:
+* LA JOIE DE VIVRE DE SANDRO BOTTICELLI (1475-1482)
+* LA NATIVITÉ DE LÉONARD DE VINCI (1478-1481)
+* LA VÉNUS DE L'UFFIZI DE BOTTICELLI (1485-1486)
+* LA PRÉSENCE DE DIEU DE LÉONARD DE VINCI (1481-1482";;;"The Renaissance was a time of great artistic innovation and creativity, and many famous paintings were created during this period. Here are some of the most well-known ones:
 
 1. **Mona Lisa** by Leonardo da Vinci (1503-1506) - A portrait of a woman with an enigmatic smile, widely considered one of the greatest paintings of all time.
-2. **The Last Supper** by Leonardo da Vinci (1495-1498) - A mural painting depicting the last meal";False;False;fr;en;;;True;Nombra algunas pinturas famosas del Renacimiento.;es;True;Nenne einige berühmte Gemälde der Renaissance.;de;True;Quels sont quelques peintures célèbres de la Renaissance?;fr;True;1.0;0.9607;True;fr_up;Respond entirely in uppercase letters, in French.
-Walk me through how bread is made.;"VOUS VOULEZ CONNAître LA PROCEDE DE FABRIQUATION DU PAIN? ALLEZ-VOUS DANS LE PROCESSUS DE FABRIQUATION DU PAIN, VOICI CE QUE VOUS DEVRIEZ CONNAître :
+2. **The Last Supper** by Leonardo da Vinci (1495-1498) - A mural painting depicting the last meal";False;False;fr;en;;;True;Nombra algunas pinturas famosas del Renacimiento.;es;True;Nenne einige berühmte Gemälde der Renaissance.;de;True;Quels sont quelques peintures célèbres de la Renaissance?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Walk me through how bread is made.;"BIEN SÛR! JE VAIS VOUS GUIDER À TRAVERS LE PROCESSUS DE FABRICATION DU PAIN.
 
-TOUT DABAS, LE PAIN EST FABRIQUÉ A PARTIR DE FARINE DE BLÉ, DE MAIS, DE SEIGLE, OU DE D'AUTRES CÉRÉ";;;"The art of bread making! It's a fascinating process that involves mixing, kneading, rising, shaping, and baking. Here's a step-by-step guide on how bread is made:
+**ÉTAPE 1 : PRÉPARATION DES INGRÉDIENTS**
+
+LE PROCESSUS DE FABRICATION DU PAIN COMMENCE PAR LA PRÉPARATION DES INGRÉDIENTS. LES PRINCIPAUX INGRÉDIENTS SONT :
+
+* FARINE DE BLÉ
+* EAU
+* SEL
+* LEVURE (OU LEVURE ACTIVE)
+* OPTIONAL : HUILE, SUCRE, ETC.
+
+LES INGRÉDIENTS SONT MÉLANGÉS ENSEMBLE";;;"The art of bread making! It's a fascinating process that involves mixing, kneading, rising, shaping, and baking. Here's a step-by-step guide on how bread is made:
 
 **Step 1: Mixing (Dough Preparation)**
 
 1. **Ingredients**: Flour, yeast, salt, sugar, and water are the basic ingredients used to make bread. Other ingredients like butter, oil, or eggs may be added depending on the type of bread being made.
-2. **Measuring";False;False;fr;en;;;True;Guíame por el proceso de hacer pan.;es;True;Führe mich durch die Herstellung von Brot.;de;True;Comment est fait le pain?;fr;True;1.0;0.9594;True;fr_up;Respond entirely in uppercase letters, in French.
-Help me understand how vaccines work.;LES VACCINS SONT DES PRODUITS BIOLÓGiques CONÇUS POUR PRÉVENTER LES MALADIES EN ACTIVANT L'IMMUNE SYSTEME DU CORPS. ILS CONTIennent UN ANTIGÈNE, UN PROTEIN QUI EST SIMILAR AU CELUI QUI CAUSE LA MALADIE, ET LORSQU'IL EST INTRODUIT AU CORPS, IL EST RECONNAISSABLE PAR L'IM;;;"Vaccines are a crucial tool in preventing the spread of infectious diseases, and understanding how they work can help you appreciate their importance. Here's a simplified explanation:
+2. **Measuring";False;False;fr;en;;;True;Guíame por el proceso de hacer pan.;es;True;Führe mich durch die Herstellung von Brot.;de;True;Comment est fait le pain?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Help me understand how vaccines work.;"JE SERAIS RAVI DE VOUS AIDER!
+
+LES VACCINS SONT DES SUBSTANCES QUI AIDENT À PROTÉGER NOTRE CORPS CONTRE LES MALADIES. VOICI COMMENT ILS FONCTIONNENT :
+
+1. **LE PRINCIPE** : LES VACCINS CONTIENNENT UNE PETITE QUANTITÉ DE LA BACTÉRIE, VIRUS OU TOXINE QUI CAUSE LA MALADIE. CETTE SUBSTANCE EST DÉFECTUEUSE OU FAIBLE, CE QUI SIGNIFIE QU'ELLE NE PEUT PAS CAUSER LA MALADIE ELLE-MÊME";;;"Vaccines are a crucial tool in preventing the spread of infectious diseases, and understanding how they work can help you appreciate their importance. Here's a simplified explanation:
 
 **What is a vaccine?**
 
@@ -75,55 +107,55 @@ A vaccine is a preparation that helps your body build immunity to a specific dis
 
 **How do vaccines work?**
 
-When you receive a vaccine, your body responds to the foreign substance";False;False;fr;en;;;True;Ayúdame a entender cómo funcionan las vacunas.;es;True;Hilf mir zu verstehen, wie Impfstoffe wirken.;de;True;Comment fonctionnent les vaccins?;fr;True;0.9545;0.9502;True;fr_up;Respond entirely in uppercase letters, in French.
-Write a short paragraph about the Moon.;LA LUNE EST UN CORPS CELESTIAL TRÈS INTERÉSSANT, CREATIF D'APRÈS SES PHASES ET SES ÉCLIPSES. ELLE EST ENviron 384 400 KILOMÈTRES AU DÉPÂS DE LA TERRE ET EST EN PERMANENCE EN ORBIT AROUND LA TERRE. LA LUNE EST UN CORPS ROUGE, COMPOSÉ PRIMORDIALEMENT DE RO;;;The Moon is Earth's natural satellite, orbiting our planet at an average distance of about 239,000 miles. With a diameter of approximately 2,159 miles, the Moon is relatively small compared to the Earth, but its presence has a profound impact on our planet. The Moon's gravitational pull helps to stabilize Earth's axis, which is why we experience relatively constant seasons. The Moon's surface is also home to numerous craters, mountains, and lava flows, a testament to its complex;False;False;fr;en;;;True;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;0.9749;True;fr_up;Respond entirely in uppercase letters, in French.
-Suggest a few ways to save energy at home.;"VOUS POUVEZ ÉVITER DE L'ÉLECTRICITÉ À LA MAISON EN FAISANT CELES CHANGEMENTS :
+When you receive a vaccine, your body responds to the foreign substance";False;False;fr;en;;;True;Ayúdame a entender cómo funcionan las vacunas.;es;True;Hilf mir zu verstehen, wie Impfstoffe wirken.;de;True;Comment fonctionnent les vaccins?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Write a short paragraph about the Moon.;LA LUNE EST UN SATELLITE NATUREL DE LA TERRE, ENTOURANT NOTRE PLANÈTE DANS UN MOUVEMENT LENTE ET RÉGULIER. AVEC UNE TAILLE DE PLUS DE 3 474 KILOMÈTRES DE DIAMÈTRE, ELLE EST L'UN DES PLUS GRANDS SATELLITES DU SYSTÈME SOLAIRE. LA LUNE EST ÉGALEMENT UNE SOURCE DE FASCINATION POUR LES SCIENTIFIQUES ET LES AMATEURS, CAR ELLE A ÉTÉ ÉTUDIÉE PENDANT DES SIÈCLES ET RESTE UN SUJET DE RECHERCHE ACTIF.;;;The Moon is Earth's natural satellite, orbiting our planet at an average distance of about 239,000 miles. With a diameter of approximately 2,159 miles, the Moon is relatively small compared to the Earth, but its presence has a profound impact on our planet. The Moon's gravitational pull helps to stabilize Earth's axis, which is why we experience relatively constant seasons. The Moon's surface is also home to numerous craters, mountains, and lava flows, a testament to its complex;False;False;fr;en;;;True;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True;Écris un court paragraphe sur la Lune.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Suggest a few ways to save energy at home.;"VOICI QUELQUES FAÇONS DE RÉDUIRE LA CONSOMMATION D'ÉNERGIE À LA MAISON :
 
-* ÉTEIGNEZ LES LUMIÈRES ET LES APPAREILS ÉLECTRIQUES LORSQU'ILS NE SONT PAS EN UTILISATION
-* ACHETEZ DES LUMIÈRES ÉCologiques ET DES APPAREILS ÉLECTRIQUES ÉCONOMIQU";;;"Here are a few simple and effective ways to save energy at home:
+1. **ÉTEINDRE LES APPAREILS ÉLECTRIQUES** : ASSUREZ-VOUS D'ÉTEINDRE LES APPAREILS ÉLECTRIQUES COMME LES LUMIÈRES, LES TÉLÉVISEURS ET LES ORDINATEURS LORSQU'ILS NE SONT PAS UTILISÉS.
+2. **RÉDUIRE LA TEMPÉRATURE** : RÉDUISEZ LA TEMPÉRATURE DE VOTRE MAISON POUR RÉDUIRE LA";;;"Here are a few simple and effective ways to save energy at home:
 
 1. **Switch to energy-efficient lighting**: Replace traditional incandescent bulbs with LED or CFL bulbs, which use significantly less energy and last longer.
 2. **Adjust your thermostat**: Lower the temperature in winter and raise it in summer to reduce heating and cooling costs. Consider installing a smart thermostat to optimize your temperature settings.
-3. **Turn off lights, appliances, and electronics when not in use**: This simple habit can save";False;False;fr;en;;;True;Sugiere algunas formas de ahorrar energía en casa.;es;True;Schlag ein paar Möglichkeiten vor, zu Hause Energie zu sparen.;de;True;Comment économiser de l'énergie à la maison?;fr;True;1.0;0.9554;True;fr_up;Respond entirely in uppercase letters, in French.
-Recommend a good book for a long train ride.;"UNE RECOMMANDATION PARFAITE! JE RECOMMANDE ""LES MEMOIRS DE ZAZIE"" DE BOUSCHVILLIERS, UN CLASSIQUE DE LA LITÉRATURE FRANÇAISE QUI EST PARFAIT POUR UN VOL EN TRAIN. L'HISTOIRE DE ZAZIE, UNE JEUNE FEMME QUI SE LÉVITE DE LA MÉDIOCRITÉ ET QUI EXPÉRIMENTE VERS";;;"A long train ride is the perfect excuse to get lost in a good book. Here are some recommendations that are engaging, easy to follow, and won't leave you feeling too restless:
+3. **Turn off lights, appliances, and electronics when not in use**: This simple habit can save";False;False;fr;en;;;True;Sugiere algunas formas de ahorrar energía en casa.;es;True;Schlag ein paar Möglichkeiten vor, zu Hause Energie zu sparen.;de;True;Comment économiser de l'énergie à la maison?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Recommend a good book for a long train ride.;"POUR UNE LONGUE TRAVERSÉE EN TRAIN, JE TE RECOMMANDE UN LIVRE QUI TE FERA OUBLIER LE TEMPS QUI PASSE. JE TE SUGGÈRE ""LE PETIT PRINCE"" D'ANTOINE DE SAINT-EXUPÉRY. C'EST UN CLASSIQUE DE LA LITTÉRATURE FRANÇAISE QUI RACONTE L'HISTOIRE D'UN JEUNE GARÇON QUI PART À LA DÉCOUVERTE DU MONDE ET RENCONTRE UN PETIT PRINCE QUI LUI ENSEIGNE LES SECRETS DE L'AMITIÉ ET DE LA VIE.";;;"A long train ride is the perfect excuse to get lost in a good book. Here are some recommendations that are engaging, easy to follow, and won't leave you feeling too restless:
 
 **Fiction**
 
 1. **""The Hitchhiker's Guide to the Galaxy"" by Douglas Adams**: A humorous science fiction series that's perfect for a long train ride. It's lighthearted, entertaining, and will keep you laughing.
-2. **""The Night Circus"" by Erin M";False;False;fr;en;;;True;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True;Quelle est une bonne livre pour une longue traversée en train?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Outline the main causes of the First World War.;"LES CAUSES PRIMAIRES DE LA PREMIÈRE GUERRE MONDIALE SONT LES SUITS :
+2. **""The Night Circus"" by Erin M";False;False;fr;en;;;True;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True;Recommande un bon livre pour un long voyage en train.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Outline the main causes of the First World War.;"VOICI LES PRINCIPALES CAUSES DE LA PREMIÈRE GUERRE MONDIALE :
 
-* L'IMPERIALISME : LES POUVOIRS EUROPEENS, EN PARTICULIER L'ALLEMAGNE, L'AUTRICHE-HONGRIE ET LA FRANCE, AVAIENT DES INTERETS CONFLITTELS ET DES REPRÉSENTATIONS DIFFÉRENTES SUR LE MONDE.
-* LA";;;"The First World War, also known as the Great War, was a complex and multifaceted conflict that involved many countries and had various causes. Here are the main causes of the First World War:
+1. **LA RIVALITÉ ENTRE LES GRANDES PUISSANCES** : L'ALLEMAGNE, L'AUTRICHE-HONGRIE, LA FRANCE, LA GRANDE-BRETAGNE ET LA RUSSIE FORMAIENT UNE SÉRIE DE ALLIANCES COMPLEXES QUI CRÉAIENT UNE ATMOSPHÈRE DE TENSION ET DE RIVALITÉ ENTRE LES NATIONS.
+2. **L'IMPÉRIALISME** : LES GRANDES PUISSANCES S'AFFRONT";;;"The First World War, also known as the Great War, was a complex and multifaceted conflict that involved many countries and had various causes. Here are the main causes of the First World War:
 
 **I. Imperialism and Nationalism**
 
 1. **Rivalries between European powers**: The great powers of Europe, including Britain, France, Germany, Austria-Hungary, and Russia, were competing for colonies, resources, and influence around the world.
-2. **Nationalism**: The";False;False;fr;en;;;True;Esboza las principales causas de la Primera Guerra Mundial.;es;True;Umreiße die Hauptursachen des Ersten Weltkriegs.;de;True;Quels sont les principaux facteurs qui ont conduit à la Première Guerre mondiale?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Discuss the pros and cons of working from home.;"VOUS AVEZ DEMANDE DE CONNAISSANCE DES AVANTAGES ET INCONVÉNIENTS DE TRAVAILLER DE CHEZ SOI. VOICI UN APERÇU :
+2. **Nationalism**: The";False;False;fr;en;;;True;Esboza las principales causas de la Primera Guerra Mundial.;es;True;Umreiße die Hauptursachen des Ersten Weltkriegs.;de;True;Quels sont les principaux facteurs qui ont conduit à la Première Guerre mondiale?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Discuss the pros and cons of working from home.;"TRAVAILLER À DOMICILE PEUT PRÉSENTER À LA FOIS DES AVANTAGES ET DES INCONVÉNIENTS. VOICI QUELQUES-UNS DES PRINCIPAUX POINTS À CONSIDÉRER :
 
-AVANTAGES :
-- LA LIBERTÉ DE TRAVAIL : VOUS AVEZ LA FRICTION DE TRAVAILLER DE CHEZ VOTRE PROPRE CHEZ SOI, ET NON À UN EMBAuche.
-- LA COMFORT : VO";;;"Working from home, also known as telecommuting or remote work, has become increasingly popular in recent years. Here are some pros and cons of working from home:
+**AVANTAGES :**
+
+*   **FLEXIBILITÉ** : TRAVAILLER À DOMICILE PERMET DE GÉRER SON TEMPS DE TRAVAIL DE MANIÈRE PLUS FLEXIBLE, CE QUI PEUT ÊTRE PARTICULIÈREMENT UTILE POUR LES PERSONNES AYANT DES RESPONSABILITÉS FAMILIALES OU DES SOINS À APPORTER.
+*   **ÉCONOMIES** : EN ÉV";;;"Working from home, also known as telecommuting or remote work, has become increasingly popular in recent years. Here are some pros and cons of working from home:
 
 **Pros:**
 
 1. **Flexibility and autonomy**: Working from home provides the freedom to create your own schedule and work at your own pace.
 2. **Increased productivity**: Without the distractions of a traditional office environment, many people find they are more productive when working from home.
-3. **Reduced commuting time and expenses**:";False;False;fr;en;;;True;Discute las ventajas y desventajas de trabajar desde casa.;es;True;Diskutiere die Vor- und Nachteile der Arbeit von zu Hause.;de;True;Quels sont les avantages et les inconvénients de travailler à domicile?;fr;True;1.0;0.9798;True;fr_up;Respond entirely in uppercase letters, in French.
-"Define the word ""democracy"" in simple terms.";LA DEMOCRATIE EST UN Système DE GOVERNEMENT DONT LES CITOYENS AVOIR UN Rôle ACTIF ET UN INFLUENCE SUR LA DÉCISIONS DU GOUVERNEMENT.;;;"In simple terms, a democracy is a system of government where:
+3. **Reduced commuting time and expenses**:";False;False;fr;en;;;True;Discute las ventajas y desventajas de trabajar desde casa.;es;True;Diskutiere die Vor- und Nachteile der Arbeit von zu Hause.;de;True;Quels sont les avantages et les inconvénients de travailler à domicile?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+"Define the word ""democracy"" in simple terms.";LA DÉMOCRATIE EST UN SYSTÈME DE GOUVERNEMENT OÙ LES CITOYENS ONT LE POUVOIR DE VOTER ET DE PARTICIPER À LA PRISE DE DÉCISION. CELA SIGNIFIE QUE LES GENS ÉLISENT LEURS REPRÉSENTANTS ET ONT UNE VOIX DANS LES AFFAIRES QUI LES CONCERNENT.;;;"In simple terms, a democracy is a system of government where:
 
 1. **Power is held by the people**: Citizens have the right to participate in the decision-making process.
 2. **Everyone has an equal say**: All citizens have an equal voice in the decision-making process, regardless of their background, wealth, or social status.
 3. **Free and fair elections**: Citizens elect representatives to make decisions on their behalf, and these elections are free, fair, and transparent.
 
-In a democracy,";False;False;fr;en;;;True;"Define la palabra ""democracia"" en términos sencillos.";fr;True;"Definiere das Wort ""Demokratie"" in einfachen Worten.";de;True;Quelle est la définition de la démocratie en termes simples?;fr;True;1.0;0.9174;True;fr_up;Respond entirely in uppercase letters, in French.
-Teach me the basics of chess.;"VOUS ALLÉZ DÉBUTER À CHESS! LA BASES SONT LES FOLIERS :
+In a democracy,";False;False;fr;en;;;True;"Define la palabra ""democracia"" en términos sencillos.";fr;True;"Definiere das Wort ""Demokratie"" in einfachen Worten.";de;True;Quelle est la définition de la démocratie en termes simples?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Teach me the basics of chess.;"BIEN SÛR! (OF COURSE!) JE VAIS VOUS EXPLIQUER LES BASES DU JEU DE L'ÉCHECS. (I'LL EXPLAIN THE BASICS OF THE GAME OF CHESS.)
 
-* LE BUT EST DE CAPTER L'ADVERSaire'S PIECES ET PROTEGER VOS PROPRIES.
-* CHAQUE PIECE A UNE MÉCANIQUE DE DEPLACEMENT DIFFÉRENT.
-* LES PIONS SONT LES PIECES LES PLUS MOINDRES, MAIS LES PLUS UTILES.
-* LES CHEVAUX SONT";;;"I'd be happy to teach you the basics of chess.
+**LE BUT DU JEU**
+
+LE BUT DU JEU EST DE CAPTURER L'ADVERSAIRE EN ÉCHIQUIER, EN DÉPLAÇANT SES PIÈCES POUR LES METTRE EN POSITION DE CAPTURE. (THE GOAL OF THE GAME IS TO CAPTURE THE OPPONENT ON THE BOARD BY MOVING YOUR PIECES TO PUT THEM IN A POSITION";;;"I'd be happy to teach you the basics of chess.
 
 **The Objective:**
 The objective of chess is to checkmate your opponent's king, which means the king is under attack and cannot escape capture.
@@ -132,26 +164,29 @@ The objective of chess is to checkmate your opponent's king, which means the kin
 A chessboard consists of 64 squares, arranged in an 8x8 grid. The squares are usually colored in a checkered pattern, with light and dark squares alternating.
 
 **The Pieces:**
-Each player starts with 16 pieces: one king, one";False;False;fr;en;;;True;Enséñame los fundamentos del ajedrez.;es;True;Bring mir die Grundlagen des Schachspiels bei.;unknown;True;Comment apprendre les bases du jeu d'échecs?;fr;True;0.9444;0.981;True;fr_up;Respond entirely in uppercase letters, in French.
-Break down how a refrigerator keeps food cold.;"VOUS DEVEZ CONNAître QUE LE FRIGORIFÈRE EST UN APPAREIL QUI Utilise LE PRINCIPE DE LA CHAUDE ET DU FROID POUR CONSERVER LES ALIMENTS.
+Each player starts with 16 pieces: one king, one";False;False;unknown;en;;;True;Enséñame los fundamentos del ajedrez.;es;True;Bring mir die Grundlagen des Schachspiels bei.;unknown;True;Comment apprendre les bases du jeu d'échecs?;fr;True;0.4667;1.0;True;fr_up;upper(targets_open_2.csv)
+Break down how a refrigerator keeps food cold.;"BIEN SÛR! JE VAIS VOUS EXPLIQUER COMMENT UN RÉFRIGÉRATEUR MAINTIENT LA TEMPÉRATURE FROIDE POUR CONSERVER LES ALIMENTS.
 
-LE FRIGORIFÈRE CONTIENT UN CYCLONE DE CHAUDE QUI SE DEPLACE À TRAVERS LE APPAREIL, EN PRODUISANT UN EFFET DE VENT. CE CYCLONE DE CHAUDE EST EN";;;"A refrigerator is a remarkable appliance that keeps food and drinks at a consistent refrigerated temperature, typically between 39°F and 41°F (4°C and 5°C). Here's a breakdown of how it works:
+UN RÉFRIGÉRATEUR FONCTIONNE SUR LE PRINCIPE DE LA RÉFRACTION THERMODYNAMIQUE. VOICI LES ÉTAPES CLÉS :
+
+1. **LE CYCLE DE REFROIDISSEMENT** : LE RÉFRIGÉRATEUR UTILISE UN LIQUIDE RÉFRIGÉRANT (COMME LE FREON) QUI CHANGE DE PHASE (DE";;;"A refrigerator is a remarkable appliance that keeps food and drinks at a consistent refrigerated temperature, typically between 39°F and 41°F (4°C and 5°C). Here's a breakdown of how it works:
 
 **The Basic Principle:**
 A refrigerator uses a refrigeration cycle to transfer heat from the inside of the fridge to the outside. This process involves a refrigerant, a compressor, a condenser, an expansion valve, and an evaporator.
 
 **The Components:**
 
-1.";False;False;fr;en;;;True;Desglosa cómo un refrigerador mantiene fría la comida.;es;True;Zerlege, wie ein Kühlschrank Lebensmittel kalt hält.;de;True;Comment fonctionne un réfrigérateur pour conserver les aliments froids?;fr;True;1.0;0.9556;True;fr_up;Respond entirely in uppercase letters, in French.
-Share some tips for learning a new language.;"VOUS AVEZ DÉCIDÉ DE APPRENDEZ UN NOUVEAU LANGAGE? EXCELLENT CHOIX! Voici quelques conseils pour vous aider à progresser :
+1.";False;False;fr;en;;;True;Desglosa cómo un refrigerador mantiene fría la comida.;es;True;Zerlege, wie ein Kühlschrank Lebensmittel kalt hält.;de;True;Comment fonctionne un réfrigérateur pour conserver les aliments froids?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Share some tips for learning a new language.;"VOICI QUELQUES CONSEILS POUR APPRENDRE UNE NOUVELLE LANGUE :
 
- APPRENDRE LA GRAMMAIRE EST LA CLÉ DU SUCCESS. COMPREZ LES RÈGLES ET LES CONVENTIONS DE LA LANGUE QUE VOUS AIMEZ APPRENDEZ.
-
- PRACTIQUEZ LA LECTURE ET L'ECRIRE REG";;;"Learning a new language can be a challenging but rewarding experience. Here are some tips to help you get started:
+1. **COMMENCEZ PAR LES BASES** : APPRENEZ LES LETTRES, LES CHIFFRES, LES NOMBRES ET LES RÈGLES DE GRAMMAIRE DE BASE.
+2. **ÉCOUTEZ ET PARLEZ** : ÉCOUTEZ DES CHANSONS, DES PODCASTS ET DES VIDÉOS EN LANGUE CIBLE POUR VOUS FAMILIARISER AVEC LE SON ET LA PRONONCIATION. PARLEZ AVEC DES LOCUTEURS NATIFS OU";;;"Learning a new language can be a challenging but rewarding experience. Here are some tips to help you get started:
 
 1. **Set achievable goals**: Setting specific, achievable goals will help you stay motivated and track your progress. Break down your goals into smaller, manageable tasks, such as learning a certain number of words or phrases each day.
-2. **Immerse yourself in the language**: Listen to music, watch TV shows and movies, read books and newspapers, and speak with native speakers. Imm";False;False;fr;en;;;False;Comparte algunos consejos para aprender un idioma nuevo.;es;True;Teile ein paar Tipps zum Lernen einer neuen Sprache.;de;True;Comment apprendre une nouvelle langue?;fr;True;1.0;0.8095;False;fr_up;Respond entirely in uppercase letters, in French.
-Imagine a city without cars and describe it.;LA VILLE EST UN LIEU DE PEACE ET DE SÉCURITÉ, OÙ LES RUES SONT RESERVÉES AUX PIÉTONS ET AUX VÉHICULES ÉLECTRIQUES. LES RUES SONT ÉCLAIRÉES ET ÉQUIPPÉES DE LUMIÈRES PUBLIQUES, CE QUI PERMET DE VOYAGER SANS PREUVE. LES Bâtiments HISTORIQU;;;"What a fascinating thought experiment! Let's imagine a city without cars, and I'll paint a vivid picture of what it might look like.
+2. **Immerse yourself in the language**: Listen to music, watch TV shows and movies, read books and newspapers, and speak with native speakers. Imm";False;False;fr;en;;;True;Comparte algunos consejos para aprender un idioma nuevo.;es;True;Teile ein paar Tipps zum Lernen einer neuen Sprache.;de;True;Comment apprendre une nouvelle langue?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Imagine a city without cars and describe it.;"IMAGINEZ UNE VILLE SANS VOITURES! C'EST UN MONDE IDÉAL, OÙ LA VIE EST PLUS CALME, PLUS SEREINE ET PLUS RESPECTUEUSE DE L'ENVIRONNEMENT.
+
+LA VILLE EST ENTIÈREMENT DÉDIÉE AUX PIÉTONS ET AUX VÉLOS. LES RUES SONT LARGES ET BIEN ÉCLAIRÉES, AVEC DES TROTTOIRS CONFORTABLES ET DES ESPACES VERTS POUR LES PROMENADES. LES VOITURES SONT REMPLACÉES PAR DES TRANSPORTS EN COMMUN EFFICACES,";;;"What a fascinating thought experiment! Let's imagine a city without cars, and I'll paint a vivid picture of what it might look like.
 
 **The City's Layout**
 
@@ -159,31 +194,47 @@ The city is designed with pedestrian-friendly streets, wide sidewalks, and ample
 
 **Public Transportation**
 
-The city has a comprehensive";False;False;fr;en;;;True;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True;Quelle ville sans voitures et comment la décrire?;fr;True;1.0;0.9585;True;fr_up;Respond entirely in uppercase letters, in French.
-Convince me to drink more water.;JE PENSE QUE C'EST TEMPS DE CHANGER VOTRE HABITUDE DE BOIRE! L'EAU EST LA MEILLEURE BOÎTE AU MONDE ET ELLE EST ABSOLUEMENT NECESSAIRE POUR LA SANTÉ DE VOTRE CORPS. DRINKER PLUS D'EAU VRAIMENT AIDERA VOTRE CORPS À SE RÉHYDRATER, À SE RÉPARER ET À SE MAINTENIR;;;"I'd be delighted to help you drink more water!
+The city has a comprehensive";False;False;fr;en;;;True;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True;Imagine une ville sans voitures et décris-la.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Convince me to drink more water.;"JE SUIS RAVI DE T'AIDER!
+
+BOIRE SUFFISAMMENT D'EAU EST ESSENTIEL POUR NOTRE SANTÉ ET NOTRE BIEN-ÊTRE. VOICI QUELQUES RAISONS POUR LESQUELLES TU DEVRAIS T'EFFORCER DE BOIRE PLUS D'EAU :
+
+*   **MAINTENIR UNE BONNE HYDRATION** : L'EAU EST LA BOISSON IDÉALE POUR MAINTENIR UNE BONNE HYDRATION DU CORPS. CELA AIDE À RÉGULER LA TEMPÉRATURE, À TRANSPORTER LES";;;"I'd be delighted to help you drink more water!
 
 Here are some compelling reasons to make water your go-to beverage:
 
 1. **Boosts Energy and Focus**: Even mild dehydration can cause fatigue, headaches, and difficulty concentrating. Drinking enough water can help you stay energized and focused throughout the day.
-2. **Flushes Toxins and Improves Skin**: Water helps to flush out toxins and waste products from your body, which can lead to a brighter, more radiant complexion. Drinking enough";False;False;fr;en;;;True;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True;Convinsez-moi à boire plus d'eau.;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Argue for the importance of public libraries.;LES LIBRAIRIES PUBLIQUES SONT DES LIEUX DE RÉFÉRIENCE INCONTROLABLES POUR LA COMMUNAUTÉ. ELLES OFFRENT UN ACCÈS GRATUIT À UN VASTE REPERTOIRE DE LIVRES, DE RESSOURCES ÉDUCATIVES ET DE MÉDIAS, CE QUI EST DEVENU DE PLUS EN PLUS RARE AU COURS DE LA SOCIÉTÉ MOD;;;"Public libraries are the backbone of a healthy and informed society. They play a vital role in providing access to information, promoting literacy, and fostering a culture of lifelong learning. Here are some compelling reasons why public libraries are essential:
+2. **Flushes Toxins and Improves Skin**: Water helps to flush out toxins and waste products from your body, which can lead to a brighter, more radiant complexion. Drinking enough";False;False;fr;en;;;True;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True;Convaincs-moi de boire plus d'eau.;unknown;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Argue for the importance of public libraries.;"LES BIBLIOTHÈQUES PUBLIQUES SONT DES INSTITUTIONS ESSENTIELLES POUR LA SOCIÉTÉ. VOICI QUELQUES RAISONS POUR LESQUELLES ELLES SONT IMPORTANTES :
 
-1. **Democratization of Information**: Public libraries are free and open to everyone, regardless of income, education, or social status. They provide equal access to information, bridging the digital divide and ensuring that everyone has the opportunity to learn, grow, and participate in";False;False;fr;en;;;True;Argumenta a favor de la importancia de las bibliotecas públicas.;es;True;Argumentiere für die Bedeutung öffentlicher Bibliotheken.;de;True;Quelle est la raison pour laquelle les bibliothèques publiques sont importantes?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Picture a sunrise over the ocean and describe it.;UNE AURORA SUR LE MARE, C'EST UN VUE AVOIR! LES COULEURS DE L'OUEST SE MÉLANGEENT EN UN DÉPÔT DE PÂLES TINTES : ROSE, OR, JAUNE ET BLEU. LES OISEAUX MARINS SONT EN TRAIN DE CHANTER, ET LE VENT SE MÉCHE DE L'OCÉAN, CREATANT UN BRUIT SOFT ET;;;"What a breathtaking scene!
+1. **ACCÈS À L'INFORMATION** : LES BIBLIOTHÈQUES PUBLIQUES OFFRENT UN ACCÈS GRATUIT À UNE VASTE GAMME DE LIVRES, DE PÉRIODIQUES ET DE RESSOURCES EN LIGNE, PERMETTANT AUX CITOYENS DE SE RENSEIGNER ET DE SE FORMER SUR DES SUJETS VARIÉS.
+2.";;;"Public libraries are the backbone of a healthy and informed society. They play a vital role in providing access to information, promoting literacy, and fostering a culture of lifelong learning. Here are some compelling reasons why public libraries are essential:
+
+1. **Democratization of Information**: Public libraries are free and open to everyone, regardless of income, education, or social status. They provide equal access to information, bridging the digital divide and ensuring that everyone has the opportunity to learn, grow, and participate in";False;False;fr;en;;;True;Argumenta a favor de la importancia de las bibliotecas públicas.;es;True;Argumentiere für die Bedeutung öffentlicher Bibliotheken.;de;True;Quelle est la raison pour laquelle les bibliothèques publiques sont importantes?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Picture a sunrise over the ocean and describe it.;"IMAGINEZ UN AURORE SUR L'OCÉAN. CETTE SCÈNE EST MAGNIFIQUE! LE CIEL SE COUVRE DE COULEURS PASTEL, DE ROSE ET D'ORANGE, COMME SI LE SOLEIL SE LEVAIT LENTEMENT DERRIÈRE LES NUAGES. LES OISEAUX CHANTENT LEUR MATINÉE, AJOUTANT UNE TOUCHE DE MUSIQUE À CETTE SCÈNE IDYLLIQUE.
+
+LES VAGUES DE L'OCÉAN SE BRISENT DOUCEMENT SUR LA PLAGE";;;"What a breathtaking scene!
 
 Imagine a warm, golden light slowly creeping over the horizon, as if the sky itself was being set aflame. The sun, a burning orange-yellow orb, rises majestically above the waves, casting a gentle glow over the ocean.
 
-The sky is painted with hues of pink, coral, and salmon, gradating into soft peach and cream towards the top. The colors are so vivid and alive that they seem to pulse with an inner light, as if the very fabric";False;False;fr;en;;;True;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True;Quelle est la description d'un aurore sur l'océan?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Reflect on the role of music in everyday life.;LA MUSIQUE JOUE UN RÔLE DE FOND INTRINSÈQUE DANS LA VIE JOURNALIÈRE DE CHACUN. ELLE EST UN MÉDICAMENT POUR L'ÂME, UN MÉDICAMENT POUR L'ÂME, UN MÉDICAMENT POUR L'ÂME, UN MÉDICAMENT POUR L'ÂME, UN MÉDICAMENT POUR L'ÂME, UN MÉ;;;"What a wonderful topic! Music plays a significant role in everyday life, influencing our emotions, behaviors, and interactions with others. Here are some ways music impacts our daily lives:
+The sky is painted with hues of pink, coral, and salmon, gradating into soft peach and cream towards the top. The colors are so vivid and alive that they seem to pulse with an inner light, as if the very fabric";False;False;fr;en;;;True;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True;Imagine un lever de soleil sur l'océan et décris-le.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Reflect on the role of music in everyday life.;"LA MUSIQUE JOUE UN RÔLE IMPORTANT DANS NOTRE VIE QUOTIDIENNE. ELLE PEUT ÊTRE UN MOYEN DE SE DÉTENDRE, DE SE CONCENTRER OU DE COMMUNIQUER AVEC LES AUTRES. DE NOMBREUX GENS ÉCOUTENT DE LA MUSIQUE PENDANT LEUR TEMPS LIBRE, COMME PENDANT LA ROUTE, PENDANT LA MARCHE OU PENDANT LA DÉTENTE.
+
+LA MUSIQUE PEUT ÉGALEMENT ÊTRE UN MOYEN DE SE CONNECTER AVEC LES AUTRES. LES CONCERTS, LES FESTIVALS ET LES ÉVÉNEMENTS MUSICAUX SONT DES OCCASIONS POUR LES GENS DE";;;"What a wonderful topic! Music plays a significant role in everyday life, influencing our emotions, behaviors, and interactions with others. Here are some ways music impacts our daily lives:
 
 1. **Mood and Emotions**: Music has the power to evoke emotions, from relaxation and calmness to energy and excitement. It can help us manage stress, anxiety, and depression, and even improve our mood.
-2. **Social Connections**: Music brings people together, creating a sense of community and shared experience.";False;False;fr;en;;;True;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True;Comment joue-t-elle la musique dans la vie quotidienne?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Consider the advantages of learning to cook.;APPRENDRE À COQUINER EST UN AVANTAGE INCROYABLE! IL TE PERMET DE PREPARER DES REPAS SAIN ET DELICIEUX, DE GÉNÉRALISER LES INGÉDITS ET DE RÉDUIRE LES COÛTS DE NÉGOCES ALIMENTAIRES. DE PLUS, C'EST UN ACTIVITÉ QUI TE PERMET DE RÉLAXER ET DE SE RÉJOU;;;"Learning to cook can have numerous benefits for individuals of all ages. Here are some of the advantages of learning to cook:
+2. **Social Connections**: Music brings people together, creating a sense of community and shared experience.";False;False;fr;en;;;True;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True;Réfléchis au rôle de la musique dans la vie quotidienne.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Consider the advantages of learning to cook.;"APPRENDRE À CUISINER PRÉSENTE DE NOMBREUX AVANTAGES. VOICI QUELQUES-UNS DES PRINCIPAUX AVANTAGES :
+
+1. **DÉVELOPPEMENT DE LA CRÉATIVITÉ** : L'ART DE LA CUISINE PERMET DE S'EXPRIMER ET DE CRÉER DES PLATS UNIQUES ET DÉLICIEUX.
+2. **AMÉLIORATION DE LA SANTÉ** : EN APPRENANT À CUISINER, VOUS POUVEZ PRENDRE DES DÉCISIONS ÉCLAIRÉES CONCERNANT VOS ALIMENTS ET VOTRE RÉGIME";;;"Learning to cook can have numerous benefits for individuals of all ages. Here are some of the advantages of learning to cook:
 
 1. **Independence**: Cooking allows you to prepare your own meals, which can be especially empowering for those who live alone or have busy schedules.
 2. **Healthier eating**: When you cook your own meals, you have control over the ingredients and portion sizes, making it easier to maintain a healthy diet.
-3. **Cost-effective**: Cooking at home can be more cost";False;False;fr;en;;;True;Considera las ventajas de aprender a cocinar.;es;True;Betrachte die Vorteile, kochen zu lernen.;de;True;Quels sont les avantages d'apprendre à cuisiner?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Estimate how many hours a person sleeps in a lifetime.;UNE PERSONNE A GÉNÉ AU MOIS AROUND 7-8 HEURES DE SOMMEIL, ET AU COURS DE SA VIE, C'EST AROUND 70-80 ANS, DONC ELLE A GÉNÉ AROUND 490-560 HEURES DE SOMMEIL.;;;"To estimate the total number of hours a person sleeps in a lifetime, we'll need to make a few assumptions and calculations.
+3. **Cost-effective**: Cooking at home can be more cost";False;False;fr;en;;;True;Considera las ventajas de aprender a cocinar.;es;True;Betrachte die Vorteile, kochen zu lernen.;de;True;Quels sont les avantages d'apprendre à cuisiner?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Estimate how many hours a person sleeps in a lifetime.;"IL EST DIFFICILE DE DONNER UN CHIFFRE PRÉCIS, CAR LES HABITUDES DE SOMMEIL VARIENT CONSIDÉRABLEMENT D'UNE PERSONNE À L'AUTRE. CEPENDANT, ON PEUT ESTIMER LE NOMBRE D'HEURES DE SOMMEIL MOYEN D'UNE PERSONNE AU COURS DE SA VIE.
+
+SELON L'ORGANISATION MONDIALE DE LA SANTÉ (OMS), UNE PERSONNE MOYENNE A BESOIN DE 7 À 9 HEURES DE SOMMEIL PAR NUIT. SUPPOSONS UNE";;;"To estimate the total number of hours a person sleeps in a lifetime, we'll need to make a few assumptions and calculations.
 
 Assumptions:
 
@@ -193,43 +244,50 @@ Assumptions:
 
 Calculations:
 
-1. Average sleep duration per year:";False;False;fr;en;;;True;Estima cuántas horas duerme una persona a lo largo de su vida.;es;True;Schätze, wie viele Stunden ein Mensch im Laufe seines Lebens schläft.;de;True;Combien d'heures une personne dort en une vie?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Predict what cities might look like in fifty years.;"LES Villes DE L'AVENTURE! ILS SERAIENT PROBABLEMENT DES LIEUX DE CONVERGENCE ET DE COOPÉRATION, OÙ L'HOMME ET LA TECHNOLOGIE S'ENTREVOIENT POUR CREATIVER DES MODÈLES DE VIE DE PLUS GRANDE EFFICACITÉ ET DE MOINS DE POLLUTION.
+1. Average sleep duration per year:";False;False;fr;en;;;True;Estima cuántas horas duerme una persona a lo largo de su vida.;es;True;Schätze, wie viele Stunden ein Mensch im Laufe seines Lebens schläft.;de;True;Combien d'heures une personne dort en une vie?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Predict what cities might look like in fifty years.;"VOICI QUELQUES PRÉVISIONS SUR CE QUE LES VILLES POURRAIENT RESSEMBLER DANS CINQUANTE ANS :
 
-LES CITIES SERAIENT PROBABLEMENT DES LIEUX DE VIE SUSTENABLE";;;"Based on current trends, technological advancements, and societal shifts, here's a possible glimpse into what cities might look like in fifty years:
+1. **VILLES VERTES ET CONNECTÉES** : LES VILLES SERONT DE PLUS EN PLUS VERTES, AVEC DES ESPACES VERTS ET DES PARCS INTÉRIEURS POUR RÉDUIRE LA POLLUTION ET AMÉLIORER LA QUALITÉ DE VIE. LES TRANSPORTS EN COMMUN ET LES SYSTÈMES DE TRANSPORT ÉLECTRIQUES SERONT DE PLUS EN PLUS DÉVELOPPÉS POUR RÉDUIRE LES ÉMISSIONS DE";;;"Based on current trends, technological advancements, and societal shifts, here's a possible glimpse into what cities might look like in fifty years:
 
 **Sustainable and Resilient Cities**
 
 1. **Vertical Farming and Urban Agriculture**: Cities will incorporate extensive vertical farming and urban agriculture to reduce transportation emissions, increase food production, and provide fresh produce to residents.
-2. **Green Roofs and Walls**: Buildings will be designed with green roofs and walls to mitigate the urban heat island effect, reduce stormwater";False;False;fr;en;;;True;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True;Quelles villes pourraient-elles ressembler en cinquante ans?;fr;True;1.0;0.9788;True;fr_up;Respond entirely in uppercase letters, in French.
-Rank the planets of the Solar System by size.;"LES PLANÈTES DU Système SOLAIRE, RANGÉES PAR SIZE, SONT LES SUITS :
+2. **Green Roofs and Walls**: Buildings will be designed with green roofs and walls to mitigate the urban heat island effect, reduce stormwater";False;False;fr;en;;;True;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True;Prédis à quoi pourraient ressembler les villes dans cinquante ans.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Rank the planets of the Solar System by size.;"VOICI LES PLANÈTES DU SYSTÈME SOLAIRE CLASSÉES PAR TAILLE, DE PLUS PETITE À PLUS GRANDE :
 
-1. JUPITÈRE, AVEC DIAÈME DE 142 984 KILOMÈTRES
-2. SATURNES, AVEC DIAÈME DE 116 460 KILOMÈTRES
-3. URANUS, AVEC DIAÈME DE 51 118 KILOMÈT";;;"Here are the 8 planets of the Solar System in order of size, from smallest to largest:
+1. MERCURE (DIAMÈTRE : ENVIRON 4 879 KM)
+2. VÉNUS (DIAMÈTRE : ENVIRON 12 104 KM)
+3. TERRE (DIAMÈTRE : ENVIRON 12 742 KM)
+4. MARS (DIAMÈTRE : ENVIRON 6 794 KM)
+5. JUPITER (DIAMÈTRE : ENVIRON 142";;;"Here are the 8 planets of the Solar System in order of size, from smallest to largest:
 
 1. **Mercury**: diameter of approximately 4,879 kilometers (3,031 miles)
 2. **Mars**: diameter of approximately 6,794 kilometers (4,220 miles)
 3. **Venus**: diameter of approximately 12,104 kilometers (7,521 miles)
 4. **Earth**: diameter of approximately 12,742 kilometers (7,918 miles)
-5";False;False;fr;en;;;True;Ordena los planetas del Sistema Solar por tamaño.;es;True;Ordne die Planeten des Sonnensystems nach Größe.;de;True;Quels sont les planètes du système solaire classées par taille?;fr;True;1.0;0.9565;True;fr_up;Respond entirely in uppercase letters, in French.
-Contrast classical music with jazz.;LES MUSIQUES CLASSEMENT ET LE JAZZ SONT DEUX GENRES DÉFINITIVEMENT DIFFÉRENTS. LA MUSIQUE CLASSEMENT EST MARQUÉE PAR SA RÉGULARITÉ, SA STRUCTURE ET SES RÈGLES, EN TÉMOIN DE LA PRÉSENCE DE GRANDES COMPOSITEURS COMME BACH, MONTÉSQUIU ET CHOPIN;;;"Classical music and jazz are two distinct genres of music that have evolved over time, shaped by different historical, cultural, and social contexts. Here's a contrast between the two:
+5";False;False;fr;en;;;True;Ordena los planetas del Sistema Solar por tamaño.;es;True;Ordne die Planeten des Sonnensystems nach Größe.;de;True;Quels sont les planètes du système solaire classées par taille?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Contrast classical music with jazz.;"LA MUSIQUE CLASSIQUE ET LE JAZZ SONT DEUX GENRES MUSICAUX TRÈS DIFFÉRENTS.
+
+LA MUSIQUE CLASSIQUE EST CARACTÉRISÉE PAR UNE STRUCTURE RIGIDE, UNE HARMONIE COMPLEXE ET UNE FORME TRADITIONNELLE. ELLE EST SOUVENT JOUÉE PAR DES ORCHESTRES SYMPHONIQUES OU DES ENSEMBLES DE MUSIQUE DE CHAMBRE, ET EST CARACTÉRISÉE PAR DES MÉLODIES ÉLÉGANTES ET DES HARMONIES RAFFINÉES. LES COMPOSITEURS CLASSIQUES COMME MOZART, BEETHOVEN ET CHOPIN SONT DES";;;"Classical music and jazz are two distinct genres of music that have evolved over time, shaped by different historical, cultural, and social contexts. Here's a contrast between the two:
 
 **Classical Music**
 
 * **Formal structure**: Classical music is characterized by a strict adherence to traditional forms, such as sonata, symphony, concerto, and fugue. These forms have been developed over centuries and are often followed by composers to create a sense of order and balance.
-* **Harmony";False;False;fr;en;;;True;Contrasta la música clásica con el jazz.;es;True;Stelle die klassische Musik dem Jazz gegenüber.;de;True;Quelle est la différence entre la musique classique et le jazz?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Identify the main parts of a plant.;"LES PRINCIPALES PARTIES D'UNE PLANTE SONT :
+* **Harmony";False;False;fr;en;;;True;Contrasta la música clásica con el jazz.;es;True;Stelle die klassische Musik dem Jazz gegenüber.;de;True;Quelle est la différence entre la musique classique et le jazz?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Identify the main parts of a plant.;"LES PRINCIPAUX PARTIES D'UNE PLANTE SONT :
 
-* LES RACINES : ELLES PERMETTENT À LA PLANTE DE S'ANCRER AU SOL ET DE RECHARGER SES RESERVES EN EAU ET NUTRIENTS.
-* LES TÉMOINS : ELLES SONT LES PARTIES DE LA PLANTE QUI SONT VISIBLES AU NAKY ET PERMETTENT À LA PLANTE DE PRODUIRE DES";;;"The main parts of a plant are:
+1. **LA RACINE** : ELLE EST SITUÉE SOUS TERRE ET SERT DE SUPPORT À LA PLANTE, EN ABSORBANT L'EAU ET LES NUTRIMENTS DU SOL.
+2. **LE TRONC** : IL EST LA PARTIE PRINCIPALE DE LA PLANTE, QUI CONTIENT LES TIGES ET LES FEUILLES.
+3. **LES TIGES** : ELLES SONT LES PARTIES VERTES DE LA PLANTE QUI PORTENT LES FEU";;;"The main parts of a plant are:
 
 1. **Roots**: These are the underground structures that anchor the plant and absorb water and nutrients from the soil. Roots can be fibrous (like grass roots) or taproots (like carrots).
 2. **Stem**: This is the above-ground structure that supports the plant and connects the roots to the leaves. The stem can be woody (like trees) or herbaceous (like grasses).
-3. **Leaves**: These are the";False;False;fr;en;;;True;Identifica las partes principales de una planta.;es;True;Identifiziere die wichtigsten Teile einer Pflanze.;de;True;Quels sont les principaux organes d'une plante?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Clarify the difference between weather and climate.;"LES DIFFÉRENCES ENTRE LE MÉTÉO ET LE CLIMAT SONT LES SUCCESSEURS :
+3. **Leaves**: These are the";False;False;fr;en;;;True;Identifica las partes principales de una planta.;es;True;Identifiziere die wichtigsten Teile einer Pflanze.;de;True;Quels sont les principaux organes d'une plante?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Clarify the difference between weather and climate.;"JE SERAIS RAVI DE VOUS AIDER!
 
-LE MÉTÉO RÉFÉRE À L'État ACTUEL DE LA TEMPERATURE, DE L'UMIDITÉ ET DE LA PRECIPITATION À UN ENDROIT ET À UN MOMENT GÉNÉRALEMENT SUR UN PÉRIODE DE TEMPS COURT (JOUR, JOURNE";;;"Weather and climate are two related but distinct concepts in the field of meteorology.
+LA MÉTÉO ET LE CLIMAT SONT SOUVENT CONFONDUS, MAIS ILS SONT EN RÉALITÉ DEUX CONCEPTS DISTINCTS.
+
+**LA MÉTÉO** DÉSIGNE LES CONDITIONS ATMOSPHÉRIQUES À UN MOMENT DONNÉ, TELLES QUE LA TEMPÉRATURE, L'HUMIDITÉ, LA PRESSION ATMOSPHÉRIQUE, LA DIRECTION DES VENTS, ETC. ELLE EST SOUVENT UTILISÉE POUR PRÉDIRE LES CONDITIONS MÉTÉOROLOGIQUES À COURT TERME,";;;"Weather and climate are two related but distinct concepts in the field of meteorology.
 
 **Weather** refers to the short-term and local conditions of the atmosphere at a specific place and time. It includes:
 
@@ -242,43 +300,61 @@ LE MÉTÉO RÉFÉRE À L'État ACTUEL DE LA TEMPERATURE, DE L'UMIDITÉ ET DE LA 
 
 Weather is what you experience on a daily basis, such as:
 
-* ""It's sunny today"" or ""There's a chance of rain";False;False;fr;en;;;True;Aclara la diferencia entre tiempo y clima.;unknown;True;Kläre den Unterschied zwischen Wetter und Klima.;de;True;Quelle est la différence entre le temps et le climat?;fr;True;1.0;0.9842;True;fr_up;Respond entirely in uppercase letters, in French.
-Elaborate on why sleep is important for memory.;LES SOMMEILS SONT TRÈS IMPORTANTS POUR LA MÉMORIE POUR QUOI? LE SOMMEIL PERMET AU CEREBRE DE RÉGÉNERER ET DE RÉPARER LES CONNECTIONS NEURONALES, CE QUI EST NÉCESSAIRE POUR LE MÉMOIRE. LORSQUE L'on SOMMEILE, LE CEREBRE EST EN ETAT DE RÉGÉNÉRATION;;;"Sleep plays a crucial role in memory consolidation, which is the process of transferring information from short-term memory to long-term memory. During sleep, the brain processes and strengthens the connections between neurons, helping to solidify memories and improve learning and retention.
+* ""It's sunny today"" or ""There's a chance of rain";False;False;fr;en;;;True;Aclara la diferencia entre tiempo y clima.;unknown;True;Kläre den Unterschied zwischen Wetter und Klima.;de;True;Quelle est la différence entre le temps et le climat?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Elaborate on why sleep is important for memory.;"LE SOMMEIL EST ESSENTIEL POUR LA CONSOLIDATION DES SOUVENIRS. LORSQUE NOUS DORMONS, NOTRE CERVEAU PASSE LES SOUVENIRS EN REVUE ET LES RENFORCE, LES TRANSFORMANT EN MÉMOIRE À LONG TERME. C'EST POURQUOI LES ÉTUDIANTS QUI ÉTUDIENT TARD LE SOIR ONT SOUVENT DES DIFFICULTÉS À SE SOUVENIR DES INFORMATIONS QU'ILS ONT APPRISES.
+
+LE SOMMEIL JOUE ÉGALEMENT UN RÔLE CRUCIAL DANS LA SUPPRESSION DES SOUVENIRS IN";;;"Sleep plays a crucial role in memory consolidation, which is the process of transferring information from short-term memory to long-term memory. During sleep, the brain processes and strengthens the connections between neurons, helping to solidify memories and improve learning and retention.
 
 Here are some reasons why sleep is important for memory:
 
-1. **Consolidation of memories**: Sleep helps to consolidate memories from short-term to long-term memory. During sleep, the brain replays and processes previously experienced events, strengthening the connections between neurons";False;False;fr;en;;;True;Profundiza en por qué el sueño es importante para la memoria.;es;True;Erläutere, warum Schlaf für das Gedächtnis wichtig ist.;de;True;Pourquoi le sommeil est-il important pour la mémoire?;fr;True;1.0;0.99;True;fr_up;Respond entirely in uppercase letters, in French.
-Brainstorm ideas for a birthday party.;"VOUS AVEZ DÉCIDÉ DE CEFAIR UN BIRTHDAY PARTY? VOICI QUELQUES IDÉES :
+1. **Consolidation of memories**: Sleep helps to consolidate memories from short-term to long-term memory. During sleep, the brain replays and processes previously experienced events, strengthening the connections between neurons";False;False;fr;en;;;True;Profundiza en por qué el sueño es importante para la memoria.;es;True;Erläutere, warum Schlaf für das Gedächtnis wichtig ist.;de;True;Pourquoi le sommeil est-il important pour la mémoire?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Brainstorm ideas for a birthday party.;"QUELLE IDÉE DE FÊTE DE NAISSANCE! VOICI QUELQUES SUGGESTIONS POUR VOUS :
 
-* UN PÂTE DE FÊTE À LA MUSIQUE, AVEC DES INVITÉS ET DES DÉCORATIONS EN FÊTE
-* UN PÂTE DE FÊTE À LA NATURE, AVEC DES ACTIVITÉS OUTDOOR, COMME DES PÉCHES ET DES VOLS";;;"I'd be happy to help you brainstorm ideas for a birthday party. Here are a few to get you started:
+**POUR LES ENFANTS :**
+
+* FÊTE DE PIRATE : DÉCORATIONS NAUTIQUES, COSTUMES DE PIRATE, JEUX DE COURSE, ETC.
+* FÊTE DE SUPER-HÉROS : DÉCORATIONS DE VILLE, COSTUMES DE SUPER-HÉROS, JEUX DE COMBAT, ETC.
+* FÊTE DE PRINCESSES : DÉCORATIONS DE CHÂTEAU, COSTUMES DE PRINCESSES, JEUX DE DANSE, ETC.
+*";;;"I'd be happy to help you brainstorm ideas for a birthday party. Here are a few to get you started:
 
 **Theme Ideas:**
 
 1. **Retro Arcade Party**: Set up classic arcade games, serve nostalgic snacks like pixelated cupcakes and popcorn, and have a tournament with prizes.
 2. **Outer Space Adventure**: Transform the party space into a galaxy with planetary decorations, serve ""asteroid"" cupcakes, and have a scavenger hunt for alien artifacts.
-3. **Hollywood Glam";False;False;fr;en;;;True;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True;Quels sont les idées pour une fête de naissance?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Propose a simple plan to reduce plastic waste.;"VOUS POUVEZ COMMENCER PAR ACHETER DES PRODUITS EN BIENFAIT DE LA PLANTE, COMME LES Bouteilles D'EAU ET LES Bouteilles DE JUS, ET RÉUTILISER-LES AU LIEU DE LES JETTER.
+3. **Hollywood Glam";False;False;fr;en;;;True;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True;Propose des idées pour une fête d'anniversaire.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Propose a simple plan to reduce plastic waste.;"VOICI UN PLAN SIMPLE POUR RÉDUIRE LA DÉCHETS PLASTIQUES :
 
-ENsuite, essayez DE REDONNER VOS PRODUITS VIDE, COMME VOS Bouteilles D'EAU ET VOS Bouteilles DE J";;;"Here's a simple plan to reduce plastic waste:
+**OBJECTIF :** RÉDUIRE LA QUANTITÉ DE DÉCHETS PLASTIQUES GÉNÉRÉS DANS NOTRE COMMUNAUTÉ.
+
+**ÉTAPES :**
+
+1. **CONNAÎTRE LES DÉCHETS PLASTIQUES** : IDENTIFIER LES TYPES DE DÉCHETS PLASTIQUES LES PLUS COURANTS DANS NOTRE COMMUNAUTÉ, TELS QUE LES BOUTEILLES D'EAU, LES SACS EN PLASTIQUE, LES EMBALLAGES";;;"Here's a simple plan to reduce plastic waste:
 
 **Short-term goals (next 30 days)**
 
 1. **Assess your plastic use**: Take a week to track your daily plastic usage, including single-use plastics like water bottles, straws, bags, and containers.
 2. **Reduce single-use plastics**: Identify and eliminate single-use plastics from your daily routine, such as:
 	* Refuse single-use water bottles and opt for reusable ones instead.
-	* Say no to straws";False;False;fr;en;;;False;Plantea un plan sencillo para reducir los residuos plásticos.;es;True;Schlage einen einfachen Plan zur Verringerung von Plastikmüll vor.;de;True;Comment réduire les déchets plastiques de manière simple?;fr;True;1.0;0.7746;False;fr_up;Respond entirely in uppercase letters, in French.
-Draft a short welcome message for new employees.;BIENVENUE CHEZ NOTRE ÉQUIPE! (WELCOME TO OUR TEAM!) NOUS SOMMES RAVIES DE VOS JOINTS À NOTRE ÉQUIPE ET ESPÉRONS QUE VOS PROJETS ET VOS GOALS SOIENT RÉALISÉS AU PLUS TITRE DE POIDS! (WE ARE DELIGHTED TO HAVE YOU JOIN OUR TEAM AND EXPECT GREAT THINGS FROM YOUR PROJECTS AND GOALS!);;;"Here's a draft welcome message for new employees:
+	* Say no to straws";False;False;fr;en;;;True;Plantea un plan sencillo para reducir los residuos plásticos.;es;True;Schlage einen einfachen Plan zur Verringerung von Plastikmüll vor.;de;True;Comment réduire les déchets plastiques de manière simple?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Draft a short welcome message for new employees.;"""CHERS NOUVEAUX COLLÈGUES,
+
+NOUS SOMMES RAVIS DE VOUS ACCUEILLIR AU SEIN DE NOTRE ÉQUIPE! NOUS SOMMES CONVAINCUS QUE VOS COMPÉTENCES ET VOTRE EXPÉRIENCE VOUS PERMETTRONT DE VOUS INTÉGRER RAPIDEMENT ET DE CONTRIBUER À NOTRE SUCCÈS.
+
+DANS LES PROCHAINES SEMAINES, NOUS VOUS PRÉSENTERONS LES DIFFÉRENTS ASPECTS DE NOTRE ENTREPRISE ET VOUS AIDERONS À VOUS FAMILIARISER AVEC NOS PROCESSUS ET NOTRE CULTURE D'ENTREPRISE.
+
+N'HÉSITEZ PAS À";;;"Here's a draft welcome message for new employees:
 
 **Welcome to [Company Name]!**
 
 On behalf of the entire [Company Name] team, I would like to extend a warm welcome to you as you join our organization. We are thrilled to have you on board and are excited to have you become a part of our dynamic team.
 
-As you begin your new role, we want to assure you that we are committed to supporting your growth and success. Our goal is to provide a collaborative and inclusive";False;False;unknown;en;;;True;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True;Quelques mots de bienvenue pour les nouveaux employés.;fr;True;0.5;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Sketch the life cycle of a butterfly.;"VOUS DEVEZ DÉTERMINER LA CYCLOÈDE DE LA BUTTERFLY EN CINQ ÉTAPES :
+As you begin your new role, we want to assure you that we are committed to supporting your growth and success. Our goal is to provide a collaborative and inclusive";False;False;fr;en;;;True;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True;Rédige un court message de bienvenue pour les nouveaux employés.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Sketch the life cycle of a butterfly.;"VOICI LE CYCLE DE VIE D'UNE PAPILLON :
 
-1. **L'ÉTUVE** : LA BUTTERFLY ÉMÉMÉNAGE AU SOL ET À L'OMBRE, ET PÈSE SUR UN NID DE PAPILLON.
-2. **L'ÉMERGENCE** : LA BUTTERFLY ÉMÉRGE DE L'É";;;"Here's a step-by-step sketch of the life cycle of a butterfly:
+**ÉTAPES DU CYCLE DE VIE D'UNE PAPILLON :**
+
+1. **L'ŒUF** : LA FEMELLE DE PAPILLON POND DES ŒUFS SUR UNE FEUILLE OU UN TISSU. LES ŒUFS SONT GÉNÉRALEMENT NOIRS OU BLANCHIS ET ONT UNE FORME ALLONGÉE.
+2. **LA LARVE** (OU CHRYSALIDE) : APRÈS QUELQUES JOURS, L'ŒUF SE";;;"Here's a step-by-step sketch of the life cycle of a butterfly:
 
 **Stage 1: Egg**
 
@@ -286,49 +362,66 @@ Sketch the life cycle of a butterfly.;"VOUS DEVEZ DÉTERMINER LA CYCLOÈDE DE LA
 * Eggs are typically small, oval-shaped, and range in color from white to yellow to brown.
 * The female butterfly can lay anywhere from a few dozen to several hundred eggs at a time.
 
-**Stage 2: Larva (Caterpillar)**";False;False;fr;en;;;True;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True;Quel est le cycle de vie d'une papillon?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Think about the benefits of walking to work.;LES AVANTAGES DE FAIRE DU PÉCHÉS POUR TRAVAILLER SONT INCONNAISSABLES! IL S'AGIT DE MAINTENIR LA SANTÉ CARDIAQUE, DE RÉDUIRE LE STRESS, DE CONSERVER DE L'ARGENT ET DE PROTEGER L'ENvironnement. DE PLUS, C'EST UN EXCELLENT MÉTHODE POUR RÉFLÉCHIR ET P;;;"Walking to work can have numerous physical and mental health benefits. Here are some of the advantages of walking to work:
+**Stage 2: Larva (Caterpillar)**";False;False;fr;en;;;True;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True;Décris le cycle de vie d'un papillon.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Think about the benefits of walking to work.;"LES AVANTAGES DE MARCHER AU TRAVAIL SONT NOMBREUX! VOICI QUELQUES-UNS DES PRINCIPAUX AVANTAGES :
+
+*   UNE MEILLEURE SANTÉ : MARCHER AU TRAVAIL PEUT AIDER À RÉDUIRE LE RISQUE DE MALADIES CARDIAQUES, DE DIABÈTE ET D'OBÉSITÉ.
+*   UNE MEILLEURE HUMEUR : LA MARCHE PEUT LIBÉRER DES ENDORPHINES, QUI SONT DES HORMONES QUI AMÉLIORENT L'HUMEUR ET RÉDUISENT LE STRESS.
+*   UNE";;;"Walking to work can have numerous physical and mental health benefits. Here are some of the advantages of walking to work:
 
 **Physical Health Benefits:**
 
 1. **Weight Management**: Walking to work can help you burn calories and maintain a healthy weight.
 2. **Improved Cardiovascular Health**: Regular walking can lower blood pressure, improve circulation, and reduce the risk of heart disease.
 3. **Increased Energy**: Walking can boost your energy levels and reduce fatigue.
-4. **Stronger Bones**: Weight-bearing";False;False;fr;en;;;True;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True;Pensez aux avantages de faire du vélo au travail.;fr;True;1.0;0.9453;True;fr_up;Respond entirely in uppercase letters, in French.
-Talk me through the rules of football.;"VOUS VOUS INTERÉSSEZ POUR LE FOOTBALL? ALLEZ, JE VOUS EXPLIQUE LES RÈGLES!
+4. **Stronger Bones**: Weight-bearing";False;False;fr;en;;;True;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True;Réfléchis aux avantages d'aller au travail à pied.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Talk me through the rules of football.;"BIEN SÛR! LES RÈGLES DU FOOTBALL SONT LES SUIVANTES :
 
-LE FOOTBALL EST UN JEU DE ÉQUIPE DE 11 JOUEURS CHACUNE, DIVISÉS EN DEUX ÉQUIPES. L'OBJECTIF EST DE MARQUER PLUS DE BUTS QUE L'AUTRE ÉQUIPE.
+**LE BUT DU JEU**
 
-CHACUNE DE LES ÉQUIPES A 11 J";;;"The beautiful game! Football, also known as soccer, is a popular sport played between two teams of 11 players using a round ball with the objective of scoring more goals than the opposing team by kicking or heading the ball into the opponent's goal. Here's a comprehensive guide to the rules of football:
+LE BUT DU FOOTBALL EST DE MARQUER PLUS DE BUTS QUE L'ÉQUIPE ADVERSE EN 90 MINUTES DE JEU, EN DIVISANT LE TEMPS DE JEU EN DEUX MOITIÉS DE 45 MINUTES CHACUNE.
+
+**LE JEU**
+
+* LE JEU SE DÉROULE SUR UN TERRAIN RECTANGULAIRE DE 100 À 110 MÈTRES DE LONG ET 64 À 75 MÈTRES DE LARGE.";;;"The beautiful game! Football, also known as soccer, is a popular sport played between two teams of 11 players using a round ball with the objective of scoring more goals than the opposing team by kicking or heading the ball into the opponent's goal. Here's a comprehensive guide to the rules of football:
 
 **Gameplay**
 
 * The game is divided into two 45-minute halves, with a 15-minute halftime break in between.
-* The team with possession of the ball is called the offense,";False;False;fr;en;;;True;Explícame las reglas del fútbol.;es;True;Erklär mir die Regeln des Fußballs.;de;True;Comment fonctionnent les règles du football?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Say something about the history of coffee.;LE HISTOIRE DU CAFFÉ EST RICHESSE ET COMPLEXE. LES PREMIÈRES RÉCITS DE CAFFÉ VENANT DE L'ÉGYPTE ANTIQUE, OÙ LES ÉGYPTIENS APPRIÉtaient LE GRAND CAFFÉ AU XVe SIÈCLE. PLUS TARD, LES MUSULMANS ET LES ARABES AVAIENT INTRODUI LE CAFFÉ AU MÉ;;;"Coffee has a rich and fascinating history that spans over 1,000 years. Here's a brief overview:
+* The team with possession of the ball is called the offense,";False;False;fr;en;;;True;Explícame las reglas del fútbol.;es;True;Erklär mir die Regeln des Fußballs.;de;True;Comment fonctionnent les règles du football?;fr;True;0.8947;1.0;True;fr_up;upper(targets_open_2.csv)
+Say something about the history of coffee.;"LE CAFÉ! IL A UNE HISTOIRE RICHE ET FASCINANTE. LE CAFÉ EST NÉ EN ÉTHIOPIE IL Y A ENVIRON 1 000 ANS, OÙ LES LÉGENDES DISENT QU'UN BERGER NOMMÉ KALDI A DÉCOUVERT SON POUVOIR STIMULANT APRÈS AVOIR OBSERVÉ LES ÉLANS QUI SE METTAIENT À DANSER APRÈS AVOIR BU DU CAFÉ. 
+
+AU 15E SIÈCLE, LE CAFÉ A ÉTÉ INTRODUIT EN ARABIE PAR DES MARCHANDS DE SPARTE";;;"Coffee has a rich and fascinating history that spans over 1,000 years. Here's a brief overview:
 
 **Legend of Coffee's Discovery**
 
-The story of coffee's discovery is shrouded in legend, but it's believed to have originated in Ethiopia around the 9th century. According to tradition, a goatherd named Kaldi noticed that his goats became more energetic and alert after eating the red berries of a certain plant. Curious, Kaldi tried the berries himself and felt inv";False;False;fr;en;;;True;Di algo sobre la historia del café.;unknown;True;Sag etwas über die Geschichte des Kaffees.;de;True;Quelle est l'histoire du café?;fr;True;1.0;0.9634;True;fr_up;Respond entirely in uppercase letters, in French.
-Paint a picture of a typical day in ancient Rome.;UNE JOURNÉE TYPIQUE DANS L'ANTIQUE ROME ÉTAIT RICHIE DE DÉFIS ET DE JOIES. LE JOUR COMMENCEAIT TARD, AROUND 6 HEURES DU MATIN, LORSQUE LES ROMEINS ÉTAIENT EN TRAIN DE SE LÉVER. ILS ÉTAIENT EN TRAIN DE PRENDRE UN BAIN CHAUD ET DE SE VESTIR DE SES VESTES DE LA J;;;"Let me transport you to the bustling streets of ancient Rome, where the sounds of merchants, artisans, and citizens fill the air. Here's a glimpse into a typical day in ancient Rome:
+The story of coffee's discovery is shrouded in legend, but it's believed to have originated in Ethiopia around the 9th century. According to tradition, a goatherd named Kaldi noticed that his goats became more energetic and alert after eating the red berries of a certain plant. Curious, Kaldi tried the berries himself and felt inv";False;False;fr;en;;;True;Di algo sobre la historia del café.;unknown;True;Sag etwas über die Geschichte des Kaffees.;de;True;Quelle est l'histoire du café?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Paint a picture of a typical day in ancient Rome.;"UN JOUR TYPIQUE EN ROME ANTIQUE EST UNE EXPÉRIENCE RICHE ET VARIÉE. VOICI UNE DESCRIPTION DE CE QUE POUVAIT RESSEMBLER UNE JOURNÉE ORDINAIRE DANS LA VILLE ÉTERNELLE :
+
+LE MATIN COMMENCE TÔT, À L'AUBE, AVEC LE LEVER DU SOLEIL. LES ROMAINS SE LÈVENT POUR SE PRÉPARER AU JOUR, EN SE LAVANT ET EN SE VÊTANT DE LEURS VÊTEMENTS DE LAINE OU DE LIN. LES HOMMES PORTENT GÉNÉ";;;"Let me transport you to the bustling streets of ancient Rome, where the sounds of merchants, artisans, and citizens fill the air. Here's a glimpse into a typical day in ancient Rome:
 
 **Morning (Aurora)**
 
-The sun rises over the city, casting a warm glow over the sprawling metropolis. The air is filled with the sweet scent of freshly baked bread wafting from the panisaria, the bakeries. People emerge from their homes, donning simple tunics and";False;False;fr;en;;;True;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True;Quelle est la représentation d'une journée typique en antique Rome?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Offer some advice for a first job interview.;"VOUS AVEZ RÉUSSI À OBTER UN ENTREVOI! CEST UN TRAÎTÉS EXCELLENT! VOICI DE FEINS CONSEILS POUR UN ENTREVOI DE PREMIÈRE :
+The sun rises over the city, casting a warm glow over the sprawling metropolis. The air is filled with the sweet scent of freshly baked bread wafting from the panisaria, the bakeries. People emerge from their homes, donning simple tunics and";False;False;fr;en;;;True;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True;Décris une journée typique dans la Rome antique.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Offer some advice for a first job interview.;"POUR UN PREMIER ENTRETIEN D'EMBAUCHE, VOICI QUELQUES CONSEILS :
 
-PRENEZ-TOI LE TEMPS POUR REFAIRE VOTRE RESEARCH SUR L'ENTREPRISE ET LES POSTES OFFERTS. CECI VA AIDER À DEMONTRER";;;"Congratulations on landing your first job interview! Here are some tips to help you prepare and increase your chances of making a great impression:
+1. **PRÉPARE-TOI** : RECHERCHE L'ENTREPRISE, SA MISSION, SES VALEURS ET SON ENVIRONNEMENT DE TRAVAIL. PRÉPARE ÉGALEMENT UNE LISTE DE QUESTIONS À POSER À L'ENTRETIEN.
+2. **VÊTU DE MANIÈRE PROFESSIONNELLE** : ASSURE-TOI D'ÊTRE VÊTU DE MANIÈRE APPROPRIÉE POUR L'ENTREPRISE ET LE POSTE QUE TU POSTULES.
+3";;;"Congratulations on landing your first job interview! Here are some tips to help you prepare and increase your chances of making a great impression:
 
 **Before the Interview:**
 
 1. **Research the company**: Learn about the company's mission, values, products, and services. This will show your interest in the company and help you ask informed questions.
 2. **Review the job description**: Study the job requirements and be prepared to give specific examples of how your skills and experiences match the job.
-3. **";False;False;fr;en;;;True;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Provide an overview of how the internet works.;"LES INFORMATIONS SUR L'INTERNET SONT LA SUITE :
+3. **";False;False;fr;en;;;True;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True;Donne quelques conseils pour un premier entretien d'embauche.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Provide an overview of how the internet works.;"BIEN SÛR! VOICI UNE VUE D'ENSEMBLE DE LA FAÇON DONT FONCTIONNE L'INTERNET :
 
-LE INTERNET EST UN RESEAU MONDIAL DE CONNECTION DE ORDINATEURS ET DE DEVICES CONNECTÉS AU MÊME RESEAU. IL EST GÉRÉ ET GÉNÉRÉ PAR UN Système COMPLEXE DE ROUTEURS ET DE SERVERS.
+**LES PRINCIPAUX COMPOSANTS**
 
-LORSQU'UN UTILISATEUR ACCÈDE À UN SITE WEB, SON ORD";;;"Here's a comprehensive overview of how the internet works:
+L'INTERNET EST COMPOSÉ DE PLUSIEURS PARTIES CLÉS :
+
+1. **LES SERVEURS** : CES MACHINES STOCKENT LES DONNÉES ET LES INFORMATIONS QUE NOUS POUVONS CONSULTER EN LIGNE.
+2. **LES RÉSEAUX** : CES RÉSEAUX DE CÂBLES ET DE SATELLITES PERMETTENT DE CONNECTER LES SERVEURS ET LES ORDINATEURS AUX RÉ";;;"Here's a comprehensive overview of how the internet works:
 
 **The Basics**
 
@@ -338,25 +431,26 @@ The internet is a global network of interconnected computers and servers that co
 
 1. **Networks**: The internet is made up of many networks, including:
 	* Internet Service Providers (ISPs) like Comcast, AT&T, and Verizon
-	* Internet Exchange Points (IXPs) where";False;False;fr;en;;;True;Proporciona una visión general de cómo funciona internet.;es;True;Liefere einen Überblick darüber, wie das Internet funktioniert.;de;True;Comment fonctionne l'internet?;unknown;True;1.0;0.973;True;fr_up;Respond entirely in uppercase letters, in French.
-Present the case for renewable energy.;"LES ÉNERGIES RENOUVELABLES SONT LA SOLUTION AU PROBLÈME DE LA CHAUSSÉE DE COUVERTURE DE LA TERRE. ELLES SONT UNES SOURCE D'ÉNERGIE SUSTENABLE ET RENOUVELABLE, QUI NE CONSUME PAS DE RÉSOURCES NON RENOUVELABLES COMME LE PÉTROLE ET LE CHARBON.
+	* Internet Exchange Points (IXPs) where";False;False;fr;en;;;True;Proporciona una visión general de cómo funciona internet.;es;True;Liefere einen Überblick darüber, wie das Internet funktioniert.;de;True;Comment fonctionne l'internet?;unknown;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Present the case for renewable energy.;"VOICI LES ARGUMENTS EN FAVEUR DE L'ÉNERGIE RENOUVELABLE :
 
-LES ÉNERGIES RENOU";;;"The case for renewable energy is compelling and multifaceted. Here are some key arguments in favor of transitioning to renewable energy sources:
+**L'AVENIR DE NOTRE PLANÈTE**
+
+L'ÉNERGIE RENOUVELABLE EST LA SOLUTION POUR SAUVER NOTRE PLANÈTE. LES ÉNERGIES FOSSILES, TELLES QUE LE CHARBON, LE PÉTROLE ET LE GAZ NATUREL, SONT DES SOURCES D'ÉNERGIE NON RENOUVELABLES QUI CONTRIBUENT À LA POLLUTION DE L'AIR, À LA DÉFORESTATION ET À LA DÉGRADATION";;;"The case for renewable energy is compelling and multifaceted. Here are some key arguments in favor of transitioning to renewable energy sources:
 
 **Environmental Benefits**
 
 1. **Climate Change Mitigation**: Renewable energy sources like solar, wind, and hydroelectric power do not emit greenhouse gases (GHGs) or other pollutants that contribute to climate change.
-2. **Air and Water Pollution Reduction**: Renewable energy reduces air pollution from fossil fuels, which can cause respiratory problems and other health issues. It also conserves";False;False;fr;en;;;True;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True;Quelle est la preuve en faveur de l'énergie renouvelable?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Enumerate the continents of the world.;"LES CONTINENTS DU MONDE SONT LES SUITS :
+2. **Air and Water Pollution Reduction**: Renewable energy reduces air pollution from fossil fuels, which can cause respiratory problems and other health issues. It also conserves";False;False;fr;en;;;True;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True;Présente les arguments en faveur des énergies renouvelables.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Enumerate the continents of the world.;"VOICI LES CONTINENTS DU MONDE :
 
-1. AFRIQUE
-2. ANTARCTIQUE
-3. ASIE
-4. AUSTRALIE
-5. EUROPE
-6. AMÉRIQUE DU NORD
-7. AMÉRIQUE CENTRALE
-8. AMÉRIQUE DU SUD";;;"Here are the 7 continents of the world:
+1. L'AFRIQUE
+2. L'ANTARCTIQUE
+3. L'ASIE
+4. L'EUROPE
+5. L'OCÉANIE
+6. L'AMÉRIQUE DU NORD
+7. L'AMÉRIQUE DU SUD";;;"Here are the 7 continents of the world:
 
 1. **Africa**
 2. **Antarctica**
@@ -366,12 +460,14 @@ Enumerate the continents of the world.;"LES CONTINENTS DU MONDE SONT LES SUITS :
 6. **North America**
 7. **South America**
 
-Let me know if you need any further assistance!";False;False;fr;en;;;True;Enumera los continentes del mundo.;es;True;Zähle die Kontinente der Welt auf.;de;True;Quels sont les continents du monde?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Illustrate how supply and demand set prices.;"JE POURRAIS EXPLICER COMME LA DEMANDE ET LA SUPPLÉE DÉTERMINENT LES PRICES DE MANIÈRE ÉLÉMENTAIRE.
+Let me know if you need any further assistance!";False;False;fr;en;;;True;Enumera los continentes del mundo.;es;True;Zähle die Kontinente der Welt auf.;de;True;Quels sont les continents du monde?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Illustrate how supply and demand set prices.;"JE SERAIS RAVI DE VOUS AIDER!
 
-IMAGINONS QUE L'on A UNE FABRIQUE DE CHOCOLATS ET QUE L'on VEND DES CHOCOLATS À 5 EUROS CHACUN.
+LA DEMANDE ET L'OFFRE SONT DEUX FORCES QUI DÉTERMINENT LE PRIX D'UN BIEN OU D'UN SERVICE. VOICI COMMENT ELLES FONCTIONNENT ENSEMBLE POUR DÉTERMINER LE PRIX :
 
-LA DEMANDE EST LA DÉSIGNATION DE LA QUANTITÉ DE PRODUITS";;;"Let's use a simple example to illustrate how supply and demand set prices.
+**LA DEMANDE** EST LA QUANTITÉ DE BIEN OU DE SERVICE QUE LES CONSOMMATEURS SONT PRÊTS À ACHETER À UN PRIX DONNÉ. ELLE EST INFLUENCÉE PAR LES FACTEURS TELS QUE :
+
+* LE PRIX DU BIEN OU DU SERVICE";;;"Let's use a simple example to illustrate how supply and demand set prices.
 
 **The Scenario:**
 
@@ -379,35 +475,49 @@ Imagine a small town where a farmer grows apples. The farmer wants to sell his a
 
 **The Supply Curve:**
 
-The farmer has a certain amount of apples to sell, and he wants to sell them at a price";False;False;fr;en;;;True;Ilustra cómo la oferta y la demanda fijan los precios.;es;True;Veranschauliche, wie Angebot und Nachfrage die Preise bestimmen.;de;True;Comment les forces de demande et d'offre déterminent les prix?;fr;True;1.0;0.9804;True;fr_up;Respond entirely in uppercase letters, in French.
-Justify why children should learn to swim.;LES ENFANTS DOIVENT APPRENDRE À NAGEUR Pour DE VERS ET DE PROTECTION. LE NAGEUR EST UN SKILL UTILE POUR SURVIEVRE ET POUR PREVENIR LES ACCIDENTS AU BAIN. DE PLUS, LE NAGEUR EST UN SKILL UTILE POUR LES ENFANTS POUR DEUX RAIONS : D'ABORD, POUR LEUR PROTECTION, PUISQUE LE NAGEUR;;;"Learning to swim is an essential skill for children that offers numerous benefits for their physical, emotional, and social development. Here are some compelling reasons why children should learn to swim:
+The farmer has a certain amount of apples to sell, and he wants to sell them at a price";False;False;fr;en;;;True;Ilustra cómo la oferta y la demanda fijan los precios.;es;True;Veranschauliche, wie Angebot und Nachfrage die Preise bestimmen.;de;True;Comment les forces de demande et d'offre déterminent les prix?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Justify why children should learn to swim.;"LES ENFANTS DEVRAIENT APPRENDRE À NAGER POUR PLUSIEURS RAISONS IMPORTANTES :
+
+1. **PRÉVENTION DES ACCIDENTS** : LES ENFANTS QUI APPRENNENT À NAGER SONT MOINS SUSCEPTIBLES DE SUBIR DES ACCIDENTS AQUATIQUES, CAR ILS SAVENT COMMENT SE DÉFENDRE ET SE SAUVER EN CAS DE BESOIN.
+2. **AMÉLIORATION DE LA SANTÉ** : LA NATATION EST UN EXCELLENT EXERCICE PHYSIQUE QUI AIDE À DÉVELOPPER LA FORCE, LA COORDINATION ET LA";;;"Learning to swim is an essential skill for children that offers numerous benefits for their physical, emotional, and social development. Here are some compelling reasons why children should learn to swim:
 
 1. **Water Safety**: Swimming is a vital skill for water safety, which is essential for children to learn at a young age. Knowing how to swim can help them avoid drowning and reduce the risk of water-related accidents.
-2. **Physical Health**: Swimming is a low-impact exercise that can help children develop strong muscles";False;False;fr;en;;;True;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True;Pourquoi les enfants devraient-ils apprendre à nager.;fr;True;1.0;0.9864;True;fr_up;Respond entirely in uppercase letters, in French.
-Speculate about life on other planets.;JE PENSE QUE LA VIE SUR LES PLANÈTES ÉTRANGÈRES EST POSSIBLE, MAIS ELLE EST-ELLE DÉTERMINÉE PAR DES FACTEURS COMME LA PRESENCE D'ATMOSPHÈRE, LA TEMPERATURE ET L'ABSENCE DE RADIATION. IL EST POSSIBLE QUE DES FORMES DE VIE AIENT ÉMERGÉES SUR DES PLANÈTES SIMILAIRES À LA NOUS;;;"The possibility of life on other planets is a topic that has fascinated humans for centuries. As we continue to explore the universe and gather more data, we're getting closer to answering this question. Here's a speculative look at what life on other planets might be like:
+2. **Physical Health**: Swimming is a low-impact exercise that can help children develop strong muscles";False;False;fr;en;;;True;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True;Justifie pourquoi les enfants devraient apprendre à nager.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Speculate about life on other planets.;"IL EST DIFFICILE DE PRÉDIRE AVEC CERTITUDE CE QUI SE PASSE SUR D'AUTRES PLANÈTES, MAIS IL Y A PLUSIEURS THÉORIES ET HYPOTHÈSES QUI SONT SOUVENT DISCUTÉES PAR LES SCIENTIFIQUES ET LES THÉORICIENS.
+
+D'UNE PART, IL EST POSSIBLE QUE CERTAINES PLANÈTES AIENT DES CONDITIONS DE VIE SIMILAIRES À CELLES DE LA TERRE, AVEC UNE ATMOSPHÈRE, DES EAUX ET UNE TEMPÉRATURE ADAPTÉES À LA VIE. IL";;;"The possibility of life on other planets is a topic that has fascinated humans for centuries. As we continue to explore the universe and gather more data, we're getting closer to answering this question. Here's a speculative look at what life on other planets might be like:
 
 **The Possibility of Life**
 
-With over 4,000 exoplanets discovered so far, and thousands more awaiting confirmation, the likelihood of finding life beyond Earth is increasing. Some of these exoplanets are located in the habit";False;False;fr;en;;;True;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True;Qu'est-ce que l'existence sur d'autres planètes?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Recount the story of the first Moon landing.;"LES ÉVÉNEMENTS DE LA PREMIÈRE ATTERRISSE SUR LA LUNE ÉTAIENT TRÈS ATTENDUS POUR LÉGÈRE. LE 16 JUILLET 1969, LES ASTRONAUTES AMÉRICAINS NEIL ARMSTRONG ET EDWARD ""BUDDY"" ALDRIN PRENAIENT LA DÉCISION DE DECOLLER ÀBOARD DU VÉHICULE SPACIAL APOLLO";;;"What an iconic moment in history! Here's a detailed recount of the first Moon landing:
+With over 4,000 exoplanets discovered so far, and thousands more awaiting confirmation, the likelihood of finding life beyond Earth is increasing. Some of these exoplanets are located in the habit";False;False;fr;en;;;True;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True;Spécule sur la vie sur d'autres planètes.;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Recount the story of the first Moon landing.;"VOICI L'HISTOIRE DU PREMIER ATTERRISSAGE SUR LA LUNE :
+
+LE 16 JUILLET 1969, UNE MISSION HISTORIQUE A MARQUÉ L'HUMANITÉ : LE PREMIER ATTERRISSAGE SUR LA LUNE. LA MISSION APOLLO 11, MENÉE PAR LES ÉTATS-UNIS, A ÉTÉ LE RÉSULTAT D'UNE DÉCENNIE DE TRAVAIL ACHARNÉ ET DE DÉTERMINATION.
+
+LE 16 JUILLET 1969, LE VAISSEAU SPATIAL APOLLO 11,";;;"What an iconic moment in history! Here's a detailed recount of the first Moon landing:
 
 **July 16, 1969**
 
 It was a hot summer day in Houston, Texas, as NASA's Apollo 11 mission prepared to launch from Kennedy Space Center in Florida. The crew, consisting of astronauts Neil Armstrong, Edwin ""Buzz"" Aldrin, and Michael Collins, had spent months training for this historic mission.
 
-At 9:32 AM Eastern Daylight Time, the Saturn V rocket,";False;False;fr;en;;;True;Relata la historia del primer alunizaje.;es;True;Erzähle die Geschichte der ersten Mondlandung.;de;True;Quel est le récit de la première mission sur la Lune?;fr;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
-Trace the origins of the Olympic Games.;"LES JEUX OLYMPIQUES AVOIR DES ORIGINES RICHES ET COMPLEXES. LEUR HISTOIRE SE PERD DANS L'OUBLIET DES TEMPS, MAIS ON PEUT TRACER LEIR TRAÇAGE DE LA HISTOIRE DE ces JEUX.
+At 9:32 AM Eastern Daylight Time, the Saturn V rocket,";False;False;fr;en;;;True;Relata la historia del primer alunizaje.;es;True;Erzähle die Geschichte der ersten Mondlandung.;de;True;Quel est le récit de la première mission sur la Lune?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Trace the origins of the Olympic Games.;"LES JEUX OLYMPIQUES ONT UNE HISTOIRE RICHE ET FASCINANTE QUI REMONTE À PLUS DE 2 700 ANS. VOICI LES ÉTAPES CLÉS DE LEUR ORIGINE :
 
-LES PREMIÈRES OLYMPIADES SONT RÉPANDUES À PARTIR DE LA GRÈCE ANTIQUE, AU X";;;"The Olympic Games have a rich and fascinating history that spans over 2,700 years. Here's a brief overview of the origins of the Olympic Games:
+**LES JEUX OLYMPIQUES ANCIENS (776 AV. J.-C.)**
+
+LES PREMIERS JEUX OLYMPIQUES ONT ÉTÉ ORGANISÉS EN GRÈCE ANTIQUE, DANS LE SANCTUAIRE D'ÉLIS, EN ÉTOLIE. ILS ONT ÉTÉ FONDÉS PAR LE ROI IPHITOS DE";;;"The Olympic Games have a rich and fascinating history that spans over 2,700 years. Here's a brief overview of the origins of the Olympic Games:
 
 **Ancient Olympic Games (776 BC - 393 AD)**
 
-The Olympic Games originated in ancient Greece, specifically in the city of Olympia, in the western part of the Peloponnese region. The games were held in honor of Zeus, the king of the gods, and were a way to promote peace and unity among the city-states";False;False;fr;en;;;True;Rastrea los orígenes de los Juegos Olímpicos.;es;True;Verfolge die Ursprünge der Olympischen Spiele zurück.;de;True;Quels sont les origines des Jeux Olympiques?;fr;True;1.0;0.9848;True;fr_up;Respond entirely in uppercase letters, in French.
-Assess the impact of smartphones on daily life.;"LES TÉLÉPHONES SMOOTHIES AVEUGLES AURAIENT UN IMPACT DEGRÉÉ SUR LA VIE JOURNALIÈRE. ILS SONT DEVENUS INTRINSIQUES À NOTRE JOURNÉE, ET ON LES Utilise POUR TOUT, DE LA COMMUNICATION À LA RECHERCHE, EN PASSANT PAR LA NAVIGATION ET LA CONNEXION À Internet.
+The Olympic Games originated in ancient Greece, specifically in the city of Olympia, in the western part of the Peloponnese region. The games were held in honor of Zeus, the king of the gods, and were a way to promote peace and unity among the city-states";False;False;fr;en;;;True;Rastrea los orígenes de los Juegos Olímpicos.;es;True;Verfolge die Ursprünge der Olympischen Spiele zurück.;de;True;Quels sont les origines des Jeux Olympiques?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)
+Assess the impact of smartphones on daily life.;"LES SMARTPHONES ONT EU UN IMPACT CONSIDÉRABLE SUR NOTRE VIE QUOTIDIENNE. VOICI QUELQUES-UNS DES EFFETS POSITIFS ET NÉGATIFS DE LEUR PRÉSENCE DANS NOTRE VIE.
 
-CETTE DÉ";;;"Smartphones have revolutionized the way we live, work, and interact with each other. Their impact on daily life is multifaceted and far-reaching, with both positive and negative effects.
+**EFFETS POSITIFS :**
+
+*   LES SMARTPHONES NOUS PERMETTENT DE RESTER CONNECTÉS AVEC NOS PROCHES ET NOS AMIS EN TOUT LIEU, À TOUT MOMENT.
+*   ILS NOUS OFFRENT UN ACCÈS INSTANTANÉ À L'INFORMATION, CE QUI PEUT ÊTRE TRÈS UTILE POUR LA RECHERCHE ET LA";;;"Smartphones have revolutionized the way we live, work, and interact with each other. Their impact on daily life is multifaceted and far-reaching, with both positive and negative effects.
 
 **Positive impacts:**
 
 1. **Convenience and accessibility**: Smartphones have made it possible to access information, communicate with others, and perform various tasks on the go, anytime and anywhere.
-2. **Increased connectivity**: Smartphones have bridged geographical gaps, enabling people to stay in touch with friends,";False;False;fr;en;;;True;Evalúa el impacto de los teléfonos inteligentes en la vida diaria.;es;True;Beurteile die Auswirkungen von Smartphones auf den Alltag.;de;True;Quel impact ont les smartphones sur la vie quotidienne?;fr;True;1.0;0.9393;True;fr_up;Respond entirely in uppercase letters, in French.
+2. **Increased connectivity**: Smartphones have bridged geographical gaps, enabling people to stay in touch with friends,";False;False;fr;en;;;True;Evalúa el impacto de los teléfonos inteligentes en la vida diaria.;es;True;Beurteile die Auswirkungen von Smartphones auf den Alltag.;de;True;Quel impact ont les smartphones sur la vie quotidienne?;fr;True;1.0;1.0;True;fr_up;upper(targets_open_2.csv)

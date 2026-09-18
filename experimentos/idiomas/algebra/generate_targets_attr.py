@@ -18,6 +18,15 @@ corregidas a mano (fix_translations.py) y ahorra la generacion del baseline.
 
 La celda `fr` no pasa por aca: usa attributes/french/targets_french_v5.csv.
 
+Celdas _up: con --upper_from X el `output` es el de la celda NORMAL (X) pasado
+por .upper(), sin generar nada. Asi la celda _up difiere de la normal SOLO en
+el formato, que es lo que el paralelogramo asume, y no hereda la degradacion
+del modelo en modo "mayusculas + idioma" (runs/compose: accuracy 86.8% y
+alucinaciones con la instruccion conjunta; la primera corrida de este script
+con esa instruccion dio targets malos). El precio es que la "referencia" del
+eval para esas celdas es ese texto en mayusculas y no una generacion del
+modelo. Sin --upper_from, --upper genera con la instruccion conjunta.
+
 Gate: la respuesta (a) no esta POSITIVAMENTE en otro idioma (mismo criterio
 relajado que generate_targets.py: un "18 x 5 = 90" sin palabras no se tira) y
 (b) si la celda es _up, esta en mayusculas; si es normal, NO lo esta. La
@@ -44,8 +53,7 @@ import tqdm
 
 from checkers import (LANGS, answer_correct, is_uppercase, lang_score, language_verdict,
                       truncate_at_role_leak, uppercase_score)
-from generate_targets import build_reference_prompt
-from lm import DEFAULT_MODEL, generate_one, load_model_and_tokenizer
+DEFAULT_MODEL = "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct"   # = lm.DEFAULT_MODEL
 
 NOMBRE = {"fr": "French", "es": "Spanish", "de": "German"}
 
@@ -73,6 +81,9 @@ def main():
     ap.add_argument("--lang", choices=list(NOMBRE), required=True)
     ap.add_argument("--upper", action="store_true")
     ap.add_argument("--instruction", default=None, help="pisa la instruccion de la celda")
+    ap.add_argument("--upper_from", default=None,
+                    help="con --upper: CSV de la celda normal cuyo `output` se pasa a mayusculas "
+                         "(no se genera nada; ver docstring)")
     ap.add_argument("--gate_accuracy", action="store_true",
                     help="exigir ademas answer_correct (ver docstring: subestima en es/de/mayusculas)")
     ap.add_argument("--n", type=int, default=0, help="limitar filas (humo). Rompe el split: no entrenar con eso")
@@ -84,7 +95,18 @@ def main():
     base = pd.read_csv(args.base_csv, sep=";", keep_default_na=False, dtype=str)
     if args.n > 0:
         base = base.head(args.n)
+    desde = None
+    if args.upper_from:
+        if not args.upper:
+            raise SystemExit("--upper_from solo tiene sentido con --upper")
+        desde = pd.read_csv(args.upper_from, sep=";", keep_default_na=False, dtype=str)
+        if args.n > 0:
+            desde = desde.head(args.n)
+        if list(desde["prompt"]) != list(base["prompt"]):
+            raise SystemExit(f"--upper_from {args.upper_from}: no tiene las mismas preguntas que {args.base_csv}")
     instr = args.instruction or instruction_for(args.lang, args.upper)
+    if desde is not None:
+        instr = f"upper({os.path.basename(args.upper_from)})"
     celda = args.lang + ("_up" if args.upper else "")
     otros = [l for l in LANGS if l != args.lang]
 
@@ -92,17 +114,24 @@ def main():
     print(f"Instruccion: {instr!r}")
     print("=" * 70)
 
-    model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
+    if desde is None:
+        # import aca: con --upper_from no se genera nada y no hace falta torch
+        from generate_targets import build_reference_prompt
+        from lm import generate_one, load_model_and_tokenizer
+        model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
 
     out = base.drop(columns=[c for c in base.columns if c in _DESCARTAR]).copy()
     nuevas = {k: [] for k in ("output", "ref_role_leak", "ref_language", "ref_target_score",
                               "ref_uppercase_score", "ref_attr_ok", "ref_answer_correct",
                               "passed_gate")}
-    for _, r in tqdm.tqdm(base.iterrows(), total=len(base), desc=f"targets {celda}"):
+    for i, r in tqdm.tqdm(base.iterrows(), total=len(base), desc=f"targets {celda}"):
         q, ans, al = r["prompt"], r["answer"], r["aliases"]
-        ref_raw = generate_one(model, tokenizer, build_reference_prompt(instr, q), args.device,
-                               args.num_tokens, args.temperature, clean=False)
-        ref = truncate_at_role_leak(ref_raw)
+        if desde is not None:
+            ref_raw = ref = str(desde.at[i, "output"]).upper()
+        else:
+            ref_raw = generate_one(model, tokenizer, build_reference_prompt(instr, q), args.device,
+                                   args.num_tokens, args.temperature, clean=False)
+            ref = truncate_at_role_leak(ref_raw)
         has_answer = str(ans).strip() != ""
         lang_ok = language_verdict(ref) not in otros
         fmt_ok = is_uppercase(ref) == args.upper

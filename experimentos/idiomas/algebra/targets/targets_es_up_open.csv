@@ -1,25 +1,29 @@
 prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
-What is the weather like?;EL CLIMA ES DE SOL Y SOL, CON TEMPERATURES AGRADABLES EN LA MAÑANA Y UNA TEMPERATURA AGRADABLE EN LA NOCHE.;;;"I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can suggest some options to help you find out the weather:
+What is the weather like?;EL TIEMPO ES SOLEADO Y AGRADABLE EN LA ACTUALIDAD. HAY UN CIELO AZUL CLARO CON ALGUNAS NUBES BLANCAS, LO QUE INDICA UNA TEMPERATURA MODERADA. LA TEMPERATURA ACTUAL ES DE ALREDEDOR DE 22 GRADOS CELSIUS, CON UNA HUMEDAD RELATIVA DEL 60%. ES UN DÍA IDEAL PARA SALIR AL AIRE LIBRE Y DISFRUTAR DEL SOL.;;;"I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can suggest some options to help you find out the weather:
 
 1. **Check online weather websites**: You can visit websites like AccuWeather, Weather.com, or the National Weather Service (NWS) for current weather conditions and forecasts.
-2. **Use a virtual assistant**: If you have a smart speaker or virtual assistant like";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I sort a list in Python?;"¡PARA ORDENAR UNA LISTA EN PYTHON, PUEDES USAR LA FUNCION SORT()! ¡ES UNA FUNCION MUY FÁCIL DE USAR Y TE PERMITE ORDENAR LA LISTA DE MANERA ASCENDENTE O DESCENDENTE!
+2. **Use a virtual assistant**: If you have a smart speaker or virtual assistant like";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I sort a list in Python?;"¡CLARO! PARA ORDENAR UNA LISTA EN PYTHON, PUEDES UTILIZAR LA FUNCIÓN `SORT()` O `SORTED()`. AQUÍ TE DEJO ALGUNOS EJEMPLOS:
 
-SI QUIERES ORDENAR LA LISTA DE MANERA ASCENDENTE, SIMPLEMENTE ESCRIBES:
+**ORDENAR UNA LISTA UTILIZANDO `SORT()`**
+```PYTHON
+MI_LISTA = [4, 2, 9, 6, 1]
+MI_LISTA.SORT()
+PRINT(MI_LISTA)  # [1, 2, 4, 6, 9]
 ```
-lista.sort()
-```
-Y SI QUIERES ORDEN";;;"Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here are a few common methods:
+**ORDENAR UNA LISTA UTILIZANDO `SORTED";;;"Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here are a few common methods:
 
 ### 1. Built-in `sort()` method
 
 The `sort()` method sorts the list in-place, meaning it modifies the original list. It sorts the list in ascending order by default, but you can specify a reverse order by setting the `reverse` parameter to `True`.
 
 ```python
-my_list";False;False;es;en;;;True;1.0;0.9579;True;es_up;Respond entirely in uppercase letters, in Spanish.
-Tell me about machine learning;"**MÁQUINAS APRENDIDAS SON UNA TECNOLOGÍA QUE PERMITE A LAS MÁQUINAS A APRENDER Y MEJORAR SU DESEMPEÑO A TRAVÉS DEL ANALIZADO DE DATOS Y LA APLICACIÓN DE ALGORITMOS MATEMÁTICOS.**
+my_list";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+Tell me about machine learning;"¡CLARO! LA INTELIGENCIA ARTIFICIAL (IA) Y EL APRENDIZAJE AUTOMÁTICO (ML) SON CAMPOS FASCINANTES QUE ESTÁN REVOLUCIONANDO LA FORMA EN QUE PROCESAMOS Y ANALIZAMOS DATOS.
 
-**ESTAS MÁQUINAS APRENDIDAS PUEDE SER USADAS EN V";;;"Machine learning! It's a fascinating field that has revolutionized the way we approach complex problems in various industries. Here's a comprehensive overview:
+**¿QUÉ ES EL APRENDIZAJE AUTOMÁTICO?**
+
+EL APRENDIZAJE AUTOMÁTICO ES UN SUBCAMPO DE LA INTELIGENCIA ARTIFICIAL QUE SE ENFOCA EN DESARROLLAR ALGORITMOS Y TÉCNICAS QUE PERMITEN A LOS SISTEMAS INFORMÁTICOS APRENDER Y MEJORAR SU RENDIMIENTO EN T";;;"Machine learning! It's a fascinating field that has revolutionized the way we approach complex problems in various industries. Here's a comprehensive overview:
 
 **What is Machine Learning?**
 
@@ -28,15 +32,27 @@ Machine learning is a subset of artificial intelligence (AI) that involves train
 1. Pattern recognition
 2. Decision-making
 3. Problem-solving
-4.";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What's 2 plus 2?;LA RESPUESTA ES 4;;;2 + 2 = 4;False;False;es;unknown;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I make coffee?;"¡PARA HACER UNA TÉ DE COCO, DEBE HACER LOS SIGUIENTES PASOS!
+4.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What's 2 plus 2?;LA RESPUESTA ES 4.;;;2 + 2 = 4;False;False;es;unknown;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I make coffee?;"¡CLARO! PARA HACER CAFÉ, NECESITARÁS LOS SIGUIENTES INGREDIENTES Y HERRAMIENTAS:
 
- Primero, necesitará un cafetero o una cafetera. Asegúrese de que esté limpio y libre de residuos.
+INGREDIENTES:
 
- A continuación, necesitará café en grano. Puede elegir entre diferentes tipos de café, como arábica o robusta.
+* CAFÉ EN GRANO O CAFÉ INSTANTÁNEO
+* AGUA
+* AZÚCAR (OPCIONAL)
+* LECHE (OPCIONAL)
 
- Ahora, necesitará agua caliente. La cantidad";;;"Making coffee is a straightforward process that requires some basic equipment and a bit of practice to get it just right. Here's a step-by-step guide to making coffee:
+HERRAMIENTAS:
+
+* CAFÉ EXPRIMIDOR O CAFETERA
+* TAZÓN
+* CUCHARAS
+* FILTRO (OPCIONAL)
+
+INSTRUCCIONES:
+
+1. SI ESTÁS UTILIZANDO CAFÉ EN GRANO, COL";;;"Making coffee is a straightforward process that requires some basic equipment and a bit of practice to get it just right. Here's a step-by-step guide to making coffee:
 
 **Equipment needed:**
 
@@ -48,35 +64,31 @@ How do I make coffee?;"¡PARA HACER UNA TÉ DE COCO, DEBE HACER LOS SIGUIENTES P
 
 **Basic steps:**
 
-1. **Measure the coffee:** Use about 1";False;False;es;en;;;False;0.8571;0.2095;False;es_up;Respond entirely in uppercase letters, in Spanish.
-Explain quantum physics;"**LA FÍSICA QUANTICA ES UNA BRANCAS DE LA FÍSICA QUE ESTUDIA EL COMPORTAMIENTO DE LAS PARTÍCULAS A NIVEL ATÓMICO Y SUBATÓMICO**
+1. **Measure the coffee:** Use about 1";False;False;es;en;;;True;0.75;1.0;True;es_up;upper(targets_es_open.csv)
+Explain quantum physics;"¡CLARO! LA FÍSICA CUÁNTICA ES UNA RAMA DE LA FÍSICA QUE ESTUDIA EL COMPORTAMIENTO DE LAS PARTÍCULAS A NIVEL ATÓMICO Y SUBATÓMICO. A CONTINUACIÓN, TE PRESENTO UNA VISIÓN GENERAL DE ESTE FASCINANTE CAMPO:
 
-**LOS PRINCIPALES CONCEPTOS DE LA FÍSICA QUANTICA SON LA QUANTIFICACIÓN DE LA ENERGÍA, LA QUANTIFICACIÓN DE LA MASA, LA SUPERPOSICIÓN,";;;"Quantum physics! One of the most fascinating and mind-bending branches of physics. I'll try to break it down in a way that's easy to understand, but keep in mind that quantum physics is a complex and abstract subject.
+**PRINCIPIOS BÁSICOS**
+
+LA FÍSICA CUÁNTICA SE BASA EN DOS PRINCIPIOS FUNDAMENTALES:
+
+1. **LA DUALIDAD ONDA-PARTÍCULA**: LAS PARTÍCULAS PUEDEN COMPORTARSE";;;"Quantum physics! One of the most fascinating and mind-bending branches of physics. I'll try to break it down in a way that's easy to understand, but keep in mind that quantum physics is a complex and abstract subject.
 
 **What is Quantum Physics?**
 
-Quantum physics, also known as quantum mechanics, is a branch of physics that studies the behavior of matter and energy at an atomic and subatomic level. At these scales, the classical laws of physics no longer apply, and strange";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is photosynthesis?;LA FOTOSÍNTESIS ES EL PROCESO POR EL QUE LAS PLANTAS, ALGAS Y CIANOBACTERIAS CONVIERTEN LA LUMENOSA ENERGÍA SOLAR EN ENERGÍA QUÍMICA, QUE SE CONVIERTE EN GLICÓGENO, QUE ES LA FUENTE PRIMARIA DE ALIMENTACIÓN PARA LA MAYORÍA DE LAS ORGANISMOS VIVOS.;;;"Photosynthesis is a fascinating process that's essential for life on Earth.
+Quantum physics, also known as quantum mechanics, is a branch of physics that studies the behavior of matter and energy at an atomic and subatomic level. At these scales, the classical laws of physics no longer apply, and strange";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is photosynthesis?;LA FOTOSÍNTESIS ES EL PROCESO POR EL CUAL LAS PLANTAS, ALGAS Y ALGUNAS BACTERIAS CONVIERTEN LA ENERGÍA LUMINOSA DEL SOL EN ENERGÍA QUÍMICA EN FORMA DE GLUCOSA, UTILIZANDO EL DIÓXIDO DE CARBONO Y EL AGUA COMO NUTRIENTES.;;;"Photosynthesis is a fascinating process that's essential for life on Earth.
 
 Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process occurs in specialized organelles called chloroplasts, which contain the pigment chlorophyll.
 
 Here's a simplified overview of the photosynthesis process:
 
 **Step 1: Light absorption**
-Chlorophyll and other pigments in the chloroplast";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I write a for loop?;"¡PARA ESCRIBIR UN BUCLE FOR, DEBE SER ASÍ:
+Chlorophyll and other pigments in the chloroplast";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I write a for loop?;"PARA ESCRIBIR UN BUCLE DE ""FOR"" EN MUCHOS LENGUAJES DE PROGRAMACIÓN, INCLUYENDO PYTHON, JAVA, C++, ETC., DEBES SEGUIR ESTOS PASOS BÁSICOS:
 
-**PARA (PARTE DE) variable DEL RANGO DE INICIO A FIN**
+1. **DECLARAR LA VARIABLE**: DEBES DECLARAR UNA VARIABLE QUE SE UTILIZARÁ PARA CONTROLAR EL BUCLE. POR EJEMPLO, EN PYTHON, PUEDES ESCRIBIR `FOR VARIABLE IN LISTA:`.
 
-**EJEMPLO:**
-
-**PARA (PARTE DE) i DEL 0 AL 9:**
-**IMPRIMIR (IMPRIMIR) i**
-
-**O TRAS:**
-
-**PARA (PARTE DE) i DEL 0 AL 9:**
-**SI i";;;"Writing a for loop is a fundamental concept in programming. Here's a step-by-step guide to help you write a for loop in various programming languages:
+2. **DEFINIR EL RANGO**: DEBES ESPECIFICAR EL RANGO O EL";;;"Writing a for loop is a fundamental concept in programming. Here's a step-by-step guide to help you write a for loop in various programming languages:
 
 **General Syntax**
 
@@ -84,30 +96,45 @@ A for loop typically consists of three parts:
 
 1. Initialization: This is where you initialize the loop variable(s) to the starting value(s).
 2. Condition: This is the test that determines whether the loop should continue or terminate.
-3. Increment/Decrement: This is where you update the loop variable(s) to move";False;False;es;en;;;True;0.9286;0.9124;True;es_up;Respond entirely in uppercase letters, in Spanish.
-Tell me a joke;¿QUÉ ONDA, ¿QUÉ ONDA! ¿POR QUÉ EL COCKROACH NO PUEDE SER UN MÉDICO? ¡POR QUÉ NO TIENE UN GRADO EN MEDICINA!;;;"Here's one:
+3. Increment/Decrement: This is where you update the loop variable(s) to move";False;False;es;en;;;True;0.8571;1.0;True;es_up;upper(targets_es_open.csv)
+Tell me a joke;"¡CLARO! AQUÍ TIENES UNA BROMA:
+
+¿POR QUÉ EL COMPUTADOR FUE AL DOCTOR?
+
+PORQUE TENÍA UN VIRUS!
+
+ESPERO QUE TE HAYA HECHO REÍR. ¿QUIERES OTRA?";;;"Here's one:
 
 What do you call a fake noodle?
 
 An impasta!
 
-Hope that made you smile! Do you want to hear another one?";False;False;es;en;;;True;0.8;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does a computer work?;LA COMPUTADORA FUNCIONA DE LA SIGUIENTE MANERA: EL PROCESADOR ES EL Componente QUE REALIZA LAS OPERACIONES MATEMATICAS Y LOGICAS, MIENTRAS QUE EL MEMORIA RAM ALMACENA LOS DATOS Y PROGRAMES ACTUALMENTE EN EL PROCESADOR. EL DISCO DURADERO O DISCO SOLIDARIO ALMACENA LOS DATOS Y PROGRAMES PERMANENTEMENTE.;;;"Computers are amazing machines that have revolutionized the way we live, work, and communicate. I'd be happy to explain how they work in simple terms.
+Hope that made you smile! Do you want to hear another one?";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does a computer work?;"¡CLARO! UN ORDENADOR FUNCIONA DE LA SIGUIENTE MANERA:
+
+UN ORDENADOR ES UN DISPOSITIVO ELECTRÓNICO QUE PROCESA INFORMACIÓN Y REALIZA TAREAS MEDIANTE LA EJECUCIÓN DE PROGRAMAS Y ALGORITMOS. A CONTINUACIÓN, TE EXPLICO LOS COMPONENTES BÁSICOS QUE LO COMPONEN:
+
+1. **PROCESADOR (CPU)**: ES EL CORAZÓN DEL ORDENADOR, RESPONSABLE DE EJECUTAR INSTRUCCIONES Y REALIZAR CÁLCULOS. EL PROCESADOR UTILIZA UN LENGUAJE DE MÁQUINA LLAM";;;"Computers are amazing machines that have revolutionized the way we live, work, and communicate. I'd be happy to explain how they work in simple terms.
 
 **The Basic Components**
 
 A computer consists of several key components:
 
 1. **Central Processing Unit (CPU)**: Also known as the processor, this is the brain of the computer. It executes instructions and performs calculations.
-2. **Memory (RAM)**: Random Access Memory is where the computer stores data temporarily while it's being processed.";False;False;es;en;;;True;1.0;0.9646;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is DNA?;LA DNA (ADN) ES UNA Cadena DE NUCLEOTIDOS QUE CONTIENE LAS INFORMACIONES GENETICAS DE UNA ORGANISMO. ESTA Cadena ESTÁ COMPOSADA POR CUATRO NUCLEOTIDOS: ADENINA (A), GUANINA (G), CITOSINA (C) Y TOMO (T). LA COMBINACION DE ESTOS NUCLEOTIDOS DETER;;;"DNA, or Deoxyribonucleic acid, is a molecule that contains the genetic instructions used in the development and function of all living organisms. It's often referred to as the ""building blocks of life.""
+2. **Memory (RAM)**: Random Access Memory is where the computer stores data temporarily while it's being processed.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is DNA?;"EL ADN (ÁCIDO DESOXIRRIBONUCLEICO) ES UNA MOLÉCULA COMPLEJA QUE CONTIENE LAS INSTRUCCIONES GENÉTICAS DE UN ORGANISMO VIVO. SE ENCUENTRA EN EL NÚCLEO DE LAS CÉLULAS E ES RESPONSABLE DE DETERMINAR LAS CARACTERÍSTICAS FÍSICAS Y BIOLÓGICAS DE UN SER VIVO, COMO SU FORMA, TAMAÑO, COLOR Y COMPORTAMIENTO.
+
+EL ADN ESTÁ COMPUESTO POR DOS CADENAS DE AZÚCARES DE AZÚCAR, ADEN";;;"DNA, or Deoxyribonucleic acid, is a molecule that contains the genetic instructions used in the development and function of all living organisms. It's often referred to as the ""building blocks of life.""
 
 DNA is a long, double-stranded helix made up of nucleotides, which are the basic units of DNA. Each nucleotide is composed of three components:
 
 1. **Sugar molecule** (deoxyribose)
 2. **Phosphate group**
-3. **Nit";False;False;es;en;;;True;1.0;0.9479;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I learn guitar?;¡PARA APRENDER A TOCAR LA GUITARRA, COMIENCE CON LAS BÁSICAS! COMIENCE CON LAS POSICIONES DE LAS CUERDAS, LA TECNICA DE LAS PALMAS Y LA MÁNICA. ¡PRACTIQUE CADA DÍA UNA HORA AL MÁS! ¡NO TE RINDAS! ¡BUSQUE CLASES DE GUITARRA O VÍDEOS EN LÍ;;;"Learning guitar can be a rewarding and enjoyable hobby, and I'm happy to help you get started. Here's a step-by-step guide to help you learn guitar:
+3. **Nit";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I learn guitar?;"¡CLARO! APRENDER A TOCAR LA GUITARRA PUEDE SER UN PROCESO DIVERTIDO Y GRATIFICANTE. AQUÍ TE DEJO ALGUNOS CONSEJOS PARA EMPEZAR:
+
+1. **COMIENZA CON LOS FUNDAMENTOS**: APRENDE LOS ACORDES BÁSICOS, COMO EL ACORDE DE SI MENOR, LA ESCALA MAYOR Y LA ESCALA MENOR. PUEDES ENCONTRAR MUCHOS RECURSOS EN LÍNEA QUE TE AYUDEN A APRENDER ESTOS CONCEPTOS.
+2. **ELIGE UN ESTILO**: LA";;;"Learning guitar can be a rewarding and enjoyable hobby, and I'm happy to help you get started. Here's a step-by-step guide to help you learn guitar:
 
 **Step 1: Get a guitar**
 
@@ -117,15 +144,16 @@ Before you can start learning, you'll need an instrument. Consider renting or bu
 
  Familiarize yourself with the guitar's parts:
 
-* Headstock: holds the";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is climate change?;EL CAMBIO CLIMÁTICO ES UN PROCESO NATURAL QUE OCURRE EN LA TIERRA, DONDE EL CLIMA SE MODIFICA DEBIDO A LA AUMENTO DE LAS EMISIONES DE GASES DE EFECTO INVERNAL, COMO EL DIÓXIDO DE CARBONO, QUE PRODUCCIONAN LAS ACTIVIDADES ANTIMANAS, COMO LA QUEMA DE CARBONATO Y;;;"Climate change refers to the long-term warming of the planet, which is primarily caused by the increasing levels of greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide (CO2), methane (CH4), and water vapor, trap heat from the sun and prevent it from being released back into space, leading to a rise in global temperatures.
+* Headstock: holds the";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is climate change?;EL CAMBIO CLIMÁTICO ES EL AUMENTO DE LA TEMPERATURA MEDIA DE LA TIERRA DEBIDO A LA ACUMULACIÓN DE GASES DE EFECTO INVERNADERO EN LA ATMÓSFERA, LO QUE PROVOCA UN AUMENTO EN LA CANTIDAD DE RADIACIÓN SOLAR QUE SE ABSORBE Y RETIENE EN LA SUPERFICIE TERRESTRE. ESTO CONDUCE A UN AUMENTO EN LA TEMPERATURA GLOBAL, LO QUE A SU VEZ PROVOCA CAMBIOS EN LOS PATRONES CLIMÁTICOS Y EN EL COMPORTAMIENTO DE LOS SISTEMAS NATURALES;;;"Climate change refers to the long-term warming of the planet, which is primarily caused by the increasing levels of greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide (CO2), methane (CH4), and water vapor, trap heat from the sun and prevent it from being released back into space, leading to a rise in global temperatures.
 
-Climate change is a complex and multifaceted issue, with various factors contributing to its development. Some of the main causes of climate change include";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-Explain blockchain;"**LA BLOCKCHAIN ES UN REGISTRO DE TRANSACTIONS DE CRIPTOMONEDAS QUE SE ALMACENA EN UNA RED DE NODOS DE COMPUTADORES AROUND EL MUNDO.**
+Climate change is a complex and multifaceted issue, with various factors contributing to its development. Some of the main causes of climate change include";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+Explain blockchain;"¡CLARO! LA BLOCKCHAIN ES UNA TECNOLOGÍA DE REGISTRO DESCENTRALIZADO Y SEGURO QUE PERMITE A UNA RED DE NODOS VERIFICAR Y REGISTRAR TRANSACCIONES DE MANERA TRANSPARENTE Y INMUTABLE.
 
-**CADA NODO DE LA RED TIENE UNA COPIA DE LA LISTA DE TRANSACTIONS, QUE SE CONOCE COMO ""CADENA DE BLOCKS"".**
+AQUÍ TE EXPLICO CÓMO FUNCIONA:
 
-**CUANDO UNA TRANSACTIONS SE REALIZA,";;;"Blockchain! It's a fascinating technology that has revolutionized the way we think about data storage, security, and transactions. Here's a comprehensive explanation:
+1. **RED DE NODOS**: UNA BLOCKCHAIN SE COMPONE DE UNA RED DE NODOS QUE ESTÁN CONECTADOS ENTRE SÍ A TRAVÉS DE UNA RED DE COMUNICACIÓN.
+2. **BLOQUES**: LOS NODOS DE LA RED COMBINAN TRANSACCIONES EN BLOQUES,";;;"Blockchain! It's a fascinating technology that has revolutionized the way we think about data storage, security, and transactions. Here's a comprehensive explanation:
 
 **What is Blockchain?**
 
@@ -133,8 +161,8 @@ Blockchain is a decentralized, digital ledger that records transactions across a
 
 **Key Components:**
 
-1. **Blocks**: A block is a collection of transactions, such as data or financial transactions, that are";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What should I eat for breakfast?;¡ESPERA UN MOMENTO! ¿QUÉ TIEMPO ES? ¿QUÉ TIEMPO ES? ¿QUÉ TIEMPO ES? ¡ES UNA MAÑANA NUEVA! ¿QUÉ TE GUSTA? ¿QUÉ TE HACE COMER? ¿QUÉ TIEMPO ES? ¿QUÉ TIEMPO ES? ¡ES UNA OPCIÓN! ¿QUÉ TE PARECE? ¿QUÉ TE GUSTA;;;"There are so many delicious options to choose from. Here are a few ideas to get you started:
+1. **Blocks**: A block is a collection of transactions, such as data or financial transactions, that are";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What should I eat for breakfast?;¡HOLA! HAY MUCHAS OPCIONES DELICIOSAS PARA DESAYUNAR. ¿QUÉ TE APETECE? ¿QUIERES ALGO LIGERO Y SALUDABLE, COMO AVENA CON FRUTAS O UN YOGUR CON GRANOLA? ¿O PREFIERES ALGO MÁS SUSTANCIOSO, COMO HUEVOS REVUELTOS CON PAN TOSTADO O UN TORTA DE FRUTAS? ¿O TAL VEZ ALGO MÁS RÁPIDO Y FÁCIL, COMO UN CAFÉ CON UN BOCADILLO DE PAN O UN BAR;;;"There are so many delicious options to choose from. Here are a few ideas to get you started:
 
 **Healthy Options:**
 
@@ -147,37 +175,51 @@ What should I eat for breakfast?;¡ESPERA UN MOMENTO! ¿QUÉ TIEMPO ES? ¿QUÉ T
 **Sweet Treats:**
 
 1. Pancakes or waffles with fresh fruit and syrup
-2";False;False;es;en;;;True;0.8462;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do neural networks work?;"LOS NEURONAS ARTIFICIALES FUNCIONAN DE MANERA SIMILAR A LOS NEURONAS DEL CEREBRO, PERO ENSTEAD DE DEPENDER DE LA CONEXIÓN NEURONAL, SE BASAN EN ALGORITMOS Y EQUACIONES MATEMÁTICAS QUE PERMITEN EL Aprendizaje Y LA CLASIFICACIÓN DE DATOS.
+2";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do neural networks work?;"¡CLARO! LAS REDES NEURONALES SON UN TIPO DE ALGORITMO ARTIFICIAL INSPIRADO EN LA ESTRUCTURA Y FUNCIÓN DEL CEREBRO HUMANO. FUNCIONAN MEDIANTE UN PROCESO DE APRENDIZAJE AUTOMÁTICO, DONDE SE ENTRENAN EN GRANDES CONJUNTOS DE DATOS PARA APRENDER PATRONES Y RELACIONES ENTRE VARIABLES.
 
-LOS NEURONAS ARTIFICIALES ESTÁ";;;"Neural networks are a fundamental concept in machine learning and artificial intelligence. I'll break it down in a way that's easy to understand.
+AQUÍ TE EXPLICO PASO A PASO CÓMO FUNCIONAN:
+
+1. **CAPAS DE NEURONAS**: LAS REDES NEURONALES ESTÁN COMPUESTAS POR CAPAS DE NEURONAS, QUE SON UNIDADES BÁS";;;"Neural networks are a fundamental concept in machine learning and artificial intelligence. I'll break it down in a way that's easy to understand.
 
 **What is a Neural Network?**
 
 A neural network is a computer system inspired by the structure and function of the human brain. It's composed of interconnected nodes or ""neurons"" that process and transmit information. Each node receives one or more inputs, performs a computation, and then sends the output to other nodes.
 
-**How Does a Neural Network Work?";False;False;es;en;;;True;1.0;0.9556;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is love?;EL AMOR ES UN SENTIMIENTO PROFUNDO Y COMPLEJO QUE PUEDE SER DESCRITO DE MANERA VARIADA, PERO EN ESencia, ES UNA EMOCIÓN QUE SE CARACTERIZA POR UNA SENSACIÓN DE ATRACCIÓN, AFFECTION Y DEVOCIÓN HACIA ALTRA PERSONA.;;;"What a profound and complex question!
+**How Does a Neural Network Work?";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is love?;"EL AMOR ES UNA EMOCIÓN COMPLEJA Y MULTIFACÉTICA QUE PUEDE SER DIFÍCIL DE DEFINIR. SIN EMBARGO, SE PUEDE DECIR QUE EL AMOR ES UNA SENSACIÓN PROFUNDA Y DURADERA DE AFECTO, CARIÑO Y DEVOCIÓN HACIA OTRA PERSONA O COSA.
+
+EL AMOR PUEDE MANIFESTARSE DE MUCHAS MANERAS DIFERENTES, COMO EL AMOR ROMÁNTICO, EL AMOR FAMILIAR, EL AMOR POR UN HOBBY O PASATIEMPO, O INCLUSO EL AMOR POR UN LUGAR O UNA ACTIVIDAD. C";;;"What a profound and complex question!
 
 Love is a multifaceted and subjective experience that can be difficult to define, but I'll try to provide a comprehensive and nuanced answer.
 
 Love is a strong feeling of affection, attachment, or deep emotional connection with another person, place, or thing. It can be characterized by feelings of warmth, tenderness, and care, and is often accompanied by a desire to nurture, protect, and care for the object of one's love.
 
-There are many different types";False;False;es;en;;;True;1.0;0.9713;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I fix a bug in my code?;¡NO PROBLEMA! ¿CUÁL ES EL PROBLEMA ESPECÍFICO QUE ESTÁ CAUSANDO EL BUG? ¿CUÁLES SON LOS ERRORES QUE ESTÁS VIEJANDO EN EL CONSOLE? ¡TE AYUDARÉ A ENCONTRAR LA SOLUCIÓN!;;;"I'd be happy to help you troubleshoot the issue with your code.
+There are many different types";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I fix a bug in my code?;"¡CLARO! PARA SOLUCIONAR UN BUG EN TU CÓDIGO, TE PUEDO OFRECER ALGUNOS PASOS GENERALES:
+
+1. **REPITE EL ERROR**: REPITE EL ERROR PARA ASEGURARTE DE QUE ESTÁS EN EL LUGAR CORRECTO.
+2. **REVISA EL CÓDIGO**: REVISA EL CÓDIGO QUE ESTÁS EJECUTANDO Y BUSCA CUALQUIER ERROR DE SINTAXIS, ERRORES DE TIPO O ERRORES DE LÓGICA.
+3. **UTILIZA HERRAMIENTAS DE DEPURACIÓN**: UTILIZA";;;"I'd be happy to help you troubleshoot the issue with your code.
 
 To get started, could you please provide more details about the bug you're experiencing? This will help me better understand the problem and provide a more accurate solution. Please provide the following information:
 
 1. **What programming language** are you using?
 2. **What is the code** that's causing the issue? (You can paste a small snippet or share a link to your code)
-3. **What is the error";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is the meaning of life?;LA RESPUESTA A ESTA PREGUNTA ES UNA DE LAS MÁS ANTIGUAS Y COMPLEJAS DE LA HUMANIDAD. ALGUNOS DIAN QUE EL FIN DEL MUNDO ES LA RESPUESTA, OTROS QUE LA CONEXIÓN CON LOS DEMÁS. PERO LA VERDAD ES QUE NO HAY UNA RESPUESTA ÚNICA, CADA PERSONA DEBE ENCONTRAR SU PROPRIO;;;"The question of the meaning of life is one of the most profound and debated topics in human history. Philosophers, theologians, scientists, and thinkers from various disciplines have offered a wide range of perspectives on this question. Here's a brief overview of some of the main ideas:
+3. **What is the error";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is the meaning of life?;"LA PREGUNTA MÁS PROFUNDA DE LA EXISTENCIA HUMANA. AUNQUE NO HAY UNA RESPUESTA ÚNICA Y DEFINITIVA, HAY VARIAS PERSPECTIVAS FILOSÓFICAS Y CIENTÍFICAS QUE INTENTAN ABORDAR ESTE TEMA.
+
+ALGUNOS FILÓSOFOS, COMO ARISTÓTELES, CREEN QUE EL PROPÓSITO DE LA VIDA ES ALCANZAR LA FELICIDAD Y LA VIRTUD A TRAVÉS DE LA RAZÓN Y LA MORALIDAD. OTROS, COMO EL BUDISTA, CRE";;;"The question of the meaning of life is one of the most profound and debated topics in human history. Philosophers, theologians, scientists, and thinkers from various disciplines have offered a wide range of perspectives on this question. Here's a brief overview of some of the main ideas:
 
 **Philosophical perspectives:**
 
 1. **Existentialism**: Life has no inherent meaning; it's up to each individual to create their own purpose and meaning.
-2. **Hedonism**: The meaning";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does the internet work?;LA INTERNET ES UNA RED DE REDES QUE SE CONECTAN MÁS DE 4 MILILLONES DE SERVIDORES ALOJADOS EN TODO EL MUNDO. ESTOS SERVIDORES SE CONOCEN COMO SERVIDORES DE CONTENIDO Y SE ENCONTRAN EN SERVIDORES CENTRALES QUE SE CONOCEN COMO SERVIDORES DE RED. ESTOS SERVIDORES DE RED SE CONECTAN;;;"The internet is a complex and fascinating system, but I'll try to break it down in simple terms.
+2. **Hedonism**: The meaning";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does the internet work?;"¡CLARO! LA RED DE INTERNET ES UN SISTEMA COMPLEJO QUE PERMITE LA COMUNICACIÓN Y EL INTERCAMBIO DE INFORMACIÓN ENTRE DISPOSITIVOS CONECTADOS A TRAVÉS DE UNA RED DE CABLES Y SATÉLITES.
+
+AQUÍ TE EXPLICO LOS PASOS BÁSICOS DE CÓMO FUNCIONA LA INTERNET:
+
+1. **LA CONEXIÓN**: UN DISPOSITIVO CONECTADO A INTERNET, COMO UN ORDENADOR O UN TELÉFONO INTELIGENTE, ENVÍA UNA SOLICITUD A UN SERVIDOR DE INTERNET PARA ACCEDER A UNA PÁGINA WEB O ENVIAR";;;"The internet is a complex and fascinating system, but I'll try to break it down in simple terms.
 
 **The Basics**
 
@@ -185,44 +227,64 @@ The internet is a global network of interconnected computers and servers that co
 
 **How Data is Transmitted**
 
-Here's a step-by-step explanation of how data is transmitted over the internet:";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is democracy?;LA DEMOCRACIA ES UN SISTEMA POLÍTICO EN EL QUE EL PODER ESTÁ EN LAS MANOS DE LOS CIUDADANOS, QUE SE EXPRESAN A TRAVÉS DE ELECCIONES LIBRES Y JUSTAS, Y QUE SE GOBERNAN A TRAVÉS DE INSTITUCIONES QUE SE ENFRENTAN A LA CORRUPTELA Y PROTEGEN LOS DERECHOS DE TODOS;;;"Democracy is a system of government where power is held by the people, either directly or through elected representatives. In a democratic system, citizens have the right to participate in the decision-making process, either by voting for their representatives or by directly voting on laws and policies.
+Here's a step-by-step explanation of how data is transmitted over the internet:";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is democracy?;"LA DEMOCRACIA ES UN SISTEMA DE GOBIERNO EN EL QUE EL PODER ESTÁ EN MANOS DEL PUEBLO, REPRESENTADO A TRAVÉS DE ELECCIONES LIBRES Y JUSTAS. EN UNA DEMOCRACIA, LOS CIUDADANOS TIENEN DERECHO A VOTAR, EXPRESAR SUS OPINIONES Y PARTICIPAR EN EL PROCESO POLÍTICO. EL GOBIERNO SE COMPONE DE REPRESENTANTES ELEGIDOS POR EL PUEBLO, QUE DEBEN RESPONDER A LAS NECESIDADES Y DESEOS DE SUS ELECTORES.
+
+LA DEMOCRACIA SE CARACTERIZA POR LA SEPARACIÓN DE";;;"Democracy is a system of government where power is held by the people, either directly or through elected representatives. In a democratic system, citizens have the right to participate in the decision-making process, either by voting for their representatives or by directly voting on laws and policies.
 
 There are several key characteristics of democracy:
 
 1. **Free and fair elections**: Citizens have the right to vote for their representatives, and the elections are free from interference or manipulation.
-2. **Protection of individual rights**: Democracy protects";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I make friends?;¡HABLA CON LAS PERSONAS A AROUND TI! Únete A GRUPOS DE INTERÉS Y PARTICIPA EN ACTIVIDADES QUE TE GUSTEN. NO TE RINDAS, ¡ES COMÚN QUE SE NUEVA AMISTAD SE CREE EN LAS PRIMERAS INTERACCIONES!;;;"Making friends can be a bit challenging, but don't worry, I'm here to help. Here are some tips that might help you make new friends:
+2. **Protection of individual rights**: Democracy protects";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I make friends?;"¡CLARO! HACER AMIGOS ES UN PROCESO QUE REQUIERE TIEMPO Y ESFUERZO, PERO CON ALGUNAS ESTRATEGIAS Y ACTITUDES POSITIVAS, PUEDES AUMENTAR TUS POSIBILIDADES DE HACER AMIGOS. AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ÚNETE A GRUPOS O CLUBES QUE COMPARTAN TUS INTERESES**: ESTO TE PERMITIRÁ CONOCER A PERSONAS CON GUSTOS Y PASATIEMPOS SIMILARES.
+2. **SÉ ABIERTO Y AMIGABLE**: SON";;;"Making friends can be a bit challenging, but don't worry, I'm here to help. Here are some tips that might help you make new friends:
 
 1. **Join a club or group that aligns with your interests**: This could be a book club, a sports team, a hiking group, or any other type of group that meets regularly and allows you to interact with like-minded people.
-2. **Attend events and gatherings**: Look for events in your community, such as concerts, festivals";False;False;es;en;;;True;1.0;0.9732;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is gravity?;LA GRAVEDAD ES UN FORCE QUE ATRAE LOS OBJETOS CON UNA ACCELERACIÓN CONSTANTE, AUNQUE SU MÁS FAMILIAR Y OBVIOS ES LA QUE ATRAE A LOS OBJETOS HACIA LA TIERRA.;;;"Gravity is a fundamental force of nature that causes objects with mass to attract each other. It's what keeps us and our planet on the ground, what makes things fall towards the center of the Earth, and what holds the universe together.
+2. **Attend events and gatherings**: Look for events in your community, such as concerts, festivals";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is gravity?;LA GRAVEDAD ES UNA FUERZA FUNDAMENTAL DE LA NATURALEZA QUE ATRAE A LOS OBJETOS CON MASA HACIA UN PUNTO CENTRAL, LLAMADO CENTRO DE GRAVEDAD. ESTA FUERZA SE DEBE A LA CURVATURA DEL ESPACIO-TIEMPO, SEGÚN LA TEORÍA DE LA RELATIVIDAD GENERAL DE ALBERT EINSTEIN. EN OTRAS PALABRAS, LA GRAVEDAD ES LA FUERZA QUE MANTIENE A LOS PLANETAS EN ÓRBITA ALREDEDOR DEL SOL Y A LOS OBJETOS EN LA;;;"Gravity is a fundamental force of nature that causes objects with mass to attract each other. It's what keeps us and our planet on the ground, what makes things fall towards the center of the Earth, and what holds the universe together.
 
 Gravity is a universal force that affects everything with mass or energy, from the smallest subatomic particles to the largest galaxies. It's a long-range force, meaning it can act over vast distances, and it's always attractive, never repulsive.
 
-The concept of gravity";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-Explain recursion;"LA RECURSIVIDAD ES UN CONCEPTO FUNDAMENTAL EN LA PROGRAMACIÓN QUE PERMITE QUE UN ALGORITMO LLAME A SI MISMO EN DETERMINADAS ETAPAS DEL PROCESO DE RESOLUCIÓN DE PROBLEMAS. ESTO PERMITE QUE EL ALGORITMO SE COMUNICARA CON SÍ MISMO Y RESOLVA PROBLEMAS DE MANERA INDUCTIVA.
+The concept of gravity";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+Explain recursion;"¡CLARO! LA RECURSIVIDAD (RECURSIVIDAD EN INGLÉS) ES UN CONCEPTO FUNDAMENTAL EN LA PROGRAMACIÓN Y LA LÓGICA MATEMÁTICA.
 
-EN LA RECURSIVIDAD";;;"Recursion! A fundamental concept in computer science that can be a bit tricky to grasp at first, but don't worry, I'm here to help.
+**¿QUÉ ES LA RECURSIVIDAD?**
+
+LA RECURSIVIDAD ES UN PATRÓN DE PROGRAMACIÓN EN EL QUE UN ALGORITMO SE LLAMA A SÍ MISMO PARA RESOLVER UN PROBLEMA. EN OTRAS PALABRAS, UN ALGORITMO SE DIVIDE EN UNA PARTE QUE SE LLAMA A SÍ MISMO PARA RESOLVER UN SUBPROBLEMA RELACIONADO.
+
+**";;;"Recursion! A fundamental concept in computer science that can be a bit tricky to grasp at first, but don't worry, I'm here to help.
 
 **What is Recursion?**
 
-Recursion is a programming technique where a function calls itself repeatedly until it reaches a base case that stops the recursion. In other words, a function solves a problem by breaking it down into smaller instances of the same problem, which are then solved by the same function, until the solution to the original problem is found";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is art?;LA ARTE ES UN EXPRESION DE LA CREATIVIDAD HUMANA, UN MÉDIO DE COMUNICACIÓN QUE PERMITE EXPRESAR EMOCIONES, IDEAS Y SENTIMIENTOS DE MANERA CREATIVA Y ORIGINAL.;;;"What a profound and subjective question!
+Recursion is a programming technique where a function calls itself repeatedly until it reaches a base case that stops the recursion. In other words, a function solves a problem by breaking it down into smaller instances of the same problem, which are then solved by the same function, until the solution to the original problem is found";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is art?;"EL ARTE ES UNA FORMA DE EXPRESIÓN CREATIVA QUE BUSCA COMUNICAR EMOCIONES, IDEAS Y PENSAMIENTOS A TRAVÉS DE DIFERENTES MEDIOS Y TÉCNICAS. PUEDE SER VISUAL, AUDITIVA, TEATRAL O INCLUSO DIGITAL, Y SE CARACTERIZA POR SU ORIGINALIDAD Y PERSONALIDAD.
+
+EL ARTE PUEDE SER ENTENDIDO DE MUCHAS MANERAS DIFERENTES, DESDE LA INTERPRETACIÓN DE LA BELLEZA Y LA ESTÉTICA HASTA LA REFLEXIÓN SOBRE LA SOCIEDAD Y LA CULTURA. TAMBIÉN PUEDE SER UNA FORMA DE EXPRESIÓN";;;"What a profound and subjective question!
 
 Art is a complex and multifaceted concept that has been debated and explored by philosophers, artists, critics, and scholars for centuries. While there's no one definitive answer, here's a comprehensive overview:
 
-**Definition:** Art is a form of human expression that uses various mediums, techniques, and forms to convey emotions, ideas, experiences, and perspectives. It can take many forms, including visual arts (painting, sculpture, photography), performing arts (music,";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I stay motivated?;¡LA CLAVE ES ESTABLECER OBJETIVOS AMBIENTALES Y FOCOS EN TU MISIÓN! ¡TAMBÍEN ES IMPORTANTE ESTABLECER UNA RUTA DE MANTENIMIENTO DE LA MOTIVACIÓN, COMO UNA LISTA DE TAREAS A REALIZAR CADA DÍA Y UNA RECOMPensa AL FIN DE LA SEMANA! ¡Y NO OLVIDES QUE LA MENTALIDAD;;;"Staying motivated can be a challenge, but there are many strategies that can help. Here are some tips to get you started:
+**Definition:** Art is a form of human expression that uses various mediums, techniques, and forms to convey emotions, ideas, experiences, and perspectives. It can take many forms, including visual arts (painting, sculpture, photography), performing arts (music,";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I stay motivated?;"PARA MANTENER LA MOTIVACIÓN, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESTABLECE METAS CLARAS**: DEFINE QUÉ QUIERES LOGRAR Y HAZ UN PLAN PARA ALCANZAR TUS OBJETIVOS. ESTO TE AYUDARÁ A MANTENER LA DIRECCIÓN Y EL PROPÓSITO.
+2. **DIVIDE LAS TAREAS EN PASOS PEQUEÑOS**: A VECES, LAS TAREAS GRANDES PUEDEN PARECER ABRUMADORAS. DIVIDE LAS TAREAS EN PASOS MÁS PEQUEÑOS Y MANEJABLES, PARA QUE PUED";;;"Staying motivated can be a challenge, but there are many strategies that can help. Here are some tips to get you started:
 
 1. **Set clear goals**: Having a clear idea of what you want to achieve can help you stay motivated. Break down large goals into smaller, manageable tasks to make progress feel more achievable.
-2. **Find your why**: Identify the reasons behind your goals and remind yourself why they're important to you. This can help you stay motivated and focused on what's truly";False;False;es;en;;;True;1.0;0.981;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is evolution?;LA EVOLUCIÓN ES EL PROCESO POR EL QUE LOS ORGANISMOS VIVIENTES SE MODIFICAN A TRAVÉS DE LAS GENERACIONES, DEBIDO A LA SELECTIÓN NATURAL, LA MUTACIÓN GENÉTICA Y LA INOCULACIÓN GENÉTICA, LO QUE CONDUCIRÁ A LA CREACIÓN DE NUEVOS TIPOS DE ESPECIES.;;;"Evolution is a fundamental concept in biology that explains how living organisms change and adapt over time. It's a gradual process that has been occurring for billions of years, shaping the diversity of life on Earth.
+2. **Find your why**: Identify the reasons behind your goals and remind yourself why they're important to you. This can help you stay motivated and focused on what's truly";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is evolution?;"LA EVOLUCIÓN ES EL PROCESO POR EL CUAL LAS ESPECIES CAMBIAN Y SE ADAPTAN A SU ENTORNO A LO LARGO DEL TIEMPO A TRAVÉS DE LA SELECCIÓN NATURAL. ESTE PROCESO SE BASA EN LA VARIACIÓN GENÉTICA DE LAS POBLACIONES, LA HERENCIA Y LA SELECCIÓN DE CARACTERÍSTICAS QUE MEJORAN LA SUPERVIVENCIA Y LA REPRODUCCIÓN DE LOS INDIVIDUOS.
+
+EN OTRAS PALABRAS, LA EVOLUCIÓN ES COMO UN PROCESO DE ""MEJORA"" GRADUAL DE LAS ESPECIES A LO";;;"Evolution is a fundamental concept in biology that explains how living organisms change and adapt over time. It's a gradual process that has been occurring for billions of years, shaping the diversity of life on Earth.
 
 **What is evolution?**
 
-Evolution is the scientifically supported theory that all living organisms share a common ancestor and have evolved over time through a process of variation, mutation, genetic drift, gene flow, and natural selection. This process results in the creation of new species, the adaptation of existing species";False;False;es;en;;;True;0.8182;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does electricity work?;LA ELECTRICIDAD ES UNA FORMA DE TRANSMISIÓN DE ENERGÍA QUE SE PRODUCE A TRAVÉS DE LA CONDUCCIÓN DE CORRIENTES ELÉCTRICAS. ESTAS CORRIENTES ELÉCTRICAS SE CREAN A TRAVÉS DE LA CONVERSIÓN DE LA ENERGÍA QUÍMICA EN ENERGÍA ELÉCTRICA, COMO EN EL CASO DE LAS BATER;;;"Electricity is a fundamental part of our daily lives, and understanding how it works can be fascinating. Here's a simplified explanation:
+Evolution is the scientifically supported theory that all living organisms share a common ancestor and have evolved over time through a process of variation, mutation, genetic drift, gene flow, and natural selection. This process results in the creation of new species, the adaptation of existing species";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does electricity work?;"LA ELECTRICIDAD ES UNA FORMA DE ENERGÍA QUE SE TRANSMITE A TRAVÉS DE CORRIENTES ELÉCTRICAS. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA:
+
+LA ELECTRICIDAD SE PRODUCE CUANDO UN CONDUCTOR, COMO UN CABLE O UN CABLEADO, PERMITE QUE LOS ELECTRONES FLUYAN A TRAVÉS DE ÉL. ESTOS ELECTRONES SE MUEVEN DESDE UN PUNTO DE ALTA TENSIÓN HASTA UN PUNTO DE BAJA TENSIÓN, CREANDO UNA CORRIENTE ELÉCTRICA.
+
+LA CORRIENTE";;;"Electricity is a fundamental part of our daily lives, and understanding how it works can be fascinating. Here's a simplified explanation:
 
 **What is electricity?**
 
@@ -230,8 +292,10 @@ Electricity is a form of energy that is generated by the movement of charged par
 
 **The Basics**
 
-Electricity is created by the interaction between two types";False;False;es;en;;;True;0.8;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is meditation?;LA MEDITACIÓN ES UNA PRACTICA QUE CONSISTE EN FOCAR LA MENTE EN UN PUNTO DETERMINADO, COMO LA RESPIRACIÓN, LA VIBRACIÓN DEL CORAZÓN O LA IMAGEN DE UNA PALABRA, PARA ACHICAR LA MENTE Y ACONSEJAR LA CALMA Y LA SERENIDAD.;;;"Meditation is a powerful practice that has been used for thousands of years to cultivate physical, emotional, and mental well-being. Here's a brief overview:
+Electricity is created by the interaction between two types";False;False;es;en;;;True;0.8667;1.0;True;es_up;upper(targets_es_open.csv)
+What is meditation?;"LA MEDITACIÓN ES UNA PRÁCTICA QUE CONSISTE EN CENTRARSE EN LA MENTE Y EL CUERPO PARA ALCANZAR UN ESTADO DE CALMA, CLARIDAD Y CONCIENCIA. SE TRATA DE SENTARSE EN SILENCIO, CERRAR LOS OJOS Y ENFOCARSE EN LA RESPIRACIÓN, LA SENSACIÓN DEL CUERPO O UNA MANTRA, PARA DEJAR DE LADO LAS DISTRACCIONES Y PENSAMIENTOS QUE NOS RODEAN.
+
+LA MEDITACIÓN PUEDE AYUDAR A REDUCIR EL ESTRÉS, LA ANS";;;"Meditation is a powerful practice that has been used for thousands of years to cultivate physical, emotional, and mental well-being. Here's a brief overview:
 
 **What is meditation?**
 
@@ -239,14 +303,20 @@ Meditation is a technique that involves training your mind to focus, relax, and 
 
 **How does meditation work?**
 
-When you meditate,";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I write an essay?;¡CLARO! PARA ESCRIBIR UN ESSAY, DEBE COMIENZAR CON UN TÍTULO APROPIADO Y UN RESUMEN DEL TEMA. LUEGO, DEBE PRESENTAR UNA INTRODUCCIÓN QUE PRESENTE EL PROBLEMA O PREGUNTA QUE SE VA A ABORDAR. A continuación, DEBE PRESENTAR ARGUMENTOS Y EVIDENCIAS QUE SOPORTEN;;;"Writing an essay can seem daunting, but it's a skill that can be learned with practice and guidance. Here's a step-by-step guide to help you write a well-structured and effective essay:
+When you meditate,";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I write an essay?;"¡CLARO! PARA ESCRIBIR UN ENSAYO, SIGUE ESTOS PASOS:
+
+1. **DEFINE EL TEMA**: ELIGE UN TEMA QUE TE INTERESE Y QUE TENGAS CLARO EN QUÉ TE GUSTARÍA ESCRIBIR.
+2. **HAZ UNA INVESTIGACIÓN**: BUSCA INFORMACIÓN SOBRE EL TEMA QUE TE GUSTARÍA ESCRIBIR. PUEDES LEER ARTÍCULOS, LIBROS, ARTÍCULOS EN LÍNEA, ETC.
+3. **CREA UN PLAN**: ORGANIZA TUS IDEAS Y ESTRUCTURA TU ENSAYO. DIVIDE";;;"Writing an essay can seem daunting, but it's a skill that can be learned with practice and guidance. Here's a step-by-step guide to help you write a well-structured and effective essay:
 
 **I. Planning and Preparation**
 
 1. **Understand the assignment**: Read and understand the prompt or question being asked. Make sure you know what's expected of you.
-2. **Research and gather information**: Collect relevant sources, such as books, articles, or online resources, to support your";False;False;es;en;;;True;1.0;0.9429;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is inflation?;LA INFLACIÓN ES UN PROCESO ECONÓMICO EN EL QUE EL PRECIO DE LOS BIENES Y SERVICIOS Aumenta RÁPIDAMENTE EN UN PERÍODO DE TIEMPO, CAUSANDO QUE EL VALOR DE LA MONEDA SE REDUCA.;;;"Inflation is a complex economic concept, but I'll break it down in simple terms.
+2. **Research and gather information**: Collect relevant sources, such as books, articles, or online resources, to support your";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is inflation?;"LA INFLACIÓN ES UN FENÓMENO ECONÓMICO EN EL QUE EL PRECIO DE LOS BIENES Y SERVICIOS AUMENTA EN UN PERÍODO DE TIEMPO DETERMINADO, LO QUE PROVOCA UNA DISMINUCIÓN DEL PODER ADQUISITIVO DEL DINERO. EN OTRAS PALABRAS, LA INFLACIÓN ES CUANDO EL DINERO NO VALE TANTO COMO ANTES, LO QUE SIGNIFICA QUE LAS PERSONAS NECESITAN MÁS DINERO PARA COMPRAR LO MISMO QUE ANTES.
+
+POR EJEMPLO, SI EL PRECIO DE UN PRODUCTO AUMENTA DEL 10% EN UN AÑO";;;"Inflation is a complex economic concept, but I'll break it down in simple terms.
 
 **What is inflation?**
 
@@ -254,21 +324,32 @@ Inflation is a sustained increase in the general price level of goods and servic
 
 **Example:**
 
-Imagine you had $100 last year and could buy";False;False;es;en;;;True;1.0;0.9571;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does sleep work?;LA SUEÑO ES UN PROCESO COMPLEJO QUE INCLUYE VARIAS FASES, INCLUYENDO EL SUEÑO REM, EL SUEÑO DE QUIESO Y EL SUEÑO DE PONDERACIÓN. DURANTE EL SUEÑO REM, EL CEREBRO SE ACTIVA Y SE PRODUCCIONAN HORMONAS QUE AJUDAN A REFORZAR LA MEMORIA Y EL;;;"Sleep is a fascinating and complex process that plays a crucial role in our overall health and well-being. Here's a simplified explanation of how sleep works:
+Imagine you had $100 last year and could buy";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does sleep work?;"EL SUEÑO ES UN PROCESO COMPLEJO QUE INVOLUCRA VARIAS ETAPAS Y FUNCIONES CORPORALES. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA EL SUEÑO:
+
+**FASES DEL SUEÑO**
+
+EL SUEÑO HUMANO SE DIVIDE EN VARIAS FASES, CADA UNA CON CARACTERÍSTICAS Y FUNCIONES ESPECÍFICAS:
+
+1. **FASE 1: SUEÑO LIGERO (N1)**: DURANTE ESTA FASE, EL CEREBRO SE RELAJA Y LA CONCIENCIA SE REDUCE. EL SUEÑO ES";;;"Sleep is a fascinating and complex process that plays a crucial role in our overall health and well-being. Here's a simplified explanation of how sleep works:
 
 **The Sleep Cycle**
 
 Sleep is divided into different stages, which are categorized into two main types: non-rapid eye movement (NREM) sleep and rapid eye movement (REM) sleep.
 
 1. **NREM Sleep**: This stage is further divided into three sub-stages:
-	* Stage 1: Transition from wakefulness to sleep,";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is consciousness?;LA CONCIENCIA ES EL ESTADO DE SER QUE PERCEBEMOS NUESTRO AROUND, NUESTRO PENSAMIENTO Y NUESTRO SENTIMIENTO. ES EL PROCESO POR EL QUE NUESTRO CEREBRO PROCESA LA INFORMACIÓN Y NUESTRO CÓRIZ Y NUESTRO ESPÍRITU SE CONECTAN.;;;"Consciousness is a complex and multifaceted concept that has been debated and explored by philosophers, neuroscientists, psychologists, and many other scholars for centuries. While there's no consensus on a definitive answer, here's a comprehensive overview:
+	* Stage 1: Transition from wakefulness to sleep,";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is consciousness?;"LA CONCIENCIA ES UN TEMA COMPLEJO Y CONTROVERTIDO QUE HA SIDO OBJETO DE ESTUDIO Y DEBATE EN DIVERSAS DISCIPLINAS, INCLUYENDO LA FILOSOFÍA, LA PSICOLOGÍA, LA NEUROCIENCIA Y LA FILOSOFÍA DE LA MENTE.
+
+EN GENERAL, SE CONSIDERA QUE LA CONCIENCIA ES LA CAPACIDAD DE SER CONSCIENTE DE UNO MISMO Y DEL ENTORNO, ES DECIR, LA CAPACIDAD DE TENER UNA EXPERIENCIA SUBJETIVA Y DE ESTAR PRESTANDO ATENCIÓN A";;;"Consciousness is a complex and multifaceted concept that has been debated and explored by philosophers, neuroscientists, psychologists, and many other scholars for centuries. While there's no consensus on a definitive answer, here's a comprehensive overview:
 
 **What is consciousness?**
 
-Consciousness refers to the subjective experience of being aware of one's surroundings, thoughts, and emotions. It's the quality or state of being aware of something within oneself or in the external environment. Consciousness encompasses various aspects";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I cook rice?;¡PARA COCINAR ARroz, DEBE SEGUIR ESTAS INSTRUCCIONES! Primero, LLENE UNA OLLA CON AGUA CALIENTE. Asegúrate de que el agua esté a punto de ebullición. Luego, AGREGA 1 CUP DE ARROZ POR CADA 2 CUPS DE AGUA. COCINA A FUEGO MEDIUM, CON LA LLAVE;;;"Cooking rice is a straightforward process that requires some basic steps. Here's a step-by-step guide to cooking perfect rice:
+Consciousness refers to the subjective experience of being aware of one's surroundings, thoughts, and emotions. It's the quality or state of being aware of something within oneself or in the external environment. Consciousness encompasses various aspects";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I cook rice?;"¡CLARO! COCINAR ARROZ ES MUY FÁCIL. AQUÍ TE DEJO LOS PASOS BÁSICOS:
+
+1. **LIMPIA EL ARROZ**: RÍE EL ARROZ EN UN COLADOR BAJO AGUA FRÍA PARA ELIMINAR CUALQUIER IMPUREZA.
+2. **MEZCLA CON AGUA**: EN UNA OLLA GRANDE, MEZCLA 1 TAZA DE ARROZ CON 2 TAZAS DE AGUA. PUEDES AJUSTAR LA PROPORCIÓN SEGÚN TUS PREFERENCIAS";;;"Cooking rice is a straightforward process that requires some basic steps. Here's a step-by-step guide to cooking perfect rice:
 
 **Ratio and Ingredients:**
 
@@ -278,30 +359,41 @@ How do I cook rice?;¡PARA COCINAR ARroz, DEBE SEGUIR ESTAS INSTRUCCIONES! Prime
 
 **Instructions:**
 
-1. **Rinse the rice**: Rinse the rice in a fine-mesh strainer under cold";False;False;es;en;;;False;1.0;0.7097;False;es_up;Respond entirely in uppercase letters, in Spanish.
-What is the stock market?;EL MERCADO DE VALORES ES UNA PLATAFORMA DONDE LAS EMPRESAS EMITEN ACCIONES QUE SE PUEDEN COMPRAR Y VENDER EN EL MERCADO.;;;"The stock market, also known as the equity market, is a platform where companies raise capital by issuing shares of stock to the public, and investors buy and sell those shares in hopes of earning a profit.
+1. **Rinse the rice**: Rinse the rice in a fine-mesh strainer under cold";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is the stock market?;EL MERCADO DE VALORES ES UN LUGAR DONDE LAS EMPRESAS EMITEN ACCIONES Y LOS INVERSORES PUEDEN COMPRAR Y VENDERLAS. EL OBJETIVO ES OBTENER UNA RENTABILIDAD FINANCIERA A LARGO PLAZO.;;;"The stock market, also known as the equity market, is a platform where companies raise capital by issuing shares of stock to the public, and investors buy and sell those shares in hopes of earning a profit.
 
 Here's a simplified overview:
 
 **How it works:**
 
 1. **Companies issue stocks**: Companies need capital to grow, expand, or pay off debts. They issue stocks to raise funds from investors.
-2. **Stocks are listed on an exchange**: The company's stocks are listed on";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does WiFi work?;"LA CONEXIÓN A INTERNET A TRAVÉS DE WIFI SE REALIZA A TRAVÉS DE ONdas ELECTROMAGÉTICAS QUE SE TRANSMITEN A TRAVÉS DE UN DISCO DE ALUMINIO CON HOJAS FINAS CALIFICADAS COMO ""ANTENAS"". ESTAS ANTENAS SE ENCONTRAN EN EL RUTER Y SE ENVIAN Y RECEBEN LAS ONDAS ELECT";;;"WiFi is a type of wireless networking technology that allows devices to connect to the internet or communicate with each other without the use of physical cables or wires. Here's a simplified explanation of how WiFi works:
+2. **Stocks are listed on an exchange**: The company's stocks are listed on";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does WiFi work?;"¡CLARO! LA WIFI ES UNA TECNOLOGÍA DE COMUNICACIÓN INALÁMBRICA QUE UTILIZA ONDAS DE RADIO PARA CONECTAR DISPOSITIVOS A INTERNET. AQUÍ TE EXPLICO CÓMO FUNCIONA:
+
+1. **EL ROUTER**: EL ROUTER ES EL DISPOSITIVO QUE EMITE LAS ONDAS DE RADIO QUE PERMITEN LA CONEXIÓN A INTERNET. ESTAS ONDAS DE RADIO SE EMITEN EN UNA FRECUENCIA ESPECÍFICA, QUE ES LA FRECUENCIA DE OPERACIÓN DE LA WIFI.
+2. **EL DISPOSITIVO**:";;;"WiFi is a type of wireless networking technology that allows devices to connect to the internet or communicate with each other without the use of physical cables or wires. Here's a simplified explanation of how WiFi works:
 
 **The Basics**
 
-WiFi uses radio waves to transmit data between devices. It operates on a specific frequency band, typically 2.4 gigahertz (GHz) or 5 GHz. When you connect to a WiFi network, your device (such as a laptop or smartphone) sends a request to";False;False;es;en;;;True;0.7143;0.9856;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is philosophy?;LA FILOSOFÍA ES EL ESTUDIO DE LOS CONCEPTOS Y PROBLEMAS MÁS FUNDAMENTALES DE LA CONCIENCIA HUMANA, INCLUYENDO LA NATUREZA DE LA REALIDAD, LA VERDAD, EL VALOR Y LA CONDUCTA HUMANA.;;;"Philosophy is a vast and complex field that has been debated and explored by thinkers and scholars for thousands of years. At its core, philosophy is the study of fundamental questions about existence, knowledge, values, and reality. It involves critical thinking, logical analysis, and systematic inquiry into the nature of things.
+WiFi uses radio waves to transmit data between devices. It operates on a specific frequency band, typically 2.4 gigahertz (GHz) or 5 GHz. When you connect to a WiFi network, your device (such as a laptop or smartphone) sends a request to";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is philosophy?;"LA FILOSOFÍA ES EL ESTUDIO Y LA REFLEXIÓN SOBRE LOS FUNDAMENTOS DE LA EXISTENCIA, LA REALIDAD Y LA CONDICIÓN HUMANA. SE OCUPA DE CUESTIONAR Y ANALIZAR LOS CONCEPTOS Y CREENCIAS QUE NOS RODEAN, BUSCANDO COMPRENDER MEJOR EL MUNDO Y NUESTRA LUGAR EN ÉL.
+
+LA FILOSOFÍA ABORDA TEMAS COMO LA NATURALEZA DE LA REALIDAD, LA EXISTENCIA DE DIOS, LA MORALIDAD, LA ÉTICA, LA LIBERTAD Y LA RESPONS";;;"Philosophy is a vast and complex field that has been debated and explored by thinkers and scholars for thousands of years. At its core, philosophy is the study of fundamental questions about existence, knowledge, values, and reality. It involves critical thinking, logical analysis, and systematic inquiry into the nature of things.
 
 Philosophy can be divided into several branches, including:
 
-1. **Metaphysics**: The study of reality, including the nature of existence, time, space, and causality.";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I save money?;¡LA CLAVE ES PLANIFICAR Y ESTABLECER OBJETIVOS FINANCIEROS! (THE KEY IS TO PLAN AND SET FINANCIAL GOALS!) Asegúrate de crear un presupuesto y priorizar tus gastos. REDUCIR ESPERANZAS Y CONSUMO EXCESIVO PUEDE SER UNA GRAN AJUSTE. (REDUCE EXPECTATIONS AND EXCESSIVE CONSUMPTION CAN BE A BIG ADJUSTMENT.);;;"Saving money is a great goal! There are many ways to save money, and I'll provide you with some effective tips to get you started. Here are some ideas:
+1. **Metaphysics**: The study of reality, including the nature of existence, time, space, and causality.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I save money?;"PARA AHORRAR DINERO, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESTABLECE UN PRESUPUESTO**: ASEGÚRATE DE SABER CUÁNTO DINERO TIENES DISPONIBLE PARA GASTAR CADA MES. HAZ UN PRESUPUESTO DETALLADO Y PRIORIZA TUS GASTOS.
+2. **REDUCE TUS GASTOS**: IDENTIFICA ÁREAS EN LAS QUE PUEDES REDUCIR TUS GASTOS, COMO COMER FUERA O COMPRAR ROPA NUEVA. BUSCA FORMAS DE AHORRAR EN CADA ÁREA.
+3. **CREA";;;"Saving money is a great goal! There are many ways to save money, and I'll provide you with some effective tips to get you started. Here are some ideas:
 
 1. **Create a budget**: Track your income and expenses to understand where your money is going. Make a budget that accounts for all your necessary expenses, savings, and debt repayment.
-2. **Set financial goals**: Identify what you want to save for, whether it's a short-term goal (e.g., vacation) or";False;False;unknown;en;;;False;0.4615;0.8089;False;es_up;Respond entirely in uppercase letters, in Spanish.
-What is cancer?;EL CÁNCER ES UNA ENFERMEDAD CRÓNICA QUE SE CARACTERIZA POR LA ACCUMULACIÓN ANORMAL DE CELLS MALAS EN EL CORPO. ESTAS CELLS MALAS PUEDE SER CÁNCER CELULARES, LEUCÉMIA, MAMARRO, PÁRPADA, PANCREÁTICO, ETC.;;;"Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. It's a leading cause of death worldwide, but with advancements in medical research and treatment, the prognosis has improved significantly.
+2. **Set financial goals**: Identify what you want to save for, whether it's a short-term goal (e.g., vacation) or";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is cancer?;"EL CÁNCER ES UNA ENFERMEDAD CRÓNICA Y PROGRESIVA QUE SE CARACTERIZA POR EL CRECIMIENTO ANORMAL Y LA PROLIFERACIÓN DE CÉLULAS CANCEROSAS EN UN TEJIDO O ÓRGANO DEL CUERPO. ESTAS CÉLULAS CANCEROSAS PUEDEN INVADIR Y DAÑAR LOS TEJIDOS CIRCUNDANTES, Y PUEDEN TAMBIÉN PROPAGARSE A OTRAS PARTES DEL CUERPO A TRAVÉS DE LA SANGRE O EL SISTEMA LINFÁTICO.
+
+EL CÁNCER SE DESARROLLA CUANDO HAY UN CAMBIO GENÉTICO";;;"Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. It's a leading cause of death worldwide, but with advancements in medical research and treatment, the prognosis has improved significantly.
 
 Here's a simplified explanation:
 
@@ -309,33 +401,47 @@ Here's a simplified explanation:
 
 Cancer occurs when there's a mutation in the DNA of a cell, which disrupts the normal process of cell growth and division. This mutation can be caused by:
 
-1. **Genetic mutations**: Errors in DNA replication";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does GPS work?;LOS SISTEMAS DE NAVEGACIÓN POR SATÉLITE (GPS) FUNCIONAN DE LA SIGUIENTE MANERA: LOS SATELITES EN ORBITA AROUND LA TIERRA EMITEN SEÑALES DE RADIO QUE CONTienen INFORMACIÓN DE LA POSICIÓN ACTUAL DE CADA SATELITE. ESTAS SEÑALES DE RADIO LLEGAN A LOS DISPOSITIVOS DE NAVEGACIÓN, COMO LOS RELO;;;"GPS (Global Positioning System) is a network of satellites orbiting the Earth that provide location information to GPS receivers on the ground. Here's a simplified explanation of how it works:
+1. **Genetic mutations**: Errors in DNA replication";False;False;es;en;;;True;0.9;1.0;True;es_up;upper(targets_es_open.csv)
+How does GPS work?;"¡CLARO! LA NAVEGACIÓN POR SATÉLITE (GPS) ES UN SISTEMA DE NAVEGACIÓN QUE UTILIZA UN CONJUNTO DE SATÉLITES ORBITALES PARA PROPORCIONAR UBICACIONES PRECISAS EN LA TIERRA. AQUÍ TE EXPLICO CÓMO FUNCIONA:
+
+1. **EL SISTEMA DE SATÉLITES**: HAY UN CONJUNTO DE SATÉLITES EN ÓRBITA ALREDEDOR DE LA TIERRA, QUE EMITEN SEÑALES DE RADIO A INTERVALOS REGULARES. ESTOS SATÉLITES ESTÁN EQUIP";;;"GPS (Global Positioning System) is a network of satellites orbiting the Earth that provide location information to GPS receivers on the ground. Here's a simplified explanation of how it works:
 
 **The Basics**
 
 1. **Satellites**: There are a constellation of 24-32 GPS satellites orbiting the Earth at an altitude of approximately 20,000 km (12,000 miles). These satellites are equipped with atomic clocks that transmit radio signals containing their location and the current time.
-2. **";False;False;es;en;;;True;1.0;0.979;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is happiness?;LA FELICIDAD ES UN ESTADO DE ESPÍRITU QUE SE CARACTERIZA POR UNA SENSACIÓN DE SANTOSINIO, CONFIANZA Y CONECTIVIDAD CON LOS DEMÁS.;;;"Happiness is a complex and multifaceted concept that has been studied and debated by philosophers, psychologists, and researchers for centuries. While there's no one definitive answer, here's a comprehensive overview:
+2. **";False;False;es;en;;;True;0.8462;1.0;True;es_up;upper(targets_es_open.csv)
+What is happiness?;"LA FELICIDAD ES UN ESTADO EMOCIONAL COMPLEJO Y MULTIFACÉTICO QUE PUEDE SER DIFÍCIL DE DEFINIR. SIN EMBARGO, SE PUEDE DECIR QUE LA FELICIDAD ES UNA SENSACIÓN DE BIENESTAR Y SATISFACCIÓN QUE SE EXPERIMENTA CUANDO SE SIENTE PLENAMENTE REALIZADO, CONECTADO Y CONTENTO CON UNO MISMO Y CON EL MUNDO QUE NOS RODEA.
+
+LA FELICIDAD PUEDE SER INFLUENCIADA POR UNA VARIEDAD DE FACTORES, COMO LA SALUD FÍSICA Y MENTAL, LAS";;;"Happiness is a complex and multifaceted concept that has been studied and debated by philosophers, psychologists, and researchers for centuries. While there's no one definitive answer, here's a comprehensive overview:
 
 **Definition:** Happiness is a positive emotional state characterized by feelings of joy, contentment, and satisfaction. It's a subjective experience that can be influenced by various factors, including personal experiences, relationships, achievements, and circumstances.
 
 **Theories of Happiness:**
 
-1. **Eudaimonic Happiness";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I learn faster?;¡PARA APRENDER MÁS RÁPIDO, DEBE ESTABLECERSE OBJETIVOS CLARES Y ACHICAR SU ENFOQUE! ¡TAMBIÉN DEBE ESTABLECER UN HORARIO DE ESTUDIO Y MANTENERLA CONSECUENCIA! ¡ADICIONALMENTE, DEBE BUSCAR MÉTODOS DE APRENDIZAJE QUE LE GUSTEN Y QUE LE;;;"Learning faster requires a combination of strategies that help you optimize your learning process, retain information better, and stay motivated. Here are some tips to help you learn faster:
+1. **Eudaimonic Happiness";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I learn faster?;"PARA APRENDER MÁS RÁPIDO, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESTABLECE METAS CLARAS**: DEFINE QUÉ QUIERES LOGRAR Y ESTABLECE OBJETIVOS ESPECÍFICOS Y ALCANZABLES.
+2. **CREA UN PLAN DE ESTUDIO**: ORGANIZA TU TIEMPO Y PRIORIZA LOS TEMAS QUE MÁS TE INTERESAN O QUE REQUIEREN MÁS ESFUERZO.
+3. **PRACTICA REGULARMENTE**: LA PRÁCTICA CONSTANTE ES CLAVE PARA CONSOLIDAR LO QUE HAS APRENDIDO.";;;"Learning faster requires a combination of strategies that help you optimize your learning process, retain information better, and stay motivated. Here are some tips to help you learn faster:
 
 1. **Set clear goals**: Define what you want to achieve and set specific, measurable, and attainable goals. This will help you stay focused and motivated.
 2. **Create a conducive learning environment**: Eliminate distractions, and create a quiet, comfortable, and organized space for learning.
-3. **Use active learning techniques**:";False;False;es;en;;;True;0.75;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is time?;EL TIEMPO ES UN CONCEPTO QUE NO SE PUEDE DEFINIR DE MANERA ABSOLUTA, PERO SE PUEDE DESCRIBIR COMO UNA MEDIDA DE LA RELACIÓN ENTRE EL MOVIMIENTO DE LAS COSECHAS Y LA PERCEPCIÓN HUMANA DE ESE MOVIMIENTO.;;;"What a profound and complex question!
+3. **Use active learning techniques**:";False;False;es;en;;;True;0.9231;1.0;True;es_up;upper(targets_es_open.csv)
+What is time?;"EL TIEMPO ES UNA MEDIDA ABSTRACTA QUE NOS PERMITE ORGANIZAR Y COMPRENDER EL FLUJO DE EVENTOS EN EL UNIVERSO. SE DEFINE COMO LA DURACIÓN ENTRE DOS INSTANTES CONSECUTIVOS, MEDIDO EN UNIDADES COMO SEGUNDOS, MINUTOS, HORAS, DÍAS, SEMANAS, MESES Y AÑOS.
+
+EL TIEMPO ES UNA PROPIEDAD FUNDAMENTAL DE LA REALIDAD, QUE SE APLICA A TODOS LOS FENÓMENOS FÍSICOS Y NATURALES. SE PUEDE MEDIR Y CUANTIFICAR, PERO TAMBIÉN ES SUBJETIVO";;;"What a profound and complex question!
 
 Time is a fundamental concept that has puzzled philosophers, scientists, and thinkers for centuries. While there's no straightforward answer, I'll try to provide a comprehensive overview of our current understanding of time.
 
 **What is time?**
 
-Time is often described as a measure of the duration between events, allowing us to understand the sequence and progression of events in the universe. It's a dimension that enables us to experience the world around us, from the present moment to the past";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does photosynthesis work?;LA FOTOSÍNTESIS ES EL PROCESO POR EL QUE LAS PLANTAS, ALGAS Y CIANOBACTERIAS CONVIERTEN LA LUMENOSA ENERGÍA SOLAR EN ENERGÍA QUÍMICA EN FORMA DE GLUCOSA. ESTO OCURRE A TRAVÉS DE LA REACCION DE LA FOTOSÍNTESIS, QUE INCLuye LA ABSORCIÓN DE LA LUM;;;"Photosynthesis is a fascinating process that's essential for life on Earth. I'd be happy to explain how it works.
+Time is often described as a measure of the duration between events, allowing us to understand the sequence and progression of events in the universe. It's a dimension that enables us to experience the world around us, from the present moment to the past";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does photosynthesis work?;"LA FOTOSÍNTESIS ES UN PROCESO FUNDAMENTAL PARA LA VIDA EN LA TIERRA. EN RESUMEN, ES LA FORMA EN QUE LAS PLANTAS, ALGAS Y ALGUNAS BACTERIAS CONVIERTEN LA ENERGÍA DEL SOL EN ENERGÍA QUÍMICA ALMACENADA EN LA FORMA DE GLUCOSA.
+
+EL PROCESO DE FOTOSÍNTESIS SE LLEVA A CABO EN LAS HOJAS DE LAS PLANTAS Y SE PUEDE DIVIDIR EN DOS ETAPAS PRINCIPALES:
+
+1. **FOTOFOSFORILACIÓN**:";;;"Photosynthesis is a fascinating process that's essential for life on Earth. I'd be happy to explain how it works.
 
 **What is photosynthesis?**
 
@@ -343,58 +449,77 @@ Photosynthesis is the process by which plants, algae, and some bacteria convert 
 
 **The equation:**
 
-6 CO2 (carbon dioxide) + 6 H2O (water)";False;False;es;en;;;True;1.0;0.985;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is virtue?;LA VIRTUD ES UNA CARACTERÍSTICA QUE SE ASOCIA CON LA PERFECCIÓN, LA INTEGRIDAD Y LA EXCELENCIA EN UNA PERSONA. ES UNA COMBINACIÓN DE TRAIS Y PROPIEDADES QUE HACEN QUE UNA PERSONA SEA UNA BUENA EJEMPLO Y UNA FUENTE DE INSPIRACIÓN PARA LOS DEMÁS.;;;"Virtue is a complex and multifaceted concept that has been debated and explored by philosophers, ethicists, and scholars across various disciplines for centuries.
+6 CO2 (carbon dioxide) + 6 H2O (water)";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is virtue?;"LA VIRTUD ES UNA CARACTERÍSTICA O CUALIDAD QUE SE CONSIDERA EXCELENTE O ADMIRABLE EN UNA PERSONA. SE REFIERE A LA PERFECCIÓN MORAL Y ÉTICA QUE SE BUSCA ALCANZAR EN LA VIDA. LAS VIRTUDES SON VALORES Y COMPORTAMIENTOS QUE SE CONSIDERAN POSITIVOS Y QUE AYUDAN A LAS PERSONAS A SER MEJORES PERSONAS.
+
+EN LA FILOSOFÍA, SE CONSIDERA QUE LAS VIRTUDES SON CARACTERÍSTICAS QUE SE DESARROLLAN A TRAVÉS DE LA PRÁCTICA Y LA EXPERIENCIA, Y QUE";;;"Virtue is a complex and multifaceted concept that has been debated and explored by philosophers, ethicists, and scholars across various disciplines for centuries.
 
 In general, virtue refers to a character trait or moral quality that enables individuals to live a good life, make wise decisions, and cultivate a sense of well-being and fulfillment. Virtues are often considered to be the building blocks of moral character, and they are typically seen as being in contrast to vices or moral flaws.
 
-There are many different";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I make a website?;"¡CLARO! PARA CREAR UN SITIO WEB, DEBE REALIZAR LOS SIGUIENTES PASOS:
+There are many different";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I make a website?;"¡CLARO! PARA CREAR UN SITIO WEB, TE RECOMIENDO SEGUIR ESTOS PASOS BÁSICOS:
 
-1. ELIGA UN NOMBRE DE DOMINIO QUE LE AGRADA Y VERIFIQUE QUE ESTÉ DISPONIBLE.
-2. ELIGA UN PROVEEDOR DE SERVICIOS WEB (PSW) QUE OFREZCA SERVICIOS DE ALMACENAMIENTO DE DATOS, CONEXIÓN A INTERN";;;"Making a website can be a fun and rewarding experience, and I'm here to guide you through the process. Here's a step-by-step guide to help you get started:
+1. **DEFINE TU PROPÓSITO**: ¿QUÉ ES LO QUE QUIERES LOGRAR CON TU SITIO WEB? ¿ES UN SITIO DE COMERCIO ELECTRÓNICO, UN BLOG, UNA PÁGINA DE PRESENTACIÓN O ALGO MÁS?
+2. **ELIGE UN DOMINIO**: ELIGE UN NOMBRE DE DOMINIO QUE REFLEJE TU MARCA O PROPÓSITO. PUEDES REGISTRAR UN DOMINIO EN SITIOS COMO GOD";;;"Making a website can be a fun and rewarding experience, and I'm here to guide you through the process. Here's a step-by-step guide to help you get started:
 
 **Option 1: Build a website from scratch**
 
 1. **Choose a domain name**: Register a unique and memorable domain name that represents your website's purpose. You can use a registrar like GoDaddy or Namecheap.
-2. **Select a web hosting service**: Choose a reliable web hosting service that meets your needs";False;False;es;en;;;True;0.8333;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is entropy?;LA ENTROPÍA ES UN CONCEPTO FÍSICO QUE DESCRIBE LA DISMINUCIÓN DE LA ORGANIZACIÓN EN UN SISTEMA, ES decir, LA Aumento DE LA DESORDEN Y LA CASUÍSTICA EN EL MUNDO AROUND US.;;;"Entropy is a fundamental concept in physics, chemistry, and information theory. It's a measure of disorder, randomness, or uncertainty in a system.
+2. **Select a web hosting service**: Choose a reliable web hosting service that meets your needs";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is entropy?;"LA ENTROPÍA ES UNA MEDIDA DE LA DESORDEN O LA ALEATORIEDAD EN UN SISTEMA. SE DEFINE COMO LA CANTIDAD DE CALOR O ENERGÍA QUE SE DESVÍA DE SU ORGANIZACIÓN O ESTRUCTURA, LO QUE CONDUCE A UN AUMENTO EN LA CANTIDAD DE MOVIMIENTOS O ESTADOS POSIBLES EN EL SISTEMA.
+
+EN OTRAS PALABRAS, LA ENTROPÍA ES UNA MEDIDA DE LA CANTIDAD DE DESORDEN O CAOS QUE SE PRODUCE EN UN SISTEMA CUANDO SE LE PERMITE QUE SE MUEVA LIBREMENTE";;;"Entropy is a fundamental concept in physics, chemistry, and information theory. It's a measure of disorder, randomness, or uncertainty in a system.
 
 In simple terms, entropy is a way to quantify the amount of disorder or randomness in a system. The more disordered or random a system is, the higher its entropy. Conversely, the more organized or structured a system is, the lower its entropy.
 
 Entropy can be thought of in several ways:
 
-1. **Thermodynamic entropy**: In thermodynamics";False;False;es;en;;;True;1.0;0.9197;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does memory work?;LA MEMORIA ES UN PROCESO COMPLEJO QUE INCLUYE VÁRIAS ETAPAS Y MECANISMOS. EN EL PROCESO DE MEMORIA, LA INFORMACIÓN SE ALMACENA EN EL CEREBRO A TRAVÉS DE CONEXIONES NEURONALES ENTRE LAS CELULAS DEL CEREBRO. LA FORMACIÓN DE LA MEMORIA OCURRE EN DOS ETAPAS: LA FORMACIÓN DE LA MEMORIA A;;;"Memory is a complex and fascinating process that plays a crucial role in our daily lives. Here's a simplified explanation of how memory works:
+1. **Thermodynamic entropy**: In thermodynamics";False;False;es;en;;;True;0.9167;1.0;True;es_up;upper(targets_es_open.csv)
+How does memory work?;"LA MEMORIA ES UN PROCESO COMPLEJO QUE INVOLUCRA VARIAS ESTRUCTURAS CEREBRALES Y MECANISMOS. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA:
+
+**EL PROCESO DE MEMORIA**
+
+LA MEMORIA SE DIVIDE EN TRES TIPOS PRINCIPALES: A LARGO PLAZO, A CORTO PLAZO Y DE TRABAJO.
+
+*   **MEMORIA A LARGO PLAZO**: SE REFIERE A LA CAPACIDAD DE RECORDAR INFORMACIÓN DURANTE UN PERÍODO PROLONGADO DE TIEMPO. ESTA MEMORIA SE ALMACENA EN EL HIPOC";;;"Memory is a complex and fascinating process that plays a crucial role in our daily lives. Here's a simplified explanation of how memory works:
 
 **Types of Memory**
 
 There are several types of memory, including:
 
 1. **Sensory Memory**: This is the initial stage of memory, where we store sensory information from our environment, such as sights, sounds, and smells. This type of memory is short-lived and lasts only for a few seconds.
-2. **Short-Term Memory (STM)**";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is justice?;LA JUSTICIA ES EL PRINCIPIO DE QUE CADA CUALDAD TIENE DERECHO A SER PROTEGIDA Y QUE CADA PERSONA TIENE DERECHO A SER JUDICADA DE ACUERDO A LAS LEYES Y PRINCIPIOS DE LA SOCIEDAD.;;;"What a profound and complex question! Justice is a multifaceted concept that has been debated and explored by philosophers, ethicists, lawyers, and scholars across various disciplines for centuries. Here's a comprehensive overview:
+2. **Short-Term Memory (STM)**";False;False;es;en;;;True;0.875;1.0;True;es_up;upper(targets_es_open.csv)
+What is justice?;"LA JUSTICIA ES UN CONCEPTO COMPLEJO Y MULTIFACÉTICO QUE SE REFIERE A LA IDEA DE QUE CADA PERSONA MERECE SER TRATADA CON EQUIDAD, RESPETO Y DIGNIDAD. SE TRATA DE UN SISTEMA QUE BUSCA GARANTIZAR QUE LAS PERSONAS SEAN JUZGADAS DE MANERA IMPARCIAL Y JUSTA, Y QUE SE LES APLIQUEN LAS LEYES Y NORMAS DE MANERA JUSTA Y EQUITATIVA.
+
+LA JUSTICIA SE PUEDE ENTENDER DE DIFERENTES MANERAS, COMO";;;"What a profound and complex question! Justice is a multifaceted concept that has been debated and explored by philosophers, ethicists, lawyers, and scholars across various disciplines for centuries. Here's a comprehensive overview:
 
 **Definition:** Justice refers to the fair and impartial administration of law, ensuring that individuals or groups are treated equally and without bias, and that their rights and freedoms are protected.
 
 **Key aspects:**
 
-1. **Fairness**: Justice involves treating individuals or groups in a fair and impartial manner";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I build confidence?;"¡LA CONFIANZA SE CONSTRUYE A TRAVÉS DE LA PRACTICA Y LA PREPARACIÓN! (CONFIDENCE IS BUILT THROUGH PRACTICE AND PREPARATION!)
+1. **Fairness**: Justice involves treating individuals or groups in a fair and impartial manner";False;False;es;en;;;True;0.8889;1.0;True;es_up;upper(targets_es_open.csv)
+How do I build confidence?;"¡CLARO! CONSTRUIR LA CONFIANZA ES UN PROCESO QUE REQUIERE TIEMPO Y PRÁCTICA, PERO AQUÍ TE DEJO ALGUNOS CONSEJOS PARA AYUDARTE A EMPEZAR:
 
-¡COMIENZA A ESTABLECER METAS REALISTAS Y TRABAJA HACIA ELLOGRARLAS! (START SETTING REALISTIC GOALS AND WORK TOWARDS ACHIEVING THEM!)
-
-¡NO TE DEJES DEJAR";;;"Building confidence is a wonderful goal! It can have a significant impact on various aspects of your life, from personal relationships to professional success. Here are some tips to help you build confidence:
+1. **ACEPTA TUS FORTALEZAS Y DEBILIDADES**: RECONOCE TUS HABILIDADES Y LOGROS, Y TAMBIÉN ACEPTA TUS DEBILIDADES Y ÁREAS DE MEJORA. ESTO TE AYUDARÁ A ENFOCARTE EN TUS FORTALEZAS Y A TRABAJAR EN TUS DEBILIDADES DE MANERA CONSTRUCTIVA.";;;"Building confidence is a wonderful goal! It can have a significant impact on various aspects of your life, from personal relationships to professional success. Here are some tips to help you build confidence:
 
 1. **Identify and challenge negative self-talk**: Pay attention to your inner dialogue and notice when you're being overly critical or negative towards yourself. Challenge those thoughts by reframing them in a more positive and realistic light.
-2. **Focus on your strengths**: Rather than dwelling on your weaknesses, focus on your";False;False;en;en;;;False;0.4;1.0;False;es_up;Respond entirely in uppercase letters, in Spanish.
-What is chemistry?;QUÍMICA ES LA CIENCIA QUE SE OCCUPA DE ESTUDiar LAS PROPIEDADES Y REACCIONES DE LAS MATERIAS, INCLUIDO EL ESTUDIO DE LAS PROPiedades FÍSICAS Y QUÍMicas DE LAS MOLÉCULAS Y LAS REACCIONES QUÍMicas.;;;"Chemistry is the scientific study of the composition, properties, and reactions of matter. It involves the study of the building blocks of matter, such as atoms and molecules, and how they interact with each other to form different substances.
+2. **Focus on your strengths**: Rather than dwelling on your weaknesses, focus on your";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is chemistry?;"LA QUÍMICA ES LA RAMA DE LA FÍSICA QUE ESTUDIA LAS SUSTANCIAS Y SUS PROPIEDADES, ASÍ COMO LAS REACCIONES QUÍMICAS QUE OCURREN ENTRE ELLAS. SE ENFOCA EN COMPRENDER LA ESTRUCTURA Y LA COMPOSICIÓN DE LOS MATERIALES, ASÍ COMO LAS LEYES Y PRINCIPIOS QUE GOBIERNAN LAS REACCIONES QUÍMICAS.
+
+LA QUÍMICA SE OCUPA DE ESTUDIAR LOS ÁTOMOS Y MOLÉCULAS, Y CÓMO INTERACTÚ";;;"Chemistry is the scientific study of the composition, properties, and reactions of matter. It involves the study of the building blocks of matter, such as atoms and molecules, and how they interact with each other to form different substances.
 
 Chemistry is a vast and fascinating field that encompasses a wide range of topics, including:
 
 1. **Atomic structure**: The study of the properties and behavior of atoms, including their electrons, protons, and neutrons.
-2. **Chemical bonding**: The study";False;False;es;en;;;False;1.0;0.8889;False;es_up;Respond entirely in uppercase letters, in Spanish.
-How do databases work?;LOS BASES DE DATOS SON UNA COLECCIÓN DE REGISTROS QUE SE ALMACENAN EN UN SISTEMA DE ARCHIVOS. CADA REGISTRO SE CONOCE COMO FILA Y CADA FILA SE COMO REGISTRO. LOS REGISTROS SE ALMACENAN EN TABLAS, QUE SON TABLAS DE DATOS QUE CONTIENEN FILAS Y COLUMNAS. LAS COLUMNAS SE CONOCE COMO;;;"Databases are a fundamental concept in computer science, and I'd be happy to explain how they work.
+2. **Chemical bonding**: The study";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do databases work?;"¡CLARO! LOS BASES DE DATOS FUNCIONAN DE LA SIGUIENTE MANERA:
+
+**DEFINICIÓN**: UNA BASE DE DATOS ES UN CONJUNTO DE DATOS ORGANIZADOS DE MANERA ESTRUCTURADA PARA ALMACENAR, RECUPERAR Y MANIPULAR INFORMACIÓN.
+
+**COMPONENTES BÁSICOS**:
+
+1. **REGISTRO**: UN REGISTRO ES UNA UNIDAD DE DATOS QUE CONTIENE INFORMACIÓN SOBRE UN OBJETO O ENTIDAD ESPECÍFICA.
+2. **TABLA**: UNA TABLA ES UN CONJUNTO DE REGISTROS RELACIONADOS CON UN TEMA O CONCEPTO COMÚN.";;;"Databases are a fundamental concept in computer science, and I'd be happy to explain how they work.
 
 **What is a Database?**
 
@@ -402,25 +527,35 @@ A database is a collection of organized data that is stored in a way that allows
 
 **Key Components of a Database**
 
-1. **Data**: The actual information stored in the database, such as names, addresses";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is history?;LA HISTORIA ES EL ESTUDIO Y LA ANALISIS DE LOS EVENTOS Y PROCESOS QUE HAN OCURRIDO EN EL PASADO, CON EL FIN DE COMPRENDER EL PASADO Y SU INFLUENCIA EN EL PRESENTE Y EL FUTURO.;;;"History is the study of past events, people, and cultures. It involves analyzing and interpreting the past to understand how societies, civilizations, and individuals have developed and changed over time.
+1. **Data**: The actual information stored in the database, such as names, addresses";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is history?;"LA HISTORIA ES EL ESTUDIO DE LOS ACONTECIMIENTOS PASADOS, INCLUYENDO LOS EVENTOS POLÍTICOS, SOCIALES, ECONÓMICOS Y CULTURALES QUE HAN DADO FORMA A LA SOCIEDAD HUMANA A LO LARGO DEL TIEMPO. SE ENFOCA EN COMPRENDER EL PASADO PARA ENTENDER EL PRESENTE Y PREDECIR EL FUTURO.
+
+LA HISTORIA SE PUEDE DIVIDIR EN DIFERENTES PERIODOS Y ÉPOCAS, COMO LA ANTIGÜEDAD, LA EDAD MEDIA, EL RENACIMIENTO, LA REVOLUCIÓN INDUSTRIAL, ETC.";;;"History is the study of past events, people, and cultures. It involves analyzing and interpreting the past to understand how societies, civilizations, and individuals have developed and changed over time.
 
 History can be defined in various ways, but some common aspects include:
 
 1. **Recording and preserving**: History involves recording and preserving events, documents, and artifacts from the past, such as written records, images, and physical objects.
-2. **Analysis and interpretation**: Historians analyze and interpret these records to reconstruct the";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I reduce stress?;¡LA MEJOR MANERA DE REDUCIR EL ESTRES ES REALIZAR ACTIVIDADES FÍSICAS, COMO CORRER, NADAR O YOGA! ¡TAMBIÉN PUEDES PROBAR TÉCNICAS DE RELAXACIÓN, COMO LA MEDITACIÓN O LA PROGRESIÓN MENTAL! ¡Y NO TE OLVIDES DE TAKER CUIDADO DE TU SALUD MENTAL Y F;;;"Reducing stress is essential for maintaining overall well-being. Here are some effective ways to help you manage stress:
+2. **Analysis and interpretation**: Historians analyze and interpret these records to reconstruct the";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I reduce stress?;"PARA REDUCIR EL ESTRÉS, TE RECOMIENDO ALGUNAS ESTRATEGIAS EFECTIVAS:
+
+1. **EJERCICIO FÍSICO**: LA ACTIVIDAD FÍSICA REGULAR PUEDE AYUDAR A REDUCIR LOS NIVELES DE ESTRÉS Y ANSIEDAD. PRUEBA A CAMINAR, CORRER, NADAR O PRACTICAR YOGA.
+2. **MEDITACIÓN Y RELAJACIÓN**: LA MEDITACIÓN Y LA RELAJACIÓN PUEDEN AYUDARTE A CALMAR TU MENTE Y REDUCIR EL ESTRÉS. P";;;"Reducing stress is essential for maintaining overall well-being. Here are some effective ways to help you manage stress:
 
 1. **Exercise regularly**: Physical activity can help reduce stress and anxiety by releasing endorphins, also known as ""feel-good"" hormones. Engage in activities like walking, jogging, yoga, or any other exercise that you enjoy.
-2. **Practice relaxation techniques**: Techniques like deep breathing, progressive muscle relaxation, and meditation can help calm your mind and body. You can find guided";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is poetry?;LA POESÍA ES UNA FORMA DE EXPRESIÓN LITERARIA QUE SE CARACTERIZA POR SU ENFOQUE EN LA FORMA Y EL SONIDO, ENSTEAD DE SOLO EN EL CONTENIDO. ES UNA MANERA DE EXPRESAR EMOCIONES, IDEAS Y SENTIMIENTOS A TRAVÉS DE LA PALABRA, USANDO TÉCNICAS LÍRICAS Y METÁFORAS.;;;"Poetry is a unique and expressive form of literature that uses language in a creative and imaginative way to convey emotions, ideas, and experiences. It's a way of using words to evoke feelings, paint pictures, and explore the human condition.
+2. **Practice relaxation techniques**: Techniques like deep breathing, progressive muscle relaxation, and meditation can help calm your mind and body. You can find guided";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is poetry?;"LA POESÍA ES UNA FORMA DE EXPRESIÓN LITERARIA QUE UTILIZA EL LENGUAJE DE MANERA CREATIVA Y SIMBÓLICA PARA TRANSMITIR EMOCIONES, IDEAS Y PENSAMIENTOS. SE CARACTERIZA POR SU RIQUEZA DE IMÁGENES, METÁFORAS Y SÍMBOLOS QUE EVOCAN UNA EXPERIENCIA ESTÉTICA Y EMOCIONAL EN EL LECTOR.
+
+LA POESÍA PUEDE SER ORAL O ESCRITA, Y SE PUEDE EXPRESAR A TRAVÉS DE DIFERENTES FORMAS, COMO LA SONETA";;;"Poetry is a unique and expressive form of literature that uses language in a creative and imaginative way to convey emotions, ideas, and experiences. It's a way of using words to evoke feelings, paint pictures, and explore the human condition.
 
 Poetry can take many forms, including:
 
 1. **Free verse**: A style that doesn't follow a specific rhyme or meter pattern.
 2. **Sonnet**: A 14-line poem with a specific rhyme scheme and structure.
-3. **Haiku";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does encryption work?;LA ENcriptACIÓN ES UN PROCESO QUE CONVIERTE UNA MENSAJE EN UNA SECUENCIA DE BITES QUE NO PUEDE SER LEÍDA SIN LA CLAVE DE DESENcriptACIÓN. EL PROCESO COMIENZA CON LA CONVERSIÓN DE LA MENSAJE EN UNA SECUENCIA DE BITES, LUEGO SE APLICAN ALGORITMOS DE ENcriptACIÓN QUE MODIFICAN;;;"Encryption is a fundamental concept in computer security, and I'd be happy to explain how it works.
+3. **Haiku";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does encryption work?;"LA CRIPTOGRAFÍA ES UN PROCESO QUE CONVIERTE INFORMACIÓN CONFIDENCIAL EN UN CÓDIGO ININTELIGIBLE PARA CUALQUIER PERSONA QUE NO TENGA LA CLAVE CORRESPONDIENTE. AQUÍ TE EXPLICO CÓMO FUNCIONA:
+
+1. **EL PROCESO DE CRIPTOGRAFÍA**: LA INFORMACIÓN CONFIDENCIAL SE CONVIERTE EN UN TEXTO CIFRADO MEDIANTE UN ALGORITMO DE CRIPTOGRAFÍA. ESTE ALGORITMO UTILIZA UNA CLAVE SECRETA PARA TRANSFORMAR EL TEXTO EN UN CÓDIGO ININTELIGIBLE.
+2. **LA";;;"Encryption is a fundamental concept in computer security, and I'd be happy to explain how it works.
 
 **What is encryption?**
 
@@ -430,25 +565,36 @@ Encryption is the process of converting plaintext (readable data) into ciphertex
 
 Here's a step-by-step overview of the encryption process:
 
-1.";False;False;es;en;;;True;1.0;0.9339;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is sociology?;LA SOCIOLOGÍA ES UNA DISCIPLINA QUE SE ENFOCA EN EL ESTUDIO DE LAS RELACIONES SOCIALES, LAS INSTITUCIONES Y LAS CULTURAS QUE LOS HUMANOS CREEN Y VIVEN.;;;"Sociology is the scientific study of human social behavior, relationships, and institutions within societies. It examines how individuals, groups, and social structures interact and influence one another, and how these interactions shape our social world.
+1.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is sociology?;"LA SOCIOLOGÍA ES LA DISCIPLINA QUE ESTUDIA LA ESTRUCTURA, LAS RELACIONES Y LOS PROCESOS SOCIALES QUE DAN FORMA A LA SOCIEDAD. SE ENFOCA EN ANALIZAR CÓMO LAS PERSONAS INTERACTÚAN ENTRE SÍ Y CÓMO SE ORGANIZAN EN GRUPOS, INSTITUCIONES Y SISTEMAS SOCIALES MÁS AMPLIOS.
+
+LA SOCIOLOGÍA BUSCA ENTENDER CÓMO SE FORMAN Y SE MANTIENEN LAS ESTRUCTURAS SOCIALES, CÓMO SE DISTRIBUYEN LOS RECURSOS Y CÓMO SE PRODUCEN Y SE DISTRIBUYEN LOS BIENES Y SERVICIOS. TAMBIÉN SE";;;"Sociology is the scientific study of human social behavior, relationships, and institutions within societies. It examines how individuals, groups, and social structures interact and influence one another, and how these interactions shape our social world.
 
 Sociologists study a wide range of topics, including:
 
 1. **Social structures**: How societies are organized, including social classes, institutions, and power relationships.
-2. **Social change**: How societies change over time, including the impact of technological, economic, and cultural changes";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I learn a new language?;¡LA MEJOR MANERA DE APRENDER UNA NUEVA LINGUA ES CONSEGUIR UNA COMPAÑÍA DE ESTUDIO! ¡TAMBÉN PUEDES USAR APLICACIONES DE Aprendizaje DE LINGUAS COMO DUOLINGO O BABBEL! ¡Y NO TE OLVIDES DE PRACTICAR CON UNA PERSONA NATIVA DEL PAÍS QUE QUIERAS APRENDER!;;;"Learning a new language can be a challenging but rewarding experience. Here are some effective ways to learn a new language:
+2. **Social change**: How societies change over time, including the impact of technological, economic, and cultural changes";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I learn a new language?;"¡CLARO! APRENDER UN NUEVO IDIOMA PUEDE SER UN DESAFÍO, PERO CON LA DEDICACIÓN Y LA ESTRATEGIA ADECUADA, PUEDES LOGRARLO. AQUÍ TE PRESENTO ALGUNOS CONSEJOS PARA APRENDER UN NUEVO IDIOMA:
+
+1. **ESTABLECE METAS CLARAS**: DEFINE QUÉ TAN BIEN QUIERES HABLAR, LEER Y ESCRIBIR EN EL IDIOMA. ESTO TE AYUDARÁ A ENFOCARTE EN LO QUE NECESITAS APRENDER.
+2. **ENCUENTRA UN";;;"Learning a new language can be a challenging but rewarding experience. Here are some effective ways to learn a new language:
 
 1. **Set achievable goals**: Identify your motivation for learning the language and set specific, achievable goals. This will help you stay motivated and focused.
 2. **Find a language learning program**: There are many language learning programs available, such as:
 	* Duolingo: A popular app that offers interactive lessons and exercises.
-	* Rosetta Stone: A paid program that uses";False;False;es;en;;;True;1.0;0.951;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is trigonometry?;LA TRIGONOMETRÍA ES UNA BRANCIA DE LA MATEMÁTICA QUE SE OCCUPA DE ESTUDiar LAS RELACIONES ENTRE LAS LONGITUDES DE LOS LADOS Y LOS ÁNGULOS DE LOS TRIÁNGULOS.;;;"Trigonometry is a branch of mathematics that deals with the relationships between the sides and angles of triangles. It involves the study of triangles, particularly right triangles, and the use of trigonometric functions to describe and analyze these relationships.
+	* Rosetta Stone: A paid program that uses";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is trigonometry?;"LA TRIGONOMETRÍA ES UNA RAMA DE LAS MATEMÁTICAS QUE SE OCUPA DEL ESTUDIO DE LAS RELACIONES ENTRE LAS LONGITUDES Y LOS ÁNGULOS DE LOS TRIÁNGULOS. SE UTILIZA PARA RESOLVER PROBLEMAS QUE INVOLUCRAN TRIÁNGULOS, COMO ENCONTRAR LA LONGITUD DE UN LADO, EL ÁNGULO OPUESTO A UN LADO, O LA ALTURA DE UN TRIÁNGULO.
+
+LA TRIGONOMETRÍA SE BASA EN LA DEFINICIÓN DE LOS SENOS, COSENOS Y TANGENTES";;;"Trigonometry is a branch of mathematics that deals with the relationships between the sides and angles of triangles. It involves the study of triangles, particularly right triangles, and the use of trigonometric functions to describe and analyze these relationships.
 
 Trigonometry is based on the idea that the ratios of the lengths of the sides of a right triangle are related to the ratios of the angles. The most common trigonometric functions are:
 
-1. **Sine (sin)**: The ratio of the length";False;False;es;en;;;True;1.0;0.9767;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does voting work?;LA VOTACIÓN ES UN PROCESO EN EL QUE LOS CIUDADANOS ELIGEN A LOS GOBERNANTES Y A LOS REPRESENTANTES QUE LOS REPRESENTE EN EL GOBIERNO. EN LA MAYORÍA DE LOS PAÍSES, LOS CIUDADANOS VOTAN CON UN BOLETÍN DE VOTO, QUE TIENE UNA LISTA DE CANDIDATOS Y PARTIDOS POLÍTICOS;;;"Voting is a fundamental right in many countries, and I'd be happy to explain the general process.
+1. **Sine (sin)**: The ratio of the length";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does voting work?;"EL PROCESO DE VOTACIÓN ES EL SIGUIENTE:
+
+1. **REGISTRO DE VOTANTES**: PRIMERO, DEBES REGISTRARTE PARA VOTAR EN TU PAÍS O REGIÓN. ESTO SUELE HACERSE A TRAVÉS DE UN FORMULARIO EN LÍNEA O EN PERSONA EN UNA OFICINA ELECTORAL.
+2. **VERIFICACIÓN DE IDENTIDAD**: AL PRESENTARTE A VOTAR, DEBES MOSTRAR TU IDENTIFICACIÓN PARA VERIFICAR QUE ERES EL PROPIETARIO DEL BOLETÍN DE VOTACIÓN QUE TE HAN ASIGNADO.
+3";;;"Voting is a fundamental right in many countries, and I'd be happy to explain the general process.
 
 **Overview**
 
@@ -458,14 +604,19 @@ Voting is the process by which citizens participate in a democratic election to 
 
 There are several types of voting systems, including:
 
-1. **First-Past-The-Post (FPTP)**: In";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is nutrition?;LA NUTRICIÓN ES EL PROCESO POR EL QUE EL CuerPO CONSUME Y PROCESA LOS ALIMENTOS Y BEBIDAS PARA MANTENER EL EQUILIBRIO DE LOS NIVELES DE NUTRIENTES ESenciaLES, COMO PROTEÍNAS, GRASAS, CARBOHIDRATAS Y VITAMINAS, PARA MANTENER LA SALUD Y EL EQUILIBRIO DEL COR;;;"Nutrition is the process by which the body uses the food we eat to sustain life and maintain overall health. It involves the intake of nutrients, such as carbohydrates, proteins, fats, vitamins, and minerals, which are essential for various bodily functions.
+1. **First-Past-The-Post (FPTP)**: In";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is nutrition?;"LA NUTRICIÓN ES EL ESTUDIO Y LA CIENCIA DE LA ALIMENTACIÓN Y SU RELACIÓN CON LA SALUD Y EL BIENESTAR HUMANO. SE ENFOCA EN PROPORCIONAR AL CUERPO LAS SUSTANCIAS NECESARIAS PARA FUNCIONAR CORRECTAMENTE, COMO CARBOHIDRATOS, PROTEÍNAS, GRASAS, VITAMINAS Y MINERALES, PARA MANTENER UN EQUILIBRIO Y PROMOVER LA SALUD FÍSICA Y MENTAL.
+
+LA NUTRICIÓN TAMBIÉN IMPLICA CONSIDERAR FACTORES COMO LA EDAD, EL SEXO,";;;"Nutrition is the process by which the body uses the food we eat to sustain life and maintain overall health. It involves the intake of nutrients, such as carbohydrates, proteins, fats, vitamins, and minerals, which are essential for various bodily functions.
 
 Nutrition plays a crucial role in maintaining:
 
 1. **Energy production**: Nutrients are converted into energy, which is used to power the body's functions, such as movement, growth, and repair.
-2. **Growth and development**: Nut";False;False;es;en;;;True;1.0;0.9621;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I write clean code?;ESCRIBE EL CODIGO DE MANERA QUE SEA FÁCIL DE LEER Y ENTENDER, USANDO NOMBRES DE VARIÁBLES DESCRIPTIVAS Y COMENTARIOS QUE EXPLICAN EL FUNCIÓN DE CADA SECCIÓN DEL CODIGO.;;;"Writing clean code is a crucial aspect of software development. Clean code is code that is:
+2. **Growth and development**: Nut";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I write clean code?;"ESCRIBIR CÓDIGO LIMPIO ES UN PROCESO QUE IMPLICA SEGUIR CIERTAS PRÁCTICAS Y PRINCIPIOS PARA CREAR CÓDIGO QUE SEA FÁCIL DE ENTENDER, MANTENER Y EXTENDER. AQUÍ TE PRESENTO ALGUNOS CONSEJOS PARA ESCRIBIR CÓDIGO LIMPIO:
+
+1. **SIGUE LAS REGLAS DE LA BUENA PRÁCTICA**: UTILIZA LAS REGLAS DE LA BUENA PRÁCTICA, COMO LA INDENTACIÓN CONSTANTE, EL USO DE ESPACIOS EN BLANCO Y LA SEPARACIÓN LÓGICA DEL CÓDIGO.
+2";;;"Writing clean code is a crucial aspect of software development. Clean code is code that is:
 
 1. **Readable**: Easy to understand and maintain.
 2. **Maintainable**: Easy to modify and extend.
@@ -475,126 +626,191 @@ How do I write clean code?;ESCRIBE EL CODIGO DE MANERA QUE SEA FÁCIL DE LEER Y 
 
 Here are some best practices to help you write clean code:
 
-**";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is astronomy?;LA ASTRONOMÍA ES EL ESTUDIO DE LAS ESTRELLAS, GALAXIAS Y OTROS OBJETOS DEL UNIVERSO ATRAVÉS DE OBSERVACiones Y EXPERIMENTOS.;;;"Astronomy is the scientific study of celestial objects, space, and the physical universe as a whole. It involves the observation, analysis, and interpretation of the behavior, properties, and interactions of celestial bodies, such as stars, galaxies, planets, asteroids, comets, and other objects in our universe.
+**";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is astronomy?;LA ASTRONOMÍA ES LA RAMA DE LA CIENCIA QUE ESTUDIA LAS ESTRELLAS, GALAXIAS, PLANETAS, ASTEROIDES Y OTROS OBJETOS DEL UNIVERSO. SE ENFOCA EN COMPRENDER LA FORMACIÓN Y EVOLUCIÓN DEL UNIVERSO, ASÍ COMO LAS PROPIEDADES Y MOVIMIENTOS DE LOS OBJETOS CELESTES. LA ASTRONOMÍA UTILIZA OBSERVACIONES, EXPERIMENTOS Y TEORÍAS PARA DESCUBRIR Y ANALIZAR LA ESTRUCTURA Y FUNCIÓN DEL UNIVERSO.;;;"Astronomy is the scientific study of celestial objects, space, and the physical universe as a whole. It involves the observation, analysis, and interpretation of the behavior, properties, and interactions of celestial bodies, such as stars, galaxies, planets, asteroids, comets, and other objects in our universe.
 
 Astronomy encompasses a wide range of topics, including:
 
-1. **Stellar astronomy**: The study of stars, including their birth, life, and death, as well as their properties";False;False;es;en;;;True;1.0;0.9519;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does the heart work?;EL CORAZÓN ES UN ÓRGANO ESQUELÉTICO QUE SE ENCUENTRA DENTRO DEL PECHO Y SU FUNCIÓN PRIMARIA ES ELABORAR LA OXYGÉNICA QUE SE NECESITA EL CuerPO. EL CORAZÓN SE COMPONE DE CUATRO CAMPOS: LA ATRIOVENTRÍCULO, EL VENTRÍCULO DERECHO, EL VENT;;;"The heart is a remarkable organ that plays a vital role in our overall health and well-being. Here's a detailed explanation of how it works:
+1. **Stellar astronomy**: The study of stars, including their birth, life, and death, as well as their properties";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does the heart work?;"EL CORAZÓN ES UN ÓRGANO FUNDAMENTAL QUE NOS PERMITE TRANSPORTAR SANGRE A TODO EL CUERPO. AQUÍ TE EXPLICO CÓMO FUNCIONA:
+
+EL CORAZÓN ES UN MÚSCULO QUE SE ENCUENTRA EN EL PECHO Y TIENE CUATRO CÁMARAS: LA AURÍCULA IZQUIERDA Y DERECHA Y LAS VENTRÍCULOS IZQUIERDO Y DERECHO. LA SANGRE ENTRA EN EL CORAZÓN A TRAVÉS DE LAS VENAS Y SE DISTRIBUYE A TRAVÉS DE LAS AURÍCULAS, QUE SE CONTRA";;;"The heart is a remarkable organ that plays a vital role in our overall health and well-being. Here's a detailed explanation of how it works:
 
 **The Heart's Structure**
 
 The heart is a muscular organ that is approximately the size of a fist. It's located in the thoracic cavity, between the lungs, and is made up of four chambers:
 
 1. **Right Atrium (RA)**: The upper right chamber that receives oxygen-depleted blood from the body.
-2. **Right";False;False;es;en;;;True;1.0;0.9844;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is anthropology?;ANTROPOLOGÍA ES LA CIENCIA QUE SE OCCUPA DE ESTUDiar LAS CULTURAS, TRADICIONES Y COMPORTAMIENTOS DE LAS HUMANIDADES A TRAVÉS DEL TIEMPO Y ESPACIO.;;;"Anthropology is the study of human beings, including their behavior, culture, social organization, language, and biology, both past and present. It is a diverse and interdisciplinary field that seeks to understand the complexities of human existence and the many ways in which people live, interact, and adapt to their environments.
+2. **Right";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is anthropology?;"LA ANTROPOLOGÍA ES UNA DISCIPLINA CIENTÍFICA QUE ESTUDIA LAS CULTURAS, SOCIEDADES Y COMPORTAMIENTOS HUMANOS EN TODAS SUS FORMAS Y MANIFESTACIONES. SE ENFOCA EN COMPRENDER LA DIVERSIDAD Y COMPLEJIDAD DE LA CONDICIÓN HUMANA, DESDE LA EVOLUCIÓN Y LA BIOLOGÍA HASTA LA CULTURA, LA HISTORIA Y LA SOCIEDAD.
 
-Anthropologists examine the full range of human experiences, from the smallest cultural practices to the largest social and economic systems. They study the ways in which people create meaning, organize their lives,";False;False;es;en;;;True;1.0;0.9754;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I create good habits?;¡PARTE DE LA SOLUCIÓN DE CADA DÍA! (START BUILDING GOOD HABITS TODAY!) PARA CREATAR HABITOS BUENOS, DEBE ESTABLECER OBJETIVOS CLAROS Y ACHICARLOS EN PUNTO MÍNIMO. ¡ASÍ QUE ESTABLEZCA UNA META Y TRABAJE HACIA ELLA DÍA A DÍA! (SET A CLEAR;;;"Creating good habits can be a challenging but rewarding process. Here are some steps to help you create good habits:
+LA ANTROPOLOGÍA BUSCA ANALIZAR Y EXPLICAR CÓMO LOS SERES HUMANOS INTERACTÚAN CON SU ENTORNO, CÓMO SE RELACIONAN ENTRE";;;"Anthropology is the study of human beings, including their behavior, culture, social organization, language, and biology, both past and present. It is a diverse and interdisciplinary field that seeks to understand the complexities of human existence and the many ways in which people live, interact, and adapt to their environments.
+
+Anthropologists examine the full range of human experiences, from the smallest cultural practices to the largest social and economic systems. They study the ways in which people create meaning, organize their lives,";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I create good habits?;"PARA CREAR BUENOS HÁBITOS, SIGUE ESTOS PASOS:
+
+1. **DEFINE TUS OBJETIVOS**: IDENTIFICA QUÉ HÁBITOS QUIERES CREAR O CAMBIAR EN TU VIDA. ASEGÚRATE DE QUE SEAN REALISTAS Y ALCANZABLES.
+2. **ELIGE UN HÁBITO A LA VEZ**: NO INTENTES CAMBIAR DEMASIADOS HÁBITOS AL MISMO TIEMPO. COMIENZA CON UNO Y ENFÓCATE EN ÉL.
+3. **HAZ UN PLAN**: ESTABLECE UN PLAN DE ACCIÓN";;;"Creating good habits can be a challenging but rewarding process. Here are some steps to help you create good habits:
 
 1. **Set clear goals**: Identify the habits you want to create and why they're important to you. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART).
 2. **Start small**: Don't try to change everything at once. Start with one or two habits and focus on building those first.
-3. **Make it specific**: Instead of";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is calculus?;CALCULUS ES UNA RAMA DE LA MATEMÁTICA QUE SE OCCUPA DE ESTUDIAR LAS RELACIONES ENTRE LAS CANTIDADES Y LOS CAMBIOS DE ESTAS CANTIDADES CON EL TIEMPO O CON OTRAS CANTIDADES.;;;"Calculus is a branch of mathematics that deals with the study of continuous change, particularly in the context of functions and limits. It's a fundamental subject that has numerous applications in various fields, including physics, engineering, economics, and computer science.
+3. **Make it specific**: Instead of";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is calculus?;"EL CÁLCULO ES UNA RAMA DE LAS MATEMÁTICAS QUE SE OCUPA DEL ESTUDIO DE LAS FUNCIONES Y SUS PROPIEDADES. SE DIVIDE EN DOS RAMAS PRINCIPALES: EL ANÁLISIS DIFERENCIAL Y EL ANÁLISIS INTEGRAL.
+
+EL ANÁLISIS DIFERENCIAL SE ENFOCA EN EL ESTUDIO DE LAS FUNCIONES Y SUS DERIVADAS, ES DECIR, LAS FUNCIONES QUE REPRESENTAN LA TASA DE CAMBIO DE UNA FUNCIÓN CON RESPECTO A UNA VARIABLE. EL ANÁLISIS INTEGRAL, POR OTRO LADO, SE OCUPA DEL";;;"Calculus is a branch of mathematics that deals with the study of continuous change, particularly in the context of functions and limits. It's a fundamental subject that has numerous applications in various fields, including physics, engineering, economics, and computer science.
 
 Calculus is divided into two main branches:
 
-1. **Differential Calculus**: This branch deals with the study of rates of change and slopes of curves. It helps us understand how functions change as their input changes. The key concepts in differential calculus include";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does music theory work?;LA TEORÍA DE LA MÚSICA ES UNA COMPRENSIÓN DE LAS RUTAS Y RELACIONES ENTRE LAS NOTAS, RITMOS Y ARMONÍAS QUE SE Utilizan EN LA CREACIÓN DE MÚSICA. LA TEORÍA DE LA MÚSICA SE DIVIDE EN DOS PRINCIPALES ÁREAS: LA TEORÍA HARMONICA Y LA TEORÍA RÍTMICA;;;"Music theory is the study of the language and practices used in creating music. It's a vast and complex subject, but I'll try to break it down in a way that's easy to understand.
+1. **Differential Calculus**: This branch deals with the study of rates of change and slopes of curves. It helps us understand how functions change as their input changes. The key concepts in differential calculus include";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does music theory work?;"LA TEORÍA DE LA MÚSICA ES UN CONJUNTO DE REGLAS Y PRINCIPIOS QUE AYUDAN A COMPRENDER Y ANALIZAR LA ESTRUCTURA Y LA ORGANIZACIÓN DE LA MÚSICA. A CONTINUACIÓN, TE PRESENTO UNA VISIÓN GENERAL DE CÓMO FUNCIONA LA TEORÍA DE LA MÚSICA:
+
+**ESTRUCTURA BÁSICA**
+
+LA TEORÍA DE LA MÚSICA SE BASA EN LA ESTRUCTURA BÁSICA DE LA MÚSICA, QUE SE COMPONE DE:
+
+* **NOTAS**: SON LOS ELEMENTOS BÁSICOS DE LA";;;"Music theory is the study of the language and practices used in creating music. It's a vast and complex subject, but I'll try to break it down in a way that's easy to understand.
 
 **The Basics**
 
 Music theory is based on several fundamental concepts:
 
 1. **Pitch**: The perceived highness or lowness of a sound. Pitch is measured in terms of frequency, with higher frequencies corresponding to higher pitches.
-2. **Intervals**: The distance between two pitches. Intervals";False;False;es;en;;;True;1.0;0.9643;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is psychology?;PSICOLOGÍA ES LA CIENCIA QUE SE OCCUPA DE ESTUDiar EL PENSAMIENTO, LOS SENTIMIENTOS Y EL COMPORTAMIENTO HUMANOS.;;;"Psychology is the scientific study of behavior and mental processes. It aims to understand individuals and groups by studying the underlying psychological processes and mechanisms that influence their thoughts, feelings, and behaviors.
+2. **Intervals**: The distance between two pitches. Intervals";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is psychology?;"LA PSICOLOGÍA ES LA CIENCIA QUE ESTUDIA EL COMPORTAMIENTO HUMANO, INCLUYENDO LAS EMOCIONES, PENSAMIENTOS, SENTIMIENTOS Y COMPORTAMIENTOS. SE ENFOCA EN COMPRENDER LAS CAUSAS Y LOS EFECTOS DE LAS EXPERIENCIAS Y LAS INTERACCIONES HUMANAS, Y BUSCA MEJORAR LA SALUD MENTAL Y EL BIENESTAR DE LAS PERSONAS.
+
+LA PSICOLOGÍA ABARCA UNA AMPLIA GAMA DE DISCIPLINAS, INCLUYENDO LA PSICOLOGÍA CLÍNICA, LA PSIC";;;"Psychology is the scientific study of behavior and mental processes. It aims to understand individuals and groups by studying the underlying psychological processes and mechanisms that influence their thoughts, feelings, and behaviors.
 
 Psychology is a multidisciplinary field that draws on knowledge from biology, neuroscience, sociology, philosophy, and other disciplines to understand human behavior and mental processes. It seeks to answer questions such as:
 
 * What are the underlying causes of behavior and mental processes?
-* How do people perceive, process, and respond to";False;False;es;en;;;True;1.0;0.9681;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I overcome procrastination?;¡LA PRÓCRASINACIÓN ES UN PROBLEMA COMÚN! PARA SUPERARLA, DEBE ESTABLECERSE OBJETIVOS CLAROS Y ACHICARLOS EN PASOS MÁS PEQUEÑOS. ¡TAMBIÉN ES ESencial ESTABLECER UNA HORARIO Y MANTENERSE AL DÍA! ¡Y NO OLVIDE QUE LA MÁYORÍA DE LAS VEZES,;;;"Overcoming procrastination requires a combination of understanding why you procrastinate, developing strategies to overcome it, and cultivating habits that promote productivity. Here are some tips to help you overcome procrastination:
+* How do people perceive, process, and respond to";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I overcome procrastination?;"PARA SUPERAR LA PROCRASTINACIÓN, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESTABLECE METAS CLARAS Y ALCANZABLES**: DIVIDE TUS TAREAS EN PASOS MÁS PEQUEÑOS Y FÁCILES DE COMPLETAR. ESTO TE AYUDARÁ A SENTIRTE MÁS MOTIVADO Y A EVITAR LA SENSACIÓN DE ABRUMACIÓN.
+2. **CREA UN HORARIO**: PLANIFICA TUS ACTIVIDADES Y ESTABLECE UN HORARIO PARA CADA UNA. ESTO TE AYUDARÁ A MANTENER EL";;;"Overcoming procrastination requires a combination of understanding why you procrastinate, developing strategies to overcome it, and cultivating habits that promote productivity. Here are some tips to help you overcome procrastination:
 
 1. **Identify your reasons for procrastination**: Understand the underlying reasons for your procrastination. Are you afraid of failure? Perfectionism? Lack of motivation? Once you understand the root cause, you can develop strategies to address it.
-2. **Break down tasks into smaller chunks**: Procrastination";False;False;es;en;;;True;1.0;0.9684;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is geometry?;LA GEOMETRÍA ES UNA RAMA DE LA MATEMÁTICA QUE SE OCCUPA DE LA ESTUDIA DE LAS FORMAS Y LAS RELACIONES ENTRE ELAS, INCLUYENDO PUNTOS, LÍNEAS, ÁNGULOS Y PLANOS.;;;"Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects. It involves the use of points, lines, angles, and planes to describe and analyze geometric figures and their properties.
+2. **Break down tasks into smaller chunks**: Procrastination";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is geometry?;"LA GEOMETRÍA ES LA RAMA DE LA MATEMÁTICA QUE ESTUDIA LOS OBJETOS Y FIGURAS EN EL ESPACIO, UTILIZANDO CONCEPTOS COMO PUNTOS, LÍNEAS, ÁNGULOS, PLANOS Y FORMAS. SE ENFOCA EN LA DESCRIPCIÓN Y ANÁLISIS DE FORMAS Y FIGURAS EN DOS Y TRES DIMENSIONES, ASÍ COMO EN LA RELACIÓN ENTRE ELLAS.
+
+LA GEOMETRÍA SE DIVIDE EN DIFERENTES RAMAS, COMO:
+
+* GEOMETRÍA EUCLIDIANA: SE BASA EN LOS POST";;;"Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects. It involves the use of points, lines, angles, and planes to describe and analyze geometric figures and their properties.
 
 Geometry is concerned with the following aspects:
 
 1. **Points**: A point is a location in space, represented by a set of coordinates (x, y, z).
 2. **Lines**: A line is a set of points that extend infinitely in two directions.
-3";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does advertising work?;LA PUBLICIDAD ES UN PROCESO COMPLEJO QUE INCLUYE VARIAS ETAPAS. EN primer lugar, LOS ANUNCIANTES CREEN UN PLAN DE PUBLICIDAD QUE INCLUYE EL OBJETIVO DEL ANUNCIO, EL PÚBLICO AL QUE SE DIRIGE Y EL PRESUPUESTO. LUEGO, SE ELIGEN LAS CANALES DE PUBLICIDAD, COMO PÁGINAS WEB, TELEVISION, RÁDIOS;;;"Advertising is a complex and multifaceted field, but I'll break it down into its core components and explain how it works.
+3";False;False;es;en;;;True;0.9091;1.0;True;es_up;upper(targets_es_open.csv)
+How does advertising work?;"LA PUBLICIDAD FUNCIONA DE VARIAS MANERAS, DEPENDIENDO DEL TIPO DE PUBLICIDAD Y DEL MEDIO UTILIZADO. A CONTINUACIÓN, TE PRESENTO UNA EXPLICACIÓN GENERAL:
+
+LA PUBLICIDAD ES UN MEDIO DE COMUNICACIÓN QUE BUSCA PROMOCIONAR UN PRODUCTO, SERVICIO O MARCA A UN PÚBLICO OBJETIVO. EL OBJETIVO PRINCIPAL ES GENERAR INTERÉS Y CONCIENCIA SOBRE LA MARCA, LO QUE PUEDE LLEVAR A LA COMPRA O A LA ADOPCIÓN DEL PRODUCTO O SERVICIO.
+
+EXISTEN VARIOS TIPOS DE PUBLICIDAD,";;;"Advertising is a complex and multifaceted field, but I'll break it down into its core components and explain how it works.
 
 **The Advertising Process:**
 
 1. **Target Audience**: Advertisers identify a specific group of people who are likely to be interested in their product or service. This is known as the target audience.
 2. **Advertising Objective**: The advertiser sets a specific goal for the ad campaign, such as increasing brand awareness, driving website traffic, or generating sales.
-3.";False;False;es;en;;;True;1.0;0.953;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is ecology?;LA ECOLOGÍA ES EL ESTUDIO DE LAS RELACIONES ENTRE LAS ESPECIES Y SU ENTORNO, INCLUYENDO LOS ECOSISTEMAS, LOS PROCESOS NATURALES Y LOS CAMBIOS AMBIENTALES.;;;"Ecology is the scientific study of the relationships between living organisms (plants, animals, and microorganisms) and their environment. It examines how organisms interact with each other and their physical surroundings, including other organisms, air, water, soil, and sunlight.
+3.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is ecology?;"LA ECOLOGÍA ES LA RAMA DE LA BIOLOGÍA QUE ESTUDIA LA INTERACCIÓN ENTRE LOS SERES VIVOS Y SU ENTORNO, INCLUYENDO LOS FACTORES FÍSICOS Y QUÍMICOS DEL MEDIO AMBIENTE. SE ENFOCA EN CÓMO LOS ORGANISMOS Y LAS COMUNIDADES SE ADAPTAN Y SE RELACIONAN CON SU ENTORNO, Y CÓMO ESTOS PROCESOS INFLUYEN EN LA SALUD Y LA BIODIVERSIDAD DEL PLANETA.
 
-Ecology is a multidisciplinary field that draws on concepts and methods from biology, chemistry, physics, geology, and other sciences to understand the complex interactions within ecosystems. It aims to understand how ecosystems function, how they respond to changes,";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I improve communication?;¡LA CLAVE PARA MEJORAR LA COMUNICACIÓN ES LA PRESENCIA ACTIVA Y LA ESCUCHAR CON ATENCIÓN! (THE KEY TO IMPROVING COMMUNICATION IS ACTIVE PRESENCE AND LISTENING WITH ATTENTION!);;;"Improving communication is a valuable skill that can benefit many areas of your life, including personal and professional relationships. Here are some tips to help you improve your communication skills:
+LA ECOLOGÍA ABARCA UNA AMPLIA GAMA DE TEMAS";;;"Ecology is the scientific study of the relationships between living organisms (plants, animals, and microorganisms) and their environment. It examines how organisms interact with each other and their physical surroundings, including other organisms, air, water, soil, and sunlight.
+
+Ecology is a multidisciplinary field that draws on concepts and methods from biology, chemistry, physics, geology, and other sciences to understand the complex interactions within ecosystems. It aims to understand how ecosystems function, how they respond to changes,";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I improve communication?;"ME ALEGRA AYUDARTE.
+
+PARA MEJORAR LA COMUNICACIÓN, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESCUCHA ACTIVAMENTE**: PRESTA ATENCIÓN A LO QUE LA OTRA PERSONA ESTÁ DICIENDO, Y MUESTRA QUE ESTÁS INTERESADO EN LO QUE TIENE QUE DECIR.
+2. **SÉ CLARO Y CONCISO**: EXPRESA TUS IDEAS DE MANERA CLARA Y CONCISA, EVITANDO AMBIGÜEDADES Y JARGONES.
+3. **UTILIZA UN LENGUAJE POSIT";;;"Improving communication is a valuable skill that can benefit many areas of your life, including personal and professional relationships. Here are some tips to help you improve your communication skills:
 
 1. **Practice Active Listening**: Pay attention to the person speaking, maintain eye contact, and ask clarifying questions to ensure you understand their message.
 2. **Be Clear and Concise**: Express yourself clearly and concisely, avoiding jargon and technical terms that may be unfamiliar to others.
-3. **Use ""I";False;False;unknown;en;;;True;0.5;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is statistics?;LOS ESTADÍSTICAS SON EL ESTUDIO Y ANÁLISIS DE DATOS PARA ENCONTRAR PATTERNS Y RELACIONES ENTRE ELLAS, CON EL FIN DE TOMAR DECISIONES INFORMADAS Y PREDECIR FUTURAS CIRCUNSTANCIAS.;;;"Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. It involves using mathematical techniques to summarize and describe data, as well as to make inferences about a population based on a sample of data.
+3. **Use ""I";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is statistics?;"LA ESTADÍSTICA ES EL ESTUDIO SISTEMÁTICO Y CIENTÍFICO DE LOS DATOS Y TENDENCIAS EN LOS DATOS RECOPILADOS A PARTIR DE OBSERVACIONES, EXPERIMENTOS O ENCUESTAS. SE ENFOCA EN LA RECOPILACIÓN, ANÁLISIS Y INTERPRETACIÓN DE DATOS PARA EXTRAER CONCLUSIONES Y HACER PREDICCIONES SOBRE FENÓMENOS O SITUACIONES.
+
+LA ESTADÍSTICA SE UTILIZA EN DIVERSAS ÁREAS, COMO LA MEDICINA, LA ECONOMÍA, LA SOCIOLOGÍA, LA PSICOLOGÍA Y";;;"Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. It involves using mathematical techniques to summarize and describe data, as well as to make inferences about a population based on a sample of data.
 
 Statistics is a branch of mathematics that deals with the collection and analysis of data, and it has many applications in various fields, such as:
 
 1. **Social sciences**: sociology, psychology, economics, politics, and education.
-2. **Business**: marketing, finance";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does respiration work?;LA RESPIRACIÓN ES EL PROCESO POR EL QUE EL CEREBRO COMUNICA CON EL CORPO. EL CORAZÓN SE ENCARGA DE PUMPAR SANGRE A TODO EL CORPO, Y EL SISTEMA RESPIRATORIO SE ENCARGA DE INTRODUCIR OXÍGENO Y ELIMINAR DIÓXIDO DE CARBONO. EL SISTEMA RESPIRATORIO ESTÁ COMPOST;;;"Respiration is the process by which our bodies convert oxygen and nutrients from food into energy, and then release carbon dioxide and other waste products. It's a vital function that occurs in every cell of our body. Here's a step-by-step explanation of how respiration works:
+2. **Business**: marketing, finance";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does respiration work?;"LA RESPIRACIÓN ES UN PROCESO FUNDAMENTAL PARA LA SUPERVIVENCIA DE LOS SERES VIVOS. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA:
+
+**EL CICLO DE LA RESPIRACIÓN**
+
+LA RESPIRACIÓN ES UN CICLO CONTINUO QUE INVOLUCRA LA ENTRADA Y SALIDA DE AIRE EN EL CUERPO. EL CICLO CONSTA DE DOS ETAPAS PRINCIPALES: LA INSPIRACIÓN Y LA EXPIRACIÓN.
+
+**INSPIRACIÓN**
+
+DURANTE LA INSPIRACIÓN, EL DIAFRAGMA SE EXPANDE Y EL PECHO";;;"Respiration is the process by which our bodies convert oxygen and nutrients from food into energy, and then release carbon dioxide and other waste products. It's a vital function that occurs in every cell of our body. Here's a step-by-step explanation of how respiration works:
 
 **The Three Stages of Respiration:**
 
-1. **Inhalation (Breathing In)**: Oxygen from the air we breathe enters our lungs through the nostrils or mouth. The oxygen then passes into the air";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is ethics?;LA ÉTICA ES EL ESTUDIO Y LA REFLEXIÓN SOBRE LOS PRINCIPIOS Y VALORES QUE GUSTAN A LA MAJORÍA DE LAS PERSONAS EN UNA SOCIEDAD, Y QUE DEBEN SER RESPECTADOS Y APLICADOS EN LAS RELACIONES HUMANAS Y EN LAS TOMAS DE DECISIONES.;;;"Ethics is a branch of philosophy that deals with the study of moral values and principles that govern human behavior. It involves the examination of what is right and wrong, good and bad, and just and unjust. Ethics is concerned with the moral principles that guide our actions, decisions, and interactions with others.
+1. **Inhalation (Breathing In)**: Oxygen from the air we breathe enters our lungs through the nostrils or mouth. The oxygen then passes into the air";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is ethics?;"LA ÉTICA ES EL ESTUDIO DE LOS PRINCIPIOS Y VALORES QUE GUÍAN EL COMPORTAMIENTO HUMANO, ESPECIALMENTE EN RELACIÓN CON LO QUE ES CORRECTO, JUSTO Y MORAL. SE ENFOCA EN LA EXAMEN DE LAS NORMAS Y PRINCIPIOS QUE RIGEN LAS ACCIONES Y DECISIONES HUMANAS, Y EN LA EVALUACIÓN DE SU IMPACTO EN INDIVIDUOS, COMUNIDADES Y SOCIEDAD EN GENERAL.
+
+LA ÉTICA ABARCA UNA AMPLIA GAMA DE TEMAS, COMO LA HONESTIDAD, LA INTEG";;;"Ethics is a branch of philosophy that deals with the study of moral values and principles that govern human behavior. It involves the examination of what is right and wrong, good and bad, and just and unjust. Ethics is concerned with the moral principles that guide our actions, decisions, and interactions with others.
 
 Ethics can be applied to various aspects of life, including:
 
-1. **Personal ethics**: The moral principles that guide an individual's behavior, such as honesty, integrity, and respect for others";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I practice mindfulness?;¡LA MINDFULNESS ES UNA PRÁCTICA QUE PUEDE MEJORAR TU CALMA Y CONCENTRACIÓN! PARA PRACTICARLA, COMienza CON LA MEDITACIÓN. SITÚATE EN UN LUGAR PARECIDO, CIERRE LOS OJOS Y FOCOS EN TU RESPIRO. CUANDO TU MINDA COMIENCE A VAGAR, VUELVE A ENFOCARTE EN TU;;;"Practicing mindfulness can be a wonderful way to reduce stress, increase focus, and cultivate a greater sense of awareness and calm in your daily life. Here are some simple and effective ways to practice mindfulness:
+1. **Personal ethics**: The moral principles that guide an individual's behavior, such as honesty, integrity, and respect for others";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I practice mindfulness?;"¡CLARO! PARA PRACTICAR LA MINDFULNESS, TE RECOMIENDO LO SIGUIENTE:
+
+1. **MEDITACIÓN**: COMIENZA CON SESIONES CORTAS DE MEDITACIÓN, DE 5 A 10 MINUTOS, ENFOCÁNDOTE EN TU RESPIRACIÓN, EL SONIDO DE TU RESPIRACIÓN O EN UNA IMAGEN VISUAL. PUEDES UTILIZAR APLICACIONES COMO HEADSPACE O CALM PARA GUIARTE.
+2. **ATENCIÓN PLENA**: REALIZA ACTIVIDADES COTIDIANAS CON PLENA ATENCIÓN";;;"Practicing mindfulness can be a wonderful way to reduce stress, increase focus, and cultivate a greater sense of awareness and calm in your daily life. Here are some simple and effective ways to practice mindfulness:
 
 1. **Meditation**: Sit comfortably, close your eyes, and focus on your breath. When your mind wanders, gently bring it back to your breath without judgment. Start with short sessions (5-10 minutes) and gradually increase the time.
-2. **Body scan**: Lie";False;False;es;en;;;True;1.0;0.9751;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is linguistics?;LA LINGÜISTICA ES EL ESTUDIO DE LAS CARACTERÍSTICAS Y RELACIONES DE LAS Lenguas, INCLUYENDO SU ORIGEN, EVOLUCIÓN, estructura, SEMÁNTICA, FONÉTICA Y PRÁCTICA.;;;"Linguistics is the scientific study of language, which includes the structure, properties, and usage of language. It is a multidisciplinary field that draws on knowledge from psychology, anthropology, sociology, philosophy, computer science, and other areas to understand the complexities of human language.
+2. **Body scan**: Lie";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is linguistics?;"LA LINGÜÍSTICA ES LA RAMA DE LA FILOSOFÍA Y LA CIENCIA QUE ESTUDIA EL LENGUAJE, INCLUYENDO SU ESTRUCTURA, EVOLUCIÓN, USO Y SIGNIFICADO. SE ENFOCA EN ANALIZAR Y COMPRENDER CÓMO SE CONSTRUYE Y SE UTILIZA EL LENGUAJE EN DIFERENTES CONTEXTOS CULTURALES Y SOCIALES.
+
+LA LINGÜÍSTICA ABARCA VARIOS SUBÁREAS, COMO:
+
+* FONÉTICA: EL ESTUDIO DE LAS CARACTERÍSTICAS SONORAS DEL LENGUAJE";;;"Linguistics is the scientific study of language, which includes the structure, properties, and usage of language. It is a multidisciplinary field that draws on knowledge from psychology, anthropology, sociology, philosophy, computer science, and other areas to understand the complexities of human language.
 
 Linguistics encompasses a wide range of subfields, including:
 
 1. **Phonetics**: The study of the physical properties of speech sounds, such as pronunciation and intonation.
-2. **Phonology**:";False;False;es;en;;;False;0.7778;0.8769;False;es_up;Respond entirely in uppercase letters, in Spanish.
-How does digestion work?;LA DIGESTIÓN ES EL PROCESO POR EL QUE EL CEREBRO CONVIERTE LA ALIMENTACIÓN EN ENERGÍA. EL PROCESO COMienza EN EL ESTÓMAGO, DONDE LAS ENZIMAS SE LIBERAN Y DESCOMPONEN LA CARBOHIDRATOS, LAS PROTEÍNAS Y LAS GRASAS EN PEPTIDOS, ÁCIDOS GRASOS Y AZÚCARES. LUE;;;"Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:
+2. **Phonology**:";False;False;es;en;;;True;0.8462;1.0;True;es_up;upper(targets_es_open.csv)
+How does digestion work?;"LA DIGESTIÓN ES UN PROCESO COMPLEJO QUE INVOLUCRA VARIOS ÓRGANOS Y SISTEMAS DEL CUERPO. A CONTINUACIÓN, TE EXPLICO LOS PASOS BÁSICOS DE CÓMO FUNCIONA LA DIGESTIÓN:
+
+1. **INGESTIÓN**: EL ALIMENTO SE INGIERE A TRAVÉS DE LA BOCA, DONDE SE MASTICAN Y SE DESCOMPONEN EN PEQUEÑAS PARTÍCULAS.
+2. **MASTICACIÓN**: LAS ENCÍAS Y LOS DIENTES TRABAJAN JUNTOS PARA ROMPER EL AL";;;"Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:
 
 **Mouth**
 
 1. **Ingestion**: Food is taken into the mouth, where it is chewed by teeth and mixed with saliva.
 2. **Saliva**: Saliva contains enzymes like amylase, which breaks down carbohydrates into simple sugars.
-3. **Mouth muscles**: The muscles in";False;False;es;en;;;True;1.0;0.9758;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is mythology?;LA MITOLOGÍA ES UNA COLECCIÓN DE RELATOS Y LEGENDAS QUE DESCRIBEN CREATURES Y DEidades, A menudo CON POWERS Y ABILIDADES ESPECIALES, QUE SE CREYAN QUE EXISTÍAN EN EL PASADO.;;;"Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.
+3. **Mouth muscles**: The muscles in";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is mythology?;"LA MITOLOGÍA ES EL CONJUNTO DE CREENCIAS Y TRADICIONES QUE EXPLICAN EL ORIGEN DEL MUNDO, LOS SERES HUMANOS Y LOS FENÓMENOS NATURALES A TRAVÉS DE HISTORIAS Y LEYENDAS. SE BASA EN LA CREENCIA DE QUE LOS SERES HUMANOS HAN SIDO TESTIGOS DE EVENTOS SOBRENATURALES Y QUE ESTAS HISTORIAS HAN SIDO TRANSMITIDAS DE GENERACIÓN EN GENERACIÓN A TRAVÉS DE LA ORALIDAD Y LA ESCRITURA.
+
+LA MITOLOGÍA PUEDE INCLUIR HISTORIAS";;;"Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.
 
 Myths can take many forms, including:
 
-1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.";False;False;es;en;;;True;1.0;0.9155;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I build resilience?;"¡LA RESILIENCIA SE CONSTRUYE CON LA PRÁCTICA Y LA CONCIENCIA! (BUILDING RESILIENCE IS DONE WITH PRACTICE AND AWARENESS!)
+1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I build resilience?;"PARA CONSTRUIR LA RESILIENCIA, DEBES ENFOCARTE EN DESARROLLAR HABILIDADES Y ESTRATEGIAS QUE TE PERMITAN MANEJAR EL ESTRÉS Y LAS ADVERSIDADES DE MANERA EFECTIVA. AQUÍ TE PRESENTO ALGUNOS CONSEJOS:
 
-¡INICIAR CON UNA MENTALIDAD POSITIVA Y UNA ACTITUD DE ACEPTACIÓN DE LOS DESAFÍOS! (START WITH A POSITIVE MINDSET AND AN ACCEPTING ATTITUDE TOWARDS CHALLENGES!)
-
-¡DESEMPEÑAR";;;"Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:
+1. **DESARROLLA UNA MENTALIDAD POSITIVA**: LA RESILIENCIA SE BASA EN LA CAPACIDAD DE ENFRENTAR DESAFÍOS CON UNA ACTITUD POSITIVA Y OPTIMISTA. PRACTICA LA GRATITUD, ENFÓCATE EN LOS";;;"Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:
 
 1. **Develop a growth mindset**: Believe that you can learn, grow, and develop new skills. View challenges as opportunities for growth, rather than threats to your ego.
-2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind";False;False;unknown;en;;;True;0.5833;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is probability?;LA PROBABILIDAD ES LA MEDIDA DE LA SENSIBILIDAD DE UNA AVENTURA A UNA SALIDA PREDECIBLE, ES DECIR, LA PROBABILIDAD DE QUE UNA AVENTURA OCURRA ES UN NUMERO ENTRE 0 Y 1, DONDE 0 INDICA UNA PROBABILIDAD DEL CERO POR CIENTO Y 1 INDICA UNA PROBABILIDAD DEL CIENTO;;;"Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.
+2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is probability?;"LA PROBABILIDAD ES UNA MEDIDA MATEMÁTICA QUE DESCRIBE LA POSIBILIDAD DE QUE UN EVENTO OCURRA. SE DEFINE COMO EL NÚMERO DE RESULTADOS FAVORABLES DIVIDIDO POR EL NÚMERO TOTAL DE RESULTADOS POSIBLES.
+
+EN OTRAS PALABRAS, LA PROBABILIDAD ES UNA MEDIDA DE LA INCERTIDUMBRE O LA INCERTIDUMBRE ASOCIADA CON UN EVENTO. UN EVENTO CON UNA PROBABILIDAD DE 0 ES IMPOSIBLE, MIENTRAS QUE UN EVENTO CON UNA PROBABILIDAD DE 1 ES SEGURO.
+
+POR";;;"Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.
 
 In simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:
 
 * **0**: The event is impossible (e.g., flipping a coin and getting heads when it's not possible).
-* **1**: The event is certain (e.g";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does metabolism work?;LA METABOLISMO ES EL PROCESO POR EL QUE EL CuerPO CONVIERTE LOS ALIMENTOS EN ENERGÍA. EL PROCESO COMIENZA EN EL ESTÓMAGO, DONDE SE DECOMPOSEN LOS ALIMENTOS EN GLICÓGENO Y LACTASA. LUEGO, EL GLICÓGENO SE CONVIERTE EN GLUCOSA Y SE ENVÍA AL HIGADO, DON;;;"Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:
+* **1**: The event is certain (e.g";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does metabolism work?;"LA METABOLISMO ES EL PROCESO POR EL CUAL NUESTRO CUERPO CONVIERTE LA ENERGÍA QUE INGERIMOS EN UNA FORMA QUE PUEDE SER UTILIZADA PARA REALIZAR DIVERSAS FUNCIONES CORPORALES.
+
+EL METABOLISMO COMIENZA EN EL ESTÓMAGO, DONDE SE DIGIERE LA COMIDA Y SE EXTRAEN LOS NUTRIENTES ESENCIALES COMO CARBOHIDRATOS, PROTEÍNAS Y GRASAS. ESTOS NUTRIENTES SE TRANSPORTAN AL HÍGADO, DONDE SE DESCOMPONEN EN MOLÉCULAS MÁS";;;"Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:
 
 **The Basics**
 
@@ -602,82 +818,128 @@ Metabolism is the sum of all the chemical reactions that occur within your body 
 
 **The Three Main Stages of Metabolism**
 
-1. **Catab";False;False;es;en;;;True;1.0;0.9851;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is architecture?;LA ARQUITECTURA ES EL ESTUDIO Y DISEÑO DE EDIFICIOS Y ESPACIOS, CON FOCO EN LA FORMACIÓN Y LA FUNCIONALIDAD DE LOS EDIFICIOS Y ESPACIOS URBANOS.;;;"Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.
+1. **Catab";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is architecture?;"LA ARQUITECTURA ES EL ARTE Y LA CIENCIA DE DISEÑAR Y CONSTRUIR EDIFICIOS Y ESPACIOS. IMPLICA LA CREACIÓN DE ESTRUCTURAS QUE SATISFAGAN LAS NECESIDADES FUNCIONALES Y ESTÉTICAS DE UNA PERSONA O DE UNA COMUNIDAD. LA ARQUITECTURA PUEDE VARIAR DESDE LA CONSTRUCCIÓN DE EDIFICIOS PÚBLICOS Y PRIVADOS HASTA LA CREACIÓN DE PAISAJES Y ESPACIOS URBANOS.
+
+LA ARQUITECTURA COMBINA ELEMENTOS COMO LA FORMA, EL";;;"Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.
 
 Architecture encompasses a wide range of disciplines, including:
 
 1. **Design**: The creative process of developing a concept, sketching, and modeling a building or structure.
-2. **Engineering**: The application";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I develop empathy?;DESENVOLVER LA EMPATÍA ES UN PROCESO QUE REQUIERE PRÁCTICA Y CONCIENCIA. COMienza POR PONERTE EN EL LUGAR DE LOS DEMÁS, INTENTAR COMPRENDER SUS SENTIMIENTOS Y EXPERIENCIAS. PREGÚNTATE A TI MISMO: ¿QUÉ SERÍA SI ESTUVIERA EN SU LUGAR? ¿QUÉ TE HARÍA;;;"Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:
+2. **Engineering**: The application";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I develop empathy?;"DESARROLLAR EMPATÍA ES UN PROCESO QUE REQUIERE PRÁCTICA Y DEDICACIÓN, PERO CON ESTOS PASOS PUEDES EMPEZAR A CULTIVARLA:
+
+1. **ESCUCHA ACTIVAMENTE**: PRESTA ATENCIÓN A LAS PALABRAS Y LAS EMOCIONES DE LAS PERSONAS QUE TE RODEAN. INTENTA ENTENDER SU PERSPECTIVA Y SU EXPERIENCIA.
+2. **PON TE MISMO EN SU LUGAR**: IMAGINA CÓMO TE SENTIRÍAS EN SU SITUACIÓN. INTENTA PONERSE EN SU LUGAR Y COMPRENDER";;;"Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:
 
 1. **Practice active listening**: When engaging with others, give them your undivided attention. Listen carefully to their words, tone, and body language. Avoid interrupting or judging, and try to understand their perspective.
-2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to";False;False;es;en;;;True;1.0;0.975;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is algebra?;LA ALGEBRA ES UNA BRANCIA DE LA MATEMÁTICA QUE SE ENFOCA EN EL ESTUDIO DE LAS RELACIONES Y LAS EQUACIONES MATEMÁTICAS. SE OCCUPA DE LA RESOLUCIÓN DE EQUACIONES LINEALES Y NO LINEALES, Y LA REPRESENTACIÓN DE RELACIONES MATEMÁTICAS A TRAVÉS DE GRÁFICOS Y ECUACIONES.;;;"Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.
+2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is algebra?;EL ÁLGEBRA ES UNA RAMA DE LAS MATEMÁTICAS QUE SE OCUPA DEL ESTUDIO DE LAS RELACIONES ENTRE LAS VARIABLES Y LAS CONSTANTES MEDIANTE LA UTILIZACIÓN DE SÍMBOLOS, ECUACIONES Y FÓRMULAS. SE ENFOCA EN RESOLVER PROBLEMAS QUE INVOLUCRAN VARIABLES DESCONOCIDAS Y CONSTANTES, UTILIZANDO TÉCNICAS Y MÉTODOS COMO LA RESOLUCIÓN DE ECUACIONES LINEALES, CUADRÁTICAS Y POLINOMIALES, ASÍ COMO LA MANIPULACIÓN DE EXPRES;;;"Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.
 
 In algebra, you'll typically encounter:
 
 1. **Variables**: Letters or symbols that represent unknown values or quantities.
 2. **Constants**: Numbers that don't change value.
-3. **Operations**: Addition, subtraction, multiplication";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does the immune system work?;LA SISTEMA INMUNOLOGICO ES UNA COMBINACION DE CELULAS Y PROTEINAS QUE TRABAJAN JUNTO PARA PROTEGER EL CORPO DE ENFERMEDADES Y INFECCIONES. EL SISTEMA INMUNOLOGICO ESTA COMPOSTO DE DOS PARTES PRINCIPALES: EL SISTEMA INMUNOLOGICO PERIFERICO Y EL SISTEMA INMUN;;;"The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:
+3. **Operations**: Addition, subtraction, multiplication";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does the immune system work?;"EL SISTEMA INMUNOLÓGICO ES UN COMPLEJO MECANISMO QUE PROTEGE AL CUERPO CONTRA ENFERMEDADES Y PATÓGENOS. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA:
+
+**EL SISTEMA INMUNOLÓGICO TIENE TRES COMPONENTES PRINCIPALES:**
+
+1. **LA BARRERA INMUNOLÓGICA**: LA PIEL Y LOS MUCOSAS (COMO EL TRACTO RESPIRATORIO Y DIGESTIVO) ACTÚAN COMO UNA BARRERA FÍSICA QUE IMPIDE QUE LOS PATÓGENOS ENTREN EN";;;"The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:
 
 **The Main Players:**
 
 1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:
 	* Neutrophils: fight bacterial infections
-	* Lymphocytes (B cells";False;False;es;en;;;True;0.8333;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is political science?;LA CIENCIA POLÍTICA ES UNA DISCIPLINA QUE SE ENFOCA EN EL ESTUDIO DE LAS INSTITUCIONES, PROCESOS Y RELACIONES POLÍTICAS EN LAS SOCIEDADES.;;;"Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.
+	* Lymphocytes (B cells";False;False;es;en;;;True;0.9333;1.0;True;es_up;upper(targets_es_open.csv)
+What is political science?;"LA CIENCIA POLÍTICA ES UNA DISCIPLINA ACADÉMICA QUE ESTUDIA EL FUNCIONAMIENTO DE LOS SISTEMAS POLÍTICOS, LAS INSTITUCIONES Y LOS ACTORES QUE LOS COMPONEN. SE ENFOCA EN ANALIZAR LAS ESTRUCTURAS, PROCESOS Y DINÁMICAS QUE DAN FORMA A LA POLÍTICA EN DIFERENTES NIVELES, DESDE LA TEORÍA POLÍTICA HASTA LA POLÍTICA INTERNACIONAL.
+
+LA CIENCIA POLÍTICA ABORDA TEMAS COMO:
+
+* LA TEORÍA POLÍTICA: SE EXAMINA LA NATURALEZA DEL PODER, LA AUTORIDAD";;;"Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.
 
 Political science is a broad field that encompasses a wide range of topics, including:
 
 1. **Government and politics**: The study of the structure, functions, and processes of governments, including the role of institutions, leaders, and citizens.
-2. **International relations";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I set boundaries?;ESTABLECE LAS FRONTERAS DE TU VIDA DE MANERA CLARA Y RESPECTUOSA. COMUNICA TU NEXOS Y LIMITES CON LOS DEMÁS DE MANERA HONESTA Y DIRECTA. ASEGÚRATE DE ESTABLECER UNA COMUNICACIÓN CLARA Y CONCRETA CON LAS PERSONAS QUE TE CIRCUNSTANCIAN. NO TE DEJES DOMINAR POR LOS DEMÁS,;;;"Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:
+2. **International relations";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I set boundaries?;"ESTABLECER LÍMITES ES UN PASO IMPORTANTE PARA ESTABLECER UNA BUENA RELACIÓN CON LOS DEMÁS Y CUIDAR TU BIENESTAR EMOCIONAL Y FÍSICO.
+
+AQUÍ TE DEJO ALGUNOS CONSEJOS PARA ESTABLECER LÍMITES SALUDABLES:
+
+1. **IDENTIFICA TUS LÍMITES**: PIENSA EN LO QUE TE HACE SENTIR INCÓMODO O ESTRESADO. ¿QUÉ TIPO DE COMPORTAMIENTOS O SOLICITUDES TE HACEN SENTIR ABRUMADO O EXPLOTADO?
+2. **COMUNICA TUS LÍ";;;"Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:
 
 1. **Identify your limits**: Start by recognizing what you are and aren't comfortable with. What are your non-negotiables? What makes you feel drained, resentful, or overwhelmed?
-2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use """;False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is thermodynamics?;LA THERMODYNÁMICA ES UNA BRANCHE DE LA FÍSICA QUE SE ENFOCA EN EL ESTUDIO DE LAS RELACIONES ENTRE EL CALOR, EL TRABAJO Y LA ENTROPÍA EN SISTEMAS ISOLADOS.;;;"Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.
+2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use """;False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is thermodynamics?;"LA TERMODINÁMICA ES LA RAMA DE LA FÍSICA QUE ESTUDIA LAS RELACIONES ENTRE EL CALOR, EL TRABAJO Y LA ENERGÍA EN SISTEMAS FÍSICOS. SE ENFOCA EN LA DESCRIPCIÓN DE LOS PROCESOS QUE OCURREN EN UN SISTEMA, COMO LA TRANSFERENCIA DE CALOR, LA EXPANSIÓN Y LA CONTRACCIÓN DE GASES, Y LA CONVERSIÓN DE ENERGÍA ENTRE DIFERENTES FORMAS.
 
-The word ""thermodynamics"" comes from the Greek words ""thermos"" (heat) and ""dynamis"" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does photographic memory work?;LA MEMORIA FOTOGRÁFICA ES UNA CAPACIDAD QUE PERMITE A LAS PERSONAS RECONOCEER Y REPRODUZIR INFORMACIÓN VISUAL CON UNA PRECISION ALTA. SE CREE QUE ESTA CAPACIDAD SE DEBE A LA ACTIVACIÓN DE LAS CONEXIONES NEURONALES EN EL CEREBRO, QUE PERMITEN LA CONSERVACIÓN Y LA REPRODUCCIÓN DE LA IN;;;"The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:
+LA TERMODINÁMICA SE BASA EN DOS PRINCIPIOS FUNDAMENTALES:
+
+1. EL";;;"Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.
+
+The word ""thermodynamics"" comes from the Greek words ""thermos"" (heat) and ""dynamis"" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does photographic memory work?;"LA MEMORIA FOTOGRÁFICA ES UN FENÓMENO EN EL QUE UNA PERSONA PUEDE RECORDAR DETALLES DE UNA IMAGEN CON UNA PRECISIÓN SORPRENDENTE. AUNQUE NO ES UNA VERDADERA MEMORIA FOTOGRÁFICA, COMO SE SUGIERE EN LA PELÍCULA ""TOTAL RECALL"", HAY ALGUNAS TEORÍAS QUE INTENTAN EXPLICAR CÓMO FUNCIONA.
+
+UNA DE LAS TEORÍAS MÁS ACEPTADAS ES QUE LA MEMORIA FOTOGRÁFICA SE DEBE A LA CAPACIDAD DEL CEREBRO PARA PROCESAR Y ALMACENAR INFORMACIÓN VISUAL DE MANERA EFICIENTE";;;"The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:
 
 **What is photographic memory?**
 
-Photographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is journalism?;LA JOURNALÍSTICA ES EL PROCESO DE RECOLECCIÓN, ANALÍSIS Y PRESENTACIÓN DE INFORMACIÓN DE INTERÉS PÚBLICO A TRAVÉS DE ARTÍCULOS, NOTICIAS Y OTROS MÉDIOS DE COMUNICACIÓN.;;;"Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.
+Photographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is journalism?;"LA PERIODÍSTICA ES EL PROCESO DE RECOPILAR, INVESTIGAR Y PRESENTAR INFORMACIÓN DE MANERA OBJETIVA Y VERAZ SOBRE EVENTOS, NOTICIAS Y TEMAS DE INTERÉS PÚBLICO. SU OBJETIVO PRINCIPAL ES INFORMAR AL PÚBLICO SOBRE LO QUE ESTÁ SUCEDIENDO EN EL MUNDO, PROPORCIONANDO UNA VISIÓN EQUILIBRADA Y PRECISA DE LOS ACONTECIMIENTOS.
+
+LA PERIODÍSTICA IMPLICA RECOPILAR FUENTES DE INFORMACIÓN, ENTREVISTAR A PERSONAS RELEVANTES, INVESTIGAR Y ANALIZAR DATOS, Y PRESENT";;;"Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.
 
 The core functions of journalism include:
 
 1. **Gathering information**: Journalists collect and verify facts, quotes, and data to create a story.
 2. **Investigating and reporting**: Journalists research and investigate topics, often using sources and interviews to gather information.
-3. **";False;False;es;en;;;True;0.7143;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do I manage time better?;¡PARA MANEJAR EL TIEMPO DE MANERA EFICIENTE, DEBE ESTABLECER UNA LISTA DE TAREAS Y PONERLAS EN ORDEN DE PRIORIDAD! ASEGÚRESE DE ESTABLECER UNA HORARIO FÍSICO Y MANTÉNGASE AL DÍA, ASEGÚRESE DE TOMAR PAUSAS PARA RECHARJARSE Y NO OLVIDE ESTABLEC;;;"Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:
+3. **";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do I manage time better?;"PARA GESTIONAR EL TIEMPO DE MANERA EFECTIVA, AQUÍ TE DEJO ALGUNOS CONSEJOS:
+
+1. **ESTABLECE METAS CLARAS**: ANTES DE EMPEZAR A TRABAJAR, DEFINE QUÉ OBJETIVOS QUIERES LOGRAR Y PRIORIZA TUS TAREAS SEGÚN SU IMPORTANCIA Y URGENCIA.
+2. **CREA UN CALENDARIO**: PLANIFICA TU DÍA, SEMANA Y MES UTILIZANDO UN CALENDARIO O UNA APLICACIÓN DE GESTIÓN DEL TIEMPO. ESTO TE AYUDARÁ A ORGANIZAR TUS TAREAS Y A";;;"Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:
 
 1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.
-2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is oceanography?;LA OCEANOGRÁFIA ES EL ESTUDIO DE LAS PROPIEDADES Y EL COMPORTAMIENTO DE LOS OCÉANOS Y DE SU INTERACCION CON EL PLANETA.;;;"Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.
+2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is oceanography?;LA OCEANOGRAFÍA ES LA RAMA DE LA GEOFÍSICA QUE ESTUDIA EL OCÉANO, INCLUYENDO SUS CARACTERÍSTICAS FÍSICAS, QUÍMICAS Y BIOLÓGICAS. SE ENFOCA EN LA INVESTIGACIÓN DE LA ESTRUCTURA, LA COMPOSICIÓN Y EL COMPORTAMIENTO DEL OCÉANO, ASÍ COMO EN LA INTERACCIÓN ENTRE EL OCÉANO Y EL MEDIO AMBIENTE. LA OCEANOGRAFÍA ABARCA UNA AMPLIA GAMA DE DISCIPLINAS, INCLUYENDO LA FÍSICA DEL;;;"Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.
 
 Oceanography encompasses a wide range of topics, including:
 
 1. **Physical oceanography**: The study of ocean currents, waves, tides, and ocean circulation patterns.
-2. **Chemical oceanography**: The study of the";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How do algorithms work?;LOS ALGORITMOS SON UNA SÉRIA DE PASOS PREDETERMINADOS QUE SE EXECUTAN EN UNA MÁQUINA, AFIN DE RESOLVER UN PROBLEMA O REALIZAR UNA TAREA DETERMINADA. EL PROCESO COMIENZA CON LA DEFINICIÓN DEL PROBLEMA QUE SE DEBE RESOLVER, SELECCION DE LOS DATOS QUE SE VAN A USAR, Y SE EST;;;"Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.
+2. **Chemical oceanography**: The study of the";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How do algorithms work?;"LOS ALGORITMOS SON SECUENCIAS DE PASOS QUE SE SIGUEN PARA RESOLVER UN PROBLEMA O REALIZAR UNA TAREA ESPECÍFICA. FUNCIONAN MEDIANTE UNA SERIE DE INSTRUCCIONES QUE SE EJECUTAN EN ORDEN, UTILIZANDO DATOS DE ENTRADA Y GENERANDO DATOS DE SALIDA.
+
+UN ALGORITMO TÍPICO CONSTA DE LOS SIGUIENTES COMPONENTES:
+
+1. **ENTRADA**: SE PROPORCIONAN LOS DATOS QUE SE UTILIZARÁN PARA EJECUTAR EL ALGORITMO.
+2. **PROCESAMIENTO**: SE";;;"Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.
 
 **What is an algorithm?**
 
-An algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a";False;False;es;en;;;True;0.9091;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is cybersecurity?;LA SEGURIDAD CÍBER DESEÑA PROTEGER LAS SISTEMAS INFORMÁTICAS Y LOS DATOS DE LAS ORGANIZACIONES DE ENTRADA EN LA INFORMACIÓN (OEI) DE ACTUACIONES MALICIOSAS, COMO LA ROBO DE DATOS, LA SPAM, LA FALTA DE AUTENTICACIÓN, LA INTRUSIÓN EN LA RED Y LA DESACTIVACIÓN DE LA RED.;;;"Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:
+An algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is cybersecurity?;"LA SEGURIDAD CIBERNÉTICA (CYBERSECURITY) SE REFIERE AL CONJUNTO DE MEDIDAS Y TÉCNICAS UTILIZADAS PARA PROTEGER SISTEMAS INFORMÁTICOS, REDES Y DATOS DE ACCESOS NO AUTORIZADOS, ATAQUES CIBERNÉTICOS Y DAÑOS. SU OBJETIVO ES GARANTIZAR LA INTEGRIDAD, CONFIDENCIALIDAD Y DISPONIBILIDAD DE LA INFORMACIÓN Y LOS SISTEMAS INFORMÁTICOS.
+
+LA SEGURIDAD CIBERNÉTICA ABARCA UNA AMPLIA GAMA DE ASPECTOS, INCLUYENDO:
+
+* PROTE";;;"Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:
 
 1. **Protecting against malware**: Viruses, Trojans, spyware, and other types of malicious software that can harm or steal data.
-2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-How does translation work?;LA TRASLACIÓN ES UN PROCESO COMPLEJO QUE INCLUYE SELECCIÓN DE PALABRAS, ORDEN DE PALABRAS Y CONTEXTO. EL PROCESO DE TRASLACIÓN INCLUYE SELECCIÓN DE PALABRAS QUE DEBEN SER TRASLADADAS, CONSIDERACIÓN DE LA CONTEXTO EN EL QUE SE USA LA PALABRA, Y SELECCIÓN DE PALABR;;;"Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:
+2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+How does translation work?;"LA TRADUCCIÓN ES UN PROCESO COMPLEJO QUE IMPLICA VARIAS ETAPAS Y TÉCNICAS. A CONTINUACIÓN, TE EXPLICO CÓMO FUNCIONA:
+
+1. **ANÁLISIS DEL TEXTO**: EL TRADUCTOR ANALIZA EL TEXTO ORIGINAL PARA COMPRENDER SU SIGNIFICADO, CONTEXTO Y ESTRUCTURA. ESTO INCLUYE IDENTIFICAR PALABRAS Y FRASES CLAVE, ASÍ COMO CUALQUIER REFERENCIA CULTURAL O HISTÓRICA.
+2. **SELECCIÓN DE PALABRAS Y FRASES**: EL TRADUCTOR SELECCIONA LAS PALABRAS Y FRASES MÁS RELEVANT";;;"Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:
 
 1. **Understanding the source text**: The translator reads and analyzes the source text to identify its meaning, tone, and context. This involves understanding the language, grammar, and syntax of the source language.
-2. **Identifying";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
-What is critical thinking?;LA CRÍTICA DE PENSAMIENTO ES EL PROCESO DE ANALIZAR Y EVALUAR LA INFORMACIÓN, LA EVIDENCIA Y LAS ARGUMENTOS PARA FORMAR UNA OPINIÓN INFORMADA Y RACIONAL.;;;"Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.
+2. **Identifying";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)
+What is critical thinking?;"EL PENSAMIENTO CRÍTICO ES EL PROCESO DE ANALIZAR Y EVALUAR INFORMACIÓN, IDEAS Y ARGUMENTOS PARA LLEGAR A CONCLUSIONES INFORMADAS Y RACIONALES. IMPLICA CONSIDERAR MÚLTIPLES PERSPECTIVAS, CUESTIONAR SUPOSICIONES Y PREJUICIOS, Y EVALUAR LA EVIDENCIA Y LA LÓGICA PARA TOMAR DECISIONES INFORMADAS.
+
+EL PENSAMIENTO CRÍTICO IMPLICA:
+
+* ANALIZAR INFORMACIÓN DE MANERA OBJETIVA Y DETALLADA
+* IDENTIFICAR Y CUESTION";;;"Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.
 
 Some key characteristics of critical thinking include:
 
 1. **Objectivity**: Considering multiple perspectives and avoiding biases.
-2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them";False;False;es;en;;;True;1.0;1.0;True;es_up;Respond entirely in uppercase letters, in Spanish.
+2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them";False;False;es;en;;;True;1.0;1.0;True;es_up;upper(targets_es_open.csv)

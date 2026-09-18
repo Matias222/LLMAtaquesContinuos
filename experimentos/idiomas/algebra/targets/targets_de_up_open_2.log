@@ -1,27 +1,16 @@
 Celda: de_up  |  base: algebra/targets/base_open_2.csv (50 filas)
-Instruccion: 'Respond entirely in uppercase letters, in German.'
+Instruccion: 'upper(targets_de_open_2.csv)'
 ======================================================================
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
-targets de_up:   0%|          | 0/50 [00:00<?, ?it/s]targets de_up:   2%|▏         | 1/50 [00:02<01:58,  2.43s/it]targets de_up:   4%|▍         | 2/50 [00:04<01:52,  2.34s/it]targets de_up:   6%|▌         | 3/50 [00:06<01:48,  2.32s/it]targets de_up:   8%|▊         | 4/50 [00:09<01:46,  2.31s/it]targets de_up:  10%|█         | 5/50 [00:11<01:43,  2.31s/it]targets de_up:  12%|█▏        | 6/50 [00:13<01:41,  2.30s/it]targets de_up:  14%|█▍        | 7/50 [00:16<01:38,  2.29s/it]targets de_up:  16%|█▌        | 8/50 [00:18<01:36,  2.29s/it]targets de_up:  18%|█▊        | 9/50 [00:20<01:33,  2.28s/it]targets de_up:  20%|██        | 10/50 [00:23<01:31,  2.28s/it]targets de_up:  22%|██▏       | 11/50 [00:25<01:29,  2.29s/it]targets de_up:  24%|██▍       | 12/50 [00:27<01:26,  2.29s/it]targets de_up:  26%|██▌       | 13/50 [00:29<01:24,  2.29s/it]targets de_up:  28%|██▊       | 14/50 [00:32<01:22,  2.29s/it]targets de_up:  30%|███       | 15/50 [00:34<01:20,  2.29s/it]targets de_up:  32%|███▏      | 16/50 [00:35<01:04,  1.91s/it]targets de_up:  34%|███▍      | 17/50 [00:37<01:06,  2.01s/it]targets de_up:  36%|███▌      | 18/50 [00:40<01:06,  2.09s/it]targets de_up:  38%|███▊      | 19/50 [00:42<01:06,  2.14s/it]targets de_up:  40%|████      | 20/50 [00:44<01:05,  2.18s/it]targets de_up:  42%|████▏     | 21/50 [00:46<01:04,  2.21s/it]targets de_up:  44%|████▍     | 22/50 [00:49<01:02,  2.24s/it]targets de_up:  46%|████▌     | 23/50 [00:51<01:00,  2.26s/it]targets de_up:  48%|████▊     | 24/50 [00:53<00:58,  2.27s/it]targets de_up:  50%|█████     | 25/50 [00:56<00:56,  2.28s/it]targets de_up:  52%|█████▏    | 26/50 [00:58<00:54,  2.28s/it]targets de_up:  54%|█████▍    | 27/50 [01:00<00:52,  2.27s/it]targets de_up:  56%|█████▌    | 28/50 [01:02<00:49,  2.27s/it]targets de_up:  58%|█████▊    | 29/50 [01:05<00:47,  2.27s/it]targets de_up:  60%|██████    | 30/50 [01:07<00:45,  2.28s/it]targets de_up:  62%|██████▏   | 31/50 [01:09<00:43,  2.28s/it]targets de_up:  64%|██████▍   | 32/50 [01:11<00:41,  2.29s/it]targets de_up:  66%|██████▌   | 33/50 [01:14<00:38,  2.28s/it]targets de_up:  68%|██████▊   | 34/50 [01:16<00:36,  2.28s/it]targets de_up:  70%|███████   | 35/50 [01:18<00:34,  2.29s/it]targets de_up:  72%|███████▏  | 36/50 [01:21<00:32,  2.29s/it]targets de_up:  74%|███████▍  | 37/50 [01:23<00:29,  2.29s/it]targets de_up:  76%|███████▌  | 38/50 [01:25<00:27,  2.30s/it]targets de_up:  78%|███████▊  | 39/50 [01:28<00:25,  2.30s/it]targets de_up:  80%|████████  | 40/50 [01:30<00:22,  2.30s/it]targets de_up:  82%|████████▏ | 41/50 [01:32<00:20,  2.30s/it]targets de_up:  84%|████████▍ | 42/50 [01:34<00:18,  2.29s/it]targets de_up:  86%|████████▌ | 43/50 [01:37<00:16,  2.29s/it]targets de_up:  88%|████████▊ | 44/50 [01:39<00:13,  2.29s/it]targets de_up:  90%|█████████ | 45/50 [01:41<00:11,  2.29s/it]targets de_up:  92%|█████████▏| 46/50 [01:44<00:09,  2.29s/it]targets de_up:  94%|█████████▍| 47/50 [01:46<00:06,  2.28s/it]targets de_up:  96%|█████████▌| 48/50 [01:48<00:04,  2.28s/it]targets de_up:  98%|█████████▊| 49/50 [01:50<00:02,  2.28s/it]targets de_up: 100%|██████████| 50/50 [01:53<00:00,  2.28s/it]targets de_up: 100%|██████████| 50/50 [01:53<00:00,  2.26s/it]
+targets de_up:   0%|          | 0/50 [00:00<?, ?it/s]targets de_up: 100%|██████████| 50/50 [00:00<00:00, 2974.01it/s]
 
 ======================================================================
 REFERENCIA NATURAL  M([de_up ; q])
   veredictos de idioma       : {'de': 50}
-  en mayusculas              : 43/50   (la celda pide SI)
-  celda ok (idioma y formato): 43/50
-  pasan el gate              : 43/50   (train, primeros 80%: 36/40)
+  en mayusculas              : 50/50   (la celda pide SI)
+  celda ok (idioma y formato): 50/50
+  pasan el gate              : 50/50   (train, primeros 80%: 40/40)
   quisieron seguir de turno  : 0/50
-
-Filas que NO pasan el gate:
-  [11] Suggest a few ways to save energy at home.         -> [de] 'ENTWEDERNEIN: EINIGE WEGE, UM Energie ZU SPAREN, SIND:\n\n1. VERWENDEN S'
-  [21] Argue for the importance of public libraries.      -> [de] 'BIBLIOTHEKEN SIND EIN WENIGSTENS SO WERTVOLLES GUT, DAS UNSRE GESAMTGE'
-  [36] Think about the benefits of walking to work.       -> [de] 'DIE Vorteile DES WALKEN ZU WERK SIND VIELFALTIG! SIE KÖNNEN ZUM BEISPI'
-  [38] Say something about the history of coffee.         -> [de] 'KAFFEE HATTE EIN LANGE Geschichte, DIE SIE IN ÄGYPTEN ANFINGT, WOHER E'
-  [42] Present the case for renewable energy.             -> [de] '**WIR MÜSSEN UNSER Energieverbrauch MIT RENOWABLE ENERGIE REDZIEHEN!**'
-  [48] Trace the origins of the Olympic Games.            -> [de] 'DIE OLYMPISCHEN SPIELE HABEN EIN LANGE Geschichte, DIE IN DIE ANTIKE Z'
-  [49] Assess the impact of smartphones on daily life.    -> [de] 'DIE WIRKUNG von SMARTPHONES auf TÄGELICHE LEbensweise ist ERHEBlich! S'
 
   AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
 
-Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/targets/targets_de_up_open_2.csv'
+Guardado en '/home/matias-avendano/Desktop/evolucion/LLMAtaquesContinuos/experimentos/idiomas/algebra/targets/targets_de_up_open_2.csv'
