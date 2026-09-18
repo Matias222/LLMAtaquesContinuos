@@ -1,0 +1,658 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
+What is the weather like?;LE CIEL EST CLAIR ET ENsoleillé, MAIS IL Y A UN LEVANT DE TEMPS, IL FAUDRA PROVOIR À SE PROTEGER DE LA RAYONNIER.;;;"I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can suggest some options to help you find out the weather:
+
+1. **Check online weather websites**: You can visit websites like AccuWeather, Weather.com, or the National Weather Service (NWS) for current weather conditions and forecasts.
+2. **Use a virtual assistant**: If you have a smart speaker or virtual assistant like";False;False;fr;en;;;True;1.0;0.9091;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I sort a list in Python?;"VOUS POUVEZ Utiliser LA FONCTION SORT() EN PYTHON POUR TRIER UN LISTE. EXEMPLE : LISTE = [4, 2, 9, 6, 5, 1] ; LISTE = SORT(LISTE) ; PRINT(LISTE)";;;"Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here are a few common methods:
+
+### 1. Built-in `sort()` method
+
+The `sort()` method sorts the list in-place, meaning it modifies the original list. It sorts the list in ascending order by default, but you can specify a reverse order by setting the `reverse` parameter to `True`.
+
+```python
+my_list";False;False;fr;en;;;True;1.0;0.9239;True;fr_up;Respond entirely in uppercase letters, in French.
+Tell me about machine learning;LES MACHINES APPRENTEZ À APPRENDRE DE LA MÊME MANIÈRE QUE LES HUMAINS, EN APPRENANT DES MODÈLES ET DES RELATIONS ENTRE LES DONNÉES ET LES RÉSULTATS. C'EST UN domaine qui a évolué considérablement ces dernières années, ET QUI EST DEVENU DE PLUS EN PLUS IMPORTANT DANS DE VARIOUS domaines, COMME LA RECONNA;;;"Machine learning! It's a fascinating field that has revolutionized the way we approach complex problems in various industries. Here's a comprehensive overview:
+
+**What is Machine Learning?**
+
+Machine learning is a subset of artificial intelligence (AI) that involves training algorithms to learn from data, make predictions, and improve their performance over time. The goal is to enable machines to perform tasks that typically require human intelligence, such as:
+
+1. Pattern recognition
+2. Decision-making
+3. Problem-solving
+4.";False;False;fr;en;;;False;1.0;0.7631;False;fr_up;Respond entirely in uppercase letters, in French.
+What's 2 plus 2?;C'EST ÉVIDENT, 2 PLUS 2 ÉGALE 4!;;;2 + 2 = 4;False;False;fr;unknown;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I make coffee?;TO FAIRE DU CAFFÉ, IL FAUT D'ABORD PREPARER LES INGÉDIENTS. RÉUNISSE DES GRANULÉS DE CAFFÉ, DE L'EAU CHAUD, DU SUCRER ET DU LAIT (SI TU LE PRÉFÈRES). ENsuite, MÉLANGE LES GRANULÉS DE CAFFÉ ET L'EAU CHAUD DANS UN PICHET. LÉVE;;;"Making coffee is a straightforward process that requires some basic equipment and a bit of practice to get it just right. Here's a step-by-step guide to making coffee:
+
+**Equipment needed:**
+
+* Coffee beans (freshly roasted and ground)
+* Coffee maker (drip, French press, or pour-over)
+* Coffee filter (if using a drip coffee maker)
+* Water
+* Sugar and creamer (optional)
+
+**Basic steps:**
+
+1. **Measure the coffee:** Use about 1";False;False;fr;en;;;True;0.9286;0.9711;True;fr_up;Respond entirely in uppercase letters, in French.
+Explain quantum physics;"LES PHYSIQUES QUANTIFIQUES SONT UN FIEL DE LA PHYSIQUE THEORIQUE QUI ETUDIE LES COMPORTEMENTS DES MATIÈRES À L'ÉCHELLE ATOMIQUE ET SUBATOMIQUE. IL S'INTERÈS À LA COMPORTANCE DES PARTICULES ET DES PHOTONS, ET À LA RELATION ENTRE LA MATIÈRE ET L'ÉNERGIE.
+
+LES PRINCIPES FOND";;;"Quantum physics! One of the most fascinating and mind-bending branches of physics. I'll try to break it down in a way that's easy to understand, but keep in mind that quantum physics is a complex and abstract subject.
+
+**What is Quantum Physics?**
+
+Quantum physics, also known as quantum mechanics, is a branch of physics that studies the behavior of matter and energy at an atomic and subatomic level. At these scales, the classical laws of physics no longer apply, and strange";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is photosynthesis?;LA PHOTOSYNTHÈSE EST UN PROCESSUS BIOLÓGIQUE PAR LEQUEL LES PLANTS, LES ALGUES ET CERTAINS BACTÉRIAS CONVERSIONNENT LA LUMIÈRE SOLAIRE ET L'EAU EN GLUCOSE ET OXYGÈNE.;;;"Photosynthesis is a fascinating process that's essential for life on Earth.
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process occurs in specialized organelles called chloroplasts, which contain the pigment chlorophyll.
+
+Here's a simplified overview of the photosynthesis process:
+
+**Step 1: Light absorption**
+Chlorophyll and other pigments in the chloroplast";False;False;fr;en;;;True;0.8182;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I write a for loop?;"VOUS POUVEZ ÉCRIRE UN BOUCLÉ FOR EN FRANÇAIS DE LA MANIÈRE SUITE :
+
+FOR (VARIABLE IN LISTE) ACCROIT (VARIABLE) DE 0 À LA LONGUEUR DE LA LISTE - FAIT VOTRE TRAVAIL ICI!";;;"Writing a for loop is a fundamental concept in programming. Here's a step-by-step guide to help you write a for loop in various programming languages:
+
+**General Syntax**
+
+A for loop typically consists of three parts:
+
+1. Initialization: This is where you initialize the loop variable(s) to the starting value(s).
+2. Condition: This is the test that determines whether the loop should continue or terminate.
+3. Increment/Decrement: This is where you update the loop variable(s) to move";False;False;fr;en;;;True;0.75;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+Tell me a joke;JE VOUS FAIS UN JOKE : POUR QUOI L'ÉLEPHANT N'EST-IL PAS ALLÉ À LA BANQUE? POURQUOI IL N'AVAIT PAS D'ARGENT!;;;"Here's one:
+
+What do you call a fake noodle?
+
+An impasta!
+
+Hope that made you smile! Do you want to hear another one?";False;False;unknown;en;;;True;0.5556;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does a computer work?;UNE COMPTER est UN APPAREIL ELECTRONIQUE QUI PERMET DE PROCÉDER ET DE STOCKER DES DONNÉES. IL EST COMPOSE DE PLUSIEURS COMPOSANTS, COMME UN PROCESSSEUR, DES MEMORIES, UN DISQUE DUR, ET UN Système D'EXPÉDITION. LE PROCESSSEUR EST RESPONSABLE DE L'EXÉCUTION DES INSTRUCTIONS, LES MEMORIES STOCKENT LES DONNÉES;;;"Computers are amazing machines that have revolutionized the way we live, work, and communicate. I'd be happy to explain how they work in simple terms.
+
+**The Basic Components**
+
+A computer consists of several key components:
+
+1. **Central Processing Unit (CPU)**: Also known as the processor, this is the brain of the computer. It executes instructions and performs calculations.
+2. **Memory (RAM)**: Random Access Memory is where the computer stores data temporarily while it's being processed.";False;False;fr;en;;;True;1.0;0.9644;True;fr_up;Respond entirely in uppercase letters, in French.
+What is DNA?;L'ADN EST UN ACIDE NUCLEIQUE COMPOSE DE DEUX CHAÎNES DE NUCLEOTIDES, CHACUNE COMPOSÉE DE DEUX BASES NUCLEOTIDIQUES : ADENINE ET GUANINE, ET DE DEUX NUCLEOTIDES : CYTOSINE ET THYMINE. C'EST CE QUI PERMET À L'ADN DE SE REPRODUIRE ET DE TRANSMET;;;"DNA, or Deoxyribonucleic acid, is a molecule that contains the genetic instructions used in the development and function of all living organisms. It's often referred to as the ""building blocks of life.""
+
+DNA is a long, double-stranded helix made up of nucleotides, which are the basic units of DNA. Each nucleotide is composed of three components:
+
+1. **Sugar molecule** (deoxyribose)
+2. **Phosphate group**
+3. **Nit";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I learn guitar?;APPRENTEZ-VOUS À PLAYER DE LA GUITARE EN COMMENCANT PAR APPRENDRE LES BASSES ET LES CHORDES DE BASE, ENsuite, POURSUIVEZ VOTRE Éducation EN APPRENANT DES MÉTHODES DE JEU, COMME LE MÉTHODE DE LA MAIN, ET FINALLY, PRACTIQUEZ REGULIÈREMENT POUR AMÉLIORER VOTRES COMPÉT;;;"Learning guitar can be a rewarding and enjoyable hobby, and I'm happy to help you get started. Here's a step-by-step guide to help you learn guitar:
+
+**Step 1: Get a guitar**
+
+Before you can start learning, you'll need an instrument. Consider renting or buying an acoustic guitar, as they are easier to play and less expensive than electric guitars.
+
+**Step 2: Learn the basics**
+
+ Familiarize yourself with the guitar's parts:
+
+* Headstock: holds the";False;False;fr;en;;;True;1.0;0.9406;True;fr_up;Respond entirely in uppercase letters, in French.
+What is climate change?;LE CHANGEMENT CLIMATIQUE EST UN PROBLÈME MONDIAL QUI CONSISTE EN L'ACCROISSANCE DE LA TEMPERATURE GLOBALE DUE À L'ACTIVITÉ HUMAINE, EN PRODUISANT DE LA DÉFORESTATION, DE LA POLLUTION DE L'AIR ET DE L'EAU, ET EN L'ACCROISSANCE DE LA NIVEAU DE L'EAU DE MER. C'EST UN;;;"Climate change refers to the long-term warming of the planet, which is primarily caused by the increasing levels of greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide (CO2), methane (CH4), and water vapor, trap heat from the sun and prevent it from being released back into space, leading to a rise in global temperatures.
+
+Climate change is a complex and multifaceted issue, with various factors contributing to its development. Some of the main causes of climate change include";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+Explain blockchain;LE BLOCKCHAIN EST UN Système DE REGISTRE DE CHAINES DE BLOCS, C'EST-À-DIRE QUE LES DONNÉES SONT ENREGISTRÉES SUR UN LIVRE DE COMPTE NUMÉRIQUE SECURISÉ ET DECRYPTÉ. CHACUN DES BLOCS CONTIENT UN IDÉNTEFICATEUR UNIQUE ET UN HASH, QUI SERVE À VÉRIFIER L'INTÉGRIT;;;"Blockchain! It's a fascinating technology that has revolutionized the way we think about data storage, security, and transactions. Here's a comprehensive explanation:
+
+**What is Blockchain?**
+
+Blockchain is a decentralized, digital ledger that records transactions across a network of computers. It's a chain of blocks, each containing a set of transactions, which are linked together through cryptography.
+
+**Key Components:**
+
+1. **Blocks**: A block is a collection of transactions, such as data or financial transactions, that are";False;False;fr;en;;;True;1.0;0.9716;True;fr_up;Respond entirely in uppercase letters, in French.
+What should I eat for breakfast?;JE RECOMMANDE DE MANGER DU YAOURT ET DU BACON, OU DES TOASTS AU FROMAGE ET AU JAM. C'EST UN REPAS SAIN ET RENFORÇANT POUR DEMARRER LA JOURNÉE.;;;"There are so many delicious options to choose from. Here are a few ideas to get you started:
+
+**Healthy Options:**
+
+1. Overnight oats with fruit and nuts
+2. Greek yogurt with berries and granola
+3. Avocado toast with scrambled eggs
+4. Smoothie bowl with spinach, banana, and almond milk
+5. Whole-grain toast with almond butter and banana slices
+
+**Sweet Treats:**
+
+1. Pancakes or waffles with fresh fruit and syrup
+2";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do neural networks work?;LES RESEAUX NEURONALIS ÉTANT UN TYPE D'ALGORITHME D'APPRENDRE, ILS SONT CONCEUS POUR APPRENDRE ET PREDIRE DES MODÈLES DE DONNÉES ENUtilisant DES LAYERS DE NEURONS ARTIFICIELLS ET DES PES, ILS TRAVAILLENT EN APPRENDANT DES MODÈLES DE RELATION ENTRE LES ENTRÉES ET;;;"Neural networks are a fundamental concept in machine learning and artificial intelligence. I'll break it down in a way that's easy to understand.
+
+**What is a Neural Network?**
+
+A neural network is a computer system inspired by the structure and function of the human brain. It's composed of interconnected nodes or ""neurons"" that process and transmit information. Each node receives one or more inputs, performs a computation, and then sends the output to other nodes.
+
+**How Does a Neural Network Work?";False;False;fr;en;;;True;1.0;0.9635;True;fr_up;Respond entirely in uppercase letters, in French.
+What is love?;L'AMOUR EST UN ÉTAT D'ÂME, UN FEU QUI BRûLE DANS L'ÂME, UN FEELING INCONNU, INÉVITABLE ET INEXPLICABLE. IL EST UN ÉTAT DE TENDRESSÉ, DE DEVOTION, DE PASSION ET DE DÉVOTION INCONDITIONNÉE.;;;"What a profound and complex question!
+
+Love is a multifaceted and subjective experience that can be difficult to define, but I'll try to provide a comprehensive and nuanced answer.
+
+Love is a strong feeling of affection, attachment, or deep emotional connection with another person, place, or thing. It can be characterized by feelings of warmth, tenderness, and care, and is often accompanied by a desire to nurture, protect, and care for the object of one's love.
+
+There are many different types";False;False;fr;en;;;True;1.0;0.9932;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I fix a bug in my code?;JE POURRAIS AIDEZ-VOUS A DÉBUGER VOTRE CODE! POUVEZ-VOUS ME DÉSIGNER LES BESOINS SPECIFIQUES DE VOTRE PROJET ET JE SERAI EN CAPACITE DE VOUS OFFRER DES CONSEILS ET DES RECOMMANDATIONS POUR RÉPARER LE BUG!;;;"I'd be happy to help you troubleshoot the issue with your code.
+
+To get started, could you please provide more details about the bug you're experiencing? This will help me better understand the problem and provide a more accurate solution. Please provide the following information:
+
+1. **What programming language** are you using?
+2. **What is the code** that's causing the issue? (You can paste a small snippet or share a link to your code)
+3. **What is the error";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is the meaning of life?;LA RÉPONSE À CECI EST COMPLÈTEMENT PERSONNELLE, MAIS ON POUVAIT DIRE QUE L'OBJECTIF DE LA VIE EST DE TRADITIONNER UN ÉTAT DE BONHEUR ET DE SATISFACTION À TRAVERS LA CONQUIÈTE DE SOI-MÊME ET DE L'EXPERIENCE DE LA VIE.;;;"The question of the meaning of life is one of the most profound and debated topics in human history. Philosophers, theologians, scientists, and thinkers from various disciplines have offered a wide range of perspectives on this question. Here's a brief overview of some of the main ideas:
+
+**Philosophical perspectives:**
+
+1. **Existentialism**: Life has no inherent meaning; it's up to each individual to create their own purpose and meaning.
+2. **Hedonism**: The meaning";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does the internet work?;LA RECHERCHE D'INFORMATION EST UN PROCESSUS COMPLEXE QUI CONSISTE EN LA COLLECTE, LA STOCKAGE ET LA PARTAGE DE DONNEES SUR UN RESEAU DE COMPUTATEURS GLOBAUX. LE SYSTEME INTERNET EST BASEE SUR LE PROTOCOLE TCP/IP, QUI PERMET AUX DIFFERENTS APPAREILS DE COMMUNICATEZ-SE ET DE PARTAGER DES DONNEES. LES DONNE;;;"The internet is a complex and fascinating system, but I'll try to break it down in simple terms.
+
+**The Basics**
+
+The internet is a global network of interconnected computers and servers that communicate with each other using standardized protocols. It's often referred to as a ""network of networks"" because it's made up of many different networks, each with its own set of rules and connections.
+
+**How Data is Transmitted**
+
+Here's a step-by-step explanation of how data is transmitted over the internet:";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is democracy?;LA DEMOCRATIE EST UN Système DE GOVERNEMENT DANS LEQUE LES CITOYENS AVOIR UN Rôle ACTIF ET PARTICIPATIF À LA DÉCISION DE LA SOCIÉTÉ. C'EST UN SystÈME DANS LEQUE LES INTERÈS DES CITOYENS SONT PRIMÉS À THÈSE DE LA DÉCISION ET DE LA GESTION DES RESOURCES PUBLIQUES.;;;"Democracy is a system of government where power is held by the people, either directly or through elected representatives. In a democratic system, citizens have the right to participate in the decision-making process, either by voting for their representatives or by directly voting on laws and policies.
+
+There are several key characteristics of democracy:
+
+1. **Free and fair elections**: Citizens have the right to vote for their representatives, and the elections are free from interference or manipulation.
+2. **Protection of individual rights**: Democracy protects";False;False;fr;en;;;True;0.9286;0.9439;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I make friends?;FAIRE DES CONNAISSANCES EST PLUS FACILE QU'ON NE LE DIT PAS! PRENE TOUS LES MÉTODES POSSIBLES : JOIGNES DES GROUPES DE SPORTS, DES ASSOCIATIONS DE VIEILLE GUERRE, DES CAFÉS, DES ÉVÉNEMENTS, ET NE PAS HESITER À AVOIR DES CONVERSATIONS AVEC LES PERSONNES AROUND YOU!;;;"Making friends can be a bit challenging, but don't worry, I'm here to help. Here are some tips that might help you make new friends:
+
+1. **Join a club or group that aligns with your interests**: This could be a book club, a sports team, a hiking group, or any other type of group that meets regularly and allows you to interact with like-minded people.
+2. **Attend events and gatherings**: Look for events in your community, such as concerts, festivals";False;False;fr;en;;;True;0.9474;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is gravity?;LA GRAVITÉ EST UN PHénomène PHYSIQUE QUI EXERCITE UNE FORCE ATTRACTION SUR LES OBJETS AVEC UNE INTENSITÉ PROPORTIONNELLE À LA MASSA ET À LA DISTANCE ENTRE LES OBJETS. C'EST LA FORCE QUI RÉSISTE À LA DÉPLACEMENT DES OBJETS SUR LA SURFACE DE LA TERRE ET QUI EST RESPONSABLE DE LA PENDULE, DE LA CHUTE DES;;;"Gravity is a fundamental force of nature that causes objects with mass to attract each other. It's what keeps us and our planet on the ground, what makes things fall towards the center of the Earth, and what holds the universe together.
+
+Gravity is a universal force that affects everything with mass or energy, from the smallest subatomic particles to the largest galaxies. It's a long-range force, meaning it can act over vast distances, and it's always attractive, never repulsive.
+
+The concept of gravity";False;False;fr;en;;;True;1.0;0.9714;True;fr_up;Respond entirely in uppercase letters, in French.
+Explain recursion;LA RÉCURSION EST UN CONCEPT DE PROGRAMMATION QUI PERMET À UN ALGO DE APPELER SOI-MÊME DANS SON EXÉCUTION. C'EST UN PROCESSUS DE DIVISION EN PARTIES PLUS PETITES UNTIL L'OBJET EST RÉCHÉCHÉ. EXEMPLE : UN ALGO QUI RECONSTRUIT UN ARBRE À PART DE SES BRANCHES, OU UN ALGO QUI RECONSTR;;;"Recursion! A fundamental concept in computer science that can be a bit tricky to grasp at first, but don't worry, I'm here to help.
+
+**What is Recursion?**
+
+Recursion is a programming technique where a function calls itself repeatedly until it reaches a base case that stops the recursion. In other words, a function solves a problem by breaking it down into smaller instances of the same problem, which are then solved by the same function, until the solution to the original problem is found";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is art?;L'ART EST LA EXPRESSION DE LA CREATIVITÉ HUMaine, UN MÉDIUM DE COMMUNICATION ET DE EXPRESSION DE L'EMOTION, DE LA THOUGHT ET DE LA VIE. IL EST UN MÉDIUM DE COMMUNICATION QUI PERMET DE TRANSMETTRE DES IDÉES, DES ÉMOTIONS ET DES EXPÉRIENCES DE MANIÈRE CREATIVE ET INNOVANTE.;;;"What a profound and subjective question!
+
+Art is a complex and multifaceted concept that has been debated and explored by philosophers, artists, critics, and scholars for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Art is a form of human expression that uses various mediums, techniques, and forms to convey emotions, ideas, experiences, and perspectives. It can take many forms, including visual arts (painting, sculpture, photography), performing arts (music,";False;False;fr;en;;;True;1.0;0.9818;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I stay motivated?;TO RESTER MOTIVÉ, IL FAUT AVOIR UN BUT CLAIR ET ATTACHEZ-VOUS À L'OBTENIR. IL EST IMPORTANT DE SE FIXER DES GOALS REALISTES ET DE LES TRAVAILLER AVEC DÉTERMINATION ET PERSEVERANCE. IL EST ÉGALEMENT IMPORTANT DE SE SURVEILLER ET DE SE MÉDITER POUR ÉVITER L'ÉNUROSION ET LA DÉSINT;;;"Staying motivated can be a challenge, but there are many strategies that can help. Here are some tips to get you started:
+
+1. **Set clear goals**: Having a clear idea of what you want to achieve can help you stay motivated. Break down large goals into smaller, manageable tasks to make progress feel more achievable.
+2. **Find your why**: Identify the reasons behind your goals and remind yourself why they're important to you. This can help you stay motivated and focused on what's truly";False;False;fr;en;;;True;0.8947;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is evolution?;L'ÉVOLUTION EST UN PROCESSUS BIOLÓGIQUE AU COURS DUQUEL LES SPÉCIES CHANGENT AU FIL DU TEMPS ET DES GÉNÉRATIONS, EN RÉSULTAT DE LA SURVIE ET DE LA REPRODUCTION DES INDIVIDUS MEILLEURS ADAPTÉS À L'ENVIRONNEMENT.;;;"Evolution is a fundamental concept in biology that explains how living organisms change and adapt over time. It's a gradual process that has been occurring for billions of years, shaping the diversity of life on Earth.
+
+**What is evolution?**
+
+Evolution is the scientifically supported theory that all living organisms share a common ancestor and have evolved over time through a process of variation, mutation, genetic drift, gene flow, and natural selection. This process results in the creation of new species, the adaptation of existing species";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does electricity work?;LA ELECTRICITE EST UN FENOMENE PHYSIQUE QUI SE DEPLACE A TRAVERS UN CABLE ET PRODUIT UN CIRCUIT ELECTRIQUE. LE CIRCUIT ELECTRIQUE EST COMPOSE DE DIX DIFFERENTS COMPOSANTS : UN CABLE, UN CONDUITE, UN CIRCUIT, UN CONDENSATEUR, UN RESISTANCE, UN CAPACITE, UN INDUCTANCE, UN GENERATEUR ET UN;;;"Electricity is a fundamental part of our daily lives, and understanding how it works can be fascinating. Here's a simplified explanation:
+
+**What is electricity?**
+
+Electricity is a form of energy that is generated by the movement of charged particles, such as electrons. It's a secondary energy source, meaning it's derived from other energy sources like coal, natural gas, nuclear reactions, or renewable sources like solar or wind power.
+
+**The Basics**
+
+Electricity is created by the interaction between two types";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is meditation?;LA MÉDITATION EST UN PRACTIQUE DE RÉFLÉCHITION ET DE CONCENTRATION QUI PERMET DE RÉDUIRE L'ANXIETÉ ET L'AGITATION, EN PROMOUVANT LA PAIX ET LA SÉCURITÉ INTÉRIÈURES. C'EST UN PROCESSUS DE CONSCIENCE DE SOI, DE PRÉSENCE ET DE PRESENCE AU PRESENTE MOMENT.;;;"Meditation is a powerful practice that has been used for thousands of years to cultivate physical, emotional, and mental well-being. Here's a brief overview:
+
+**What is meditation?**
+
+Meditation is a technique that involves training your mind to focus, relax, and become more aware of the present moment. It's a practice that helps you develop a non-judgmental awareness of your thoughts, emotions, and bodily sensations.
+
+**How does meditation work?**
+
+When you meditate,";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I write an essay?;TO ÉCRIR UN ÉSSAY, VOUS DEVOYEZ D'ABORD À VOS IDEES ET À VOS CONCEPTS. RÉFLÉCHISSEZ À VOTRE SUJET ET À VOTRE PROPOSITION. ENsuite, PRENEZ UN PAPIER ET UN CRAYON ET ÉCRIVEZ VOTRE THÈSE. SUIVEZ-LE DE VOTRES ARGUMENTS ET DE VOTRES É;;;"Writing an essay can seem daunting, but it's a skill that can be learned with practice and guidance. Here's a step-by-step guide to help you write a well-structured and effective essay:
+
+**I. Planning and Preparation**
+
+1. **Understand the assignment**: Read and understand the prompt or question being asked. Make sure you know what's expected of you.
+2. **Research and gather information**: Collect relevant sources, such as books, articles, or online resources, to support your";False;False;fr;en;;;True;0.6429;0.9725;True;fr_up;Respond entirely in uppercase letters, in French.
+What is inflation?;L'INFLATION EST UN PHénomène ÉCONOMIQUE DANS LEQUEL LE PRIX DES BIENS ET DES SERVICES SONT EN augmentation AU FIL DU TEMPS. C'EST DÛ À LA DEMANDE SUPÉRIEURE POUR CERTAINS BIENS ET SERVICES, CE QUI RÉSULTE EN UN ÉLEVEMENT DES TITRES MONÉTAIRES.;;;"Inflation is a complex economic concept, but I'll break it down in simple terms.
+
+**What is inflation?**
+
+Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. It's a measure of how quickly prices are rising. In other words, inflation is when the things we buy, like food, housing, and clothing, become more expensive over time.
+
+**Example:**
+
+Imagine you had $100 last year and could buy";False;False;fr;en;;;True;1.0;0.904;True;fr_up;Respond entirely in uppercase letters, in French.
+How does sleep work?;LES RÉPRESSENTATIONS SLEEP, ELLES SONT UN PROCESSUS COMPLEXE QUI CONSISTE EN UN CYCLE DE RÉVEIL ET DE SOMMEIL. LORSQU'ON SE LÈVE, LES RÉPRESSENTATIONS SLEEP SONT ACTIVÉES ET ELLES AIDENT À RÉGÉNERER LES CELLULES DU CORPS ET À RÉPARER LES TISSUS ENDOMÉTRI;;;"Sleep is a fascinating and complex process that plays a crucial role in our overall health and well-being. Here's a simplified explanation of how sleep works:
+
+**The Sleep Cycle**
+
+Sleep is divided into different stages, which are categorized into two main types: non-rapid eye movement (NREM) sleep and rapid eye movement (REM) sleep.
+
+1. **NREM Sleep**: This stage is further divided into three sub-stages:
+	* Stage 1: Transition from wakefulness to sleep,";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is consciousness?;LA CONSCIENCE EST UN PHÉNOMÈNE COMPLEXE ET MULTIDIMENSIONNEL QUI PERMET À L'INDIVIDU DE S'ACCORDER À SOI-MÊME ET À SON ENVIROMENT. C'EST UN ÉTAT DE PRÉSENCE ET DE CONSCIENCE QUI PERMET À L'INDIVIDU DE POUVOIR S'APPRENDRE, APPRENDRE ET ÉVOLUER;;;"Consciousness is a complex and multifaceted concept that has been debated and explored by philosophers, neuroscientists, psychologists, and many other scholars for centuries. While there's no consensus on a definitive answer, here's a comprehensive overview:
+
+**What is consciousness?**
+
+Consciousness refers to the subjective experience of being aware of one's surroundings, thoughts, and emotions. It's the quality or state of being aware of something within oneself or in the external environment. Consciousness encompasses various aspects";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I cook rice?;TO COOK RICE, RINSE 1 CUP OF RICE IN A FINE MESH SIEVE UNTIL THE WATER RUNS CLEAR. IN A LARGE POT, COMBINE 2 CUPS OF WATER WITH 1 CUP OF RICE. BRING TO A BOIL, THEN REDUCE HEAT TO LOW, COVER AND SIMMER FOR 15-20 MINUTES, OR UNTIL THE WATER HAS BEEN ABSORBED AND THE RICE IS;;;"Cooking rice is a straightforward process that requires some basic steps. Here's a step-by-step guide to cooking perfect rice:
+
+**Ratio and Ingredients:**
+
+* 1 cup of uncooked white or brown rice
+* 2 cups of water (for white rice) or 2 1/4 cups of water (for brown rice)
+* Salt (optional)
+
+**Instructions:**
+
+1. **Rinse the rice**: Rinse the rice in a fine-mesh strainer under cold";False;False;en;en;;;False;0.0;1.0;False;fr_up;Respond entirely in uppercase letters, in French.
+What is the stock market?;LE MARCHÉ DES ACTIFS EST UN MÉCANISME DE VENTE ET DE ACHAT DE PARTICIPATIONS D'ENTREPRISES ET DE DROITS SUR LES ACTIFS. IL PERMET AUX INVESTISSEURS DE VENDRE ET DE ACHETER DES PARTICIPATIONS D'ENTREPRISES, DES OBLIQUES ET DES DROITS SUR LES ACTIFS, TELLES QUE LES ACTIONS, LES OBLIQU;;;"The stock market, also known as the equity market, is a platform where companies raise capital by issuing shares of stock to the public, and investors buy and sell those shares in hopes of earning a profit.
+
+Here's a simplified overview:
+
+**How it works:**
+
+1. **Companies issue stocks**: Companies need capital to grow, expand, or pay off debts. They issue stocks to raise funds from investors.
+2. **Stocks are listed on an exchange**: The company's stocks are listed on";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does WiFi work?;LES RESEAUX DE WIFi fonctionnent en utilisant des ondes radio pour transmettre des données entre les appareils. LES APPAREILS ENVOIENT DES DONNEES AU ROUTEUR, QUI LES ENVOIE ENsuite AU ROUTEUR DE REDIFFUSION, ET FINalement AU DESTINATEUR. CECI SE FAIT A TRAVERS DES FREQUENCES DE RADIO ET DES ADRESSES MAC.;;;"WiFi is a type of wireless networking technology that allows devices to connect to the internet or communicate with each other without the use of physical cables or wires. Here's a simplified explanation of how WiFi works:
+
+**The Basics**
+
+WiFi uses radio waves to transmit data between devices. It operates on a specific frequency band, typically 2.4 gigahertz (GHz) or 5 GHz. When you connect to a WiFi network, your device (such as a laptop or smartphone) sends a request to";False;False;fr;en;;;False;1.0;0.6403;False;fr_up;Respond entirely in uppercase letters, in French.
+What is philosophy?;LA PHILOSOPHIE EST UN DÉBAT CONTINU SUR LES QUESTIONS FONDAMENTALES DE L'EXISTENCE, DE LA CONNAISSANCE ET DE LA VIE. C'EST UN ENDEAVOUR DE COMPRENDRE LA NATURE DE LA REALITÉ, DE LA VÉRITÉ ET DE LA JUSTICE. C'EST UN DÉFI CONTINU DE PENSER DE MANIÈRE CRITIQUE ET REFLEXIVE;;;"Philosophy is a vast and complex field that has been debated and explored by thinkers and scholars for thousands of years. At its core, philosophy is the study of fundamental questions about existence, knowledge, values, and reality. It involves critical thinking, logical analysis, and systematic inquiry into the nature of things.
+
+Philosophy can be divided into several branches, including:
+
+1. **Metaphysics**: The study of reality, including the nature of existence, time, space, and causality.";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I save money?;TO ÉCONOMISER, IL FAUDRA PRENDRE DES MESURES CONSCIENTES! PRENEZ-VOUS DU TEMPS À ÉVALUER VOS EXPENSES ET À IDENTIFIER LES ENDROITS OÙ VOUS POUVEZ COUTER. CRIEZ UN BUDGET ET SUIVEZ-LE! ÉVITEZ DE FAIRE DES ACHATS IMPULSIFS ET PENSEZ À VOS DÉP;;;"Saving money is a great goal! There are many ways to save money, and I'll provide you with some effective tips to get you started. Here are some ideas:
+
+1. **Create a budget**: Track your income and expenses to understand where your money is going. Make a budget that accounts for all your necessary expenses, savings, and debt repayment.
+2. **Set financial goals**: Identify what you want to save for, whether it's a short-term goal (e.g., vacation) or";False;False;fr;en;;;True;0.9286;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is cancer?;LE CANCÈRE EST UN TISSU ANORMAL QUI SE DÉVELOPPE DANS LE CORPS ET SE PROGREDE TROUVEZ À VÉRITÉ, IL EST UN PROBLÈME DE SANTÉ SERIEUX ET COMPLEXE.;;;"Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. It's a leading cause of death worldwide, but with advancements in medical research and treatment, the prognosis has improved significantly.
+
+Here's a simplified explanation:
+
+**What causes cancer?**
+
+Cancer occurs when there's a mutation in the DNA of a cell, which disrupts the normal process of cell growth and division. This mutation can be caused by:
+
+1. **Genetic mutations**: Errors in DNA replication";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does GPS work?;LES SATELLITES DE POSITION GÉOMÉTRIQUE (GPS) TRAVENT ÉTABLIS AROUND LE MONDE ET ENVOIENT DES SIGAUX DE POSITION REGULIÈREMENT À DES ANTÉNNAS SUR LA TERRE. LES ANTÉNNAS ENVOIENT LES SIGAUX À UN CENTRE DE CONTRÔLE, QUI CALCULE LA POSITION DE L'ANTÉNNA EN COMBINANT LES SIGAUX DE;;;"GPS (Global Positioning System) is a network of satellites orbiting the Earth that provide location information to GPS receivers on the ground. Here's a simplified explanation of how it works:
+
+**The Basics**
+
+1. **Satellites**: There are a constellation of 24-32 GPS satellites orbiting the Earth at an altitude of approximately 20,000 km (12,000 miles). These satellites are equipped with atomic clocks that transmit radio signals containing their location and the current time.
+2. **";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is happiness?;LA FELICITÉ EST UN ÉTAT D'ÂME, UN ÉTAT DE BONHEUR ET DE SANTÉ MENTALE. C'EST LA COMBINAISON DE TOUTES LES CHOSES QUE L'on APPRÉCIE ET QUE L'on EST GRATEFUL POUR, COMME LA SANTÉ, LES RELATIONS, LES RÉSULTATS, ET LES EXPÉRIENCES POSITIVES.;;;"Happiness is a complex and multifaceted concept that has been studied and debated by philosophers, psychologists, and researchers for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Happiness is a positive emotional state characterized by feelings of joy, contentment, and satisfaction. It's a subjective experience that can be influenced by various factors, including personal experiences, relationships, achievements, and circumstances.
+
+**Theories of Happiness:**
+
+1. **Eudaimonic Happiness";False;False;fr;en;;;True;1.0;0.9785;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I learn faster?;"TO APPRENDRE PLUS RAPIDEMENT, IL EST NECESSARY DE PRENDRE DES MESURES POUR AMéliorer VOTRE APPRENTISSAGE. VOICI QUELQUES CONSEILS :
+
+* PRENEZ DES NOTES ET LISEZ-LES REGULIÈREMENT
+* FAITES DES EXERCICES ET DES PROBLÈMES POUR RÉPÉTER CE QUE VOUS AVEZ APPRISENT
+* DEM";;;"Learning faster requires a combination of strategies that help you optimize your learning process, retain information better, and stay motivated. Here are some tips to help you learn faster:
+
+1. **Set clear goals**: Define what you want to achieve and set specific, measurable, and attainable goals. This will help you stay focused and motivated.
+2. **Create a conducive learning environment**: Eliminate distractions, and create a quiet, comfortable, and organized space for learning.
+3. **Use active learning techniques**:";False;False;fr;en;;;True;0.8947;0.9674;True;fr_up;Respond entirely in uppercase letters, in French.
+What is time?;LE TEMPS EST UN CONCEPTE COMPLEXE ET MULTIFACETTE QUI PEUT ÊTRE DÉFINI DE MANIÈRE DIFFÉRENTES. IL EST LA MESURE DE LA DURÉE ET DE LA PROGRESSION DE L'ÉVOLUTION, ET IL EST CONNU À TRAVERS LES DIFFÉRENTS MÉTRODES ET Systèmes.;;;"What a profound and complex question!
+
+Time is a fundamental concept that has puzzled philosophers, scientists, and thinkers for centuries. While there's no straightforward answer, I'll try to provide a comprehensive overview of our current understanding of time.
+
+**What is time?**
+
+Time is often described as a measure of the duration between events, allowing us to understand the sequence and progression of events in the universe. It's a dimension that enables us to experience the world around us, from the present moment to the past";False;False;fr;en;;;True;1.0;0.9613;True;fr_up;Respond entirely in uppercase letters, in French.
+How does photosynthesis work?;LA PHOTOSYNTHÈSE EST UN PROCESSUS BIOLÓGIQUE PAR LEQUEL LES PLANTS, LES ALGUES ET CERTAINS BACTERIES CONVERSIONNENT L'ÉNERGIE LUMINAIQUE EN ÉNERGIE CHIMIQUE. C'EST UN PROCESSUS COMPLEXE QUI INCLUT LA PRENDRE DU DIÈSSE ET DE L'AZOTE DE L'ENvironnement, L'UTILISER POUR;;;"Photosynthesis is a fascinating process that's essential for life on Earth. I'd be happy to explain how it works.
+
+**What is photosynthesis?**
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process is also known as the ""food factory"" of plants.
+
+**The equation:**
+
+6 CO2 (carbon dioxide) + 6 H2O (water)";False;False;fr;en;;;True;1.0;0.9505;True;fr_up;Respond entirely in uppercase letters, in French.
+What is virtue?;LA VIRTÉ EST UNE QUALITÉ DE CARACTÈRE QUI EST MARQUÉE PAR UNE COMBINAISON DE TRAITS POSITIFS TELLES QUE LA HONNETÉ, LA LOYALITÉ, LA MODÉRATION ET LA SAGESSE. C'EST UNE QUALITÉ QUI EST NÉE DE LA RÉFLÉCHITION, DE LA RÉFLÉCHISSANCE ET DE LA PRATIQUE DE;;;"Virtue is a complex and multifaceted concept that has been debated and explored by philosophers, ethicists, and scholars across various disciplines for centuries.
+
+In general, virtue refers to a character trait or moral quality that enables individuals to live a good life, make wise decisions, and cultivate a sense of well-being and fulfillment. Virtues are often considered to be the building blocks of moral character, and they are typically seen as being in contrast to vices or moral flaws.
+
+There are many different";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I make a website?;TO CREATER UN SITE WEB, VOUS AVEZ D'ABORD A CHOISIR UN HÔTEUR, COMME PAR exemple, BLUEHOST OU HOSTGATOR. ENsuite, VOUS AVEZ A CHOISIR UN DOMAINE, COMME PAR EXEMPLE, EXEMPLE.COM. ENsuite, VOUS AVEZ A CHOISIR UN PROJET DE CONCEPTION, COMME PAR EXEMPLE, WORDPRESS OU WIX;;;"Making a website can be a fun and rewarding experience, and I'm here to guide you through the process. Here's a step-by-step guide to help you get started:
+
+**Option 1: Build a website from scratch**
+
+1. **Choose a domain name**: Register a unique and memorable domain name that represents your website's purpose. You can use a registrar like GoDaddy or Namecheap.
+2. **Select a web hosting service**: Choose a reliable web hosting service that meets your needs";False;False;fr;en;;;True;0.6923;0.9194;True;fr_up;Respond entirely in uppercase letters, in French.
+What is entropy?;LA ENTROPIE EST UN CONCEPT DE PHYSIQUE QUI DESCRIT LA DÉGRADATION DE LA DISORDRE DANS UN Système. C'EST LA MESURE DE LA PRÉSENCE DE LA CHAOS ET DE LA RÉGULARITÉ DANS UN Système, ET ELLE EST TENDU À AUGMENTER AU COURS DU TEMPS.;;;"Entropy is a fundamental concept in physics, chemistry, and information theory. It's a measure of disorder, randomness, or uncertainty in a system.
+
+In simple terms, entropy is a way to quantify the amount of disorder or randomness in a system. The more disordered or random a system is, the higher its entropy. Conversely, the more organized or structured a system is, the lower its entropy.
+
+Entropy can be thought of in several ways:
+
+1. **Thermodynamic entropy**: In thermodynamics";False;False;fr;en;;;True;1.0;0.9333;True;fr_up;Respond entirely in uppercase letters, in French.
+How does memory work?;LA MÉMOIRE EST UN PROCESSUS COMPLEXE QUI CONSISTE EN LA CONSERVATION ET LE RECONNAISSANCE DES INFORMATIONS ET DES EXPÉRIENCES. ELLE EST GÉNÉRÉE PAR LES CELLULES DU CÉBRE ET EST ENREGISTRÉE DANS LES SYNAPSES, QUI SONT LES CONNEXIONS QUI LIENT LES CELLULES DU CÉBRE. LORSQU';;;"Memory is a complex and fascinating process that plays a crucial role in our daily lives. Here's a simplified explanation of how memory works:
+
+**Types of Memory**
+
+There are several types of memory, including:
+
+1. **Sensory Memory**: This is the initial stage of memory, where we store sensory information from our environment, such as sights, sounds, and smells. This type of memory is short-lived and lasts only for a few seconds.
+2. **Short-Term Memory (STM)**";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is justice?;LA JUSTICE EST LA RÉPONSE À LA VÉRITÉ ET À LA LOI, C'EST L'ÉQUILLEMENT DE LA DROITE ET DE LA DUTÉ, C'EST LA PROTECTION DES DROITS ET DES LIBERTÉS DE TOUS LES INDIVIDUS.;;;"What a profound and complex question! Justice is a multifaceted concept that has been debated and explored by philosophers, ethicists, lawyers, and scholars across various disciplines for centuries. Here's a comprehensive overview:
+
+**Definition:** Justice refers to the fair and impartial administration of law, ensuring that individuals or groups are treated equally and without bias, and that their rights and freedoms are protected.
+
+**Key aspects:**
+
+1. **Fairness**: Justice involves treating individuals or groups in a fair and impartial manner";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I build confidence?;TO BUILDER CONFIDENCE, IL EST NECESSARY DE COMMENCER PAR À L'ACQUISITION DE CONNAISSANCES ET COMPÉTENCES. PRENE DES COURS, LIS DES LIVRES ET ASSISTE À DES ATELIERS SUR LE SUJET QUI TE PREOccupe. EN PLUS, IL EST IMPORTANT DE SE FIXER DES GOALS ET DE TRAVAILLER AVEC DÉTERMINATION ET PERSEVERANCE;;;"Building confidence is a wonderful goal! It can have a significant impact on various aspects of your life, from personal relationships to professional success. Here are some tips to help you build confidence:
+
+1. **Identify and challenge negative self-talk**: Pay attention to your inner dialogue and notice when you're being overly critical or negative towards yourself. Challenge those thoughts by reframing them in a more positive and realistic light.
+2. **Focus on your strengths**: Rather than dwelling on your weaknesses, focus on your";False;False;fr;en;;;True;0.95;0.9792;True;fr_up;Respond entirely in uppercase letters, in French.
+What is chemistry?;LA CHIMIE EST LA BRANCHES DE LA PHYSIQUE QUI ETUDIE LES PROPRÉTÉS DES MATIÈRES ET DES RÉACTIONS CHEMICALES. C'EST UN domaine SCIENTIFIQUE QUI SE OCCUPE DE LA COMPRÉHENSION DES PROPRÉTÉS DES MATIÈRES, DES RÉACTIONS CHEMICALES ET DES PRODUITS DE RÉACTIONS.;;;"Chemistry is the scientific study of the composition, properties, and reactions of matter. It involves the study of the building blocks of matter, such as atoms and molecules, and how they interact with each other to form different substances.
+
+Chemistry is a vast and fascinating field that encompasses a wide range of topics, including:
+
+1. **Atomic structure**: The study of the properties and behavior of atoms, including their electrons, protons, and neutrons.
+2. **Chemical bonding**: The study";False;False;fr;en;;;True;1.0;0.9668;True;fr_up;Respond entirely in uppercase letters, in French.
+How do databases work?;LES BASES DE DATES SONT COMPOSEES DE TABLEAUX, DE LIGUES ET DE CLÉS PRIMAIRES ET SECONDAIRES. LES TABLEAUX CONTIennent DES ENTRÉES ET DES COLONNES, LES LIGUES PERMETTENT DE RELIER LES ENTRÉES ET LES COLONNES, ET LES CLÉS PRIMAIRES ET SECONDAIRES PERMETTENT DE RÉFÉ;;;"Databases are a fundamental concept in computer science, and I'd be happy to explain how they work.
+
+**What is a Database?**
+
+A database is a collection of organized data that is stored in a way that allows for efficient retrieval and manipulation. It's like a library where you can store and retrieve information, but instead of physical books, you're storing digital data.
+
+**Key Components of a Database**
+
+1. **Data**: The actual information stored in the database, such as names, addresses";False;False;fr;en;;;True;1.0;0.9725;True;fr_up;Respond entirely in uppercase letters, in French.
+What is history?;L'HISTOIRE EST LA REPRÉSENTATION DE L'ÉVOLUTION DE LA SOCIÉTÉ ET DE LA CULTURE AU FIL DES SÉCLES, EN PRENDANT EN COMPTE LES ÉVÉNEMENTS, LES PERSONNAGES ET LES PHÉNOMÈNES QUI L'ONT FORMÉE.;;;"History is the study of past events, people, and cultures. It involves analyzing and interpreting the past to understand how societies, civilizations, and individuals have developed and changed over time.
+
+History can be defined in various ways, but some common aspects include:
+
+1. **Recording and preserving**: History involves recording and preserving events, documents, and artifacts from the past, such as written records, images, and physical objects.
+2. **Analysis and interpretation**: Historians analyze and interpret these records to reconstruct the";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I reduce stress?;TO REDUCER L'ANXIETÉ, IL EST IMPORTANT DE PRATIQUER DES ACTIVITÉS RELAXANTES COMME LA MEDITATION, LA RESPIRATION PROFONDE, L'YOGA ET LA MUSIQUE CALME. IL EST ÉGALEMENT RÉCOMMANDÉ DE PRENDRE DU TEMPS POUR SE LOISIR ET DE SE OCCUPPER DE ACTIVITÉS QUI VOUS RENDENT;;;"Reducing stress is essential for maintaining overall well-being. Here are some effective ways to help you manage stress:
+
+1. **Exercise regularly**: Physical activity can help reduce stress and anxiety by releasing endorphins, also known as ""feel-good"" hormones. Engage in activities like walking, jogging, yoga, or any other exercise that you enjoy.
+2. **Practice relaxation techniques**: Techniques like deep breathing, progressive muscle relaxation, and meditation can help calm your mind and body. You can find guided";False;False;fr;en;;;True;0.9333;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is poetry?;LA POÉSIE EST UN ART QUI CONSISTE À CREER DES TEXTES LITTÉRAIRES RICHES EN SENS, EN RHYTHME ET EN MÉTAPHORES, QUI ÉVOCENT DES ÉMOTIONS ET DES IDÉES DE MANIÈRE INCONNUE ET INTIMIDE.;;;"Poetry is a unique and expressive form of literature that uses language in a creative and imaginative way to convey emotions, ideas, and experiences. It's a way of using words to evoke feelings, paint pictures, and explore the human condition.
+
+Poetry can take many forms, including:
+
+1. **Free verse**: A style that doesn't follow a specific rhyme or meter pattern.
+2. **Sonnet**: A 14-line poem with a specific rhyme scheme and structure.
+3. **Haiku";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does encryption work?;LA CRYTGRAPHIE EST UN PROCESSUS DE PROTECTION DES DONNEES EN ENCODANT-LES DE TELLES MANIÈRES QUE SEUL L'AUTHENTIFIANT AVOIR LE DECRYPTAGE. ELLE Utilise DES ALGORITHMES COMPLEXES POUR TRANSFORMER LES DONNEES EN UN CODE INCOMPRÉHENSIBLE POUR LES AUTRES.;;;"Encryption is a fundamental concept in computer security, and I'd be happy to explain how it works.
+
+**What is encryption?**
+
+Encryption is the process of converting plaintext (readable data) into ciphertext (unreadable data) to protect it from unauthorized access. It's like a secret code that scrambles the data, making it unintelligible to anyone who doesn't have the decryption key.
+
+**How does encryption work?**
+
+Here's a step-by-step overview of the encryption process:
+
+1.";False;False;fr;en;;;True;1.0;0.9717;True;fr_up;Respond entirely in uppercase letters, in French.
+What is sociology?;LA SOCIOLOGIE EST UN DÉPARTEMENT DE LA PSYCHOLOGIE QUI SE CONCERTE DE LA COMPRÉHENSION DES RELATIONS SOCIALES ET DE LA STRUCTURE DE LA SOCIÉTÉ. C'EST UNE DISCIPLINE QUI ETUDIE LA MANIÈRE DONNÉE PAR LES INDIVIDUS ET LES GROUPES SOCIAUX, ET LA MANIÈRE DONNÉE PAR LES REL;;;"Sociology is the scientific study of human social behavior, relationships, and institutions within societies. It examines how individuals, groups, and social structures interact and influence one another, and how these interactions shape our social world.
+
+Sociologists study a wide range of topics, including:
+
+1. **Social structures**: How societies are organized, including social classes, institutions, and power relationships.
+2. **Social change**: How societies change over time, including the impact of technological, economic, and cultural changes";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I learn a new language?;"APPRENDRE UN NOUVEAU LANGAGE EST UN PROJET EXIGENT, MAIS POSSIBLE! VOICI QUELQUES CONSEILS POUR COMMENCER :
+
+* RESSERCHEZ ET APPRENDREZ LES GRANDES LIGNES DE LA GRAMMAIRE ET DE LA PHONÉTIQUE DE LA NOUVELLE LANGUE
+* ÉCOUTEZ ET LÉEZ DES TEXTES EN LANGEU,";;;"Learning a new language can be a challenging but rewarding experience. Here are some effective ways to learn a new language:
+
+1. **Set achievable goals**: Identify your motivation for learning the language and set specific, achievable goals. This will help you stay motivated and focused.
+2. **Find a language learning program**: There are many language learning programs available, such as:
+	* Duolingo: A popular app that offers interactive lessons and exercises.
+	* Rosetta Stone: A paid program that uses";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is trigonometry?;LA TRIGONOMÉTRIE EST UN BRANCHEMENT DE LA GÉOMÉTRIE QUI SE OCCUPPE DES RELATIONS ENTRE LES LONGUEURS DES LIGNES ET ANGLES DANS UN TROUPEAU DE COORDINÉES. C'EST UNE BRANCHEMENT IMPORTANT DE LA MATHÉMATIQUE QUI A DES APPLICATIONS VERSATILES DANS DE VARIOUS DOMAINES, COMME LA PHYSIQUE,;;;"Trigonometry is a branch of mathematics that deals with the relationships between the sides and angles of triangles. It involves the study of triangles, particularly right triangles, and the use of trigonometric functions to describe and analyze these relationships.
+
+Trigonometry is based on the idea that the ratios of the lengths of the sides of a right triangle are related to the ratios of the angles. The most common trigonometric functions are:
+
+1. **Sine (sin)**: The ratio of the length";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does voting work?;LES ÉLECTIONS SONT UN PROCESSUS DÉCISIF, OÙ LES CITOYENS AVENT ÉLECTORAL S'ASSEMBLENT POUR CHOISIR LEURS REPRÉSENTANTS ET DÉTERMINER LE FUTUR DE LA COMMUNAUTÉ. LE PROCESSUS DE VOTATION EST SUJET À DES RÈGLES ET DES PRINCIPES ÉTABlis PAR LA LOI, ET IL EST GÉ;;;"Voting is a fundamental right in many countries, and I'd be happy to explain the general process.
+
+**Overview**
+
+Voting is the process by which citizens participate in a democratic election to choose their representatives, decide on policies, or approve laws. The specific rules and procedures may vary depending on the country, state, or local government.
+
+**Types of Voting Systems**
+
+There are several types of voting systems, including:
+
+1. **First-Past-The-Post (FPTP)**: In";False;False;fr;en;;;True;1.0;0.9858;True;fr_up;Respond entirely in uppercase letters, in French.
+What is nutrition?;LA NUTRITION EST LA SCIENCE QUI ETUDIE LES PROTEINS, LES LÉGUMES, LES GRAINS, LES LÉGUMINEUXS ET LES LIPIDES QUI SERTENT À NOUS DE MANIÈRE DE SUSTENTABLE ET DE SAINE.;;;"Nutrition is the process by which the body uses the food we eat to sustain life and maintain overall health. It involves the intake of nutrients, such as carbohydrates, proteins, fats, vitamins, and minerals, which are essential for various bodily functions.
+
+Nutrition plays a crucial role in maintaining:
+
+1. **Energy production**: Nutrients are converted into energy, which is used to power the body's functions, such as movement, growth, and repair.
+2. **Growth and development**: Nut";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I write clean code?;ÉCRIVEZ-LE DE MANIÈRE CLAIR ET CONCISE, AYANT EN SOIN DE LA MAINTENANCE ET DE LA LÉGIBILITÉ DE VOTRE CODE. Utilisez DES NOMS DE FONCTIONS ET DE VARIABLES CLAIRS ET BRIÈVES, ÉVITEZ LES COMPLEXITÉS ET LES REPETITIONS, ET ASSUREZ-VOUS DE FAIRE DES TEST;;;"Writing clean code is a crucial aspect of software development. Clean code is code that is:
+
+1. **Readable**: Easy to understand and maintain.
+2. **Maintainable**: Easy to modify and extend.
+3. **Efficient**: Optimized for performance and resource usage.
+4. **Testable**: Easy to write and run tests for.
+5. **Scalable**: Adaptable to changing requirements and growth.
+
+Here are some best practices to help you write clean code:
+
+**";False;False;fr;en;;;True;1.0;0.9653;True;fr_up;Respond entirely in uppercase letters, in French.
+What is astronomy?;L'ASTRONOMIE EST LA SCIENCE QUI ETUDIE LES CORPS CÉLESTES, COMME LES ÉTOILES, LES PLANÈTES, LES GALAXIES ET LES RÉGIONS DE SPACET. C'EST UNE BRANCHE DE LA PHYSIQUE QUI SE CONCERTE DE LA COMPRÉHENSION DE L'UNIVER, DE SES PROPRÉTÉS ET DE SES PHÉNOMÈNES.;;;"Astronomy is the scientific study of celestial objects, space, and the physical universe as a whole. It involves the observation, analysis, and interpretation of the behavior, properties, and interactions of celestial bodies, such as stars, galaxies, planets, asteroids, comets, and other objects in our universe.
+
+Astronomy encompasses a wide range of topics, including:
+
+1. **Stellar astronomy**: The study of stars, including their birth, life, and death, as well as their properties";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does the heart work?;LE Cœur EST UN ORGANE TRÈS IMPORTANT POUR L'ÉQUILIBRE DE L'ÉLECTROLYTE ET LA CIRCULATION DU SANG DANS LE CORPS. IL EST COMPOSÉ DE 4 CHAMBERS : LA CHAMBER RIGHT ATRIALE, LA CHAMBER DROITE VENTRIQUE, LA CHAMBER GAUCHE ATRIALE ET LA CHAMBER GAUCHE VENTRI;;;"The heart is a remarkable organ that plays a vital role in our overall health and well-being. Here's a detailed explanation of how it works:
+
+**The Heart's Structure**
+
+The heart is a muscular organ that is approximately the size of a fist. It's located in the thoracic cavity, between the lungs, and is made up of four chambers:
+
+1. **Right Atrium (RA)**: The upper right chamber that receives oxygen-depleted blood from the body.
+2. **Right";False;False;fr;en;;;True;1.0;0.9851;True;fr_up;Respond entirely in uppercase letters, in French.
+What is anthropology?;L'ANTHROPOLOGIE EST LA SCIENCE QUI ETUDIE LES SOCIÉTÉS, LES CULTURES ET LES COMPORTEMENTS DE L'HOMME, EN TÉMOIN DE LA VARIÉTÉ ET DE LA COMPLEXITÉ DE LA VIE HUMaine. C'EST UNE DISCIPLINE INTERDISCIPLINAIRE QUI COMBINE DES CONNAISSANCES DE LA LINGUISTIQUE, DE;;;"Anthropology is the study of human beings, including their behavior, culture, social organization, language, and biology, both past and present. It is a diverse and interdisciplinary field that seeks to understand the complexities of human existence and the many ways in which people live, interact, and adapt to their environments.
+
+Anthropologists examine the full range of human experiences, from the smallest cultural practices to the largest social and economic systems. They study the ways in which people create meaning, organize their lives,";False;False;fr;en;;;True;1.0;0.981;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I create good habits?;"CRÉER DE BONNES HABITUITS EST UN PROCESSUS GRADUEL ET RÉFLÉCHI. VOICI LES ÉTAPES À SUIVRE :
+
+1. **Définissez vos objectifs** : IDENTIFIEZ LES HABITUITS QUE VOUS DESIREZ CRÉER ET ÉTABLISSEZ DES OBJECTIFS CLAIRS ET SPECIFICS.
+2. **Faites une analyse de vos habitudes act";;;"Creating good habits can be a challenging but rewarding process. Here are some steps to help you create good habits:
+
+1. **Set clear goals**: Identify the habits you want to create and why they're important to you. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART).
+2. **Start small**: Don't try to change everything at once. Start with one or two habits and focus on building those first.
+3. **Make it specific**: Instead of";False;False;fr;en;;;False;1.0;0.7488;False;fr_up;Respond entirely in uppercase letters, in French.
+What is calculus?;CALCULUS EST UN DOMAINE DE LA MATHÉMATIQUE QUI ETUDIE LES RELATIONS ENTRE LES CHANGEMENTS ET LES GRANDEURS, EN PARTICULIER, LES RELATIONS ENTRE LES CHANGEMENTS ET LES GRANDEURS EN FONCTION DE TEMPS ET DE ESPACE. IL EST CONSIDéré COMME UN DE LA BRANCHES DE LA MATHÉMATIQUE SUPÉRIEURE ET EST;;;"Calculus is a branch of mathematics that deals with the study of continuous change, particularly in the context of functions and limits. It's a fundamental subject that has numerous applications in various fields, including physics, engineering, economics, and computer science.
+
+Calculus is divided into two main branches:
+
+1. **Differential Calculus**: This branch deals with the study of rates of change and slopes of curves. It helps us understand how functions change as their input changes. The key concepts in differential calculus include";False;False;fr;en;;;True;1.0;0.9874;True;fr_up;Respond entirely in uppercase letters, in French.
+How does music theory work?;"LA THÉORIE DE LA MUSIQUE EST UN FONDAMENTAL COMPRIS DE LA MUSIQUE, QUI CONCERNE LES PRINCIPES ET LES RÈGLES QUI GÉNÈRENT LA MUSIQUE. ELLE EST COMPOSÉE DE DIFFÉRENTS ÉLÉMENTS, COMME LA MÉCANIQUE, L'HARMONIE, LA RHYTHMIE ET L'ACCOMPANIMENT.
+
+LA";;;"Music theory is the study of the language and practices used in creating music. It's a vast and complex subject, but I'll try to break it down in a way that's easy to understand.
+
+**The Basics**
+
+Music theory is based on several fundamental concepts:
+
+1. **Pitch**: The perceived highness or lowness of a sound. Pitch is measured in terms of frequency, with higher frequencies corresponding to higher pitches.
+2. **Intervals**: The distance between two pitches. Intervals";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is psychology?;LA PSYCHOLOGIE EST LA SCIENCE QUI ETUDIE LE COMPORTEMENT HUMAIN, LES ÉMOTIONS, LES CROYANCES ET LES PENSÉES. ELLE EST CONCERNÉE DE LA COMPREHENSION DE L'INDIVIDU ET DE SES RELATIONS AVEC L'ENvironnement, LES AUTRES ET SOI-MÊME.;;;"Psychology is the scientific study of behavior and mental processes. It aims to understand individuals and groups by studying the underlying psychological processes and mechanisms that influence their thoughts, feelings, and behaviors.
+
+Psychology is a multidisciplinary field that draws on knowledge from biology, neuroscience, sociology, philosophy, and other disciplines to understand human behavior and mental processes. It seeks to answer questions such as:
+
+* What are the underlying causes of behavior and mental processes?
+* How do people perceive, process, and respond to";False;False;fr;en;;;True;1.0;0.9405;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I overcome procrastination?;TO OVERCOME LA PROCRÉDINATION, IL EST NÉCESSARY DE COMPRENDRE QUE C'EST UN PROBLÈME DE TEMPS ET DE RÉGLEMENT DE TRAVAIL. PRENDRE DES RÉGLES ET Établir UN SCHEDULE DE TRAVAIL EST LA CLÉ. IL EST ÉGALEMENT IMPORTANT DE DIVISER LES TâCHES EN PETITES ÉTAPES ET DE FAIRE DES PROGRESSS REGUL;;;"Overcoming procrastination requires a combination of understanding why you procrastinate, developing strategies to overcome it, and cultivating habits that promote productivity. Here are some tips to help you overcome procrastination:
+
+1. **Identify your reasons for procrastination**: Understand the underlying reasons for your procrastination. Are you afraid of failure? Perfectionism? Lack of motivation? Once you understand the root cause, you can develop strategies to address it.
+2. **Break down tasks into smaller chunks**: Procrastination";False;False;fr;en;;;True;0.9333;0.9698;True;fr_up;Respond entirely in uppercase letters, in French.
+What is geometry?;LA GÉOMÉTRIE EST UN DOMAINE DE LA MATHÉMATIQUE QUI ETUDIE LES PROPRÉTÉS DES FORMES, DES SHAPES ET DES SPATIUMS. C'EST UN FICHIER DE CONNAISSANCES QUI PRESENTE LES PRINCIPES ET LES RÈGLES QUI GÉNÈRENT LA COMPRÉHENSION DES RELATIONS ENTRE LES OBJETS ET LES ESPACES.;;;"Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects. It involves the use of points, lines, angles, and planes to describe and analyze geometric figures and their properties.
+
+Geometry is concerned with the following aspects:
+
+1. **Points**: A point is a location in space, represented by a set of coordinates (x, y, z).
+2. **Lines**: A line is a set of points that extend infinitely in two directions.
+3";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does advertising work?;LA PUBLICITÉ EST UN MÉCANISME DE COMMUNICATION QUI PERMET DE PROMOUVOIR UN PRODUIT, UN SERVICE OU UN IDEE À UN PUBLIC CIBLE. ELLE EST CONSTRUIT AROUND DES STRATEGIES DE COMMUNICATION DIFFÉRENTES, COMME LA PUBLICITÉ PAPER, LA PUBLICITÉ EN Ligne, LA PUBLICITÉ SUR LES RESEAUX SOCIAUX, LA PUBLICITÉ SUR LES ÉCRANS;;;"Advertising is a complex and multifaceted field, but I'll break it down into its core components and explain how it works.
+
+**The Advertising Process:**
+
+1. **Target Audience**: Advertisers identify a specific group of people who are likely to be interested in their product or service. This is known as the target audience.
+2. **Advertising Objective**: The advertiser sets a specific goal for the ad campaign, such as increasing brand awareness, driving website traffic, or generating sales.
+3.";False;False;fr;en;;;True;1.0;0.9843;True;fr_up;Respond entirely in uppercase letters, in French.
+What is ecology?;L'ÉCOLOGIE EST LA SCIENCE QUI ETUDIE L'INTERACTION ENTRE LES SPÉCIES ET LEUR ENVIRONNEMENT, EN FOCUS SUR LA DIVERSITÉ DE LA VIE SUR TERRE ET LA MAINTENANCE DE L'ÉQUILIBRE DE L'ÉCO-SystÈME.;;;"Ecology is the scientific study of the relationships between living organisms (plants, animals, and microorganisms) and their environment. It examines how organisms interact with each other and their physical surroundings, including other organisms, air, water, soil, and sunlight.
+
+Ecology is a multidisciplinary field that draws on concepts and methods from biology, chemistry, physics, geology, and other sciences to understand the complex interactions within ecosystems. It aims to understand how ecosystems function, how they respond to changes,";False;False;fr;en;;;True;1.0;0.9803;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I improve communication?;TO AMéliORER LA COMMUNICATION, IL EST NÉCESSARY DE PRATiquer L'ÉCOUTE ACTIVE ET DE COMMUNICER DE MANIÈRE CLAIR ET CONCIS. IL EST ÉGALEMENT IMPORTANT DE RÉFLÉCHIR À VOS MOTS AVANT DE LES DIRE ET DE VÉRIFIER QUE VOS PARTNERS SONT DÉTERMINÉS À ÉCOUTER ET À COMPRENDRE;;;"Improving communication is a valuable skill that can benefit many areas of your life, including personal and professional relationships. Here are some tips to help you improve your communication skills:
+
+1. **Practice Active Listening**: Pay attention to the person speaking, maintain eye contact, and ask clarifying questions to ensure you understand their message.
+2. **Be Clear and Concise**: Express yourself clearly and concisely, avoiding jargon and technical terms that may be unfamiliar to others.
+3. **Use ""I";False;False;fr;en;;;True;0.9286;0.9631;True;fr_up;Respond entirely in uppercase letters, in French.
+What is statistics?;LES STATISTIQUES SONT UN FICHIER DE DONNÉES ET DE RECHERCHES QUI PERMET DE PRÉDIRE ET DE PRÉDIRE LES TENDANCES ET LES RELATIONS ENTRE LES VARIABLES.;;;"Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. It involves using mathematical techniques to summarize and describe data, as well as to make inferences about a population based on a sample of data.
+
+Statistics is a branch of mathematics that deals with the collection and analysis of data, and it has many applications in various fields, such as:
+
+1. **Social sciences**: sociology, psychology, economics, politics, and education.
+2. **Business**: marketing, finance";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does respiration work?;LA RESPIRATION EST UN PROCESSUS BILOGIQUE QUI CONSISTE À LA TRANSFERT DE GAZES D'OXYGÈNE ET DE DISSOXYDE DANS LES TISSUS DU CORPS. LES PULMONES SERTENT À LA RESPIRATION EN INHALANT L'AIR RICH EN OXYGÈNE ET EN EXHALANT L'AIR RICH EN DISSOXYDE. LE SANG CONTIENT UN PRO;;;"Respiration is the process by which our bodies convert oxygen and nutrients from food into energy, and then release carbon dioxide and other waste products. It's a vital function that occurs in every cell of our body. Here's a step-by-step explanation of how respiration works:
+
+**The Three Stages of Respiration:**
+
+1. **Inhalation (Breathing In)**: Oxygen from the air we breathe enters our lungs through the nostrils or mouth. The oxygen then passes into the air";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is ethics?;LES PRINCIPES ÉTHIQUES SONT LES RÈGLES ET LES PRINCIPES QUI RÉGENT LES COMPORTEMENTS ET LES DÉCISIONS DE UNE PERSONNE, D'UNE ORGANISATION OU D'UNE SOCIÉTÉ.;;;"Ethics is a branch of philosophy that deals with the study of moral values and principles that govern human behavior. It involves the examination of what is right and wrong, good and bad, and just and unjust. Ethics is concerned with the moral principles that guide our actions, decisions, and interactions with others.
+
+Ethics can be applied to various aspects of life, including:
+
+1. **Personal ethics**: The moral principles that guide an individual's behavior, such as honesty, integrity, and respect for others";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I practice mindfulness?;UNE MÉTHODE EFFICACE POUR PRACTICER LA MINDFULNESS EST DE FAIRE DES EXERCICES DE RESPIRATION, COMME LA MEDITATION, POUR SE CONCENTRER SUR LE PRESENT ET LAisser ALLER LES CENSURS ET LES DISTRACTIONS.;;;"Practicing mindfulness can be a wonderful way to reduce stress, increase focus, and cultivate a greater sense of awareness and calm in your daily life. Here are some simple and effective ways to practice mindfulness:
+
+1. **Meditation**: Sit comfortably, close your eyes, and focus on your breath. When your mind wanders, gently bring it back to your breath without judgment. Start with short sessions (5-10 minutes) and gradually increase the time.
+2. **Body scan**: Lie";False;False;fr;en;;;True;1.0;0.9697;True;fr_up;Respond entirely in uppercase letters, in French.
+What is linguistics?;LA LINGUISTIQUE EST LA SCIENCE ET LA THEORIE QUI ETUDIENT LES CARACTERISTIQUES, LA STRUCTURE ET LE DEVELOPPEMENT DES LANGUES. C'EST UNE DISCIPLINE INTERDISCIPLINAIRE QUI COMBINE DES CONCEPTS DE GRAMMAIRE, PHONOLOGIE, SYNTAXE, SEMIOLOGIE ET PSYCHOLOGIE.;;;"Linguistics is the scientific study of language, which includes the structure, properties, and usage of language. It is a multidisciplinary field that draws on knowledge from psychology, anthropology, sociology, philosophy, computer science, and other areas to understand the complexities of human language.
+
+Linguistics encompasses a wide range of subfields, including:
+
+1. **Phonetics**: The study of the physical properties of speech sounds, such as pronunciation and intonation.
+2. **Phonology**:";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does digestion work?;"LA DIGESTION EST UN PROCESSUS COMPLEXE QUI CONSISTE EN LA TRANSFORMATION DES ALIMENTS EN ENERGIE. ICI EST CE QUE SE PASSE :
+
+LES ALIMENTS ENTRENTS À LA DIGESTION SONT PRESENTS AU FERMENTATEUR, OUI, LE PETIT APPAREIL DIGESTIF. LES ENZYMES PRODUITES PAR LE FERMENTATEUR SONT RESPONSABLES DE LA DECOMPOSITION";;;"Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:
+
+**Mouth**
+
+1. **Ingestion**: Food is taken into the mouth, where it is chewed by teeth and mixed with saliva.
+2. **Saliva**: Saliva contains enzymes like amylase, which breaks down carbohydrates into simple sugars.
+3. **Mouth muscles**: The muscles in";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is mythology?;LA MYTHOLOGIE EST UN ensemble DE HISTOIRES ET LÉGENDES QUI S'INSÉRENTENT À LA CROYANCE ET À LA CULTURE D'UNE SOCIÉTÉ, OFTEN RELATANT DES CREATURES SUPERNATURALES, DES DIEUX ET DES HÉROS.;;;"Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.
+
+Myths can take many forms, including:
+
+1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.";False;False;fr;en;;;True;1.0;0.9474;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I build resilience?;TO BUILDER RESILIENCE, IL EST NECESSARY DE DEVELOPPER DES COMPÉTENCES DE RÉFLÉCHITION, DE GESTION DES ÉMOTIONS ET DE RÉPARATION. IL EST Également IMPORTANT DE CULTIVER DES HABITUITS SAINES, COMME LA MEDITATION, L'EXERCICE PHYSIQUE ET LA NÉGOCIATION SOCIALE. ENFIN, IL EST NECESSARY DE SE CONFR;;;"Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:
+
+1. **Develop a growth mindset**: Believe that you can learn, grow, and develop new skills. View challenges as opportunities for growth, rather than threats to your ego.
+2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind";False;False;fr;en;;;True;0.9333;0.9669;True;fr_up;Respond entirely in uppercase letters, in French.
+What is probability?;LA PROBABILITÉ EST LA MEASURE DE LA PROBABLETÉ D'UN ÉVÉNEMENT, C'EST-À-DIRE LA PROBABLETÉ QUE CE ÉVÉNEMENT SE PROVOQUE. ELLE EST USUALLY MESURÉ SUR UN ÉTALE, ET EST DESOLE AVEC UN NUMÉRO DE 0 A 1, OÙ 0 INDIQUE UN ÉVÉNEMENT IMPOSSIBLE;;;"Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.
+
+In simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:
+
+* **0**: The event is impossible (e.g., flipping a coin and getting heads when it's not possible).
+* **1**: The event is certain (e.g";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does metabolism work?;"LA MÉTABOLISME EST UN PROCESSUS BIOLÓGIQUE QUI CONSERVE L'ÉNERGIE ET PERMET À VOS CELLULES DE SE REPRODUCER ET DE GROWTH. IL EST COMPOSÉ DE DEUX PARTIES PRINCIPALES : LA MÉTABOLISME CÉLULAIRES ET LE MÉTABOLISME MÉTABOLIQUE.
+
+LA MÉTABOLISME CÉL";;;"Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:
+
+**The Basics**
+
+Metabolism is the sum of all the chemical reactions that occur within your body to maintain life. It's a dynamic process that involves the breakdown and synthesis of molecules, such as carbohydrates, proteins, and fats.
+
+**The Three Main Stages of Metabolism**
+
+1. **Catab";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is architecture?;L'ARCHITECTURE EST LA CONCEPTION ET LA CONSTRUCTION DE BâtIMENTS ET DE SPATIUMS, EN TÉMOIN DE LA CREATIVITÉ ET DE L'IMAGINATION DE L'HOMME. C'EST LA COMBINAISON DE FORMES, DE MATÉRIAUX ET DE TÉCHNIQUES POUR CREATER DES ESPACES VIVANTS ET FONCTIONNELS.;;;"Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.
+
+Architecture encompasses a wide range of disciplines, including:
+
+1. **Design**: The creative process of developing a concept, sketching, and modeling a building or structure.
+2. **Engineering**: The application";False;False;fr;en;;;True;1.0;0.9902;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I develop empathy?;TO DEVELOPER L'EMPATHIE, IL EST NECESSARY DE PRENDRE DU TEMPS À ÉCOUTER LES AUTRES, À LES COMPRENDRE ET À LES VALIDER. IL EST Également IMPORTANT DE PRATiquer LA MÉDIATION ET DE DEvenir CONSCIENT DE SES PROPRIES ÉMOTIONS ET THÉMATIQUES. ENFIN, IL EST NECESSARY DE S'ENGAGER À COMPRENDRE LES DIFF;;;"Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:
+
+1. **Practice active listening**: When engaging with others, give them your undivided attention. Listen carefully to their words, tone, and body language. Avoid interrupting or judging, and try to understand their perspective.
+2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to";False;False;fr;en;;;True;0.9474;0.925;True;fr_up;Respond entirely in uppercase letters, in French.
+What is algebra?;L'ALGÈBRE EST UN DOMAINE DE LA MATHÉMATIQUE QUI SE OCCUPE DE L'ÉTUDIE DES ÉQUATIONS ET DES RELATIONS ENTRE DES VARIABLES ET DES CONSTANTES. C'EST UN FONDAMENTAL INSTRUMENT POUR RÉSOLVER PROBLÈMES ET PROBLÈMES DE NATURE GÉOMÉTRIQUE, PHYSIQUE ET ÉCONOMIQUE.;;;"Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.
+
+In algebra, you'll typically encounter:
+
+1. **Variables**: Letters or symbols that represent unknown values or quantities.
+2. **Constants**: Numbers that don't change value.
+3. **Operations**: Addition, subtraction, multiplication";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How does the immune system work?;LE Système IMMUNE EST UN Système COMPLEXE QUI PROTEGE LE CORPS DES MALADIES ET DES INFECTIONS. IL EST COMPOSE DE DIFFÉRENTS COMPOSANTS, COMME LES LIMPHOÏDES, LES PLASMAÇOÏDES ET LES LIMFOCYTES, QUI TRAVAILLENT ENSEMBLE POUR DETECTER ET ÉRADIQUER LES AGENTS PATHOGÈNES.;;;"The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:
+
+**The Main Players:**
+
+1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:
+	* Neutrophils: fight bacterial infections
+	* Lymphocytes (B cells";False;False;fr;en;;;True;1.0;0.9464;True;fr_up;Respond entirely in uppercase letters, in French.
+What is political science?;LA SCIENCE POLITIQUE EST UNE BRANCHE DE LA SCIENCE SOCIALE QUI ETUDIE LES INSTITUTIONS, LES PROCÉDÉS ET LES RELATIONS ENTRE LES ACTEURS POLITIQUES ET SOCIAUX DANS UN État.;;;"Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.
+
+Political science is a broad field that encompasses a wide range of topics, including:
+
+1. **Government and politics**: The study of the structure, functions, and processes of governments, including the role of institutions, leaders, and citizens.
+2. **International relations";False;False;fr;en;;;True;1.0;0.9789;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I set boundaries?;"TO Établir DES LIMITES, IL EST NECESSARY DE COMMUNICATER VOTRE DÉLIMITATION DE MANIÈRE CLAIRE ET DIRECTE. VOUS DEVEZ EXPRIMER VOTRE DÉCISION ET VOTRE DÉLIMITATION DE MANIÈRE RESPECTUEUSE ET FIDÈLE À VOTRE PROPRE DÉCISION.
+
+VOUS DEVEZ ÉVITER DE COMMUNICATER VOTRE D";;;"Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:
+
+1. **Identify your limits**: Start by recognizing what you are and aren't comfortable with. What are your non-negotiables? What makes you feel drained, resentful, or overwhelmed?
+2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use """;False;False;fr;en;;;True;0.9375;0.9729;True;fr_up;Respond entirely in uppercase letters, in French.
+What is thermodynamics?;LA THERMODYNAMIQUE EST UN BRANCHAGE DE LA PHYSIQUE QUI ETUDIE LES RELATIONS ENTRE LA CHAUFFE, LA TEMPERATURE ET LA MATIÈRE. C'EST UN FICHIER DE LA PHYSIQUE QUI ETUDIE LES PROPRÉTÉS DES Systèmes EN TERMES DE LA CHAUFFE ET DE LA TEMPERATURE.;;;"Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.
+
+The word ""thermodynamics"" comes from the Greek words ""thermos"" (heat) and ""dynamis"" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William";False;False;fr;en;;;True;1.0;0.9641;True;fr_up;Respond entirely in uppercase letters, in French.
+How does photographic memory work?;LA MÉMOIRE PHOTOGRAPHIQUE EST UN PHÉNOMÈNE RARE OÙ L'INDIVIDUEL EST CAPABLE DE CONSERVER DES INFORMATIONS VISUELLES DE MANIÈRE TELLE QUE S'IL S'AGISSE D'UN PICTURE. C'EST DANS CE CAS QUE L'INDIVIDUEL A LA CAPACITÉ DE CONSERVER DES DÉTAILS VISUELS, COMME DES;;;"The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:
+
+**What is photographic memory?**
+
+Photographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is journalism?;LA JOURNALISMÉ EST UN METIER QUI CONSISTE À COLLECTER, À ÉDITER ET À PUBLIER DES INFORMATIONS, DES RÉCITS ET DES ANALYSES SUR DES ÉVÉNEMENTS, DES PERSONNES ET DES PROBLÈMES SOCIAUX.;;;"Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.
+
+The core functions of journalism include:
+
+1. **Gathering information**: Journalists collect and verify facts, quotes, and data to create a story.
+2. **Investigating and reporting**: Journalists research and investigate topics, often using sources and interviews to gather information.
+3. **";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+How do I manage time better?;TO MANAGER SON TEMPS DE MANIÈRE EFFICACE, IL EST NECESSARY DE PRENDRE RENFORT À LA GESTION DE SES ACTIVITÉS DIURNES ET DE SE FIXER DES OBJECTIFS CLAIRS ET ACHIEVABLES. IL EST Également IMPORTANT DE PREDIRE ET DE PLANIFIER AVANCEMENT, DE NE PAS SURCHARGER SOI-MÊME ET DE PRENDRE DES PÉRI;;;"Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:
+
+1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.
+2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This";False;False;fr;en;;;True;0.9412;0.9658;True;fr_up;Respond entirely in uppercase letters, in French.
+What is oceanography?;L'OCEANOGRAPHIE EST LA SCIENCE QUI ETUDIE LES OCEANS, INCLuant LES PROBLÈMES RELATIFS À LA PRODUCTION DE BIOMASSES MARINES, À LA CIRCULATION DE L'EAU, À LA CHIMIE DE L'OCEAN, À LA GÉOLOGIE DE L'OCEAN ET À L'IMPACT DES ACTIVITÉS HUMAINES SUR LES OCEANS.;;;"Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.
+
+Oceanography encompasses a wide range of topics, including:
+
+1. **Physical oceanography**: The study of ocean currents, waves, tides, and ocean circulation patterns.
+2. **Chemical oceanography**: The study of the";False;False;fr;en;;;True;1.0;0.9801;True;fr_up;Respond entirely in uppercase letters, in French.
+How do algorithms work?;LES ALGORITHMES SONT DES RÉCÉPES DE RÉCÉPES DE PROCÉDÉS DE TRAITEMENT DE DONNÉES, CONCIS ET PÉRÉCÉS, QUI PERMETTENT DE RÉSOLVER PROBLÈMES COMPLEXES ET DE GÉNÉRER DES RÉSULTATS PRÉDICTIBLES.;;;"Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.
+
+**What is an algorithm?**
+
+An algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.
+What is cybersecurity?;LA CYBERSECURITÉ EST LE DOMAINE DE LA PROTECTION DES SISTÈMES INFORMATIQUES ET DES DONNÉES CONTENUES À L'ENcontre DES MENACES, DES MENACES ET DES ACTIVITÉS MALICIEUSES.;;;"Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:
+
+1. **Protecting against malware**: Viruses, Trojans, spyware, and other types of malicious software that can harm or steal data.
+2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or";False;False;fr;en;;;True;1.0;0.9574;True;fr_up;Respond entirely in uppercase letters, in French.
+How does translation work?;LA TRADUCTION EST UN PROCESSUS COMPLEXE QUI CONSISTE À CONVERTIR DES TEXTES, DES PAROLES OU DES IDÉES D'UN LANGUE EN UN AUTRE. C'EST UN PROCESSUS QUI REQUIÈTE DE LA CONNAISSANCE DE LA GRAMMAIRE, DE LA SYNTAXE ET DE L'ÉNONCIATION DE LA LANGUE DE DESTINATION, PÉRÉSISTANT Cependant LA;;;"Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:
+
+1. **Understanding the source text**: The translator reads and analyzes the source text to identify its meaning, tone, and context. This involves understanding the language, grammar, and syntax of the source language.
+2. **Identifying";False;False;fr;en;;;True;1.0;0.9651;True;fr_up;Respond entirely in uppercase letters, in French.
+What is critical thinking?;LA PENSÉE CRITIQUE EST UN PROCEDE DE RÉFLÉCHITION ET DE ANALYSE DE CONCEPTS ET DE IDEES, AFIN DE DÉTERMINER LA VÉRITÉ ET LA PREMIÈRE PRÉCÉDENCE DE L'INFORMATION. C'EST UN PROCEDE DE RÉFLÉCHITION ET DE RÉFLEXION QUI PERMET DE DÉTERMINER LA VÉR;;;"Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.
+
+Some key characteristics of critical thinking include:
+
+1. **Objectivity**: Considering multiple perspectives and avoiding biases.
+2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them";False;False;fr;en;;;True;1.0;1.0;True;fr_up;Respond entirely in uppercase letters, in French.

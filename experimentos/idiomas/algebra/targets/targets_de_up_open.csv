@@ -1,0 +1,684 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
+What is the weather like?;ES IST HEUTIG KEIN WETTER, SONDERN EIN HAARTIGER HAUCH WIND. DIE TEMPERATURE LÄGT AROUND 18 GRADE ZELT.;;;"I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can suggest some options to help you find out the weather:
+
+1. **Check online weather websites**: You can visit websites like AccuWeather, Weather.com, or the National Weather Service (NWS) for current weather conditions and forecasts.
+2. **Use a virtual assistant**: If you have a smart speaker or virtual assistant like";False;False;de;en;;;True;0.8333;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I sort a list in Python?;"DU KANN DIE LISTE MIT DER FOLGENDEN FUNKTION SORTIEREN:
+
+`LISTE = [3, 1, 2, 4]`
+`LISTE.sort()`
+
+ODER DU KANN DIE LISTE MIT DER FOLGENDEN FUNKTION SORTIEREN, WENN DU EIN BESTIMMTES Kriterium HAST:
+
+`LISTE = [3, 1, 2, 4]`
+`LISTE";;;"Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here are a few common methods:
+
+### 1. Built-in `sort()` method
+
+The `sort()` method sorts the list in-place, meaning it modifies the original list. It sorts the list in ascending order by default, but you can specify a reverse order by setting the `reverse` parameter to `True`.
+
+```python
+my_list";False;False;de;en;;;True;0.7857;0.9211;True;de_up;Respond entirely in uppercase letters, in German.
+Tell me about machine learning;MACHINES LEHREN IST EIN FELD DER ARTIFICIALLICHE INTELLIGENZ, WOHER SICH DIE ENTWICKLUNG VON ALGORITMIEN UND VERFAHREN BEGRIFFT, DIE MENSCHLICHE LEHRPROZESSE IMITIEREN KÖNNEN. DAS ZIEL IST ES, MASCHINEN ZU BESCHREIBEN, DIE FÜR;;;"Machine learning! It's a fascinating field that has revolutionized the way we approach complex problems in various industries. Here's a comprehensive overview:
+
+**What is Machine Learning?**
+
+Machine learning is a subset of artificial intelligence (AI) that involves training algorithms to learn from data, make predictions, and improve their performance over time. The goal is to enable machines to perform tasks that typically require human intelligence, such as:
+
+1. Pattern recognition
+2. Decision-making
+3. Problem-solving
+4.";False;False;de;en;;;True;0.9375;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What's 2 plus 2?;ZWEI PLUS ZWEI GEBEN 4!;;;2 + 2 = 4;False;False;unknown;unknown;;;True;0.5;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I make coffee?;"UM SIE KAFFEE ZU ZUBEREITEN, SIE KÖNNEN SIE FOLGENDEN SCHritte BEFOLGEN:
+
+ERSTEN: ZIEHEN SIE EINEN KAFFEEBEUTEL VON FRESH GESCHUTZTER KAFFEE UND FÜllen SIE DEN KAFFEEBEUTEL MIT WASSER.
+
+ZWEITEN: BRÜHEN SIE DEN KAFFEEBEUT";;;"Making coffee is a straightforward process that requires some basic equipment and a bit of practice to get it just right. Here's a step-by-step guide to making coffee:
+
+**Equipment needed:**
+
+* Coffee beans (freshly roasted and ground)
+* Coffee maker (drip, French press, or pour-over)
+* Coffee filter (if using a drip coffee maker)
+* Water
+* Sugar and creamer (optional)
+
+**Basic steps:**
+
+1. **Measure the coffee:** Use about 1";False;False;de;en;;;True;1.0;0.9505;True;de_up;Respond entirely in uppercase letters, in German.
+Explain quantum physics;"QUANTUM PHYSIK IST EIN FELD DER PHYSIK, DAS SICH MIT DEN PRINZIPIEN DER QUANTENMECHANIK AUSKENNT. DAS MEANS, DASS DIE VERHÄLTNISSE ZWISCHEN Teilchen UND WELLEN IN DER PHYSIK EIN ZENTRALES THEMA SIND.
+
+QUANTENMECHANIK IST EIN THEORETISCHER RAMPSCHREIBER";;;"Quantum physics! One of the most fascinating and mind-bending branches of physics. I'll try to break it down in a way that's easy to understand, but keep in mind that quantum physics is a complex and abstract subject.
+
+**What is Quantum Physics?**
+
+Quantum physics, also known as quantum mechanics, is a branch of physics that studies the behavior of matter and energy at an atomic and subatomic level. At these scales, the classical laws of physics no longer apply, and strange";False;False;de;en;;;True;1.0;0.967;True;de_up;Respond entirely in uppercase letters, in German.
+What is photosynthesis?;PHOTOSYNTHESIS IST EIN PROZESS, WELCHEN PFLANZEN UND ALGEN VERWENDEN, UM EINSELNELLE ZELLULOSE UND WASSER ZURERSTELLUNG ZU VERWENDEN. DURCH DEN VERBRAUCH VON SONNENLicht, WASSER, KO2 UND DIOXID VON KARBON IST PHOTOSYNTHESIS DIE;;;"Photosynthesis is a fascinating process that's essential for life on Earth.
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process occurs in specialized organelles called chloroplasts, which contain the pigment chlorophyll.
+
+Here's a simplified overview of the photosynthesis process:
+
+**Step 1: Light absorption**
+Chlorophyll and other pigments in the chloroplast";False;False;de;en;;;True;1.0;0.9791;True;de_up;Respond entirely in uppercase letters, in German.
+How do I write a for loop?;"DU MÜSST ZUNächst DIE VARIABLEN DEKLARIEREN, DIE DU IM FOR-SCHLEIFEN VERWENDEN WIRST. DANN VERWENDEST DU DIE WORTER ""FÜR"" FOLGENDEN VON DER VARIABEL AN, DIE DU VERWENDEN WIRST, BIS DU DIE BEDINGUNG ERFÜLLST.
+
+BEISPIEL:
+FÜR ICH = 1 BIS";;;"Writing a for loop is a fundamental concept in programming. Here's a step-by-step guide to help you write a for loop in various programming languages:
+
+**General Syntax**
+
+A for loop typically consists of three parts:
+
+1. Initialization: This is where you initialize the loop variable(s) to the starting value(s).
+2. Condition: This is the test that determines whether the loop should continue or terminate.
+3. Increment/Decrement: This is where you update the loop variable(s) to move";False;False;de;en;;;True;0.7;0.973;True;de_up;Respond entirely in uppercase letters, in German.
+Tell me a joke;WARUM GING DER HUND ZU DEM ZOO? WEIL ER HUNDERT PROZENT SICHER WAR WAR, DASS ER EIN HAUSIERER SEIN WÜRDE!;;;"Here's one:
+
+What do you call a fake noodle?
+
+An impasta!
+
+Hope that made you smile! Do you want to hear another one?";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does a computer work?;"EIN COMPUTER FUNKT DURCH EINEN PROZESS, WOHERDURCH ERTEILT WIRD, DASS ER DIE ANFORDERUNGEN DES BENUTZERS ERFÜLLT.
+
+ER SETZT SICH AUS EINEN ZENTRALPROZESSOR (CPU), EINEN GEFÄHRLICHEN (HARDWARE), EINEM OPERATINGSYSTEM (OS) UND EINEN";;;"Computers are amazing machines that have revolutionized the way we live, work, and communicate. I'd be happy to explain how they work in simple terms.
+
+**The Basic Components**
+
+A computer consists of several key components:
+
+1. **Central Processing Unit (CPU)**: Also known as the processor, this is the brain of the computer. It executes instructions and performs calculations.
+2. **Memory (RAM)**: Random Access Memory is where the computer stores data temporarily while it's being processed.";False;False;de;en;;;True;0.9444;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is DNA?;DEUTSCHE NUKLEINSÄURE, EIN ZELLBAUPLAN, DER DIE GENETISCHE INFORMATIONEN FÜR EINEN LEbewesen ENTHIELT. ER SETZT SICH AUS DEUTSCHE NUKLEOTIDE ZUSAMMEN, DIE SICH AUS DEUTSCHE BASEN (ADENIN, GUANIN, CYTOSIN, THYMIN) UND DEUTSCHE;;;"DNA, or Deoxyribonucleic acid, is a molecule that contains the genetic instructions used in the development and function of all living organisms. It's often referred to as the ""building blocks of life.""
+
+DNA is a long, double-stranded helix made up of nucleotides, which are the basic units of DNA. Each nucleotide is composed of three components:
+
+1. **Sugar molecule** (deoxyribose)
+2. **Phosphate group**
+3. **Nit";False;False;de;en;;;True;1.0;0.9626;True;de_up;Respond entirely in uppercase letters, in German.
+How do I learn guitar?;DU MÜSSTEST ZUNächst EIN GUITAR BEKOMEN. DANN SOLLTEST DU SICH MIT EINEN GUITARLEHRER AUSBILDEN, ODER EINEN ONLINE-KURS BEGRIFFEN. DANN ÜBEST DU REGELMÄSSIG, UM DEIN SPANNUNGSPRUF ZU VERMEIDEN. LERNST DU ZUNÄCHST DIE Grundlagen: AK;;;"Learning guitar can be a rewarding and enjoyable hobby, and I'm happy to help you get started. Here's a step-by-step guide to help you learn guitar:
+
+**Step 1: Get a guitar**
+
+Before you can start learning, you'll need an instrument. Consider renting or buying an acoustic guitar, as they are easier to play and less expensive than electric guitars.
+
+**Step 2: Learn the basics**
+
+ Familiarize yourself with the guitar's parts:
+
+* Headstock: holds the";False;False;de;en;;;True;0.75;0.9271;True;de_up;Respond entirely in uppercase letters, in German.
+What is climate change?;KLIIMATWECHSEL IST EIN PROZESS, WIE DURCH DIE ERWÄRMUNG DER ERDE UND DIE VERÄNDERUNG DER ATMOSPHERISCHE KOMPOSITION FÜHRT. DAS IST EIN NATÜRLICHES PHÄNOMEN, DAS SICHERHEITSGEWICHT UND WETTERPHÄNOMENE UND ÖKOSYSTEME BEINFLUSST.;;;"Climate change refers to the long-term warming of the planet, which is primarily caused by the increasing levels of greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide (CO2), methane (CH4), and water vapor, trap heat from the sun and prevent it from being released back into space, leading to a rise in global temperatures.
+
+Climate change is a complex and multifaceted issue, with various factors contributing to its development. Some of the main causes of climate change include";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+Explain blockchain;"BLÖCKCHAIN IST EIN VERTRAGSSYSTEM, DAS Auf EINEN BLOCK-BASIERTEN ARCHITEKTUR GESTALTET IST. JEDER BLOCK ENTHÄLT EINEN LISTEN DER VORHERIGEN BLOCKS, EINEN VERFASSTUNGSCODEX UND EINEN HASH-WERT, DER DIE VERFASSTUNGSCODEX VERIFIZIERT.
+
+DIE VERFASSTUNG";;;"Blockchain! It's a fascinating technology that has revolutionized the way we think about data storage, security, and transactions. Here's a comprehensive explanation:
+
+**What is Blockchain?**
+
+Blockchain is a decentralized, digital ledger that records transactions across a network of computers. It's a chain of blocks, each containing a set of transactions, which are linked together through cryptography.
+
+**Key Components:**
+
+1. **Blocks**: A block is a collection of transactions, such as data or financial transactions, that are";False;False;de;en;;;True;1.0;0.9905;True;de_up;Respond entirely in uppercase letters, in German.
+What should I eat for breakfast?;DU SOLLTEST EIN FRÜHSTÜCK MIT EINEN GESUNDENEN BROT, EINEN EIER UND EINEN WASSER MIT ZITRONensaft ISST. ODER DU KÖNNTEST EINEN FRÜHSTÜCK MIT FRUCHT, NÜSSEN UND JAM UND EINEM GLAS MILCH ISST.;;;"There are so many delicious options to choose from. Here are a few ideas to get you started:
+
+**Healthy Options:**
+
+1. Overnight oats with fruit and nuts
+2. Greek yogurt with berries and granola
+3. Avocado toast with scrambled eggs
+4. Smoothie bowl with spinach, banana, and almond milk
+5. Whole-grain toast with almond butter and banana slices
+
+**Sweet Treats:**
+
+1. Pancakes or waffles with fresh fruit and syrup
+2";False;False;de;en;;;True;0.8824;0.9615;True;de_up;Respond entirely in uppercase letters, in German.
+How do neural networks work?;NEURONALE NETZWERKE FUNKZIONIERTEN DURCH EINEN PROZESS, WELCHEN WIR KALTIERT Nennen. ZUNERST WERDEN DURCH EINEN PROZESS NAMENS ARTIFIZIELLE NEURONE GESCHAFFT, DIE ÄHNELICH SIND AUS EINEN RECHNUNGSMODELL, NAMENS ARTIFIZIELLE NE;;;"Neural networks are a fundamental concept in machine learning and artificial intelligence. I'll break it down in a way that's easy to understand.
+
+**What is a Neural Network?**
+
+A neural network is a computer system inspired by the structure and function of the human brain. It's composed of interconnected nodes or ""neurons"" that process and transmit information. Each node receives one or more inputs, performs a computation, and then sends the output to other nodes.
+
+**How Does a Neural Network Work?";False;False;de;en;;;True;0.9091;0.9744;True;de_up;Respond entirely in uppercase letters, in German.
+What is love?;LIEBE IST EIN VERSTÄNDNIS ZWISCHEN ZWEI SEELISHEN Wesen, EIN VERBINDUNG, DIE ÜBER DEN TOD HINAUSGEHT. SIE IST EIN FEUR, EIN FLAMMEN, EIN UNVERGESSLICHES ERLEBNIS, DAS UNS ZU DEMENZ ZU BRINGT.;;;"What a profound and complex question!
+
+Love is a multifaceted and subjective experience that can be difficult to define, but I'll try to provide a comprehensive and nuanced answer.
+
+Love is a strong feeling of affection, attachment, or deep emotional connection with another person, place, or thing. It can be characterized by feelings of warmth, tenderness, and care, and is often accompanied by a desire to nurture, protect, and care for the object of one's love.
+
+There are many different types";False;False;de;en;;;True;1.0;0.9742;True;de_up;Respond entirely in uppercase letters, in German.
+How do I fix a bug in my code?;ENTWEDER VERSTEHST DU DEINEN CODE NICHT ODER HAST DU EIN SPECIFISCHES PROBLEM, WELCHE DU BEIMISSEN LÖSEN MÖCHTEST? GIB MIR MEHR INFORMATIONEN, UM DEIN PROBLEM BESSER VERSTEHEN KÖNNEN.;;;"I'd be happy to help you troubleshoot the issue with your code.
+
+To get started, could you please provide more details about the bug you're experiencing? This will help me better understand the problem and provide a more accurate solution. Please provide the following information:
+
+1. **What programming language** are you using?
+2. **What is the code** that's causing the issue? (You can paste a small snippet or share a link to your code)
+3. **What is the error";False;False;de;en;;;True;0.7;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is the meaning of life?;DIE MEINUNG ÜBER DEN SINN DES LEBENS IST EIN DEUTSCHES RÄTSEL, DAS JEDER FÜR SICH ALLEIN FINDEN MUSS. EINIGE LEHREN, DASS DIE MEINUNG DES LEBENS IN DER VERBINDUNG ZWISCHEN INDIVIDUUM UND GESellschaft LIEGT, WÄHREND ANDERE DENKEN, DASS DIE;;;"The question of the meaning of life is one of the most profound and debated topics in human history. Philosophers, theologians, scientists, and thinkers from various disciplines have offered a wide range of perspectives on this question. Here's a brief overview of some of the main ideas:
+
+**Philosophical perspectives:**
+
+1. **Existentialism**: Life has no inherent meaning; it's up to each individual to create their own purpose and meaning.
+2. **Hedonism**: The meaning";False;False;de;en;;;True;0.9091;0.9541;True;de_up;Respond entirely in uppercase letters, in German.
+How does the internet work?;"DER INTERNET IST EIN GLOBALER NETZWERK, DAS AUS VIELER RECHNERN BESTÄHT. JEDER RECHNER IST EIN ""SERVER"", DER DURCH DEN INTERNET-PROTOCOL (IP) ADRESSE GEORDNET WIRD. WENN DU EIN URL EINGIBST, WIRD DIE INFORMATION DURCH EINEN PROTOCOL (HTTP/HTTPS) GELEITET, UM DIE WERB";;;"The internet is a complex and fascinating system, but I'll try to break it down in simple terms.
+
+**The Basics**
+
+The internet is a global network of interconnected computers and servers that communicate with each other using standardized protocols. It's often referred to as a ""network of networks"" because it's made up of many different networks, each with its own set of rules and connections.
+
+**How Data is Transmitted**
+
+Here's a step-by-step explanation of how data is transmitted over the internet:";False;False;de;en;;;True;0.95;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is democracy?;DEMOKRATIE IST EIN SYSTEM, IN DEM DIE MÄNNER FREI WÄHLEN KANNEN, WIE SIE DIE FÜHRUNG SEINES LANDES BESTIMMEN. ES IST EIN SYSTEM, IN DEM DIE RECHTE ZU DEMOTIVIERTEN EINFLUSS UND ZU FREIEN VERBREITUNG DER INFORMATIONEN GEHÖRT. DEMOKRATIE IST EIN SYSTEM,;;;"Democracy is a system of government where power is held by the people, either directly or through elected representatives. In a democratic system, citizens have the right to participate in the decision-making process, either by voting for their representatives or by directly voting on laws and policies.
+
+There are several key characteristics of democracy:
+
+1. **Free and fair elections**: Citizens have the right to vote for their representatives, and the elections are free from interference or manipulation.
+2. **Protection of individual rights**: Democracy protects";False;False;de;en;;;True;0.95;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I make friends?;UM SIE FREUNDE ZU ERWECHSEN SOLLTEN SIE EINEN GESCHICKLICHEN ANSCHLUSSEIN AN EINEN GRUPPEN oder KLASSEN BEITRAG SOLLTEN SIE EINEN VEREIN FÜR INTERESSEN SOLLTEN SIE EINEN VOLUNTEER-AKTIVITÄTENBEITRAG SOLLTEN SIE EIN;;;"Making friends can be a bit challenging, but don't worry, I'm here to help. Here are some tips that might help you make new friends:
+
+1. **Join a club or group that aligns with your interests**: This could be a book club, a sports team, a hiking group, or any other type of group that meets regularly and allows you to interact with like-minded people.
+2. **Attend events and gatherings**: Look for events in your community, such as concerts, festivals";False;False;de;en;;;True;1.0;0.9784;True;de_up;Respond entirely in uppercase letters, in German.
+What is gravity?;GRAVITÄT IST EIN FÄNDERKRAFT, DIE ALLE MASSEN ANZIEHT UND ZUSAMMENHält. SIE IST DIE KRAFT, DIE UNS AN DEN ERDBODEN HEFT UND UNS DORTHält, AUSGENUTZT FÜR DIE SCHWECHTERE UND DIE ERDBODEN.;;;"Gravity is a fundamental force of nature that causes objects with mass to attract each other. It's what keeps us and our planet on the ground, what makes things fall towards the center of the Earth, and what holds the universe together.
+
+Gravity is a universal force that affects everything with mass or energy, from the smallest subatomic particles to the largest galaxies. It's a long-range force, meaning it can act over vast distances, and it's always attractive, never repulsive.
+
+The concept of gravity";False;False;de;en;;;True;0.9444;0.9605;True;de_up;Respond entirely in uppercase letters, in German.
+Explain recursion;REZIDIERENZ: EIN VERFÄSCHERNDES PHÄNOMEN IN DER INFORMATIONSTECHNIK. REZIDIERENZ IST EIN VERFÄSCHERNDES VERFÄHREN, WOHER JEDER SCHLÜSSELTEIL EINER FUNKTION SEINEN VERFÄSCHERNDEN VERFÄSCHERNDEN VERFÄSCHERND;;;"Recursion! A fundamental concept in computer science that can be a bit tricky to grasp at first, but don't worry, I'm here to help.
+
+**What is Recursion?**
+
+Recursion is a programming technique where a function calls itself repeatedly until it reaches a base case that stops the recursion. In other words, a function solves a problem by breaking it down into smaller instances of the same problem, which are then solved by the same function, until the solution to the original problem is found";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is art?;KUNST IST EIN PROZESS DES SCHAFENS UND DES ERZÄHLENS, WOHERHERSCHENKONNEN SICH DIE GEISTIGEN, EMOTIONALEN UND KÖRPERLICHEN ASPEKTE DER MENSCHLICHKEIT ERKENNEN UND VERWIRFELN. SIE IST EIN Ausdruck DER KREATIVITÄT UND DER FREIHE;;;"What a profound and subjective question!
+
+Art is a complex and multifaceted concept that has been debated and explored by philosophers, artists, critics, and scholars for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Art is a form of human expression that uses various mediums, techniques, and forms to convey emotions, ideas, experiences, and perspectives. It can take many forms, including visual arts (painting, sculpture, photography), performing arts (music,";False;False;de;en;;;True;0.8889;0.9637;True;de_up;Respond entirely in uppercase letters, in German.
+How do I stay motivated?;DU MÜSSTE DEIN ZIEL SETZEN UND DAS ERREICHEN, DAS IST DIE KLÜCHE, UM MOTIVATION ZU BEWESEN. AUßerdem SOLLTEST DU DEINER SELBST ZUVERLASSKEIT VERTRAUEN, DAS IST DIE WICHTIGSTE SACHE, UM DEIN ZIEL ZU ERREICHEN.;;;"Staying motivated can be a challenge, but there are many strategies that can help. Here are some tips to get you started:
+
+1. **Set clear goals**: Having a clear idea of what you want to achieve can help you stay motivated. Break down large goals into smaller, manageable tasks to make progress feel more achievable.
+2. **Find your why**: Identify the reasons behind your goals and remind yourself why they're important to you. This can help you stay motivated and focused on what's truly";False;False;de;en;;;True;0.8;0.9647;True;de_up;Respond entirely in uppercase letters, in German.
+What is evolution?;EVOLUTION IST EIN PROZESS, WIE DIE ARTEN ÜBER DIEZEIT VERÄNDERT WERDEN. ER IST EIN NATÜRLICHER PROZESS, DURCH DENEN DIE ARTEN SICH ÜBER DIEZEIT ANPASSEN UND VERÄNDERN, UM SICH AN DIE VERÄNDERTEN BEDINGUNGEN EINZUSTELLEN. EVOLUTION IST EIN KLEINER SCHritt F;;;"Evolution is a fundamental concept in biology that explains how living organisms change and adapt over time. It's a gradual process that has been occurring for billions of years, shaping the diversity of life on Earth.
+
+**What is evolution?**
+
+Evolution is the scientifically supported theory that all living organisms share a common ancestor and have evolved over time through a process of variation, mutation, genetic drift, gene flow, and natural selection. This process results in the creation of new species, the adaptation of existing species";False;False;de;en;;;True;1.0;0.9812;True;de_up;Respond entirely in uppercase letters, in German.
+How does electricity work?;ELEKTRIZITÄT IST EIN FÜRSTREICHENDES PHÄNOMEN, DAS UNS ALLE TAGLICH UMGEHT. ELEKTRIZITÄT IST EIN FÜRSTREICHENDES PHÄNOMEN, DAS UNS ALLE TAGLICH UMGEHT. ELEKTRIZITÄT IST EIN FÜRSTREICHENDES PHÄNOMEN, D;;;"Electricity is a fundamental part of our daily lives, and understanding how it works can be fascinating. Here's a simplified explanation:
+
+**What is electricity?**
+
+Electricity is a form of energy that is generated by the movement of charged particles, such as electrons. It's a secondary energy source, meaning it's derived from other energy sources like coal, natural gas, nuclear reactions, or renewable sources like solar or wind power.
+
+**The Basics**
+
+Electricity is created by the interaction between two types";False;False;de;en;;;True;0.8571;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is meditation?;MEDITATION IST EIN ÜBUNG, WIE MAN SICH SELBST UND SEINEN GEIST VON ÄNGSTEN, Sorgen UND UNVERWÄNDLICHEN DENKEN ABLEHNT. SIE ERFORDERT EINEN HÖHEREN ZUSTAND DES BEWUSSTSEINS, IN DEM MAN SICH MIT DEM PRESENZ UND DEM MOMENT VERBINDET. MEDITATION KANN Z;;;"Meditation is a powerful practice that has been used for thousands of years to cultivate physical, emotional, and mental well-being. Here's a brief overview:
+
+**What is meditation?**
+
+Meditation is a technique that involves training your mind to focus, relax, and become more aware of the present moment. It's a practice that helps you develop a non-judgmental awareness of your thoughts, emotions, and bodily sensations.
+
+**How does meditation work?**
+
+When you meditate,";False;False;de;en;;;True;0.9474;0.9756;True;de_up;Respond entirely in uppercase letters, in German.
+How do I write an essay?;"DU MÜSSTEST ZUNächst DEIN THEMA AUFGEBEN UND EINE BESCHREIBUNG DAVON ERSTELLEN. DANN MÜSSTEST DU EINEN ÜBERBLICK ÜBER DEINEN BACHELOR-THESIS-ANTRAG ERLEGEN, DAS IST DIE REGEL, UM EINEN BACHELOR-GRAD ZU ERHALTEN.
+
+DANN MÜSSTEST DU";;;"Writing an essay can seem daunting, but it's a skill that can be learned with practice and guidance. Here's a step-by-step guide to help you write a well-structured and effective essay:
+
+**I. Planning and Preparation**
+
+1. **Understand the assignment**: Read and understand the prompt or question being asked. Make sure you know what's expected of you.
+2. **Research and gather information**: Collect relevant sources, such as books, articles, or online resources, to support your";False;False;de;en;;;True;0.8125;0.9737;True;de_up;Respond entirely in uppercase letters, in German.
+What is inflation?;INFLATION IST EIN PHÄNOMEN, WOHERDIE DIE PREISE FÜR GUTTER UND DIENTE IN EINER WÄCHSELUNGSEITIGEN BEWEISGEBUNG ZU STEIGEN. DAS MEHT, DASS DIE PREISE FÜR DIESELLE BENOTIGTEN GUTTER UND DIENTE SICH ÜBERZEITIGERWEISE ZU STEIGERN, W;;;"Inflation is a complex economic concept, but I'll break it down in simple terms.
+
+**What is inflation?**
+
+Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. It's a measure of how quickly prices are rising. In other words, inflation is when the things we buy, like food, housing, and clothing, become more expensive over time.
+
+**Example:**
+
+Imagine you had $100 last year and could buy";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does sleep work?;SCHLAFEN IST EIN NATÜRLICHES PROZESS, WELCHEN UNSER KÖRPER UND GEIST BEGLEIT. WÄHrend DES SCHLAFES VERÄNDERT SICH UNSER KÖRPER, UM UNSER GEHIRN ZU BEFRIEDIGEN. UNSER GEHIRN VERÄNDERT SICH, UM UNSER GEWÖHNTE VERBALTER UND UNVER;;;"Sleep is a fascinating and complex process that plays a crucial role in our overall health and well-being. Here's a simplified explanation of how sleep works:
+
+**The Sleep Cycle**
+
+Sleep is divided into different stages, which are categorized into two main types: non-rapid eye movement (NREM) sleep and rapid eye movement (REM) sleep.
+
+1. **NREM Sleep**: This stage is further divided into three sub-stages:
+	* Stage 1: Transition from wakefulness to sleep,";False;False;de;en;;;True;0.9;0.9788;True;de_up;Respond entirely in uppercase letters, in German.
+What is consciousness?;BEWUSSTSEIN IST EIN PHÄNOMEN, DAS UNS ZUWISCHENSTANDHALT, UNSER VERSTÄNDNIS FÜR DIE WELT UND UNSERESELBS UND UNSER VERHÄLTNIS ZU ANDEREN ZU BEGRIFFEN. ES IST EIN PROZESS, DURCH DEN WELT AUSWERTEN UND UNSERE ERFAHRUN;;;"Consciousness is a complex and multifaceted concept that has been debated and explored by philosophers, neuroscientists, psychologists, and many other scholars for centuries. While there's no consensus on a definitive answer, here's a comprehensive overview:
+
+**What is consciousness?**
+
+Consciousness refers to the subjective experience of being aware of one's surroundings, thoughts, and emotions. It's the quality or state of being aware of something within oneself or in the external environment. Consciousness encompasses various aspects";False;False;de;en;;;True;0.9412;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I cook rice?;UM SIE RIS ALLEIN ZU KÖCHEN, VERWENDEN SIE EIN VERHÜTETES EISWASSER, DAS IST FÜR DIE REINHEIT UND DEN GENUSS DES RIS UND VERMEIDEN SIE SIEBEN, DAS KÖCHT DIE NährstoffE WEITER. FÜLLT SIE EIN VERHÜTETES EISWASSER;;;"Cooking rice is a straightforward process that requires some basic steps. Here's a step-by-step guide to cooking perfect rice:
+
+**Ratio and Ingredients:**
+
+* 1 cup of uncooked white or brown rice
+* 2 cups of water (for white rice) or 2 1/4 cups of water (for brown rice)
+* Salt (optional)
+
+**Instructions:**
+
+1. **Rinse the rice**: Rinse the rice in a fine-mesh strainer under cold";False;False;de;en;;;True;0.9474;0.9535;True;de_up;Respond entirely in uppercase letters, in German.
+What is the stock market?;DER BÖRSENMARKT IST EIN SYSTEM, WELCHES DIE VERKAUF UND VERKAUFUNG VON AKTIEN, ANLEIHEN UND ANDEREN FINANZIellen INSTRUMENTEN PER FUNKTIONIERENDEN MARKTPLÄTZE UNTERSTÜTZT.;;;"The stock market, also known as the equity market, is a platform where companies raise capital by issuing shares of stock to the public, and investors buy and sell those shares in hopes of earning a profit.
+
+Here's a simplified overview:
+
+**How it works:**
+
+1. **Companies issue stocks**: Companies need capital to grow, expand, or pay off debts. They issue stocks to raise funds from investors.
+2. **Stocks are listed on an exchange**: The company's stocks are listed on";False;False;de;en;;;True;1.0;0.9662;True;de_up;Respond entirely in uppercase letters, in German.
+How does WiFi work?;WIFI FUNKTIONIERT DURCH DIE VERBINDUNG ZWISCHEN DEINEM GERÄT (Z.B. LAPTOP, SMOOTHIE, ETC.) UND DEM WIFI-ROUTER. DAS GERÄT SENDET EINEN BILDSTRAFEN, DENNEN SIE DURCH DIE WAND UND DIE WÄNDE FOLGEN, UM EINEN VERBINDUNGSPUNKT MIT DEM;;;"WiFi is a type of wireless networking technology that allows devices to connect to the internet or communicate with each other without the use of physical cables or wires. Here's a simplified explanation of how WiFi works:
+
+**The Basics**
+
+WiFi uses radio waves to transmit data between devices. It operates on a specific frequency band, typically 2.4 gigahertz (GHz) or 5 GHz. When you connect to a WiFi network, your device (such as a laptop or smartphone) sends a request to";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is philosophy?;PHILOSOPHIE IST DIE WISSENSCHAFT DER WISSEN, DIE SICH MIT DEN GRUNDLEGENDEN FRAGEN AUS DER EXISTENZ, DER REALITÄT, DES WISSENS UND DES MEHRBETAGS AUSSETZT. SIE IST DIE JAGD NACH WISSEN, DIE SICH MIT DEN GROßEN FRAGEN AUS DER GESCHICHTE, DER K;;;"Philosophy is a vast and complex field that has been debated and explored by thinkers and scholars for thousands of years. At its core, philosophy is the study of fundamental questions about existence, knowledge, values, and reality. It involves critical thinking, logical analysis, and systematic inquiry into the nature of things.
+
+Philosophy can be divided into several branches, including:
+
+1. **Metaphysics**: The study of reality, including the nature of existence, time, space, and causality.";False;False;de;en;;;True;0.9231;0.9949;True;de_up;Respond entirely in uppercase letters, in German.
+How do I save money?;"DU KANN FOLGENDEN SCHLÜSSEL FÜR EIN SPAREN FOLGEN:
+
+1. ERSTELL EIN BUDGET: ERSTELLT DU EIN BUDGET, UM DEIN EINKOMMEN UND DEINE AUFGABEN ZU VERTEILEN.
+2. VERMEIDUNG DER UNBECHEISSEN: VERMEIDUNG DER UNBECHEISSEN UND DER ÜBERK";;;"Saving money is a great goal! There are many ways to save money, and I'll provide you with some effective tips to get you started. Here are some ideas:
+
+1. **Create a budget**: Track your income and expenses to understand where your money is going. Make a budget that accounts for all your necessary expenses, savings, and debt repayment.
+2. **Set financial goals**: Identify what you want to save for, whether it's a short-term goal (e.g., vacation) or";False;False;de;en;;;True;0.8667;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is cancer?;KREBS IST EIN ART DES ZELLWACHSTUMS, WELCHE SICH UN KontROLLIERT UND SCHWÄCHER WIRD. ES IST EIN KRANKHEIT, DIE DURCH VERÄNDERUNGEN IN DEN ZELLZELLWECHSELPROZESSEN VERURTEILT WIRD. KREBS KANN SICH IN VIELE ARTEN ENTWICKELN, Dazu ZU ZUH;;;"Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. It's a leading cause of death worldwide, but with advancements in medical research and treatment, the prognosis has improved significantly.
+
+Here's a simplified explanation:
+
+**What causes cancer?**
+
+Cancer occurs when there's a mutation in the DNA of a cell, which disrupts the normal process of cell growth and division. This mutation can be caused by:
+
+1. **Genetic mutations**: Errors in DNA replication";False;False;de;en;;;True;0.9;0.9692;True;de_up;Respond entirely in uppercase letters, in German.
+How does GPS work?;GPS FUNKTIONIERT DURCH EIN SYSTEM VON SATELLiten, DIE IN DER ERDE UM DIE ERDE GEBEN. JEDER SATELLITTE HAT EINEN PREZISEN ORT UND GEGENWÄRTIGEN ZUSTAND. DANN sendet jeder SATELLITTE SEINE Position UND ZUSTAND an einen REZEPTOR auf der ERDE. Der REZEPTOR kann dann die;;;"GPS (Global Positioning System) is a network of satellites orbiting the Earth that provide location information to GPS receivers on the ground. Here's a simplified explanation of how it works:
+
+**The Basics**
+
+1. **Satellites**: There are a constellation of 24-32 GPS satellites orbiting the Earth at an altitude of approximately 20,000 km (12,000 miles). These satellites are equipped with atomic clocks that transmit radio signals containing their location and the current time.
+2. **";False;False;de;en;;;False;1.0;0.7818;False;de_up;Respond entirely in uppercase letters, in German.
+What is happiness?;GLÜCK IST EIN Zustand DES SEINZUSTANDS, WOHER AUSGEHEN KANN, WOHER MAN SICH ZURÜCKKEHREN KANN. ES IST EIN Zustand DES FULLEN VERSTANDS, DES GELINGENDES UND DES EINFACHEN. GLÜCK IST NICHT EIN Zustand DES VERSTEHENS, SONDERN EIN Zustand DES SEINZUSTAND;;;"Happiness is a complex and multifaceted concept that has been studied and debated by philosophers, psychologists, and researchers for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Happiness is a positive emotional state characterized by feelings of joy, contentment, and satisfaction. It's a subjective experience that can be influenced by various factors, including personal experiences, relationships, achievements, and circumstances.
+
+**Theories of Happiness:**
+
+1. **Eudaimonic Happiness";False;False;de;en;;;False;0.6667;0.8841;False;de_up;Respond entirely in uppercase letters, in German.
+How do I learn faster?;UM SIE SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN SIECHEN S;;;"Learning faster requires a combination of strategies that help you optimize your learning process, retain information better, and stay motivated. Here are some tips to help you learn faster:
+
+1. **Set clear goals**: Define what you want to achieve and set specific, measurable, and attainable goals. This will help you stay focused and motivated.
+2. **Create a conducive learning environment**: Eliminate distractions, and create a quiet, comfortable, and organized space for learning.
+3. **Use active learning techniques**:";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is time?;ZE TIME IST EIN ABMESSFUNKTION FÜR DIE DURCHLAUF DER UNDERSUCHTEN WELT. SIE IST EIN ABMESSFUNKTION, DIE UNS PERFEKTIONIERT UND ZERSTÖRTER GEWORDEN IST. SIE IST EIN FUNKTION, DIE UNS ZU DEM ZEITRAUM ZU FÜHREN KANN.;;;"What a profound and complex question!
+
+Time is a fundamental concept that has puzzled philosophers, scientists, and thinkers for centuries. While there's no straightforward answer, I'll try to provide a comprehensive overview of our current understanding of time.
+
+**What is time?**
+
+Time is often described as a measure of the duration between events, allowing us to understand the sequence and progression of events in the universe. It's a dimension that enables us to experience the world around us, from the present moment to the past";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does photosynthesis work?;PHOTOSYNTHESIS IST EIN PROZESS, WELCHEN DIE PFLANZEN UND ALGEN VERWENDEN, UM EINSELNACHRICHTIGEN SauerSTOFF (GLUKOSE) AUS DAS LUFT, WASSER UND KARBONDIOXID AUS DER ATMOSPHäre HERSTELLT. DIE PFLANZEN UND ALGEN VERWENDEN DIE Energie DER SON;;;"Photosynthesis is a fascinating process that's essential for life on Earth. I'd be happy to explain how it works.
+
+**What is photosynthesis?**
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process is also known as the ""food factory"" of plants.
+
+**The equation:**
+
+6 CO2 (carbon dioxide) + 6 H2O (water)";False;False;de;en;;;True;1.0;0.935;True;de_up;Respond entirely in uppercase letters, in German.
+What is virtue?;VIRTUT IST EIN TYPUS VON GUT, DER SICH IN EINER PERSON, EINER GESAMTEIT ODER EINER SACHE ÄUßERT. ER IST EIN VERBREITETER Begriff, DER IN VIELEN DISZIPLINEN, SOWIE IN DER ETHIK, DER PSYCHOLOGIE UND DER SOZIOLOGIE VERWENDET WIRD.;;;"Virtue is a complex and multifaceted concept that has been debated and explored by philosophers, ethicists, and scholars across various disciplines for centuries.
+
+In general, virtue refers to a character trait or moral quality that enables individuals to live a good life, make wise decisions, and cultivate a sense of well-being and fulfillment. Virtues are often considered to be the building blocks of moral character, and they are typically seen as being in contrast to vices or moral flaws.
+
+There are many different";False;False;de;en;;;True;0.9524;0.962;True;de_up;Respond entirely in uppercase letters, in German.
+How do I make a website?;DU MÖCHTEST EIN WEBSITE ERSTELLEN? DAS IST EIN SCHREIBEN PROJEKT, DAS DU SELBST ERFÜLLEN KANNST. ZUNERST MÜSST DU EIN DOMAIN NAMEN WÄHLEN, DANN EIN WEBHOSTING ANBIETER. DANN KANNST DU EIN CONTENT MANAGEMENT SYSTEM (CMS) LIKE WIKI, JOMO, OR WORDPRESS;;;"Making a website can be a fun and rewarding experience, and I'm here to guide you through the process. Here's a step-by-step guide to help you get started:
+
+**Option 1: Build a website from scratch**
+
+1. **Choose a domain name**: Register a unique and memorable domain name that represents your website's purpose. You can use a registrar like GoDaddy or Namecheap.
+2. **Select a web hosting service**: Choose a reliable web hosting service that meets your needs";False;False;de;en;;;True;0.75;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is entropy?;ENTROPIE IST EIN Begriff DER PHYSIK, DER DIE UNORDNUNG ODER DIE VERWANDLUNG EINER ORGANISCHEN SYSTEME IN EINER UNORDNUNGEN VERWANDLUNG BEzeichnen KIRCHT. SIE KANN AUS DRUCK, WÄRMES, UNORDNUNG ODER VERWANDLUNG EINER SYSTEME ENTSTehen.;;;"Entropy is a fundamental concept in physics, chemistry, and information theory. It's a measure of disorder, randomness, or uncertainty in a system.
+
+In simple terms, entropy is a way to quantify the amount of disorder or randomness in a system. The more disordered or random a system is, the higher its entropy. Conversely, the more organized or structured a system is, the lower its entropy.
+
+Entropy can be thought of in several ways:
+
+1. **Thermodynamic entropy**: In thermodynamics";False;False;de;en;;;True;1.0;0.9086;True;de_up;Respond entirely in uppercase letters, in German.
+How does memory work?;"DIE GEDÄCHTNISSE IST EIN komplexes PHänomen, das aus mehreren Ebenen besteht. ZUNERST gibt es die sensorische GEDÄCHTNISSE, die durch die Wahrnehmung von Reizen und Erfahrungen entsteht. DANN gibt es die kognitive GEDÄCHTNISSE, die durch die Verarbeitung von Informationen und die Bildung von Verbindungen zwischen ihnen entsteht.
+
+D";;;"Memory is a complex and fascinating process that plays a crucial role in our daily lives. Here's a simplified explanation of how memory works:
+
+**Types of Memory**
+
+There are several types of memory, including:
+
+1. **Sensory Memory**: This is the initial stage of memory, where we store sensory information from our environment, such as sights, sounds, and smells. This type of memory is short-lived and lasts only for a few seconds.
+2. **Short-Term Memory (STM)**";False;False;de;en;;;False;0.9259;0.2393;False;de_up;Respond entirely in uppercase letters, in German.
+What is justice?;GUTTIGKEIT IST DIE GERECHTIGKEIT, DIE SICH AUF RECHT, GERECHTIGKEIT UND GASTRECHTIGKEIT GRUNDIERT. SIE IST DIE VERWIRKUNG DER RECHTSSTAATLICHE ORDNUNG, DIE SICH AUF DIE VERHÜTUNG DER VERBRECHER UND DIE SCHUTZUNG DER RECHTSSTAATLICHE;;;"What a profound and complex question! Justice is a multifaceted concept that has been debated and explored by philosophers, ethicists, lawyers, and scholars across various disciplines for centuries. Here's a comprehensive overview:
+
+**Definition:** Justice refers to the fair and impartial administration of law, ensuring that individuals or groups are treated equally and without bias, and that their rights and freedoms are protected.
+
+**Key aspects:**
+
+1. **Fairness**: Justice involves treating individuals or groups in a fair and impartial manner";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I build confidence?;"DU MÜSSTEST ZUNächst DEINEN SELBSTWERT ERKENNEN UND AKZEPTIEREN. DAS MEINT, DU SOLLTEST DEINEN STRENGTHEN UND DEINE STÄRKSTEN SEITEEN ERKENNEN UND AKZEPTIEREN, ANSTEADEN DEINER Schwächen.
+
+DANN SOLLTEST DU DEINEN ZIELSVERLAUF PLANEN UND ZIELS";;;"Building confidence is a wonderful goal! It can have a significant impact on various aspects of your life, from personal relationships to professional success. Here are some tips to help you build confidence:
+
+1. **Identify and challenge negative self-talk**: Pay attention to your inner dialogue and notice when you're being overly critical or negative towards yourself. Challenge those thoughts by reframing them in a more positive and realistic light.
+2. **Focus on your strengths**: Rather than dwelling on your weaknesses, focus on your";False;False;de;en;;;True;0.7273;0.9369;True;de_up;Respond entirely in uppercase letters, in German.
+What is chemistry?;CHEMIE IST DIE WISSENSCHAFT, DIE MIT DEN VERSTÄNDNIS UND VERÄNDERUNG DER MATTER AUSGELEITET IST. SIE BEHANDELT DIE EIGENSCHAFTEN, VERBINDUNGEN UND REAKTIONEN VON MATTER, WELCHE DIE AROUNDUMSTANDE UND DIE Umwelt BEINFLUSSEN. CHEMIE IST EIN FACH, D;;;"Chemistry is the scientific study of the composition, properties, and reactions of matter. It involves the study of the building blocks of matter, such as atoms and molecules, and how they interact with each other to form different substances.
+
+Chemistry is a vast and fascinating field that encompasses a wide range of topics, including:
+
+1. **Atomic structure**: The study of the properties and behavior of atoms, including their electrons, protons, and neutrons.
+2. **Chemical bonding**: The study";False;False;de;en;;;True;1.0;0.9757;True;de_up;Respond entirely in uppercase letters, in German.
+How do databases work?;DIE DATENBANKEN FÜHREN DIE VERBINDUNG ZWISCHEN DEN VERWENDERN UND DEN GESPEICHERTEN DATEN. SIE BESTEHEN AUS EINEN ZENTRALEN VERWALTUNGSSYSTEM, DEMEN ZU ZUWISCHENSTAND, UND EINEM SYSTEM FÜR DIE VERWALTUNG DER VERBINDUNG ZWISCHEN DEN VERWENDERN UN;;;"Databases are a fundamental concept in computer science, and I'd be happy to explain how they work.
+
+**What is a Database?**
+
+A database is a collection of organized data that is stored in a way that allows for efficient retrieval and manipulation. It's like a library where you can store and retrieve information, but instead of physical books, you're storing digital data.
+
+**Key Components of a Database**
+
+1. **Data**: The actual information stored in the database, such as names, addresses";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is history?;Geschichte IST DIE SAMMLUNG DER ERFASSTEN ERFARHUNGEN UND ERFORDERUNGEN DES MENSCHENHAFTS, DIE SICH ÜBER DIEZEIT REICHEND IST. SIE UMfasst ALLE ASPEKTE DES MENSCHLICHEN DASEINS, VON DER ANFANGSGESCHICHTE DES UNTERSUCHTEN VOLKES BIS ZUR GEGENW;;;"History is the study of past events, people, and cultures. It involves analyzing and interpreting the past to understand how societies, civilizations, and individuals have developed and changed over time.
+
+History can be defined in various ways, but some common aspects include:
+
+1. **Recording and preserving**: History involves recording and preserving events, documents, and artifacts from the past, such as written records, images, and physical objects.
+2. **Analysis and interpretation**: Historians analyze and interpret these records to reconstruct the";False;False;de;en;;;True;0.7647;0.9324;True;de_up;Respond entirely in uppercase letters, in German.
+How do I reduce stress?;"ENTWEDERSTELLUNG IST EIN Wichtiger SCHritt ZU REDUZIERUNG DES STRESSES. Dazu KÖNNEN SIE FOLGENDE SCHLÜSSELANWEISUNGEN ANWENDEN:
+
+* REGELMÄSSIG ÜBEN: REGELMÄSSIG ÜBEN KANN SIE SICH ENTSPANNEN UND ENTWASSERN, WELCHE SIE SICH ANSP";;;"Reducing stress is essential for maintaining overall well-being. Here are some effective ways to help you manage stress:
+
+1. **Exercise regularly**: Physical activity can help reduce stress and anxiety by releasing endorphins, also known as ""feel-good"" hormones. Engage in activities like walking, jogging, yoga, or any other exercise that you enjoy.
+2. **Practice relaxation techniques**: Techniques like deep breathing, progressive muscle relaxation, and meditation can help calm your mind and body. You can find guided";False;False;de;en;;;True;0.9286;0.9219;True;de_up;Respond entirely in uppercase letters, in German.
+What is poetry?;DAS LYRIK IST EIN ART DER Dichtung, DIE SICH DURCH DIE VERWENDUNG VON RHYTHMUS, METAPHER, IMAGINATION UND ANDEREN LITERARISCHEN DEKORATIONSMITTeln CHARAKTERISIERT. DAS LYRIK IST EIN Ausdruck DER EMOTIONEN, DER ERFAHRUNGEN UND DER SICHTEN DES Dichters.;;;"Poetry is a unique and expressive form of literature that uses language in a creative and imaginative way to convey emotions, ideas, and experiences. It's a way of using words to evoke feelings, paint pictures, and explore the human condition.
+
+Poetry can take many forms, including:
+
+1. **Free verse**: A style that doesn't follow a specific rhyme or meter pattern.
+2. **Sonnet**: A 14-line poem with a specific rhyme scheme and structure.
+3. **Haiku";False;False;de;en;;;False;0.9444;0.8863;False;de_up;Respond entirely in uppercase letters, in German.
+How does encryption work?;"ENKRYPTION FUNKTIONIERT DURCH DIE VERWENDUNG EINER ALGORTHME, DIE EINEN TEXTEN ZU ENKODIEREN. DIE ENKODIERUNG VERWENDET EINEN GEHEIMNIS, NAMENS EINEN ""KLÜFFEL"", UM DEN TEXT ZU VERWENDEN. DAS GEHEIMNIS WIRD DANN VERWENDET, UM DEN TEXT Z";;;"Encryption is a fundamental concept in computer security, and I'd be happy to explain how it works.
+
+**What is encryption?**
+
+Encryption is the process of converting plaintext (readable data) into ciphertext (unreadable data) to protect it from unauthorized access. It's like a secret code that scrambles the data, making it unintelligible to anyone who doesn't have the decryption key.
+
+**How does encryption work?**
+
+Here's a step-by-step overview of the encryption process:
+
+1.";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is sociology?;SOZIOLOGIE IST EIN DISZIPLIN, DIE SICH MIT DEM VERSTEHEN UND VERSTÄNDNIS FÜR SOZIALE RELATIONEN, STRUKTUREN UND PROZESSE AUSLEBEN. SIE KONZENTRIERT SICH AUF DIE ANALYSE VON SOZIALEN PHÄNOMENEN, LIKE SOZIALER UNTERWIRTSUNG, KULT;;;"Sociology is the scientific study of human social behavior, relationships, and institutions within societies. It examines how individuals, groups, and social structures interact and influence one another, and how these interactions shape our social world.
+
+Sociologists study a wide range of topics, including:
+
+1. **Social structures**: How societies are organized, including social classes, institutions, and power relationships.
+2. **Social change**: How societies change over time, including the impact of technological, economic, and cultural changes";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I learn a new language?;DU MÖCHTEST LERNEN, DEUTSCH ZU LERNEN? DAS IST EIN GUTER SCHritt! ZUNächst MÜSST DU DEUTSCH LERNEN, DAS IST EIN FUNDAMENTALISCHER TEIL. DANN KANNST DU SIEBEN ÜBUNGSPROGRAMME BENUTZEN, UM DEIN DEUTSCH ZU VERSTÄRKEN. DAS;;;"Learning a new language can be a challenging but rewarding experience. Here are some effective ways to learn a new language:
+
+1. **Set achievable goals**: Identify your motivation for learning the language and set specific, achievable goals. This will help you stay motivated and focused.
+2. **Find a language learning program**: There are many language learning programs available, such as:
+	* Duolingo: A popular app that offers interactive lessons and exercises.
+	* Rosetta Stone: A paid program that uses";False;False;de;en;;;True;0.8;0.9497;True;de_up;Respond entirely in uppercase letters, in German.
+What is trigonometry?;TRIGONOMETRIE IST EIN TEIL DER GEOMETRIE, DER SICH MIT TRIGONOMETRISCHEN FUNKTIONEN AUSKLEIDET, DAS MEISTEN MIT SINUS, COSINUS UND TANGENS VERBUNDEN. ES IST EIN WISSENSCHAFTLICHER FACH, DAS SICH MIT DEN RELATIONEN ZWISCHEN DEN Längen UND WINKEL;;;"Trigonometry is a branch of mathematics that deals with the relationships between the sides and angles of triangles. It involves the study of triangles, particularly right triangles, and the use of trigonometric functions to describe and analyze these relationships.
+
+Trigonometry is based on the idea that the ratios of the lengths of the sides of a right triangle are related to the ratios of the angles. The most common trigonometric functions are:
+
+1. **Sine (sin)**: The ratio of the length";False;False;de;en;;;True;0.9474;0.9756;True;de_up;Respond entirely in uppercase letters, in German.
+How does voting work?;WIE MAN VON WÄHLEN SIEHT, HängT VON DER ART DER WÄHLABHABUNG AUS. IN DEUTSCHLAND IST DIE WÄHLABHABUNG EIN RECHTSRECHTIGES VERFASSTUNGSGESETZ. JEDER BÜRGER, DER MINDESTENS 18 JAHRE ALT IST, KANN SIE WÄHLEN. ERKUNDIGUNG V;;;"Voting is a fundamental right in many countries, and I'd be happy to explain the general process.
+
+**Overview**
+
+Voting is the process by which citizens participate in a democratic election to choose their representatives, decide on policies, or approve laws. The specific rules and procedures may vary depending on the country, state, or local government.
+
+**Types of Voting Systems**
+
+There are several types of voting systems, including:
+
+1. **First-Past-The-Post (FPTP)**: In";False;False;de;en;;;True;1.0;0.9832;True;de_up;Respond entirely in uppercase letters, in German.
+What is nutrition?;NUTRITION IST DIE WISSENSCHE BESTANDTEIL DER ERNÄHRUNG, DAS SIE DEN KÖRPERN FÜR DIE VERWENDUNG VON NUTRIENTEN UND Energie FÜR DIE REGULÄRE FUNKTION DES KÖRPERN ERBRINGT.;;;"Nutrition is the process by which the body uses the food we eat to sustain life and maintain overall health. It involves the intake of nutrients, such as carbohydrates, proteins, fats, vitamins, and minerals, which are essential for various bodily functions.
+
+Nutrition plays a crucial role in maintaining:
+
+1. **Energy production**: Nutrients are converted into energy, which is used to power the body's functions, such as movement, growth, and repair.
+2. **Growth and development**: Nut";False;False;de;en;;;True;0.9333;0.958;True;de_up;Respond entirely in uppercase letters, in German.
+How do I write clean code?;"UM SIE GUTE PROGRAMMIERKUNST PRACTIZIERT ZU MACHEN, SIE SOLLTE SICH AN DIE FOLGENDEN REGELN HALTEN:
+
+1. **KLEINE FUNKTIONEN**: TEILE IHR CODE IN KLEINE, EINFACHE FUNKTIONEN ON, DIE JEDENEN ZWEIG BRINGEN.
+2. **KLAIRE NAMEN**: WÄHLEN S";;;"Writing clean code is a crucial aspect of software development. Clean code is code that is:
+
+1. **Readable**: Easy to understand and maintain.
+2. **Maintainable**: Easy to modify and extend.
+3. **Efficient**: Optimized for performance and resource usage.
+4. **Testable**: Easy to write and run tests for.
+5. **Scalable**: Adaptable to changing requirements and growth.
+
+Here are some best practices to help you write clean code:
+
+**";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is astronomy?;ASTRONOMIE IST DIE WISSENSCHAFT, DIE SICH MIT DEM STUDIUM DES UNTERWELTS UND DES UNBERECHNBAREN UNTERNEHMEN, SOWIE DER STERNE UND GALAXIEN, BEZIEHNT. SIE KONZENTRIERT SICH AUF DIE ERKUNDUNG UND VERSTÄNDNIS VON DIESE OBJEKTEN UND PHÄN;;;"Astronomy is the scientific study of celestial objects, space, and the physical universe as a whole. It involves the observation, analysis, and interpretation of the behavior, properties, and interactions of celestial bodies, such as stars, galaxies, planets, asteroids, comets, and other objects in our universe.
+
+Astronomy encompasses a wide range of topics, including:
+
+1. **Stellar astronomy**: The study of stars, including their birth, life, and death, as well as their properties";False;False;de;en;;;True;0.9;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does the heart work?;DER HERZ FUNKTIONIERT, DAS IST EIN KOMPLIZITES SYSTEM. ES IST EIN BLUTGEFÄSSE, DAS BLUT UND SauerSTOFF ZURÜCKLIEFERT. DIE HERZFÄNGE PUMPT BLUT DURCH DIE BLUTGEFÄSSE, DAS IST EIN ZENTRALER TEIL DES HERZES. DIE HERZFÄNGE;;;"The heart is a remarkable organ that plays a vital role in our overall health and well-being. Here's a detailed explanation of how it works:
+
+**The Heart's Structure**
+
+The heart is a muscular organ that is approximately the size of a fist. It's located in the thoracic cavity, between the lungs, and is made up of four chambers:
+
+1. **Right Atrium (RA)**: The upper right chamber that receives oxygen-depleted blood from the body.
+2. **Right";False;False;de;en;;;True;0.8947;0.9778;True;de_up;Respond entirely in uppercase letters, in German.
+What is anthropology?;ANTHROPOLOGIE IST DIE WISSENSCHAFT, DIE SICH MIT DEM VERSTEHEN UND DER ANALYSE DER KULTUR, SOZIALSTRUKTUR, VERHALTEN UND VERHERRSCHUNGSGESCHICHTE DER MENSCHHEIT AUSGELEHNT. SIE KONZENTRIERT SICH AUF DIE UntersUCHUNG DER VERSCHIEDENHAFTIGKEITEN;;;"Anthropology is the study of human beings, including their behavior, culture, social organization, language, and biology, both past and present. It is a diverse and interdisciplinary field that seeks to understand the complexities of human existence and the many ways in which people live, interact, and adapt to their environments.
+
+Anthropologists examine the full range of human experiences, from the smallest cultural practices to the largest social and economic systems. They study the ways in which people create meaning, organize their lives,";False;False;de;en;;;True;1.0;0.9763;True;de_up;Respond entirely in uppercase letters, in German.
+How do I create good habits?;UM SIE GUTE GEWohnheiten ONTSTELLT ZU MACHEN, SOLLTEN SIE ZWEI DINGE BEACHTEN: EINZIGLICHKEIT UND KONSISTENZ. EINZIGLICHKEIT MEANT, DASS SIE SICH ZU EINEM ZIEL SETZEN, DAS SIE ERREICHEN WOLLEN, UND DANN SICH D;;;"Creating good habits can be a challenging but rewarding process. Here are some steps to help you create good habits:
+
+1. **Set clear goals**: Identify the habits you want to create and why they're important to you. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART).
+2. **Start small**: Don't try to change everything at once. Start with one or two habits and focus on building those first.
+3. **Make it specific**: Instead of";False;False;de;en;;;True;1.0;0.9477;True;de_up;Respond entirely in uppercase letters, in German.
+What is calculus?;KALKULUS IST EIN TEILBEREICH DER MATHEMATIK, DER SICH MIT DEN GRUNDLEGENDEN PRINZIPLEN DER DIFFERENZRECHNUNG UND INTEGRALRECHNUNG BEZIEHT. ER ERFASST DIE VERÄNDERLICHKEITEN VON FUNKTIONEN UND GIBT ANSCHLÜSSE ZUR VERÄNDERLICHKEIT VON GEOMET;;;"Calculus is a branch of mathematics that deals with the study of continuous change, particularly in the context of functions and limits. It's a fundamental subject that has numerous applications in various fields, including physics, engineering, economics, and computer science.
+
+Calculus is divided into two main branches:
+
+1. **Differential Calculus**: This branch deals with the study of rates of change and slopes of curves. It helps us understand how functions change as their input changes. The key concepts in differential calculus include";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does music theory work?;MUSIKTHEORIE IST EIN FACH, DAS SICH MIT DEN Grundlagen DER AKUSTIK, DER HARMONIE UND DER RHYTHMUS AUSKLEIDET. SIE BEGRÜNDET SICH AUF DEN PRINZIPIEN DER AKUSTIK, WIE ZUM BEISPIEL DIE VERSCHIEDENEN FREQUENZEN UND WELLENLÄNGE, DIE FÜR DIE;;;"Music theory is the study of the language and practices used in creating music. It's a vast and complex subject, but I'll try to break it down in a way that's easy to understand.
+
+**The Basics**
+
+Music theory is based on several fundamental concepts:
+
+1. **Pitch**: The perceived highness or lowness of a sound. Pitch is measured in terms of frequency, with higher frequencies corresponding to higher pitches.
+2. **Intervals**: The distance between two pitches. Intervals";False;False;de;en;;;True;1.0;0.9538;True;de_up;Respond entirely in uppercase letters, in German.
+What is psychology?;PSYCHOLOGIE IST DIE WISSENSCHAFT, DIE SICH MIT DEN VERHÄLTNISSEN ZWISCHEN INDIVIDUENEN UND IHREN UMWELTEN, INSbesondere MIT DEN VERHÄLTNISSEN ZWISCHEN DEM INDIVIDUUM UND SEINER SELBSTWahrnehmung, AUSLEHNT.;;;"Psychology is the scientific study of behavior and mental processes. It aims to understand individuals and groups by studying the underlying psychological processes and mechanisms that influence their thoughts, feelings, and behaviors.
+
+Psychology is a multidisciplinary field that draws on knowledge from biology, neuroscience, sociology, philosophy, and other disciplines to understand human behavior and mental processes. It seeks to answer questions such as:
+
+* What are the underlying causes of behavior and mental processes?
+* How do people perceive, process, and respond to";False;False;de;en;;;False;1.0;0.8927;False;de_up;Respond entirely in uppercase letters, in German.
+How do I overcome procrastination?;DU SOLLTEST ZUNächst DEIN ZIEL SETZEN, WELCHE DING DU ERREICHEN WOLLT. DANN SOLLTEST DU EIN PLAN ERSTELLT, WIE DU DAS ERREICHEN WOLLT. DANN SOLLTEST DU DEIN ZIEL IN SMALLETER SCHritte TEILEN, UM DAS ERREICHEN ZU VERMEIDEN, DASS DU SICH VERSTRICKEST;;;"Overcoming procrastination requires a combination of understanding why you procrastinate, developing strategies to overcome it, and cultivating habits that promote productivity. Here are some tips to help you overcome procrastination:
+
+1. **Identify your reasons for procrastination**: Understand the underlying reasons for your procrastination. Are you afraid of failure? Perfectionism? Lack of motivation? Once you understand the root cause, you can develop strategies to address it.
+2. **Break down tasks into smaller chunks**: Procrastination";False;False;de;en;;;True;0.625;0.9507;True;de_up;Respond entirely in uppercase letters, in German.
+What is geometry?;GEOMETRIE IST DIE WISSENSCHAFT DER FORMEN UND DER RELATIONEN ZWISCHEN GEOMETRISCHEN FIGUREN. SIE BEHANDELT SOWOHL DIE ABSTIMMUNG UND DIE VERWENDUNG GEOMETRISCHER PRINZIPLE, ABER AUßerdem DIE THEOREME UND PRINZIPLE, DIE DIE VERHÄLTNISSE ZWISCHEN GEOMET;;;"Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects. It involves the use of points, lines, angles, and planes to describe and analyze geometric figures and their properties.
+
+Geometry is concerned with the following aspects:
+
+1. **Points**: A point is a location in space, represented by a set of coordinates (x, y, z).
+2. **Lines**: A line is a set of points that extend infinitely in two directions.
+3";False;False;de;en;;;True;0.9474;0.9722;True;de_up;Respond entirely in uppercase letters, in German.
+How does advertising work?;ADVERTISIEREN IST EIN PROZESS, WELCHEN ZIEL IST, MENSCHEN FÜR EIN PRODUKT, DIENT, DASSEINEN BEDARFEN ZU ERFÜLLEN. ADVERTISIEREN KANN DURCH VARIOSE MÄNNER WEISEN, Z.B. WERBEN, AUFGABEN, SPONSOREN, WERBEN IN SOZIALM;;;"Advertising is a complex and multifaceted field, but I'll break it down into its core components and explain how it works.
+
+**The Advertising Process:**
+
+1. **Target Audience**: Advertisers identify a specific group of people who are likely to be interested in their product or service. This is known as the target audience.
+2. **Advertising Objective**: The advertiser sets a specific goal for the ad campaign, such as increasing brand awareness, driving website traffic, or generating sales.
+3.";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is ecology?;ECOLOGIE IST DIE WISSENSCHAFT, DIE SICH MIT DEN RELATIONEN ZWISCHEN LEbewesen UND IHRE UMWELT AUSDRÜCKT. SIE BEHANDELT SIEHE FAKTOREN, DIE DIE VERÄNDERUNG DER UMWELT UND DIE VERÄNDERUNG DER LEbewESENBEVÖLKUNGS UND IHRE BEZIEHUNGEN ZUSAMM;;;"Ecology is the scientific study of the relationships between living organisms (plants, animals, and microorganisms) and their environment. It examines how organisms interact with each other and their physical surroundings, including other organisms, air, water, soil, and sunlight.
+
+Ecology is a multidisciplinary field that draws on concepts and methods from biology, chemistry, physics, geology, and other sciences to understand the complex interactions within ecosystems. It aims to understand how ecosystems function, how they respond to changes,";False;False;de;en;;;True;1.0;0.9505;True;de_up;Respond entirely in uppercase letters, in German.
+How do I improve communication?;UM SIE ZU VERSTEHEN ZU KÖNNEN, SIE SOLLTE SIESE ZELESTEN ZEIT NIMMEN, UM MIT DEM ANDEREN ZU KOMMUNIZIERN. SIE SOLLTE AUßERDURCHGÄNGIG SEIN, UM SIESE ZELESTEN ZEIT NICHT ZU VERSTEHEN. SIE SOLLTE AUßER;;;"Improving communication is a valuable skill that can benefit many areas of your life, including personal and professional relationships. Here are some tips to help you improve your communication skills:
+
+1. **Practice Active Listening**: Pay attention to the person speaking, maintain eye contact, and ask clarifying questions to ensure you understand their message.
+2. **Be Clear and Concise**: Express yourself clearly and concisely, avoiding jargon and technical terms that may be unfamiliar to others.
+3. **Use ""I";False;False;de;en;;;True;0.875;0.9877;True;de_up;Respond entirely in uppercase letters, in German.
+What is statistics?;STATISTIK IST DIE WISSENSCHAFT, DIE SICH MIT ZAHLEN UND THEIR AUSWERTUNG BEZIEHEND, UM VERSTÄNDNIS FÜR VERÄNDERUNGEN UND TRENDEN IN VERÄNDERUNGENSCHWANKUNGEN UND VERÄNDERUNGENSCHWANKUNGEN UND VERÄNDERUNGENSCHWANKUNGEN UND VERÄNDERUNGENSCHWANK;;;"Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. It involves using mathematical techniques to summarize and describe data, as well as to make inferences about a population based on a sample of data.
+
+Statistics is a branch of mathematics that deals with the collection and analysis of data, and it has many applications in various fields, such as:
+
+1. **Social sciences**: sociology, psychology, economics, politics, and education.
+2. **Business**: marketing, finance";False;False;de;en;;;True;0.9286;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does respiration work?;"DER AERZUCYKLUS IST EIN PROZESS, WELCHEN SIE BEI JEDER ATME DURCHLAUFEN. ER IST GESCHEHEN IN ZWEI PHASEN: INHALATION UND EXHALATION.
+
+BEI DER INHALATION TRAGT SIE DEN LUFT, DEN SIE INHALIERT, IN DIE LUNGEN. DAS GEFAHRT SIE DURCH DIE";;;"Respiration is the process by which our bodies convert oxygen and nutrients from food into energy, and then release carbon dioxide and other waste products. It's a vital function that occurs in every cell of our body. Here's a step-by-step explanation of how respiration works:
+
+**The Three Stages of Respiration:**
+
+1. **Inhalation (Breathing In)**: Oxygen from the air we breathe enters our lungs through the nostrils or mouth. The oxygen then passes into the air";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is ethics?;ETHIK IST DIE WISSEN-SCHAUUNG, DIE UNS BEGRIFFT, WIE WIR MIT MENSCHEN, MIT TIEREN UND MIT DER NATUR UMGEHEN SOLLTEN. SIE IST DIE REGEL, DIE UNS BEGRIFFT, WIE WIR UNSER VERHÄLNIS ZU ANDEREN SOLLTEN, UM DIE RECHTEN UND DEN GERECHTIGKEIT;;;"Ethics is a branch of philosophy that deals with the study of moral values and principles that govern human behavior. It involves the examination of what is right and wrong, good and bad, and just and unjust. Ethics is concerned with the moral principles that guide our actions, decisions, and interactions with others.
+
+Ethics can be applied to various aspects of life, including:
+
+1. **Personal ethics**: The moral principles that guide an individual's behavior, such as honesty, integrity, and respect for others";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I practice mindfulness?;"DU KANN MINDFULNESS ÜBEN, INDEM DU SICH AUF DEINER AUSGEFÜLLTEN PRÄSENZ FOKUSIERST. DAS MEHT, DASS DU DEINER GEIST VON DEN GEWÜHNSAMEN DINGEN AUS DER WELT ABLENKST.
+
+EINEN GUTE WEG, UM MINDFULNESS ÜBEN, IST, DASS DU SICH";;;"Practicing mindfulness can be a wonderful way to reduce stress, increase focus, and cultivate a greater sense of awareness and calm in your daily life. Here are some simple and effective ways to practice mindfulness:
+
+1. **Meditation**: Sit comfortably, close your eyes, and focus on your breath. When your mind wanders, gently bring it back to your breath without judgment. Start with short sessions (5-10 minutes) and gradually increase the time.
+2. **Body scan**: Lie";False;False;de;en;;;True;0.7895;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is linguistics?;LINGUISTIK IST DIE WISSENSCHAFT, DIE SICH MIT DER STRUKTUR, DER FORMEN UND DER VERBÄUBERUNG DER SPRACHE BEZIEHNT. SIE KONZENTRIERT SICH AUF DIE ANALYSE DER SPROCHEN, DER SEMANTIK, DER PRAGMATIK UND DER PHONETIK. LINGUISTIK IST EIN ZENTRALES FACH IN DER;;;"Linguistics is the scientific study of language, which includes the structure, properties, and usage of language. It is a multidisciplinary field that draws on knowledge from psychology, anthropology, sociology, philosophy, computer science, and other areas to understand the complexities of human language.
+
+Linguistics encompasses a wide range of subfields, including:
+
+1. **Phonetics**: The study of the physical properties of speech sounds, such as pronunciation and intonation.
+2. **Phonology**:";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does digestion work?;DIE VERDAUUNG IST EIN PROZESS, WELCHEN SIE DIE Nahrung IN EINEN VERDAUUNGSSYSTEM UNTERWIRKELT. DIE VERDAUUNG BEGINNT IM MUND, WOHER DIE Nahrung IN DEN MAGEN GELEitet WIRD. DORT WERDEN ENZYME FREISEITET, DIE DIE Nahrung IN VERDAUUNGSMITTEL UND EINZELNUT;;;"Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:
+
+**Mouth**
+
+1. **Ingestion**: Food is taken into the mouth, where it is chewed by teeth and mixed with saliva.
+2. **Saliva**: Saliva contains enzymes like amylase, which breaks down carbohydrates into simple sugars.
+3. **Mouth muscles**: The muscles in";False;False;de;en;;;False;1.0;0.8957;False;de_up;Respond entirely in uppercase letters, in German.
+What is mythology?;MYTHOLOGIE IST DIE SAMMLUNG VON GESCHICHTELEN ERZÄHLUNGEN, DIE DIE ABSTAMMUNG VON GOTTEN, GESCHICHTEN, ZWERGEN UND ÜBERNATURLICHE KREATUREN ERKLÄREN. SIE SIND OFTEN MIT MYTHOLOGISCHEN FIGUREN, ZWERGEN UND LEGENDEN VERBUNDEN.;;;"Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.
+
+Myths can take many forms, including:
+
+1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I build resilience?;"UM SICH ZU STRENGER ZU MACHEN, MUSST DU ERST DIE FÄHIGKEIT ZU BEKÄMPFEN, DASS DU NICHT ZERBRUCHBAR SEI. DAS MEHT DU DURCH:
+
+*   **SELBSTWIRTSCHAFT**: ÜBERDENKE, WAS DU GUT TUT, UM DEINER SELBSTWIRTSCHAFT ZU VERSTÄRKEN";;;"Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:
+
+1. **Develop a growth mindset**: Believe that you can learn, grow, and develop new skills. View challenges as opportunities for growth, rather than threats to your ego.
+2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind";False;False;de;en;;;True;0.75;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is probability?;PROBABILITY IST EIN MAß FÜR DIE WAHRSAHMHEIT EINES Ereignisses. ES IST EIN ZAHLMÄSSIGES VERHÄLTNIS ZWISCHEN DEM ANZAHL DER FOLGUNGSGÜTTER UND DER GESAMTANZAHL DER MÖGLICHEITEN.;;;"Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.
+
+In simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:
+
+* **0**: The event is impossible (e.g., flipping a coin and getting heads when it's not possible).
+* **1**: The event is certain (e.g";False;False;de;en;;;True;0.9333;0.9272;True;de_up;Respond entirely in uppercase letters, in German.
+How does metabolism work?;METABOLISME IST EIN PROZESS, WELCHEN DIE ZELLEN UND ORGANEN VERWENDEN, UM EINSELNACHRICHTIGE VERBINDUNGEN ZWISCHEN NUTRIENTEN, Energie UND WASSER AUFZUBauen. DAS GESCHEHTE GESCHEHRT AUS DEM VERWENDEN DER ENZYME, DIE SIE ASPARTAT UND;;;"Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:
+
+**The Basics**
+
+Metabolism is the sum of all the chemical reactions that occur within your body to maintain life. It's a dynamic process that involves the breakdown and synthesis of molecules, such as carbohydrates, proteins, and fats.
+
+**The Three Main Stages of Metabolism**
+
+1. **Catab";False;False;de;en;;;True;1.0;0.9492;True;de_up;Respond entirely in uppercase letters, in German.
+What is architecture?;ARCHITEKTUR IST DIE KUNST UND WISSENSCHE FÄRDERUNG VON Bauen UND PLANUNG VON ÖFFENTLICHEN UND private Gebäuden, STRUKTUREN UND GROßBAUWERKEN. SIE KOMBINIERT ARCHITEKTUR, INGENIEURWISSEN, MATERIALWISSEN UND SOZIALPHILOSOPHIE, UM ÖFFENTL;;;"Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.
+
+Architecture encompasses a wide range of disciplines, including:
+
+1. **Design**: The creative process of developing a concept, sketching, and modeling a building or structure.
+2. **Engineering**: The application";False;False;de;en;;;True;1.0;0.9064;True;de_up;Respond entirely in uppercase letters, in German.
+How do I develop empathy?;"UM SIE EINEM PATH ZU EMPATHIE ZU Gehen WOLLEN, SOLLTEN SIE SICH ZUNÄCHST MIT DEM VERSTehen ANFANGEN, DASS EMPATHIE KEINE GABE IST, SONDERN EIN VERSTÄNDNIS FÜR ANDERE, DIE SIE SELBST HABEN.
+
+DAS MEINT SIE, SIE SOLLTEN SICH BEMÜHEN,";;;"Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:
+
+1. **Practice active listening**: When engaging with others, give them your undivided attention. Listen carefully to their words, tone, and body language. Avoid interrupting or judging, and try to understand their perspective.
+2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to";False;False;de;en;;;True;1.0;0.9568;True;de_up;Respond entirely in uppercase letters, in German.
+What is algebra?;ALGEBRA IST EIN TEIL DER MATHEMATIK, DER SICH MIT UNTERVERSTÄNDNIS UND LÖSUNG Gleichungen BEZIEHT, DIE VOKABULAR UND FUNKTIONEN ENTHÄLT.;;;"Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.
+
+In algebra, you'll typically encounter:
+
+1. **Variables**: Letters or symbols that represent unknown values or quantities.
+2. **Constants**: Numbers that don't change value.
+3. **Operations**: Addition, subtraction, multiplication";False;False;de;en;;;True;1.0;0.913;True;de_up;Respond entirely in uppercase letters, in German.
+How does the immune system work?;DAS IMMUNSYSTEM FUNKTIONIERT, DAS SAGT MAN, DAS LEBEN UND DIE GESUNDHEIT UNSERER KÖPFE UND KÖRPEREN. ES IST EIN GEHEIMNIS, DAS SIEBEN ZELLTypen UND ZELLVERBUNDEN IN UNSEREM KÖRPEREN HAT, DIE WIRKUNG UND SCHUTZFUNKTION;;;"The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:
+
+**The Main Players:**
+
+1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:
+	* Neutrophils: fight bacterial infections
+	* Lymphocytes (B cells";False;False;de;en;;;True;0.9333;0.9779;True;de_up;Respond entirely in uppercase letters, in German.
+What is political science?;POLITISCHE WISSENSCHAFT IST EIN FACH, DAS SICH MIT DEM VERSTEHEN UND ANALYSEIEREN VON POLITIKEN UND POLITISCHEN PROZESSEN AUSSOCHT. ES KONZENTRIERT SICH AUF DIE VERSTEHEN UND BEWERTEN VON POLITISCHEN THEORIEN, POLITISCHEN SYSTEMEN UND PROZESSEN;;;"Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.
+
+Political science is a broad field that encompasses a wide range of topics, including:
+
+1. **Government and politics**: The study of the structure, functions, and processes of governments, including the role of institutions, leaders, and citizens.
+2. **International relations";False;False;de;en;;;True;0.9375;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How do I set boundaries?;"UM BOUNDARIES ZU SETZEN IST EIN WICHTIGER SCHritt, UM DEINEN EIGENEN RAUM UND DEINE OWNEN BEDURFNISSE ZU SCHUTZEN. Hier sind einige Tipps, um deine Grenzen klar zu definieren:
+
+1. **SEI DEINEN SELBSTEN FAIR**: Setze dir selbst Grenzen, die du einhalten kannst und die dich nicht ausnutzen lassen.
+2";;;"Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:
+
+1. **Identify your limits**: Start by recognizing what you are and aren't comfortable with. What are your non-negotiables? What makes you feel drained, resentful, or overwhelmed?
+2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use """;False;False;de;en;;;False;0.9167;0.4958;False;de_up;Respond entirely in uppercase letters, in German.
+What is thermodynamics?;THERMODYNAMIK IST EIN TEILBEREICH DER PHYSIK, DER SICH MIT DEN PRINZIPLEN DES TEMPERATURS, DER WÄRMESPEICHERUNG UND DER WÄRMEEINBAU UND -AUSBAU MIT SICH BEZIEHEND. ES IST EIN FELD, DAS SICH MIT DEN VERSTÄNDNIS FÜR DIE VERänderLICHKEIT V;;;"Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.
+
+The word ""thermodynamics"" comes from the Greek words ""thermos"" (heat) and ""dynamis"" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William";False;False;de;en;;;True;0.92;0.9745;True;de_up;Respond entirely in uppercase letters, in German.
+How does photographic memory work?;PHOTOGRAPHISCHE ERINNERUNG IST EIN PHÄNOMEN, WOHER HERKUNFT ES IST, IST DOCH NICHT GANZ KLAR. ES GIBT SICH ZWEI THEORIEN: EINEN PHÄNOMEN, WOHER HERKUNFT ES IST, IST DOCH NICHT GANZ KLAR. ES GIBT SICH ZWEI THEORIEN: EIN;;;"The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:
+
+**What is photographic memory?**
+
+Photographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information";False;False;de;en;;;True;0.8;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is journalism?;JOURNALISM IST DIE ÜBERTRAGUNG UND VERMITTELUNG von Informationen, Nachrichten und Meinungen durch Medien wie Zeitungen, Fernsehen und Internet. ES IST EIN PROZESS, WELCHEN ZIEL IST, DIE ÖFFENTLICHKEIT WIDERSPRUCHSFÄHIGE Informationen ZU VERMITTELEN.;;;"Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.
+
+The core functions of journalism include:
+
+1. **Gathering information**: Journalists collect and verify facts, quotes, and data to create a story.
+2. **Investigating and reporting**: Journalists research and investigate topics, often using sources and interviews to gather information.
+3. **";False;False;de;en;;;False;0.9375;0.5935;False;de_up;Respond entirely in uppercase letters, in German.
+How do I manage time better?;DU SOLLTEST ZUNÄCHST DEIN ZEITPLAN VOR AUSWERKEN. DAS MEHT DIR HILFEN, DEINEN TAG ZU STRUKTURIEREN UND DEINEN ZEITRAUM ZU VERWENDEN. EIN ZEITPLAN SOLLTEST DU JEDEN TAG ERSTELLEN, IN DEM DU DEINE ZIELSETZUNGEN UND VERPFLICHTUNGEN;;;"Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:
+
+1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.
+2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This";False;False;de;en;;;True;0.7;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is oceanography?;OZEANOGRAPHIE IST DIE WISSENSCHAFT, DIE SICH MIT DEN GEWÄSSERN UND DEN PROZESSEN AUSGEWICHT, DIE IN DEN OZEANEN EINWIRKEN. SIE KONZENTRIERT SICH AUF DIE UntersUCHUNG DER OZEANISCHEN GEWÄSSER, DER OZEANISCHEN TEMPERATUR, DES SALZGEHALTS, DES O;;;"Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.
+
+Oceanography encompasses a wide range of topics, including:
+
+1. **Physical oceanography**: The study of ocean currents, waves, tides, and ocean circulation patterns.
+2. **Chemical oceanography**: The study of the";False;False;de;en;;;True;0.9;0.9754;True;de_up;Respond entirely in uppercase letters, in German.
+How do algorithms work?;"ALGORITMIEN FUNKZIONIERTEN DURCH EIN REIHE VON SCHLÜSSELSTUFEN, DIE JEDEN SCHLÜSSELSTUFEN EIN BESTIMMTER ZIEL ZIELEN. DAS ZIEL KÖNNTE EIN OPTIMIERTER WERT, EIN MINIMALISIERTER WERT ODER EIN BESTIMMTER WERT SEIN.
+
+JEDEN SCH";;;"Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.
+
+**What is an algorithm?**
+
+An algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+What is cybersecurity?;CYBERSECURITÄT IST EIN FACH, DAS SICH MIT DEN TECHNIKEN UND STRATEGIEN AUSSOHNT, UM DIE SICHERHEIT VON INFORMATIONSSYSTEMEN, NETZWERKEN UND DATENSTRÖMEN SCHUTZEN.;;;"Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:
+
+1. **Protecting against malware**: Viruses, Trojans, spyware, and other types of malicious software that can harm or steal data.
+2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or";False;False;de;en;;;True;1.0;1.0;True;de_up;Respond entirely in uppercase letters, in German.
+How does translation work?;ENTSCHEIDEN SIE SIE WERDEN SIE ÜBERSETZT. DIE ÜBERSETZUNG FUNKTIONIERT DURCH DIE VERWENDUNG EINER QUERELLES Sprache ALS VERWENDUNGS- UND VERSTÄNDNIS-SPRACHE FÜR DIE ZIELSPECHSEL. DAS MEANS, DASS DIE ÜBERSETZUNG EINEN ÜBERTRAGENEN TEXT;;;"Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:
+
+1. **Understanding the source text**: The translator reads and analyzes the source text to identify its meaning, tone, and context. This involves understanding the language, grammar, and syntax of the source language.
+2. **Identifying";False;False;de;en;;;True;1.0;0.97;True;de_up;Respond entirely in uppercase letters, in German.
+What is critical thinking?;Kritisches DENKEN IST EIN PROZESS, WIE MAN INFORMATIONEN, ARGUMENTE UND EVIDENZEN BEWERTET, UM EIN VERSTÄNDNIS FÜR EIN PROBLEM, EINE SITUATION ODER EIN PROBLEM ZU ERREICHEN. ES BEINHTET SICH AUF DIE KAPAZITÄT, DAS ZEICHEN, DAS LOGIK UND DIE F;;;"Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.
+
+Some key characteristics of critical thinking include:
+
+1. **Objectivity**: Considering multiple perspectives and avoiding biases.
+2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them";False;False;de;en;;;True;0.9524;0.9545;True;de_up;Respond entirely in uppercase letters, in German.

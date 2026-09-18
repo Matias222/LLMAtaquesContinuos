@@ -1,0 +1,962 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
+What is the weather like?;"Leider kann ich keine aktuelle Wettervorhersage abrufen. Ich kann jedoch einige allgemeine Informationen über das Wetter geben.
+
+Wenn du nach der Wetterlage in einer bestimmten Stadt oder Region fragst, kann ich dir gerne helfen, die aktuelle Wettervorhersage zu finden. Oder ich kann dir einige allgemeine Informationen über das Wetter in Deutschland geben, wie zum Beispiel die Durchschnittstemperaturen oder die typischen Wetter";;;"I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can suggest some options to help you find out the weather:
+
+1. **Check online weather websites**: You can visit websites like AccuWeather, Weather.com, or the National Weather Service (NWS) for current weather conditions and forecasts.
+2. **Use a virtual assistant**: If you have a smart speaker or virtual assistant like";False;False;de;en;;;True;0.9615;0.0467;True;de;Answer in German.
+How do I sort a list in Python?;"Um eine Liste in Python zu sortieren, kannst du die `sort()`-Methode verwenden. Hier sind einige Beispiele:
+
+```python
+# Sortiere eine Liste in absteigender Reihenfolge
+meine_liste = [4, 2, 9, 6, 5]
+meine_liste.sort(reverse=True)
+print(meine_liste)  # [9, 6, 5, 4, 2]
+
+# Sort";;;"Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here are a few common methods:
+
+### 1. Built-in `sort()` method
+
+The `sort()` method sorts the list in-place, meaning it modifies the original list. It sorts the list in ascending order by default, but you can specify a reverse order by setting the `reverse` parameter to `True`.
+
+```python
+my_list";False;False;de;en;;;True;0.8333;0.0591;True;de;Answer in German.
+Tell me about machine learning;"Maschinelles Lernen (Machine Learning) ist ein Teilgebiet der künstlichen Intelligenz (KI), das sich mit der Entwicklung von Algorithmen beschäftigt, die aus Daten lernen und verbessern können.
+
+**Was ist Maschinelles Lernen?**
+
+Maschinelles Lernen ist ein Prozess, bei dem ein Computermodell aus Daten trainiert wird, um bestimmte Aufgaben zu erfüllen. Das Modell lernt aus";;;"Machine learning! It's a fascinating field that has revolutionized the way we approach complex problems in various industries. Here's a comprehensive overview:
+
+**What is Machine Learning?**
+
+Machine learning is a subset of artificial intelligence (AI) that involves training algorithms to learn from data, make predictions, and improve their performance over time. The goal is to enable machines to perform tasks that typically require human intelligence, such as:
+
+1. Pattern recognition
+2. Decision-making
+3. Problem-solving
+4.";False;False;de;en;;;True;1.0;0.0719;True;de;Answer in German.
+What's 2 plus 2?;Das ist einfach! 2 plus 2 ist gleich 4.;;;2 + 2 = 4;False;False;de;unknown;;;True;1.0;0.0385;True;de;Answer in German.
+How do I make coffee?;"Um perfekt kaffee zu machen, benötigst du folgende Zutaten und Schritte:
+
+**Zutaten:**
+
+* 1-2 Esslöffel Kaffeebohnen
+* 1 Tasse Wasser (ca. 250 ml)
+* Zucker und Milch (optional)
+
+**Schritte:**
+
+1. **Kaffeebohnen vorbereiten**: Rieche die Kaffeebohnen und entferne eventuelle Schmut";;;"Making coffee is a straightforward process that requires some basic equipment and a bit of practice to get it just right. Here's a step-by-step guide to making coffee:
+
+**Equipment needed:**
+
+* Coffee beans (freshly roasted and ground)
+* Coffee maker (drip, French press, or pour-over)
+* Coffee filter (if using a drip coffee maker)
+* Water
+* Sugar and creamer (optional)
+
+**Basic steps:**
+
+1. **Measure the coffee:** Use about 1";False;False;de;en;;;True;0.875;0.0735;True;de;Answer in German.
+Explain quantum physics;"Quantenphysik! Das ist ein komplexes und faszinierendes Fachgebiet, das die Grundlagen der Physik revolutionierte. Ich werde mich bemühen, es dir in einfachen Begriffen zu erklären.
+
+**Was ist Quantenphysik?**
+
+Quantenphysik ist ein Teilgebiet der Physik, das sich mit den Eigenschaften und Verhaltensweisen von Teilchen auf der subatomaren Ebene beschäftigt.";;;"Quantum physics! One of the most fascinating and mind-bending branches of physics. I'll try to break it down in a way that's easy to understand, but keep in mind that quantum physics is a complex and abstract subject.
+
+**What is Quantum Physics?**
+
+Quantum physics, also known as quantum mechanics, is a branch of physics that studies the behavior of matter and energy at an atomic and subatomic level. At these scales, the classical laws of physics no longer apply, and strange";False;False;de;en;;;True;0.9583;0.0537;True;de;Answer in German.
+What is photosynthesis?;"Photosynthese ist ein biologischer Prozess, bei dem Pflanzen, Algen und Bakterien Energie aus der Sonne gewinnen. Sie nutzen die Sonnenstrahlen, um Kohlendioxid (CO2) und Wasser (H2O) in Glukose (C6H12O6) und Sauerstoff (O2) umzuwandeln.
+
+Dieser Prozess spielt eine entscheidende Rolle im Ökosystem";;;"Photosynthesis is a fascinating process that's essential for life on Earth.
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process occurs in specialized organelles called chloroplasts, which contain the pigment chlorophyll.
+
+Here's a simplified overview of the photosynthesis process:
+
+**Step 1: Light absorption**
+Chlorophyll and other pigments in the chloroplast";False;False;de;en;;;True;1.0;0.1055;True;de;Answer in German.
+How do I write a for loop?;"Um einen For-Schleifenzyklus zu schreiben, musst du die folgenden Elemente verwenden:
+
+*   `for`: Dies ist der Schlüsselwort, das den Anfang des Schleifenzyklus markiert.
+*   `Variable`: Hier wird die Variable, die in der Schleife verwendet wird, angegeben. Zum Beispiel `i` oder `j`.
+*   `Ausdruck`: Dies ist der Ausdruck, der die";;;"Writing a for loop is a fundamental concept in programming. Here's a step-by-step guide to help you write a for loop in various programming languages:
+
+**General Syntax**
+
+A for loop typically consists of three parts:
+
+1. Initialization: This is where you initialize the loop variable(s) to the starting value(s).
+2. Condition: This is the test that determines whether the loop should continue or terminate.
+3. Increment/Decrement: This is where you update the loop variable(s) to move";False;False;de;en;;;True;0.8182;0.068;True;de;Answer in German.
+Tell me a joke;"Ein Witz!
+
+Warum gehen Geister nie zum Arzt?
+Weil sie sich nicht anstecken lassen!
+
+(Hoffentlich hat das gelacht!)";;;"Here's one:
+
+What do you call a fake noodle?
+
+An impasta!
+
+Hope that made you smile! Do you want to hear another one?";False;False;de;en;;;True;1.0;0.0787;True;de;Answer in German.
+How does a computer work?;"Ein Computer ist ein komplexes Gerät, aber ich werde es dir einfach erklären.
+
+Ein Computer besteht aus mehreren Hauptkomponenten:
+
+1. **Prozessor (CPU)**: Der Prozessor ist der ""Hauptnerv"" des Computers. Er übernimmt die Aufgaben, wie z.B. die Ausführung von Programme und die Verarbeitung von Daten.
+2. **Speicher**: Der Speicher ist, wo die Daten und Programme gespeichert werden";;;"Computers are amazing machines that have revolutionized the way we live, work, and communicate. I'd be happy to explain how they work in simple terms.
+
+**The Basic Components**
+
+A computer consists of several key components:
+
+1. **Central Processing Unit (CPU)**: Also known as the processor, this is the brain of the computer. It executes instructions and performs calculations.
+2. **Memory (RAM)**: Random Access Memory is where the computer stores data temporarily while it's being processed.";False;False;de;en;;;True;0.9286;0.0872;True;de;Answer in German.
+What is DNA?;"DNA steht für Deoxyribonucleinsäure, eine molekulare Struktur, die in allen lebenden Organismen vorkommt. Sie enthält die genetische Information, die für die Entwicklung, das Wachstum und die Funktion eines Lebewesens notwendig ist.
+
+DNA besteht aus zwei Hauptbestandteilen: den Nukleinsäuren Adenin (A) und Guanin (G), die in Paaren mit";;;"DNA, or Deoxyribonucleic acid, is a molecule that contains the genetic instructions used in the development and function of all living organisms. It's often referred to as the ""building blocks of life.""
+
+DNA is a long, double-stranded helix made up of nucleotides, which are the basic units of DNA. Each nucleotide is composed of three components:
+
+1. **Sugar molecule** (deoxyribose)
+2. **Phosphate group**
+3. **Nit";False;False;de;en;;;True;1.0;0.0791;True;de;Answer in German.
+How do I learn guitar?;"Um zu lernen, wie man Gitarre spielt, gibt es einige Schritte, die du unternehmen kannst:
+
+1. **Kaufe eine Gitarre**: Stelle sicher, dass du eine Gitarre hast, die für dich geeignet ist. Es gibt verschiedene Arten von Gitarren, wie Akustik, Elektrische und Klassische.
+2. **Lerne die Grundlagen**: Beginne mit der Einstellung der Gitarre,";;;"Learning guitar can be a rewarding and enjoyable hobby, and I'm happy to help you get started. Here's a step-by-step guide to help you learn guitar:
+
+**Step 1: Get a guitar**
+
+Before you can start learning, you'll need an instrument. Consider renting or buying an acoustic guitar, as they are easier to play and less expensive than electric guitars.
+
+**Step 2: Learn the basics**
+
+ Familiarize yourself with the guitar's parts:
+
+* Headstock: holds the";False;False;de;en;;;True;0.8182;0.069;True;de;Answer in German.
+What is climate change?;"Klimawandel ist ein komplexes Phänomen, das sich auf die Veränderung des Erdklimas bezieht. Es handelt sich um eine langfristige Veränderung der globalen Klimabedingungen, die durch menschliche Aktivitäten wie den Treibhausgas-Emissionen verursacht wird.
+
+Die Hauptursachen für den Klimawandel sind:
+
+* Die Verbrennung fossiler Brennstoffe wie Kohle,";;;"Climate change refers to the long-term warming of the planet, which is primarily caused by the increasing levels of greenhouse gases in the Earth's atmosphere. These gases, such as carbon dioxide (CO2), methane (CH4), and water vapor, trap heat from the sun and prevent it from being released back into space, leading to a rise in global temperatures.
+
+Climate change is a complex and multifaceted issue, with various factors contributing to its development. Some of the main causes of climate change include";False;False;de;en;;;True;0.9167;0.0574;True;de;Answer in German.
+Explain blockchain;"Ein Blockchain ist ein dezentrales, sicheres und transparentes System, das es ermöglicht, Daten zu speichern und zu verwalten. Hier sind die wichtigsten Aspekte:
+
+**Was ist ein Blockchain?**
+
+Ein Blockchain ist eine Liste von Transaktionen, die in einem Block gespeichert werden. Jeder Block enthält eine Liste von Transaktionen, die von einem Netzwerk von Computern bestätigt werden. Diese Transaktionen sind in Form von """;;;"Blockchain! It's a fascinating technology that has revolutionized the way we think about data storage, security, and transactions. Here's a comprehensive explanation:
+
+**What is Blockchain?**
+
+Blockchain is a decentralized, digital ledger that records transactions across a network of computers. It's a chain of blocks, each containing a set of transactions, which are linked together through cryptography.
+
+**Key Components:**
+
+1. **Blocks**: A block is a collection of transactions, such as data or financial transactions, that are";False;False;de;en;;;True;0.9688;0.0638;True;de;Answer in German.
+What should I eat for breakfast?;"Für ein gutes Frühstück gibt es viele gute Optionen. Hier sind einige Ideen:
+
+* Ein frischer Kaffee mit einem Stück Brot und Marmelade oder Honig
+* Ein Omelett mit frischen Kräutern und Gemüse
+* Ein Frühstücksbuffet mit frischen Früchten, Joghurt, Müsli und Käse
+* Ein Vollkornbrot mit Avocado, E";;;"There are so many delicious options to choose from. Here are a few ideas to get you started:
+
+**Healthy Options:**
+
+1. Overnight oats with fruit and nuts
+2. Greek yogurt with berries and granola
+3. Avocado toast with scrambled eggs
+4. Smoothie bowl with spinach, banana, and almond milk
+5. Whole-grain toast with almond butter and banana slices
+
+**Sweet Treats:**
+
+1. Pancakes or waffles with fresh fruit and syrup
+2";False;False;de;en;;;True;0.9524;0.105;True;de;Answer in German.
+How do neural networks work?;"Neuronale Netze sind ein komplexes Thema, aber ich werde es dir gerne erklären.
+
+**Was sind neuronale Netze?**
+
+Neuronale Netze, auch bekannt als künstliche neuronale Netze (KNN), sind ein Typ von maschinellen Lernalgorithmen, die sich an die Struktur und Funktionsweise des menschlichen Gehirns anlehnen. Sie bestehen aus einer Vielzahl von Knoten (Neuronen) und";;;"Neural networks are a fundamental concept in machine learning and artificial intelligence. I'll break it down in a way that's easy to understand.
+
+**What is a Neural Network?**
+
+A neural network is a computer system inspired by the structure and function of the human brain. It's composed of interconnected nodes or ""neurons"" that process and transmit information. Each node receives one or more inputs, performs a computation, and then sends the output to other nodes.
+
+**How Does a Neural Network Work?";False;False;de;en;;;True;0.9091;0.0678;True;de;Answer in German.
+What is love?;"Liebe ist eine komplexe und vielschichtige Emotion, die viele Menschen auf der ganzen Welt erleben. Sie kann sich in verschiedenen Formen äußern, wie z.B. romantische Liebe, familiäre Liebe, Freundschaftsliebe oder Selbstliebe.
+
+Liebe kann als eine tiefe emotionale Verbindung zwischen zwei Menschen beschrieben werden, die über die bloße physische Anziehung hinausgeht. Sie kann auch als";;;"What a profound and complex question!
+
+Love is a multifaceted and subjective experience that can be difficult to define, but I'll try to provide a comprehensive and nuanced answer.
+
+Love is a strong feeling of affection, attachment, or deep emotional connection with another person, place, or thing. It can be characterized by feelings of warmth, tenderness, and care, and is often accompanied by a desire to nurture, protect, and care for the object of one's love.
+
+There are many different types";False;False;de;en;;;True;0.96;0.0494;True;de;Answer in German.
+How do I fix a bug in my code?;"Um ein Problem in deinem Code zu beheben, benötige ich ein paar Informationen. Bitte gib mir folgende Details:
+
+1. Was ist der Name des Problems (z.B. ""Fehler bei der Ausführung einer Funktion"")?
+2. Welcher Code-Teil ist betroffen (z.B. eine bestimmte Funktion, ein Loop oder ein Array)?
+3. Welches Fehlerbild oder -meldung hast du erhalten (z.B. ""Unbekannter Fehler"",";;;"I'd be happy to help you troubleshoot the issue with your code.
+
+To get started, could you please provide more details about the bug you're experiencing? This will help me better understand the problem and provide a more accurate solution. Please provide the following information:
+
+1. **What programming language** are you using?
+2. **What is the code** that's causing the issue? (You can paste a small snippet or share a link to your code)
+3. **What is the error";False;False;de;en;;;True;0.9;0.089;True;de;Answer in German.
+What is the meaning of life?;"Eine Frage, die Menschen seit Jahrhunderten beschäftigt!
+
+Die Antwort ist natürlich nicht einfach zu finden, da es viele verschiedene Perspektiven und Meinungen gibt. Einige Menschen glauben, dass das Leben nur ein kleiner Teil eines größeren Ganzen ist, wie zum Beispiel die Universum oder die Schöpfung. Andere denken, dass das Leben einzigartig und einzigartig ist und dass es keine allgemeingültige Antwort gibt.";;;"The question of the meaning of life is one of the most profound and debated topics in human history. Philosophers, theologians, scientists, and thinkers from various disciplines have offered a wide range of perspectives on this question. Here's a brief overview of some of the main ideas:
+
+**Philosophical perspectives:**
+
+1. **Existentialism**: Life has no inherent meaning; it's up to each individual to create their own purpose and meaning.
+2. **Hedonism**: The meaning";False;False;de;en;;;True;0.9062;0.0549;True;de;Answer in German.
+How does the internet work?;"Die Internet-Infrastruktur ist ein komplexes System, aber ich werde es dir gerne erklären.
+
+Das Internet ist ein globaler Netzwerk, das aus einer Vielzahl von Computern, Router, Servern und Netzwerken besteht. Hier ist eine kurze Übersicht:
+
+1. **Datenträger**: Die Daten, die über das Internet übertragen werden, werden in Form von Binärdaten auf Computern gespeichert. Diese Daten werden in Form";;;"The internet is a complex and fascinating system, but I'll try to break it down in simple terms.
+
+**The Basics**
+
+The internet is a global network of interconnected computers and servers that communicate with each other using standardized protocols. It's often referred to as a ""network of networks"" because it's made up of many different networks, each with its own set of rules and connections.
+
+**How Data is Transmitted**
+
+Here's a step-by-step explanation of how data is transmitted over the internet:";False;False;de;en;;;True;0.963;0.075;True;de;Answer in German.
+What is democracy?;"Demokratie ist eine Form der Regierung, bei der die Macht an das Volk übertragen ist. Die Bürger haben das Recht, an Wahlen teilzunehmen, um ihre Vertreter zu wählen, die die Interessen der Gesellschaft vertreten. Die Demokratie basiert auf einigen Grundprinzipien:
+
+1. **Volksentscheid**: Die Bürger haben das Recht, Entscheidungen über wichtige Angelegenheiten zu";;;"Democracy is a system of government where power is held by the people, either directly or through elected representatives. In a democratic system, citizens have the right to participate in the decision-making process, either by voting for their representatives or by directly voting on laws and policies.
+
+There are several key characteristics of democracy:
+
+1. **Free and fair elections**: Citizens have the right to vote for their representatives, and the elections are free from interference or manipulation.
+2. **Protection of individual rights**: Democracy protects";False;False;de;en;;;True;1.0;0.0705;True;de;Answer in German.
+How do I make friends?;"Um Freunde zu finden, gibt es einige Tipps und Tricks. Hier sind einige Vorschläge:
+
+1. **Teilnahme an Gruppenaktivitäten**: Suche nach Gruppen, die deine Interessen teilen. Das kann ein Sportteam, ein Buchclub oder ein Hobby-Gruppe sein. So kannst du Menschen treffen, die ähnliche Hobbys haben wie du.
+2. **Freiwilligenarbeit**: Freiwilligenarbeit ist eine großartige";;;"Making friends can be a bit challenging, but don't worry, I'm here to help. Here are some tips that might help you make new friends:
+
+1. **Join a club or group that aligns with your interests**: This could be a book club, a sports team, a hiking group, or any other type of group that meets regularly and allows you to interact with like-minded people.
+2. **Attend events and gatherings**: Look for events in your community, such as concerts, festivals";False;False;de;en;;;True;0.8636;0.0717;True;de;Answer in German.
+What is gravity?;"Gravitation ist eine der vier Grundkräfte der Natur und beschreibt die Anziehungskraft zwischen zwei Objekten. Sie ist eine der wichtigsten Kräfte im Universum und hat eine enorme Auswirkung auf unsere Welt.
+
+Gravitation ist eine Folge der Schwerkraft, die durch die Bewegung von Massen entsteht. Je größer das Massenobjekt, desto stärker ist die Schwerkraft, die es ausü";;;"Gravity is a fundamental force of nature that causes objects with mass to attract each other. It's what keeps us and our planet on the ground, what makes things fall towards the center of the Earth, and what holds the universe together.
+
+Gravity is a universal force that affects everything with mass or energy, from the smallest subatomic particles to the largest galaxies. It's a long-range force, meaning it can act over vast distances, and it's always attractive, never repulsive.
+
+The concept of gravity";False;False;de;en;;;True;0.9667;0.0583;True;de;Answer in German.
+Explain recursion;"**Rekursion**
+
+Rekursion ist eine Programmierkonzepte, bei dem ein Algorithmus sich selbst aufnimmt, um eine bestimmte Aufgabe zu lösen. Ein rekursiver Algorithmus ruft sich selbst auf, um eine Teilprobleme zu lösen, bis schließlich das gewünschte Ergebnis erreicht ist.
+
+**Beispiel: Faktorisierung von Zahlen**
+
+Ein klassisches Beispiel für Rekursion ist die Faktorisierung von Zahlen";;;"Recursion! A fundamental concept in computer science that can be a bit tricky to grasp at first, but don't worry, I'm here to help.
+
+**What is Recursion?**
+
+Recursion is a programming technique where a function calls itself repeatedly until it reaches a base case that stops the recursion. In other words, a function solves a problem by breaking it down into smaller instances of the same problem, which are then solved by the same function, until the solution to the original problem is found";False;False;de;en;;;True;1.0;0.0536;True;de;Answer in German.
+What is art?;"Eine Frage, die viele Menschen beschäftigt!
+
+Art ist ein komplexes Konzept, das sich auf verschiedene Aspekte des menschlichen Kreativitätsausdrucks bezieht. Es kann als eine Form der Selbstausdruck, Kommunikation und Ästhetik verstanden werden.
+
+Einige Definitionen von Art sind:
+
+* Ein Ausdruck der menschlichen Kreativität, der sich in verschiedenen Formen wie Musik, Literatur, Malere";;;"What a profound and subjective question!
+
+Art is a complex and multifaceted concept that has been debated and explored by philosophers, artists, critics, and scholars for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Art is a form of human expression that uses various mediums, techniques, and forms to convey emotions, ideas, experiences, and perspectives. It can take many forms, including visual arts (painting, sculpture, photography), performing arts (music,";False;False;de;en;;;True;0.9167;0.0681;True;de;Answer in German.
+How do I stay motivated?;"Um motiviert zu bleiben, gibt es einige Strategien, die du ausprobieren kannst:
+
+1. **Setze dir Ziele**: Definiere klare, erreichbare Ziele und schreibe sie auf. Das gibt dir ein Gefühl von Richtung und Motivation.
+2. **Erstelle einen Plan**: Plane deine Aufgaben und Prioritäten. Das hilft dir, deine Zeit effizient zu nutzen und dich auf die wichtigsten Aufgaben zu konzent";;;"Staying motivated can be a challenge, but there are many strategies that can help. Here are some tips to get you started:
+
+1. **Set clear goals**: Having a clear idea of what you want to achieve can help you stay motivated. Break down large goals into smaller, manageable tasks to make progress feel more achievable.
+2. **Find your why**: Identify the reasons behind your goals and remind yourself why they're important to you. This can help you stay motivated and focused on what's truly";False;False;de;en;;;True;0.913;0.061;True;de;Answer in German.
+What is evolution?;"Die Evolution ist ein Prozess, bei dem sich Lebewesen über eine lange Zeit hinweg entwickeln und sich an ihre Umgebung anpassen. Dieser Prozess wird durch natürliche Selektion, Genetik und Umweltbedingungen getrieben.
+
+Die Evolution ist ein komplexer Prozess, der sich über Millionen von Jahren vollzubringt. Sie beginnt mit der Bildung von Lebewesen, die sich von ihren Vorgängern unters";;;"Evolution is a fundamental concept in biology that explains how living organisms change and adapt over time. It's a gradual process that has been occurring for billions of years, shaping the diversity of life on Earth.
+
+**What is evolution?**
+
+Evolution is the scientifically supported theory that all living organisms share a common ancestor and have evolved over time through a process of variation, mutation, genetic drift, gene flow, and natural selection. This process results in the creation of new species, the adaptation of existing species";False;False;de;en;;;True;1.0;0.0617;True;de;Answer in German.
+How does electricity work?;"Elektrizität ist ein faszinierendes Phänomen, das uns jeden Tag umgibt. Hier ist eine kurze Erklärung, wie es funktioniert:
+
+Elektrizität ist ein Strom von Ladungsträgern, wie Elektronen, durch ein Medium wie Luft, Wasser oder Metall. Der Strom entsteht, wenn eine elektrische Spannung zwischen zwei Punkten besteht, wie zum Beispiel zwischen einem Batterie und einem elektr";;;"Electricity is a fundamental part of our daily lives, and understanding how it works can be fascinating. Here's a simplified explanation:
+
+**What is electricity?**
+
+Electricity is a form of energy that is generated by the movement of charged particles, such as electrons. It's a secondary energy source, meaning it's derived from other energy sources like coal, natural gas, nuclear reactions, or renewable sources like solar or wind power.
+
+**The Basics**
+
+Electricity is created by the interaction between two types";False;False;de;en;;;True;0.963;0.0613;True;de;Answer in German.
+What is meditation?;"Meditation ist eine Praxis, bei der man sich auf die Gegenwart konzentriert und seine Gedanken, Gefühle und Körperempfindungen bewusst wahrnimmt. Ziel der Meditation ist es, die eigene Bewusstseinshaltung zu verbessern, Stress und Angst zu reduzieren und eine Gefühl von Ruhe und Entspannung zu erzeugen.
+
+Meditation kann auf verschiedene Weise ausgeübt werden, wie";;;"Meditation is a powerful practice that has been used for thousands of years to cultivate physical, emotional, and mental well-being. Here's a brief overview:
+
+**What is meditation?**
+
+Meditation is a technique that involves training your mind to focus, relax, and become more aware of the present moment. It's a practice that helps you develop a non-judgmental awareness of your thoughts, emotions, and bodily sensations.
+
+**How does meditation work?**
+
+When you meditate,";False;False;de;en;;;True;0.9615;0.0523;True;de;Answer in German.
+How do I write an essay?;"Um ein gut geschriebenes Essay zu schreiben, sollten Sie folgende Schritte beachten:
+
+1. **Thema und Ziel**: Bestimmen Sie zunächst das Thema und das Ziel Ihres Essays. Was möchten Sie beweisen oder kommunizieren?
+2. **Recherche**: Sammeln Sie Informationen und Fakten, die Ihnen helfen, Ihre Argumentation zu stärken. Verwenden Sie vertrauenswürdige Quellen und notieren Sie wicht";;;"Writing an essay can seem daunting, but it's a skill that can be learned with practice and guidance. Here's a step-by-step guide to help you write a well-structured and effective essay:
+
+**I. Planning and Preparation**
+
+1. **Understand the assignment**: Read and understand the prompt or question being asked. Make sure you know what's expected of you.
+2. **Research and gather information**: Collect relevant sources, such as books, articles, or online resources, to support your";False;False;de;en;;;True;1.0;0.085;True;de;Answer in German.
+What is inflation?;"Inflation ist eine wirtschaftliche Phänomen, bei dem die Preise für Güter und Dienstleistungen in einer Währung über einen bestimmten Zeitraum hinweg steigen. Das bedeutet, dass die Kaufkraft der Währung abnimmt, d.h. man kann mit der gleichen Menge Geld weniger Güter und Dienstleistungen kaufen, als vorher.
+
+Ein Beispiel: Wenn die Preise für Lebensmittel um 10%";;;"Inflation is a complex economic concept, but I'll break it down in simple terms.
+
+**What is inflation?**
+
+Inflation is a sustained increase in the general price level of goods and services in an economy over a period of time. It's a measure of how quickly prices are rising. In other words, inflation is when the things we buy, like food, housing, and clothing, become more expensive over time.
+
+**Example:**
+
+Imagine you had $100 last year and could buy";False;False;de;en;;;True;1.0;0.0638;True;de;Answer in German.
+How does sleep work?;"Schlaf ist ein komplexer Prozess, der unsere Körper und Geister regt. Hier ist eine kurze Übersicht:
+
+**Schlafzyklen**
+
+Schlaf wird in verschiedene Phasen unterteilt, die in Schlafzyklen eingeteilt werden. Ein Schlafzyklus besteht aus drei Phasen:
+
+1. **Nicht-ruhiger Schlaf (NRS)**: Hier beginnt der Schlaf, und unsere";;;"Sleep is a fascinating and complex process that plays a crucial role in our overall health and well-being. Here's a simplified explanation of how sleep works:
+
+**The Sleep Cycle**
+
+Sleep is divided into different stages, which are categorized into two main types: non-rapid eye movement (NREM) sleep and rapid eye movement (REM) sleep.
+
+1. **NREM Sleep**: This stage is further divided into three sub-stages:
+	* Stage 1: Transition from wakefulness to sleep,";False;False;de;en;;;True;1.0;0.0794;True;de;Answer in German.
+What is consciousness?;"Bewusstsein ist ein komplexes und vielschichtiges Konzept, das in der Philosophie, Psychologie und Neurowissenschaften intensiv diskutiert wird. Es ist schwierig, eine definitive Antwort zu geben, aber ich kann dir einige Aspekte des Bewusstseins nennen.
+
+Bewusstsein kann als die Fähigkeit definiert werden, sich selbst und die Umgebung zu bewusst wahrnehmen. Es umfas";;;"Consciousness is a complex and multifaceted concept that has been debated and explored by philosophers, neuroscientists, psychologists, and many other scholars for centuries. While there's no consensus on a definitive answer, here's a comprehensive overview:
+
+**What is consciousness?**
+
+Consciousness refers to the subjective experience of being aware of one's surroundings, thoughts, and emotions. It's the quality or state of being aware of something within oneself or in the external environment. Consciousness encompasses various aspects";False;False;de;en;;;True;0.8696;0.0419;True;de;Answer in German.
+How do I cook rice?;"Um Reis zu kochen, benötigst du folgende Zutaten und Schritte:
+
+**Zutaten:**
+
+* 1 Teil Reis (z.B. Weißreis oder Basmatireis)
+* 2 Teile Wasser
+* Salz (optional)
+
+**Schritte:**
+
+1. **Reinigung**: Wasche den Reis gründlich, um alle Verunreinigungen zu entfernen.
+2. **Anschneiden**:";;;"Cooking rice is a straightforward process that requires some basic steps. Here's a step-by-step guide to cooking perfect rice:
+
+**Ratio and Ingredients:**
+
+* 1 cup of uncooked white or brown rice
+* 2 cups of water (for white rice) or 2 1/4 cups of water (for brown rice)
+* Salt (optional)
+
+**Instructions:**
+
+1. **Rinse the rice**: Rinse the rice in a fine-mesh strainer under cold";False;False;de;en;;;True;0.8;0.0964;True;de;Answer in German.
+What is the stock market?;"Der Aktienmarkt ist ein wichtiger Teil der Wirtschaft und dient als Plattform für Unternehmen, um Kapital zu sammeln, um ihre Geschäfte zu finanzieren und zu wachsen.
+
+Der Aktienmarkt ist ein Ort, an dem Unternehmen ihre Aktien (auch Anteile genannt) an die Öffentlichkeit anbieten. Wenn ein Unternehmen Aktien anbietet, kann es Geld von Investoren wie Privatpersonen, Institutionen und";;;"The stock market, also known as the equity market, is a platform where companies raise capital by issuing shares of stock to the public, and investors buy and sell those shares in hopes of earning a profit.
+
+Here's a simplified overview:
+
+**How it works:**
+
+1. **Companies issue stocks**: Companies need capital to grow, expand, or pay off debts. They issue stocks to raise funds from investors.
+2. **Stocks are listed on an exchange**: The company's stocks are listed on";False;False;de;en;;;True;0.96;0.0688;True;de;Answer in German.
+How does WiFi work?;"WiFi ist eine Technologie, die es ermöglicht, Daten über kurze Distanzen (in der Regel bis zu 150 Meter) zwischen Geräten zu übertragen, ohne dass physische Kabel benötigt werden.
+
+Die Funkwellen, die für die WiFi-Übertragung verwendet werden, haben eine sehr kurze Wellenlänge und werden daher als Mikrowellen bezeichnet. Diese Wellen werden von einem WiFi-Router oder einem Access Point (AP)";;;"WiFi is a type of wireless networking technology that allows devices to connect to the internet or communicate with each other without the use of physical cables or wires. Here's a simplified explanation of how WiFi works:
+
+**The Basics**
+
+WiFi uses radio waves to transmit data between devices. It operates on a specific frequency band, typically 2.4 gigahertz (GHz) or 5 GHz. When you connect to a WiFi network, your device (such as a laptop or smartphone) sends a request to";False;False;de;en;;;True;0.9655;0.0784;True;de;Answer in German.
+What is philosophy?;"Philosophie ist eine Wissenschaft, die sich mit den Grundfragen des Seins, der Realität und der Wahrheit beschäftigt. Sie untersucht die Natur der Erkenntnis, der Wahrheit und der Moral und versucht, die Grundlagen unseres Verständnisses der Welt und unseres Platzes in ihr zu klären.
+
+Philosophie ist eine kritische und analytische Disziplin, die sich mit den wichtigsten Fragen des mens";;;"Philosophy is a vast and complex field that has been debated and explored by thinkers and scholars for thousands of years. At its core, philosophy is the study of fundamental questions about existence, knowledge, values, and reality. It involves critical thinking, logical analysis, and systematic inquiry into the nature of things.
+
+Philosophy can be divided into several branches, including:
+
+1. **Metaphysics**: The study of reality, including the nature of existence, time, space, and causality.";False;False;de;en;;;True;0.9375;0.0557;True;de;Answer in German.
+How do I save money?;"Um Geld zu sparen, gibt es einige einfache und effektive Tipps:
+
+1. **Einen Budget erstellen**: Berechnen Sie eure Einnahmen und Ausgaben und erstellen Sie einen Budgetplan, der eure Ausgaben in drei Kategorien aufteilt: Notwendig, Wünschenswert und Ausgaben, die Sie reduzieren können.
+2. **Einen Notfallfonds anlegen**: Speichern Sie ein bestimmtes";;;"Saving money is a great goal! There are many ways to save money, and I'll provide you with some effective tips to get you started. Here are some ideas:
+
+1. **Create a budget**: Track your income and expenses to understand where your money is going. Make a budget that accounts for all your necessary expenses, savings, and debt repayment.
+2. **Set financial goals**: Identify what you want to save for, whether it's a short-term goal (e.g., vacation) or";False;False;de;en;;;True;0.9474;0.075;True;de;Answer in German.
+What is cancer?;"Krebs ist eine Gruppe von Krankheiten, die durch unkontrolliertes Wachstum und Ausbreiten von abnormen Zellen in einem Körper verursacht werden. Diese abnormen Zellen können sich nicht normal teilen und können sich in andere Teile des Körpers ausbreiten, wodurch Organe und Funktionen beeinträchtigt werden.
+
+Krebs kann durch verschiedene Faktoren wie genetische Veranlagung";;;"Cancer is a group of diseases characterized by the uncontrolled growth and spread of abnormal cells. It's a leading cause of death worldwide, but with advancements in medical research and treatment, the prognosis has improved significantly.
+
+Here's a simplified explanation:
+
+**What causes cancer?**
+
+Cancer occurs when there's a mutation in the DNA of a cell, which disrupts the normal process of cell growth and division. This mutation can be caused by:
+
+1. **Genetic mutations**: Errors in DNA replication";False;False;de;en;;;True;0.9524;0.0502;True;de;Answer in German.
+How does GPS work?;"GPS (Global Positioning System) ist ein komplexes System, das es ermöglicht, die genaue Position eines Geräts auf der Erde zu bestimmen. Hier ist eine kurze Erklärung, wie es funktioniert:
+
+1. **Satelliten**: Es gibt mindestens 24 GPS-Satelliten in einer niedrigen Erdumlaufbahn, die in einer Höhe von etwa 20.000 km über der Erde kreisen. Diese";;;"GPS (Global Positioning System) is a network of satellites orbiting the Earth that provide location information to GPS receivers on the ground. Here's a simplified explanation of how it works:
+
+**The Basics**
+
+1. **Satellites**: There are a constellation of 24-32 GPS satellites orbiting the Earth at an altitude of approximately 20,000 km (12,000 miles). These satellites are equipped with atomic clocks that transmit radio signals containing their location and the current time.
+2. **";False;False;de;en;;;True;0.8696;0.0824;True;de;Answer in German.
+What is happiness?;"Glück ist ein komplexes Konzept, das viele Aspekte umfasst. Es kann als ein Zustand beschrieben werden, der durch eine Kombination aus verschiedenen Faktoren wie z.B. Zufriedenheit, Erfolg, Gesundheit und Beziehungen entsteht.
+
+Einige Wissenschaftler definieren Glück als eine positive Emotion, die durch die Erfahrung von Freude, Zufriedenheit und Erfolg gekennzeichnet ist";;;"Happiness is a complex and multifaceted concept that has been studied and debated by philosophers, psychologists, and researchers for centuries. While there's no one definitive answer, here's a comprehensive overview:
+
+**Definition:** Happiness is a positive emotional state characterized by feelings of joy, contentment, and satisfaction. It's a subjective experience that can be influenced by various factors, including personal experiences, relationships, achievements, and circumstances.
+
+**Theories of Happiness:**
+
+1. **Eudaimonic Happiness";False;False;de;en;;;True;0.9565;0.0637;True;de;Answer in German.
+How do I learn faster?;"Um schneller zu lernen, gibt es einige Tipps, die dir helfen können:
+
+1. **Erstelle einen Lernplan**: Setze dir Ziele und planst deine Lernzeit. Das hilft dir, deine Zeit effizient zu nutzen.
+2. **Verwende active Lernmethoden**: Während du lernst, solltest du nicht nur passiv lesen oder hören. Versuche, aktiv zu lernen, indem du zum Beispiel Ü";;;"Learning faster requires a combination of strategies that help you optimize your learning process, retain information better, and stay motivated. Here are some tips to help you learn faster:
+
+1. **Set clear goals**: Define what you want to achieve and set specific, measurable, and attainable goals. This will help you stay focused and motivated.
+2. **Create a conducive learning environment**: Eliminate distractions, and create a quiet, comfortable, and organized space for learning.
+3. **Use active learning techniques**:";False;False;de;en;;;True;0.7778;0.0564;True;de;Answer in German.
+What is time?;"Zeit ist eine komplexe und vielschichtige Konzeption, die in verschiedenen Disziplinen wie Physik, Philosophie und Wissenschaften untersucht wird.
+
+In der Physik wird Zeit als eine Dimension beschrieben, die mit den drei anderen Dimensionen (Länge, Breite und Höhe) zusammenzählt. Sie wird oft als eine Linie dargestellt, die sich vorwärts bewegt, während sich die anderen Dimensionen konstant halten.";;;"What a profound and complex question!
+
+Time is a fundamental concept that has puzzled philosophers, scientists, and thinkers for centuries. While there's no straightforward answer, I'll try to provide a comprehensive overview of our current understanding of time.
+
+**What is time?**
+
+Time is often described as a measure of the duration between events, allowing us to understand the sequence and progression of events in the universe. It's a dimension that enables us to experience the world around us, from the present moment to the past";False;False;de;en;;;True;1.0;0.0509;True;de;Answer in German.
+How does photosynthesis work?;"Photosynthese ist ein wunderbares Phänomen, bei dem Pflanzen und einige Algen Energie aus der Sonne gewinnen. Hier ist eine kurze Erklärung:
+
+**Schritt 1: Lichtabsorption**
+Pflanzen und Algen haben spezielle Pigmente wie Chlorophyll, das Licht der Sonne aufnimmt. Dieses Licht wird dann in eine chemische Energie umgewandelt.
+
+**Schritt 2:";;;"Photosynthesis is a fascinating process that's essential for life on Earth. I'd be happy to explain how it works.
+
+**What is photosynthesis?**
+
+Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of organic compounds, such as glucose. This process is also known as the ""food factory"" of plants.
+
+**The equation:**
+
+6 CO2 (carbon dioxide) + 6 H2O (water)";False;False;de;en;;;True;1.0;0.073;True;de;Answer in German.
+What is virtue?;"Eine gute Frage!
+
+Virtue (lateinisch: virtus) bezeichnet eine moralische Eigenschaft oder ein Charakteristikon, das als wünschenswert und edel gilt. Virtue umfasst eine Reihe von positiven Eigenschaften wie Integrität, Ehrlichkeit, Güte, Selbstbeherrschung und Weisheit. Diese Eigenschaften sind nicht nur moralisch gut, sondern auch für die persönliche Entwicklung und das Woh";;;"Virtue is a complex and multifaceted concept that has been debated and explored by philosophers, ethicists, and scholars across various disciplines for centuries.
+
+In general, virtue refers to a character trait or moral quality that enables individuals to live a good life, make wise decisions, and cultivate a sense of well-being and fulfillment. Virtues are often considered to be the building blocks of moral character, and they are typically seen as being in contrast to vices or moral flaws.
+
+There are many different";False;False;de;en;;;True;1.0;0.0536;True;de;Answer in German.
+How do I make a website?;"Um eine Website zu erstellen, gibt es verschiedene Möglichkeiten. Hier sind einige Schritte, die du befolgen kannst:
+
+1. **Wähle einen Webhoster**: Ein Webhoster ist der Anbieter, der deine Website auf einem Server speichert. Es gibt viele Webhoster wie z.B. 1&1, Hostinger, Bluehost usw.
+2. **Wähle ein Content-Management-System (CMS)**: Ein CMS ist ein Software";;;"Making a website can be a fun and rewarding experience, and I'm here to guide you through the process. Here's a step-by-step guide to help you get started:
+
+**Option 1: Build a website from scratch**
+
+1. **Choose a domain name**: Register a unique and memorable domain name that represents your website's purpose. You can use a registrar like GoDaddy or Namecheap.
+2. **Select a web hosting service**: Choose a reliable web hosting service that meets your needs";False;False;de;en;;;True;0.875;0.1043;True;de;Answer in German.
+What is entropy?;"Entropie ist ein Begriff aus der Thermodynamik und beschreibt die Maßzahl für die Unordnung oder das Chaos in einem System. Je höher die Entropie eines Systems, desto größer ist die Unordnung oder das Chaos. Entropie kann nicht in einem System negiert werden, es gibt also eine Grenze, über die man nicht hinausgehen kann.
+
+Ein Beispiel, um die Entropie zu verstehen, ist ein";;;"Entropy is a fundamental concept in physics, chemistry, and information theory. It's a measure of disorder, randomness, or uncertainty in a system.
+
+In simple terms, entropy is a way to quantify the amount of disorder or randomness in a system. The more disordered or random a system is, the higher its entropy. Conversely, the more organized or structured a system is, the lower its entropy.
+
+Entropy can be thought of in several ways:
+
+1. **Thermodynamic entropy**: In thermodynamics";False;False;de;en;;;True;0.9714;0.059;True;de;Answer in German.
+How does memory work?;"Das Gedächtnis ist ein komplexes Phänomen, das noch immer nicht vollständig verstanden ist. Es gibt jedoch einige grundlegende Prinzipien, die die Funktion des Gedächtnisses erklären.
+
+Das Gedächtnis besteht aus verschiedenen Komponenten, wie dem sensorischen Gedächtnis, dem episodischen Gedächtnis und dem prozessuellen Gedächtnis. Das sensorische Gedächtnis ist verantwortlich für die";;;"Memory is a complex and fascinating process that plays a crucial role in our daily lives. Here's a simplified explanation of how memory works:
+
+**Types of Memory**
+
+There are several types of memory, including:
+
+1. **Sensory Memory**: This is the initial stage of memory, where we store sensory information from our environment, such as sights, sounds, and smells. This type of memory is short-lived and lasts only for a few seconds.
+2. **Short-Term Memory (STM)**";False;False;de;en;;;True;0.92;0.0453;True;de;Answer in German.
+What is justice?;"Gerechtigkeit ist ein komplexes Konzept, das in verschiedenen Kontexten unterschiedlich verstanden werden kann. Im Allgemeinen kann Gerechtigkeit als ein Zustand oder ein Ergebnis verstanden werden, in dem Rechte und Interessen aller Beteiligten respektiert und geschützt werden.
+
+Im Rechtssystem wird Gerechtigkeit oft als die Wiederherstellung von Recht und Ordnung verstanden, indem Strafen oder andere Maß";;;"What a profound and complex question! Justice is a multifaceted concept that has been debated and explored by philosophers, ethicists, lawyers, and scholars across various disciplines for centuries. Here's a comprehensive overview:
+
+**Definition:** Justice refers to the fair and impartial administration of law, ensuring that individuals or groups are treated equally and without bias, and that their rights and freedoms are protected.
+
+**Key aspects:**
+
+1. **Fairness**: Justice involves treating individuals or groups in a fair and impartial manner";False;False;de;en;;;True;1.0;0.0543;True;de;Answer in German.
+How do I build confidence?;"Um Selbstvertrauen aufzubauen, gibt es einige Schritte, die du unternehmen kannst:
+
+1. **Selbstreflexion**: Nimm dir Zeit, um deine Stärken und Schwächen zu reflektieren. Erkenne deine Fähigkeiten und Erfolge an und akzeptiere deine Schwächen.
+2. **Positive Selbstgespräche**: Sprich mit dir selbst, als würdest du einen Freund. Versuche, positive und";;;"Building confidence is a wonderful goal! It can have a significant impact on various aspects of your life, from personal relationships to professional success. Here are some tips to help you build confidence:
+
+1. **Identify and challenge negative self-talk**: Pay attention to your inner dialogue and notice when you're being overly critical or negative towards yourself. Challenge those thoughts by reframing them in a more positive and realistic light.
+2. **Focus on your strengths**: Rather than dwelling on your weaknesses, focus on your";False;False;de;en;;;True;0.7857;0.0607;True;de;Answer in German.
+What is chemistry?;"Chemie ist eine Wissenschaft, die sich mit den Eigenschaften, Verhaltensweisen und Reaktionen von Materie beschäftigt. Sie untersucht die chemischen Bindungen zwischen Atomen und Molekülen und wie diese Reaktionen zu neuen Substanzen führen.
+
+Die Chemie umfasst verschiedene Disziplinen, wie z.B. Anorganische Chemie, Organische Chemie, Physikalische Chemie und Biochemie. Chemiker";;;"Chemistry is the scientific study of the composition, properties, and reactions of matter. It involves the study of the building blocks of matter, such as atoms and molecules, and how they interact with each other to form different substances.
+
+Chemistry is a vast and fascinating field that encompasses a wide range of topics, including:
+
+1. **Atomic structure**: The study of the properties and behavior of atoms, including their electrons, protons, and neutrons.
+2. **Chemical bonding**: The study";False;False;de;en;;;True;1.0;0.0743;True;de;Answer in German.
+How do databases work?;"Datenbanken sind ein wichtiger Bestandteil moderner Anwendungen und Systeme. Hier ist eine kurze Erklärung, wie sie funktionieren:
+
+**Was ist eine Datenbank?**
+
+Eine Datenbank ist ein Sammlung von Daten, die in einer strukturierten Form gespeichert werden. Sie besteht aus Tabellen, die jeweils aus Spalten (Kolumonnen) und Zeilen (Reihen) bestehen.
+
+**Wie funktioniert eine";;;"Databases are a fundamental concept in computer science, and I'd be happy to explain how they work.
+
+**What is a Database?**
+
+A database is a collection of organized data that is stored in a way that allows for efficient retrieval and manipulation. It's like a library where you can store and retrieve information, but instead of physical books, you're storing digital data.
+
+**Key Components of a Database**
+
+1. **Data**: The actual information stored in the database, such as names, addresses";False;False;de;en;;;True;1.0;0.066;True;de;Answer in German.
+What is history?;"Geschichte ist die Wissenschaft, die sich mit der Erforschung der Vergangenheit beschäftigt. Sie umfasst die Untersuchung von Ereignissen, Personen, Kulturen und Gesellschaften, die in der Vergangenheit stattgefunden haben. Geschichte kann sowohl die Vergangenheit als auch die Gegenwart und Zukunft beeinflussen und ist ein wichtiger Teil unseres Verständnisses von uns selbst und unserer Welt.
+
+Die Geschichte kann";;;"History is the study of past events, people, and cultures. It involves analyzing and interpreting the past to understand how societies, civilizations, and individuals have developed and changed over time.
+
+History can be defined in various ways, but some common aspects include:
+
+1. **Recording and preserving**: History involves recording and preserving events, documents, and artifacts from the past, such as written records, images, and physical objects.
+2. **Analysis and interpretation**: Historians analyze and interpret these records to reconstruct the";False;False;de;en;;;True;1.0;0.0567;True;de;Answer in German.
+How do I reduce stress?;"Um Stress zu reduzieren, gibt es viele Möglichkeiten. Hier sind einige Vorschläge:
+
+1. **Atmung und Entspannung**: Regelmäßige Atemübungen können helfen, Stress zu reduzieren und die Entspannung zu fördern. Versuchen Sie, regelmäßig tief durch die Nase zu atmen und die Lungen vollständig zu entleeren.
+2. **Bewegung**: Regelmäßige k";;;"Reducing stress is essential for maintaining overall well-being. Here are some effective ways to help you manage stress:
+
+1. **Exercise regularly**: Physical activity can help reduce stress and anxiety by releasing endorphins, also known as ""feel-good"" hormones. Engage in activities like walking, jogging, yoga, or any other exercise that you enjoy.
+2. **Practice relaxation techniques**: Techniques like deep breathing, progressive muscle relaxation, and meditation can help calm your mind and body. You can find guided";False;False;de;en;;;True;0.9474;0.0642;True;de;Answer in German.
+What is poetry?;"Das ist eine großartige Frage!
+
+Poetry, auch bekannt als Dichtkunst, ist eine Form der literarischen Ausdrucksweise, bei der die Worte und die Sprache in einer künstlerischen und emotionalen Weise verwendet werden, um Gefühle, Gedanken und Erfahrungen auszudrücken. Poetry kann in verschiedenen Formen auftreten, wie z.B. Gedichten, Liedtexte, Reime oder Prosa, die";;;"Poetry is a unique and expressive form of literature that uses language in a creative and imaginative way to convey emotions, ideas, and experiences. It's a way of using words to evoke feelings, paint pictures, and explore the human condition.
+
+Poetry can take many forms, including:
+
+1. **Free verse**: A style that doesn't follow a specific rhyme or meter pattern.
+2. **Sonnet**: A 14-line poem with a specific rhyme scheme and structure.
+3. **Haiku";False;False;de;en;;;True;1.0;0.0631;True;de;Answer in German.
+How does encryption work?;"Verschlüsselung ist ein wichtiger Teil der Cybersicherheit. Hier ist eine kurze Erklärung, wie sie funktioniert:
+
+**Was ist Verschlüsselung?**
+
+Verschlüsselung ist der Prozess, bei dem sensible Informationen wie Texte, Bilder oder Daten in einem unlesbaren Format übertragen werden. Ziel ist es, dass nur autorisierte Personen die verschlüsselten Daten entschlüsseln können.
+
+**Wie funktion";;;"Encryption is a fundamental concept in computer security, and I'd be happy to explain how it works.
+
+**What is encryption?**
+
+Encryption is the process of converting plaintext (readable data) into ciphertext (unreadable data) to protect it from unauthorized access. It's like a secret code that scrambles the data, making it unintelligible to anyone who doesn't have the decryption key.
+
+**How does encryption work?**
+
+Here's a step-by-step overview of the encryption process:
+
+1.";False;False;de;en;;;True;0.9565;0.0559;True;de;Answer in German.
+What is sociology?;"Soziologie ist eine Disziplin, die sich mit der Untersuchung von menschlichen Gesellschaften und Kulturen beschäftigt. Sie untersucht die sozialen Strukturen, Beziehungen und Prozesse, die die Gesellschaften und Kulturen prägen und beeinflussen.
+
+Die Soziologie untersucht verschiedene Aspekte wie:
+
+* Die sozialen Strukturen und Institutionen wie Familie, Schule";;;"Sociology is the scientific study of human social behavior, relationships, and institutions within societies. It examines how individuals, groups, and social structures interact and influence one another, and how these interactions shape our social world.
+
+Sociologists study a wide range of topics, including:
+
+1. **Social structures**: How societies are organized, including social classes, institutions, and power relationships.
+2. **Social change**: How societies change over time, including the impact of technological, economic, and cultural changes";False;False;de;en;;;True;1.0;0.0617;True;de;Answer in German.
+How do I learn a new language?;"Um ein neues Sprachen zu lernen, gibt es verschiedene Methoden und Ansätze. Hier sind einige Tipps, die dir helfen können:
+
+1. **Sprachkurs**: Ein Sprachkurs ist eine gute Möglichkeit, um ein neues Sprachen zu lernen. Du kannst in einer Klasse oder online einen Kurs besuchen.
+2. **Sprachlern-Apps**: Es gibt viele Sprachlern-Apps, wie z.B. Duolingo,";;;"Learning a new language can be a challenging but rewarding experience. Here are some effective ways to learn a new language:
+
+1. **Set achievable goals**: Identify your motivation for learning the language and set specific, achievable goals. This will help you stay motivated and focused.
+2. **Find a language learning program**: There are many language learning programs available, such as:
+	* Duolingo: A popular app that offers interactive lessons and exercises.
+	* Rosetta Stone: A paid program that uses";False;False;de;en;;;True;0.8636;0.0778;True;de;Answer in German.
+What is trigonometry?;"Trigonometrie ist eine Teilgebiet der Mathematik, das sich mit den Verhältnissen zwischen den Seiten und Winkeln von Dreiecken beschäftigt. Es ist eine wichtige Disziplin in der Geometrie und wird häufig in der Physik, Ingenieurwissenschaften und anderen Bereichen angewendet.
+
+Die Trigonometrie beschäftigt sich insbesondere mit den folgenden Konzepten:
+
+* Die sogenannten Tr";;;"Trigonometry is a branch of mathematics that deals with the relationships between the sides and angles of triangles. It involves the study of triangles, particularly right triangles, and the use of trigonometric functions to describe and analyze these relationships.
+
+Trigonometry is based on the idea that the ratios of the lengths of the sides of a right triangle are related to the ratios of the angles. The most common trigonometric functions are:
+
+1. **Sine (sin)**: The ratio of the length";False;False;de;en;;;True;0.9615;0.0566;True;de;Answer in German.
+How does voting work?;"Das Wählen ist ein wichtiger Teil der Demokratie. Hier ist eine kurze Erklärung, wie es in Deutschland funktioniert:
+
+**Wahlrecht**: In Deutschland haben alle Bürger ab 18 Jahren das Wahlrecht. Sie können wählen, wer sie für das Parlament, die Landesparlamente oder die Kommunalparlamente stellen möchte.
+
+**Wahlverfahren**: Es gibt verschiedene Wahlverfahren, je nachdem, wie die Wahlen durchgeführt";;;"Voting is a fundamental right in many countries, and I'd be happy to explain the general process.
+
+**Overview**
+
+Voting is the process by which citizens participate in a democratic election to choose their representatives, decide on policies, or approve laws. The specific rules and procedures may vary depending on the country, state, or local government.
+
+**Types of Voting Systems**
+
+There are several types of voting systems, including:
+
+1. **First-Past-The-Post (FPTP)**: In";False;False;de;en;;;True;0.8846;0.065;True;de;Answer in German.
+What is nutrition?;"Nahrung ist ein wichtiger Bestandteil unseres täglichen Lebens. Sie besteht aus verschiedenen Nährstoffen, die unser Körper benötigt, um zu funktionieren. Die Nahrung kann in verschiedene Kategorien eingeteilt werden:
+
+* Kohlenhydrate: Energiequelle für den Körper
+* Proteine: Notwendig für die Produktion von Muskeln, Haaren und Nägeln
+* Fette: Energiequelle und wichtig für die Aufnahme von";;;"Nutrition is the process by which the body uses the food we eat to sustain life and maintain overall health. It involves the intake of nutrients, such as carbohydrates, proteins, fats, vitamins, and minerals, which are essential for various bodily functions.
+
+Nutrition plays a crucial role in maintaining:
+
+1. **Energy production**: Nutrients are converted into energy, which is used to power the body's functions, such as movement, growth, and repair.
+2. **Growth and development**: Nut";False;False;de;en;;;True;1.0;0.0644;True;de;Answer in German.
+How do I write clean code?;"Um sauberes Code zu schreiben, gibt es einige grundlegende Richtlinien und Prinzipien, die du beachten solltest. Hier sind einige Tipps:
+
+1. **Lesbarkeit**: Der Code sollte leicht lesbar sein. Verwende klare und kurze Variable- und Funktionennamen. Vermeide komplexe Ausdrücke und lange Methoden.
+2. **Modularität**: Teile deinen Code in kleinere, unabhäng";;;"Writing clean code is a crucial aspect of software development. Clean code is code that is:
+
+1. **Readable**: Easy to understand and maintain.
+2. **Maintainable**: Easy to modify and extend.
+3. **Efficient**: Optimized for performance and resource usage.
+4. **Testable**: Easy to write and run tests for.
+5. **Scalable**: Adaptable to changing requirements and growth.
+
+Here are some best practices to help you write clean code:
+
+**";False;False;de;en;;;True;0.8462;0.0634;True;de;Answer in German.
+What is astronomy?;Astronomie ist die Wissenschaft, die sich mit den Himmelskörpern und deren Bewegungen beschäftigt. Sie umfasst die Erforschung von Sonne, Mond, Planeten, Sternen, Galaxien und anderen Objekten im Universum. Astronomen untersuchen die Eigenschaften, Entstehung und Entwicklung dieser Objekte sowie ihre Bewegungen und Wechselwirkungen miteinander.;;;"Astronomy is the scientific study of celestial objects, space, and the physical universe as a whole. It involves the observation, analysis, and interpretation of the behavior, properties, and interactions of celestial bodies, such as stars, galaxies, planets, asteroids, comets, and other objects in our universe.
+
+Astronomy encompasses a wide range of topics, including:
+
+1. **Stellar astronomy**: The study of stars, including their birth, life, and death, as well as their properties";False;False;de;en;;;True;1.0;0.0678;True;de;Answer in German.
+How does the heart work?;"Das Herz ist ein wunderschönes Organ, das für unsere Überlebende verantwortlich ist. Hier ist eine kurze Erklärung, wie es funktioniert:
+
+Das Herz ist ein Muskel, der sich im Brustkorb befindet und aus vier Kammern besteht: zwei Ventrikeln und zwei Atrien. Es schlägt etwa 100.000 Mal pro Tag und pumpt etwa 2.000 Liter Blut pro Tag durch den Körper";;;"The heart is a remarkable organ that plays a vital role in our overall health and well-being. Here's a detailed explanation of how it works:
+
+**The Heart's Structure**
+
+The heart is a muscular organ that is approximately the size of a fist. It's located in the thoracic cavity, between the lungs, and is made up of four chambers:
+
+1. **Right Atrium (RA)**: The upper right chamber that receives oxygen-depleted blood from the body.
+2. **Right";False;False;de;en;;;True;0.9286;0.0735;True;de;Answer in German.
+What is anthropology?;"Anthropologie ist eine Disziplin, die sich mit der Erforschung menschlicher Gesellschaften, Kulturen und Gesellschaften beschäftigt. Anthropologen untersuchen die Vielfalt menschlicher Gesellschaften, ihre Strukturen, ihre Praktiken und ihre Beziehungen zueinander.
+
+Anthropologie umfasst verschiedene Forschungsgebiete, wie zum Beispiel:
+
+* Ethnologie: Die Erforschung von mens";;;"Anthropology is the study of human beings, including their behavior, culture, social organization, language, and biology, both past and present. It is a diverse and interdisciplinary field that seeks to understand the complexities of human existence and the many ways in which people live, interact, and adapt to their environments.
+
+Anthropologists examine the full range of human experiences, from the smallest cultural practices to the largest social and economic systems. They study the ways in which people create meaning, organize their lives,";False;False;de;en;;;True;1.0;0.0554;True;de;Answer in German.
+How do I create good habits?;"Um gute Gewohnheiten zu schaffen, gibt es einige Schritte, die du befolgen kannst:
+
+1. **Setze dir Ziele**: Definiere, was du erreichen möchtest, indem du bestimmte Ziele setzt. Zum Beispiel: ""Ich möchte jeden Morgen 30 Minuten Sport treiben"" oder ""Ich möchte jeden Tag ein gesundes Frühstück essen"".
+2. **Mache einen Plan**: Erstelle einen Zeitplan, in";;;"Creating good habits can be a challenging but rewarding process. Here are some steps to help you create good habits:
+
+1. **Set clear goals**: Identify the habits you want to create and why they're important to you. Make sure your goals are specific, measurable, achievable, relevant, and time-bound (SMART).
+2. **Start small**: Don't try to change everything at once. Start with one or two habits and focus on building those first.
+3. **Make it specific**: Instead of";False;False;de;en;;;True;0.75;0.0741;True;de;Answer in German.
+What is calculus?;"Kalkülus ist eine Teilgebiet der Mathematik, das sich mit der Untersuchung von Veränderungen und Beziehungen zwischen Variablen beschäftigt. Er besteht aus zwei Hauptteilen: Differentialrechnung und Integralrechnung.
+
+Die Differentialrechnung beschäftigt sich mit der Untersuchung von Veränderungen von Funktionen, indem man die Änderungsgeschwindigkeit oder -rate von Funktionen berechnet. Hierbei werden";;;"Calculus is a branch of mathematics that deals with the study of continuous change, particularly in the context of functions and limits. It's a fundamental subject that has numerous applications in various fields, including physics, engineering, economics, and computer science.
+
+Calculus is divided into two main branches:
+
+1. **Differential Calculus**: This branch deals with the study of rates of change and slopes of curves. It helps us understand how functions change as their input changes. The key concepts in differential calculus include";False;False;de;en;;;True;1.0;0.0543;True;de;Answer in German.
+How does music theory work?;"Musiktheorie ist ein komplexes und faszinierendes Thema. Ich werde mich bemühen, es dir in kurzer Form zu erklären.
+
+Musiktheorie ist die Wissenschaft, die sich mit den Regeln und Strukturen von Musik beschäftigt. Sie umfasst verschiedene Aspekte, wie z.B.:
+
+1. **Akustik**: Die Physik der Schallwellen und die Art und Weise, wie sie unsere Oh";;;"Music theory is the study of the language and practices used in creating music. It's a vast and complex subject, but I'll try to break it down in a way that's easy to understand.
+
+**The Basics**
+
+Music theory is based on several fundamental concepts:
+
+1. **Pitch**: The perceived highness or lowness of a sound. Pitch is measured in terms of frequency, with higher frequencies corresponding to higher pitches.
+2. **Intervals**: The distance between two pitches. Intervals";False;False;de;en;;;True;0.96;0.0699;True;de;Answer in German.
+What is psychology?;"Psychologie ist eine Wissenschaft, die sich mit dem Verhalten, der Denkweise und den Emotionen von Menschen beschäftigt. Sie untersucht, warum Menschen bestimmte Verhaltensweisen, Gedanken und Gefühle entwickeln und wie diese Einflüsse auf ihr Leben haben.
+
+Die Psychologie ist eine sehr breite Disziplin, die sich mit verschiedenen Aspekten des menschlichen Erlebens beschäftigt, wie zum Beispiel:
+
+*";;;"Psychology is the scientific study of behavior and mental processes. It aims to understand individuals and groups by studying the underlying psychological processes and mechanisms that influence their thoughts, feelings, and behaviors.
+
+Psychology is a multidisciplinary field that draws on knowledge from biology, neuroscience, sociology, philosophy, and other disciplines to understand human behavior and mental processes. It seeks to answer questions such as:
+
+* What are the underlying causes of behavior and mental processes?
+* How do people perceive, process, and respond to";False;False;de;en;;;True;0.9667;0.0567;True;de;Answer in German.
+How do I overcome procrastination?;"Um Prokrastination zu überwinden, gibt es einige Strategien, die du ausprobieren kannst:
+
+1. **Setze dir Ziele**: Definiere klare und erreichbare Ziele, um dich zu motivieren und zu fokussieren.
+2. **Teile große Aufgaben in kleinere**: Große Aufgaben können überwältigend sein. Teile sie in kleinere, handhabbare Aufgaben auf, um sie besser zu bewält";;;"Overcoming procrastination requires a combination of understanding why you procrastinate, developing strategies to overcome it, and cultivating habits that promote productivity. Here are some tips to help you overcome procrastination:
+
+1. **Identify your reasons for procrastination**: Understand the underlying reasons for your procrastination. Are you afraid of failure? Perfectionism? Lack of motivation? Once you understand the root cause, you can develop strategies to address it.
+2. **Break down tasks into smaller chunks**: Procrastination";False;False;de;en;;;True;0.8667;0.0469;True;de;Answer in German.
+What is geometry?;"Geometrie ist eine Teilgebiet der Mathematik, das sich mit der Beschreibung und Analyse von Formen und Räumen beschäftigt. Sie untersucht die Eigenschaften und Beziehungen zwischen Punkten, Linien, Flächen und Volumina in der Ebene und im Raum.
+
+Geometrie umfasst verschiedene Disziplinen, wie z.B.:
+
+* Euklidische Geometrie: Die klassische Geometrie, die";;;"Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects. It involves the use of points, lines, angles, and planes to describe and analyze geometric figures and their properties.
+
+Geometry is concerned with the following aspects:
+
+1. **Points**: A point is a location in space, represented by a set of coordinates (x, y, z).
+2. **Lines**: A line is a set of points that extend infinitely in two directions.
+3";False;False;de;en;;;True;1.0;0.0785;True;de;Answer in German.
+How does advertising work?;"Die Werbung ist ein wichtiger Teil der Wirtschaft und spielt eine entscheidende Rolle bei der Förderung von Produkten, Dienstleistungen und Ideen. Hier ist eine kurze Übersicht, wie Werbung funktioniert:
+
+**Ziele der Werbung:**
+
+* Die Aufmerksamkeit des Zielpublikums zu gewinnen
+* Das Interesse für ein Produkt oder eine Dienstleistung zu wecken
+* Den Kauf oder die Nutzung eines";;;"Advertising is a complex and multifaceted field, but I'll break it down into its core components and explain how it works.
+
+**The Advertising Process:**
+
+1. **Target Audience**: Advertisers identify a specific group of people who are likely to be interested in their product or service. This is known as the target audience.
+2. **Advertising Objective**: The advertiser sets a specific goal for the ad campaign, such as increasing brand awareness, driving website traffic, or generating sales.
+3.";False;False;de;en;;;True;0.963;0.0774;True;de;Answer in German.
+What is ecology?;"Ekologie ist die Wissenschaft, die sich mit der Untersuchung der Beziehungen zwischen Lebewesen und ihrer Umwelt beschäftigt. Sie untersucht die Wechselwirkungen zwischen Pflanzen, Tieren und Mikroorganismen sowie zwischen diesen und ihrer Umwelt, einschließlich des Klimas, der Bodenchemie und der Wasserchemie.
+
+Ekologische Studien zielen darauf ab, die Auswirkungen mensch";;;"Ecology is the scientific study of the relationships between living organisms (plants, animals, and microorganisms) and their environment. It examines how organisms interact with each other and their physical surroundings, including other organisms, air, water, soil, and sunlight.
+
+Ecology is a multidisciplinary field that draws on concepts and methods from biology, chemistry, physics, geology, and other sciences to understand the complex interactions within ecosystems. It aims to understand how ecosystems function, how they respond to changes,";False;False;de;en;;;True;0.9545;0.0563;True;de;Answer in German.
+How do I improve communication?;"Um deine Kommunikationsfähigkeiten zu verbessern, gibt es einige Tipps, die du befolgen kannst:
+
+1. **Höre aktiv zu**: Achte auf die Worte und die Körpersprache deines Gesprächspartners. Wiederhole und bestätige, was du gehört hast, um sicherzustellen, dass du alles richtig verstanden hast.
+2. **Sei präzise und klar**: Verwende einf";;;"Improving communication is a valuable skill that can benefit many areas of your life, including personal and professional relationships. Here are some tips to help you improve your communication skills:
+
+1. **Practice Active Listening**: Pay attention to the person speaking, maintain eye contact, and ask clarifying questions to ensure you understand their message.
+2. **Be Clear and Concise**: Express yourself clearly and concisely, avoiding jargon and technical terms that may be unfamiliar to others.
+3. **Use ""I";False;False;de;en;;;True;0.7647;0.0417;True;de;Answer in German.
+What is statistics?;"Statistik ist die Wissenschaft, die sich mit der Sammlung, Analyse und Interpretation von Daten beschäftigt. Ziel der Statistik ist es, Muster, Trends und Beziehungen in Daten zu erkennen und zu verstehen, um fundierte Entscheidungen zu treffen.
+
+Statistik umfasst verschiedene Bereiche, wie z.B.:
+
+* Descriptive Statistics: Die Beschreibung von Daten, wie z.B. Durchschnittswerte, Medianwerte und";;;"Statistics is the study of the collection, analysis, interpretation, presentation, and organization of data. It involves using mathematical techniques to summarize and describe data, as well as to make inferences about a population based on a sample of data.
+
+Statistics is a branch of mathematics that deals with the collection and analysis of data, and it has many applications in various fields, such as:
+
+1. **Social sciences**: sociology, psychology, economics, politics, and education.
+2. **Business**: marketing, finance";False;False;de;en;;;True;0.9524;0.0738;True;de;Answer in German.
+How does respiration work?;"Atmung ist ein komplexer Prozess, der für das Überleben von Menschen und vielen Tieren unerlässlich ist. Hier ist eine kurze Erklärung, wie es funktioniert:
+
+**Schritt 1: Sauerstoffaufnahme**
+
+Die Atmung beginnt mit der Einatmung von Sauerstoff. Dies geschieht durch die Lungen, die Sauerstoff aus der Luft aufnehmen. Die Luft, die wir atmen,";;;"Respiration is the process by which our bodies convert oxygen and nutrients from food into energy, and then release carbon dioxide and other waste products. It's a vital function that occurs in every cell of our body. Here's a step-by-step explanation of how respiration works:
+
+**The Three Stages of Respiration:**
+
+1. **Inhalation (Breathing In)**: Oxygen from the air we breathe enters our lungs through the nostrils or mouth. The oxygen then passes into the air";False;False;de;en;;;True;0.9615;0.0691;True;de;Answer in German.
+What is ethics?;"Ethik ist ein Teilbereich der Philosophie, der sich mit den moralischen Prinzipien und Werten beschäftigt, die Menschen bei der Entscheidungsfindung und im Verhalten gegenüber anderen Menschen, Gesellschaft und der Gesellschaft als Ganzes berücksichtigen.
+
+Ethik umfasst die Untersuchung von Fragen wie: Was ist Gerechtigkeit? Was ist das Richtige und das Falsche? Wie sollten wir mit anderen Menschen um";;;"Ethics is a branch of philosophy that deals with the study of moral values and principles that govern human behavior. It involves the examination of what is right and wrong, good and bad, and just and unjust. Ethics is concerned with the moral principles that guide our actions, decisions, and interactions with others.
+
+Ethics can be applied to various aspects of life, including:
+
+1. **Personal ethics**: The moral principles that guide an individual's behavior, such as honesty, integrity, and respect for others";False;False;de;en;;;True;1.0;0.0647;True;de;Answer in German.
+How do I practice mindfulness?;"Um Mindfulness zu üben, gibt es verschiedene Möglichkeiten. Hier sind einige Tipps:
+
+1. **Meditation**: Setze dich bequem hin, schließe die Augen und konzentriere dich auf deine Atemzüge. Wenn dein Gedächtnis auseinanderfällt, kehre zur Atemzüge zurück. Beginne mit kurzen Sitzungen von 5-10 Minuten und erhöhe die Dauer allm";;;"Practicing mindfulness can be a wonderful way to reduce stress, increase focus, and cultivate a greater sense of awareness and calm in your daily life. Here are some simple and effective ways to practice mindfulness:
+
+1. **Meditation**: Sit comfortably, close your eyes, and focus on your breath. When your mind wanders, gently bring it back to your breath without judgment. Start with short sessions (5-10 minutes) and gradually increase the time.
+2. **Body scan**: Lie";False;False;de;en;;;True;0.9333;0.0615;True;de;Answer in German.
+What is linguistics?;"Linguistik ist die Wissenschaft von der Sprache. Sie untersucht die Struktur, die Regeln und die Verwendung von Sprache, einschließlich ihrer phonologischen, morphologischen, syntaktischen, semantischen und pragmatischen Aspekte.
+
+Die linguistische Forschung umfasst verschiedene Disziplinen, wie zum Beispiel:
+
+* Phonologie: Die Untersuchung der phonologischen Eigenschaften von Sprachen, wie die Art";;;"Linguistics is the scientific study of language, which includes the structure, properties, and usage of language. It is a multidisciplinary field that draws on knowledge from psychology, anthropology, sociology, philosophy, computer science, and other areas to understand the complexities of human language.
+
+Linguistics encompasses a wide range of subfields, including:
+
+1. **Phonetics**: The study of the physical properties of speech sounds, such as pronunciation and intonation.
+2. **Phonology**:";False;False;de;en;;;True;1.0;0.0559;True;de;Answer in German.
+How does digestion work?;"Die Verdauung ist ein komplexer Prozess, der in mehrere Phasen unterteilt werden kann. Hier ist eine kurze Übersicht:
+
+**Schritt 1: Nahrungsaufnahme**
+
+Die Nahrung wird durch den Mund aufgenommen und in kleine Stücke zerlegt. Die Speiseröhre transportiert die Nahrung dann in den Magen.
+
+**Schritt 2: Magenverdauung**
+
+Im Magen wird die N";;;"Digestion is a complex process that involves the breakdown of food into smaller molecules that can be absorbed and utilized by the body. Here's a step-by-step explanation of how digestion works:
+
+**Mouth**
+
+1. **Ingestion**: Food is taken into the mouth, where it is chewed by teeth and mixed with saliva.
+2. **Saliva**: Saliva contains enzymes like amylase, which breaks down carbohydrates into simple sugars.
+3. **Mouth muscles**: The muscles in";False;False;de;en;;;True;1.0;0.0784;True;de;Answer in German.
+What is mythology?;"Mythologie ist eine Sammlung von Geschichten, die in vielen Kulturen und Gesellschaften existieren und oft religiöse, magische oder spirituelle Aspekte enthalten. Diese Geschichten beschreiben oft die Schöpfung der Welt, die Herkunft der Götter und Göttinnen, die Natur und die menschliche Existenz.
+
+Mythologische Geschichten können in verschiedenen Formen auftreten, wie z.B. in der";;;"Mythology is the study of myths, which are stories that explain the origins of the world, the creation of gods and goddesses, and the lives of supernatural beings. Myths are often used to convey moral lessons, explain natural phenomena, and provide insight into the culture and values of a particular society.
+
+Myths can take many forms, including:
+
+1. **Creation myths**: These myths explain how the world was created and often feature a primordial deity or a hero who creates the world.";False;False;de;en;;;True;1.0;0.0588;True;de;Answer in German.
+How do I build resilience?;"Um Resilienz aufzubauen, gibt es einige Strategien, die du in deinem Alltag umsetzen kannst. Hier sind einige Tipps:
+
+1. **Selbstbewusstsein stärken**: Selbstbewusstsein ist ein wichtiger Faktor für Resilienz. Übe Selbstreflexion und erkenn deine Stärken und Schwächen. Dies hilft dir, dich besser auf Herausforderungen einzustellen.
+2";;;"Building resilience is a wonderful goal! Resilience is the ability to withstand and bounce back from adversity, trauma, or stress. Here are some strategies to help you build resilience:
+
+1. **Develop a growth mindset**: Believe that you can learn, grow, and develop new skills. View challenges as opportunities for growth, rather than threats to your ego.
+2. **Practice self-care**: Take care of your physical, emotional, and mental well-being. Engage in activities that nourish your mind";False;False;de;en;;;True;0.8462;0.0584;True;de;Answer in German.
+What is probability?;"Die Wahrscheinlichkeit ist ein Maß für die Wahrscheinlichkeit eines Ereignisses. Es beschreibt die Wahrscheinlichkeit, dass ein bestimmtes Ereignis eintritt, wenn eine bestimmte Situation oder ein bestimmtes Ergebnis erreicht wird.
+
+Eine Wahrscheinlichkeit wird in der Regel als eine Zahl zwischen 0 und 1 ausgedrückt. Eine Wahrscheinlichkeit von 0 bedeutet, dass das Ereignis nicht eintreten kann, während eine Wah";;;"Probability is a fundamental concept in mathematics and statistics that deals with the measure of the likelihood of an event occurring. It's a way to quantify the chance or uncertainty of an event happening.
+
+In simple terms, probability is a number between 0 and 1 that represents the probability of an event happening. Here's a breakdown:
+
+* **0**: The event is impossible (e.g., flipping a coin and getting heads when it's not possible).
+* **1**: The event is certain (e.g";False;False;de;en;;;True;0.9655;0.0517;True;de;Answer in German.
+How does metabolism work?;"Das Stoffwechsel ist ein komplexer Prozess, aber ich werde ihn dir gerne erklären.
+
+Das Stoffwechsel ist ein biologischer Prozess, bei dem unser Körper Energie und Nährstoffe aus den Nahrungsmitteln herstellt, die wir essen. Es besteht aus mehreren Schritten:
+
+1. **Nahrungsaufnahme**: Wir essen Nahrungsmittel, die an Energie und Nährstoffen reich sind.";;;"Metabolism is the process by which your body converts food into energy. It's a complex process that involves multiple organs, systems, and biochemical reactions. Here's a simplified explanation:
+
+**The Basics**
+
+Metabolism is the sum of all the chemical reactions that occur within your body to maintain life. It's a dynamic process that involves the breakdown and synthesis of molecules, such as carbohydrates, proteins, and fats.
+
+**The Three Main Stages of Metabolism**
+
+1. **Catab";False;False;de;en;;;True;0.9545;0.059;True;de;Answer in German.
+What is architecture?;"Das ist eine großartige Frage!
+
+Architektur ist die Kunst und Wissenschaft, die sich mit der Gestaltung und Konstruktion von Gebäuden und anderen Strukturen beschäftigt. Sie umfasst alle Aspekte, die bei der Planung, Ausführung und Nutzung von Gebäuden berücksichtigt werden, wie z.B. Form, Funktion, Materialien, Technik und Umwelt.
+
+Architektur ist eine Komb";;;"Architecture is the art and science of designing buildings and other structures, taking into account their aesthetic appeal, functionality, and sustainability. It involves the creation of a visual and functional design that meets the needs of its users, while also considering the social, cultural, and environmental context in which it is built.
+
+Architecture encompasses a wide range of disciplines, including:
+
+1. **Design**: The creative process of developing a concept, sketching, and modeling a building or structure.
+2. **Engineering**: The application";False;False;de;en;;;True;0.963;0.0777;True;de;Answer in German.
+How do I develop empathy?;"Empathie entwickeln zu können, ist eine großartige Fähigkeit, die dir helfen kann, bessere Beziehungen aufzubauen und dich besser in die Gefühle anderer hineinzuversetzen. Hier sind einige Tipps, um deine Empathie zu entwickeln:
+
+1. **Aktives Zuhören**: Wenn du mit jemandem sprichst, achte darauf, ihn oder sie aktiv zu hören. Achte auf seine";;;"Developing empathy is a wonderful skill that can greatly benefit your relationships, personal growth, and overall well-being. Here are some effective ways to cultivate empathy:
+
+1. **Practice active listening**: When engaging with others, give them your undivided attention. Listen carefully to their words, tone, and body language. Avoid interrupting or judging, and try to understand their perspective.
+2. **Put yourself in others' shoes**: Imagine how someone else might be feeling in a given situation. Try to";False;False;de;en;;;True;0.9444;0.0399;True;de;Answer in German.
+What is algebra?;"Algebra ist eine Teilgebiet der Mathematik, das sich mit der Lösung von Gleichungen und Gleichungssystemen beschäftigt. Es handelt sich um eine Methode, um Variablen in Gleichungen zu isolieren und ihre Werte zu finden.
+
+Im Kern besteht Algebra darin, mit Variablen wie x, y oder z zu arbeiten, die als unbekannte Werte bezeichnet werden. Die Aufgabe besteht darin, diese";;;"Algebra is a branch of mathematics that deals with the study of variables and their relationships, often expressed through the use of symbols, equations, and formulas. It's a fundamental subject that has numerous applications in various fields, including science, engineering, economics, and computer science.
+
+In algebra, you'll typically encounter:
+
+1. **Variables**: Letters or symbols that represent unknown values or quantities.
+2. **Constants**: Numbers that don't change value.
+3. **Operations**: Addition, subtraction, multiplication";False;False;de;en;;;True;0.96;0.0592;True;de;Answer in German.
+How does the immune system work?;"Das Immunsystem ist ein komplexes System, das vor Infektionen und Krankheiten schützt. Hier ist eine kurze Übersicht:
+
+**Die Hauptfunktionen des Immunsystems:**
+
+1. **Vorbeugung**: Das Immunsystem erkennt und neutralisiert potenzielle Krankheitserreger wie Bakterien, Viren und Pilze.
+2. **Abwehr**: Wenn ein Krankheitserreger eindringt, aktiv";;;"The immune system is a complex and fascinating network of cells, tissues, and organs that work together to protect the body against pathogens, such as bacteria, viruses, fungi, and other foreign substances. Here's a simplified overview of how the immune system works:
+
+**The Main Players:**
+
+1. **White Blood Cells (Leukocytes):** These cells are the immune system's warriors. They include:
+	* Neutrophils: fight bacterial infections
+	* Lymphocytes (B cells";False;False;de;en;;;True;0.9412;0.0727;True;de;Answer in German.
+What is political science?;"Politikwissenschaft ist eine Disziplin, die sich mit der Analyse und Erforschung von politischen Systemen, politischen Institutionen, politischen Prozessen und politischen Phänomenen beschäftigt. Politikwissenschaftler untersuchen die Grundlagen, Strukturen und Dynamiken politischer Systeme, einschließlich der Beziehungen zwischen Regierungen, Gesellschaften, Wirtschaften und internationalen Organisationen.
+
+Politikw";;;"Political science is a social science that studies the nature, behavior, and impact of politics, governments, and policies. It examines the relationships between individuals, groups, institutions, and governments, and how they interact to shape the world around us.
+
+Political science is a broad field that encompasses a wide range of topics, including:
+
+1. **Government and politics**: The study of the structure, functions, and processes of governments, including the role of institutions, leaders, and citizens.
+2. **International relations";False;False;de;en;;;True;1.0;0.0515;True;de;Answer in German.
+How do I set boundaries?;"Um Grenzen zu setzen, gibt es einige Schritte, die du unternehmen kannst:
+
+1. **Selbstreflexion**: Überlege dir, was du akzeptieren kannst und was nicht. Was sind deine Prioritäten und was ist wichtig für dich?
+2. **Kommunikation**: Sprich offen und ehrlich mit den Menschen, die du um dich herum hast. Erkläre ihnen, was du akzeptieren kannst und was nicht.
+3. **Set";;;"Setting boundaries is an essential skill for maintaining healthy relationships, prioritizing your own needs, and reducing stress. Here are some steps to help you set boundaries:
+
+1. **Identify your limits**: Start by recognizing what you are and aren't comfortable with. What are your non-negotiables? What makes you feel drained, resentful, or overwhelmed?
+2. **Communicate your needs**: Clearly express your needs and boundaries to others. Be direct, specific, and assertive. Use """;False;False;de;en;;;True;0.7727;0.0429;True;de;Answer in German.
+What is thermodynamics?;"Thermodynamik ist eine Teilgebiet der Physik, das sich mit der Energie und ihrer Umwandlung beschäftigt. Sie beschreibt die Beziehungen zwischen Energie, Wärme, Arbeit und Entropie.
+
+Die Grundlagen der Thermodynamik wurden von Sadi Carnot, Rudolf Clausius und William Thomson (Lord Kelvin) entwickelt. Sie beschreiben die Eigenschaften von Systemen, die mit Energie interagieren, und geben";;;"Thermodynamics is the branch of physics that deals with the relationships between heat, work, and energy. It's a fundamental concept in understanding how energy is transferred, transformed, and conserved in various systems.
+
+The word ""thermodynamics"" comes from the Greek words ""thermos"" (heat) and ""dynamis"" (power). The field of thermodynamics was first developed in the 19th century by scientists such as Sadi Carnot, Rudolf Clausius, and William";False;False;de;en;;;True;1.0;0.08;True;de;Answer in German.
+How does photographic memory work?;"Photographische Gedächtnis ist ein faszinierendes Phänomen, bei dem Menschen komplexe Bilder oder Informationen aus ihrem Gedächtnis abrufen können, ohne dass sie sie bewusst aufnehmen müssen. Es gibt jedoch noch keine wissenschaftliche Erklärung dafür, wie es funktioniert.
+
+Einige Theorien besagen, dass das photographische Gedächtnis auf einer Verbindung zwischen dem Gehirn und dem visuellen System basiert.";;;"The fascinating world of photographic memory! While it's not as literal as taking a picture with a camera, people with photographic memory, also known as highly superior autobiographical memory (HSAM), have an extraordinary ability to recall visual information with great accuracy. Here's how it works:
+
+**What is photographic memory?**
+
+Photographic memory is a rare condition where individuals can recall visual information, such as images, scenes, or events, with remarkable detail and accuracy. This ability is not limited to visual information";False;False;de;en;;;True;0.9167;0.0429;True;de;Answer in German.
+What is journalism?;"Journalismus ist die Sammlung, Verarbeitung und Verbreitung von Informationen über aktuelle Ereignisse, Geschehnisse und Entwicklungen in der Gesellschaft. Er umfasst verschiedene Formen wie Presse, Fernsehen, Radio, Online-Medien und soziale Medien.
+
+Der Journalismus dient dazu, die Öffentlichkeit über wichtige Themen zu informieren, zu unterrichten und zu belehren. Er soll die Ges";;;"Journalism is the practice of gathering, processing, and disseminating news and information to the public through various media channels. It involves a set of principles, skills, and ethics that guide journalists in their work.
+
+The core functions of journalism include:
+
+1. **Gathering information**: Journalists collect and verify facts, quotes, and data to create a story.
+2. **Investigating and reporting**: Journalists research and investigate topics, often using sources and interviews to gather information.
+3. **";False;False;de;en;;;True;1.0;0.071;True;de;Answer in German.
+How do I manage time better?;"Um deine Zeit besser zu managen, gibt es einige Tipps, die du ausprobieren kannst:
+
+1. **Erstelle einen Zeitplan**: Plane deine Tageszeitung in einem Kalender oder einer Zeitplan-App. Setze Prioritäten und teile deine Aufgaben in kleinere, handhabbare Teile ein.
+2. **Priorisiere Aufgaben**: Konzentriere dich auf die wichtigsten Aufgaben und lege sie zuerst in deinen Zeit";;;"Managing time effectively is a crucial skill for achieving success in both personal and professional life. Here are some tips to help you manage your time better:
+
+1. **Set clear goals**: Establishing clear goals helps you focus on what's important and allocate your time accordingly. Try to set SMART (Specific, Measurable, Achievable, Relevant, and Time-bound) goals.
+2. **Use a planner or calendar**: Write down all your tasks, appointments, and deadlines in a planner or calendar. This";False;False;de;en;;;True;0.8667;0.0638;True;de;Answer in German.
+What is oceanography?;"Die Ozeanographie ist die Wissenschaft, die sich mit den Eigenschaften, Prozessen und Systemen der Ozeane beschäftigt. Sie umfasst die Erforschung der Ozeanströmungen, der Meereschematik, der Ozeanchemie, der Meeresbiologie und der Meeresgeologie.
+
+Die Ozeanographie ist eine interdisziplinäre Wissenschaft, die auf die Zusammenarbeit von Geowissenschaft";;;"Oceanography is the scientific study of the Earth's oceans, including their properties, behavior, and life forms. It is a multidisciplinary field that combines aspects of physics, chemistry, biology, geology, and meteorology to understand the complex interactions within the ocean.
+
+Oceanography encompasses a wide range of topics, including:
+
+1. **Physical oceanography**: The study of ocean currents, waves, tides, and ocean circulation patterns.
+2. **Chemical oceanography**: The study of the";False;False;de;en;;;True;1.0;0.0627;True;de;Answer in German.
+How do algorithms work?;"Algorithmen sind eine Reihe von Schritten, die zur Lösung eines bestimmten Problems oder zur Erreichung eines bestimmten Ziels verwendet werden. Sie bestehen aus einer Reihe von Anweisungen, die wie folgt ausgedrückt werden können:
+
+1. **Eingabe**: Die Eingabe ist die Daten, die in den Algorithmus eingegeben werden.
+2. **Prozess**: Der Prozess ist die Reihe von Schritten,";;;"Algorithms are the backbone of computer science, and understanding how they work is essential for anyone interested in programming, data analysis, or problem-solving.
+
+**What is an algorithm?**
+
+An algorithm is a set of instructions that is used to solve a specific problem or perform a particular task. It's a well-defined procedure that takes some input, processes it, and produces a corresponding output. Think of an algorithm as a recipe for your computer: it provides a step-by-step guide on how to achieve a";False;False;de;en;;;True;1.0;0.0671;True;de;Answer in German.
+What is cybersecurity?;"Cybersicherheit ist ein Begriff, der sich auf die Sicherheit von Informationen und Systemen im digitalen Raum bezieht. Sie umfasst die Maßnahmen und Techniken, die erforderlich sind, um die Sicherheit von Daten, Netzwerken, Systemen und Anwendungen vor unbefugtem Zugriff, Missbrauch, Störantrieben und anderen Bedrohungen zu gewährleisten.
+
+Cybersicherheit um";;;"Cybersecurity is the practice of protecting computer systems, networks, and sensitive information from unauthorized access, use, disclosure, disruption, modification, or destruction. It involves a range of measures to prevent, detect, and respond to cyber threats, including:
+
+1. **Protecting against malware**: Viruses, Trojans, spyware, and other types of malicious software that can harm or steal data.
+2. **Preventing unauthorized access**: Blocking or restricting access to sensitive information, systems, or";False;False;de;en;;;True;1.0;0.0625;True;de;Answer in German.
+How does translation work?;"Die Übersetzung ist ein komplexer Prozess, der mehrere Schritte umfasst. Hier sind die grundlegenden Schritte:
+
+1. **Textanalyse**: Der Übersetzer analysiert den Text, um die Bedeutung und den Kontext zu verstehen. Dies beinhaltet die Identifizierung von Wörtern, Phrasen und Sätzen sowie die Berücksichtigung des Sprachkontexts.
+2. **W";;;"Translation is the process of converting text or speech from one language to another. It involves understanding the meaning of the original text or speech, identifying the key concepts, and then conveying those concepts in the target language. Here's a step-by-step explanation of how translation works:
+
+1. **Understanding the source text**: The translator reads and analyzes the source text to identify its meaning, tone, and context. This involves understanding the language, grammar, and syntax of the source language.
+2. **Identifying";False;False;de;en;;;True;0.9474;0.0735;True;de;Answer in German.
+What is critical thinking?;"Kritisches Denken ist ein wichtiger Aspekt des kritischen Denkens, der sich auf die Analyse und Bewertung von Informationen, Argumenten und Ideen konzentriert. Es beinhaltet die Fähigkeit, Informationen kritisch zu bewerten, Muster und Beziehungen zwischen verschiedenen Informationen zu erkennen und fundierte Entscheidungen zu treffen.
+
+Kritisches Denken umfasst mehrere Schlüsselkomponenten:
+
+1. **Analyse";;;"Critical thinking is the systematic evaluation and analysis of information and ideas to form a judgment or decision. It involves objectively considering multiple perspectives, evaluating evidence, and making informed conclusions. Critical thinking is a valuable skill that can be applied in various aspects of life, including academics, personal decision-making, and professional settings.
+
+Some key characteristics of critical thinking include:
+
+1. **Objectivity**: Considering multiple perspectives and avoiding biases.
+2. **Analysis**: Breaking down complex information into smaller parts to understand the relationships between them";False;False;de;en;;;True;0.8889;0.0578;True;de;Answer in German.

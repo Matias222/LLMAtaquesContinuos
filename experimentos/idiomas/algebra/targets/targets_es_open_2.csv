@@ -1,0 +1,550 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;prompt_es;prompt_es_language;prompt_es_ok;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
+Tell me about the water cycle.;"¡Claro! El ciclo del agua es un proceso natural que involucra la evaporación, condensación y precipitación del agua en la Tierra.
+
+**Fases del ciclo del agua:**
+
+1. **Evaporación**: El sol calienta el agua de los océanos, lagos y ríos, convirtiéndolo en vapor de agua. Este vapor se eleva hacia la atmósfera.
+2. **Condensación**:";;;"The water cycle! It's an essential process that sustains life on Earth. The water cycle, also known as the hydrologic cycle, is the continuous movement of water on, above, and below the surface of the Earth. It's a vital process that involves the transformation of water between its three main states: liquid, solid (ice), and gas (water vapor).
+
+Here's a step-by-step explanation of the water cycle:
+
+**Step 1: Evaporation**
+
+The water cycle begins with";False;False;es;en;;;True;Cuéntame sobre el ciclo del agua.;es;True;Erzähl mir vom Wasserkreislauf.;de;True;Comment fonctionne le cycle de l'eau?;fr;True;1.0;0.0323;True;es;Answer in Spanish.
+Explain why the sky is blue.;El cielo es azul debido a una fenómeno llamado dispersión de la luz. Cuando la luz del sol entra en la atmósfera terrestre, se divide en diferentes colores, debido a la interacción con las moléculas de gases como el nitrógeno y el oxígeno. Los colores más cortos, como el azul y el violeta, se dispersan más que los colores más largos, como;;;"The sky appears blue because of a phenomenon called Rayleigh scattering, named after the British physicist Lord Rayleigh, who first described it in the late 19th century.
+
+Here's what happens:
+
+1. **Sunlight enters Earth's atmosphere**: When sunlight enters our atmosphere, it consists of a spectrum of colors, including all the colors of the visible spectrum (red, orange, yellow, green, blue, indigo, and violet).
+2. **Light interacts with tiny molecules**: As sunlight travels";False;False;es;en;;;True;Explica por qué el cielo es azul.;es;True;Erkläre, warum der Himmel blau ist.;de;True;Quel est le pourquoi du ciel bleu?;fr;True;1.0;0.011;True;es;Answer in Spanish.
+Describe how a bicycle stays upright while moving.;"Un bicicleta se mantiene en equilibrio mientras se mueve gracias a varios factores:
+
+1.  **Giro de las ruedas**: Cuando se gira una rueda, la bicicleta se inclina hacia la dirección del giro. Esto se debe a que la rueda que gira está en contacto con el suelo y se mueve en una dirección diferente a la del eje de la bicicleta. Esto crea una fuerza";;;"The magic of balance and stability on a bicycle! Here's a breakdown of how a bicycle stays upright while moving:
+
+**Key Components:**
+
+1. **Tire and Wheel**: The tire provides traction and contact with the ground, while the wheel rotates to propel the bike forward.
+2. **Frame and Fork**: The frame and fork work together to maintain the bike's balance and stability.
+3. **Pedals and Crankset**: The pedals and crankset convert the rider's leg motion into";False;False;es;en;;;True;Describe cómo una bicicleta se mantiene en pie mientras se mueve.;es;True;Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt.;de;True;Comment un vélo reste-il debout pendant le mouvement?;fr;True;1.0;0.0185;True;es;Answer in Spanish.
+Summarize the plot of Romeo and Juliet.;"¡Claro! La trama de Romeo y Julieta, de William Shakespeare, es la siguiente:
+
+La historia se desarrolla en Verona, donde dos familias rivales, los Montecchi y los Capuleto, han estado en conflicto durante mucho tiempo. Romeo, un joven Montecchi, se enamora de Julieta, la hija de los Capuleto, en una fiesta. A pesar de la oposición de sus familias, Romeo y";;;"A classic tale of love and tragedy!
+
+Here's a brief summary of the plot of Romeo and Juliet:
+
+The story takes place in Verona, Italy, where two rival families, the Montagues and the Capulets, have a long-standing feud. Against this backdrop of hatred and violence, Romeo, a Montague, and Juliet, a Capulet, fall in love at a ball hosted by Juliet's family.
+
+Romeo and Juliet exchange vows of love, but their families' animosity";False;False;es;en;;;True;Resume la trama de Romeo y Julieta.;unknown;True;Fasse die Handlung von Romeo und Julia zusammen.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;0.0567;True;es;Answer in Spanish.
+Compare cats and dogs as pets.;"¡Claro! Aquí te presento una comparación entre gatos y perros como mascotas:
+
+**Ventajas de los gatos como mascotas:**
+
+* Son más independientes y requieren menos atención que los perros.
+* Son más limpios y no necesitan ser lavados con frecuencia.
+* Son más económicos en términos de comida y cuidado.
+* Son más tranquilos y no pueden ser tan agresivos como los perros.
+* Son";;;"The age-old debate: cats vs dogs as pets! Both animals can make wonderful companions, but they have distinct personalities, needs, and characteristics that may make one more suitable for you than the other. Here's a comprehensive comparison:
+
+**Similarities:**
+
+1. Both cats and dogs can provide affection, entertainment, and emotional support.
+2. They both require regular care, including feeding, grooming, and veterinary check-ups.
+3. Both can be trained to behave well and perform tricks.
+
+**D";False;False;es;en;;;True;Compara los gatos y los perros como mascotas.;es;True;Vergleiche Katzen und Hunde als Haustiere.;de;True;Comparez les chats et les chiens en tant que animaux de compagnie.;fr;True;1.0;0.0273;True;es;Answer in Spanish.
+List three benefits of regular exercise.;"¡Claro! Aquí te dejo tres beneficios del ejercicio regular:
+
+1. **Mejora la salud cardiovascular**: El ejercicio regular ayuda a fortalecer el corazón y mejorar la circulación sanguínea, lo que reduce el riesgo de enfermedades cardíacas y accidentes cerebrovasculares.
+2. **Aumenta la energía y la vitalidad**: El ejercicio regular aumenta la producción de energía en el cuerpo y mejora la";;;"Here are three benefits of regular exercise:
+
+1. **Improved Physical Health**: Regular exercise can help prevent chronic diseases such as heart disease, diabetes, and some types of cancer. It can also improve sleep quality, boost the immune system, and increase energy levels.
+2. **Mental Health Benefits**: Exercise has been shown to have a positive impact on mental health, reducing symptoms of anxiety and depression. It can also improve mood, reduce stress, and enhance cognitive function.
+3. **Increased Productivity";False;False;es;en;;;True;Menciona tres beneficios del ejercicio regular.;unknown;True;Nenne drei Vorteile regelmäßiger Bewegung.;de;True;Quels sont les trois avantages de l'exercice régulier?;fr;True;0.9091;0.0193;True;es;Answer in Spanish.
+Give me a short history of the printing press.;"¡Claro! Aquí te dejo una breve historia del imprenta:
+
+La imprenta fue inventada por Johannes Gutenberg en el siglo XV. En ese momento, la reproducción de libros era un proceso laborioso y costoso que requería la intervención de muchos artesanos. Gutenberg, un sastre y tipógrafo alemán, creó una máquina que permitía imprimir textos y imágenes en grandes cantidades.
+
+La innovación";;;"The printing press is a revolutionary invention that has had a profound impact on human history. Here's a brief overview:
+
+**The Early Years (1450s)**
+
+The printing press was invented by Johannes Gutenberg, a German goldsmith and printer, in the mid-15th century. Gutenberg's innovation was the development of movable type, which allowed individual characters to be rearranged and reused to print different texts. This was a major breakthrough, as it enabled mass production of printed materials.
+
+**The First";False;False;es;en;;;True;Dame una breve historia de la imprenta.;es;True;Gib mir eine kurze Geschichte der Druckerpresse.;de;True;Quel est l'histoire breve de l'imprimerie?;fr;True;1.0;0.0321;True;es;Answer in Spanish.
+Name some famous paintings from the Renaissance.;"¡Claro! Algunas de las pinturas más famosas del Renacimiento son:
+
+* ""La Gioconda"" (Mona Lisa) de Leonardo da Vinci
+* ""La última cena"" (La Última Cena) de Leonardo da Vinci
+* ""El nacimiento de Venus"" (El Nacimiento de Venus) de Sandro Botticelli
+* ""La Venus de Urbino"" (La Venus de Urbino) de Tiziano
+* ""El baut";;;"The Renaissance was a time of great artistic innovation and creativity, and many famous paintings were created during this period. Here are some of the most well-known ones:
+
+1. **Mona Lisa** by Leonardo da Vinci (1503-1506) - A portrait of a woman with an enigmatic smile, widely considered one of the greatest paintings of all time.
+2. **The Last Supper** by Leonardo da Vinci (1495-1498) - A mural painting depicting the last meal";False;False;es;en;;;True;Nombra algunas pinturas famosas del Renacimiento.;es;True;Nenne einige berühmte Gemälde der Renaissance.;de;True;Quels sont quelques peintures célèbres de la Renaissance?;fr;True;0.6667;0.1304;True;es;Answer in Spanish.
+Walk me through how bread is made.;"¡Claro! Empecemos a explicar el proceso de fabricación de pan.
+
+**Paso 1: Selección de la harina**
+
+El primer paso para hacer pan es seleccionar la harina adecuada. Hay diferentes tipos de harina, como harina de trigo integral, harina de trigo refinada, harina de centeno, etc. La harina de trigo integral es la más común y se utiliza para hacer pan tradicional.
+
+**P";;;"The art of bread making! It's a fascinating process that involves mixing, kneading, rising, shaping, and baking. Here's a step-by-step guide on how bread is made:
+
+**Step 1: Mixing (Dough Preparation)**
+
+1. **Ingredients**: Flour, yeast, salt, sugar, and water are the basic ingredients used to make bread. Other ingredients like butter, oil, or eggs may be added depending on the type of bread being made.
+2. **Measuring";False;False;es;en;;;True;Guíame por el proceso de hacer pan.;es;True;Führe mich durch die Herstellung von Brot.;de;True;Comment est fait le pain?;fr;True;1.0;0.0281;True;es;Answer in Spanish.
+Help me understand how vaccines work.;"¡Claro que sí! (Of course!) Las vacunas funcionan de una manera muy sencilla. (Vaccines work in a very simple way.)
+
+Cuando se administra una vacuna, el cuerpo humano recibe una pequeña cantidad de una sustancia que es similar a la que causa una enfermedad. (When a vaccine is administered, the human body receives a small amount of a substance that is similar to the one that causes an illness.)
+
+El sistema inmunológ";;;"Vaccines are a crucial tool in preventing the spread of infectious diseases, and understanding how they work can help you appreciate their importance. Here's a simplified explanation:
+
+**What is a vaccine?**
+
+A vaccine is a preparation that helps your body build immunity to a specific disease. It's made from a weakened or inactivated form of the disease-causing agent, such as a virus or bacteria.
+
+**How do vaccines work?**
+
+When you receive a vaccine, your body responds to the foreign substance";False;False;unknown;en;;;True;Ayúdame a entender cómo funcionan las vacunas.;es;True;Hilf mir zu verstehen, wie Impfstoffe wirken.;de;True;Comment fonctionnent les vaccins?;fr;True;0.5652;0.0212;True;es;Answer in Spanish.
+Write a short paragraph about the Moon.;La Luna es un satélite natural que orbita la Tierra. Tiene una superficie rocosa y desértica, con montañas y valles que se formaron debido a la expansión y contraición del magma en su interior. La Luna es un objeto fascinante que ha capturado la imaginación de las personas durante siglos, y ha sido objeto de estudio y exploración por parte de científicos y astronautas. Su influencia en el mar;;;The Moon is Earth's natural satellite, orbiting our planet at an average distance of about 239,000 miles. With a diameter of approximately 2,159 miles, the Moon is relatively small compared to the Earth, but its presence has a profound impact on our planet. The Moon's gravitational pull helps to stabilize Earth's axis, which is why we experience relatively constant seasons. The Moon's surface is also home to numerous craters, mountains, and lava flows, a testament to its complex;False;False;es;en;;;True;Escribe un párrafo corto sobre la Luna.;es;True;Schreib einen kurzen Absatz über den Mond.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;0.0217;True;es;Answer in Spanish.
+Suggest a few ways to save energy at home.;"¡Claro! Aquí te dejo algunas sugerencias para ahorrar energía en tu hogar:
+
+1. **Ajusta la temperatura**: Ajusta la temperatura de tu casa para ahorrar energía. A una temperatura de 20-22°C, puedes ahorrar hasta un 10% de energía.
+2. **Usa luces LED**: Las luces LED consumen menos energía que las luces tradicionales y pueden durar hasta 25 veces";;;"Here are a few simple and effective ways to save energy at home:
+
+1. **Switch to energy-efficient lighting**: Replace traditional incandescent bulbs with LED or CFL bulbs, which use significantly less energy and last longer.
+2. **Adjust your thermostat**: Lower the temperature in winter and raise it in summer to reduce heating and cooling costs. Consider installing a smart thermostat to optimize your temperature settings.
+3. **Turn off lights, appliances, and electronics when not in use**: This simple habit can save";False;False;es;en;;;True;Sugiere algunas formas de ahorrar energía en casa.;es;True;Schlag ein paar Möglichkeiten vor, zu Hause Energie zu sparen.;de;True;Comment économiser de l'énergie à la maison?;fr;True;1.0;0.0541;True;es;Answer in Spanish.
+Recommend a good book for a long train ride.;"¡Claro! (¡Por supuesto!) Si estás a punto de embarcarte en un largo viaje en tren, te recomiendo leer ""El viaje de Gulliver"" (El viaje de Lemuel Gulliver) de Jonathan Swift. Es una novela clásica que combina aventuras, sátira y reflexión filosófica, lo que la hace perfecta para un viaje largo y relajante.
+
+La historia sigue a Lem";;;"A long train ride is the perfect excuse to get lost in a good book. Here are some recommendations that are engaging, easy to follow, and won't leave you feeling too restless:
+
+**Fiction**
+
+1. **""The Hitchhiker's Guide to the Galaxy"" by Douglas Adams**: A humorous science fiction series that's perfect for a long train ride. It's lighthearted, entertaining, and will keep you laughing.
+2. **""The Night Circus"" by Erin M";False;False;es;en;;;True;Recomiéndame un buen libro para un viaje largo en tren.;fr;True;Empfiehl mir ein gutes Buch für eine lange Zugfahrt.;de;True;Quelle est une bonne livre pour une longue traversée en train?;fr;True;1.0;0.0502;True;es;Answer in Spanish.
+Outline the main causes of the First World War.;"¡Claro! A continuación, te presento los principales factores que contribuyeron a la estallida de la Primera Guerra Mundial:
+
+**I. La política de alianzas**
+
+* La Triple Entente (Francia, Reino Unido y Rusia) y la Triple Alianza (Alemania, Austria-Hungría e Italia) crearon un sistema de alianzas que aumentó la tensión entre las potencias europeas.
+* La";;;"The First World War, also known as the Great War, was a complex and multifaceted conflict that involved many countries and had various causes. Here are the main causes of the First World War:
+
+**I. Imperialism and Nationalism**
+
+1. **Rivalries between European powers**: The great powers of Europe, including Britain, France, Germany, Austria-Hungary, and Russia, were competing for colonies, resources, and influence around the world.
+2. **Nationalism**: The";False;False;es;en;;;True;Esboza las principales causas de la Primera Guerra Mundial.;es;True;Umreiße die Hauptursachen des Ersten Weltkriegs.;de;True;Quels sont les principaux facteurs qui ont conduit à la Première Guerre mondiale?;fr;True;1.0;0.0755;True;es;Answer in Spanish.
+Discuss the pros and cons of working from home.;"¡Claro! A continuación, te presento los pros y los contras de trabajar desde casa:
+
+**Ventajas:**
+
+1. **Flexibilidad**: Puedes trabajar en cualquier momento y lugar que desees, siempre y cuando tengas una conexión a Internet estable.
+2. **Comodidad**: No tienes que preocuparte por el tráfico, el transporte público o el tiempo de viaje, lo que te permite ahorrar tiempo y energía.
+3. **Menos";;;"Working from home, also known as telecommuting or remote work, has become increasingly popular in recent years. Here are some pros and cons of working from home:
+
+**Pros:**
+
+1. **Flexibility and autonomy**: Working from home provides the freedom to create your own schedule and work at your own pace.
+2. **Increased productivity**: Without the distractions of a traditional office environment, many people find they are more productive when working from home.
+3. **Reduced commuting time and expenses**:";False;False;es;en;;;True;Discute las ventajas y desventajas de trabajar desde casa.;es;True;Diskutiere die Vor- und Nachteile der Arbeit von zu Hause.;de;True;Quels sont les avantages et les inconvénients de travailler à domicile?;fr;True;1.0;0.0303;True;es;Answer in Spanish.
+"Define the word ""democracy"" in simple terms.";"La palabra ""democracia"" se define de la siguiente manera:
+
+Una democracia es un sistema de gobierno en el que el poder está en manos del pueblo, es decir, de los ciudadanos que viven en un país o comunidad. En una democracia, los ciudadanos tienen derecho a elegir a sus representantes, a participar en el proceso de toma de decisiones y a defender sus derechos y libertades.";;;"In simple terms, a democracy is a system of government where:
+
+1. **Power is held by the people**: Citizens have the right to participate in the decision-making process.
+2. **Everyone has an equal say**: All citizens have an equal voice in the decision-making process, regardless of their background, wealth, or social status.
+3. **Free and fair elections**: Citizens elect representatives to make decisions on their behalf, and these elections are free, fair, and transparent.
+
+In a democracy,";False;False;es;en;;;True;"Define la palabra ""democracia"" en términos sencillos.";fr;True;"Definiere das Wort ""Demokratie"" in einfachen Worten.";de;True;Quelle est la définition de la démocratie en termes simples?;fr;True;1.0;0.01;True;es;Answer in Spanish.
+Teach me the basics of chess.;"¡Claro! Empecemos con los fundamentos del ajedrez.
+
+**Objetivo del juego**
+
+El objetivo del ajedrez es capturar al rey del oponente o ponerlo en una posición en la que no pueda escapar.
+
+**Piezas**
+
+Hay seis piezas en el ajedrez:
+
+1. **Rey**: El rey es la pieza más importante. Si se captura, pierde el juego.
+2. **Rey**: El";;;"I'd be happy to teach you the basics of chess.
+
+**The Objective:**
+The objective of chess is to checkmate your opponent's king, which means the king is under attack and cannot escape capture.
+
+**The Board:**
+A chessboard consists of 64 squares, arranged in an 8x8 grid. The squares are usually colored in a checkered pattern, with light and dark squares alternating.
+
+**The Pieces:**
+Each player starts with 16 pieces: one king, one";False;False;es;en;;;True;Enséñame los fundamentos del ajedrez.;es;True;Bring mir die Grundlagen des Schachspiels bei.;unknown;True;Comment apprendre les bases du jeu d'échecs?;fr;True;1.0;0.047;True;es;Answer in Spanish.
+Break down how a refrigerator keeps food cold.;"¡Claro! Aquí te explico cómo funciona un refrigerador para mantener la comida fría:
+
+**El ciclo de refrigeración**
+
+Un refrigerador utiliza un ciclo de refrigeración para mantener la temperatura interna baja. El ciclo consta de tres etapas principales:
+
+1. **Compresión**: El refrigerante se comprime en el motor del refrigerador, lo que aumenta su presión y temperatura.
+2. **Conducción**: El refrigerante caliente se dirige a";;;"A refrigerator is a remarkable appliance that keeps food and drinks at a consistent refrigerated temperature, typically between 39°F and 41°F (4°C and 5°C). Here's a breakdown of how it works:
+
+**The Basic Principle:**
+A refrigerator uses a refrigeration cycle to transfer heat from the inside of the fridge to the outside. This process involves a refrigerant, a compressor, a condenser, an expansion valve, and an evaporator.
+
+**The Components:**
+
+1.";False;False;es;en;;;True;Desglosa cómo un refrigerador mantiene fría la comida.;es;True;Zerlege, wie ein Kühlschrank Lebensmittel kalt hält.;de;True;Comment fonctionne un réfrigérateur pour conserver les aliments froids?;fr;True;0.9333;0.0267;True;es;Answer in Spanish.
+Share some tips for learning a new language.;"¡Claro! Aquí te dejo algunos consejos para aprender un nuevo idioma:
+
+1. **Establece metas claras**: Define qué quieres lograr con tu aprendizaje del idioma y establece metas específicas y alcanzables.
+2. **Encuentra un método que te guste**: Hay muchos métodos de aprendizaje del idioma, como el método de aprendizaje por corregir, el método de escucha y comprens";;;"Learning a new language can be a challenging but rewarding experience. Here are some tips to help you get started:
+
+1. **Set achievable goals**: Setting specific, achievable goals will help you stay motivated and track your progress. Break down your goals into smaller, manageable tasks, such as learning a certain number of words or phrases each day.
+2. **Immerse yourself in the language**: Listen to music, watch TV shows and movies, read books and newspapers, and speak with native speakers. Imm";False;False;es;en;;;True;Comparte algunos consejos para aprender un idioma nuevo.;es;True;Teile ein paar Tipps zum Lernen einer neuen Sprache.;de;True;Comment apprendre une nouvelle langue?;fr;True;0.875;0.0209;True;es;Answer in Spanish.
+Imagine a city without cars and describe it.;"Imagina una ciudad sin coches. En ese caso, la ciudad sería un lugar muy diferente y acogedor. Primero, el aire sería mucho más limpio y fresco, ya que no habría el ruido y la contaminación de los vehículos. Los ruidos serían más suaves y serenos, con el canto de los pájaros y el murmullo de las personas caminando por las calles.
+
+Las calles ser";;;"What a fascinating thought experiment! Let's imagine a city without cars, and I'll paint a vivid picture of what it might look like.
+
+**The City's Layout**
+
+The city is designed with pedestrian-friendly streets, wide sidewalks, and ample green spaces. The streets are lined with tall trees, providing shade and a sense of tranquility. The city's layout is optimized for walking, cycling, and public transportation, with a focus on efficiency and sustainability.
+
+**Public Transportation**
+
+The city has a comprehensive";False;False;es;en;;;True;Imagina una ciudad sin coches y descríbela.;es;True;Stell dir eine Stadt ohne Autos vor und beschreibe sie.;de;True;Quelle ville sans voitures et comment la décrire?;fr;True;1.0;0.0182;True;es;Answer in Spanish.
+Convince me to drink more water.;"¡Claro que sí! (Por supuesto) Beber más agua es una excelente decisión para tu salud y bienestar. Aquí te explico por qué:
+
+**Tu cuerpo está compuesto por el 60% de agua**: es fundamental para mantener tus funciones corporales en orden. El agua ayuda a transportar nutrientes y oxígeno a tus células, a eliminar los desechos y a mantener tu piel saludable y hidratada.
+
+**Beber agua";;;"I'd be delighted to help you drink more water!
+
+Here are some compelling reasons to make water your go-to beverage:
+
+1. **Boosts Energy and Focus**: Even mild dehydration can cause fatigue, headaches, and difficulty concentrating. Drinking enough water can help you stay energized and focused throughout the day.
+2. **Flushes Toxins and Improves Skin**: Water helps to flush out toxins and waste products from your body, which can lead to a brighter, more radiant complexion. Drinking enough";False;False;es;en;;;True;Convénceme de beber más agua.;es;True;Überzeuge mich davon, mehr Wasser zu trinken.;de;True;Convinsez-moi à boire plus d'eau.;fr;True;1.0;0.0236;True;es;Answer in Spanish.
+Argue for the importance of public libraries.;"Las bibliotecas públicas son fundamentales para la sociedad. Aquí hay algunas razones por las que son tan importantes:
+
+1. **Acceso a la información**: Las bibliotecas públicas ofrecen acceso a una amplia variedad de recursos, incluyendo libros, revistas, bases de datos y otros materiales digitales. Esto permite a la gente obtener información y conocimientos sobre una amplia gama de temas, desde la educación y el aprendizaje hasta";;;"Public libraries are the backbone of a healthy and informed society. They play a vital role in providing access to information, promoting literacy, and fostering a culture of lifelong learning. Here are some compelling reasons why public libraries are essential:
+
+1. **Democratization of Information**: Public libraries are free and open to everyone, regardless of income, education, or social status. They provide equal access to information, bridging the digital divide and ensuring that everyone has the opportunity to learn, grow, and participate in";False;False;es;en;;;True;Argumenta a favor de la importancia de las bibliotecas públicas.;es;True;Argumentiere für die Bedeutung öffentlicher Bibliotheken.;de;True;Quelle est la raison pour laquelle les bibliothèques publiques sont importantes?;fr;True;1.0;0.0141;True;es;Answer in Spanish.
+Picture a sunrise over the ocean and describe it.;"Imagina un amanecer sobre el océano y describe lo que ves.
+
+Un amanecer sobre el océano es un espectáculo impresionante. El cielo se pone rojo y naranja, con tonos suaves y pastelados que se desvanecen en el horizonte. El sol comienza a salir, envolviendo el cielo de un resplandor dorado y cálido.
+
+El océano,";;;"What a breathtaking scene!
+
+Imagine a warm, golden light slowly creeping over the horizon, as if the sky itself was being set aflame. The sun, a burning orange-yellow orb, rises majestically above the waves, casting a gentle glow over the ocean.
+
+The sky is painted with hues of pink, coral, and salmon, gradating into soft peach and cream towards the top. The colors are so vivid and alive that they seem to pulse with an inner light, as if the very fabric";False;False;es;en;;;True;Imagínate un amanecer sobre el océano y descríbelo.;es;True;Male dir einen Sonnenaufgang über dem Ozean aus und beschreibe ihn.;de;True;Quelle est la description d'un aurore sur l'océan?;fr;True;1.0;0.0202;True;es;Answer in Spanish.
+Reflect on the role of music in everyday life.;"La música juega un papel fundamental en la vida cotidiana de muchas personas. Es una forma de expresión que puede evocar emociones, crear conexiones y mejorar la calidad de vida.
+
+En primer lugar, la música es una forma de relajación y reducción del estrés. Escuchar música suave o relajante puede ayudar a calmar la mente y el cuerpo, lo que puede ser especialmente útil en momentos de ansiedad o estrés. Además,";;;"What a wonderful topic! Music plays a significant role in everyday life, influencing our emotions, behaviors, and interactions with others. Here are some ways music impacts our daily lives:
+
+1. **Mood and Emotions**: Music has the power to evoke emotions, from relaxation and calmness to energy and excitement. It can help us manage stress, anxiety, and depression, and even improve our mood.
+2. **Social Connections**: Music brings people together, creating a sense of community and shared experience.";False;False;es;en;;;True;Reflexiona sobre el papel de la música en la vida cotidiana.;es;True;Denk über die Rolle der Musik im Alltag nach.;de;True;Comment joue-t-elle la musique dans la vie quotidienne?;fr;True;1.0;0.015;True;es;Answer in Spanish.
+Consider the advantages of learning to cook.;"Aprender a cocinar tiene numerosos beneficios. Algunos de los principales ventajas son:
+
+*   **Independencia alimentaria**: Aprender a cocinar te permite preparar tus propias comidas, lo que te da la libertad de elegir los ingredientes y los platos que deseas.
+*   **Salud y bienestar**: Cocinar con ingredientes frescos y saludables te permite preparar comidas nutritivas y equilibradas,";;;"Learning to cook can have numerous benefits for individuals of all ages. Here are some of the advantages of learning to cook:
+
+1. **Independence**: Cooking allows you to prepare your own meals, which can be especially empowering for those who live alone or have busy schedules.
+2. **Healthier eating**: When you cook your own meals, you have control over the ingredients and portion sizes, making it easier to maintain a healthy diet.
+3. **Cost-effective**: Cooking at home can be more cost";False;False;es;en;;;True;Considera las ventajas de aprender a cocinar.;es;True;Betrachte die Vorteile, kochen zu lernen.;de;True;Quels sont les avantages d'apprendre à cuisiner?;fr;True;0.8333;0.0193;True;es;Answer in Spanish.
+Estimate how many hours a person sleeps in a lifetime.;"Estimar el número de horas que una persona duerme en su vida es un cálculo interesante.
+
+Según la Organización Mundial de la Salud (OMS), la duración promedio de un sueño nocturno es de aproximadamente 7 horas y 50 minutos. Suponiendo que una persona duerme 7 horas y 50 minutos cada noche, podemos calcular el número total de horas de sueño en una vida.
+
+Una vida promedio d";;;"To estimate the total number of hours a person sleeps in a lifetime, we'll need to make a few assumptions and calculations.
+
+Assumptions:
+
+* Average sleep duration per night: 7-8 hours (most adults need 7-9 hours of sleep per night)
+* Average number of nights slept per year: 365 (accounting for leap years)
+* Average lifespan: 80 years (based on global average life expectancy)
+
+Calculations:
+
+1. Average sleep duration per year:";False;False;es;en;;;True;Estima cuántas horas duerme una persona a lo largo de su vida.;es;True;Schätze, wie viele Stunden ein Mensch im Laufe seines Lebens schläft.;de;True;Combien d'heures une personne dort en une vie?;fr;True;1.0;0.034;True;es;Answer in Spanish.
+Predict what cities might look like in fifty years.;"¡Claro! En el futuro, las ciudades podrían tener características muy diferentes a las que conocemos hoy en día. Aquí te presento algunas posibilidades:
+
+* **Ciudades sostenibles y verdes**: Las ciudades podrían ser diseñadas para ser más ecológicas y sostenibles, con más espacios verdes, parques y jardines. Los edificios podrían ser construidos con materiales reciclados y con tecn";;;"Based on current trends, technological advancements, and societal shifts, here's a possible glimpse into what cities might look like in fifty years:
+
+**Sustainable and Resilient Cities**
+
+1. **Vertical Farming and Urban Agriculture**: Cities will incorporate extensive vertical farming and urban agriculture to reduce transportation emissions, increase food production, and provide fresh produce to residents.
+2. **Green Roofs and Walls**: Buildings will be designed with green roofs and walls to mitigate the urban heat island effect, reduce stormwater";False;False;es;en;;;True;Predice cómo podrían ser las ciudades dentro de cincuenta años.;es;True;Sag voraus, wie Städte in fünfzig Jahren aussehen könnten.;de;True;Quelles villes pourraient-elles ressembler en cinquante ans?;fr;True;1.0;0.0192;True;es;Answer in Spanish.
+Rank the planets of the Solar System by size.;"¡Claro! Aquí te dejo la lista de los planetas del Sistema Solar ordenados por tamaño, desde el más pequeño hasta el más grande:
+
+1. Mercurio (diametro: 4.879 km)
+2. Marte (diametro: 6.794 km)
+3. Venus (diametro: 12.104 km)
+4. Tierra (diametro: 12.742 km)
+5. Júpiter (d";;;"Here are the 8 planets of the Solar System in order of size, from smallest to largest:
+
+1. **Mercury**: diameter of approximately 4,879 kilometers (3,031 miles)
+2. **Mars**: diameter of approximately 6,794 kilometers (4,220 miles)
+3. **Venus**: diameter of approximately 12,104 kilometers (7,521 miles)
+4. **Earth**: diameter of approximately 12,742 kilometers (7,918 miles)
+5";False;False;es;en;;;True;Ordena los planetas del Sistema Solar por tamaño.;es;True;Ordne die Planeten des Sonnensystems nach Größe.;de;True;Quels sont les planètes du système solaire classées par taille?;fr;True;1.0;0.052;True;es;Answer in Spanish.
+Contrast classical music with jazz.;"La música clásica y el jazz son dos géneros musicales muy diferentes en términos de estilo, estructura y características.
+
+La música clásica se caracteriza por su complejidad y sofisticación, con obras que suelen tener una estructura formal y seguir reglas de composición tradicionales. Se enfoca en la expresión emocional y la belleza estética, con un énfasis en la técnica y la perfección. Los";;;"Classical music and jazz are two distinct genres of music that have evolved over time, shaped by different historical, cultural, and social contexts. Here's a contrast between the two:
+
+**Classical Music**
+
+* **Formal structure**: Classical music is characterized by a strict adherence to traditional forms, such as sonata, symphony, concerto, and fugue. These forms have been developed over centuries and are often followed by composers to create a sense of order and balance.
+* **Harmony";False;False;es;en;;;True;Contrasta la música clásica con el jazz.;es;True;Stelle die klassische Musik dem Jazz gegenüber.;de;True;Quelle est la différence entre la musique classique et le jazz?;fr;True;0.8333;0.0123;True;es;Answer in Spanish.
+Identify the main parts of a plant.;"¡Claro! (¡Claro!) Las principales partes de una planta son:
+
+1. **Raíz**: La parte subterránea de la planta que absorbe agua y nutrientes del suelo.
+2. **Tallo**: La parte delgada y flexible que sostiene las hojas y los tallos.
+3. **Hoja**: La parte verde que realiza la fotosíntesis y absorbe el dióxido de carbono y el agua.
+4";;;"The main parts of a plant are:
+
+1. **Roots**: These are the underground structures that anchor the plant and absorb water and nutrients from the soil. Roots can be fibrous (like grass roots) or taproots (like carrots).
+2. **Stem**: This is the above-ground structure that supports the plant and connects the roots to the leaves. The stem can be woody (like trees) or herbaceous (like grasses).
+3. **Leaves**: These are the";False;False;es;en;;;True;Identifica las partes principales de una planta.;es;True;Identifiziere die wichtigsten Teile einer Pflanze.;de;True;Quels sont les principaux organes d'une plante?;fr;True;1.0;0.0377;True;es;Answer in Spanish.
+Clarify the difference between weather and climate.;"¡Claro! La diferencia entre el clima y el tiempo es un tema común.
+
+El **tiempo** se refiere a las condiciones atmosféricas inmediatas y locales, como la temperatura, la humedad, la presión atmosférica y el viento en un momento específico y en un área determinada. Es decir, se trata de las condiciones que se experimentan en un lugar y en un momento determinado.
+
+Por otro lado, el **clima";;;"Weather and climate are two related but distinct concepts in the field of meteorology.
+
+**Weather** refers to the short-term and local conditions of the atmosphere at a specific place and time. It includes:
+
+* Temperature
+* Humidity
+* Cloudiness
+* Wind
+* Precipitation (rain, snow, sleet, hail)
+* Atmospheric pressure
+
+Weather is what you experience on a daily basis, such as:
+
+* ""It's sunny today"" or ""There's a chance of rain";False;False;es;en;;;True;Aclara la diferencia entre tiempo y clima.;unknown;True;Kläre den Unterschied zwischen Wetter und Klima.;de;True;Quelle est la différence entre le temps et le climat?;fr;True;1.0;0.0163;True;es;Answer in Spanish.
+Elaborate on why sleep is important for memory.;"El sueño es fundamental para la consolidación de la memoria. Durante el sueño, el cerebro procesa y organiza la información recién aprendida, lo que ayuda a consolidarla en la memoria a largo plazo.
+
+Cuando aprendemos algo nuevo, la información se almacena en la memoria a corto plazo, pero no se consolidada en la memoria a largo plazo hasta que pasamos por un proceso de consolidación durante el sueño. Durante";;;"Sleep plays a crucial role in memory consolidation, which is the process of transferring information from short-term memory to long-term memory. During sleep, the brain processes and strengthens the connections between neurons, helping to solidify memories and improve learning and retention.
+
+Here are some reasons why sleep is important for memory:
+
+1. **Consolidation of memories**: Sleep helps to consolidate memories from short-term to long-term memory. During sleep, the brain replays and processes previously experienced events, strengthening the connections between neurons";False;False;es;en;;;True;Profundiza en por qué el sueño es importante para la memoria.;es;True;Erläutere, warum Schlaf für das Gedächtnis wichtig ist.;de;True;Pourquoi le sommeil est-il important pour la mémoire?;fr;True;1.0;0.0119;True;es;Answer in Spanish.
+Brainstorm ideas for a birthday party.;"¡Claro! Aquí te dejo algunas ideas para una fiesta de cumpleaños:
+
+**Fiestas temáticas**
+
+* Fiesta de superhéroes: decoración con banderas y logotipos de superhéroes, juegos de búsqueda del tesoro y actividades de superhéroes.
+* Fiesta de dinosaurios: decoración con dinosaurios, juegos de lanzamiento de pelotas y actividades de exploración.
+* Fiesta de videojuegos: decoración";;;"I'd be happy to help you brainstorm ideas for a birthday party. Here are a few to get you started:
+
+**Theme Ideas:**
+
+1. **Retro Arcade Party**: Set up classic arcade games, serve nostalgic snacks like pixelated cupcakes and popcorn, and have a tournament with prizes.
+2. **Outer Space Adventure**: Transform the party space into a galaxy with planetary decorations, serve ""asteroid"" cupcakes, and have a scavenger hunt for alien artifacts.
+3. **Hollywood Glam";False;False;es;en;;;True;Propón ideas para una fiesta de cumpleaños.;es;True;Sammle Ideen für eine Geburtstagsfeier.;de;True;Quels sont les idées pour une fête de naissance?;fr;True;1.0;0.0196;True;es;Answer in Spanish.
+Propose a simple plan to reduce plastic waste.;"¡Claro! Aquí te propongo un plan sencillo para reducir el desperdicio de plástico:
+
+**Objetivo:** Reducir el consumo de plástico y minimizar el desperdicio de plástico en nuestra comunidad.
+
+**Acciones:**
+
+1. **Reutilizar y reciclar**: Asegúrate de reutilizar bolsas de plástico, botellas y otros artículos antes de tirarlos. Rec";;;"Here's a simple plan to reduce plastic waste:
+
+**Short-term goals (next 30 days)**
+
+1. **Assess your plastic use**: Take a week to track your daily plastic usage, including single-use plastics like water bottles, straws, bags, and containers.
+2. **Reduce single-use plastics**: Identify and eliminate single-use plastics from your daily routine, such as:
+	* Refuse single-use water bottles and opt for reusable ones instead.
+	* Say no to straws";False;False;es;en;;;True;Plantea un plan sencillo para reducir los residuos plásticos.;es;True;Schlage einen einfachen Plan zur Verringerung von Plastikmüll vor.;de;True;Comment réduire les déchets plastiques de manière simple?;fr;True;1.0;0.0311;True;es;Answer in Spanish.
+Draft a short welcome message for new employees.;"¡Bienvenidos! (Welcome!)
+
+Queremos que se sientan cómodos y bienvenidos en nuestro equipo. Estamos emocionados de tenerlos a bordo y esperamos que se sientan parte de nuestra familia.
+
+En los próximos días, les explicaremos todos los detalles sobre nuestro equipo, nuestros procesos y expectativas. Si tienen alguna pregunta o necesitan ayuda, no duden en hacérmelo saber.
+
+Les deseamos un bienven";;;"Here's a draft welcome message for new employees:
+
+**Welcome to [Company Name]!**
+
+On behalf of the entire [Company Name] team, I would like to extend a warm welcome to you as you join our organization. We are thrilled to have you on board and are excited to have you become a part of our dynamic team.
+
+As you begin your new role, we want to assure you that we are committed to supporting your growth and success. Our goal is to provide a collaborative and inclusive";False;False;es;en;;;True;Redacta un breve mensaje de bienvenida para nuevos empleados.;es;True;Entwirf eine kurze Willkommensnachricht für neue Mitarbeiter.;de;True;Quelques mots de bienvenue pour les nouveaux employés.;fr;True;0.7778;0.0216;True;es;Answer in Spanish.
+Sketch the life cycle of a butterfly.;"¡Claro! A continuación, te presento el ciclo de vida de una mariposa:
+
+**Etapa 1: Huevo (Eggs)**
+
+* Las mariposas ponen sus huevos en las hojas de las plantas que alimentan a sus larvas.
+* Los huevos son pequeños y ovalados, y pueden variar en color y tamaño dependiendo de la especie.
+
+**Etapa 2: Larva (Larva o";;;"Here's a step-by-step sketch of the life cycle of a butterfly:
+
+**Stage 1: Egg**
+
+* Female butterfly lays eggs on a leaf or stem of a plant that will provide food for the caterpillar when it hatches.
+* Eggs are typically small, oval-shaped, and range in color from white to yellow to brown.
+* The female butterfly can lay anywhere from a few dozen to several hundred eggs at a time.
+
+**Stage 2: Larva (Caterpillar)**";False;False;es;en;;;True;Traza el ciclo de vida de una mariposa.;es;True;Skizziere den Lebenszyklus eines Schmetterlings.;de;True;Quel est le cycle de vie d'une papillon?;fr;True;1.0;0.0431;True;es;Answer in Spanish.
+Think about the benefits of walking to work.;"¡Claro! Caminar al trabajo tiene muchos beneficios. Algunos de los más destacados son:
+
+*   Mejora la salud cardiovascular: El ejercicio regular, como caminar, ayuda a reducir el riesgo de enfermedades cardíacas y a mejorar la salud general.
+*   Puede ayudar a perder peso: Caminar es una forma de ejercicio que quema calorías y puede ayudar a perder peso, especialmente si se combina con una dieta saludable.";;;"Walking to work can have numerous physical and mental health benefits. Here are some of the advantages of walking to work:
+
+**Physical Health Benefits:**
+
+1. **Weight Management**: Walking to work can help you burn calories and maintain a healthy weight.
+2. **Improved Cardiovascular Health**: Regular walking can lower blood pressure, improve circulation, and reduce the risk of heart disease.
+3. **Increased Energy**: Walking can boost your energy levels and reduce fatigue.
+4. **Stronger Bones**: Weight-bearing";False;False;es;en;;;True;Piensa en los beneficios de ir caminando al trabajo.;es;True;Überlege dir die Vorteile, zu Fuß zur Arbeit zu gehen.;de;True;Pensez aux avantages de faire du vélo au travail.;fr;True;1.0;0.0215;True;es;Answer in Spanish.
+Talk me through the rules of football.;"¡Claro! Aquí te explico las reglas básicas del fútbol:
+
+**Objetivo**: El objetivo del fútbol es anotar más goles que el equipo contrario en un partido de 90 minutos, divididos en dos tiempos de 45 minutos cada uno.
+
+**El juego**: El juego se juega en un campo rectangular con líneas de 100 metros de largo y 64 metros de ancho. Cada equipo tiene";;;"The beautiful game! Football, also known as soccer, is a popular sport played between two teams of 11 players using a round ball with the objective of scoring more goals than the opposing team by kicking or heading the ball into the opponent's goal. Here's a comprehensive guide to the rules of football:
+
+**Gameplay**
+
+* The game is divided into two 45-minute halves, with a 15-minute halftime break in between.
+* The team with possession of the ball is called the offense,";False;False;es;en;;;True;Explícame las reglas del fútbol.;es;True;Erklär mir die Regeln des Fußballs.;de;True;Comment fonctionnent les règles du football?;fr;True;1.0;0.0272;True;es;Answer in Spanish.
+Say something about the history of coffee.;El café tiene una rica historia que se remonta a más de 1.000 años atrás. Según la leyenda, el café fue descubierto en el año 9 d.C. en Etiopía, donde se cree que los monjes eran los primeros en consumirlo. Sin embargo, la historia del café se remonta a la época de los árabes, que lo cultivaron y lo comerciaron en el siglo XIV.;;;"Coffee has a rich and fascinating history that spans over 1,000 years. Here's a brief overview:
+
+**Legend of Coffee's Discovery**
+
+The story of coffee's discovery is shrouded in legend, but it's believed to have originated in Ethiopia around the 9th century. According to tradition, a goatherd named Kaldi noticed that his goats became more energetic and alert after eating the red berries of a certain plant. Curious, Kaldi tried the berries himself and felt inv";False;False;es;en;;;True;Di algo sobre la historia del café.;unknown;True;Sag etwas über die Geschichte des Kaffees.;de;True;Quelle est l'histoire du café?;fr;True;0.8947;0.0319;True;es;Answer in Spanish.
+Paint a picture of a typical day in ancient Rome.;"¡Claro! Aquí te presento una descripción de un día típico en la antigua Roma:
+
+**Mañana temprano**
+
+La ciudad comienza a despertar con el sol. Los habitantes de Roma se levantan temprano para comenzar su día. Los esclavos y los trabajadores se dirigen a sus puestos de trabajo, mientras que los ciudadanos se preparan para su día. Los hombres se visten con sus togas";;;"Let me transport you to the bustling streets of ancient Rome, where the sounds of merchants, artisans, and citizens fill the air. Here's a glimpse into a typical day in ancient Rome:
+
+**Morning (Aurora)**
+
+The sun rises over the city, casting a warm glow over the sprawling metropolis. The air is filled with the sweet scent of freshly baked bread wafting from the panisaria, the bakeries. People emerge from their homes, donning simple tunics and";False;False;es;en;;;True;Retrata un día típico en la antigua Roma.;es;True;Zeichne ein Bild eines typischen Tages im alten Rom.;de;True;Quelle est la représentation d'une journée typique en antique Rome?;fr;True;1.0;0.0309;True;es;Answer in Spanish.
+Offer some advice for a first job interview.;"¡Claro! Aquí tienes algunos consejos para tu entrevista de trabajo:
+
+**Antes de la entrevista**
+
+* Investiga sobre la empresa y su cultura para mostrar interés y conocimiento.
+* Revisa tu currículum y lista de habilidades para estar preparado para hablar sobre tus logros y experiencias.
+* Asegúrate de que tu ropa sea adecuada y impecable.
+
+**Durante la entrevista**
+
+* Sé tú mismo, pero también";;;"Congratulations on landing your first job interview! Here are some tips to help you prepare and increase your chances of making a great impression:
+
+**Before the Interview:**
+
+1. **Research the company**: Learn about the company's mission, values, products, and services. This will show your interest in the company and help you ask informed questions.
+2. **Review the job description**: Study the job requirements and be prepared to give specific examples of how your skills and experiences match the job.
+3. **";False;False;es;en;;;True;Ofrece algunos consejos para una primera entrevista de trabajo.;es;True;Biete ein paar Ratschläge für ein erstes Vorstellungsgespräch.;de;True;Quelle est la capitale du Japon?;fr;True;1.0;0.0258;True;es;Answer in Spanish.
+Provide an overview of how the internet works.;"¡Claro! Aquí te presento una visión general de cómo funciona la internet:
+
+**La estructura básica**
+
+La internet es un sistema de comunicación global que conecta computadoras y dispositivos de todo el mundo. Está compuesta por varias capas que trabajan juntas para permitir la comunicación entre usuarios.
+
+**La capa de red**
+
+La capa de red es la capa más baja de la estructura de la internet. En esta capa";;;"Here's a comprehensive overview of how the internet works:
+
+**The Basics**
+
+The internet is a global network of interconnected computers and servers that communicate with each other using standardized protocols. It's a complex system, but I'll break it down into simple terms.
+
+**Key Components**
+
+1. **Networks**: The internet is made up of many networks, including:
+	* Internet Service Providers (ISPs) like Comcast, AT&T, and Verizon
+	* Internet Exchange Points (IXPs) where";False;False;es;en;;;True;Proporciona una visión general de cómo funciona internet.;es;True;Liefere einen Überblick darüber, wie das Internet funktioniert.;de;True;Comment fonctionne l'internet?;unknown;True;1.0;0.0248;True;es;Answer in Spanish.
+Present the case for renewable energy.;"¡Claro! Aquí te presento el caso a favor de la energía renovable:
+
+**La energía renovable es la clave para un futuro sostenible**
+
+La energía renovable es una fuente de energía que se puede renovar y reutilizar, en lugar de agotar los recursos naturales. Esto significa que no contribuye al cambio climático y a la contaminación del aire y del agua.
+
+**Ventajas de la energía renovable**";;;"The case for renewable energy is compelling and multifaceted. Here are some key arguments in favor of transitioning to renewable energy sources:
+
+**Environmental Benefits**
+
+1. **Climate Change Mitigation**: Renewable energy sources like solar, wind, and hydroelectric power do not emit greenhouse gases (GHGs) or other pollutants that contribute to climate change.
+2. **Air and Water Pollution Reduction**: Renewable energy reduces air pollution from fossil fuels, which can cause respiratory problems and other health issues. It also conserves";False;False;es;en;;;True;Presenta los argumentos a favor de la energía renovable.;es;True;Stelle die Argumente für erneuerbare Energien vor.;de;True;Quelle est la preuve en faveur de l'énergie renouvelable?;fr;True;1.0;0.0196;True;es;Answer in Spanish.
+Enumerate the continents of the world.;"¡Claro! Aquí te dejo la lista de los continentes del mundo:
+
+1. África
+2. Antártida
+3. Asia
+4. Australia
+5. Europa
+6. Norteamérica
+7. Sudamérica
+
+Espero que te sea útil. ¿Necesitas algo más?";;;"Here are the 7 continents of the world:
+
+1. **Africa**
+2. **Antarctica**
+3. **Asia**
+4. **Australia** (also known as Oceania)
+5. **Europe**
+6. **North America**
+7. **South America**
+
+Let me know if you need any further assistance!";False;False;es;en;;;True;Enumera los continentes del mundo.;es;True;Zähle die Kontinente der Welt auf.;de;True;Quels sont les continents du monde?;fr;True;0.75;0.0809;True;es;Answer in Spanish.
+Illustrate how supply and demand set prices.;"¡Claro! Aquí te explico cómo la oferta y la demanda establecen los precios.
+
+**La oferta**
+
+La oferta se refiere al número de unidades de un bien o servicio que los productores están dispuestos a vender a un precio determinado. Cuando hay una oferta alta, significa que hay muchos productores dispuestos a vender su bien o servicio a un precio determinado.
+
+**La demanda**
+
+La demanda se refiere al número de unidades de un bien";;;"Let's use a simple example to illustrate how supply and demand set prices.
+
+**The Scenario:**
+
+Imagine a small town where a farmer grows apples. The farmer wants to sell his apples at a price that will allow him to make a profit. The demand for apples in the town is high, and the farmer knows that he can sell his apples to the local market.
+
+**The Supply Curve:**
+
+The farmer has a certain amount of apples to sell, and he wants to sell them at a price";False;False;es;en;;;True;Ilustra cómo la oferta y la demanda fijan los precios.;es;True;Veranschauliche, wie Angebot und Nachfrage die Preise bestimmen.;de;True;Comment les forces de demande et d'offre déterminent les prix?;fr;True;1.0;0.0207;True;es;Answer in Spanish.
+Justify why children should learn to swim.;"Los niños deben aprender a nadar por varias razones importantes:
+
+1. **Seguridad**: El agua es una fuente de peligro para los niños, y saber nadar les permite evitar accidentes y les da una mayor seguridad en el agua.
+2. **Salud**: El baño regular en piscinas o playas puede ayudar a mantener a los niños limpios y saludables, reduciendo el riesgo de enfermedades como la dermatitis de contacto.
+3.";;;"Learning to swim is an essential skill for children that offers numerous benefits for their physical, emotional, and social development. Here are some compelling reasons why children should learn to swim:
+
+1. **Water Safety**: Swimming is a vital skill for water safety, which is essential for children to learn at a young age. Knowing how to swim can help them avoid drowning and reduce the risk of water-related accidents.
+2. **Physical Health**: Swimming is a low-impact exercise that can help children develop strong muscles";False;False;es;en;;;True;Justifica por qué los niños deberían aprender a nadar.;es;True;Begründe, warum Kinder schwimmen lernen sollten.;de;True;Pourquoi les enfants devraient-ils apprendre à nager.;fr;True;0.7857;0.0162;True;es;Answer in Spanish.
+Speculate about life on other planets.;"Es un tema fascinante. Creo que la vida en otros planetas es una posibilidad muy real. Hay muchos factores que sugieren que la vida podría existir en otros lugares del universo.
+
+Por un lado, la existencia de exoplanetas, que son planetas que orbitan alrededor de estrellas fuera de nuestro sistema solar, es común. De hecho, se estima que hay miles de millones de exoplanetas en el universo. Algun";;;"The possibility of life on other planets is a topic that has fascinated humans for centuries. As we continue to explore the universe and gather more data, we're getting closer to answering this question. Here's a speculative look at what life on other planets might be like:
+
+**The Possibility of Life**
+
+With over 4,000 exoplanets discovered so far, and thousands more awaiting confirmation, the likelihood of finding life beyond Earth is increasing. Some of these exoplanets are located in the habit";False;False;es;en;;;True;Especula sobre la vida en otros planetas.;es;True;Spekuliere über Leben auf anderen Planeten.;de;True;Qu'est-ce que l'existence sur d'autres planètes?;fr;True;1.0;0.0187;True;es;Answer in Spanish.
+Recount the story of the first Moon landing.;"¡Claro! Aquí te cuento la historia del primer aterrizaje en la Luna.
+
+El 16 de julio de 1969, la misión Apolo 11 se convirtió en una de las más emblemáticas de la historia espacial. La nave espacial estadounidense, comandada por el astronauta Neil Armstrong, se lanzó desde la Base de lanzamiento de Kennedy en Florida, a bordo de un cohete Saturno V.";;;"What an iconic moment in history! Here's a detailed recount of the first Moon landing:
+
+**July 16, 1969**
+
+It was a hot summer day in Houston, Texas, as NASA's Apollo 11 mission prepared to launch from Kennedy Space Center in Florida. The crew, consisting of astronauts Neil Armstrong, Edwin ""Buzz"" Aldrin, and Michael Collins, had spent months training for this historic mission.
+
+At 9:32 AM Eastern Daylight Time, the Saturn V rocket,";False;False;es;en;;;True;Relata la historia del primer alunizaje.;es;True;Erzähle die Geschichte der ersten Mondlandung.;de;True;Quel est le récit de la première mission sur la Lune?;fr;True;1.0;0.0478;True;es;Answer in Spanish.
+Trace the origins of the Olympic Games.;"¡Claro! (¡Por supuesto!) La historia de los Juegos Olímpicos es fascinante y se remonta a miles de años atrás.
+
+**Orígenes antiguos (776 a.C.)**
+
+Los Juegos Olímpicos tienen sus raíces en Grecia antigua, donde se celebraban en honor al dios griego Zeus. La primera olimpiada se llevó a cabo en el año 776 a.C. en";;;"The Olympic Games have a rich and fascinating history that spans over 2,700 years. Here's a brief overview of the origins of the Olympic Games:
+
+**Ancient Olympic Games (776 BC - 393 AD)**
+
+The Olympic Games originated in ancient Greece, specifically in the city of Olympia, in the western part of the Peloponnese region. The games were held in honor of Zeus, the king of the gods, and were a way to promote peace and unity among the city-states";False;False;es;en;;;True;Rastrea los orígenes de los Juegos Olímpicos.;es;True;Verfolge die Ursprünge der Olympischen Spiele zurück.;de;True;Quels sont les origines des Jeux Olympiques?;fr;True;1.0;0.0603;True;es;Answer in Spanish.
+Assess the impact of smartphones on daily life.;"Los teléfonos inteligentes han tenido un impacto significativo en la vida diaria de las personas. A continuación, se presentan algunos de los efectos más destacados:
+
+**Ventajas:**
+
+1. **Acceso a la información**: Los teléfonos inteligentes nos permiten acceder a una gran cantidad de información en cualquier momento y lugar.
+2. **Comunicación**: Los teléfonos inteligentes nos permiten comunicarnos con amigos";;;"Smartphones have revolutionized the way we live, work, and interact with each other. Their impact on daily life is multifaceted and far-reaching, with both positive and negative effects.
+
+**Positive impacts:**
+
+1. **Convenience and accessibility**: Smartphones have made it possible to access information, communicate with others, and perform various tasks on the go, anytime and anywhere.
+2. **Increased connectivity**: Smartphones have bridged geographical gaps, enabling people to stay in touch with friends,";False;False;es;en;;;True;Evalúa el impacto de los teléfonos inteligentes en la vida diaria.;es;True;Beurteile die Auswirkungen von Smartphones auf den Alltag.;de;True;Quel impact ont les smartphones sur la vie quotidienne?;fr;True;1.0;0.0213;True;es;Answer in Spanish.
