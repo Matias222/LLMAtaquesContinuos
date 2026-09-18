@@ -137,6 +137,10 @@ def main():
     Ea = load_embeddings(args.source, dev)
     Eb = load_embeddings(args.target, dev)
     print(f"origen  {tuple(Ea.shape)}\ndestino {tuple(Eb.shape)}")
+    # La dosis de un parche se lee contra la norma tipica de un embedding de SU
+    # modelo: a=1 no es la misma perturbacion relativa en los dos.
+    na, nb = Ea.norm(dim=1).mean().item(), Eb.norm(dim=1).mean().item()
+    print(f"norma media de embedding: origen {na:.4f}  destino {nb:.4f}  (destino/origen {nb / na:.3f})")
 
     patch = torch.load(args.patch, map_location=dev).to(torch.float32)
     print(f"parche  {tuple(patch.shape)}  norma {patch.norm().item():.4f}")
@@ -188,6 +192,7 @@ def main():
     meta = {"source": args.source, "target": args.target, "patch": args.patch,
             "d_source": Ea.shape[1], "d_target": Eb.shape[1],
             "norm_source": patch.norm().item(), "norm_mapped": mapped.norm().item(),
+            "emb_norm_source": na, "emb_norm_target": nb,
             "roundtrip_top1_heldout": t1, "roundtrip_top10_heldout": t10,
             "roundtrip_top1_insample": t1i, "n_heldout": len(held),
             "control": args.control}
