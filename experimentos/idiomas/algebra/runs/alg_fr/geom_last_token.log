@@ -1,0 +1,26 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.41it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.35it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.14it/s]
+parche alg_fr       anchor=goal_all  shape=(1, 1, 3072) norma=0.8418  algebra/runs/alg_fr/lang_patch_best_train.pt
+prompts: 50 (heldout, filas 200..249)  |  base: prompt  |  referencias: ['frq', 'qde', 'qes', 'instr', 'de', 'corto']
+activaciones:   0%|          | 0/50 [00:00<?, ?it/s]activaciones:   2%|▏         | 1/50 [00:00<00:17,  2.84it/s]activaciones:   4%|▍         | 2/50 [00:00<00:12,  3.80it/s]activaciones:   6%|▌         | 3/50 [00:00<00:10,  4.30it/s]activaciones:   8%|▊         | 4/50 [00:00<00:09,  4.60it/s]activaciones:  10%|█         | 5/50 [00:01<00:09,  4.79it/s]activaciones:  12%|█▏        | 6/50 [00:01<00:09,  4.88it/s]activaciones:  14%|█▍        | 7/50 [00:01<00:08,  4.95it/s]activaciones:  16%|█▌        | 8/50 [00:01<00:08,  4.97it/s]activaciones:  18%|█▊        | 9/50 [00:01<00:08,  5.03it/s]activaciones:  20%|██        | 10/50 [00:02<00:07,  5.07it/s]activaciones:  22%|██▏       | 11/50 [00:02<00:07,  5.09it/s]activaciones:  24%|██▍       | 12/50 [00:02<00:07,  5.10it/s]activaciones:  26%|██▌       | 13/50 [00:02<00:07,  5.12it/s]activaciones:  28%|██▊       | 14/50 [00:02<00:07,  5.13it/s]activaciones:  30%|███       | 15/50 [00:03<00:06,  5.13it/s]activaciones:  32%|███▏      | 16/50 [00:03<00:06,  5.12it/s]activaciones:  34%|███▍      | 17/50 [00:03<00:06,  5.11it/s]activaciones:  36%|███▌      | 18/50 [00:03<00:06,  5.11it/s]activaciones:  38%|███▊      | 19/50 [00:03<00:06,  5.10it/s]activaciones:  40%|████      | 20/50 [00:04<00:05,  5.13it/s]activaciones:  42%|████▏     | 21/50 [00:04<00:05,  5.13it/s]activaciones:  44%|████▍     | 22/50 [00:04<00:05,  5.12it/s]activaciones:  46%|████▌     | 23/50 [00:04<00:05,  5.14it/s]activaciones:  48%|████▊     | 24/50 [00:04<00:05,  5.15it/s]activaciones:  50%|█████     | 25/50 [00:05<00:04,  5.13it/s]activaciones:  52%|█████▏    | 26/50 [00:05<00:04,  5.12it/s]activaciones:  54%|█████▍    | 27/50 [00:05<00:04,  5.10it/s]activaciones:  56%|█████▌    | 28/50 [00:05<00:04,  5.11it/s]activaciones:  58%|█████▊    | 29/50 [00:05<00:04,  5.12it/s]activaciones:  60%|██████    | 30/50 [00:06<00:03,  5.13it/s]activaciones:  62%|██████▏   | 31/50 [00:06<00:03,  5.13it/s]activaciones:  64%|██████▍   | 32/50 [00:06<00:03,  5.12it/s]activaciones:  66%|██████▌   | 33/50 [00:06<00:03,  5.04it/s]activaciones:  68%|██████▊   | 34/50 [00:06<00:03,  4.83it/s]activaciones:  70%|███████   | 35/50 [00:07<00:03,  4.87it/s]activaciones:  72%|███████▏  | 36/50 [00:07<00:02,  4.92it/s]activaciones:  74%|███████▍  | 37/50 [00:07<00:02,  4.93it/s]activaciones:  76%|███████▌  | 38/50 [00:07<00:02,  4.98it/s]activaciones:  78%|███████▊  | 39/50 [00:07<00:02,  5.04it/s]activaciones:  80%|████████  | 40/50 [00:08<00:01,  5.09it/s]activaciones:  82%|████████▏ | 41/50 [00:08<00:01,  5.11it/s]activaciones:  84%|████████▍ | 42/50 [00:08<00:01,  5.10it/s]activaciones:  86%|████████▌ | 43/50 [00:08<00:01,  5.11it/s]activaciones:  88%|████████▊ | 44/50 [00:08<00:01,  5.14it/s]activaciones:  90%|█████████ | 45/50 [00:08<00:00,  5.14it/s]activaciones:  92%|█████████▏| 46/50 [00:09<00:00,  5.15it/s]activaciones:  94%|█████████▍| 47/50 [00:09<00:00,  5.11it/s]activaciones:  96%|█████████▌| 48/50 [00:09<00:00,  5.10it/s]activaciones:  98%|█████████▊| 49/50 [00:09<00:00,  5.13it/s]activaciones: 100%|██████████| 50/50 [00:09<00:00,  5.12it/s]activaciones: 100%|██████████| 50/50 [00:09<00:00,  5.01it/s]
+
+--- contra pregunta en francés
+parche      estadistico               L9     L12     L14     L16     L20     L24     L28
+alg_fr      cos_de_medias          0.696   0.754   0.734   0.766   0.828   0.894   0.917
+alg_fr      media_de_cosenos       0.641   0.688   0.655   0.691   0.752   0.797   0.824
+alg_fr      media_cos_vs_dir       0.625   0.662   0.613   0.644   0.659   0.713   0.701
+
+--- contra instrucción de francés
+parche      estadistico               L9     L12     L14     L16     L20     L24     L28
+alg_fr      cos_de_medias          0.539   0.574   0.593   0.746   0.868   0.910   0.933
+alg_fr      media_de_cosenos       0.523   0.551   0.566   0.706   0.825   0.862   0.883
+alg_fr      media_cos_vs_dir       0.484   0.503   0.494   0.625   0.691   0.725   0.713
+
+--- contra instrucción de respuesta corta
+parche      estadistico               L9     L12     L14     L16     L20     L24     L28
+alg_fr      cos_de_medias          0.330   0.348   0.287   0.293   0.432   0.403   0.457
+alg_fr      media_de_cosenos       0.340   0.347   0.290   0.246   0.327   0.276   0.340
+alg_fr      media_cos_vs_dir       0.297   0.305   0.240   0.247   0.345   0.323   0.348
+
+Guardado: algebra/runs/alg_fr/geom_last_token/heldout.json
+Graficar:  python3 plot_last_token.py plot algebra/runs/alg_fr/geom_last_token/heldout.json

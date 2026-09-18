@@ -1,0 +1,78 @@
+# Algebra de direcciones: geometria en el espacio del parche
+
+- `fr`: `algebra/runs/alg_fr/lang_patch_best_train.pt`  (norma 0.8418)
+- `fr_up`: `algebra/runs/alg_fr_up/lang_patch_best_train.pt`  (norma 0.9765)
+- `es`: `algebra/runs/alg_es/lang_patch_best_train.pt`  (norma 0.8655)
+- `es_up`: `algebra/runs/alg_es_up/lang_patch_best_train.pt`  (norma 0.9742)
+- `de`: `algebra/runs/alg_de/lang_patch_best_train.pt`  (norma 0.8491)
+- `de_up`: `algebra/runs/alg_de_up/lang_patch_best_train.pt`  (norma 1.0230)
+
+Dimension 3072: el coseno entre dos direcciones al azar es ~±0.018.
+
+## Techo de ruido (misma celda, otro orden de datos)
+
+| celda | cos(original, replica) | error relativo |
+|---|---|---|
+| fr | 0.490 | 1.015 |
+| es_up | 0.583 | 0.907 |
+
+Ningun `cos(v*, v_real)` de abajo puede superar esto de forma interpretable: es lo que se parece un parche a SI MISMO reentrenado.
+
+## Cosenos entre celdas
+
+| | fr | fr_up | es | es_up | de | de_up |
+|---|---|---|---|---|---|---|
+| **fr** | 1.000 | 0.254 | 0.253 | 0.170 | 0.194 | 0.131 |
+| **fr_up** | 0.254 | 1.000 | 0.121 | 0.184 | 0.137 | 0.153 |
+| **es** | 0.253 | 0.121 | 1.000 | 0.250 | 0.167 | 0.112 |
+| **es_up** | 0.170 | 0.184 | 0.250 | 1.000 | 0.106 | 0.151 |
+| **de** | 0.194 | 0.137 | 0.167 | 0.106 | 1.000 | 0.205 |
+| **de_up** | 0.131 | 0.153 | 0.112 | 0.151 | 0.205 | 1.000 |
+
+## Paralelogramos  v* = s + o − d
+
+| oculta = s + o − d | cos(v*, real) | err rel | ‖v*‖ / ‖real‖ | cos(s, real) | cos(o, real) | cos(s+o, real) | cos(s+o−azar, real) |
+|---|---|---|---|---|---|---|---|
+| fr=fr_up+es-es_up | **0.209** | 1.795 | 1.443 / 0.842 | 0.254 | 0.253 | 0.338 | 0.259 |
+| fr_up=fr+es_up-es | **0.210** | 1.548 | 1.377 / 0.977 | 0.254 | 0.184 | 0.283 | 0.241 |
+| es=es_up+fr-fr_up | **0.232** | 1.747 | 1.457 / 0.865 | 0.250 | 0.253 | 0.328 | 0.267 |
+| es_up=es+fr_up-fr | **0.187** | 1.552 | 1.353 / 0.974 | 0.250 | 0.184 | 0.287 | 0.264 |
+| fr=fr_up+de-de_up | **0.184** | 1.888 | 1.512 / 0.842 | 0.254 | 0.194 | 0.299 | 0.230 |
+| fr_up=fr+de_up-de | **0.176** | 1.628 | 1.438 / 0.977 | 0.254 | 0.153 | 0.263 | 0.230 |
+| de=de_up+fr-fr_up | **0.161** | 1.872 | 1.487 / 0.849 | 0.205 | 0.194 | 0.265 | 0.214 |
+| de_up=de+fr_up-fr | **0.154** | 1.554 | 1.384 / 1.023 | 0.205 | 0.153 | 0.234 | 0.213 |
+| es=es_up+de-de_up | **0.181** | 1.832 | 1.495 / 0.865 | 0.250 | 0.167 | 0.284 | 0.227 |
+| es_up=es+de_up-de | **0.193** | 1.628 | 1.454 / 0.974 | 0.250 | 0.151 | 0.263 | 0.225 |
+| de=de_up+es-es_up | **0.169** | 1.868 | 1.490 / 0.849 | 0.205 | 0.167 | 0.251 | 0.193 |
+| de_up=de+es_up-es | **0.162** | 1.550 | 1.388 / 1.023 | 0.205 | 0.151 | 0.237 | 0.213 |
+
+`cos(v*, real)` solo significa algo si supera a `cos(s, real)`, `cos(o, real)` y a la suma sin resta: esas columnas son lo que ya se parecia la esquina oculta a los ingredientes. OJO: si todas las celdas comparten un componente comun grande `c`, TODOS estos cosenos salen altos aunque no haya ninguna estructura (v = c + ruido ya da cos(v*, real) > 0). El test libre de `c` es el de las dos secciones que siguen: son diferencias, `c` se cancela, y sin estructura dan ~0. Cerrar el paralelogramo `fr_up = fr + es_up − es` es exactamente pedir `u_fr = u_es`.
+
+## Direcciones de formato  u_L = v_L_up − v_L
+
+- cos(u_fr, u_es) = **0.094**
+- cos(u_fr, u_de) = **0.049**
+- cos(u_es, u_de) = **0.064**
+- normas: u_fr 1.116, u_es 1.130, u_de 1.188
+
+Si "mayusculas" es un eje independiente del idioma, las tres se parecen.
+
+## Direcciones de idioma  v_A − v_B, en normal vs en MAYUSCULAS
+
+- fr-es: cos = **0.137**  (normas 1.044 / 1.246)
+- fr-de: cos = **0.115**  (normas 1.074 / 1.302)
+- es-de: cos = **0.140**  (normas 1.107 / 1.302)
+
+## Modelo aditivo  v = c + a_idioma + b_formato + interaccion
+
+- **R² aditivo = 0.656**  (1.0 = todos los paralelogramos cierran exactos; **0.60 es lo que dan celdas AL AZAR**, por grados de libertad: el piso no es 0)
+- variacion entre celdas: idioma 44.6%, formato 21.0%, interaccion 34.4%
+- componente comun c: norma 0.513; cos(celda, c): fr 0.58, es 0.55, de 0.52, fr_up 0.57, es_up 0.57, de_up 0.55
+- normas: a_idioma fr 0.500, es 0.513, de 0.527; b_MAYUS 0.352
+
+## SVD de las celdas (fraccion de energia por componente)
+
+- crudo:    0.313  0.177  0.158  0.140  0.113  0.100
+- centrado: 0.256  0.228  0.208  0.163  0.144  0.000
+
+Centrado y aditivo perfecto con 3 idiomas x 2 formatos serian 3 componentes (2 de idioma + 1 de formato); energia en la 4a y 5a es interaccion.

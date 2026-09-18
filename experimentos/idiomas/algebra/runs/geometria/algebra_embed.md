@@ -1,0 +1,80 @@
+# Algebra de direcciones: los parches contra la matriz de embeddings
+
+Cosenos al azar en esta dimension: ~±0.018.
+
+## Offset de mayusculas del vocabulario  (mean E[" WORD"] − E[" word"], 1709 pares, techo split-half 0.814)
+
+| direccion | cos |
+|---|---|
+| fr | 0.058 |
+| es | 0.023 |
+| de | 0.045 |
+| fr_up | 0.076 |
+| es_up | 0.091 |
+| de_up | 0.095 |
+| u_fr (=fr_up-fr) | 0.022 |
+| u_es (=es_up-es) | 0.061 |
+| u_de (=de_up-de) | 0.050 |
+| fr-es | 0.028 |
+| fr-de | 0.010 |
+| es-de | -0.017 |
+| c (comun) | 0.119 |
+| b_MAYUS (aditivo) | 0.073 |
+| a_fr (aditivo) | 0.001 |
+| a_es (aditivo) | -0.014 |
+| a_de (aditivo) | 0.013 |
+
+## Offsets de traduccion del vocabulario  (mean E[palabra_L] − E[palabra_en])
+
+pares usados: fr 46, es 43, de 40
+
+| direccion | offset fr | offset es | offset de |
+|---|---|---|---|
+| fr | 0.097 | 0.067 | 0.058 |
+| es | 0.055 | 0.079 | 0.038 |
+| de | 0.048 | 0.052 | 0.071 |
+| fr_up | 0.085 | 0.056 | 0.053 |
+| es_up | 0.087 | 0.119 | 0.087 |
+| de_up | 0.073 | 0.079 | 0.110 |
+| u_fr (=fr_up-fr) | 0.001 | -0.002 | 0.003 |
+| u_es (=es_up-es) | 0.032 | 0.041 | 0.046 |
+| u_de (=de_up-de) | 0.029 | 0.031 | 0.044 |
+| fr-es | 0.032 | -0.012 | 0.015 |
+| fr-de | 0.038 | 0.011 | -0.011 |
+| es-de | 0.007 | 0.022 | -0.025 |
+| c (comun) | 0.134 | 0.136 | 0.127 |
+| b_MAYUS (aditivo) | 0.034 | 0.038 | 0.051 |
+| a_fr (aditivo) | 0.027 | -0.029 | -0.030 |
+| a_es (aditivo) | -0.005 | 0.043 | -0.013 |
+| a_de (aditivo) | -0.021 | -0.015 | 0.040 |
+
+direccion de idioma del parche contra la del vocabulario: fr-es 0.082, fr-de 0.082, es-de 0.077
+offsets entre si: fr~es 0.855, fr~de 0.824, es~de 0.811
+
+## Tokens mas cercanos y mas lejanos (embeddings centrados)
+
+- **fr**  cerca: `encoded` ` plav` `']>;
+` `asının` `无码` ` cigaret` `.MoveNext` `>';
+` `isoft` `	ZEPHIR` `豪` `blick`  (0.10)   lejos: ` Why` `?` ` Bar` ` Wake` ` why` ` für` ` Is` ` When` ` Let` ` Who` ` Hal` ` Sal`  (-0.10)
+- **es**  cerca: `_UN` `殺` ` Pieces` ` nhật` `’il` `erea` `يري` `Kill` ` podría` `asure` `cimiento` ` متخصص`  (0.07)   lejos: ` went` ` styling` ` Sculpt` `\Validator` `=models` ` lattice` ` hailed` ` Brand` ` foundation` ` geb` ` consisting` ` go`  (-0.08)
+- **de**  cerca: ` رشد` `setContent` `_nt` `			    	` ` prav` ` بواسطة` `쟁` `ittance` ` nghiêm` `essen` `věl` `.visitMethodInsn`  (0.07)   lejos: `{\` ` eux` ` actually` ` gave` `۲۰۱` ` {\` `ƒ` `201` ` Ever` `{` ` sphere` ` ever`  (-0.09)
+- **fr_up**  cerca: ` пацієн` ` monstrous` `ètre` `MODULE` `Courtesy` `しない` ` itk` `imenti` `CHASE` `imentos` `	rb` `：</`  (0.10)   lejos: `�` ` y` ` u` ` What` `?` ` Pit` ` f` `%(` `The` ` epic` ` what` `.f`  (-0.10)
+- **es_up**  cerca: `ientos` `[iVar` ` pornofil` ` �` ` Municip` ` Bedrooms` `gregar` `劉` ` ADVISED` `ılır` `VertexUvs` `лара`  (0.09)   lejos: ` goes` `?` ` went` ` database` `â` ` go` ` critique` ` colleagues` ` source` ` up` `\` ` love`  (-0.09)
+- **de_up**  cerca: `ουσ` `üssen` `действ` `ERRQ` ` смеш` `ुश` `EDIATEK` `_restart` `ящих` `	TRACE` `_TRNS` `﻿#`  (0.10)   lejos: `The` ` The` ` the` `?` `Ac` ` la` ` fx` ` coating` ` Richard` `-` `.The` ` los`  (-0.10)
+- **u_fr (=fr_up-fr)**  cerca: ` необхідно` `MODULE` `_bet` `ableObject` ` alumnos` `	gtk` `Clause` `_et` ` Scri` ` Et` `prepend` `/object`  (0.08)   lejos: `sharp` `<AudioSource` `deck` ` //!<` ` shade` ` Shade` ` suck` ` ي` `formance` ` lä` `.assign` `encoded`  (-0.09)
+- **u_es (=es_up-es)**  cerca: `料理` `Baş` ` Rodr` `gregar` `={}` `IPPING` `-deals` `INGS` `.AddWithValue` `MouseButton` `Direccion` ` nghiệm`  (0.09)   lejos: `She` ` loves` ` apocalypse` ` //` ` rant` ` love` `012` `Sh` ` пля` ` assess` ` saturation` `.local`  (-0.08)
+- **u_de (=de_up-de)**  cerca: ` EVER` `دام` `действ` `.COLUMN` ` тебе` `	flash` `_HAND` `({});
+` `梦` `ATOR` ` спросил` `utations`  (0.08)   lejos: `The` ` Ng` `Ng` `National` ` THE` `Ac` ` Compared` `_payload` ` alloy` ` cold` ` The` `When`  (-0.08)
+- **fr-es**  cerca: `料理` ` Goat` `UCCEEDED` `encoded` `搜` `))*(` `.sendRedirect` `*);
+` `ART` ` bağımsız` `.BindingSource` `)(*`  (0.08)   lejos: `	mem` `(mem` ` Mem` ` figura` ` باعث` `_stmt` `Factor` `ipar` ` İŞ` ` Memor` ` Para` `Para`  (-0.09)
+- **fr-de**  cerca: ` encoded` `semb` `encoded` ` opsiyon` `.assign` `atern` `/******/` `atég` ` бач` ` bos` `/co` ` вис`  (0.09)   lejos: `_vm` ` podle` ` When` `When` ` durch` `essional` ` achievement` ` zu` `_CC` ` für` `_MM` ` diese`  (-0.08)
+- **es-de**  cerca: `asure` `Mis` ` aire` `/member` `>{@` ` Mis` ` enclave` ` mano` ` dateTime` ` eux` ` anticip` `Lik`  (0.08)   lejos: `setContent` ` الهند` `(View` ` Alloy` `.PackageManager` `.BindingSource` ` Diesel` ` beb` `.Validate` `geb` `ชาต` ` hailed`  (-0.08)
+- **c (comun)**  cerca: `							
+` `﻿/*
+` ` اروپ` ` -*-
+` ` zdravot` ` vystav` ` зазнач` ` tüket` ` ovliv` ` PodsDummy` `ırlar` ` выращи`  (0.09)   lejos: `?` ` what` ` which` ` went` ` are` ` What` ` the` ` being` ` The` ` on` ` was` ` is`  (-0.13)
+- **b_MAYUS (aditivo)**  cerca: ` необхідно` `ertia` `自拍` `-upper` `	Editor` `NonQuery` ` IMPORTANT` ` 注意` `.addElement` `�` `Đối` `:pk`  (0.09)   lejos: `The` `_the` `ает` `sharp` `Code` `-the` `_source` ` assess` `While` `Fire` ` Ng` `012`  (-0.09)
+- **a_fr (aditivo)**  cerca: ` François` `.groupBox` `طلق` ` пацієн` `اسي` `áli` `坐在` `constitution` ` underline` `voir` `(TM` `Rp`  (0.08)   lejos: `(pre` ` Uno` ` figura` ` ese` ` gece` ` Von` `merge` ` fname` `flatten` ` Fern` ` Merge` ` STA`  (-0.08)
+- **a_es (aditivo)**  cerca: ` endanger` ` los` ` İŞ` ` Оп` `)?
+` ` �` ` MIS` ` Una` `field` ` il` ` fantas` `-os`  (0.08)   lejos: ` procession` ` unter` ` philosoph` `.subscription` ` screw` `Communication` ` pant` `zia` ` scout` ` Sculpt` ` deix` `_CMD`  (-0.07)
+- **a_de (aditivo)**  cerca: ` câu` ` einfach` `_wheel` `达到` ` hat` `landscape` ` heal` `@Slf` `ουσ` ` scenery` ` wheel` ` Strom`  (0.09)   lejos: `{_` `/co` ` isolate` `ighton` `ISODE` `拉` ` losers` ` rectangles` `Mis` `_movies` ` enclave` ` #{`  (-0.08)
