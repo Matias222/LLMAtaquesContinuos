@@ -1,0 +1,18 @@
+base_open_2.csv: 0 cambios | gate 50/50
+targets_de.csv: 0 cambios | gate 250/250 | accuracy ref 248/250
+targets_de_open.csv: 0 cambios | gate 99/99
+targets_de_open_2.csv: 0 cambios | gate 50/50
+targets_de_up.csv: celda _up, se salta (regenerar con --upper_from)
+targets_de_up_open.csv: celda _up, se salta (regenerar con --upper_from)
+targets_de_up_open_2.csv: celda _up, se salta (regenerar con --upper_from)
+targets_es.csv: 0 cambios | gate 250/250 | accuracy ref 248/250
+targets_es_open.csv: 0 cambios | gate 99/99
+targets_es_open_2.csv: 0 cambios | gate 50/50
+targets_es_up.csv: celda _up, se salta (regenerar con --upper_from)
+targets_es_up_open.csv: celda _up, se salta (regenerar con --upper_from)
+targets_es_up_open_2.csv: celda _up, se salta (regenerar con --upper_from)
+targets_fr_up.csv: celda _up, se salta (regenerar con --upper_from)
+targets_fr_up_open.csv: celda _up, se salta (regenerar con --upper_from)
+targets_fr_up_open_2.csv: celda _up, se salta (regenerar con --upper_from)
+
+OK

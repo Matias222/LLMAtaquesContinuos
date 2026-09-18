@@ -62,7 +62,7 @@ set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE/.."                      # experimentos/idiomas: los scripts importan lm, checkers, ...
 
-MODEL="${1:-/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct}"
+MODEL="${1:-/teamspace/studios/this_studio/modelos/Llama-3.2-3B-Instruct}"
 DEVICE="${DEVICE:-cuda:0}"
 L2="${L2:-0.075}"
 EPOCHS="${EPOCHS:-10}"
