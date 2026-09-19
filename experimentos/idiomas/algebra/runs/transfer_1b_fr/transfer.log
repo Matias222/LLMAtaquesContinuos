@@ -1,0 +1,17 @@
+tokenizers compatibles: True  (100.0% de los ids coinciden (2004/2004 muestreados))
+origen  (128256, 3072)
+destino (128256, 2048)
+norma media de embedding: origen 1.0861  destino 0.9298  (destino/origen 0.856)
+parche  (1, 1, 3072)  norma 0.8418
+
+Procrustes ortogonal 3072 -> 2048
+  residuo relativo ||Ea W - Eb|| / ||Eb|| = 0.7938
+
+GATE - ida y vuelta con el mapa ajustado en media lengua:
+  in-sample  top-1 92.2%   (no decide nada: Procrustes sobreajusta)
+  HELD-OUT   top-1 88.3%   top-10 90.1%   sobre 4000 tokens
+  azar: 0.0008%
+  El mapa preserva identidad: el parche mapeado es interpretable.
+
+norma mapeada 0.6883  (origen 0.8418)
+escrito algebra/runs/transfer_1b_fr/lang_patch.pt
