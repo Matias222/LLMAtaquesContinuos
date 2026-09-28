@@ -13,6 +13,8 @@ Runs involucrados:
 | `algebra/runs/alg_fr_s1`, `alg_es_up_s1` | réplicas (mismo todo, otro orden de batches) |
 | `algebra/runs/geometria` | cosenos, álgebra en comportamiento, activaciones, embeddings |
 | `algebra/runs/alg_fr/restar_fr` | pregunta en francés menos el parche de francés |
+| `algebra/runs/alg_fr/restar_es`, `restar_de` | control: pregunta en francés menos el parche de español / alemán |
+| `algebra/runs/entrada_o_directiva` | ¿el parche falsifica el idioma de la entrada o es una orden sobre la salida? |
 
 ---
 
@@ -22,7 +24,8 @@ Runs involucrados:
    idioma de la respuesta**, desde cualquier idioma de entrada, con la misma
    compliance que el parche de 3 posiciones y sin perder accuracy.
 2. **Tiene signo.** Restarlo de una pregunta en francés saca la respuesta del
-   francés (0.90 → 0.12). El parche viejo de 3 posiciones no se deja invertir
+   francés (0.90 → 0.12). Restar el parche de español o de alemán no
+   (0.88 / 0.96), y el parche viejo de 3 posiciones tampoco se deja invertir
    (0.92). Falta el control aleatorio para cerrarlo (sección 7).
 3. **No es única.** Dos entrenamientos de la misma celda comparten la mitad
    de la dirección (coseno 0.49). Hay muchas direcciones que sirven.
@@ -36,6 +39,11 @@ Runs involucrados:
 6. **Todas las direcciones comparten un componente grande** (coseno 0.52–0.58
    con la media), que apunta en contra de las palabras funcionales de una
    pregunta en inglés (`?`, `what`, `which`, `the`, `is`).
+7. **El parche se comporta como una propiedad de la entrada, no como una
+   orden.** Si se le pregunta al modelo en qué idioma está `q_en + v_fr`,
+   contesta "French" en el 76% de los casos (y "Spanish" con `v_es`, 78–92%),
+   mientras que un vector al azar de la misma norma lo deja en "English". Una
+   instrucción explícita en texto le gana al parche (sección 8).
 
 ---
 
@@ -159,6 +167,12 @@ puede salir en mayúsculas).
   abiertos caen a 0.30 / 0.23 / 0.18, y parte de las salidas se van al inglés
   en mayúsculas. `de_up` es la que peor entrenó: CE head en held-out de 1.45,
   contra 0.69 de fr.
+- **`alg_fr` contra `v5_goalall_head_multi`** (misma receta salvo L2 0.075 y
+  10 epochs, contra 0.0725 y 8): prácticamente empatados. `alg_fr` es algo más
+  fuerte sobre lo que vio (held-out 1.00 contra 0.96; desde es/de 0.96/0.98
+  contra 0.88/0.96; open_2 desde inglés 0.48 contra 0.36). `v5` transfiere
+  mejor a los idiomas no vistos (it/pt 0.82/0.74 contra 0.72/0.60): las dos
+  epochs extra parecen especializar un poco.
 
 ### 3.3 Entrenamiento
 
@@ -341,6 +355,8 @@ M(q_fr − v_fr)
 |---|---|---|---|---|---|---|---|---|
 | `q_fr` sin parche | 0.90 | 0.00 | 0.00 | 0.00 | 0.92 | 79 | 0.78 | 2.79 |
 | `q_fr − v_fr` | **0.12** | **0.54** | 0.26 | 0.04 | 0.64 | 268 | **2.92** | 2.62 |
+| `q_fr − v_es` | 0.88 | 0.00 | 0.08 | 0.02 | 0.78 | 237 | 1.80 | 4.46 |
+| `q_fr − v_de` | 0.96 | 0.00 | 0.04 | 0.00 | 0.76 | 245 | 1.60 | 4.50 |
 | `q_fr − v4_250` (3 posiciones) | 0.92 | 0.00 | 0.02 | 0.00 | 0.90 | — | — | — |
 
 - **Saca del francés.** De las 47 filas que salían en francés, 41 cambian:
@@ -356,16 +372,124 @@ M(q_fr − v_fr)
   también degrada la lectura de la pregunta: la accuracy cae a 0.64 y el
   largo se triplica.
 
-**Falta el control que lo cierra.** Nunca corrimos un vector al azar de la
-misma norma con `goal_all`: el control aleatorio de `runs/random_control` es
-del parche de 3 posiciones. Y la condición `resta_azar` del álgebra muestra
+- **Es específico del francés.** Restar las direcciones de español o de
+  alemán (`restar_es`, `restar_de`), que comparten el componente común, deja
+  el francés en 0.88 y 0.96. Igual degradan la entrada: la accuracy cae a
+  0.76–0.78 y el largo se triplica, como con `v_fr`.
+
+**Falta el control que lo cierra.** Nunca corrimos `q_fr − r` con un vector
+al azar de la misma norma: el control aleatorio de `runs/random_control` es
+del parche de 3 posiciones, y el `rand0` de la sección 8 se restó sobre una
+pregunta en inglés con instrucción, no sobre `q_fr`. Y la condición `resta_azar` del álgebra muestra
 que una perturbación al azar de esta norma **sí** mueve el comportamiento
 (por ejemplo, `es_up + de − r` dio 0.86 de español). Hasta correrlo, la caída
 del francés podría ser en parte solo eso.
 
 ---
 
-## 8. Qué está establecido y qué no
+## 8. ¿Propiedad de la entrada o directiva? (`entrada_o_directiva.py`)
+
+`algebra/runs/entrada_o_directiva/`, parches `alg_fr` y `alg_es`, control
+`rand0` (vector al azar con la norma de `v_fr`, 0.842), tail del held-out
+n=50. Hay dos lecturas de por qué `q_en + v_fr` se contesta en francés:
+
+```
+entrada     v falsifica "en qué idioma está escrita la pregunta" y el francés
+            lo pone la política que el modelo ya tiene (contestar en el idioma
+            de la pregunta)
+directiva   v actúa sobre la decisión de idioma de la salida, como lo haría
+            "Answer this in French."
+```
+
+Las métricas de siempre no las separan. Acá el parche se suma **solo sobre el
+tramo de la pregunta**, dentro de un mensaje más largo que pregunta o manda
+otra cosa. Son tres tests.
+
+### 8.1 Preguntarle al modelo en qué idioma está (`idioma_entrada`)
+
+Dos redacciones, para que el resultado no dependa de una frase:
+
+```
+lang_id     What language is the following question written in?
+            Reply with only the name of the language.\n\n{q}
+lang_id_b   Do not answer the question below. Only tell me which language
+            it is written in, in one word.\n\n{q}
+```
+
+Se mide el primer nombre de idioma que aparece en la salida:
+
+| redacción | condición | dice en | dice fr | dice es | ninguno |
+|---|---|---|---|---|---|
+| lang_id | `q_en` | 1.00 | 0.00 | 0.00 | 0.00 |
+| lang_id | `q_en + v_fr` | 0.12 | **0.76** | 0.02 | 0.06 |
+| lang_id | `q_en + v_es` | 0.18 | 0.00 | **0.78** | 0.04 |
+| lang_id | `q_en + rand0` | 1.00 | 0.00 | 0.00 | 0.00 |
+| lang_id | `q_fr` real | 0.00 | 1.00 | 0.00 | 0.00 |
+| lang_id | `q_es` real | 0.00 | 0.00 | 1.00 | 0.00 |
+| lang_id_b | `q_en` | 0.54 | 0.06 | 0.02 | 0.30 |
+| lang_id_b | `q_en + v_fr` | 0.06 | **0.76** | 0.04 | 0.08 |
+| lang_id_b | `q_en + v_es` | 0.02 | 0.00 | **0.92** | 0.06 |
+| lang_id_b | `q_fr` real | 0.02 | 0.96 | 0.00 | 0.00 |
+
+- **El modelo cree que la pregunta está en el idioma del parche**, y la
+  lectura es específica: `v_es` da "Spanish", no "French". El vector al azar
+  de la misma norma no cambia ninguna respuesta.
+- **`lang_id_b` es un test más ruidoso.** Sin parche solo dice "English" en el
+  54%: tiende a contestar el idioma del tema de la pregunta, no el de la
+  pregunta ("capital of Ukraine" → Ukrainian, "Syria" → Arabic, "Germany
+  reunify" → German, "The Scream" → Norwegian). Ese es el 30% de "ninguno".
+  El efecto del parche se sostiene igual. Para esta redacción no se corrió
+  `rand0`.
+- Los fallos de `v_fr` también suelen ser el idioma del tema (German para
+  "Germany reunify", Russian para "Soviet Union", Norwegian para "The
+  Scream"): el parche empuja la creencia, pero no la fija del todo.
+
+### 8.2 Restar el parche contra una instrucción (`resta_directiva`)
+
+`Answer this in French. {q_en}` con `−v` solo sobre `q_en`:
+
+| condición | fr | accuracy | cambio |
+|---|---|---|---|
+| instrucción sin parche | 0.98 | 0.96 | — |
+| `− v_fr` | 0.90 | 0.94 | 0.52 |
+| `− v_es` | 0.92 | 0.94 | 0.60 |
+| `− rand0` | 0.96 | 0.96 | 0.46 |
+| sin instrucción, `q_fr − v_fr` (sección 7) | 0.12 | 0.64 | 1.00 |
+
+Restar `v_fr` no cancela una instrucción explícita: queda igual que los
+controles. Cambia el texto de la respuesta (cambio ~0.5 en las tres) pero no
+el idioma. En cambio, restarlo de una pregunta francesa sí saca del francés.
+Encaja con la lectura de entrada: `v_fr` actúa sobre lo que el modelo cree de
+la pregunta, no sobre la orden.
+
+### 8.3 Instrucción en contra (`conflicto`)
+
+`Answer this in English. {q}`:
+
+| condición | fr | en | accuracy | largo |
+|---|---|---|---|---|
+| `q_en` sin instrucción | 0.00 | 1.00 | 0.96 | 181 |
+| `q_en + v_fr` sin instrucción | 1.00 | 0.00 | 0.96 | 96 |
+| instrucción + `q_fr` real | 0.58 | 0.40 | 0.94 | 166 |
+| instrucción + `q_en + v_fr` | **0.06** | **0.92** | 0.96 | 63 |
+
+La instrucción en texto le gana al parche mucho más fácil (92% inglés) que a
+una pregunta en francés de verdad (40% inglés). El parche es más débil que el
+rasgo real, pero no se comporta como una orden que compita con otra orden: se
+comporta como una señal de entrada que la instrucción pisa.
+
+### 8.4 Lectura
+
+Los tres tests apuntan al mismo lado: `v_fr` se parece más a **"esta pregunta
+está en francés"** que a **"contestá en francés"**. El modelo lo reporta como
+el idioma de la pregunta (8.1), restarlo no deshace una orden explícita (8.2)
+y una orden explícita lo pisa (8.3). Encaja con la sección 6.1 (en las capas
+tardías el parche se parece a la pregunta en francés con coseno 0.92), aunque
+ahí también se parece a la instrucción (0.93).
+
+---
+
+## 9. Qué está establecido y qué no
 
 **Establecido**
 
@@ -378,11 +502,14 @@ del francés podría ser en parte solo eso.
   a prompts abiertos, los ejes de cada idioma no se parecen y no sobrevive a
   la superposición.
 - En el espacio del parche el álgebra de function vectors no cierra.
+- El parche se lee como el idioma de la pregunta, no como una orden: el
+  modelo dice que `q_en + v_fr` está en francés (76%, el azar 0%), restarlo
+  no deshace "Answer this in French." y "Answer this in English." lo pisa.
 
 **Con evidencia parcial**
 
-- Que la dirección tenga signo (sección 7): saca del francés, pero falta el
-  control aleatorio.
+- Que la dirección tenga signo (sección 7): saca del francés y restar otros
+  idiomas no, pero falta el control aleatorio sobre `q_fr`.
 - Un eje de idioma aditivo: la resta cancela el idioma en 3 de 6
   paralelogramos, con asimetría a favor del francés.
 - Más aditividad en las activaciones tardías que en el embedding: el álgebra
@@ -397,12 +524,12 @@ del francés podría ser en parte solo eso.
 
 ---
 
-## 9. Pendientes, por prioridad
+## 10. Pendientes, por prioridad
 
 1. **Control de la resta.** `q_fr − r` con `r` al azar de la misma norma (3
-   seeds), `q_fr − v_fr_s1` (la réplica), `q_fr − v_es`, `q_fr − v_de`. Si el
-   azar deja el francés en ~0.9, la dirección con signo queda cerrada. 6
-   corridas de ~2 minutos.
+   seeds) y `q_fr − v_fr_s1` (la réplica). `q_fr − v_es` y `q_fr − v_de` ya
+   están (0.88 / 0.96). Si el azar deja el francés en ~0.9, la dirección con
+   signo queda cerrada. 4 corridas de ~2 minutos.
 2. **Barrido de α** sobre `v_fr` en los dos sentidos (−2 a 2): que el efecto
    sea monótono en la magnitud.
 3. **Barrido de α sobre `v*`** en las tres filas de idioma que fallaron, que
@@ -420,7 +547,7 @@ del francés podría ser en parte solo eso.
 
 ---
 
-## 10. Reproducir
+## 11. Reproducir
 
 ```bash
 # (desde experimentos/idiomas)
@@ -434,6 +561,10 @@ bash algebra/run_algebra_v6.sh              # STAGES / CELLS / SKIP_TRAIN para c
 
 # resta
 bash algebra/run_restar_fr.sh               # SCALES="-0.5 -1 -2" para el barrido
+bash algebra/run_restar_otros.sh            # q_fr - v_es, q_fr - v_de
+
+# entrada o directiva (idioma_entrada, resta_directiva, conflicto)
+bash algebra/run_entrada_o_directiva.sh     # STAGES=idioma_entrada para uno solo
 
 # geometría en CPU sola
 python3 algebra/algebra_patches.py cosines \
