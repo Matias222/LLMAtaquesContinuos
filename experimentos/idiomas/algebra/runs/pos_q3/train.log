@@ -1,0 +1,1 @@
+PY -u train_lang_patch.py --model /m --device cuda:0 --targets attributes/french/targets_french_v5.csv --l2_weight 0.075 --output_dir algebra/runs/pos_q3 --batch_size 32 --num_steps_per_prompt 20 --num_epochs 10 --step_decay cosin

@@ -68,8 +68,32 @@ sola no es prefijo de la del mensaje completo (p.ej. ".\\n\\n" o " What" son un
 solo token), aborta en vez de parchear posiciones corridas. Un espacio final de
 `pre` pasa al tramo: "French. {q}" parchea " What", no "What".
 
-`--dry` no carga el modelo: imprime los tramos de las primeras filas y sale.
-Correrlo primero.
+---------------------------------------------------------------------------
+PARCHES DE 3 POSICIONES (Question-3, Header-3)
+---------------------------------------------------------------------------
+Ademas de los goal_all [1, 1, d], se aceptan parches de N posiciones con su
+anchor pegado a la ruta:
+
+    --patch q3=ruta.pt@goal      [1, N, d] sobre los primeros N tokens del
+                                 TRAMO de la pregunta (no del mensaje: nunca cae
+                                 sobre "Answer this in English."). Con la
+                                 plantilla plain el tramo es el goal entero, asi
+                                 que coincide con el entrenamiento. Con una
+                                 instruccion delante, el primer token del tramo
+                                 lleva el espacio (" What" en vez de "What").
+    --patch h3=ruta.pt@header    [1, N, d] sobre los ultimos N tokens del header
+                                 del assistant (assistant <|end_header_id|> \n\n),
+                                 como en el entrenamiento. No toca la pregunta.
+
+Sin @anchor, un [1, 1, d] es goal_all (todo el tramo) y cualquier otra forma
+es un error.
+
+Azar: `rand<seed>` copia forma, norma y anchor de --rand_like (default: el
+primer --patch). `rand<seed>_<parche>` copia los de ese parche, p.ej. rand0_h3
+es un [1, 3, d] al azar sobre el header con la norma de h3.
+
+`--dry` no carga el modelo: imprime los tramos de las primeras filas, y las
+posiciones de cada anchor pedido, y sale. Correrlo primero.
 
     python3 -u entrada_o_directiva.py --model $M --dry --preset idioma_entrada \\
         --patch fr=algebra/runs/alg_fr/lang_patch_best_train.pt --out_dir /tmp/x
@@ -163,6 +187,40 @@ def label(tpl, col, pname, a):
     return f"{tpl} | {col}" + ("" if pname == "-" else f" {a:+g}*{pname}")
 
 
+ANCHORS = ("goal_all", "goal", "header")
+
+
+def parse_patch_spec(spec):
+    """'nombre=ruta[@anchor]' -> (nombre, ruta, anchor o None)."""
+    k, _, path = spec.partition("=")
+    if not path:
+        raise SystemExit(f"--patch mal formado: '{spec}' (nombre=ruta[@anchor])")
+    anchor = None
+    if "@" in path:
+        path, _, anchor = path.rpartition("@")
+        if anchor not in ANCHORS:
+            raise SystemExit(f"anchor desconocido en '{spec}': {anchor}; validos: {ANCHORS}")
+    return k.strip(), path, anchor
+
+
+def parse_rand(pname):
+    """'rand3' -> (3, None); 'rand0_h3' -> (0, 'h3'); otro -> None."""
+    m = re.fullmatch(r"rand(\d*)(?:_(\w+))?", pname)
+    return (int(m.group(1) or 0), m.group(2)) if m else None
+
+
+def posiciones(anchor, n_vec, sm, s, e):
+    """(start, n): donde cae un parche de n_vec vectores con este anchor.
+    [s, e) es el tramo de la pregunta; el header sale del SuffixManager."""
+    if anchor == "goal_all":
+        return s, e - s
+    if anchor == "goal":
+        return s, max(0, min(n_vec, e - s))
+    hs = sm._assistant_role_slice
+    start = max(hs.start, hs.stop - n_vec)
+    return start, hs.stop - start
+
+
 def partir(tpl_text, q):
     """(pre, tramo, post): el espacio final de `pre` pasa al tramo (" What")."""
     pre, post = tpl_text.split("{q}")
@@ -205,10 +263,11 @@ def tramo_pregunta(tokenizer, build_sm, pre, tramo, post, target=""):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--patch", action="append", default=[], metavar="NOMBRE=RUTA",
-                    help="parche goal_all [1,1,d]; repetible. p.ej. fr=algebra/runs/alg_fr/...pt")
+    ap.add_argument("--patch", action="append", default=[], metavar="NOMBRE=RUTA[@ANCHOR]",
+                    help="repetible. goal_all [1,1,d] sin anchor, o [1,N,d] con @goal / @header. "
+                         "p.ej. fr=algebra/runs/alg_fr/...pt  h3=algebra/runs/pos_h3/...pt@header")
     ap.add_argument("--rand_like", default=None,
-                    help="parche cuya norma copian los rand<seed> (default: el primero)")
+                    help="parche cuya forma, norma y anchor copian los rand<seed> (default: el primero)")
     ap.add_argument("--model", default=None)
     ap.add_argument("--targets", default="attributes/french/targets_french_v5.csv")
     ap.add_argument("--train_test_split", type=float, default=0.80)
@@ -258,39 +317,55 @@ def main():
         else:
             usable[col] = set(int(i) for i in heldout.index)
 
+    specs = [parse_patch_spec(sp) for sp in args.patch]
+    anchor_pedido = {k: a for k, _, a in specs}
+
     # --- dry: solo el tokenizer ------------------------------------------------
     if args.dry:
         from transformers import AutoTokenizer
         tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True, use_fast=False)
+        # sin cargar los .pt no se sabe N: se asume 3 para los anchors con posicion
+        vistos = sorted(set(a for a in anchor_pedido.values() if a in ("goal", "header")))
         for tpl, col in dict.fromkeys((t, c) for t, c, _, _ in conds):
             print(f"\n=== {tpl} | {col}")
             for i, r in heldout.head(3).iterrows():
                 pre, tramo, post = partir(PLANTILLAS[tpl][0], str(r[col]))
-                _, ids, s, e = tramo_pregunta(tokenizer, build_suffix_manager, pre, tramo, post)
+                sm, ids, s, e = tramo_pregunta(tokenizer, build_suffix_manager, pre, tramo, post)
                 toks = [tokenizer.decode([t]) for t in ids[s:e]]
                 print(f"  [{int(i)}] {e - s:2d} tok  antes={tokenizer.decode(ids[max(0, s - 3):s])!r}  "
                       f"tramo={toks}  despues={tokenizer.decode(ids[e:e + 3])!r}")
+                for a in vistos:
+                    ps, pn = posiciones(a, 3, sm, s, e)
+                    print(f"        @{a:<6} (N=3) -> {[tokenizer.decode([t]) for t in ids[ps:ps + pn]]}")
         print("\ntramos OK. Sacar --dry para correr.")
         return
 
     # --- parches ----------------------------------------------------------------
-    patches = {}
-    for spec in args.patch:
-        k, _, path = spec.partition("=")
+    patches, anchors = {}, {}
+    for k, path, anchor in specs:
         v = torch.load(path, map_location=args.device).to(args.device)
-        if v.dim() != 3 or v.shape[1] != 1:
-            raise SystemExit(f"{path}: se espera un parche goal_all [1,1,d], llego {tuple(v.shape)}")
-        patches[k.strip()] = v
+        if v.dim() != 3 or v.shape[0] != 1:
+            raise SystemExit(f"{path}: se espera un parche [1, N, d], llego {tuple(v.shape)}")
+        if anchor is None:
+            if v.shape[1] != 1:
+                raise SystemExit(f"{path}: parche de {v.shape[1]} posiciones sin anchor "
+                                 f"(usar {k}=ruta@goal o {k}=ruta@header)")
+            anchor = "goal_all"
+        if anchor == "goal_all" and v.shape[1] != 1:
+            raise SystemExit(f"{path}: goal_all espera [1, 1, d], llego {tuple(v.shape)}")
+        patches[k], anchors[k] = v, anchor
     pedidos = list(dict.fromkeys(p for _, _, p, _ in conds if p != "-"))
-    if any(p.startswith("rand") for p in pedidos):
-        ref = args.rand_like or (list(patches)[0] if patches else None)
+    for p in pedidos:
+        if p in patches or parse_rand(p) is None:
+            continue
+        seed, ref = parse_rand(p)
+        ref = ref or args.rand_like or (list(patches)[0] if patches else None)
         if ref not in patches:
-            raise SystemExit("los rand<seed> copian la norma de un parche: pasar --patch y/o --rand_like")
-        for p in pedidos:
-            if p.startswith("rand") and p not in patches:
-                g = torch.Generator(device="cpu").manual_seed(int(p[4:] or 0))
-                r = torch.randn(patches[ref].shape, generator=g).to(args.device)
-                patches[p] = (r / r.norm(2) * patches[ref].norm(2)).to(patches[ref].dtype)
+            raise SystemExit(f"{p} copia forma y norma de un parche: falta --patch {ref} (o --rand_like)")
+        g = torch.Generator(device="cpu").manual_seed(seed)
+        r = torch.randn(patches[ref].shape, generator=g).to(args.device)
+        patches[p] = (r / r.norm(2) * patches[ref].norm(2)).to(patches[ref].dtype)
+        anchors[p] = anchors[ref]
     faltan = [p for p in pedidos if p not in patches]
     if faltan:
         raise SystemExit(f"parches sin --patch: {faltan}")
@@ -299,16 +374,21 @@ def main():
     stop_ids = stop_token_ids(tokenizer)
     os.makedirs(args.out_dir, exist_ok=True)
     for k, v in patches.items():
-        print(f"parche {k:<8} norma {v.norm(2).item():.4f}")
+        print(f"parche {k:<10} norma {v.norm(2).item():.4f}  forma {tuple(v.shape)}  anchor {anchors[k]}")
     print(f"tail held-out {len(heldout)}  |  preset={name}")
 
     def embeds_de(tpl, q, pname, a, target=""):
         pre, tramo, post = partir(PLANTILLAS[tpl][0], q)
         sm, ids, s, e = tramo_pregunta(tokenizer, build_suffix_manager, pre, tramo, post, target)
         emb = get_embeddings(model, ids.to(args.device).unsqueeze(0)).detach().clone()
-        if pname != "-":
-            emb[:, s:e, :] = emb[:, s:e, :] + (a * patches[pname]).to(emb.dtype)
-        return sm, emb, e - s
+        if pname == "-":
+            return sm, emb, 0
+        v = patches[pname]
+        ps, pn = posiciones(anchors[pname], v.shape[1], sm, s, e)
+        if pn > 0:
+            vv = v if anchors[pname] == "goal_all" else v[:, :pn, :]
+            emb[:, ps:ps + pn, :] = emb[:, ps:ps + pn, :] + (a * vv).to(emb.dtype)
+        return sm, emb, pn
 
     @torch.no_grad()
     def ce_head(tpl, q, pname, a, target):
@@ -388,11 +468,12 @@ def main():
                 f"{m['dice_' + lg]:>7.2f}" for lg in ("en", "fr", "es", "de", "it", "pt"))
                 + f"{m['dice_ninguno']:>9.2f}")
     print("=" * 132)
-    print("tok: posiciones parcheadas (solo el tramo de la pregunta). cambio: salida != la de sin parche.")
+    print("tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.")
     print("ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.")
 
-    rep = {"objetivo": "propiedad de la entrada vs directiva sobre la salida (goal_all)",
+    rep = {"objetivo": "propiedad de la entrada vs directiva sobre la salida",
            "preset": name, "patches": {k: float(v.norm(2).item()) for k, v in patches.items()},
+           "anchors": dict(anchors),
            "plantillas": {k: v[0] for k, v in PLANTILLAS.items()},
            "config": vars(args), "n_tail": len(heldout), "condiciones": resultados}
     jp = os.path.join(args.out_dir, f"entrada_o_directiva_{name}.json")
@@ -409,8 +490,11 @@ def _t(s, n=110):
 
 def write_markdown(rep, path):
     L = [f"# Entrada o directiva (preset `{rep['preset']}`)", ""]
-    L.append("Parches: " + ", ".join(f"`{k}` (norma {v:.3f})" for k, v in rep["patches"].items()))
-    L.append(f"Tail del held-out: n={rep['n_tail']}. El parche cae SOLO sobre el tramo de la pregunta.")
+    anc = rep.get("anchors", {})
+    L.append("Parches: " + ", ".join(f"`{k}` (norma {v:.3f}, {anc.get(k, 'goal_all')})"
+                                     for k, v in rep["patches"].items()))
+    L.append(f"Tail del held-out: n={rep['n_tail']}. goal_all / goal caen SOLO sobre el tramo de la "
+             "pregunta; header, sobre los ultimos tokens del header del assistant.")
     L.append("")
     L.append("| condicion | n | fr | en | es | de | unk | acc | cambio | largo | CE fr head | CE en head | tok |")
     L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
