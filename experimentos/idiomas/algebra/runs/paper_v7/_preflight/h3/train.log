@@ -1,0 +1,50 @@
+Gate de calidad sobre train: 24/24 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.37it/s]
+
+Train: 24  |  Held-out: 6  |  validacion: 2
+L2: 0.075  |  step_size: 0.00025 (cosine)  |  posiciones: 3  |  anchor: header
+  parche sobre el header del assistant: posiciones 27..29 = ['assistant', '<|end_header_id|>', '\n\n']
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_es', 'prompt_de']
+  prompt: 24/24 filas de train usables
+  prompt_es: 24/24 filas de train usables
+  prompt_de: 24/24 filas de train usables
+Epochs: 1  |  batch: 8 (3 batches/epoch)  |  steps/batch: 2
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/3] CE=3.7773  norma=0.044680  lr=2.26e-04
+  [batch 2/3] CE=3.4295  norma=0.060509  lr=8.64e-05
+  [batch 3/3] CE=3.5806  norma=0.062078  lr=0.00e+00
+  held-out head CE por entrada: prompt=5.5352  prompt_es=4.4004  prompt_de=5.0137
+
+Epoch 1: CE train (trayectoria)=3.5958  norma=0.062078
+  CE head del checkpoint:  train=5.5192   held-out=4.9831   brecha=-0.5361
+  held-out CE  head(primeros 5): con parche=4.9831  sin parche=5.0410  delta=-0.0579
+               toda la respuesta      : con parche=1.9097  sin parche=1.9302  delta=-0.0205
+  * mejor HELD-OUT hasta ahora (head CE 4.9831)
+  * mejor TRAIN hasta ahora (head CE 5.5192)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 4.9831)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    5.5192     4.9831   -0.5361    0.0621  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 4.9831)  -> algebra/runs/paper_v7/_preflight/h3/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 5.5192)  -> algebra/runs/paper_v7/_preflight/h3/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.062078
+  posicion 0: 0.035930
+  posicion 1: 0.035839
+  posicion 2: 0.035752
+
+Guardado: algebra/runs/paper_v7/_preflight/h3/lang_patch.pt
+          algebra/runs/paper_v7/_preflight/h3/lang_metadata.pt

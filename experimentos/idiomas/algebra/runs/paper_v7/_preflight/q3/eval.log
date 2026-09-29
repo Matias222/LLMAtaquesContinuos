@@ -1,0 +1,29 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.05s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]
+Held-out: 2  |  parche: algebra/runs/paper_v7/_preflight/q3/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/2 [00:00<?, ?it/s]eval:  50%|█████     | 1/2 [00:00<00:00,  1.86it/s]eval: 100%|██████████| 2/2 [00:03<00:00,  1.69s/it]eval: 100%|██████████| 2/2 [00:03<00:00,  1.51s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])         100.0%      1.000    100.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: fr   (celda_ok = idioma fr Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               6.2520      6.2559   +0.0039
+tail (el resto)                 0.5491      0.5494   +0.0004
+toda la respuesta               1.5684      1.5693   +0.0010
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal): media 3.0
+======================================================================
+
+Reportes: algebra/runs/paper_v7/_preflight/q3/eval_best_train.json
+          algebra/runs/paper_v7/_preflight/q3/eval_best_train.md

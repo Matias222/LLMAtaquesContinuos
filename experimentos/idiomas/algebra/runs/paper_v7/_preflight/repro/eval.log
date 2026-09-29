@@ -1,0 +1,29 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+Held-out: 5  |  parche: algebra/runs/alg_fr/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/5 [00:00<?, ?it/s]eval:  20%|██        | 1/5 [00:00<00:02,  1.34it/s]eval:  40%|████      | 2/5 [00:02<00:03,  1.16s/it]eval:  60%|██████    | 3/5 [00:02<00:01,  1.01it/s]eval:  80%|████████  | 4/5 [00:03<00:00,  1.40it/s]eval: 100%|██████████| 5/5 [00:03<00:00,  1.56it/s]eval: 100%|██████████| 5/5 [00:03<00:00,  1.32it/s]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])         100.0%      0.933    100.0%      0%
+parche  M(q+v)                100.0%      0.925    100.0%      0%
+----------------------------------------------------------------------
+celda target: fr   (celda_ok = idioma fr Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                100.0%     100.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.7406      0.3494   -5.3913
+tail (el resto)                 0.5057      0.2760   -0.2297
+toda la respuesta               1.9262      0.2979   -1.6283
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 8.6
+======================================================================
+
+Reportes: algebra/runs/paper_v7/_preflight/repro/eval_best_train.json
+          algebra/runs/paper_v7/_preflight/repro/eval_best_train.md

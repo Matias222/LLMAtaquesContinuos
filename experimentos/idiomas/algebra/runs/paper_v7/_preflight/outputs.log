@@ -1,0 +1,17 @@
+== parches del humo de entrenamiento
+  OK    q3: forma (1, 3, 3072), norma 0.0546
+  OK    h3: forma (1, 3, 3072), norma 0.0621
+== evals de humo
+  OK    q3/eval_best_train.json
+  OK    q3/cross_lang_idioma.json
+  OK    h3/eval_best_train.json
+  OK    h3/cross_lang_idioma.json
+== tests de humo: posiciones parcheadas por anchor
+  OK    entrada_o_directiva_conflicto.json: 12 condiciones
+  OK    entrada_o_directiva_idioma_entrada.json: 19 condiciones
+  OK    entrada_o_directiva_resta_directiva.json: 8 condiciones
+  OK    entrada_o_directiva_resta_q_fr.json: 11 condiciones
+== reproduccion: alg_fr sobre el held-out en ingles
+  OK    5/5 respuestas en frances (esperado >= 4; el original da 100%)
+
+VALIDACION OK

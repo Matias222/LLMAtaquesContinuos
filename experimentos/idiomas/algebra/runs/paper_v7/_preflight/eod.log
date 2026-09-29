@@ -1,0 +1,211 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.48it/s]
+parche fr         norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche fr_s1      norma 0.8489  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.8655  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.8491  forma (1, 1, 3072)  anchor goal_all
+parche q3         norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche h3         norma 0.0621  forma (1, 3, 3072)  anchor header
+parche rand0      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche rand1      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche rand2      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+tail held-out 2  |  preset=resta_q_fr
+plain | prompt_fr:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr:  50%|█████     | 1/2 [00:00<00:00,  1.97it/s]plain | prompt_fr: 100%|██████████| 2/2 [00:01<00:00,  1.70it/s]plain | prompt_fr: 100%|██████████| 2/2 [00:01<00:00,  1.74it/s]
+plain | prompt_fr -1*fr:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*fr:  50%|█████     | 1/2 [00:00<00:00,  1.79it/s]plain | prompt_fr -1*fr: 100%|██████████| 2/2 [00:02<00:00,  1.62s/it]plain | prompt_fr -1*fr: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+plain | prompt_fr -1*es:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*es:  50%|█████     | 1/2 [00:00<00:00,  1.80it/s]plain | prompt_fr -1*es: 100%|██████████| 2/2 [00:02<00:00,  1.62s/it]plain | prompt_fr -1*es: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+plain | prompt_fr -1*de:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*de:  50%|█████     | 1/2 [00:00<00:00,  1.88it/s]plain | prompt_fr -1*de: 100%|██████████| 2/2 [00:02<00:00,  1.60s/it]plain | prompt_fr -1*de: 100%|██████████| 2/2 [00:02<00:00,  1.44s/it]
+plain | prompt_fr -1*fr_s1:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*fr_s1:  50%|█████     | 1/2 [00:00<00:00,  1.59it/s]plain | prompt_fr -1*fr_s1: 100%|██████████| 2/2 [00:02<00:00,  1.64s/it]plain | prompt_fr -1*fr_s1: 100%|██████████| 2/2 [00:02<00:00,  1.49s/it]
+plain | prompt_fr -1*q3:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*q3:  50%|█████     | 1/2 [00:00<00:00,  2.65it/s]plain | prompt_fr -1*q3: 100%|██████████| 2/2 [00:01<00:00,  1.90it/s]plain | prompt_fr -1*q3: 100%|██████████| 2/2 [00:01<00:00,  1.99it/s]
+plain | prompt_fr -2*q3:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -2*q3:  50%|█████     | 1/2 [00:00<00:00,  2.68it/s]plain | prompt_fr -2*q3: 100%|██████████| 2/2 [00:01<00:00,  1.91it/s]plain | prompt_fr -2*q3: 100%|██████████| 2/2 [00:01<00:00,  2.00it/s]
+plain | prompt_fr -1*h3:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*h3:  50%|█████     | 1/2 [00:00<00:00,  2.67it/s]plain | prompt_fr -1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.28s/it]plain | prompt_fr -1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.15s/it]
+plain | prompt_fr -1*rand0:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*rand0:  50%|█████     | 1/2 [00:00<00:00,  1.80it/s]plain | prompt_fr -1*rand0: 100%|██████████| 2/2 [00:02<00:00,  1.62s/it]plain | prompt_fr -1*rand0: 100%|██████████| 2/2 [00:02<00:00,  1.46s/it]
+plain | prompt_fr -1*rand1:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*rand1:  50%|█████     | 1/2 [00:00<00:00,  1.72it/s]plain | prompt_fr -1*rand1: 100%|██████████| 2/2 [00:02<00:00,  1.63s/it]plain | prompt_fr -1*rand1: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+plain | prompt_fr -1*rand2:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt_fr -1*rand2:  50%|█████     | 1/2 [00:00<00:00,  1.71it/s]plain | prompt_fr -1*rand2: 100%|██████████| 2/2 [00:02<00:00,  1.64s/it]plain | prompt_fr -1*rand2: 100%|██████████| 2/2 [00:02<00:00,  1.48s/it]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+plain | prompt_fr                    2  1.00  0.00  0.00  0.00  0.00  0.50     nan   65.5    1.142    2.056   0.0
+plain | prompt_fr -1*fr              2  0.00  0.00  0.50  0.50  0.00  1.00    1.00  229.0    2.819    2.766  15.0
+plain | prompt_fr -1*es              2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  226.0    1.838    4.525  15.0
+plain | prompt_fr -1*de              2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  234.5    1.605    5.836  15.0
+plain | prompt_fr -1*fr_s1           2  0.50  0.50  0.00  0.00  0.00  0.50    1.00  241.0    2.011    3.438  15.0
+plain | prompt_fr -1*q3              2  1.00  0.00  0.00  0.00  0.00  0.50    0.00   65.5    1.146    2.065   3.0
+plain | prompt_fr -2*q3              2  1.00  0.00  0.00  0.00  0.00  0.50    0.00   65.5    1.151    2.073   3.0
+plain | prompt_fr -1*h3              2  1.00  0.00  0.00  0.00  0.00  1.00    0.50  189.5    1.159    2.127   3.0
+plain | prompt_fr -1*rand0           2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  225.5    1.506    6.023  15.0
+plain | prompt_fr -1*rand1           2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  227.0    1.940    4.766  15.0
+plain | prompt_fr -1*rand2           2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  219.0    1.225    4.012  15.0
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/paper_v7/_preflight/tests/entrada_o_directiva_resta_q_fr.json
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.19s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.32it/s]
+parche fr         norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche fr_s1      norma 0.8489  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.8655  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.8491  forma (1, 1, 3072)  anchor goal_all
+parche q3         norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche h3         norma 0.0621  forma (1, 3, 3072)  anchor header
+parche rand0      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche rand0_q3   norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche rand0_h3   norma 0.0621  forma (1, 3, 3072)  anchor header
+tail held-out 2  |  preset=idioma_entrada
+lang_id | prompt:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt:  50%|█████     | 1/2 [00:00<00:00,  6.09it/s]lang_id | prompt: 100%|██████████| 2/2 [00:00<00:00,  9.41it/s]
+lang_id | prompt +1*fr:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*fr: 100%|██████████| 2/2 [00:00<00:00, 20.92it/s]
+lang_id | prompt +1*q3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*q3: 100%|██████████| 2/2 [00:00<00:00, 21.00it/s]
+lang_id | prompt +1*h3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*h3: 100%|██████████| 2/2 [00:00<00:00, 21.04it/s]
+lang_id | prompt +1*rand0:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*rand0: 100%|██████████| 2/2 [00:00<00:00, 20.93it/s]
+lang_id | prompt +1*rand0_q3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*rand0_q3: 100%|██████████| 2/2 [00:00<00:00, 20.87it/s]
+lang_id | prompt +1*rand0_h3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*rand0_h3: 100%|██████████| 2/2 [00:00<00:00, 20.90it/s]
+lang_id | prompt +1*es:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt +1*es: 100%|██████████| 2/2 [00:00<00:00, 20.82it/s]
+lang_id | prompt_fr:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt_fr: 100%|██████████| 2/2 [00:00<00:00, 20.61it/s]
+lang_id | prompt_es:   0%|          | 0/2 [00:00<?, ?it/s]lang_id | prompt_es: 100%|██████████| 2/2 [00:00<00:00, 20.72it/s]
+lang_id_b | prompt:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt:  50%|█████     | 1/2 [00:00<00:00,  8.75it/s]lang_id_b | prompt: 100%|██████████| 2/2 [00:00<00:00, 12.38it/s]
+lang_id_b | prompt +1*fr:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*fr: 100%|██████████| 2/2 [00:00<00:00, 21.05it/s]
+lang_id_b | prompt +1*q3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*q3:  50%|█████     | 1/2 [00:00<00:00,  8.79it/s]lang_id_b | prompt +1*q3: 100%|██████████| 2/2 [00:00<00:00, 12.40it/s]
+lang_id_b | prompt +1*h3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*h3:  50%|█████     | 1/2 [00:00<00:00,  8.79it/s]lang_id_b | prompt +1*h3: 100%|██████████| 2/2 [00:00<00:00, 12.40it/s]
+lang_id_b | prompt +1*rand0:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*rand0:  50%|█████     | 1/2 [00:00<00:00,  8.65it/s]lang_id_b | prompt +1*rand0: 100%|██████████| 2/2 [00:00<00:00, 12.23it/s]
+lang_id_b | prompt +1*rand0_q3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*rand0_q3:  50%|█████     | 1/2 [00:00<00:00,  8.77it/s]lang_id_b | prompt +1*rand0_q3: 100%|██████████| 2/2 [00:00<00:00, 12.34it/s]
+lang_id_b | prompt +1*rand0_h3:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*rand0_h3:  50%|█████     | 1/2 [00:00<00:00,  8.81it/s]lang_id_b | prompt +1*rand0_h3: 100%|██████████| 2/2 [00:00<00:00, 12.41it/s]
+lang_id_b | prompt +1*es:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt +1*es: 100%|██████████| 2/2 [00:00<00:00, 21.10it/s]
+lang_id_b | prompt_fr:   0%|          | 0/2 [00:00<?, ?it/s]lang_id_b | prompt_fr: 100%|██████████| 2/2 [00:00<00:00, 20.96it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+lang_id | prompt                     2  0.00  0.00  0.00  0.00  1.00  0.00     nan    7.0      nan      nan   0.0
+lang_id | prompt +1*fr               2  0.00  0.00  0.00  0.00  1.00  0.00    0.50    6.5      nan      nan   8.5
+lang_id | prompt +1*q3               2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan   3.0
+lang_id | prompt +1*h3               2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan   3.0
+lang_id | prompt +1*rand0            2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan   8.5
+lang_id | prompt +1*rand0_q3         2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan   3.0
+lang_id | prompt +1*rand0_h3         2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan   3.0
+lang_id | prompt +1*es               2  0.00  0.00  0.00  0.00  1.00  0.00    1.00    7.0      nan      nan   8.5
+lang_id | prompt_fr                  2  0.00  0.00  0.00  0.00  1.00  0.00     nan    6.0      nan      nan   0.0
+lang_id | prompt_es                  2  0.00  0.00  0.00  0.00  1.00  0.00     nan    7.0      nan      nan   0.0
+lang_id_b | prompt                   2  0.00  0.00  0.00  0.00  1.00  0.00     nan    8.0      nan      nan   0.0
+lang_id_b | prompt +1*fr             2  0.00  0.00  0.00  0.00  1.00  0.00    1.00    6.0      nan      nan   8.5
+lang_id_b | prompt +1*q3             2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    8.0      nan      nan   3.0
+lang_id_b | prompt +1*h3             2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    8.0      nan      nan   3.0
+lang_id_b | prompt +1*rand0          2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    8.0      nan      nan   8.5
+lang_id_b | prompt +1*rand0_q3       2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    8.0      nan      nan   3.0
+lang_id_b | prompt +1*rand0_h3       2  0.00  0.00  0.00  0.00  1.00  0.00    0.00    8.0      nan      nan   3.0
+lang_id_b | prompt +1*es             2  0.00  0.00  0.00  0.00  1.00  0.00    1.00    7.0      nan      nan   8.5
+lang_id_b | prompt_fr                2  0.00  0.00  0.00  0.00  1.00  0.00     nan    6.0      nan      nan   0.0
+
+IDIOMA QUE EL MODELO DICE QUE TIENE LA PREGUNTA (primer nombre de idioma en la salida)
+condicion                            n     en     fr     es     de     it     pt  ninguno
+------------------------------------------------------------------------------------------------------------------------------------
+lang_id | prompt                     2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*fr               2   0.50   0.50   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*q3               2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*h3               2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*rand0            2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*rand0_q3         2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*rand0_h3         2   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*es               2   0.00   0.00   1.00   0.00   0.00   0.00     0.00
+lang_id | prompt_fr                  2   0.00   1.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt_es                  2   0.00   0.00   1.00   0.00   0.00   0.00     0.00
+lang_id_b | prompt                   2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*fr             2   0.00   1.00   0.00   0.00   0.00   0.00     0.00
+lang_id_b | prompt +1*q3             2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*h3             2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*rand0          2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*rand0_q3       2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*rand0_h3       2   0.50   0.00   0.00   0.00   0.00   0.00     0.50
+lang_id_b | prompt +1*es             2   0.00   0.00   1.00   0.00   0.00   0.00     0.00
+lang_id_b | prompt_fr                2   0.00   1.00   0.00   0.00   0.00   0.00     0.00
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/paper_v7/_preflight/tests/entrada_o_directiva_idioma_entrada.json
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.36it/s]
+parche fr         norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche fr_s1      norma 0.8489  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.8655  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.8491  forma (1, 1, 3072)  anchor goal_all
+parche q3         norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche h3         norma 0.0621  forma (1, 3, 3072)  anchor header
+parche rand0      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche rand0_q3   norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche rand0_h3   norma 0.0621  forma (1, 3, 3072)  anchor header
+tail held-out 2  |  preset=resta_directiva
+instr_fr | prompt:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt:  50%|█████     | 1/2 [00:00<00:00,  1.53it/s]instr_fr | prompt: 100%|██████████| 2/2 [00:00<00:00,  2.50it/s]instr_fr | prompt: 100%|██████████| 2/2 [00:00<00:00,  2.28it/s]
+instr_fr | prompt -1*fr:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*fr:  50%|█████     | 1/2 [00:00<00:00,  1.88it/s]instr_fr | prompt -1*fr: 100%|██████████| 2/2 [00:01<00:00,  1.78it/s]instr_fr | prompt -1*fr: 100%|██████████| 2/2 [00:01<00:00,  1.80it/s]
+instr_fr | prompt -1*q3:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*q3:  50%|█████     | 1/2 [00:00<00:00,  1.87it/s]instr_fr | prompt -1*q3: 100%|██████████| 2/2 [00:00<00:00,  2.89it/s]instr_fr | prompt -1*q3: 100%|██████████| 2/2 [00:00<00:00,  2.67it/s]
+instr_fr | prompt -1*h3:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*h3:  50%|█████     | 1/2 [00:00<00:00,  1.87it/s]instr_fr | prompt -1*h3: 100%|██████████| 2/2 [00:00<00:00,  2.89it/s]instr_fr | prompt -1*h3: 100%|██████████| 2/2 [00:00<00:00,  2.67it/s]
+instr_fr | prompt -1*rand0:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*rand0:  50%|█████     | 1/2 [00:00<00:00,  1.88it/s]instr_fr | prompt -1*rand0: 100%|██████████| 2/2 [00:00<00:00,  2.91it/s]instr_fr | prompt -1*rand0: 100%|██████████| 2/2 [00:00<00:00,  2.69it/s]
+instr_fr | prompt -1*rand0_q3:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*rand0_q3:  50%|█████     | 1/2 [00:00<00:00,  1.88it/s]instr_fr | prompt -1*rand0_q3: 100%|██████████| 2/2 [00:00<00:00,  2.89it/s]instr_fr | prompt -1*rand0_q3: 100%|██████████| 2/2 [00:00<00:00,  2.68it/s]
+instr_fr | prompt -1*rand0_h3:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*rand0_h3:  50%|█████     | 1/2 [00:00<00:00,  1.88it/s]instr_fr | prompt -1*rand0_h3: 100%|██████████| 2/2 [00:00<00:00,  2.89it/s]instr_fr | prompt -1*rand0_h3: 100%|██████████| 2/2 [00:00<00:00,  2.68it/s]
+instr_fr | prompt -1*es:   0%|          | 0/2 [00:00<?, ?it/s]instr_fr | prompt -1*es:  50%|█████     | 1/2 [00:00<00:00,  1.80it/s]instr_fr | prompt -1*es: 100%|██████████| 2/2 [00:01<00:00,  1.79it/s]instr_fr | prompt -1*es: 100%|██████████| 2/2 [00:01<00:00,  1.79it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+instr_fr | prompt                    2  1.00  0.00  0.00  0.00  0.00  1.00     nan   35.5    0.245    1.630   0.0
+instr_fr | prompt -1*fr              2  1.00  0.00  0.00  0.00  0.00  1.00    0.50   69.5    0.338    1.656   8.5
+instr_fr | prompt -1*q3              2  1.00  0.00  0.00  0.00  0.00  1.00    0.00   35.5    0.242    1.641   3.0
+instr_fr | prompt -1*h3              2  1.00  0.00  0.00  0.00  0.00  1.00    0.00   35.5    0.243    1.696   3.0
+instr_fr | prompt -1*rand0           2  1.00  0.00  0.00  0.00  0.00  1.00    0.50   36.5    0.293    1.427   8.5
+instr_fr | prompt -1*rand0_q3        2  1.00  0.00  0.00  0.00  0.00  1.00    0.00   35.5    0.245    1.630   3.0
+instr_fr | prompt -1*rand0_h3        2  1.00  0.00  0.00  0.00  0.00  1.00    0.00   35.5    0.243    1.638   3.0
+instr_fr | prompt -1*es              2  1.00  0.00  0.00  0.00  0.00  1.00    1.00   67.5    0.408    1.876   8.5
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/paper_v7/_preflight/tests/entrada_o_directiva_resta_directiva.json
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.05s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.57it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+parche fr         norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche fr_s1      norma 0.8489  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.8655  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.8491  forma (1, 1, 3072)  anchor goal_all
+parche q3         norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche h3         norma 0.0621  forma (1, 3, 3072)  anchor header
+parche rand0      norma 0.8418  forma (1, 1, 3072)  anchor goal_all
+parche rand0_q3   norma 0.0546  forma (1, 3, 3072)  anchor goal
+parche rand0_h3   norma 0.0621  forma (1, 3, 3072)  anchor header
+tail held-out 2  |  preset=conflicto
+instr_en | prompt_fr:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt_fr:  50%|█████     | 1/2 [00:00<00:00,  1.44it/s]instr_en | prompt_fr: 100%|██████████| 2/2 [00:03<00:00,  1.69s/it]instr_en | prompt_fr: 100%|██████████| 2/2 [00:03<00:00,  1.54s/it]
+instr_en | prompt:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt:  50%|█████     | 1/2 [00:00<00:00,  2.66it/s]instr_en | prompt: 100%|██████████| 2/2 [00:02<00:00,  1.56s/it]instr_en | prompt: 100%|██████████| 2/2 [00:02<00:00,  1.38s/it]
+instr_en | prompt +1*fr:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*fr:  50%|█████     | 1/2 [00:00<00:00,  2.66it/s]instr_en | prompt +1*fr: 100%|██████████| 2/2 [00:00<00:00,  2.65it/s]instr_en | prompt +1*fr: 100%|██████████| 2/2 [00:00<00:00,  2.65it/s]
+instr_en | prompt +1*q3:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*q3:  50%|█████     | 1/2 [00:00<00:00,  2.64it/s]instr_en | prompt +1*q3: 100%|██████████| 2/2 [00:02<00:00,  1.55s/it]instr_en | prompt +1*q3: 100%|██████████| 2/2 [00:02<00:00,  1.37s/it]
+instr_en | prompt +1*h3:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*h3:  50%|█████     | 1/2 [00:00<00:00,  2.62it/s]instr_en | prompt +1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.57s/it]instr_en | prompt +1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.39s/it]
+instr_en | prompt +1*rand0:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*rand0:  50%|█████     | 1/2 [00:00<00:00,  2.66it/s]instr_en | prompt +1*rand0: 100%|██████████| 2/2 [00:02<00:00,  1.54s/it]instr_en | prompt +1*rand0: 100%|██████████| 2/2 [00:02<00:00,  1.36s/it]
+instr_en | prompt +1*rand0_q3:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*rand0_q3:  50%|█████     | 1/2 [00:00<00:00,  2.67it/s]instr_en | prompt +1*rand0_q3: 100%|██████████| 2/2 [00:02<00:00,  1.55s/it]instr_en | prompt +1*rand0_q3: 100%|██████████| 2/2 [00:02<00:00,  1.38s/it]
+instr_en | prompt +1*rand0_h3:   0%|          | 0/2 [00:00<?, ?it/s]instr_en | prompt +1*rand0_h3:  50%|█████     | 1/2 [00:00<00:00,  2.65it/s]instr_en | prompt +1*rand0_h3: 100%|██████████| 2/2 [00:02<00:00,  1.54s/it]instr_en | prompt +1*rand0_h3: 100%|██████████| 2/2 [00:02<00:00,  1.37s/it]
+plain | prompt:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt:  50%|█████     | 1/2 [00:00<00:00,  2.67it/s]plain | prompt: 100%|██████████| 2/2 [00:02<00:00,  1.55s/it]plain | prompt: 100%|██████████| 2/2 [00:02<00:00,  1.37s/it]
+plain | prompt +1*fr:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt +1*fr:  50%|█████     | 1/2 [00:00<00:00,  1.65it/s]plain | prompt +1*fr: 100%|██████████| 2/2 [00:02<00:00,  1.11s/it]plain | prompt +1*fr: 100%|██████████| 2/2 [00:02<00:00,  1.03s/it]
+plain | prompt +1*q3:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt +1*q3:  50%|█████     | 1/2 [00:00<00:00,  2.68it/s]plain | prompt +1*q3: 100%|██████████| 2/2 [00:02<00:00,  1.55s/it]plain | prompt +1*q3: 100%|██████████| 2/2 [00:02<00:00,  1.38s/it]
+plain | prompt +1*h3:   0%|          | 0/2 [00:00<?, ?it/s]plain | prompt +1*h3:  50%|█████     | 1/2 [00:00<00:00,  2.66it/s]plain | prompt +1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.54s/it]plain | prompt +1*h3: 100%|██████████| 2/2 [00:02<00:00,  1.37s/it]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+instr_en | prompt_fr                 2  0.50  0.50  0.00  0.00  0.00  1.00     nan  291.5    2.159    0.653   0.0
+instr_en | prompt                    2  0.00  1.00  0.00  0.00  0.00  1.00     nan  292.0    6.266    0.022   0.0
+instr_en | prompt +1*fr              2  0.00  1.00  0.00  0.00  0.00  1.00    0.50   58.0    2.694    0.080   8.5
+instr_en | prompt +1*q3              2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.268    0.022   3.0
+instr_en | prompt +1*h3              2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.232    0.022   3.0
+instr_en | prompt +1*rand0           2  0.00  1.00  0.00  0.00  0.00  1.00    0.50  290.5    6.098    0.027   8.5
+instr_en | prompt +1*rand0_q3        2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.268    0.022   3.0
+instr_en | prompt +1*rand0_h3        2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.264    0.022   3.0
+plain | prompt                       2  0.00  1.00  0.00  0.00  0.00  1.00     nan  292.0    6.252    0.018   0.0
+plain | prompt +1*fr                 2  1.00  0.00  0.00  0.00  0.00  1.00    1.00  150.5    0.738    1.573   8.5
+plain | prompt +1*q3                 2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.256    0.018   3.0
+plain | prompt +1*h3                 2  0.00  1.00  0.00  0.00  0.00  1.00    0.00  292.0    6.223    0.017   3.0
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/paper_v7/_preflight/tests/entrada_o_directiva_conflicto.json

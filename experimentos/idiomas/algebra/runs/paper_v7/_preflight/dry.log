@@ -1,0 +1,118 @@
+
+=== plain | prompt_fr
+  [200] 12 tok  antes='user<|end_header_id|>\n\n'  tramo=['Qu', 'elle', ' est', ' la', ' capit', 'ale', ' de', ' l', "'", 'U', 'kraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' est']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 18 tok  antes='user<|end_header_id|>\n\n'  tramo=['Qu', 'elle', ' force', ' maint', 'ient', ' les', ' plan', 'è', 'tes', ' dans', ' leur', ' orb', 'ite', ' autour', ' du', ' Sole', 'il', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' force']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202] 13 tok  antes='user<|end_header_id|>\n\n'  tramo=['Qui', ' a', ' ec', 'rit', ' La', ' Mer', ' et', ' le', ' Vie', 'il', ' Hom', 'me', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qui', ' a', ' ec']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.
+
+=== lang_id | prompt
+  [200]  7 tok  antes=' the language.\n\n'  tramo=['What', ' is', ' the', ' capital', ' of', ' Ukraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 10 tok  antes=' the language.\n\n'  tramo=['What', ' force', ' keeps', ' planets', ' in', ' orbit', ' around', ' the', ' Sun', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' force', ' keeps']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202]  9 tok  antes=' the language.\n\n'  tramo=['Who', ' wrote', ' The', ' Old', ' Man', ' and', ' the', ' Sea', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Who', ' wrote', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== lang_id | prompt_fr
+  [200] 12 tok  antes=' the language.\n\n'  tramo=['Qu', 'elle', ' est', ' la', ' capit', 'ale', ' de', ' l', "'", 'U', 'kraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' est']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 18 tok  antes=' the language.\n\n'  tramo=['Qu', 'elle', ' force', ' maint', 'ient', ' les', ' plan', 'è', 'tes', ' dans', ' leur', ' orb', 'ite', ' autour', ' du', ' Sole', 'il', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' force']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202] 13 tok  antes=' the language.\n\n'  tramo=['Qui', ' a', ' ec', 'rit', ' La', ' Mer', ' et', ' le', ' Vie', 'il', ' Hom', 'me', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qui', ' a', ' ec']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== lang_id | prompt_es
+  [200] 11 tok  antes=' the language.\n\n'  tramo=['¿', 'Cu', 'ál', ' es', ' la', ' capital', ' de', ' U', 'cr', 'ania', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['¿', 'Cu', 'ál']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 22 tok  antes=' the language.\n\n'  tramo=['¿', 'Qué', ' fuer', 'za', ' m', 'anti', 'ene', ' a', ' los', ' planet', 'as', ' en', ' ó', 'r', 'bit', 'a', ' al', 'red', 'edor', ' del', ' Sol', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['¿', 'Qué', ' fuer']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202] 13 tok  antes=' the language.\n\n'  tramo=['¿', 'Qui', 'én', ' escri', 'bi', 'ó', ' El', ' vie', 'jo', ' y', ' el', ' mar', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['¿', 'Qui', 'én']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== lang_id_b | prompt
+  [200]  7 tok  antes=' one word.\n\n'  tramo=['What', ' is', ' the', ' capital', ' of', ' Ukraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 10 tok  antes=' one word.\n\n'  tramo=['What', ' force', ' keeps', ' planets', ' in', ' orbit', ' around', ' the', ' Sun', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' force', ' keeps']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202]  9 tok  antes=' one word.\n\n'  tramo=['Who', ' wrote', ' The', ' Old', ' Man', ' and', ' the', ' Sea', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Who', ' wrote', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== lang_id_b | prompt_fr
+  [200] 12 tok  antes=' one word.\n\n'  tramo=['Qu', 'elle', ' est', ' la', ' capit', 'ale', ' de', ' l', "'", 'U', 'kraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' est']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 18 tok  antes=' one word.\n\n'  tramo=['Qu', 'elle', ' force', ' maint', 'ient', ' les', ' plan', 'è', 'tes', ' dans', ' leur', ' orb', 'ite', ' autour', ' du', ' Sole', 'il', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qu', 'elle', ' force']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202] 13 tok  antes=' one word.\n\n'  tramo=['Qui', ' a', ' ec', 'rit', ' La', ' Mer', ' et', ' le', ' Vie', 'il', ' Hom', 'me', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Qui', ' a', ' ec']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.
+
+=== instr_fr | prompt
+  [200]  7 tok  antes=' in French.'  tramo=[' What', ' is', ' the', ' capital', ' of', ' Ukraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 10 tok  antes=' in French.'  tramo=[' What', ' force', ' keeps', ' planets', ' in', ' orbit', ' around', ' the', ' Sun', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' What', ' force', ' keeps']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202]  9 tok  antes=' in French.'  tramo=[' Who', ' wrote', ' The', ' Old', ' Man', ' and', ' the', ' Sea', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Who', ' wrote', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.
+
+=== instr_en | prompt_fr
+  [200] 12 tok  antes=' in English.'  tramo=[' Qu', 'elle', ' est', ' la', ' capit', 'ale', ' de', ' l', "'", 'U', 'kraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Qu', 'elle', ' est']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 18 tok  antes=' in English.'  tramo=[' Qu', 'elle', ' force', ' maint', 'ient', ' les', ' plan', 'è', 'tes', ' dans', ' leur', ' orb', 'ite', ' autour', ' du', ' Sole', 'il', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Qu', 'elle', ' force']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202] 13 tok  antes=' in English.'  tramo=[' Qui', ' a', ' ec', 'rit', ' La', ' Mer', ' et', ' le', ' Vie', 'il', ' Hom', 'me', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Qui', ' a', ' ec']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== instr_en | prompt
+  [200]  7 tok  antes=' in English.'  tramo=[' What', ' is', ' the', ' capital', ' of', ' Ukraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 10 tok  antes=' in English.'  tramo=[' What', ' force', ' keeps', ' planets', ' in', ' orbit', ' around', ' the', ' Sun', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' What', ' force', ' keeps']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202]  9 tok  antes=' in English.'  tramo=[' Who', ' wrote', ' The', ' Old', ' Man', ' and', ' the', ' Sea', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Who', ' wrote', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+=== plain | prompt
+  [200]  7 tok  antes='user<|end_header_id|>\n\n'  tramo=['What', ' is', ' the', ' capital', ' of', ' Ukraine', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [201] 10 tok  antes='user<|end_header_id|>\n\n'  tramo=['What', ' force', ' keeps', ' planets', ' in', ' orbit', ' around', ' the', ' Sun', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['What', ' force', ' keeps']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [202]  9 tok  antes='user<|end_header_id|>\n\n'  tramo=['Who', ' wrote', ' The', ' Old', ' Man', ' and', ' the', ' Sea', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Who', ' wrote', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.
