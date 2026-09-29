@@ -170,3 +170,64 @@ EPOCH 9/10
   [batch 2/7] CE=0.2149  norma=0.982088  lr=1.77e-05
   [batch 3/7] CE=0.2214  norma=0.983307  lr=1.49e-05
   [batch 4/7] CE=0.2429  norma=0.984925  lr=1.24e-05
+  [batch 5/7] CE=0.2126  norma=0.985284  lr=1.01e-05
+  [batch 6/7] CE=0.1631  norma=0.985330  lr=7.98e-06
+  [batch 7/7] CE=0.1052  norma=0.985209  lr=6.13e-06
+  held-out head CE por entrada: prompt=0.3619  prompt_es=0.5101  prompt_de=1.2463
+
+Epoch 9: CE train (trayectoria)=0.2048  norma=0.985209
+  CE head del checkpoint:  train=0.4339   held-out=0.7061   brecha=+0.2722
+  held-out CE  head(primeros 5): con parche=0.7061  sin parche=4.9134  delta=-4.2074
+               toda la respuesta      : con parche=0.4495  sin parche=2.1912  delta=-1.7417
+  * mejor TRAIN hasta ahora (head CE 0.4339)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 10/10
+######################################################################
+  [batch 1/7] CE=0.2958  norma=0.985038  lr=4.51e-06
+  [batch 2/7] CE=0.2148  norma=0.984567  lr=3.14e-06
+  [batch 3/7] CE=0.2240  norma=0.984675  lr=2.01e-06
+  [batch 4/7] CE=0.2570  norma=0.984735  lr=1.13e-06
+  [batch 5/7] CE=0.2435  norma=0.984722  lr=5.04e-07
+  [batch 6/7] CE=0.1512  norma=0.984718  lr=1.26e-07
+  [batch 7/7] CE=0.1375  norma=0.984718  lr=0.00e+00
+  held-out head CE por entrada: prompt=0.4000  prompt_es=0.5599  prompt_de=1.0801
+
+Epoch 10: CE train (trayectoria)=0.2177  norma=0.984718
+  CE head del checkpoint:  train=0.3110   held-out=0.6800   brecha=+0.3690
+  held-out CE  head(primeros 5): con parche=0.6800  sin parche=4.9134  delta=-4.2335
+               toda la respuesta      : con parche=0.4410  sin parche=2.1912  delta=-1.7502
+  * mejor TRAIN hasta ahora (head CE 0.3110)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 0.6758)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    0.7187     0.6758   -0.0428    0.7945  <- mejor held-out
+     2    0.8044     0.9098   +0.1053    0.8919
+     3    0.6868     0.7745   +0.0878    0.9329
+     4    0.6441     0.8164   +0.1723    0.9510
+     5    0.5719     0.7403   +0.1684    0.9621
+     6    0.5842     0.8028   +0.2187    0.9704
+     7    0.5604     0.7868   +0.2264    0.9779
+     8    0.5215     0.7818   +0.2603    0.9822
+     9    0.4339     0.7061   +0.2722    0.9852
+    10    0.3110     0.6800   +0.3690    0.9847  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 0.6758)  -> algebra/runs/pos_q3/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 10 (CE 0.3110)  -> algebra/runs/pos_q3/lang_patch_best_train.pt
+  los dos criterios NO coinciden: compara los dos parches en el eval,
+  la CE del head es un proxy y lo que decide es is_french sobre generacion.
+
+======================================================================
+Norma final: 0.794453
+  posicion 0: 0.492686
+  posicion 1: 0.462173
+  posicion 2: 0.418104
+
+Guardado: algebra/runs/pos_q3/lang_patch.pt
+          algebra/runs/pos_q3/lang_metadata.pt
