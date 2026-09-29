@@ -102,6 +102,15 @@ def main():
 
     print(f"parche {args.patch}  ||v|| {v.norm():.4f}  ||e|| medio del vocab {vocab_norm:.4f}  "
           f"(ratio {v.norm().item() / vocab_norm:.3f})")
+    # Percentil de ||v|| entre las normas de los embeddings: sobre todo el
+    # vocabulario y sobre los tokens que de verdad aparecen en las preguntas.
+    vn = v.norm().item()
+    norms_vocab = W.norm(dim=1)
+    norms_preg = norms_vocab[U]
+    pct_vocab = (norms_vocab < vn).float().mean().item()
+    pct_preg = (norms_preg < vn).float().mean().item()
+    print(f"||v|| supera la norma de {pct_vocab:.1%} de los tokens del vocabulario y de "
+          f"{pct_preg:.1%} de los tokens de las preguntas (mediana preguntas {norms_preg.median():.4f})")
     print(f"held-out {len(heldout)} filas (idx {heldout.index[0]}..{heldout.index[-1]})  |  "
           f"entradas {cols}  |  tokens unicos {len(uniq)}")
 
@@ -116,7 +125,9 @@ def main():
 
     filas, rep = [], {"patch": args.patch, "v_norm": v.norm().item(), "vocab_norm_mean": vocab_norm,
                       "n_unique": len(uniq), "sanity_self": self_ok,
-                      "gap_median": gap.median().item(), "conds": []}
+                      "gap_median": gap.median().item(),
+                      "pct_norma_vocab": pct_vocab, "pct_norma_preguntas": pct_preg,
+                      "norma_mediana_preguntas": norms_preg.median().item(), "conds": []}
     detalle = {}
     for nombre, vec in (("v", v), ("rand", r)):
         for a in alphas:
@@ -173,6 +184,8 @@ def main():
     with open(os.path.join(args.out_dir, "nearest_token.md"), "w") as f:
         f.write(f"# Vecino mas cercano de e + a*v (`{args.patch}`)\n\n")
         f.write(f"||v|| {v.norm():.4f}, ||e|| medio {vocab_norm:.4f}, gap mediano {gap.median():.3f}\n\n")
+        f.write(f"||v|| supera la norma de {pct_vocab:.1%} de los tokens del vocabulario y de "
+                f"{pct_preg:.1%} de los tokens de las preguntas (mediana {norms_preg.median():.4f})\n\n")
         f.write("| vec | a | entrada | n_tok | cambia l2 | cambia cos | destinos l2 |\n|---|---|---|---|---|---|---|\n")
         for nombre, a, c, n, fl2, fcos, top in filas:
             tops = ", ".join(f"`{s}`×{n_}" for s, n_ in top[:5])
