@@ -189,3 +189,43 @@ EPOCH 10/10
   [batch 4/7] CE=0.1937  norma=0.595234  lr=1.13e-06
   [batch 5/7] CE=0.1818  norma=0.595252  lr=5.04e-07
   [batch 6/7] CE=0.1416  norma=0.595269  lr=1.26e-07
+  [batch 7/7] CE=0.1137  norma=0.595268  lr=0.00e+00
+  held-out head CE por entrada: prompt=0.5965  prompt_es=0.7574  prompt_de=1.1335
+
+Epoch 10: CE train (trayectoria)=0.1893  norma=0.595268
+  CE head del checkpoint:  train=0.1926   held-out=0.8291   brecha=+0.6366
+  held-out CE  head(primeros 5): con parche=0.8291  sin parche=4.9134  delta=-4.0843
+               toda la respuesta      : con parche=0.4952  sin parche=2.1912  delta=-1.6959
+  * mejor TRAIN hasta ahora (head CE 0.1926)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 0.6922)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    0.8721     0.6922   -0.1799    0.4845  <- mejor held-out
+     2    0.7020     0.8697   +0.1677    0.5441
+     3    0.9550     1.1827   +0.2276    0.5735
+     4    0.9652     1.2254   +0.2602    0.5816
+     5    0.8808     1.2562   +0.3754    0.5878
+     6    0.5761     1.0545   +0.4784    0.5887
+     7    0.6954     1.1480   +0.4526    0.5927
+     8    0.8016     1.3884   +0.5868    0.5944
+     9    0.3793     0.9092   +0.5300    0.5960
+    10    0.1926     0.8291   +0.6366    0.5953  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 0.6922)  -> algebra/runs/pos_h3/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 10 (CE 0.1926)  -> algebra/runs/pos_h3/lang_patch_best_train.pt
+  los dos criterios NO coinciden: compara los dos parches en el eval,
+  la CE del head es un proxy y lo que decide es is_french sobre generacion.
+
+======================================================================
+Norma final: 0.484453
+  posicion 0: 0.236679
+  posicion 1: 0.246777
+  posicion 2: 0.343189
+
+Guardado: algebra/runs/pos_h3/lang_patch.pt
+          algebra/runs/pos_h3/lang_metadata.pt
