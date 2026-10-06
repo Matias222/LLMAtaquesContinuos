@@ -24,8 +24,9 @@ import pandas as pd
 import torch
 import tqdm
 
+import lang_id
 from checkers import (answer_correct, attr_ok, french_score, is_french, is_lang, is_uppercase,
-                      lang_score, truncate_at_role_leak)
+                      lang_detail, lang_score, truncate_at_role_leak)
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
                 n_patched_tokens, nll_of_target)
 from reporting import CONDITIONS, open_metrics, score_rows, write_markdown
@@ -101,6 +102,9 @@ def main():
         for key, text in (("baseline", base), ("reference", ref), ("patched", patched)):
             rec[f"{key}_is_french"] = bool(is_french(text))
             rec[f"{key}_french_score"] = float(french_score(text))
+            det = lang_detail(text)
+            rec[f"{key}_lang"] = det["lang"]
+            rec[f"{key}_lang_revisar"] = det["revisar"]
             if celda:
                 rec[f"{key}_is_target"] = bool(is_lang(text, args.target_lang))
                 rec[f"{key}_target_score"] = float(lang_score(text, args.target_lang))
@@ -148,6 +152,7 @@ def main():
         "patch_path": os.path.abspath(args.patch),
         "model_path": args.model,
         "patch_norm": float(patch.norm(2).item()),
+        "lang_id": lang_id.descripcion(),
         "patch_shape": list(patch.shape),
         "n_heldout": len(rows),
         "config": {

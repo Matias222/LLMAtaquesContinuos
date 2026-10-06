@@ -70,6 +70,8 @@ import pandas as pd
 import torch
 import tqdm
 
+import lang_id
+
 from attn_utils import add_metrics, aggregate
 from checkers import truncate_at_role_leak
 from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_tokenizer,
@@ -283,7 +285,7 @@ def main():
     rep = {"objetivo": "signo del parche e idioma de la pregunta de entrada",
            "target_lang": args.target_lang, "upper": args.upper,
            "preset": name, "patch": os.path.abspath(args.patch),
-           "patch_norm": patch.norm(2).item(), "config": vars(args),
+           "patch_norm": patch.norm(2).item(), "config": vars(args), "lang_id": lang_id.descripcion(),
            "n_tail": len(heldout), "condiciones": resultados}
     jp = os.path.join(args.out_dir, f"cross_lang_{name}.json")
     with open(jp, "w", encoding="utf-8") as f:

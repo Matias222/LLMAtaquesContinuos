@@ -293,6 +293,7 @@ def main():
     import torch
     import tqdm
 
+    import lang_id
     from attn_utils import add_metrics, aggregate
     from checkers import truncate_at_role_leak
     from lm import (DEFAULT_MODEL, build_suffix_manager, generate, get_embeddings,
@@ -475,7 +476,8 @@ def main():
            "preset": name, "patches": {k: float(v.norm(2).item()) for k, v in patches.items()},
            "anchors": dict(anchors),
            "plantillas": {k: v[0] for k, v in PLANTILLAS.items()},
-           "config": vars(args), "n_tail": len(heldout), "condiciones": resultados}
+           "config": vars(args), "lang_id": lang_id.descripcion(), "n_tail": len(heldout),
+           "condiciones": resultados}
     jp = os.path.join(args.out_dir, f"entrada_o_directiva_{name}.json")
     with open(jp, "w", encoding="utf-8") as f:
         json.dump(rep, f, indent=2, ensure_ascii=False)

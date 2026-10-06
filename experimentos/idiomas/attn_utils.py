@@ -58,7 +58,7 @@ import re
 import torch
 
 from checkers import (answer_correct, attr_ok, french_score, is_french, is_lang,
-                      is_uppercase, language_verdict, truncate_at_role_leak, uppercase_score)
+                      is_uppercase, lang_detail, truncate_at_role_leak, uppercase_score)
 from lm import (apply_patch_first_n, build_suffix_manager, get_embedding_matrix,
                 get_embeddings, stop_token_ids)
 
@@ -89,9 +89,12 @@ def add_metrics(rec, key, text, answer, aliases, target_lang=None, upper=False):
     checkers.attr_ok). Las de mayusculas se escriben siempre.
     """
     has_answer = str(answer).strip() != ""
-    rec[f"{key}_is_french"] = bool(is_french(text))
+    det = lang_detail(text)
+    rec[f"{key}_is_french"] = det["lang"] == "fr"
     rec[f"{key}_french_score"] = float(french_score(text))
-    rec[f"{key}_lang"] = language_verdict(text)
+    rec[f"{key}_lang"] = det["lang"]
+    rec[f"{key}_lang_p"] = det["p"]
+    rec[f"{key}_lang_revisar"] = det["revisar"]
     rec[f"{key}_answer_correct"] = (bool(answer_correct(text, answer, aliases))
                                     if has_answer else None)
     rec[f"{key}_starts_fr"] = starts_french(text)
@@ -99,7 +102,7 @@ def add_metrics(rec, key, text, answer, aliases, target_lang=None, upper=False):
     rec[f"{key}_uppercase_score"] = float(uppercase_score(text))
     rec[f"{key}_is_uppercase"] = bool(is_uppercase(text))
     if target_lang:
-        rec[f"{key}_is_target"] = bool(is_lang(text, target_lang))
+        rec[f"{key}_is_target"] = det["lang"] == target_lang
         rec[f"{key}_attr_ok"] = bool(attr_ok(text, target_lang, upper))
     return rec
 
@@ -120,6 +123,8 @@ def aggregate(rows, key):
         "len_media": sum(r[f"{key}_len"] for r in rows) / n,
         "cortas_lt25": int(sum(1 for r in rows if r[f"{key}_len"] < 25)),
         "veredictos": ver,
+        # veredictos dudosos de GlotLID (lang_id.detectar): los que van a revision manual
+        "lang_revisar": int(sum(bool(r.get(f"{key}_lang_revisar")) for r in rows)),
         # .get: filas escritas antes de que existieran estas metricas
         "is_uppercase": sum(r.get(f"{key}_is_uppercase", False) for r in rows) / n,
         "is_target": (sum(r[f"{key}_is_target"] for r in rows) / n

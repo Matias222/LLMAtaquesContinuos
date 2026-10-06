@@ -16,6 +16,8 @@ import unicodedata
 
 import pandas as pd
 
+import lang_id
+
 # ---------------------------------------------------------------------------
 # Normalizacion
 # ---------------------------------------------------------------------------
@@ -58,7 +60,12 @@ def truncate_at_role_leak(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Deteccion de idioma (frances vs ingles)
+# Deteccion de idioma
+#
+# Las funciones publicas (language_verdict, lang_score, french_score, is_french,
+# is_lang) usan GlotLID via lang_id.py. Lo que sigue hasta lang_score_heuristica
+# es la heuristica vieja de palabras funcionales y acentos: solo corre con
+# LANG_ID=heuristica, para reproducir numeros anteriores al cambio.
 # ---------------------------------------------------------------------------
 
 # Palabras funcionales que existen en UNO de los dos idiomas, no en ambos.
@@ -290,6 +297,11 @@ def language_evidence(text: str):
 
 
 def french_score(text: str) -> float:
+    """Puntaje continuo de frances en [0, 1]: lang_score(text, "fr")."""
+    return lang_score(text, "fr")
+
+
+def french_score_heuristica(text: str) -> float:
     """
     Fraccion de la evidencia total que apunta al frances, en [0, 1].
 
@@ -305,6 +317,34 @@ def french_score(text: str) -> float:
 
 
 def language_verdict(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
+    """
+    Codigo de idioma ('fr', 'en', 'es', 'de', 'it', 'pt', 'ca', 'nl', ...) o
+    'unknown' (sin idioma decidible).
+
+    Con el backend glotlid (default, ver lang_id.py) `threshold` y `min_tokens`
+    no se usan: rigen las reglas fijas de lang_id (lista cerrada de idiomas,
+    menos de 3 palabras = 'unknown'). Con LANG_ID=heuristica es la funcion
+    vieja, language_verdict_heuristica.
+    """
+    if lang_id.backend() == "glotlid":
+        return lang_id.detectar(text)["lang"]
+    return language_verdict_heuristica(text, threshold, min_tokens)
+
+
+def lang_detail(text: str) -> dict:
+    """
+    {"lang", "p", "top1", "revisar"} para guardar en cada fila de un reporte.
+    `revisar` marca los veredictos dudosos (top-1 de GlotLID fuera de la lista
+    cerrada o probabilidad baja); con la heuristica no hay probabilidad y
+    siempre es False.
+    """
+    if lang_id.backend() == "glotlid":
+        d = lang_id.detectar(text)
+        return {"lang": d["lang"], "p": round(d["p"], 4), "top1": d["top1"], "revisar": d["revisar"]}
+    return {"lang": language_verdict_heuristica(text), "p": None, "top1": None, "revisar": False}
+
+
+def language_verdict_heuristica(text: str, threshold: float = 0.6, min_tokens: int = 3) -> str:
     """
     'fr' | 'en' | 'es' | 'de' | 'it' | 'pt' | 'unknown'.
 
@@ -373,7 +413,18 @@ LANGS = ("fr", "en", "es", "de", "it", "pt")
 
 
 def lang_score(text: str, lang: str) -> float:
-    """Fraccion de la evidencia que apunta a `lang`. lang_score(t, "fr") == french_score(t)."""
+    """
+    Puntaje continuo de `lang` en [0, 1]; 0.5 = indecidible. Con glotlid es la
+    probabilidad renormalizada sobre la lista cerrada (lang_id.score); con
+    LANG_ID=heuristica, la fraccion de evidencia de palabras funcionales.
+    """
+    if lang_id.backend() == "glotlid":
+        return lang_id.score(text, lang)
+    return lang_score_heuristica(text, lang)
+
+
+def lang_score_heuristica(text: str, lang: str) -> float:
+    """Fraccion de la evidencia que apunta a `lang`. lang_score_heuristica(t, "fr") == french_score_heuristica(t)."""
     ev = language_evidence(text)
     tot = sum(ev.values())
     if tot == 0:
