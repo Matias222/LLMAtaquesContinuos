@@ -12,7 +12,8 @@
 #
 # Etapas (STAGES, en orden; cada una escribe su reporte en $R/reportes/<etapa>.md):
 #   datos   held-out listo: prompt_it/prompt_pt y alias de 6 idiomas de las viejas
-#           (preparar_targets_v8.py heldout); valida y aborta si falta algo
+#           (preparar_targets_v8.py heldout); valida y aborta si falta algo. Despues
+#           iguala el train de las tres celdas a 549 filas (preparar_targets_v8.py igualar)
 #   train   las tres direcciones                                  -> reportes/train.md
 #   A       held-out v8 por categoria: ingles (con referencia), otros idiomas de
 #           entrenamiento, italiano y portugues                    -> reportes/A.md
@@ -87,6 +88,8 @@ PY
 if has datos; then
   echo; echo "################ datos"
   python3 preparar_targets_v8.py heldout --dir "$TDIR" --split $SPLIT 2>&1 | tee "$R/reportes/datos.log"
+  # las tres celdas entrenan con la misma cantidad de filas (la menor: fr, 549)
+  python3 preparar_targets_v8.py igualar --dir "$TDIR" --split $SPLIT 2>&1 | tee -a "$R/reportes/datos.log"
 fi
 
 # =============================================================================

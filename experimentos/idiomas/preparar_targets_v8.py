@@ -280,6 +280,50 @@ def cmd_heldout(args):
     print("held-out listo" + (" (dry run)" if args.dry_run else ""))
 
 
+def cmd_igualar(args):
+    """
+    Las tres celdas entrenan con la MISMA cantidad de filas: la del minimo entre
+    celdas (fr, 549 con el split 0.84) o --n. Las celdas que tienen mas pierden
+    filas de train hasta igualar, eligiendo para maximizar el parecido con la
+    celda de referencia (la de menos filas):
+      1. solo filas que NO pasan el gate en la celda de referencia;
+      2. de la categoria con mas excedente respecto de la referencia;
+      3. dentro de la categoria, la fila de indice mas alto.
+    Las recortadas quedan passed_gate=False y recorte='igualar_<n>'. Idempotente.
+    """
+    dfs = {c: pd.read_csv(os.path.join(args.dir, f"targets_v8_{c}.csv"), sep=";",
+                          keep_default_na=False, dtype=str) for c in ("fr", "es", "de")}
+    corte = int(len(dfs["fr"]) * args.split)
+    ok = {c: [i for i in range(corte) if d.at[i, "passed_gate"].lower() == "true"] for c, d in dfs.items()}
+    n = args.n or min(len(v) for v in ok.values())
+    ref = min(ok, key=lambda c: len(ok[c]))
+    ref_set = set(ok[ref])
+    ref_cat = dfs[ref].loc[ok[ref], "categoria"].value_counts()
+    for c, d in dfs.items():
+        if "recorte" not in d.columns:
+            d["recorte"] = ""
+        sobra = len(ok[c]) - n
+        sacadas = []
+        while sobra > 0:
+            vivas = [i for i in ok[c] if i not in sacadas]
+            exceso = (d.loc[vivas, "categoria"].value_counts() - ref_cat).fillna(0)
+            candidatas = [i for i in vivas if i not in ref_set] or vivas
+            orden = sorted(candidatas, key=lambda i: (-exceso.get(d.at[i, "categoria"], 0), -i))
+            sacadas.append(orden[0])
+            sobra -= 1
+        for i in sacadas:
+            d.at[i, "passed_gate"] = "False"
+            d.at[i, "recorte"] = f"igualar_{n}"
+        quedan = [i for i in ok[c] if i not in sacadas]
+        print(f"[{c}] train {len(ok[c])} -> {len(quedan)}  (recortadas {len(sacadas)}: "
+              f"{d.loc[sacadas, 'categoria'].value_counts().to_dict() if sacadas else {}})  "
+              f"comparte con {ref}: {len(set(quedan) & ref_set)}")
+        if sacadas and not args.dry_run:
+            d.to_csv(os.path.join(args.dir, f"targets_v8_{c}.csv"), sep=";", index=False)
+    if args.dry_run:
+        print("--dry_run: no se escribe nada")
+
+
 def cmd_revisar(args):
     from checkers import answer_correct, language_verdict
     archivos = {c: os.path.join(args.dir, f"targets_v8_{c}.csv") for c in ("fr", "es", "de")}
@@ -353,11 +397,16 @@ def main():
     h.add_argument("--dir", required=True)
     h.add_argument("--split", type=float, default=0.84)
     h.add_argument("--dry_run", action="store_true")
+    q = sub.add_parser("igualar")
+    q.add_argument("--dir", required=True)
+    q.add_argument("--split", type=float, default=0.84)
+    q.add_argument("--n", type=int, default=0, help="filas de train por celda (0 = el minimo entre celdas)")
+    q.add_argument("--dry_run", action="store_true")
     v = sub.add_parser("revisar")
     v.add_argument("--dir", required=True)
     args = ap.parse_args()
     {"armar": cmd_armar, "restaurar": cmd_restaurar, "regate": cmd_regate,
-     "heldout": cmd_heldout, "revisar": cmd_revisar}[args.cmd](args)
+     "heldout": cmd_heldout, "igualar": cmd_igualar, "revisar": cmd_revisar}[args.cmd](args)
 
 
 if __name__ == "__main__":
