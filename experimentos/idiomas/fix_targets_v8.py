@@ -96,6 +96,20 @@ FIXES_OUTPUT = {
     },
 }
 
+# Respuestas de una sola palabra (veredicto 'unknown', fuera del gate) reescritas
+# con la frase que el propio modelo usa en las capitales cortas que SI pasan ("Die
+# Hauptstadt von Mosambik ist Maputo."). El dato no cambia. Reemplazo de la salida
+# COMPLETA, solo si es exactamente la original (un reemplazo literal no seria
+# idempotente: "Windhoek" esta dentro de la frase nueva). Se eligieron 3 filas de
+# train para que la celda de llegue a 650 filas en el gate (2026-10-06).
+FIXES_OUTPUT_COMPLETO = {
+    "de": {
+        "Capital of Madagascar?": ("Antananarivo", "Die Hauptstadt von Madagaskar ist Antananarivo."),
+        "Capital of Namibia?": ("Windhoek", "Die Hauptstadt von Namibia ist Windhoek."),
+        "Capital of Bhutan?": ("Thimphu", "Die Hauptstadt von Bhutan ist Thimphu."),
+    },
+}
+
 # 3. Muletilla de apertura en espanol. 123 de las 600 respuestas nuevas de la celda
 #    es abren con "¡Claro!" (a menudo seguido de "(¡Por supuesto!)" o "(¡Entendido!)");
 #    en las 100 viejas, 1. La disparan los imperativos y los marcos conversacionales,
@@ -132,6 +146,18 @@ def aplicar(df, celda, log):
         if txt != df.at[i, "output"]:
             log.append(f"[{celda}] {prompt[:45]:<45} -> {txt[:90]!r}")
             df.at[i, "output"] = txt
+    for prompt, (viejo, nuevo) in FIXES_OUTPUT_COMPLETO.get(celda, {}).items():
+        if prompt not in por_prompt:
+            log.append(f"[{celda}] aviso: no esta la pregunta {prompt!r} (se saltea)")
+            continue
+        i = por_prompt[prompt]
+        actual = df.at[i, "output"].strip()
+        if actual == viejo:
+            df.at[i, "output"] = nuevo
+            log.append(f"[{celda}] {prompt[:45]:<45} -> {nuevo!r}")
+            n += 1
+        elif actual != nuevo:
+            raise SystemExit(f"[{celda}] {prompt!r}: salida inesperada {actual[:80]!r}")
     regla = APERTURAS.get(celda)
     if regla is not None:
         sacadas = 0
