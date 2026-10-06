@@ -32,9 +32,9 @@
   imperativo               100    87%        97%       90%
   imperativo_explicativo   100   100%       100%       56%
   explicativa              100   100%       100%       75%
-  corta                    100    75%        87%       87%
+  corta                    100    78%        90%       87%
   conversacional           100    94%        99%       95%
-  veredictos: {'de': 679, 'unknown': 16, 'en': 3, 'da': 1, 'es': 1}
+  veredictos: {'de': 682, 'unknown': 13, 'en': 3, 'da': 1, 'es': 1}
 
 === traducciones (en el CSV fr)
   prompt_es: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot

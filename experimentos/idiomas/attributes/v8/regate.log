@@ -1,31 +1,31 @@
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
 
-=== fr: gate 572 -> 651 de 700  (train, primeras 560: 465 -> 524)
+=== fr: gate 651 -> 651 de 700  (train, primeras 560: 524 -> 524)
   categoria                 antes  despues   train
   factual_clasica              99       99      79
-  factual_aperturas            87       88      71
-  imperativo                   89       90      73
-  imperativo_explicativo       61      100      80
-  explicativa                  62      100      80
-  corta                        84       83      69
-  conversacional               90       91      72
+  factual_aperturas            88       88      71
+  imperativo                   90       90      73
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        83       83      69
+  conversacional               91       91      72
 
-=== es: gate 584 -> 656 de 700  (train, primeras 560: 471 -> 528)
+=== es: gate 656 -> 656 de 700  (train, primeras 560: 528 -> 528)
   categoria                 antes  despues   train
   factual_clasica             100      100      80
-  factual_aperturas            89       92      74
-  imperativo                   93       91      73
-  imperativo_explicativo       60      100      80
-  explicativa                  65      100      80
-  corta                        83       78      65
-  conversacional               94       95      76
+  factual_aperturas            92       92      74
+  imperativo                   91       91      73
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        78       78      65
+  conversacional               95       95      76
 
-=== de: gate 556 -> 647 de 700  (train, primeras 560: 456 -> 521)
+=== de: gate 647 -> 650 de 700  (train, primeras 560: 521 -> 524)
   categoria                 antes  despues   train
   factual_clasica             100      100      80
-  factual_aperturas            90       91      72
-  imperativo                   90       87      72
-  imperativo_explicativo       41      100      80
-  explicativa                  60      100      80
-  corta                        85       75      62
-  conversacional               90       94      75
+  factual_aperturas            91       91      72
+  imperativo                   87       87      72
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        75       78      65
+  conversacional               94       94      75

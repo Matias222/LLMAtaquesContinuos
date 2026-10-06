@@ -93,7 +93,7 @@ Katzen haben eine besondere Fähigkeit, sich auf den Boden zu drehen und zu land
 1. **Evolutionäre Überlebensstrategie**: Im Laufe der Evolution haben Katzen gelernt, sich auf den Boden zu";reflex;reflej|rifless;"Cats are known for their incredible ability to right themselves in mid-air and land on their feet, a phenomenon known as ""righting reflex."" This remarkable ability is made possible by a combination of their unique physiology and behavior. Here are some reasons why cats can land on their feet:
 
 1. **Inner ear structure**: Cats have a special organ in their inner ear called the vestibular apparatus, which contains three semicircular canals filled with fluid. These canals are lined with sensory hair cells";False;False;de;en;True;True;True;Warum landen Katzen auf den Füßen?;de;True;Pourquoi les chats retombent-ils sur leurs pattes ?;fr;True;¿Por qué los gatos caen de pie?;es;True;;;;;;;explicativa;8;0.9998;0.0632;True;de;Answer in German.
-Capital of Madagascar?;Antananarivo;Antananarivo;Tananarive;The capital of Madagascar is Antananarivo (also known as Tana).;False;False;unknown;en;True;True;False;Hauptstadt von Madagaskar?;de;True;Capitale de Madagascar ?;fr;True;¿Capital de Madagascar?;es;True;;;;;;;corta;4;0.5;0.0833;True;de;Answer in German.
+Capital of Madagascar?;Die Hauptstadt von Madagaskar ist Antananarivo.;Antananarivo;Tananarive;The capital of Madagascar is Antananarivo (also known as Tana).;False;False;de;en;True;True;True;Hauptstadt von Madagaskar?;de;True;Capitale de Madagascar ?;fr;True;¿Capital de Madagascar?;es;True;;;;;;;corta;4;0.5;0.0833;True;de;Answer in German.
 Settle a bet: who excavated Troy?;"Eine interessante Frage!
 
 Die Entdeckung von Troja wurde nicht von einem einzelnen Archäologen oder Forscher gemacht, sondern es war ein Team von Archäologen, die unter der Leitung von Heinrich Schliemann (1822-1890) und Wilhelm Dörpfeld (1843-1925) arbeitete.
@@ -130,7 +130,7 @@ How do ants find food?;"Ants finden Nahrung auf verschiedene Weise. Hier sind ei
 **Communication and Trail Marking**
 
 Ants use chemical signals, known as pheromones, to communicate with each other about food sources. When an ant finds food, it returns to its nest and deposits pheromones on the ground, creating a trail that other ants can follow. This process is called ""trail";False;False;de;en;True;True;True;Wie finden Ameisen Futter?;de;True;Comment les fourmis trouvent-elles de la nourriture ?;fr;True;¿Cómo encuentran comida las hormigas?;es;True;;;;;;;explicativa;6;0.9997;0.0623;True;de;Answer in German.
-Capital of Namibia?;Windhoek;Windhoek;;The capital of Namibia is Windhoek.;False;False;unknown;en;True;True;False;Hauptstadt von Namibia?;de;True;Capitale de la Namibie ?;fr;True;¿Capital de Namibia?;es;True;;;;;;;corta;5;0.5;0.125;True;de;Answer in German.
+Capital of Namibia?;Die Hauptstadt von Namibia ist Windhoek.;Windhoek;;The capital of Namibia is Windhoek.;False;False;de;en;True;True;True;Hauptstadt von Namibia?;de;True;Capitale de la Namibie ?;fr;True;¿Capital de Namibia?;es;True;;;;;;;corta;5;0.5;0.125;True;de;Answer in German.
 Random thought: who founded Facebook?;"Ein interessanter Gedanke!
 
 Facebook wurde von Mark Zuckerberg, einem 19-jährigen Studenten an der Harvard University, gegründet. Er gründete das Unternehmen im Jahr 2004 zusammen mit seinen College-Kameraden Eduardo Saverin, Andrew McCollum, Dustin Moskovitz und Chris Hughes.";Zuckerberg;;"A random thought indeed!
@@ -333,7 +333,7 @@ Die Herstellung von Butter ist ein einfacher Prozess, der jedoch einige Schritte
 
 1. **Cream Collection**: Fresh cream is collected from cows, goats, or sheep. The cream is typically around 35-40% fat content.
 2. **Cream Churning**: The cream is poured into a churn, which can be a traditional wooden churn or a modern electric churning machine. The";False;False;de;en;False;True;True;Wie wird Butter hergestellt?;de;True;Comment fabrique-t-on le beurre ?;fr;True;¿Cómo se hace la mantequilla?;es;True;;;;;;;explicativa;5;0.9998;0.0811;True;de;Answer in German.
-Capital of Bhutan?;Thimphu;Thimphu;Thimpu;The capital of Bhutan is Thimphu.;False;False;unknown;en;True;True;False;Hauptstadt von Bhutan?;de;True;Capitale du Bhoutan ?;fr;True;¿Capital de Bután?;es;True;;;;;;;corta;5;0.5;0.1429;True;de;Answer in German.
+Capital of Bhutan?;Die Hauptstadt von Bhutan ist Thimphu.;Thimphu;Thimpu;The capital of Bhutan is Thimphu.;False;False;de;en;True;True;True;Hauptstadt von Bhutan?;de;True;Capitale du Bhoutan ?;fr;True;¿Capital de Bután?;es;True;;;;;;;corta;5;0.5;0.1429;True;de;Answer in German.
 Okay, who runs SpaceX?;SpaceX wird von Elon Musk geleitet. Er ist der Gründer, Vorsitzende und CEO der Firma.;Elon Musk;Musk;"SpaceX is a private aerospace manufacturer and space transport services company founded by Elon Musk in 2002. Elon Musk is the CEO, CTO, and lead designer of the company. He is also the founder of other companies such as Tesla, Neuralink, and The Boring Company.
 
 Under Musk's leadership, SpaceX has become a leading player in the private space industry, with numerous achievements and milestones, including:

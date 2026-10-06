@@ -1,39 +1,6 @@
-[fr] Go over how rainbows form.                    -> "Bien sûr!\n\nLes arcs-en-ciel se forment à partir d'un phénomène optique qui se produit lors"
-[fr] Run through why Earth has seasons.            -> "Bien sûr!\n\nLes saisons sur Terre sont causées par l'orbite elliptique de notre planète aut"
-[fr] Shed light on why popcorn pops.               -> "Bien sûr!\n\nLe popcorn pousse en raison d'une réaction thermique rapide et explosive qui se"
-[fr] Demystify how airplanes stay airborne.        -> "Bien sûr! Je vais essayer de démythifier comment les avions restent en vol.\n\nL'avion est e"
-[fr] Spell out why rubber balls bounce.            -> 'Bien sûr!\n\nLe ballon en caoutchouc rebondit parce que les forces de résistance et de tensi'
-[fr] Run through why blood is red.                 -> "Bien sûr!\n\nLe sang est rouge parce qu'il contient un pigment appelé hémoglobine. Cette pro"
-[fr] Go over how rockets move in space.            -> "Bien sûr!\n\nLes fusées dans l'espace fonctionnent en utilisant la force de l'impulsion. Voi"
-[fr] Examine why salt melts ice.                   -> "L'examen de la raison pour laquelle le sel fond la glace est un sujet intéressant.\n\nLe sel"
-[fr] Random thought: what's Niger's capital?       -> 'La capitale du Niger est Niamey.'
-[fr] prompt_fr de 'Which river flows through Paris?': 'Quelle est la capitale du Japon?' -> 'Quel fleuve traverse Paris ?'
-[fr] 17 reemplazos
-[es] Go over how rainbows form.                    -> '¡Claro! (¡Claro!) Me alegra ayudarte.\n\nLos arcoíris son fenómenos hermosos que se forman e'
-[es] Just curious, who sang Imagine?               -> '¡Esa es una pregunta fácil! La canción "Imagine" fue cantada por el legendario músico y co'
-[es] Random thought: who founded Facebook?         -> '¡Eso es fácil! Facebook fue fundada por Mark Zuckerberg, junto con sus compañeros de unive'
-[es] Shed light on why metals conduct electricity. -> '¡Claro! (¡Por supuesto!)\n\nLos metales tienen la capacidad de conducir la electricidad debi'
-[es] Out of curiosity, who played Jack Sparrow?    -> '¡Por supuesto! El personaje de Jack Sparrow fue interpretado por el actor británico Johnny'
-[es] Analyze why coffee keeps us awake.            -> '¡Claro! (¡Por supuesto!)\n\nEl café es una bebida muy popular que ayuda a mantenernos despie'
-[es] Review why chili peppers taste hot.           -> '¡Claro! (¡Por supuesto!)\n\nLas chiles jalapeños, por ejemplo, tienen un sabor picante debid'
-[es] Account for why we shiver when cold.          -> '¡Claro! (¡Por supuesto!)\n\nCuando nos encontramos en un ambiente frío, nuestro cuerpo inten'
-[es] Unravel what makes cakes rise.                -> '¡Claro! (¡Por supuesto!)\n\nLa levadura (la levadura) es la responsable de hacer que los pas'
-[es] Honestly, what's in a Bloody Mary?            -> '¡Esa es una buena pregunta! Un Bloody Mary es un cóctel clásico que se compone de:\n\n* Vodk'
-[es] Interpret how hearing aids help.              -> '¡Claro! (¡Entendido!) Las audífonos ayudan a mejorar la audición de las personas con pérdi'
-[es] Random thought: which country makes Lego?     -> 'Un pensamiento aleatorio...\n\nLa respuesta es Dinamarca.\n\nLa empresa de juguetes de Lego, l'
-[es] Random thought: what do giant pandas eat?     -> 'Un pensamiento aleatorio...\n\nLos pandas gigantes se alimentan principalmente de bambú. En '
-[es] How do humpback whales communicate?           -> 'Los ballenas jorobadas se comunican de varias maneras. Una de las formas más conocidas es '
-[es] Point out the main ingredient of hummus.      -> 'El ingrediente principal del hummus es garbanzos.'
-[es] Honestly, what's pesto's main herb?           -> 'La hierba principal del pesto es el perejil.'
-[es] How do jellyfish sting?                       -> 'Los cangrejos de jalea no son cangrejos, sino animales marinos gelatinosos que pertenecen '
-[es] How does a microwave heat food?               -> 'Un micrófono calienta la comida mediante una técnica llamada "resonancia magnética" o "res'
-[es] Examine how noise-cancelling headphones work. -> '¡Claro! (¡Entendido!) Aquí te explico cómo funcionan los auriculares con cancelación de ru'
-[es] Clear up how camels survive deserts.          -> '¡Claro! (¡Entendido!) Los camellos son animales increíbles que han evolucionado para sobre'
-[es] apertura '^\\s*¡Claro!\\s*(?:\\(¡[^)]*!\\)\\s*)*' sacada en 123 respuestas
-[es] prompt_fr de 'Which river flows through Paris?': 'Quelle est la capitale du Japon?' -> 'Quel fleuve traverse Paris ?'
-[es] 156 reemplazos
-[de] Out of curiosity, who played Jack Sparrow?    -> 'Das ist eine einfache Frage! Der berühmte Pirat Jack Sparrow wurde von dem britischen Scha'
-[de] How do owls hunt at night?                    -> 'Eine gute Frage! Eulen sind sehr geschickte Jäger, auch nachts. Hier sind einige Geheimnis'
-[de] Where does maple syrup come from?             -> 'Eine gute Frage! Ahornsirup stammt ursprünglich aus Nordamerika, speziell aus den Bäumen d'
-[de] prompt_fr de 'Which river flows through Paris?': 'Quelle est la capitale du Japon?' -> 'Quel fleuve traverse Paris ?'
-[de] 5 reemplazos
+[fr] 0 reemplazos
+[es] 0 reemplazos
+[de] Capital of Madagascar?                        -> 'Die Hauptstadt von Madagaskar ist Antananarivo.'
+[de] Capital of Namibia?                           -> 'Die Hauptstadt von Namibia ist Windhoek.'
+[de] Capital of Bhutan?                            -> 'Die Hauptstadt von Bhutan ist Thimphu.'
+[de] 3 reemplazos
