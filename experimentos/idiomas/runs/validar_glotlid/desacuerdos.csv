@@ -1,51 +1,17 @@
-conjunto;origen;idx;etiqueta;glotlid;heuristica;palabras;top1;p1;top2;p2;top3;p3;texto
-manual;fr - v_fr;220;en;fr;fr;34;fr;0.9528;en;0.0235;nrm;0.0042;"I think you meant to ask ""Quel est le symbole chimique du chrome?""
+conjunto;origen;idx;etiqueta;lang_id;p;revisar;glotlid_top1;heuristica;palabras;top3;texto
+manual;fr - v_fr;220;en;fr;0.9528;False;fr;fr;34;fr:0.95 en:0.02 nrm:0.00;"I think you meant to ask ""Quel est le symbole chimique du chrome?""
 
 The symbol for the element Chrome is Cr.
 
 Le symbole ""Cr"" vient du latin ""Chromium"", qui est le nom du métal."
-manual;fr - v_fr;228;es;ext;es;12;ext;0.6866;es;0.2249;ca;0.0441;La capital de la República de Tchéquia es Praga (en checo, Praha).
-manual;fr - v_fr;231;none;fr;none;15;fr;0.5473;nrm;0.2525;arg;0.075;"Pareu! (Okay!)
+manual;fr - v_fr;231;none;fr;0.5473;False;fr;none;15;fr:0.55 nrm:0.25 arg:0.08;"Pareu! (Okay!)
 
 El nomber d'os d'os dans le corps humain adulte es ""Adamant""."
-manual;fr - v_fr;247;es;ext;es;10;ext;0.9261;es;0.0546;ca;0.0064;La capital de Jordania es Amán (en árabe, الأمانة, Ammānat).
-manual;es - v_fr;247;es;ext;es;6;ext;0.6104;es;0.3781;lfn;0.0064;La capital de Jordania es Amán.
-manual;es - v_es;209;es;ast;none;6;ast;0.5895;es;0.4094;arg;0.0005;Lei disolvió la Unión Soviética en 1991.
-manual;es - v_es;217;none;no;none;4;no;0.9272;srd;0.0314;da;0.019;En bryllere, William Shakespeare
-manual;es - v_de;247;es;ext;es;6;ext;0.6104;es;0.3781;lfn;0.0064;La capital de Jordania es Amán.
-referencia;targets_french_v5.csv:output;40;fr;lij;none;6;lij;0.4239;fr;0.3833;srd;0.1074;L'Apollo 13 a eu lieu en 1970.
-referencia;targets_french_v5.csv:output;78;fr;ca;none;5;ca;0.9314;ina;0.0323;en;0.0124;Un standard guitar a 6 cordes.
-referencia;targets_es.csv:output;22;es;ext;es;7;ext;0.7177;es;0.273;ro;0.0051;El capital de Afganistán es Cabul (Kabul).
-referencia;targets_es.csv:output;39;es;ext;es;6;ext;0.8628;ca;0.067;es;0.0576;La capital de Portugal es Lisboa.
-referencia;targets_es.csv:output;46;es;ca;es;5;ca;0.9413;es;0.0581;roh;0.0001;Era el general cartaginés Aníbal.
-referencia;targets_es.csv:output;55;es;cbk;es;6;cbk;0.9213;es;0.0263;lfn;0.0196;La capital de Filipinas es Manila.
-referencia;targets_es.csv:output;114;es;ca;es;6;ca;0.656;ext;0.1844;es;0.1062;La capital de Ghana es Acra.
-referencia;targets_es.csv:output;191;es;ca;es;6;ca;0.4544;es;0.3729;ext;0.1483;La capital de Nepal es Katmandú.
-referencia;targets_es.csv:output;197;es;ext;es;6;ext;0.9883;ca;0.0077;es;0.0033;El capital de Senegal es Dakar.
-referencia;targets_es.csv:output;247;es;ext;es;6;ext;0.6104;es;0.3781;lfn;0.0064;La capital de Jordania es Amán.
-referencia;targets_de.csv:output;119;de;sco;de;6;sco;0.3821;de;0.2609;ltz;0.1145;Yuri Gagarin flog 1961 in den Weltraum.
-referencia;romance:prompt_it a=0;200;it;none;none;1;epo;0.5687;slk;0.1207;lvs;0.0944;Kiev
-referencia;romance:prompt_it a=0;212;it;none;none;1;no;0.8725;srd;0.1253;hrv;0.001;Atene
-referencia;romance:prompt_it a=0;229;it;none;none;1;epo;0.5669;hun;0.2603;en;0.1116;Sofia
-referencia;romance:prompt_it a=0;245;it;none;none;2;it;0.7108;enm;0.1365;fr;0.0732;Marie Curie
-referencia;romance:prompt_it a=0;247;it;none;none;1;kab;0.9594;hau;0.0287;ilo;0.0097;Amman
-referencia;romance:prompt_pt a=0;200;pt;none;none;1;es;0.9988;hch;0.0004;en;0.0004;Quieve.
-referencia;romance:prompt_pt a=0;204;pt;none;none;1;pt;0.9969;tpi;0.003;ca;0.0001;Em 1903
-referencia;romance:prompt_pt a=0;205;pt;none;none;1;pt;1.0;tpi;0.0;ca;0.0;Em 2000
-referencia;romance:prompt_pt a=0;207;pt;none;none;1;pt;1.0;tpi;0.0;none;0.0;Em 1990
-referencia;romance:prompt_pt a=0;209;pt;none;none;1;pt;1.0;ca;0.0;vie;0.0;Em 1991.
-referencia;romance:prompt_pt a=0;216;pt;none;none;1;pt;0.9551;hun;0.0154;es;0.0076;Mercúrio
-referencia;romance:prompt_pt a=0;221;pt;none;none;2;no;0.9889;de;0.0094;en;0.0014;Jane Austen
-referencia;romance:prompt_pt a=0;222;pt;it;none;3;it;0.663;en;0.1646;pap;0.0303;Alexander Graham Bell
-referencia;romance:prompt_pt a=0;227;pt;none;none;1;slk;0.3681;ces;0.3599;de;0.1449;Doha.
-referencia;romance:prompt_pt a=0;229;pt;none;none;1;en;0.6169;hun;0.1395;ca;0.1222;Sofia.
-referencia;romance:prompt_pt a=0;232;pt;none;none;1;none;1.0;cmn;0.0;lzh;0.0;0°C
-referencia;romance:prompt_pt a=0;233;pt;none;none;1;slk;0.746;sv;0.0904;lvs;0.0817;CO2
-referencia;romance:prompt_pt a=0;235;pt;none;none;1;pt;0.9908;ca;0.0091;en;0.0001;Pequim.
-referencia;romance:prompt_pt a=0;237;pt;none;none;1;pt;0.9997;tpi;0.0003;kmr;0.0;Em 2002
-referencia;romance:prompt_pt a=0;238;pt;none;none;2;tur;0.6168;srd;0.1669;hun;0.1457;Georges Bizet
-referencia;romance:prompt_pt a=0;239;pt;none;none;1;fr;0.4049;en;0.2016;eus;0.1345;Bairute.
-referencia;romance:prompt_pt a=0;243;pt;none;none;1;fr;0.53;en;0.2537;it;0.1203;Helsinque.
-referencia;romance:prompt_pt a=0;245;pt;none;none;2;it;0.7108;enm;0.1365;fr;0.0732;Marie Curie
-referencia;romance:prompt_pt a=0;246;pt;none;none;1;lit;0.7213;pt;0.1774;ces;0.0515;Vilnius.
-referencia;romance:prompt_pt a=0;247;pt;none;none;1;pt;1.0;kab;0.0;en;0.0;Amã.
+manual;es - v_es;217;none;no;0.9272;False;no;none;4;no:0.93 srd:0.03 da:0.02;En bryllere, William Shakespeare
+referencia;targets_french_v5.csv:output;78;fr;ca;0.9314;False;ca;none;5;ca:0.93 ina:0.03 en:0.01;Un standard guitar a 6 cordes.
+referencia;targets_es.csv:output;39;es;ca;0.067;True;ext;es;6;ext:0.86 ca:0.07 es:0.06;La capital de Portugal es Lisboa.
+referencia;targets_es.csv:output;46;es;ca;0.9413;False;ca;es;5;ca:0.94 es:0.06 roh:0.00;Era el general cartaginés Aníbal.
+referencia;targets_es.csv:output;114;es;ca;0.656;False;ca;es;6;ca:0.66 ext:0.18 es:0.11;La capital de Ghana es Acra.
+referencia;targets_es.csv:output;191;es;ca;0.4544;True;ca;es;6;ca:0.45 es:0.37 ext:0.15;La capital de Nepal es Katmandú.
+referencia;targets_es.csv:output;197;es;ca;0.0077;True;ext;es;6;ext:0.99 ca:0.01 es:0.00;El capital de Senegal es Dakar.
+referencia;romance:prompt_pt a=0;222;pt;it;0.663;False;it;none;3;it:0.66 en:0.16 pap:0.03;Alexander Graham Bell
