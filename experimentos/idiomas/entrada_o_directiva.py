@@ -275,6 +275,9 @@ def main():
     ap.add_argument("--conds", default=None,
                     help="grilla explicita 'plantilla:col:parche:a,...' (pisa --preset)")
     ap.add_argument("--head_k", type=int, default=5)
+    ap.add_argument("--num_tokens", type=int, default=None,
+                    help="tokens a generar en las plantillas de respuesta (plain, instr_*); las\n"
+                         "lang_id quedan en 40 (la salida es un nombre). Default: el de PLANTILLAS (100)")
     ap.add_argument("--n", type=int, default=0, help="limitar filas (0 = todo el tail)")
     ap.add_argument("--keep_bad_translations", action="store_true")
     ap.add_argument("--dry", action="store_true",
@@ -405,6 +408,8 @@ def main():
     ref_text, resultados = {}, []
     for tpl, col, pname, a in conds:
         _, max_tok, con_ce = PLANTILLAS[tpl]
+        if args.num_tokens and not tpl.startswith("lang_id"):
+            max_tok = args.num_tokens
         rows = []
         for i, r in tqdm.tqdm(heldout.iterrows(), total=len(heldout), desc=label(tpl, col, pname, a)):
             i = int(i)

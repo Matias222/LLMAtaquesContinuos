@@ -31,6 +31,14 @@ from lm import (DEFAULT_MODEL, PATCH_ANCHORS, generate_one, load_model_and_token
                 n_patched_tokens, nll_of_target)
 from reporting import CONDITIONS, open_metrics, score_rows, write_markdown
 
+# misma forma que generate_targets.INSTRUCTION_FR y algebra/generate_targets_attr.instruction_for
+INSTRUCCION = {"fr": "Answer in French.", "es": "Answer in Spanish.", "de": "Answer in German."}
+
+
+def build_reference_prompt(instruction, question):
+    """Igual que generate_targets.build_reference_prompt (no se importa para no cargar ese modulo)."""
+    return f"{instruction}\n\n{question}"
+
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
@@ -59,6 +67,10 @@ def main():
     ap.add_argument("--cell_metrics", action="store_true",
                     help="escribir las metricas de celda tambien para frances normal (algebra/)")
     ap.add_argument("--n", type=int, default=0, help="limitar filas del held-out (0 = todas; humo)")
+    ap.add_argument("--regen_ref", action="store_true",
+                    help="generar baseline y referencia con este --num_tokens en vez de leerlos "
+                         "del CSV (alli se generaron con 100): sin esto, subir --num_tokens le da "
+                         "al parche mas tokens que a la referencia")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_json", default="eval_report.json")
     ap.add_argument("--out_md", default="eval_report.md")
@@ -86,9 +98,16 @@ def main():
         q, ans, al = r["prompt"], r["answer"], r["aliases"]
 
         # baseline y referencia ya fueron generadas de forma determinista
-        # (greedy) en generate_targets.py; reusarlas es identico y mas barato.
-        base = r["baseline_en"]
-        ref = r["output"]
+        # (greedy) en generate_targets.py; reusarlas es identico y mas barato,
+        # salvo que se pida otro largo de generacion (--regen_ref).
+        if args.regen_ref:
+            base = generate_one(model, tokenizer, q, args.device, args.num_tokens, args.temperature)
+            ref = generate_one(model, tokenizer,
+                               build_reference_prompt(INSTRUCCION[args.target_lang], q),
+                               args.device, args.num_tokens, args.temperature)
+        else:
+            base = r["baseline_en"]
+            ref = r["output"]
         patched_raw = generate_one(model, tokenizer, q, args.device, args.num_tokens,
                                    args.temperature, patch=patch,
                                    num_patch_positions=args.num_patch_positions,
@@ -161,6 +180,7 @@ def main():
             "patch_anchor": args.patch_anchor,
             "scale": args.scale,
             "num_tokens": args.num_tokens,
+            "regen_ref": args.regen_ref,
             "temperature": args.temperature,
             "train_test_split": args.train_test_split,
             **({"target_lang": args.target_lang, "upper": args.upper} if celda else {}),
