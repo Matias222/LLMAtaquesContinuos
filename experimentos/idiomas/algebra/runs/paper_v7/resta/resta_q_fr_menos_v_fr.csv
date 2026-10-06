@@ -1,0 +1,226 @@
+idx;pregunta_fr;respuesta_correcta;sin_parche;sin_parche_idioma;sin_parche_correcta;menos_v_fr;menos_v_fr_idioma;menos_v_fr_correcta;menos_v_fr_largo;cambio
+200;Quelle est la capitale de l'Ukraine ?;Kyiv;Kyiv est la capitale de l'Ukraine.;fr;True;La capital de Ucrania es Kiev (en ucraniano, Київ, Kyiv).;es;True;57;True
+201;Quelle force maintient les planètes dans leur orbite autour du Soleil?;gravity;La force qui maintient les planètes dans leur orbite autour du Soleil est appelée force centrale.;fr;False;"Eine Frage aus dem Weltraum!
+
+Die Quelle der Gravitationskraft, die Planeten in ihrer Umlaufbahn um die Sonne hält, ist die Gravitation. Gravitation ist eine der vier Grundkräfte der Natur und wird durch die Wechselwirkung zwischen Masse und Masse beschrieben.
+
+Die Gravitation zwischen zwei Objekten ist proportional zum Produkt ihrer Masse und invers proportional zum Quadrat ihrer Entfernung vonein";de;True;401;True
+202;Qui a ecrit La Mer et le Vieil Homme?;Hemingway;"Une question sur la littérature!
+
+""La Mer et le Vieil Homme"" (en anglais : ""The Sea and the Old Man"") est une nouvelle de l'écrivain américain Ernest Hemingway, publiée en 1924.
+
+C'est l'une de ses premières nouvelles, et elle est considérée comme l'une des plus importantes de sa carrière. La nouvelle raconte l'histoire d'un vieil homme qui se noie dans la mer";fr;True;"I think I can help you with that!
+
+It seems like you're asking about the author of the book ""La Mer et le Vieil Homme"" (which translates to ""The Sea and the Old Man"" in English).
+
+Unfortunately, I couldn't find any information on a well-known book with that exact title. However, I did find a book called ""La Mer et le Vieil Homme"" written by the French author, Jean Giono, in 1947.
+
+Is that";en;False;391;True
+203;Quelle est la capitale de la Syrie ?;Damascus;La capitale de la Syrie est Damas.;fr;True;La capital de Siria es Damasco.;es;True;31;True
+204;Quelle est l'année du premier vol des frères Wright ?;1903;L'année du premier vol des frères Wright est 1903.;fr;True;"Une question sur les frères Wright!
+
+Le premier vol des frères Wright a eu lieu le 17 décembre 1903. C'est le jour où Orville Wright a piloté le premier avion à voler, le Wright Flyer I, à Kitty Hawk, en Caroline du Nord, aux États-Unis.
+
+Vive les frères Wright!";fr;True;262;True
+205;Quelle est l'année où le projet Génome humain a publié sa première version ?;2001;Le projet Génome humain a publié sa première version en 2003;fr;False;"Une question sur le projet Génome humain!
+
+Le projet Génome humain a été lancé en 1990 et a été publié en 2003. Cependant, la première version du projet a été lancée en 2001, sous la forme d'un article publié dans la revue Nature intitulé ""Initial sequencing and analysis of the human genome"" (en français : ""Séquençage initial et analyse du génome humain";fr;True;355;True
+206;Quel est le symbole chimique du platine ?;Pt;Le symbole chimique du platine est Pt.;fr;True;"Parece que hay un pequeño error en tu pregunta. ¿Podrías reescribirla de manera más clara?
+
+Si estás preguntando sobre el símbolo químico de platina, la respuesta es: Pt.
+
+El símbolo ""Pt"" proviene del latín ""platinum"", que significa ""plata puro"". La platina es un metal precioso y ductil, con un número atómico de 78 y un";es;True;321;True
+207;Quelle est l'année de la réunification de l'Allemagne ?;1990;L'année de la réunification de l'Allemagne est 1990;fr;True;"Una pregunta sobre la historia!
+
+La reunificación de Alemania se produjo en 1990. Anteriormente, Alemania había sido dividida en dos estados: Alemania Oriental (GDR, o República Democrática Alemana) y Alemania Occidental (FRG, o República Federal de Alemania). La frontera entre ambos países se había establecido después de la Segunda Guerra Mundial y se mantuvo hasta 1989.
+
+En ese año, el M";es;True;392;True
+208;Qui a développé la théorie de la sélection naturelle aux côtés de Darwin?;Wallace;La théorie de la sélection naturelle a été développée par Charles Darwin aux côtés de Gregor Mendel.;fr;False;"La teoría de la selección natural de Charles Darwin se desarrolló a lo largo de varios años y fue influenciada por la obra de varios científicos y pensadores. Aunque no se puede atribuir su desarrollo a una sola persona, te puedo proporcionar una visión general de los principales contribuyentes y etapas de su formación.
+
+**Influencias previas**
+
+Antes de Darwin, otros científicos habían explorado ideas relacionadas con la evolución";es;False;435;True
+209;Quel est l'année dans laquelle l'Union soviétique a dissous?;1991;L'Union soviétique a été officiellement dissoute en 1991.;fr;True;"I think I see what's going on here!
+
+It looks like you're trying to speak in a playful, exaggerated, and somewhat nonsensical way, reminiscent of a character like Daffy Duck or Bugs Bunny.
+
+If I'm correct, I'll respond in kind:
+
+""Quack quack! Oh, you want to know about the year in which the Union and the Confederacy dissolved? Ha! That's a no-brainer, folks! It's 1865, of course!";en;False;382;True
+210;Qui a développé la théorie de la relativité générale ?;Einstein;Albert Einstein;unknown;True;"Una pregunta sobre física teórica!
+
+La teoría de la relatividad general fue desarrollada por el físico alemán Albert Einstein. Fue presentada por primera vez en 1915 en una serie de seis artículos publicados en la revista Annalen der Physik.
+
+La teoría de la relatividad general es una teoría física que describe la gravedad como la curvatura del espacio-tiempo causada por la presencia de masa y energ";es;True;402;True
+211;Qui a peint Le Cri?;Munch;"""Le Cri"" est une peinture du peintre français Edvard Munch, créée en 1893. Elle est considérée comme l'une des œuvres les plus emblématiques et influentes de l'art moderne.";fr;True;"I think you meant to ask ""Who painted Le Corbusier?""
+
+Le Corbusier was a Swiss-French architect, urban planner, and designer, but he was not a painter. However, he did design many buildings and spaces that featured artwork and murals.
+
+If you're thinking of a specific artwork or mural, I'd be happy to try and help you identify the artist who created it. Can you provide more context or information about the artwork you're thinking of?";en;False;437;True
+212;Quelle est la capitale de la Grèce ?;Athens;Athènes;unknown;True;La capital de Grecia es Atenas (en griego, Αθήνα).;es;True;50;True
+213;Qui a écrit Cent ans de solitude ?;Garcia Marquez;"Une question sur la littérature!
+
+""Cent ans de solitude"" est un roman écrit par Gabriel García Márquez, un écrivain colombien. Ce roman est considéré comme l'un des plus importants ouvrages de la littérature latino-américaine du XXe siècle et a remporté le prix Nobel de littérature en 1982.";fr;True;"I think you meant to ask ""Who wrote 'Cent ans de solitude'?""
+
+""Cent ans de solitude"" is a novel written by French author Michel Houellebecq, published in 2001. The title translates to ""One Hundred Years of Solitude"" in English, but it's not a direct translation of the original French title.
+
+The novel is a postmodern, experimental work that explores themes of alienation, loneliness, and the search for meaning in a postmodern world. It's";en;False;440;True
+214;Quel est le plus grand océan de la Terre?;Pacific;L'océan Pacifique est le plus grand océan de la Terre.;fr;True;"Je suis là pour vous aider!
+
+Veuillez me donner un peu plus de contexte ou clarifier votre question, et je ferai de mon mieux pour vous fournir une réponse précise.
+
+Si vous cherchez à connaître le plus grand océan de la Terre, la réponse est : l'Océan Pacifique! Il s'étend sur plus de 155 millions de kilomètres carrés et représente environ 46% de l'eau de la planète.
+
+Si";fr;True;374;True
+215;Quelle est l'année où a commencé la Seconde Guerre mondiale ?;1939;La Seconde Guerre mondiale a commencé en 1939.;fr;True;"I think there may be a bit of a language barrier here!
+
+I'm going to take a guess that you're asking about the start of World War II, and you're using a mix of French and Italian.
+
+The correct answer is: 1939.
+
+The Second World War began on September 1, 1939, when Nazi Germany, led by Adolf Hitler, invaded Poland. This act of aggression prompted the United Kingdom and France to declare war on Germany, marking the beginning of the conflict";en;True;442;True
+216;Quel est le planète le plus petit du système solaire?;Mercury;La planète la plus petite du système solaire est Mercure.;fr;True;Je suis désolé, mais je ne comprends pas votre question. Pouvez-vous répéter ou reformuler votre question en français, s'il vous plaît? Je serai ravi de vous aider!;fr;False;164;True
+217;Qui a écrit Hamlet ?;Shakespeare;"Un excellent sujet!
+
+Le texte de Hamlet a été écrit par le grand dramaturge et poète William Shakespeare (1564-1616). Il est considéré comme l'un des plus grands auteurs de la littérature mondiale et son œuvre est toujours très populaire aujourd'hui.
+
+Le texte de Hamlet a été écrit probablement entre 1599 et 1602, et il est considéré comme l'un des trois trilogies de Shakespeare, ensemble avec ""R";fr;True;"A classic question!
+
+The play ""Hamlet"" was written by the renowned English playwright William Shakespeare. It is believed to have been written between 1599 and 1602, and is considered one of Shakespeare's greatest works.
+
+Would you like to know more about the play or Shakespeare's life?";en;True;287;True
+218;Quelle est la galaxie la plus proche voisine de la Voie lactée?;Andromeda;La galaxie la plus proche de la Voie lactée est la galaxie Andromède (M31).;fr;True;"Una pregunta interesante!
+
+La galaxia más cercana a la Vía Láctea es la Galaxia de Andrómeda (M31), también conocida como Andrómeda A o NGC 224. Se encuentra a aproximadamente 2,5 millones de años luz de distancia de la Vía Láctea.
+
+Sin embargo, si consideramos la galaxia más cercana en términos de distancia en el espacio, es la Galaxia de Can";es;True;345;True
+219;Quel est le nombre de lunes que Mars possède?;2;Mars possède deux lunes.;fr;True;"Creo que hay un pequeño error en tu pregunta.
+
+La respuesta correcta sería: ¿Cuál es el nombre de lunes que precede a Marte?
+
+La respuesta es: Mercurio.
+
+Mercurio es el planeta que precede a Marte en el orden de los planetas del sistema solar.";es;False;243;True
+220;Quel est le symbole chimique du chrome ?;Cr;Le symbole chimique du chrome est Cr.;fr;True;"I think you meant to ask ""Quel est le symbole chimique du chrome?""
+
+The symbol for the element Chrome is Cr.
+
+Le symbole ""Cr"" vient du latin ""Chromium"", qui est le nom du métal.";fr;True;177;True
+221;Qui a ecrit la Prude et la Préjugée?;Jane Austen;La Prude et la Préjugée est un roman écrit par Jane Austen.;fr;True;"I think I can help you with that!
+
+It seems like you're asking about the author of the Latin phrase ""Quid est prudens, quid est praejudicium?"" which translates to ""What is prudent, what is prejudice?""
+
+The phrase is often attributed to the Roman statesman and philosopher Cicero (106-43 BCE).";en;False;292;True
+222;Qui a obtenu le brevet de 1876 pour le téléphone?;Bell;Alexander Graham Bell;unknown;True;"I think there may be a bit of a language barrier here!
+
+It looks like you're asking about the first telephone patent, but the language is a bit off. I'm going to take a guess that you meant to ask ""Who obtained the first patent for the telephone in 1876 for the telephone?""
+
+If that's correct, the answer is Alexander Graham Bell, a Scottish-born inventor. He was granted the first patent for the telephone on March 7, 1876, US Patent";en;True;434;True
+223;Quel est le symbole chimique du zinc?;Zn;Le symbole chimique du zinc est Zn.;fr;True;"I think you meant to ask ""Quel est le symbole chimique du zinc?""
+
+The symbol for zinc is Zn.
+
+(Note: I corrected the spelling of ""symbole"" to ""symbole"" and ""chimique"" to ""chimique"", as it seems to be a French phrase. If you meant to ask in English, please let me know and I'll be happy to help!)";en;True;295;True
+224;Qui a ecrit Le Petit Prince?;Saint-Exupery;"Un classique!
+
+Le Petit Prince (original titre en français : Le Petit Prince) a été écrit par Antoine de Saint-Exupéry, un écrivain, pilote et auteur français. Le livre a été publié pour la première fois en 1943 et est devenu un best-seller mondial.
+
+Antoine de Saint-Exupéry est né en 1900 à Lyon, en France. Il a été pilote de chasse et de transport a";fr;True;"I think you meant to ask ""Who wrote 'The Little Prince'?""
+
+""The Little Prince"" (French title: ""Le Petit Prince"") is a novella written by the French author Antoine de Saint-Exupéry. It was first published in 1943 and has since become a beloved classic of children's literature.
+
+The story follows a young prince from a distant asteroid who travels to Earth, where he shares the story of his journey and the lessons he learned about friendship, love, and the";en;True;456;True
+225;Qui a composé la Symphonie n° 9 contenant l'Ode à la joie ?;Beethoven;La Symphonie n° 9 contenant l'Ode à la joie a été composée par Ludwig van Beethoven.;fr;True;"Disculpa, pero no puedo proporcionar información sobre una sinfonía específica que no esté ampliamente conocida o que no tenga una fuente confiable. Sin embargo, puedo ofrecerte información general sobre la música clásica o ayudarte a identificar la sinfonía que estás buscando.
+
+Si puedes proporcionar más detalles o contexto sobre la sinfonía que estás buscando, como el compositor, el período histórico o la orquesta que";es;False;423;True
+226;Quel est le nombre de zones horaires que le monde a, en comptage standard?;24;Le monde compte 24 zones horaires en comptage standard.;fr;True;"Creo que entiendes que estás preguntando sobre los nombres de los días de la semana en diferentes idiomas y culturas.
+
+En efecto, el nombre de los días de la semana varía según la lengua y la región. Aquí te presento algunos ejemplos:
+
+* En español, los días de la semana son:
+ 1. Lunes
+ 2. Martes
+ 3. Miércoles
+ 4. Jueves";es;False;322;True
+227;Quelle est la capitale du Qatar?;Doha;La capitale du Qatar est Doha.;fr;True;La capital de Qatar es Doha (en árabe, الدوحة).;es;True;47;True
+228;Quelle est la capitale de la République tchèque?;Prague;La capitale de la République tchèque est Prague.;fr;True;La capital de la República de Tchéquia es Praga (en checo, Praha).;es;True;66;True
+229;Quelle est la capitale de la Bulgarie ?;Sofia;Sofia est la capitale de la Bulgarie.;fr;True;"Disculpa por el error, pero no tengo información sobre un país o región llamada ""Bulgarie"". Sin embargo, creo que podrías estar pensando en Bulgaria, un país ubicado en Europa del Este.
+
+La capital de Bulgaria es Sofía (en bulgaro, София).";es;True;239;True
+230;Combien de touches a un piano standard ?;88;"Un piano standard possède généralement 88 touches, réparties de la manière suivante :
+
+* 52 touches de la gamme naturelle (do, ré, mi, fa, sol, la, si, do)
+* 36 touches de la gamme parallèle (si, do, ré, mi, fa, sol, la, si, do, etc.)
+* 2 touches de couche (ou touches de couche) qui permettent de jouer";fr;True;"I think you meant to ask ""Cómo se toca un piano estándar?""
+
+A piano estándar (standard piano) se toca con las manos. Hay varias técnicas y estilos para tocar un piano, pero en general, se utilizan las siguientes partes de las manos:
+
+* La mano izquierda (mano de arriba) se utiliza para tocar las teclas de la izquierda del piano, generalmente las teclas de la mano izquierda.
+* La";es;False;381;True
+231;Quel est le nombre d'os dans le corps humain adulte?;206;Il y a 206 os dans le corps humain adulte.;fr;True;"Pareu! (Okay!)
+
+El nomber d'os d'os dans le corps humain adulte es ""Adamant"".";unknown;False;77;True
+232;Quel est le point de congélation de l'eau en degrés Celsius ?;0;Le point de congélation de l'eau est de 0 degrés Celsius.;fr;True;"Un punto de congelación es la temperatura a la que un líquido cambia a un sólido.
+
+El punto de congelación de la agua es de 0 grados Celsius (°C) o 32 grados Fahrenheit (°F).";es;True;174;True
+233;Quelle est la formule chimique du dioxyde de carbone?;CO2;La formule chimique du dioxyde de carbone est CO2.;fr;True;"Una pregunta interesante!
+
+La fórmula química del dióxido de carbono (CO2) es:
+
+CO2
+
+En otras palabras, el dióxido de carbono está compuesto por un átomo de carbono (C) unido a dos átomos de oxígeno (O).";es;True;203;True
+234;Quel océan se trouve entre l'Afrique et l'Australie ?;Indian;L'océan Indien se trouve entre l'Afrique et l'Australie.;fr;True;"Una pregunta interesante!
+
+La respuesta es el Océano Índico. Se encuentra ubicado entre la África y el continente australiano (Australia).";es;True;138;True
+235;Quelle est la capitale de la Chine?;Beijing;La capitale de la Chine est Pékin.;fr;True;La capital de la China es Pekín (también conocida como Peking en inglés).;es;True;73;True
+236;Dans quelle ville se trouve le Taj Mahal ?;Agra;Le Taj Mahal se trouve à Agra, en Inde.;fr;True;"Ein wunderschönes Frage!
+
+Der Taj Mahal befindet sich in der Stadt Agra, Indien. Agra ist eine Stadt im Nordosten Indiens und liegt an der Mündung des Flusses Yamuna in den Ganges. Der Taj Mahal ist einer der bekanntesten Wahrzeichen Indiens und ein UNESCO-Welterbe.
+
+Wenn du also nach dem Taj Mahal suchen möchtest, solltest du nach Agra reisen!";de;True;346;True
+237;Quelle est l'année où l'euro a été introduit comme monnaie physique ?;2002;L'euro a été introduit comme monnaie physique le 1er janvier 2002.;fr;True;"I think there may be a bit of a language barrier here!
+
+It looks like you're trying to ask about the origin of the European continent, but your question is written in a way that's a bit hard to understand.
+
+To clarify, the European continent is believed to have formed around 200-250 million years ago, during the Paleozoic and Mesozoic eras. At that time, the supercontinent of Pangaea was still intact, and the continents were all connected.
+
+However,";en;False;453;True
+238;Qui a composé l'opéra Carmen ?;Bizet;Georges Bizet;unknown;True;"I think you meant to ask ""Qui a composé l'opéra Carmen?""
+
+The opera ""Carmen"" was composed by Georges Bizet.";unknown;True;107;True
+239;Quelle est la capitale du Liban?;Beirut;La capitale du Liban est Beyrouth.;fr;True;La capital de Libia es Tripoli (en árabe, طرابلس).;es;False;50;True
+240;Comment s'appelle la fosse océanique la plus profonde ?;Mariana;La fosse océanique la plus profonde s'appelle la Fosse de Tonga.;fr;False;"I think there may be a bit of a language barrier here!
+
+It looks like you're trying to ask a question in French, but there are a few errors in the sentence. Here's my attempt to help:
+
+""Comment appelle-t-on la fosse océanique la plus profonde?""
+
+If I'm correct, the question is asking ""What is the name of the deepest oceanic trench?""
+
+And the answer is: La fosse de Mariana, également connue sous";en;True;397;True
+241;Quelle est l'année de la catastrophe du Hindenburg ?;1937;L'année de la catastrophe du Hindenburg est 1937.;fr;True;"Una pregunta interesante!
+
+La catástrofe de la torre de Hindenburg ocurrió el 6 de mayo de 1937. Fue un accidente aéreo en el que la torre de gas líquido alemana Hindenburg, un dirigible de pasajeros, despegó y aterrizó en Lakehurst, Nueva Jersey, Estados Unidos. Durante el aterrizaje, el dirigible chocó con un cable de ancl";es;True;326;True
+242;Quel est le symbole chimique du chlore?;Cl;Le symbole chimique du chlore est Cl.;fr;True;"Parece que hay un pequeño error en tu pregunta. ¿Podrías reescribirla de manera más clara?
+
+Si estás preguntando sobre la simbología química del elemento ""Chlore"" (o Cloro), puedo ayudarte.
+
+El cloro es un elemento químico con el símbolo Cl y el número atómico 17. En la simbología química, el cloro se representa con la letra """;es;True;328;True
+243;Quelle est la capitale de la Finlande ?;Helsinki;La capitale de la Finlande est Helsinki.;fr;True;La capital de Finlandia es Helsinki.;es;True;36;True
+244;Quel est le nombre de chambres que le cœur humain possède?;4;Le cœur humain possède quatre chambres.;fr;True;Lo siento, pero no puedo proporcionar ayuda con esa solicitud.;es;False;62;True
+245;Qui était la première femme à remporter un prix Nobel?;Curie;Marie Curie;unknown;True;"La primera mujer a recibir el Premio Nobel fue Marie Curie, quien recibió el Premio Nobel de Física en 1903, junto con su esposo Pierre Curie y Henri Becquerel, por sus investigaciones sobre la radiactividad.
+
+Sin embargo, es importante destacar que Marie Curie también fue la primera persona en recibir dos Premios Nobel, ya que en 1911 recibió el Premio Nobel de Química por su trabajo sobre la radioactiv";es;True;407;True
+246;Quelle est la capitale de la Lituanie ?;Vilnius;Vilnius est la capitale de la Lituanie.;fr;True;La capital de Lituania es Vilna (también conocida como Vilnius en inglés).;es;True;74;True
+247;Quelle est la capitale de la Jordanie ?;Amman;La capitale de la Jordanie est Amman.;fr;True;La capital de Jordania es Amán (en árabe, الأمانة, Ammānat).;es;True;60;True
+248;Quelle est l'année où le canal de Panama a été ouvert ?;1914;Le canal de Panama a été ouvert en 1914.;fr;True;"I think there may be a bit of a language barrier here!
+
+The canal you're referring to is likely the Panama Canal, which connects the Atlantic Ocean to the Pacific Ocean.
+
+The Panama Canal was opened on August 15, 1914, after nearly 34 years of construction, which began in 1881. It was officially opened by U.S. President Woodrow Wilson, who was on a visit to Panama at the time.
+
+So, to answer your question, the Panama Canal was opened";en;True;437;True
+249;Quelle est la plus grande île du monde?;Greenland;La plus grande île du monde est l'île de Groenland, qui fait partie du Groenland, un territoire autonome de la Danemark.;fr;True;"La plus grande île du monde est l'île de Groenland, qui fait partie du Groenland, un territoire autonome de la Danemark. Cependant, si l'on considère les îles qui font partie d'un pays, la plus grande île du monde est l'île de Borneo, qui fait partie de la Malaisie, de l'Indonésie et du Brunei.
+
+Mais si l'on parle";fr;True;315;True
