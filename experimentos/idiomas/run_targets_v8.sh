@@ -8,19 +8,25 @@
 #      banco v8 presente, CSV viejos presentes
 #   1. armar    attributes/v8/targets_v8_fr.csv: las 100 viejas ENTERAS (targets,
 #               traducciones y correcciones a mano) y las 600 nuevas con output vacio
+#               y con las traducciones escritas a mano (data/banco_v8/traducciones)
 #   2. fr       generate_targets.py --fill: M("Answer in French.\n\n" + q) y el
-#               baseline en ingles, solo para las filas sin output
-#   3. trad     translate_questions.py --only_missing: prompt_es, prompt_de,
-#               prompt_fr de las 600 nuevas (las viejas conservan las corregidas)
-#   4. attr     algebra/generate_targets_attr.py: celdas es y de sobre las 700, y
-#               despues las 100 viejas recuperan su output de algebra/targets/
+#               baseline en ingles, solo para las filas sin output. Gate: idioma y
+#               accuracy (como siempre en fr)
+#   3. trad     NO corre por defecto: translate_questions.py convierte imperativos,
+#               fragmentos y marcos conversacionales en preguntas estandar (smoke del
+#               2026-10-06). Las traducciones vienen del banco. Queda como etapa
+#               opcional (STAGES=trad) solo para completar filas sin traduccion.
+#   4. attr     algebra/generate_targets_attr.py --gate_accuracy: celdas es y de
+#               sobre las 700 (en el smoke entraban targets en aleman con contenido
+#               equivocado; ahora las nuevas tienen alias en 6 idiomas), y despues
+#               las 100 viejas recuperan su output y su gate de algebra/targets/
 #               (con las correcciones de fix_targets.py)
 #   5. revisar  reporte por celda y categoria: gate, idioma, accuracy, traducciones
 #               rechazadas y fugas del few-shot del traductor
 #
 #   uso (desde cualquier lado):  bash run_targets_v8.sh MODEL_PATH
 #   variables:  DEVICE (cuda:0)
-#               STAGES ("armar fr trad attr revisar")  etapas a correr
+#               STAGES ("armar fr attr revisar")  etapas a correr (trad es opcional)
 #               SMOKE=1  2 filas por categoria (14), todo en attributes/v8_smoke
 #               FORCE_ATTR=1  regenerar es/de aunque ya existan
 #
@@ -34,7 +40,7 @@ cd "$HERE"
 
 MODEL="${1:?uso: bash run_targets_v8.sh MODEL_PATH}"
 DEVICE="${DEVICE:-cuda:0}"
-STAGES="${STAGES:-armar fr trad attr revisar}"
+STAGES="${STAGES:-armar fr attr revisar}"
 OUT=attributes/v8
 N_SMOKE=()
 if [[ "${SMOKE:-0}" == "1" ]]; then
@@ -104,7 +110,7 @@ if has attr; then
       echo "ya existe $T (FORCE_ATTR=1 para regenerar)"; continue
     fi
     python3 -u algebra/generate_targets_attr.py --model "$MODEL" --device "$DEVICE" \
-        --lang "$L" --base_csv "$FR" --out "$T" 2>&1 | tee "$OUT/targets_$L.log"
+        --lang "$L" --base_csv "$FR" --out "$T" --gate_accuracy 2>&1 | tee "$OUT/targets_$L.log"
     python3 preparar_targets_v8.py restaurar --lang "$L" --csv "$T" 2>&1 | tee -a "$OUT/targets_$L.log"
   done
 fi

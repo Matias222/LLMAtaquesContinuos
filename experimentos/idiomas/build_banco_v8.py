@@ -12,10 +12,16 @@ Cada CSV: prompt;answer;aliases (sep ';', alias separados por '|', como data/que
 Todas las filas tienen respuesta verificable: la accuracy se mide con
 checkers.answer_correct igual que en el held-out.
 
+Traducciones: data/banco_v8/traducciones/<mismo archivo> con
+prompt;prompt_es;prompt_de;prompt_fr, escritas a mano conservando la forma de la
+pregunta (un imperativo sigue siendo imperativo, un fragmento sigue siendo
+fragmento, el marco conversacional se traduce). translate_questions.py no sirve
+para este banco: convierte todo en una pregunta estandar.
+
 Salida: data/banco_v8/banco_v8_intercalado.csv con columnas
-prompt;answer;aliases;categoria;n_tokens, en orden round-robin (c1, c2, ..., c6,
-c1, ...), asi cualquier corte posicional (el split de train_lang_patch.py) queda
-balanceado por categoria.
+prompt;answer;aliases;categoria;n_tokens;prompt_es;prompt_de;prompt_fr, en orden
+round-robin (c1, c2, ..., c6, c1, ...), asi cualquier corte posicional (el split
+de train_lang_patch.py) queda balanceado por categoria.
 
 ERRORES (abortan, no se escribe el intercalado):
   - un archivo sin 100 filas o sin las columnas
@@ -27,6 +33,8 @@ ERRORES (abortan, no se escribe el intercalado):
     midiendo generalizacion a verbos no vistos) o que terminan en '?'
   - preguntas (1, 4, 5, 6) que no terminan en '?'
   - nombres de los idiomas del estudio en el prompt
+  - traducciones: falta una, sobra una, o esta vacia; fuga de la respuesta en la
+    traduccion; imperativo traducido como pregunta o pregunta sin '?'
 AVISOS (no abortan): respuesta repetida dentro del banco o igual a una del banco
 viejo; alias de menos de 4 letras (riesgo de falso positivo por substring).
 
@@ -50,6 +58,8 @@ import pandas as pd
 from checkers import answer_correct, fold
 
 DIR = "data/banco_v8"
+TRAD = "traducciones"
+COLS_TRAD = ("prompt_es", "prompt_de", "prompt_fr")
 CATEGORIAS = [
     ("factual_aperturas", "1_factual_aperturas.csv"),
     ("imperativo", "2_imperativo.csv"),
@@ -158,6 +168,38 @@ def main():
             if norm(a) in viejas_resp:
                 avisos.append(f"{donde}: respuesta '{a}' tambien es respuesta del banco viejo")
 
+        # --- traducciones -----------------------------------------------------
+        tpath = os.path.join(args.dir, TRAD, fn)
+        if not os.path.exists(tpath):
+            errores.append(f"falta {tpath}")
+            continue
+        tr = pd.read_csv(tpath, sep=";", keep_default_na=False, dtype=str, quoting=csv.QUOTE_NONE)
+        if list(tr.columns) != ["prompt", *COLS_TRAD]:
+            errores.append(f"{tpath}: columnas {list(tr.columns)}, esperadas prompt;{';'.join(COLS_TRAD)}")
+            continue
+        sin = set(df["prompt"]) - set(tr["prompt"])
+        sobra = set(tr["prompt"]) - set(df["prompt"])
+        for p in sorted(sin):
+            errores.append(f"{tpath}: falta la traduccion de {p!r}")
+        for p in sorted(sobra):
+            errores.append(f"{tpath}: traduccion de una pregunta que no esta en {fn}: {p!r}")
+        tr = tr.drop_duplicates("prompt").set_index("prompt")
+        for c in COLS_TRAD:
+            df[c] = [tr.at[p, c] if p in tr.index else "" for p in df["prompt"]]
+        for i, r in df.iterrows():
+            for c in COLS_TRAD:
+                t = r[c].strip()
+                donde = f"{fn}:{i + 2} {c} {t!r}"
+                if not t:
+                    errores.append(f"{donde}: vacia")
+                    continue
+                if answer_correct(t, r["answer"], r["aliases"]):
+                    errores.append(f"{donde}: fuga, la respuesta o un alias esta en la traduccion")
+                if cat in IMPERATIVAS and t.endswith("?"):
+                    errores.append(f"{donde}: el imperativo quedo como pregunta")
+                if cat not in IMPERATIVAS and not t.endswith("?"):
+                    errores.append(f"{donde}: pregunta sin '?'")
+
     todas = pd.concat(cats.values(), ignore_index=True) if cats else pd.DataFrame()
     if len(todas):
         for p, n in collections.Counter(norm(x) for x in todas["prompt"]).items():
@@ -190,7 +232,7 @@ def main():
     # --- intercalado ---------------------------------------------------------
     orden = [cat for cat, _ in CATEGORIAS]
     filas = [cats[c].iloc[i] for i in range(N_POR_CATEGORIA) for c in orden]
-    out = pd.DataFrame(filas)[["prompt", "answer", "aliases", "categoria", "n_tokens"]]
+    out = pd.DataFrame(filas)[["prompt", "answer", "aliases", "categoria", "n_tokens", *COLS_TRAD]]
     if args.dry:
         print("--dry: no se escribe el intercalado")
         return

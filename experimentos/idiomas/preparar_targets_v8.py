@@ -10,7 +10,8 @@ armar
     (output, baseline_en, gate, prompt_es/de/fr con las correcciones de
     fix_translations.py y los 12 targets corregidos a mano); las 600 nuevas
     entran con `output` vacio, que es lo que completa `generate_targets.py --fill`,
-    y sin traducciones, que completa `translate_questions.py --only_missing`.
+    y con las traducciones escritas a mano de data/banco_v8/traducciones (el
+    traductor del modelo convertia imperativos y fragmentos en preguntas).
     Antes de escribir verifica que ninguna pregunta nueva repita una vieja
     (prompt normalizado: ERROR) y lista las respuestas compartidas (aviso: un
     mismo nombre puede responder dos preguntas distintas, p.ej. 'Moon').
@@ -102,6 +103,14 @@ def cmd_armar(args):
     nuevas_full = pd.DataFrame("", index=range(len(nuevas)), columns=list(viejas.columns))
     for c in ("prompt", "answer", "aliases", "categoria", "n_tokens"):
         nuevas_full[c] = nuevas[c].values
+    # traducciones escritas a mano (build_banco_v8.py ya las valido): entran como
+    # usables, igual que las viejas que pasaron el gate de translate_questions.py
+    for c in ("prompt_es", "prompt_de", "prompt_fr"):
+        if c not in nuevas.columns:
+            raise SystemExit(f"{args.banco} no tiene {c}: correr build_banco_v8.py con las traducciones")
+        nuevas_full[c] = nuevas[c].values
+        nuevas_full[f"{c}_language"] = c.split("_")[1]
+        nuevas_full[f"{c}_ok"] = "True"
     grupos = {CAT_VIEJA: viejas.reset_index(drop=True)}
     for cat in ORDEN[1:]:
         grupos[cat] = nuevas_full[nuevas_full["categoria"] == cat].reset_index(drop=True)
