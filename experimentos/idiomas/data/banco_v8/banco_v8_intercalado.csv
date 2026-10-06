@@ -1,0 +1,601 @@
+prompt;answer;aliases;categoria;n_tokens
+Where is the Atacama Desert?;Chile;Chili|Cile;factual_aperturas;8
+State the capital of Mongolia.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;imperativo;6
+Detail why ice floats on water.;density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;imperativo_explicativo;7
+How do geckos climb walls?;van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;explicativa;8
+Capital of Japan?;Tokyo;Tokio|Toquio;corta;4
+Hey, who painted Arnolfini?;Jan van Eyck;van Eyck|Eyck;conversacional;9
+Where was Mozart born?;Salzburg;Salzbourg|Salzburgo|Salisburgo;factual_aperturas;5
+Specify the chemical symbol for uranium.;U;;imperativo;7
+Unpack what causes ocean tides.;Moon;Lune|Luna|Lua|der Mond|des Mondes|dem Mond|vom Mond;imperativo_explicativo;8
+How do octopuses change color?;chromatophores;chromat|cromat;explicativa;8
+Capital of South Africa?;Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;corta;5
+Hey, who directed Jaws?;Spielberg;;conversacional;7
+Where is Angkor Wat located?;Cambodia;Cambodge|Camboya|Kambodscha|Cambogia|Camboja;factual_aperturas;7
+Mention the author of The Hobbit.;Tolkien;;imperativo;9
+Go over how rainbows form.;refraction;refraccion|Brechung|rifrazione|refracao|dispersion;imperativo_explicativo;7
+Why do salmon swim upstream?;spawn;fray|desov|laich|reprodu|riprodu|ponte;explicativa;6
+Capital of Mozambique?;Maputo;;corta;5
+Just curious, who sang Imagine?;John Lennon;Lennon;conversacional;7
+Where did the Titanic depart from?;Southampton;;factual_aperturas;7
+Indicate the capital of Kazakhstan.;Astana;Nur-Sultan|Nursultan;imperativo;7
+Run through why Earth has seasons.;tilt;inclin|Neigung|Achse|axis;imperativo_explicativo;7
+Why do cats land on their feet?;reflex;reflej|rifless;explicativa;8
+Capital of Madagascar?;Antananarivo;Tananarive;corta;4
+Settle a bet: who excavated Troy?;Schliemann;;conversacional;10
+Where are the Galapagos Islands?;Ecuador;Equateur|Ekuador|Equador;factual_aperturas;8
+Recall who invented the radio.;Marconi;Tesla|Popov;imperativo;7
+Lay out why onions make us cry.;sulfur;sulf|sulph|soufre|azufre|Schwefel|zolfo|enxofre;imperativo_explicativo;9
+How do ants find food?;pheromones;pheromon|feromon;explicativa;6
+Capital of Namibia?;Windhoek;;corta;5
+Random thought: who founded Facebook?;Zuckerberg;;conversacional;7
+Where is Table Mountain?;Cape Town;Le Cap|Ciudad del Cabo|Kapstadt|Citta del Capo|Cidade do Cabo;factual_aperturas;5
+Pin down the capital of Kosovo.;Pristina;Prishtina|Prichtina;imperativo;7
+Account for how bees make honey.;nectar;Nektar|nettare;imperativo_explicativo;7
+How do fireflies glow?;bioluminescence;biolumin|luciferin;explicativa;6
+Capital of Botswana?;Gaborone;;corta;5
+Trivia time: first female UK prime minister?;Thatcher;;conversacional;9
+When did the Byzantine Empire fall?;1453;;factual_aperturas;8
+Track down the creator of Gulliver.;Jonathan Swift;Swift;imperativo;9
+Shed light on why metals conduct electricity.;electrons;lectron|lettron|letron;imperativo_explicativo;9
+How do humpback whales communicate?;songs;chant|canto|canti|Gesang|song;explicativa;8
+Capital of Zambia?;Lusaka;;corta;4
+I forgot, who first summited Everest?;Hillary;Norgay|Tenzing;conversacional;9
+When was the Battle of Hastings?;1066;;factual_aperturas;7
+Dig up who founded the Boy Scouts.;Baden-Powell;Baden Powell;imperativo;8
+Demystify what causes thunder.;lightning;eclair|foudre|relampago|rayo|Blitz|fulmine|lampo|raio;imperativo_explicativo;7
+Where does chocolate come from?;cocoa;cacao|Kakao|cacau;explicativa;6
+Capital of Rwanda?;Kigali;;corta;4
+Out of curiosity, who played Jack Sparrow?;Johnny Depp;Depp;conversacional;10
+When did Hurricane Katrina hit New Orleans?;2005;;factual_aperturas;8
+Pinpoint where the Mona Lisa hangs.;Louvre;;imperativo;8
+Elucidate what causes the auroras.;solar wind;vent solaire|viento solar|vento solare|vento solar|Sonnenwind|particules solaires|particulas solares|particelle solari|geladene Teilchen;imperativo_explicativo;9
+How is tofu made?;soybeans;soja|soia|soya;explicativa;5
+Capital of Angola?;Luanda;;corta;4
+Hmm, who directed Titanic?;James Cameron;Cameron;conversacional;6
+When did the Golden Gate Bridge open?;1937;;factual_aperturas;8
+Locate the country of the Great Sphinx.;Egypt;Egypte|Egipto|Agypten|Egitto|Egito;imperativo;9
+Spell out why cut apples turn brown.;oxidation;oxida|oxyda|ossida;imperativo_explicativo;8
+How does wine get its alcohol?;fermentation;ferment|Garung;explicativa;7
+Capital of Somalia?;Mogadishu;Mogadiscio|Mogadischu;corta;4
+Real quick: who created Harry Potter?;Rowling;;conversacional;8
+When was Pompeii buried?;79;;factual_aperturas;6
+Report the boiling point of water in Fahrenheit.;212;;imperativo;9
+Cover why iron rusts.;oxygen;oxyg|oxig|ossig|Sauerstoff;imperativo_explicativo;6
+How is butter made?;cream;creme|nata|Sahne|panna|baratt|churn;explicativa;5
+Capital of Bhutan?;Thimphu;Thimpu;corta;5
+Okay, who runs SpaceX?;Elon Musk;Musk;conversacional;6
+When did the California Gold Rush begin?;1848;1849;factual_aperturas;8
+Cite the year the Bastille was stormed.;1789;;imperativo;10
+Decode why volcanoes erupt.;magma;;imperativo_explicativo;6
+Why does vinegar taste sour?;acetic acid;aceti|Essigs;explicativa;6
+Capital of North Korea?;Pyongyang;Pjongjang|Piongyang|Pyong-yang;corta;5
+Hi! Who was the Greek sea god?;Poseidon;Poseidone;conversacional;9
+When did the Suez Canal open?;1869;;factual_aperturas;8
+Find the capital of Argentina.;Buenos Aires;;imperativo;6
+Unravel what causes earthquakes.;tectonic;tecton|tekton|tetton;imperativo_explicativo;6
+Why does mint feel cold?;menthol;mentol;explicativa;6
+Capital of Taiwan?;Taipei;Taipeh|Taipe;corta;4
+So, who was Zeus's wife?;Hera;Juno;conversacional;8
+When was the Hubble telescope launched?;1990;;factual_aperturas;8
+Look up the capital of Thailand.;Bangkok;Banguecoque;imperativo;7
+Fill me in on why stars twinkle.;atmosphere;atmos;imperativo_explicativo;9
+Why does honey never spoil?;sugar;sucr|azuc|Zucker|zucch|acuc;explicativa;6
+Capital of Uzbekistan?;Tashkent;Tachkent|Taskent|Taschkent;corta;5
+Honestly, who slew Medusa?;Perseus;Persee|Perseo|Perseu;conversacional;7
+Whose diary was hidden in an Amsterdam annex?;Anne Frank;;factual_aperturas;10
+Point out the tallest animal alive.;giraffe;girafe|jirafa|giraffa|girafa;imperativo;7
+Interpret how a compass works.;magnetic;magnet;imperativo_explicativo;7
+How are pickles made?;brine;saumure|salmuera|Salzlake|salamoia|salmoura|vinegar|vinaigre|vinagre|Essig|aceto;explicativa;6
+Capital of Kyrgyzstan?;Bishkek;Bichkek|Biskek|Bischkek;corta;6
+Wait, who was the Greek goddess of wisdom?;Athena;Athene|Atenea|Atena;conversacional;10
+Whose assassination triggered World War I?;Franz Ferdinand;Ferdinand|Fernando|Ferdinando;factual_aperturas;8
+Remind me who painted The Kiss.;Klimt;;imperativo;8
+Expand on how fish breathe underwater.;gills;branchi|branqui|Kiemen;imperativo_explicativo;7
+What sank the Titanic?;iceberg;Eisberg;explicativa;5
+Capital of Oman?;Muscat;Mascate|Maskat|Moscate;corta;4
+Sorry, what's the capital of the Netherlands?;Amsterdam;Amsterdao;conversacional;10
+Whose equations unified electricity and magnetism?;Maxwell;;factual_aperturas;9
+Let me know the capital of Austria.;Vienna;Vienne|Viena|Wien;imperativo;8
+Examine why salt melts ice.;freezing point;congel|Gefrier|freezing;imperativo_explicativo;7
+What wiped out the dinosaurs?;asteroid;astero|meteor;explicativa;6
+Capital of Yemen?;Sanaa;Sana'a;corta;4
+Pub quiz: capital of DR Congo?;Kinshasa;Kinsasa|Quinxassa;conversacional;8
+What metal has the highest melting point?;tungsten;tungstene|tungsteno|Wolfram|tungstenio;factual_aperturas;8
+Spot the author of Frankenstein.;Mary Shelley;Shelley;imperativo;7
+Analyze why coffee keeps us awake.;caffeine;cafeine|cafeina|Koffein|caffeina;imperativo_explicativo;8
+How did Germany unify in 1871?;Bismarck;;explicativa;9
+Capital of Moldova?;Chisinau;Kichinev|Kischinau|Quixinau;corta;5
+Pub quiz: Burkina Faso capital?;Ouagadougou;Uagadugu|Wagadugu;conversacional;9
+Which bird lays the largest eggs?;ostrich;autruche|avestruz|Strauss|Strauß|struzzo;factual_aperturas;7
+Fetch the capital of Hungary.;Budapest;Budapeste;imperativo;6
+Review why chili peppers taste hot.;capsaicin;capsai;imperativo_explicativo;7
+What destroyed Pompeii?;Vesuvius;Vesu;explicativa;5
+Capital of Bosnia?;Sarajevo;Sarajewo;corta;4
+Quick question: what's the capital of Liberia?;Monrovia;;conversacional;10
+Which country gifted the Statue of Liberty?;France;Francia|Frankreich|Franca;factual_aperturas;8
+Note the capital of Suriname.;Paramaribo;;imperativo;7
+Clear up why carrots are orange.;carotene;caroten|carotin;imperativo_explicativo;7
+How did Cleopatra die?;snake;serpent|serpien|Schlang|cobra|aspic|aspid;explicativa;7
+Capital of North Macedonia?;Skopje;Skopie|Escopia;corta;5
+Hey, what's Greenland's capital?;Nuuk;;conversacional;8
+Which instrument has 47 strings?;harp;harpe|arpa|Harfe|harpa;factual_aperturas;7
+Reveal who wrote Of Mice and Men.;Steinbeck;;imperativo;10
+Go over what glass is made from.;sand;sable|arena|Sabbia|areia;imperativo_explicativo;8
+What spread the Black Death?;fleas;flea|puce|pulga|Floh|pulce|Yersinia;explicativa;6
+Capital of Montenegro?;Podgorica;;corta;5
+Just curious, capital of the Dominican Republic?;Santo Domingo;Saint-Domingue;conversacional;9
+Which land animal is the fastest?;cheetah;guepard|guepardo|Gepard|ghepardo|chita;factual_aperturas;7
+Count the stripes on the US flag.;13;;imperativo;8
+Detail what makes soda fizzy.;carbon dioxide;dioxy|dioxi|Kohlendioxid|anidride carbonica|CO2;imperativo_explicativo;7
+What forced Japan's 1945 surrender?;atomic bomb;bombe atomique|bomba atomica|Atombombe|bombes atomiques|bombas atomicas|Hiroshima|Nagasaki;explicativa;9
+Capital of Liechtenstein?;Vaduz;;corta;6
+Hi! Capital of Turkmenistan?;Ashgabat;Achgabat|Asjabad|Aschgabat|Asgabat|Ashkhabad|Asgabate;conversacional;8
+How long is a marathon in kilometers?;42;42.195|42,195|42.2|42,2;factual_aperturas;8
+Pin down who composed Pictures at an Exhibition.;Mussorgsky;Moussorgski|Mussorgski|Musorgski|Musorgsky|Mussorgskij;imperativo;9
+Unpack what causes day and night.;rotation;rotat|rotac|rotaz|Drehung;imperativo_explicativo;8
+How did the Greeks enter Troy?;wooden horse;cheval|caballo|Pferd|cavallo|cavalo|horse;explicativa;7
+Capital of Scotland?;Edinburgh;Edimbourg|Edimburgo|Edinburg;corta;4
+Random thought: what's Niger's capital?;Niamey;;conversacional;9
+How fast does sound travel in air?;343;340|1235|1 235|1.235|1,235|1234|1 234|1.234|1,234;factual_aperturas;8
+Guess the largest country in South America.;Brazil;Bresil|Brasil|Brasilien|Brasile;imperativo;8
+Run through how echoes happen.;reflection;refle|rifless|Reflexion;imperativo_explicativo;6
+What triggered the Great Depression?;stock market crash;krach|crash|crac|Borsenkrach|crollo|quebra|1929;explicativa;6
+Capital of Wales?;Cardiff;;corta;4
+Trivia time: capital of Sierra Leone?;Freetown;;conversacional;8
+How old is the universe?;13.8;13,8;factual_aperturas;6
+Pick the biggest cat species.;tiger;tigre|Tiger;imperativo;6
+Lay out how plants absorb water.;roots;racine|raic|raiz|Wurzel|radic;imperativo_explicativo;8
+What was the Silk Road used for?;trade;commerc|comerc|Handel;explicativa;8
+Capital of Haiti?;Port-au-Prince;Port au Prince|Puerto Principe|Porto Principe;corta;4
+I forgot, Eritrea's capital?;Asmara;;conversacional;9
+How long did the Hundred Years' War last?;116;;factual_aperturas;10
+Choose the fastest bird in a dive.;peregrine falcon;peregrine|pelerin|peregrino|Wanderfalke|pellegrino;imperativo;8
+Account for why we shiver when cold.;muscles;muscl|muscu|Muskel|muscol;imperativo_explicativo;9
+Why was the Great Wall built?;nomads;nomad|Mongol|invas|invad;explicativa;7
+Capital of Honduras?;Tegucigalpa;;corta;4
+Out of curiosity, Gabon's capital?;Libreville;;conversacional;9
+Who discovered X-rays?;Rontgen;Roentgen;factual_aperturas;5
+Retrieve the author of Dracula.;Bram Stoker;Stoker;imperativo;7
+Shed light on why popcorn pops.;steam;vapeur|vapor|Dampf|vapore;imperativo_explicativo;8
+Why did Columbus sail west?;Asia;Asie|Asien|India|Indien|Indias;explicativa;6
+Capital of Nicaragua?;Managua;;corta;4
+Hmm, what's the capital of Mauritania?;Nouakchott;Nuakchot|Nuakschott;conversacional;10
+Who invented dynamite?;Nobel;;factual_aperturas;5
+Supply the capital of Romania.;Bucharest;Bucarest|Bukarest|Bucareste;imperativo;6
+Demystify how airplanes stay airborne.;lift;portance|sustenta|Auftrieb|portanza;imperativo_explicativo;8
+What sparked the American Revolution?;taxes;tax|impot|impuest|Steuer|impost;explicativa;6
+Capital of Costa Rica?;San Jose;;corta;5
+Settle a bet: where was pizza invented?;Naples;Napoles|Neapel|Napoli;conversacional;10
+Who founded the Mongol Empire?;Genghis Khan;Genghis|Gengis|Dschingis|Chinggis;factual_aperturas;7
+State the capital of Belgium.;Brussels;Bruxelles|Bruselas|Brussel|Bruxelas;imperativo;6
+Elucidate how submarines dive.;ballast;lastre|zavorra|lastro;imperativo_explicativo;7
+What did Lincoln's proclamation end?;slavery;esclav|Sklav|schiav|escrav|slave;explicativa;7
+Capital of Fiji?;Suva;;corta;4
+Just curious, where do kiwi birds live?;New Zealand;Nouvelle-Zelande|Nueva Zelanda|Neuseeland|Nuova Zelanda|Nova Zelandia;conversacional;10
+Who designed the Sagrada Familia?;Gaudi;;factual_aperturas;8
+Specify the currency of the United Kingdom.;pound sterling;sterling|livre sterling|libra esterlina|Pfund|sterlina|pound;imperativo;8
+Spell out why rubber balls bounce.;elastic;elasti|Elastiz;imperativo_explicativo;7
+What did Martin Luther King fight for?;civil rights;civil|civiq|Burgerrecht|civis;explicativa;8
+Capital of Tajikistan?;Dushanbe;Douchanbe|Dusambe|Duschanbe;corta;6
+Random thought: what do giant pandas eat?;bamboo;bambou|bambu|Bambus;conversacional;9
+Who sculpted The Thinker?;Rodin;;factual_aperturas;7
+Mention who composed William Tell.;Rossini;;imperativo;7
+Cover how solar panels make electricity.;photovoltaic;voltai|photon|foton|semicond;imperativo_explicativo;7
+How did Napoleon spend his final years?;Saint Helena;Helen|Elena|exil|esilio;explicativa;8
+Capital of Cameroon?;Yaounde;Jaunde;corta;4
+I forgot, who authored The Great Gatsby?;Fitzgerald;;conversacional;10
+Who directed Psycho?;Hitchcock;;factual_aperturas;4
+Indicate who discovered DNA's double helix.;Watson;Crick|Rosalind Franklin;imperativo;10
+Decode how bats navigate in darkness.;echolocation;ecolocaliz|Echoortung|ultras|Ultraschall;imperativo_explicativo;7
+What caused the 2008 financial crisis?;subprime;hypoth|hipotec|Hypothek|mutui|mortgage;explicativa;9
+Capital of Bahrain?;Manama;;corta;4
+Hmm, what do koalas eat?;eucalyptus;eucalipto|Eukalyptus;conversacional;9
+Who discovered the electron?;Thomson;;factual_aperturas;5
+Recall the first man in space.;Gagarin;Gagarine;imperativo;8
+Unravel how salt preserves meat.;osmosis;osmo|dehydrat|deshidrat|deshydrat|disidrat|desidrat;imperativo_explicativo;7
+What did the Rosetta Stone help decode?;hieroglyphs;glyph|glif;explicativa;9
+Capital of Mali?;Bamako;;corta;4
+Honestly, where did flamenco originate?;Spain;Espagne|Espana|Spanien|Spagna|Espanha|Andalus|Andalous|Andaluc|Andaluz;conversacional;8
+Who patented the phonograph?;Edison;;factual_aperturas;6
+Determine the deepest lake in Africa.;Tanganyika;Tanganica|Tanganjika|Tanganica;imperativo;8
+Fill me in on how thermometers work.;expansion;dilata|Ausdehn|expan|espans;imperativo_explicativo;9
+Why was Galileo put on trial?;heliocentrism;heliocent|eliocent|Heliozent|Copernic|Kopernik;explicativa;8
+Capital of the UAE?;Abu Dhabi;Abou Dhabi|Abu Dabi;corta;5
+Wait, where is Mount Rushmore?;South Dakota;Dakota;conversacional;8
+Who sang Thriller?;Michael Jackson;Jackson;factual_aperturas;5
+Disclose the capital of Belize.;Belmopan;;imperativo;7
+Interpret what causes hiccups.;diaphragm;diafragm|diaframm|Zwerchfell;imperativo_explicativo;8
+What did Pasteur invent for milk?;pasteurization;pasteuris|pasteuriz|pastoriz|Pasteurisier|pastorizz;explicativa;8
+Symbol for nickel?;Ni;;corta;4
+Sorry, where is Loch Ness?;Scotland;Ecosse|Escocia|Schottland|Scozia;conversacional;7
+Who discovered Jupiter's largest moons?;Galileo;Galilee|Galilei|Galileu;factual_aperturas;7
+Pin down the largest moon of Neptune.;Triton;Tritone|Tritao;imperativo;8
+Expand on how pearls form.;nacre;nacar|Perlmutt|madreperla;imperativo_explicativo;6
+What field did Mendel's pea experiments found?;genetics;genet|Genetik|hered|herenc|Vererb|ereditar;explicativa;10
+Symbol for lithium?;Li;;corta;4
+Quick question: when was the first World Cup?;1930;;conversacional;10
+Who proposed the uncertainty principle?;Heisenberg;;factual_aperturas;6
+Pinpoint the capital of Ethiopia.;Addis Ababa;Addis-Abeba|Addis Abeba|Adis Abeba|Adis-Abeba;imperativo;7
+Examine what causes a lunar eclipse.;shadow;ombr|Schatten;imperativo_explicativo;8
+What did Florence Nightingale reform?;nursing;infirm|enferm|Krankenpfleg|Pflege|inferm|nurs;explicativa;8
+Symbol for argon?;Ar;;corta;5
+Hey, how far is the Sun from Earth?;150 million;150|149,6|149.6|93 million;conversacional;10
+Who led the Soviet Union during World War II?;Stalin;Staline;factual_aperturas;10
+Locate the country of Timbuktu.;Mali;;imperativo;10
+Analyze what colors fireworks.;metal;metaux|metais|Metall;imperativo_explicativo;6
+What was Sputnik?;satellite;satel;explicativa;6
+Symbol for bismuth?;Bi;;corta;6
+Just curious, how old is Earth?;4.5 billion;4.5|4,5|4.54|4,54;conversacional;8
+Who was Napoleon's first wife?;Josephine;Josefina|Giuseppina;factual_aperturas;7
+Report the freezing point of water in Fahrenheit.;32;;imperativo;9
+Review how antibiotics work.;bacteria;bacteri|bakteri|batteri;imperativo_explicativo;5
+What caused the Dust Bowl?;drought;secheresse|sequia|Durre|siccit|seca;explicativa;6
+Symbol for strontium?;Sr;;corta;6
+Trivia time: which metal is mainly in brass?;copper;cuivre|cobre|Kupfer;conversacional;10
+Who predicted Neptune's position mathematically?;Le Verrier;Leverrier|Verrier|John Couch Adams;factual_aperturas;9
+Cite the author of The Prince.;Machiavelli;Machiavel|Maquiavelo|Maquiavel;imperativo;8
+Clear up what creates wind.;air pressure;Luftdruck|Druckunterschied|pression atmos|pression de l'air|presion atmos|presion del aire|pressione atmos|pressao atmos|differences de pression|diferencias de presion|differenze di pressione|diferencas de pressao;imperativo_explicativo;6
+What caused Ireland's Great Famine?;potato;pomme de terre|patata|Kartoffel|batata|mildiou|tizon|blight;explicativa;8
+Symbol for barium?;Ba;;corta;5
+I forgot, who sang Purple Rain?;Prince;;conversacional;8
+Who led the first circumnavigation expedition?;Magellan;Magallanes|Magellano|Magalhaes|Magalhanes|Elcano;factual_aperturas;8
+Find the capital of Pakistan.;Islamabad;;imperativo;6
+Go over how dams generate electricity.;turbines;turbin;imperativo_explicativo;7
+How were Egyptian mummies preserved?;embalming;embaum|balsam|natron;explicativa;7
+Symbol for xenon?;Xe;;corta;5
+Out of curiosity, who directed The Godfather?;Coppola;;conversacional;10
+Who crossed the Rubicon in 49 BC?;Caesar;Cesar|Cesare|Casar;factual_aperturas;10
+Look up who invented the jet engine.;Whittle;Ohain;imperativo;8
+Detail how nuclear reactors produce energy.;fission;fissi|fision|fissao|Kernspaltung|Spaltung;imperativo_explicativo;7
+Why did the Challenger shuttle explode?;O-ring;O-Ring|torique|torica|Dichtungsring|guarnizione;explicativa;7
+Symbol for manganese?;Mn;;corta;4
+Hmm, who founded Rome?;Romulus;Romulo|Romolo|Romule;conversacional;6
+Whose brush created The Night Watch?;Rembrandt;;factual_aperturas;8
+Point out the smallest bone in the body.;stapes;etrier|estribo|Steigbugel|staffa|stirrup;imperativo;9
+Unpack how the Sun produces energy.;fusion;fusione|fusao|Kernfusion;imperativo_explicativo;8
+Why did Napoleon retreat from Russia?;winter;hiver|invierno|inverno;explicativa;7
+Symbol for krypton?;Kr;;corta;5
+Real quick: who wrote The Art of War?;Sun Tzu;Sun Zi|Sunzi;conversacional;10
+What animal is the largest mammal?;blue whale;baleine|ballena|Blauwal|balenottera|baleia;factual_aperturas;8
+Remind me who composed The Planets suite.;Holst;;imperativo;10
+Run through why blood is red.;hemoglobin;moglobin;imperativo_explicativo;7
+What causes tooth decay?;acid;acide|acido|Saure|bacteri|bakteri|batteri|plaque;explicativa;5
+Author of Emma?;Austen;Jane Austen;corta;4
+Okay, who composed Carmina Burana?;Orff;;conversacional;9
+What currency does Thailand use?;baht;;factual_aperturas;6
+Let me know the capital of Saudi Arabia.;Riyadh;Riyad|Riad|Riade;imperativo;9
+Lay out why lemons taste sour.;citric acid;citri|Zitronens;imperativo_explicativo;9
+What powered the Industrial Revolution?;coal;charbon|Kohle|carvao|el carbon|del carbon|steam|vapeur|vapor|Dampf;explicativa;6
+Author of Lolita?;Nabokov;;corta;5
+Hi! Who drafted the Declaration of Independence?;Jefferson;;conversacional;9
+What sport uses a shuttlecock?;badminton;Federball;factual_aperturas;7
+Spot the creator of Sherlock Holmes.;Conan Doyle;Doyle;imperativo;7
+Account for why pressure cookers cook faster.;boiling point;ebul|eboll|Siede|boiling;imperativo_explicativo;9
+What did the Marshall Plan fund?;reconstruction;reconstru|Wiederaufbau|ricostru|rebuild;explicativa;7
+Author of Candide?;Voltaire;;corta;5
+So, who invented basketball?;Naismith;;conversacional;6
+What blood type is the universal donor?;O negative;O-negative|O negatif|O negativo|0 negativ|O negativ|0 negativo;factual_aperturas;8
+Fetch the capital of Uruguay.;Montevideo;Montevideu;imperativo;6
+Shed light on how fog forms.;condensation;condens|kondens;imperativo_explicativo;8
+Who does Braille help?;blind;aveugl|cieg|Blind|ciech|cego|malvoyant;explicativa;6
+Author of Siddhartha?;Hesse;;corta;6
+Pub quiz: who wrote Peter Pan?;Barrie;;conversacional;8
+What organ produces insulin?;pancreas;Pankreas;factual_aperturas;5
+Track down the founder of IKEA.;Ingvar Kamprad;Kamprad;imperativo;8
+Demystify why sweating cools us.;evaporation;evapor|Verdunst;imperativo_explicativo;9
+What does pH measure?;acidity;acidi|acidez|Saure;explicativa;5
+Author of The Raven?;Edgar Allan Poe;Allan Poe;corta;5
+Pub quiz: which band sang Hey Jude?;The Beatles;Beatles;conversacional;9
+What does a seismograph measure?;earthquakes;earthquake|seisme|tremblement|terremoto|sismo|Erdbeben|terremoti;factual_aperturas;8
+Dig up who wrote The Three Musketeers.;Dumas;;imperativo;10
+Elucidate how the Grand Canyon formed.;erosion;erosi|erosao|Colorado;imperativo_explicativo;9
+What does a Geiger counter detect?;radiation;radia|Strahlung;explicativa;8
+Author of Dune?;Frank Herbert;Herbert;corta;5
+Be honest: who directed Pulp Fiction?;Tarantino;;conversacional;9
+Sunlight helps the skin make which vitamin?;vitamin D;vitamine D|vitamina D;factual_aperturas;9
+Note the capital of Guyana.;Georgetown;;imperativo;7
+Spell out how fossils form.;sediment;sedim;imperativo_explicativo;6
+What does an anemometer measure?;wind speed;wind|viento|vento|Windgeschwindigkeit|vitesse du vent;explicativa;8
+Author of Walden?;Thoreau;;corta;5
+Hmm, Eiffel Tower height?;330;324|300;conversacional;8
+Mount Fuji is in which country?;Japan;Japon|Giappone|Japao;factual_aperturas;7
+Guess the national flower of Japan.;cherry blossom;cerisier|sakura|cerezo|Kirschblute|ciliegio|cerejeira|cherry|chrysanth|crisant;imperativo;7
+Cover how sound travels.;vibrations;vibr|Schwing;imperativo_explicativo;5
+What does a hygrometer measure?;humidity;humid|humed|Feucht|umid;explicativa;8
+Author of Beloved?;Toni Morrison;Morrison;corta;5
+Settle a bet: Beatles breakup year?;1970;;conversacional;9
+The Alhambra is in which city?;Granada;Grenade;factual_aperturas;10
+Choose the tallest building in the world.;Burj Khalifa;;imperativo;8
+Decode why the Moon shows one face.;synchronous;synchron|sincron|tidal|maree|marea|Gezeiten;imperativo_explicativo;8
+What was a sextant used for?;navigation;navig|naveg;explicativa;8
+Author of The Stranger?;Camus;;corta;5
+Quick question: when did dinosaurs go extinct?;66 million;66|65;conversacional;9
+The Hermitage Museum is in which city?;Petersburg;Petersbourg|Petersburgo|Pietroburgo;factual_aperturas;10
+Retrieve the creator of Mickey Mouse.;Walt Disney;Disney|Iwerks;imperativo;7
+Unravel what makes cakes rise.;baking powder;levure|levadura|Backpulver|lievito|fermento|baking soda|bicarbonat|yeast|levain|carbon dioxide|dioxyde de carbone|dioxido de carbono|Kohlendioxid|CO2;imperativo_explicativo;7
+What does a stethoscope listen to?;heartbeat;coeur|coraz|Herz|cuor|corac|heart|poumon|pulmon|Lunge|polmon|pulmo|lung;explicativa;9
+Composer of Aida?;Verdi;;corta;5
+Just curious, when was the Mona Lisa painted?;1503;1504|1505|1506|1507|1517|1519;conversacional;10
+The Prado Museum is in which city?;Madrid;;factual_aperturas;9
+Supply the capital of Paraguay.;Asuncion;Assomption|Assuncao;imperativo;7
+Fill me in on why heavy ships float.;buoyancy;Archim|flotab|flottab|Auftrieb|galleggi|empux|buoyan;imperativo_explicativo;9
+What does insulin regulate?;glucose;gluc|Gluk|glic|blood sugar|sucre|azucar|Zucker|zucchero|acucar;explicativa;5
+Composer of Tosca?;Puccini;;corta;5
+Quick question: when did Shakespeare die?;1616;;conversacional;8
+Petra is located in which country?;Jordan;Jordanie|Jordania|Giordania|Jordanien;factual_aperturas;8
+State the capital of Estonia.;Tallinn;Tallin;imperativo;6
+Interpret why seawater is salty.;minerals;mineraux|minerais|mineral;imperativo_explicativo;8
+How do penguins stay warm?;feathers;plum|Feder|piume|penas|graisse|grasa|Fett|grasso|gordura|blubber;explicativa;7
+Composer of Messiah?;Handel;Haendel;corta;4
+Just curious, when did Rome invade Britain?;43;;conversacional;9
+Stonehenge is in which country?;England;Angleterre|Inglaterra|Inghilterra|United Kingdom|Royaume-Uni|Reino Unido|Vereinigtes|Regno Unito|UK;factual_aperturas;8
+Specify the chemical symbol for titanium.;Ti;;imperativo;7
+Expand on how batteries store energy.;electrolyte;lectrolyt|lectrolit|lettrolit|letrolit|anode|anodo|cathode|catodo|Kathode;imperativo_explicativo;7
+How do owls hunt at night?;hearing;ouie|oido|Gehor|udito|audic|audit;explicativa;8
+Composer of La Mer?;Debussy;;corta;5
+Random thought: when was the first email sent?;1971;;conversacional;10
+Chichen Itza is in which country?;Mexico;Mexique|Mexiko|Messico;factual_aperturas;9
+Mention the painter of Las Meninas.;Velazquez;;imperativo;9
+Examine why plants bend toward light.;auxin;phototrop|fototrop;imperativo_explicativo;8
+How do snakes sense warm prey?;infrared;infra;explicativa;7
+Composer of The Moldau?;Smetana;;corta;6
+Random thought: when was Bitcoin created?;2009;2008;conversacional;8
+Which river runs through Baghdad?;Tigris;Tigre|Tigri;factual_aperturas;6
+Indicate the founder of Apple.;Steve Jobs;Jobs|Wozniak;imperativo;7
+Analyze what causes sunburn.;ultraviolet;ultravi|UV;imperativo_explicativo;7
+How do kangaroos carry their young?;pouch;poche|bolsa|Beutel|marsup;explicativa;9
+Composer of Peer Gynt?;Grieg;;corta;6
+Trivia time: when did the Ottoman Empire end?;1922;1923|1924;conversacional;10
+Vienna sits on which river?;Danube;Danubio|Donau;factual_aperturas;7
+Recall the first woman in space.;Tereshkova;Terechkova|Tereschkowa|Tereskova;imperativo;8
+Review why knuckles crack.;bubbles;bulle|burbuj|Blase|bolle|bolha|cavitat|cavitac|cavitaz;imperativo_explicativo;6
+Why are flamingos pink?;shrimp;crevette|camaron|Garnele|gamberett|camarao|caroten|algue|alga|Alge|alghe;explicativa;6
+Composer of Parsifal?;Wagner;;corta;6
+Trivia time: when was the Great Pyramid built?;2560 BC;2560|2580|2600|2500|2570;conversacional;10
+When did Queen Victoria die?;1901;;factual_aperturas;6
+Reveal who mapped Australia's east coast.;James Cook;Cook;imperativo;9
+Clear up what causes tsunamis.;earthquake;seisme|terremoto|Erdbeben|sismo|terremoti;imperativo_explicativo;9
+How do beavers build dams?;wood;bois|madera|Holz|legno|madeira|branches|branchages|ramas|rami|galhos|troncs|troncos|Baumstamm;explicativa;7
+Painter of American Gothic?;Grant Wood;;corta;5
+I forgot, when was YouTube founded?;2005;;conversacional;8
+When did the Black Death reach Europe?;1347;1348;factual_aperturas;8
+Disclose the highest mountain in South America.;Aconcagua;;imperativo;9
+Go over how rockets move in space.;thrust;pouss|empuj|Schub|spinta|empux|reacti|reacci|Reaktion|reazion|reacao;imperativo_explicativo;8
+How do trees record their age?;growth rings;cernes|anillos|Jahresringe|anelli|aneis|tree rings|annual rings;explicativa;7
+Painter of The Angelus?;Millet;;corta;6
+Out of curiosity, when was Google founded?;1998;;conversacional;9
+When was the Berlin Wall built?;1961;;factual_aperturas;7
+Pin down the longest river in North America.;Missouri;Mississippi;imperativo;9
+Detail how coal formed.;plants;plant|vegeta|Pflanz|piant;imperativo_explicativo;5
+How do mushrooms reproduce?;spores;spor;explicativa;5
+Painter of The Great Wave?;Hokusai;;corta;6
+Hmm, when did Princess Diana die?;1997;;conversacional;8
+When did the Western Roman Empire fall?;476;;factual_aperturas;8
+Pinpoint the longest river in Europe.;Volga;;imperativo;8
+Unpack why the Moon has craters.;impacts;impact|impatt|Einschl|meteor;imperativo_explicativo;9
+How do coral reefs form?;polyps;polyp|polip|calcium|calcaire|calcare|carbonat;explicativa;6
+Painter of Nighthawks?;Hopper;;corta;6
+Real quick: when did Vikings reach America?;1000;1001|1021;conversacional;9
+When did Luther post his 95 theses?;1517;;factual_aperturas;10
+Locate the country of Mount Olympus.;Greece;Grece|Grecia|Griechenland;imperativo;8
+Run through why polar bears are white.;camouflage;camufl|Tarn;imperativo_explicativo;8
+What makes lightning?;electric charges;charg|carga|Ladung|caric|stati;explicativa;4
+Painter of Olympia?;Manet;;corta;4
+Okay, when did Brexit happen?;2020;2016;conversacional;7
+When was Pearl Harbor attacked?;1941;;factual_aperturas;6
+Report the number of US states.;50;;imperativo;7
+Lay out how thermoses keep heat.;vacuum;vacio|Vakuum|vuoto|vacuo|le vide|du vide|un vide;imperativo_explicativo;9
+Why does a boomerang come back?;aerodynamics;aerodyn|aerodin|spin|rotat|gyrosc|giroscop|Kreisel;explicativa;9
+Lightning rod inventor?;Franklin;;corta;5
+Hi! When was the Taj Mahal built?;1632;1631|1643|1648|1653;conversacional;10
+When did the Korean War begin?;1950;;factual_aperturas;7
+Cite the author of The Aeneid.;Virgil;Virgile|Virgilio|Vergil;imperativo;10
+Account for why rubbed balloons stick to walls.;static;stati;imperativo_explicativo;9
+How does a parachute slow a fall?;air resistance;resist|Luftwider|drag;explicativa;8
+Steam engine inventor?;Watt;Newcomen;corta;4
+So, what's sushi wrapped in?;nori;algue|alga|Alge|Seetang;conversacional;8
+When was the Rosetta Stone found?;1799;;factual_aperturas;8
+Find the capital of Cambodia.;Phnom Penh;Phnom-Penh|Nom Pen;imperativo;6
+Shed light on why skin wrinkles with age.;collagen;collag|colag|Kollagen;imperativo_explicativo;10
+Why do tires have treads?;grip;adher|aderen|Haftung|traction|traccion|Traktion|trazione|tracao;explicativa;7
+Mercury thermometer inventor?;Fahrenheit;;corta;5
+So, what grain is paella made with?;rice;du riz|le riz|de riz|arroz|riso;conversacional;10
+When did Elvis Presley die?;1977;;factual_aperturas;7
+Look up the largest living lizard.;Komodo dragon;Komodo;imperativo;7
+Demystify why hair turns gray.;melanin;;imperativo_explicativo;8
+How does a lever lift heavy loads?;fulcrum;fulcr|appui|Drehpunkt|pivot;explicativa;8
+Father of genetics?;Mendel;;corta;4
+Honestly, what's in a Bloody Mary?;vodka;;conversacional;9
+Whose expedition first reached the South Pole?;Amundsen;;factual_aperturas;9
+Point out the main ingredient of hummus.;chickpeas;chickpea|pois chiche|garbanzo|Kichererbse|grao-de-bico|grao de bico;imperativo;9
+Elucidate how seeds sprout.;germination;germin|Keim;imperativo_explicativo;8
+How are frescoes painted?;plaster;platre|yeso|Putz|intonac|gesso|enduit;explicativa;6
+Father of geometry?;Euclid;Euclide|Euclides|Euklid;corta;4
+Honestly, what's pesto's main herb?;basil;basilic|albahaca|Basilikum|basilico|manjericao;conversacional;10
+Whose ship was the Santa Maria?;Columbus;Colomb|Kolumbus|Colombo|Cristobal Colon|Cristoforo Colombo;factual_aperturas;8
+Remind me who discovered insulin.;Banting;;imperativo;7
+Spell out why the Statue of Liberty is green.;patina;patin|copper|cuivre|cobre|Kupfer|oxyd|oxid;imperativo_explicativo;10
+What structure defines a haiku?;syllables;syllab|silab|Silbe|sillab|17;explicativa;7
+Father of medicine?;Hippocrates;Hippocrate|Hipocrates|Hippokrates|Ippocrate;corta;4
+Wait, what plant makes tequila?;agave;;conversacional;8
+Which scientist discovered the neutron?;Chadwick;;factual_aperturas;6
+Let me know the capital of Serbia.;Belgrade;Belgrado|Belgrad;imperativo;8
+Cover what causes jet lag.;circadian;circadi|zirkadian;imperativo_explicativo;6
+What defines a sonnet's length?;14;quatorze|catorce|vierzehn|quattordici|catorze|fourteen;explicativa;8
+Father of history?;Herodotus;Herodote|Herodoto|Herodot|Erodoto;corta;4
+Pub quiz: which gas lights red signs?;neon;;conversacional;9
+Which computer defeated Kasparov?;Deep Blue;;factual_aperturas;7
+Spot the largest lake in Africa.;Victoria;;imperativo;7
+Decode how LEDs produce light.;semiconductors;semicond|Halbleiter|lectron;imperativo_explicativo;6
+What does a metronome keep?;tempo;rythme|ritmo|Takt|beat;explicativa;8
+Largest Mediterranean island?;Sicily;Sicile|Sicilia|Sizilien;corta;5
+Hey, who wrote Pinocchio?;Collodi;;conversacional;8
+Which empire built Machu Picchu?;Inca;Inka;factual_aperturas;8
+Fetch the capital of Latvia.;Riga;;imperativo;6
+Unravel how kidneys clean blood.;filtration;filtr|Filter;imperativo_explicativo;7
+What does an orchestra conductor hold?;baton;baguet|batut|Taktstock|bacchett;explicativa;7
+Tallest mountain in Europe?;Elbrus;Elbrous|Mont Blanc|Monte Bianco|Monte Branco;corta;6
+Quick question: who composed Canon in D?;Pachelbel;;conversacional;9
+Which dwarf planet was once a planet?;Pluto;Pluton|Plutone|Plutao;factual_aperturas;8
+Track down the country of Angel Falls.;Venezuela;;imperativo;8
+Fill me in on how flowers make seeds.;pollination;pollin|polini|Bestaub|impollin;imperativo_explicativo;9
+How does a violin produce sound?;strings;cordes|cuerdas|Saiten|corde|cordas|archet|arco|Bogen;explicativa;7
+Longest river in Asia?;Yangtze;Yangzi|Yangtse|Jangtse|Chang Jiang|Changjiang;corta;6
+Just curious, who invented the stethoscope?;Laennec;;conversacional;10
+Which philosopher tutored Alexander the Great?;Aristotle;Aristote|Aristoteles|Aristotele;factual_aperturas;8
+Dig up who invented the telegraph.;Samuel Morse;Morse;imperativo;8
+Interpret how cats purr.;larynx;laryn|laring|Kehlkopf;imperativo_explicativo;7
+How does a piano make sound?;hammers;marteau|martill|Hammer|martel;explicativa;7
+Largest country in Africa?;Algeria;Algerie|Argelia|Algerien;corta;6
+Random thought: who painted The School of Athens?;Raphael;Rafael|Raffaello;conversacional;10
+What fruit is guacamole made from?;avocado;avocat|aguacate|palta|abacate;factual_aperturas;9
+Note the tallest mountain in North America.;Denali;McKinley;imperativo;8
+Expand on how concrete hardens.;hydration;hydrat|hidrat|idrat;imperativo_explicativo;7
+How does a match ignite?;friction;fricti|friccion|Reibung|frizion|friccao;explicativa;6
+Longest river in Australia?;Murray;;corta;6
+Trivia time: who discovered Uranus?;Herschel;;conversacional;8
+Which mountains divide Europe and Asia?;Ural Mountains;Oural|Urales|Urali|Uralgebirge|Ural-Gebirge|Urais;factual_aperturas;7
+Guess the national animal of Scotland.;unicorn;licorne|unicornio|Einhorn|unicorno;imperativo;7
+Examine how soap removes grease.;surfactant;tensio|Tensid|surfact|micel|Mizell|hydrophob|hidrofob|idrofob|hydrophil|hidrofil;imperativo_explicativo;7
+Why does helium change your voice?;speed of sound;vitess|velocid|velocit|Geschwindig|speed;explicativa;7
+Largest US state?;Alaska;;corta;5
+I forgot, who invented the microwave oven?;Percy Spencer;Spencer;conversacional;9
+Which lake is the lowest point on land?;Dead Sea;mer Morte|mar Muerto|Totes Meer|Tote Meer|Toten Meer|mar Morto;factual_aperturas;9
+Choose the largest moon of Saturn.;Titan;Titano;imperativo;7
+Analyze how Velcro sticks.;hooks;crochet|gancho|Haken|uncin|hook;imperativo_explicativo;7
+Where does maple syrup come from?;tree sap;la seve|seve d|savia|Ahornsaft|linfa|seiva|erable|arce|Ahorn;explicativa;7
+Smallest US state?;Rhode Island;;corta;5
+Out of curiosity, who founded Carthage?;Dido;Didon|Elissa;conversacional;10
+Which country is shaped like a boot?;Italy;Italie|Italia|Italien;factual_aperturas;8
+Retrieve the inventor of the first automobile.;Karl Benz;Benz;imperativo;8
+Review where stars are born.;nebula;nebul|Nebel;imperativo_explicativo;6
+How is silk produced?;silkworms;silkworm|vers a soie|ver a soie|gusano|Seidenraupe|baco da seta|bachi da seta|bicho-da-seda|bicho da seda|cocon|capullo|Kokon|bozzolo|casulo;explicativa;5
+Largest city in Canada?;Toronto;;corta;6
+Hmm, who first sailed from Europe to India?;Vasco da Gama;Gama;conversacional;10
+Which instrument did Jimi Hendrix play?;guitar;guitare|guitarra|Gitarre|chitarra;factual_aperturas;9
+Supply the capital of Laos.;Vientiane;Vientian;imperativo;6
+Clear up how black holes form.;collapse;effondr|colaps|Kollaps|collass;imperativo_explicativo;7
+How is paper made?;pulp;pulpe|pulpa|Zellstoff|polpa|cellulo|celulo|Zellulo;explicativa;5
+Largest city in Brazil?;Sao Paulo;San Pablo;corta;6
+Real quick: who directed Star Wars?;George Lucas;Lucas;conversacional;8
+Which bone is the longest in the body?;femur;femore|Oberschenkel;factual_aperturas;9
+State the capital of Georgia, the country.;Tbilisi;Tbilissi|Tiflis;imperativo;9
+Go over why Mars looks red.;iron oxide;rust|rouille|Rost|ruggine|ferrugem|oxyd|oxid|ossid|Eisenoxid;imperativo_explicativo;7
+Where does natural rubber come from?;latex;hevea|seringueira|caucho|Kautschuk;explicativa;7
+Largest city in Turkey?;Istanbul;Estambul|Istambul;corta;6
+Okay, who sang Like a Prayer?;Madonna;;conversacional;8
+Where is the famous leaning tower?;Pisa;Pise;factual_aperturas;7
+Mention who composed The Blue Danube.;Johann Strauss;Strauss;imperativo;9
+Detail why Venus is so hot.;greenhouse;serre|invernadero|Treibhaus|estufa|effetto serra;imperativo_explicativo;7
+How is leather made?;tanning;tann|curti|Gerb|concia;explicativa;5
+Largest city in Morocco?;Casablanca;;corta;6
+Hi! Who created Tintin?;Herge;;conversacional;8
+Where is Michelangelo's David displayed?;Florence;Florencia|Florenz|Firenze|Florenca;factual_aperturas;8
+Indicate the founder of Amazon.;Jeff Bezos;Bezos;imperativo;7
+Unpack what causes meteor showers.;comet;Komet;imperativo_explicativo;7
+How does cotton become thread?;spinning;filag|hilad|hilar|Spinn|filatur|fiac;explicativa;6
+Fastest fish?;sailfish;marlin|voilier|pez vela|Facherfisch|pesce vela|peixe-vela|peixe vela;corta;4
+So, who created The Simpsons?;Matt Groening;Groening;conversacional;7
+Where were the Hanging Gardens said to be?;Babylon;Babilonia;factual_aperturas;9
+Recall who painted The Third of May.;Goya;;imperativo;9
+Run through what Jupiter's Great Red Spot is.;storm;tempete|tormenta|Sturm|tempest;imperativo_explicativo;10
+Why do leaves look green?;chlorophyll;chlorophyl|clorofil;explicativa;6
+Largest reptile?;saltwater crocodile;crocodile|cocodrilo|Krokodil|coccodrillo|crocodilo;corta;5
+Honestly, who found the Titanic wreck?;Ballard;;conversacional;8
+Who authored The Communist Manifesto?;Marx;Engels;factual_aperturas;7
+Reveal the largest lake in South America.;Titicaca;Maracaibo;imperativo;9
+Lay out how the Moon formed.;collision;collisi|colisi|Kollision|Theia|impact|impatt;imperativo_explicativo;8
+How does the eye focus light?;lens;cristallin|cristalino|Linse|lente|cornee|cornea|Hornhaut;explicativa;7
+Tallest tree species?;redwood;sequoia|secuoya|Mammutbaum;corta;5
+Wait, who proposed continental drift?;Wegener;;conversacional;7
+Who invented the electric battery?;Volta;;factual_aperturas;6
+Pinpoint the capital of Armenia.;Yerevan;Erevan|Eriwan|Ierevan;imperativo;7
+Account for how caves form.;limestone;calcai|caliz|Kalk|calcar;imperativo_explicativo;6
+How do glaciers form?;snow;neige|nieve|Schnee|neve;explicativa;5
+Largest fish?;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia;corta;4
+Sorry, who first split the atom?;Rutherford;Cockcroft|Walton|Hahn|Meitner;conversacional;8
+Who first measured Earth's circumference?;Eratosthenes;Eratosthene|Eratostenes|Eratostene;factual_aperturas;7
+Locate the birthplace of tango.;Argentina;Argentine|Argentinien|Uruguay|Buenos Aires|Montevideo;imperativo;9
+Shed light on how Hawaii's islands formed.;volcanoes;volcan|vulkan|vulcan|hotspot|point chaud|punto caliente|punto caldo|ponto quente;imperativo_explicativo;10
+How do hurricanes get their energy?;warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor;explicativa;7
+Slowest mammal?;sloth;paresseux|perezoso|Faultier|bradipo|preguica;corta;5
+Be honest: who wrote The Canterbury Tales?;Chaucer;;conversacional;9
+Who founded Buddhism?;Buddha;Bouddha|Buda|Siddhartha|Gautama;factual_aperturas;4
+Report the atomic number of oxygen.;8;;imperativo;7
+Demystify how wounds stop bleeding.;platelets;plaquet|Plattchen|piastrin|platelet|coagul|Gerinn;imperativo_explicativo;8
+What do bees collect besides nectar?;pollen;polen|polline;explicativa;8
+National bird of the US?;bald eagle;pygargue|aigle|aguila|Weisskopfseeadler|Seeadler|aquila|aguia;corta;6
+Pub quiz: who painted The Hay Wain?;Constable;;conversacional;10
+Which star is the brightest at night?;Sirius;Sirio;factual_aperturas;8
+Cite the author of Robinson Crusoe.;Defoe;;imperativo;9
+Elucidate how the tongue detects flavors.;taste buds;papil|Geschmacksknosp;imperativo_explicativo;9
+How do sharks detect hidden prey?;electric fields;electri|elettr|eletr|Elektr|Lorenzini;explicativa;7
+Hardest human tissue?;enamel;email|esmalte|Zahnschmelz|Schmelz|smalto;corta;5
+My kid asks: who drew Snoopy?;Charles Schulz;Schulz;conversacional;9
+Which gas makes party balloons float?;helium;helio|elio;factual_aperturas;7
+Find the capital of Azerbaijan.;Baku;Bakou;imperativo;6
+Spell out how we smell things.;olfactory;olfact|olfat|olfakt;imperativo_explicativo;7
+How do jellyfish sting?;nematocysts;nematocyst|nematocist|cnidocyt|cnidocit|Nesselzell;explicativa;6
+Universal recipient blood type?;AB positive;AB+|AB positif|AB positivo|AB positiv;corta;5
+My kid asks: what fish is Nemo?;clownfish;clown|payaso|pagliaccio|palhaco;conversacional;10
+What metal conducts electricity best?;silver;argent|plata|Silber|argento|prata;factual_aperturas;6
+Look up the founder of the Red Cross.;Henry Dunant;Dunant;imperativo;9
+Cover what controls our balance.;inner ear;oreille interne|oido interno|Innenohr|orecchio interno|ouvido interno|vestibul;imperativo_explicativo;6
+How does a key open a lock?;pins;goupille|pernos|pasador|Stifte|perni|pinos|pin tumbler;explicativa;8
+Author of Rebecca?;Daphne du Maurier;du Maurier|Maurier;corta;4
+My kid asks: biggest penguin species?;emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador;conversacional;9
+Which artist painted Campbell's Soup Cans?;Warhol;;factual_aperturas;9
+Point out the largest internal organ.;liver;foie|higado|Leber|fegato|figado;imperativo;7
+Decode where tears come from.;tear glands;lacrim|lacrym|lagrim|Tranendru;imperativo_explicativo;6
+How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr;explicativa;9
+Capital of Gambia?;Banjul;;corta;5
+Quick question: which ocean holds the Bermuda Triangle?;Atlantic;Atlantique|Atlantico|Atlantik;conversacional;10
+Which architect designed the Guggenheim Bilbao?;Gehry;;factual_aperturas;10
+Remind me who designed the Statue of Liberty.;Bartholdi;Eiffel;imperativo;10
+Unravel how anesthesia stops pain.;nerves;nerv|nerf;imperativo_explicativo;7
+How does a microwave heat food?;water molecules;molec|molek;explicativa;7
+Symbol for gallium?;Ga;;corta;5
+Hey, which country is Bali in?;Indonesia;Indonesie|Indonesien;conversacional;8
+Which empire did Montezuma rule?;Aztec;azteque|azteca|Azteken|azteco|asteca;factual_aperturas;8
+Let me know the capital of Malta.;Valletta;La Valette|La Valeta|Valeta;imperativo;8
+Fill me in on how glasses fix vision.;lenses;lentill|lente|Linse|lens;imperativo_explicativo;9
+How do airbags inflate so fast?;sodium azide;azid|azotur|nitrog|azote|Stickstoff|azoto;explicativa;8
+Capital of Chad?;N'Djamena;Ndjamena|Yamena|Nyamena;corta;4
+Just curious, which country is Transylvania in?;Romania;Roumanie|Rumania|Rumanien|Romenia;conversacional;10
+Which capital had a wall until 1989?;Berlin;Berlino|Berlim;factual_aperturas;10
+Spot the lightest chemical element.;hydrogen;hydrogene|hidrogeno|Wasserstoff|idrogeno|hidrogenio;imperativo;7
+Interpret how hearing aids help.;amplification;amplif|Verstark;imperativo_explicativo;7
+How are diamonds formed?;carbon;carbone|carbono|Kohlenstoff|carbonio;explicativa;5
+Currency of Switzerland?;Swiss franc;CHF|franc suisse|franco suizo|Schweizer Franken|franco svizzero|franco suico;corta;4
+Random thought: which country makes Lego?;Denmark;Danemark|Dinamarca|Danimarca;conversacional;8
+Which canal links the Atlantic and Pacific?;Panama;Panamakanal;factual_aperturas;8
+Fetch the capital of Albania.;Tirana;Tirane;imperativo;6
+Expand on how elevators work.;counterweight;contrepoids|contrapes|Gegengewicht|contrappes|cable|Seil;imperativo_explicativo;7
+What gives rubies their red color?;chromium;chrome|cromo|Chrom;explicativa;8
+Currency of India?;rupee;roupie|rupia|Rupie;corta;4
+Trivia time: which country has the most lakes?;Canada;;conversacional;10
+Which sea separates Europe from Africa?;Mediterranean;Mediterranee|Mediterraneo|Mittelmeer;factual_aperturas;7
+Disclose the capital of Brunei.;Bandar Seri Begawan;Bandar;imperativo;8
+Examine how noise-cancelling headphones work.;opposite waves;invers|oppos|opues|entgegen|opost|phase|fase;imperativo_explicativo;10
+How do glow sticks glow?;chemiluminescence;chimilum|quimiolum|chemilum|chemiolum;explicativa;6
+Currency of Mexico?;peso;;corta;4
+I forgot, which river flows through Rome?;Tiber;Tibre|Tevere;conversacional;9
+Lake Bled is in which country?;Slovenia;Slovenie|Eslovenia|Slowenien;factual_aperturas;8
+Guess the capital of Cyprus.;Nicosia;Nicosie|Lefkosia|Nikosia;imperativo;6
+Analyze how touchscreens sense fingers.;capacitive;capaci|kapazi;imperativo_explicativo;8
+How do clouds stay up?;droplets;gouttel|gotit|Tropfchen|goccio|gotic|droplet;explicativa;6
+Currency of Russia?;ruble;rouble|rublo|Rubel;corta;4
+Out of curiosity, which river runs through Florence?;Arno;;conversacional;10
+Which country invented paper?;China;Chine;factual_aperturas;5
+Choose the animal on Lamborghini's logo.;bull;taureau|toro|Stier|touro;imperativo;9
+Review how dolphins sleep.;hemisphere;hemisph|hemisf|emisf;imperativo_explicativo;5
+How does a sponge absorb water?;pores;poros|Poren|pori|capillar|capilar|Kapillar;explicativa;7
+Sport at Wimbledon?;tennis;tenis;corta;4
+Hmm, which sea is Venice on?;Adriatic;Adriatique|Adriatico|Adria;conversacional;8
+Which planet is farthest from the Sun?;Neptune;Neptuno|Neptun|Nettuno|Netuno;factual_aperturas;9
+Retrieve the author of Alice in Wonderland.;Lewis Carroll;Carroll;imperativo;8
+Clear up how camels survive deserts.;hump;bosse|joroba|Hocker|gobba|corcova|graisse|grasa|Fett|grasso|gordura;imperativo_explicativo;9
+How do hedgehogs defend themselves?;spines;piquant|epine|puas|Stachel|aculei|espinh|quill;explicativa;8
+Tour de France sport?;cycling;cyclisme|ciclismo|Radsport;corta;5
+Okay, which island was Napoleon born on?;Corsica;Corse|Corcega|Korsika;conversacional;9

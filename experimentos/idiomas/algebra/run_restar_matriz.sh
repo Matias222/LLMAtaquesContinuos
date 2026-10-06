@@ -38,6 +38,9 @@ T=attributes/french/targets_french_v5.csv
 OUT=algebra/runs/restar_matriz
 mkdir -p "$OUT"
 
+# detector de idioma (lang_id.py): se carga ACA para fallar antes de entrenar, no en la primera eval
+python3 -c "import json, lang_id; print('detector de idioma:', json.dumps(lang_id.descripcion()))"
+
 PATCHES=()
 for L in fr es de; do
   P="algebra/runs/alg_$L/lang_patch_best_train.pt"

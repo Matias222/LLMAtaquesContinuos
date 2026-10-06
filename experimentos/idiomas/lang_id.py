@@ -18,9 +18,22 @@ Dos reglas fijas, declaradas en el paper (seccion 3.4):
   2. MENOS DE MIN_PALABRAS PALABRAS = SIN IDIOMA ('unknown'). "Kiev",
      "Em 2000", "Marie Curie" no tienen idioma decidible.
 
-Ademas cada veredicto lleva `revisar`: True si el top-1 de GlotLID cae fuera
-de la lista o la probabilidad del idioma elegido es baja. Son los casos que
-van a revision manual; el resto no se mira.
+Las variedades del espanol que GlotLID separa (VARIEDADES: extremeno,
+chabacano, asturiano) suman su probabilidad a `es` ANTES de elegir: si no,
+"El capital de Senegal es Dakar." (ext 0.99) caia al siguiente idioma de la
+lista, que era catalan con 0.01.
+
+Ademas cada veredicto lleva `revisar` (va a revision manual; el resto no se
+mira) si:
+  - el top-1 de GlotLID cae fuera de la lista, o la probabilidad del idioma
+    elegido es < P_REVISAR;
+  - el veredicto es catalan: es la confusion conocida (respuestas cortas en
+    espanol sin tildes, "La capital de Ghana es Acra." -> ca 0.66) y el
+    catalan es un destino que se reporta en la resta;
+  - el texto mezcla idiomas: las oraciones de MIN_PALABRAS_ORACION palabras o
+    mas no salen todas en el mismo idioma ("I think you meant to ask
+    'Quel est...' Le symbole...").
+Validacion en runs/validar_glotlid/resumen.md.
 
 Backend (variable de entorno LANG_ID):
     glotlid     (default) GlotLID. Si no encuentra el modelo, FALLA: no hay
@@ -41,6 +54,12 @@ import re
 IDIOMAS = ("fr", "en", "es", "de", "it", "pt", "ca", "nl", "sv", "no", "da", "ro", "gl")
 MIN_PALABRAS = 3
 P_REVISAR = 0.5          # por debajo, el veredicto va a revision manual
+MIN_PALABRAS_ORACION = 4  # oraciones mas cortas no cuentan para detectar mezcla
+REVISAR_SIEMPRE = ("ca",)
+
+# variedades que GlotLID distingue y el modelo no produce en estos experimentos:
+# su probabilidad se suma a la del idioma de la lista (observadas en la validacion)
+VARIEDADES = {"ext": "es", "cbk": "es", "ast": "es"}
 
 # ISO 639-3 de GlotLID -> codigos de dos letras del repo
 ISO3 = {"fra": "fr", "eng": "en", "spa": "es", "deu": "de", "ita": "it", "por": "pt",
@@ -68,7 +87,8 @@ def descripcion():
         return {"backend": "heuristica"}
     _cargar()
     return {"backend": "glotlid", "modelo": os.path.abspath(_ruta), "idiomas": list(IDIOMAS),
-            "min_palabras": MIN_PALABRAS, "p_revisar": P_REVISAR}
+            "min_palabras": MIN_PALABRAS, "variedades": dict(VARIEDADES), "p_revisar": P_REVISAR,
+            "revisar_siempre": list(REVISAR_SIEMPRE), "min_palabras_oracion": MIN_PALABRAS_ORACION}
 
 
 def _cargar():
@@ -112,21 +132,56 @@ def _distribucion(t):
     return tuple(out)
 
 
-def detectar(text):
-    """
-    {"lang", "p", "top1", "p_top1", "revisar"}.
-    lang = idioma de IDIOMAS o 'unknown'; p = su probabilidad cruda;
-    top1 / p_top1 = lo que dijo GlotLID sin la lista cerrada.
-    """
-    if palabras(text) < MIN_PALABRAS:
-        return {"lang": "unknown", "p": 0.0, "top1": None, "p_top1": 0.0, "revisar": False}
+def _por_idioma(dist):
+    """{codigo de IDIOMAS: probabilidad}, con VARIEDADES sumadas a su idioma."""
+    acc = {}
+    for c, q in dist:
+        c = VARIEDADES.get(c, c)
+        if c in IDIOMAS:
+            acc[c] = acc.get(c, 0.0) + q
+    return acc
+
+
+def _elegir(text):
+    """(lang, p, top1, p_top1) sin las marcas de revision."""
     dist = distribucion(text)
     if not dist:
-        return {"lang": "unknown", "p": 0.0, "top1": None, "p_top1": 0.0, "revisar": False}
+        return "unknown", 0.0, None, 0.0
     top1, p_top1 = dist[0]
-    lang, p = next(((c, q) for c, q in dist if c in IDIOMAS), ("unknown", 0.0))
-    return {"lang": lang, "p": p, "top1": top1, "p_top1": p_top1,
-            "revisar": top1 not in IDIOMAS or p < P_REVISAR}
+    acc = _por_idioma(dist)
+    if not acc:
+        return "unknown", 0.0, top1, p_top1
+    lang = max(acc, key=acc.get)
+    return lang, acc[lang], top1, p_top1
+
+
+def oraciones(text):
+    return [o for o in re.split(r"(?<=[.!?])\s+|\n+", str(text))
+            if palabras(o) >= MIN_PALABRAS_ORACION]
+
+
+def mezcla(text):
+    """True si las oraciones largas del texto no salen todas en el mismo idioma."""
+    ors = oraciones(text)
+    if len(ors) < 2:
+        return False
+    return len({_elegir(o)[0] for o in ors} - {"unknown"}) > 1
+
+
+def detectar(text):
+    """
+    {"lang", "p", "top1", "p_top1", "mezcla", "revisar"}.
+    lang = idioma de IDIOMAS o 'unknown'; p = su probabilidad (con VARIEDADES
+    sumadas); top1 / p_top1 = lo que dijo GlotLID sin la lista cerrada.
+    """
+    if palabras(text) < MIN_PALABRAS:
+        return {"lang": "unknown", "p": 0.0, "top1": None, "p_top1": 0.0,
+                "mezcla": False, "revisar": False}
+    lang, p, top1, p_top1 = _elegir(text)
+    mix = mezcla(text)
+    top1_ok = top1 in IDIOMAS or top1 in VARIEDADES
+    return {"lang": lang, "p": p, "top1": top1, "p_top1": p_top1, "mezcla": mix,
+            "revisar": (not top1_ok) or p < P_REVISAR or lang in REVISAR_SIEMPRE or mix}
 
 
 def score(text, lang):
@@ -134,8 +189,8 @@ def score(text, lang):
     texto es demasiado corto (indecidible), como el french_score viejo."""
     if palabras(text) < MIN_PALABRAS:
         return 0.5
-    dist = [(c, q) for c, q in distribucion(text) if c in IDIOMAS]
-    tot = sum(q for _, q in dist)
+    acc = _por_idioma(distribucion(text))
+    tot = sum(acc.values())
     if tot == 0:
         return 0.5
-    return sum(q for c, q in dist if c == lang) / tot
+    return acc.get(lang, 0.0) / tot

@@ -78,6 +78,9 @@ for f in "$T" "$T_OPEN" "$T_OPEN2" "$P_FR" "$P_FR_S1" "$P_ES" "$P_DE"; do
   [[ -f "$f" ]] || { echo "falta $f"; exit 1; }
 done
 has() { [[ " $STAGES " == *" $1 "* ]]; }
+
+# detector de idioma (lang_id.py): se carga ACA para fallar antes de entrenar, no en la primera eval
+python3 -c "import json, lang_id; print('detector de idioma:', json.dumps(lang_id.descripcion()))"
 mkdir -p "$OUT/resta" "$OUT/tests"
 
 # --- grillas de entrada_o_directiva.py ---------------------------------------

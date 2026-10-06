@@ -125,6 +125,7 @@ def main():
         f["lang_id"] = a_none(det["lang"])
         f["p"] = round(det["p"], 4)
         f["revisar"] = det["revisar"]
+        f["mezcla"] = det["mezcla"]
         f["palabras"] = lang_id.palabras(t)
         f["top3"] = " ".join(f"{c}:{q:.2f}" for c, q in dist[:3])
     conjuntos = {c: [f for f in filas if f["conjunto"] == c] for c in ("manual", "referencia")}
@@ -135,7 +136,9 @@ def main():
     L = ["# Validacion del detector de idioma", ""]
     L.append(f"Modelo: `{info['modelo']}`. Lista cerrada: {', '.join(info['idiomas'])}. "
              f"Sin idioma: menos de {info['min_palabras']} palabras. "
-             f"`revisar`: top-1 fuera de la lista o p < {info['p_revisar']}.")
+             f"Variedades sumadas: {info['variedades']}. `revisar`: top-1 fuera de la lista, "
+             f"p < {info['p_revisar']}, veredicto en {info['revisar_siempre']} o texto mezclado "
+             f"(oraciones de {info['min_palabras_oracion']}+ palabras en idiomas distintos).")
     L.append("")
     L.append("| conjunto | n | " + " | ".join(DETECTORES) + " | errores lang_id | marcados revisar | errores atrapados por revisar |")
     L.append("|---|---|" + "---|" * len(DETECTORES) + "---|---|---|")
@@ -167,7 +170,7 @@ def main():
         L.append("")
     open(os.path.join(args.out_dir, "resumen.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 
-    cols = ["conjunto", "origen", "idx", "etiqueta", "lang_id", "p", "revisar", "glotlid_top1",
+    cols = ["conjunto", "origen", "idx", "etiqueta", "lang_id", "p", "revisar", "mezcla", "glotlid_top1",
             "heuristica", "palabras", "top3", "texto"]
     out = pd.DataFrame([{k: f[k] for k in cols} for f in filas], columns=cols)
     out.to_csv(os.path.join(args.out_dir, "predicciones.csv"), sep=";", index=False)

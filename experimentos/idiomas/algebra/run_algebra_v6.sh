@@ -97,6 +97,9 @@ mkdir -p "$TDIR" "$RUNS"
 for f in "$BASE" "$BASE_OPEN" "$BASE_OPEN2_SRC"; do [[ -f "$f" ]] || { echo "falta $f"; exit 1; }; done
 has() { [[ " $STAGES " == *" $1 "* ]]; }
 
+# detector de idioma (lang_id.py): se carga ACA para fallar antes de entrenar, no en la primera eval
+python3 -c "import json, lang_id; print('detector de idioma:', json.dumps(lang_id.descripcion()))"
+
 # --- configuracion por celda -------------------------------------------------
 # deja en variables: LANG_ UP_ (flag o vacio) COLS T T_OPEN T_OPEN2 CONDS
 cell_cfg() {
