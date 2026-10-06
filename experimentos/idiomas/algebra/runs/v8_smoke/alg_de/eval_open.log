@@ -1,0 +1,39 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+Held-out: 4  |  parche: algebra/runs/v8_smoke/alg_de/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:10<00:32, 10.81s/it]eval:  50%|█████     | 2/4 [00:21<00:21, 10.56s/it]eval:  75%|███████▌  | 3/4 [00:31<00:10, 10.44s/it]eval: 100%|██████████| 4/4 [00:32<00:00,  6.61s/it]eval: 100%|██████████| 4/4 [00:32<00:00,  8.06s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])           0.0%      0.000      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: de   (celda_ok = idioma de Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.1611      5.1577   -0.0034
+tail (el resto)                 0.5142      0.4967   -0.0175
+toda la respuesta               0.9570      0.9428   -0.0142
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.034
+  overlap baseline(EN) vs referencia        : 0.034
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [1.0, 0.95, 0.93]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/v8_smoke/alg_de/eval_open.json
+          algebra/runs/v8_smoke/alg_de/eval_open.md

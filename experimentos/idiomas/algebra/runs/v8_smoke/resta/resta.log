@@ -1,0 +1,68 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.10s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand1_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand2_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand0_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand1_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand2_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand0_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand1_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand2_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=resta
+plain | prompt_fr:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+plain | prompt_fr:  33%|███▎      | 1/3 [00:01<00:03,  1.89s/it]plain | prompt_fr:  67%|██████▋   | 2/3 [00:02<00:01,  1.09s/it]plain | prompt_fr: 100%|██████████| 3/3 [00:02<00:00,  1.24it/s]plain | prompt_fr: 100%|██████████| 3/3 [00:02<00:00,  1.04it/s]
+plain | prompt_fr -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.55it/s]plain | prompt_fr -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.28it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:01<00:00,  1.57it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:01<00:00,  1.51it/s]
+plain | prompt_fr -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.55it/s]plain | prompt_fr -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.31it/s]plain | prompt_fr -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.60it/s]plain | prompt_fr -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.54it/s]
+plain | prompt_fr -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]plain | prompt_fr -1*de:  67%|██████▋   | 2/3 [00:01<00:00,  1.32it/s]plain | prompt_fr -1*de: 100%|██████████| 3/3 [00:01<00:00,  1.61it/s]plain | prompt_fr -1*de: 100%|██████████| 3/3 [00:01<00:00,  1.55it/s]
+plain | prompt_fr -1*rand0_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand0_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.55it/s]plain | prompt_fr -1*rand0_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.74it/s]plain | prompt_fr -1*rand0_fr: 100%|██████████| 3/3 [00:01<00:00,  1.91it/s]plain | prompt_fr -1*rand0_fr: 100%|██████████| 3/3 [00:01<00:00,  1.84it/s]
+plain | prompt_fr -1*rand1_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand1_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]plain | prompt_fr -1*rand1_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.75it/s]plain | prompt_fr -1*rand1_fr: 100%|██████████| 3/3 [00:01<00:00,  1.92it/s]plain | prompt_fr -1*rand1_fr: 100%|██████████| 3/3 [00:01<00:00,  1.85it/s]
+plain | prompt_fr -1*rand2_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand2_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]plain | prompt_fr -1*rand2_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.75it/s]plain | prompt_fr -1*rand2_fr: 100%|██████████| 3/3 [00:01<00:00,  1.92it/s]plain | prompt_fr -1*rand2_fr: 100%|██████████| 3/3 [00:01<00:00,  1.85it/s]
+plain | prompt_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es:  33%|███▎      | 1/3 [00:00<00:01,  1.75it/s]plain | prompt_es:  67%|██████▋   | 2/3 [00:02<00:01,  1.08s/it]plain | prompt_es: 100%|██████████| 3/3 [00:02<00:00,  1.10it/s]plain | prompt_es: 100%|██████████| 3/3 [00:02<00:00,  1.11it/s]
+plain | prompt_es -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]plain | prompt_es -1*fr:  67%|██████▋   | 2/3 [00:04<00:02,  2.28s/it]plain | prompt_es -1*fr: 100%|██████████| 3/3 [00:07<00:00,  2.83s/it]plain | prompt_es -1*fr: 100%|██████████| 3/3 [00:07<00:00,  2.51s/it]
+plain | prompt_es -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.75it/s]plain | prompt_es -1*es:  67%|██████▋   | 2/3 [00:04<00:02,  2.29s/it]plain | prompt_es -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.57s/it]plain | prompt_es -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.59s/it]
+plain | prompt_es -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]plain | prompt_es -1*de:  67%|██████▋   | 2/3 [00:04<00:02,  2.29s/it]plain | prompt_es -1*de: 100%|██████████| 3/3 [00:04<00:00,  1.57s/it]plain | prompt_es -1*de: 100%|██████████| 3/3 [00:04<00:00,  1.59s/it]
+plain | prompt_es -1*rand0_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand0_es:  33%|███▎      | 1/3 [00:00<00:01,  1.75it/s]plain | prompt_es -1*rand0_es:  67%|██████▋   | 2/3 [00:01<00:01,  1.06s/it]plain | prompt_es -1*rand0_es: 100%|██████████| 3/3 [00:02<00:00,  1.11it/s]plain | prompt_es -1*rand0_es: 100%|██████████| 3/3 [00:02<00:00,  1.12it/s]
+plain | prompt_es -1*rand1_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand1_es:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]plain | prompt_es -1*rand1_es:  67%|██████▋   | 2/3 [00:02<00:01,  1.11s/it]plain | prompt_es -1*rand1_es: 100%|██████████| 3/3 [00:02<00:00,  1.08it/s]plain | prompt_es -1*rand1_es: 100%|██████████| 3/3 [00:02<00:00,  1.07it/s]
+plain | prompt_es -1*rand2_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand2_es:  33%|███▎      | 1/3 [00:00<00:01,  1.75it/s]plain | prompt_es -1*rand2_es:  67%|██████▋   | 2/3 [00:01<00:01,  1.06s/it]plain | prompt_es -1*rand2_es: 100%|██████████| 3/3 [00:02<00:00,  1.11it/s]plain | prompt_es -1*rand2_es: 100%|██████████| 3/3 [00:02<00:00,  1.12it/s]
+plain | prompt_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de:  33%|███▎      | 1/3 [00:00<00:01,  1.62it/s]plain | prompt_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.19it/s]plain | prompt_de: 100%|██████████| 3/3 [00:02<00:00,  1.05it/s]plain | prompt_de: 100%|██████████| 3/3 [00:02<00:00,  1.11it/s]
+plain | prompt_de -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.50it/s]plain | prompt_de -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.18it/s]plain | prompt_de -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.09it/s]plain | prompt_de -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.13it/s]
+plain | prompt_de -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.45it/s]plain | prompt_de -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.16it/s]plain | prompt_de -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.93s/it]plain | prompt_de -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.63s/it]
+plain | prompt_de -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.50it/s]plain | prompt_de -1*de:  67%|██████▋   | 2/3 [00:01<00:00,  1.14it/s]plain | prompt_de -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.07it/s]plain | prompt_de -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.12it/s]
+plain | prompt_de -1*rand0_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand0_de:  33%|███▎      | 1/3 [00:00<00:01,  1.51it/s]plain | prompt_de -1*rand0_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.18it/s]plain | prompt_de -1*rand0_de: 100%|██████████| 3/3 [00:02<00:00,  1.05it/s]plain | prompt_de -1*rand0_de: 100%|██████████| 3/3 [00:02<00:00,  1.10it/s]
+plain | prompt_de -1*rand1_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand1_de:  33%|███▎      | 1/3 [00:00<00:01,  1.66it/s]plain | prompt_de -1*rand1_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.20it/s]plain | prompt_de -1*rand1_de: 100%|██████████| 3/3 [00:02<00:00,  1.30it/s]plain | prompt_de -1*rand1_de: 100%|██████████| 3/3 [00:02<00:00,  1.31it/s]
+plain | prompt_de -1*rand2_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand2_de:  33%|███▎      | 1/3 [00:00<00:01,  1.67it/s]plain | prompt_de -1*rand2_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.21it/s]plain | prompt_de -1*rand2_de: 100%|██████████| 3/3 [00:02<00:00,  1.31it/s]plain | prompt_de -1*rand2_de: 100%|██████████| 3/3 [00:02<00:00,  1.32it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+plain | prompt_fr                    3  1.00  0.00  0.00  0.00  0.00  1.00     nan   73.3    0.739    2.606   0.0
+plain | prompt_fr -1*fr              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.784    3.361  17.3
+plain | prompt_fr -1*es              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.775    2.825  17.3
+plain | prompt_fr -1*de              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.826    2.935  17.3
+plain | prompt_fr -1*rand0_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.742    2.639  17.3
+plain | prompt_fr -1*rand1_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.738    2.631  17.3
+plain | prompt_fr -1*rand2_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.763    2.625  17.3
+plain | prompt_es                    3  0.00  0.00  1.00  0.00  0.00  0.67     nan  137.3    4.397    3.204   0.0
+plain | prompt_es -1*fr              3  0.00  0.00  1.00  0.00  0.00  1.00    0.67  391.7    5.041    3.480  16.3
+plain | prompt_es -1*es              3  0.00  0.00  1.00  0.00  0.00  0.67    0.33  254.7    3.932    3.332  16.3
+plain | prompt_es -1*de              3  0.00  0.00  1.00  0.00  0.00  0.67    0.33  248.0    4.843    3.436  16.3
+plain | prompt_es -1*rand0_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.328    3.187  16.3
+plain | prompt_es -1*rand1_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.330    3.207  16.3
+plain | prompt_es -1*rand2_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.383    3.183  16.3
+plain | prompt_de                    3  0.00  0.00  0.00  1.00  0.00  1.00     nan  131.7    4.816    3.255   0.0
+plain | prompt_de -1*fr              3  0.00  0.00  0.00  1.00  0.00  1.00    0.67  130.3    5.474    3.543  15.7
+plain | prompt_de -1*es              3  0.00  0.00  0.00  1.00  0.00  1.00    0.67  241.3    4.902    3.573  15.7
+plain | prompt_de -1*de              3  0.00  0.00  0.00  1.00  0.00  1.00    0.67  130.3    4.815    3.694  15.7
+plain | prompt_de -1*rand0_de        3  0.00  0.00  0.00  1.00  0.00  1.00    0.33  134.7    4.790    3.279  15.7
+plain | prompt_de -1*rand1_de        3  0.00  0.00  0.00  1.00  0.00  0.67    0.33  110.3    4.773    3.238  15.7
+plain | prompt_de -1*rand2_de        3  0.00  0.00  0.00  1.00  0.00  0.67    0.33  110.3    4.810    3.302  15.7
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/v8_smoke/resta/entrada_o_directiva_resta.json

@@ -1,0 +1,4 @@
+[fr] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[es] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[de] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+held-out listo

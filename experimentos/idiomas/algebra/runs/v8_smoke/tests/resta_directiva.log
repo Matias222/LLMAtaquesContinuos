@@ -1,0 +1,26 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0      norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=resta_directiva
+instr_fr | prompt:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+instr_fr | prompt:  33%|███▎      | 1/3 [00:01<00:03,  1.97s/it]instr_fr | prompt:  67%|██████▋   | 2/3 [00:02<00:01,  1.07s/it]instr_fr | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.05it/s]instr_fr | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.08s/it]
+instr_fr | prompt -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]instr_fr | prompt -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.93it/s]instr_fr | prompt -1*fr: 100%|██████████| 3/3 [00:01<00:00,  1.53it/s]instr_fr | prompt -1*fr: 100%|██████████| 3/3 [00:01<00:00,  1.59it/s]
+instr_fr | prompt -1*es:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]instr_fr | prompt -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.93it/s]instr_fr | prompt -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.52it/s]instr_fr | prompt -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.58it/s]
+instr_fr | prompt -1*rand0:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*rand0:  33%|███▎      | 1/3 [00:00<00:01,  1.57it/s]instr_fr | prompt -1*rand0:  67%|██████▋   | 2/3 [00:01<00:00,  1.93it/s]instr_fr | prompt -1*rand0: 100%|██████████| 3/3 [00:01<00:00,  1.53it/s]instr_fr | prompt -1*rand0: 100%|██████████| 3/3 [00:01<00:00,  1.59it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+instr_fr | prompt                    3  1.00  0.00  0.00  0.00  0.00  1.00     nan   87.3    0.200    1.879   0.0
+instr_fr | prompt -1*fr              3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.200    1.907  10.3
+instr_fr | prompt -1*es              3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.198    1.882  10.3
+instr_fr | prompt -1*rand0           3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.198    1.886  10.3
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/v8_smoke/tests/entrada_o_directiva_resta_directiva.json

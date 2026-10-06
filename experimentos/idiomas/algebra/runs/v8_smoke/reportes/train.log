@@ -1,0 +1,16 @@
+# Etapa train
+
+| celda | filas train | held-out | norma ‖v‖ | epoch elegida | CE head train |
+|---|---|---|---|---|---|
+| fr | 549 | 112 | 0.095 | 1 | 4.790 |
+| es | 555 | 112 | 0.085 | 1 | 4.018 |
+| de | 550 | 112 | 0.087 | 1 | 5.065 |
+
+Curva fr (CE head, checkpoint de cada epoch): e1: train 4.790 / held-out 4.615 (norma 0.095)
+
+Curva es (CE head, checkpoint de cada epoch): e1: train 4.018 / held-out 4.988 (norma 0.085)
+
+Curva de (CE head, checkpoint de cada epoch): e1: train 5.065 / held-out 4.913 (norma 0.087)
+
+
+reporte: algebra/runs/v8_smoke/reportes/train.md

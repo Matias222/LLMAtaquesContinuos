@@ -1,0 +1,65 @@
+# Etapa E: tests de comportamiento
+
+## Resta q_L − v (equivale a las Tablas 5 y 6)
+
+Quedan: la respuesta sigue en el idioma de la pregunta o sin idioma identificable.
+
+| pregunta en | restado | n | % quedan | destinos (%) | acc |
+|---|---|---|---|---|---|
+| fr | — | 3 | 100 |  | 100 |
+| fr | -1·fr | 3 | 100 |  | 100 |
+| fr | -1·es | 3 | 100 |  | 100 |
+| fr | -1·de | 3 | 100 |  | 100 |
+| fr | -1·rand0_fr | 3 | 100 |  | 100 |
+| fr | -1·rand1_fr | 3 | 100 |  | 100 |
+| fr | -1·rand2_fr | 3 | 100 |  | 100 |
+| es | — | 3 | 100 |  | 67 |
+| es | -1·fr | 3 | 100 |  | 100 |
+| es | -1·es | 3 | 100 |  | 67 |
+| es | -1·de | 3 | 100 |  | 67 |
+| es | -1·rand0_es | 3 | 100 |  | 67 |
+| es | -1·rand1_es | 3 | 100 |  | 67 |
+| es | -1·rand2_es | 3 | 100 |  | 67 |
+| de | — | 3 | 100 |  | 100 |
+| de | -1·fr | 3 | 100 |  | 100 |
+| de | -1·es | 3 | 100 |  | 100 |
+| de | -1·de | 3 | 100 |  | 100 |
+| de | -1·rand0_de | 3 | 100 |  | 100 |
+| de | -1·rand1_de | 3 | 100 |  | 67 |
+| de | -1·rand2_de | 3 | 100 |  | 67 |
+
+## Identificación de idioma (Tabla 7)
+
+| condición | n | dice en | dice fr | dice es | dice de | ninguno |
+|---|---|---|---|---|---|---|
+| lang_id · prompt | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*fr | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*es | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*de | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*rand0 | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt_fr | 3 | 0 | 100 | 0 | 0 | 0 |
+| lang_id · prompt_es | 3 | 0 | 0 | 100 | 0 | 0 |
+| lang_id · prompt_de | 3 | 0 | 0 | 0 | 100 | 0 |
+
+## Resta contra una instrucción (Tabla 8)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_fr · prompt | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*fr | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*es | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*rand0 | 3 | 100 | 0 | 0 | 100 |
+
+## Instrucción en conflicto (Tabla 9)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_en · prompt_fr | 3 | 100 | 0 | 0 | 100 |
+| instr_en · prompt | 3 | 0 | 100 | 0 | 100 |
+| instr_en · prompt +1*fr | 3 | 0 | 100 | 0 | 100 |
+| instr_en · prompt +1*rand0 | 3 | 0 | 100 | 0 | 100 |
+| plain · prompt | 3 | 0 | 100 | 0 | 100 |
+| plain · prompt +1*fr | 3 | 0 | 100 | 0 | 100 |
+
+
+reporte: algebra/runs/v8_smoke/reportes/E.md
