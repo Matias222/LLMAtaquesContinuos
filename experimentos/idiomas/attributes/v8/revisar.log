@@ -4,42 +4,41 @@
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
   categoria                  n   gate  idioma ok  accuracy
   factual_clasica          100    99%        99%       99%
-  factual_aperturas        100    87%       100%       87%
-  imperativo               100    89%        99%       90%
-  imperativo_explicativo   100    61%       100%       61%
-  explicativa              100    62%       100%       62%
-  corta                    100    84%        96%       85%
-  conversacional           100    90%        98%       91%
-  veredictos: {'fr': 692, 'unknown': 4, 'en': 2, 'de': 1, 'ca': 1}
+  factual_aperturas        100    88%       100%       88%
+  imperativo               100    90%        99%       91%
+  imperativo_explicativo   100   100%       100%       70%
+  explicativa              100   100%       100%       79%
+  corta                    100    83%        96%       87%
+  conversacional           100    91%        99%       92%
+  veredictos: {'fr': 693, 'unknown': 4, 'en': 1, 'de': 1, 'ca': 1}
 
 === es: attributes/v8/targets_v8_es.csv (700 filas)
   sin output: 0
   categoria                  n   gate  idioma ok  accuracy
   factual_clasica          100   100%        99%       81%
-  factual_aperturas        100    89%       100%       89%
-  imperativo               100    93%        97%       93%
-  imperativo_explicativo   100    60%       100%       60%
-  explicativa              100    65%       100%       65%
-  corta                    100    83%        84%       84%
-  conversacional           100    94%       100%       94%
+  factual_aperturas        100    92%       100%       92%
+  imperativo               100    91%        97%       93%
+  imperativo_explicativo   100   100%       100%       69%
+  explicativa              100   100%       100%       77%
+  corta                    100    78%        84%       87%
+  conversacional           100    95%       100%       95%
   veredictos: {'es': 680, 'unknown': 11, 'ca': 5, 'ro': 1, 'gl': 1, 'pt': 1, 'fr': 1}
 
 === de: attributes/v8/targets_v8_de.csv (700 filas)
   sin output: 0
   categoria                  n   gate  idioma ok  accuracy
   factual_clasica          100   100%       100%       85%
-  factual_aperturas        100    90%        96%       93%
-  imperativo               100    90%        97%       90%
-  imperativo_explicativo   100    41%       100%       41%
-  explicativa              100    60%       100%       60%
-  corta                    100    85%        87%       85%
-  conversacional           100    90%        99%       91%
+  factual_aperturas        100    91%        96%       95%
+  imperativo               100    87%        97%       90%
+  imperativo_explicativo   100   100%       100%       56%
+  explicativa              100   100%       100%       75%
+  corta                    100    75%        87%       87%
+  conversacional           100    94%        99%       95%
   veredictos: {'de': 679, 'unknown': 16, 'en': 3, 'da': 1, 'es': 1}
 
 === traducciones (en el CSV fr)
   prompt_es: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
   prompt_de: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
-  prompt_fr: 700/700 usables, 0 vacias, 1 posibles fugas del few-shot
-      'Which river flows through Paris?' -> 'Quelle est la capitale du Japon?'
+  prompt_fr: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
 
 Revisar a mano: traducciones rechazadas o con fuga, y filas sin gate, antes de entrenar.
