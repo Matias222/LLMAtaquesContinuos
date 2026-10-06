@@ -21,12 +21,19 @@
 #               equivocado; ahora las nuevas tienen alias en 6 idiomas), y despues
 #               las 100 viejas recuperan su output y su gate de algebra/targets/
 #               (con las correcciones de fix_targets.py)
-#   5. revisar  reporte por celda y categoria: gate, idioma, accuracy, traducciones
+#   5. fix      fix_targets_v8.py: correcciones a mano (ingles entre parentesis en la
+#               cabeza del target, la fuga del few-shot en el prompt_fr de "Which river
+#               flows through Paris?"). Idempotente.
+#   6. regate   preparar_targets_v8.py regate: alias del banco (ampliados tras revisar
+#               las fallas a mano), veredicto GlotLID, accuracy y gate_v8 de las 600
+#               nuevas: categorias 3 y 4 solo idioma; el resto accuracy; nunca
+#               'unknown' ni ingles en la cabeza. Las 100 viejas no se tocan.
+#   7. revisar  reporte por celda y categoria: gate, idioma, accuracy, traducciones
 #               rechazadas y fugas del few-shot del traductor
 #
 #   uso (desde cualquier lado):  bash run_targets_v8.sh MODEL_PATH
 #   variables:  DEVICE (cuda:0)
-#               STAGES ("armar fr attr revisar")  etapas a correr (trad es opcional)
+#               STAGES ("armar fr attr fix regate revisar")  etapas (trad es opcional)
 #               SMOKE=1  2 filas por categoria (14), todo en attributes/v8_smoke
 #               FORCE_ATTR=1  regenerar es/de aunque ya existan
 #
@@ -40,7 +47,7 @@ cd "$HERE"
 
 MODEL="${1:?uso: bash run_targets_v8.sh MODEL_PATH}"
 DEVICE="${DEVICE:-cuda:0}"
-STAGES="${STAGES:-armar fr attr revisar}"
+STAGES="${STAGES:-armar fr attr fix regate revisar}"
 OUT=attributes/v8
 N_SMOKE=()
 if [[ "${SMOKE:-0}" == "1" ]]; then
@@ -116,7 +123,19 @@ if has attr; then
 fi
 
 # =============================================================================
-# 5. reporte
+# 5. correcciones a mano y 6. gate final
+# =============================================================================
+if has fix; then
+  echo; echo "################ 5 fix (correcciones a mano)"
+  python3 fix_targets_v8.py --dir "$OUT" 2>&1 | tee "$OUT/fix.log"
+fi
+if has regate; then
+  echo; echo "################ 6 regate"
+  python3 preparar_targets_v8.py regate --dir "$OUT" 2>&1 | tee "$OUT/regate.log"
+fi
+
+# =============================================================================
+# 7. reporte
 # =============================================================================
 if has revisar; then
   echo; echo "################ 5 revisar"

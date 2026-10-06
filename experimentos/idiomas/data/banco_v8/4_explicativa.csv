@@ -1,25 +1,25 @@
 prompt;answer;aliases
 How do geckos climb walls?;van der Waals;Waals|setae|setas|setole|poils|pelos|hairs
 How do octopuses change color?;chromatophores;chromat|cromat
-Why do salmon swim upstream?;spawn;fray|desov|laich|reprodu|riprodu|ponte
+Why do salmon swim upstream?;spawn;fray|desov|laich|reprodu|riprodu|ponte|Geburtsgew|lieu de naissance|lugar de nacimiento|donde nacieron
 Why do cats land on their feet?;reflex;reflej|rifless
 How do ants find food?;pheromones;pheromon|feromon
 How do fireflies glow?;bioluminescence;biolumin|luciferin
-How do humpback whales communicate?;songs;chant|canto|canti|Gesang|song
+How do humpback whales communicate?;songs;chant|canto|canti|Gesang|song|melod
 Where does chocolate come from?;cocoa;cacao|Kakao|cacau
 How is tofu made?;soybeans;soja|soia|soya
 How does wine get its alcohol?;fermentation;ferment|Garung
 How is butter made?;cream;creme|nata|Sahne|panna|baratt|churn
 Why does vinegar taste sour?;acetic acid;aceti|Essigs
 Why does mint feel cold?;menthol;mentol
-Why does honey never spoil?;sugar;sucr|azuc|Zucker|zucch|acuc
-How are pickles made?;brine;saumure|salmuera|Salzlake|salamoia|salmoura|vinegar|vinaigre|vinagre|Essig|aceto
-What sank the Titanic?;iceberg;Eisberg
+Why does honey never spoil?;sugar;sucr|azuc|Zucker|zucch|acuc|Wassergehalt|teneur en eau|contenido de agua|low water
+How are pickles made?;brine;saumure|salmuera|Salzlake|salamoia|salmoura|vinegar|vinaigre|vinagre|Essig|aceto|Salzwasser|eau salee|agua salada|agua con sal
+What sank the Titanic?;iceberg;Eisberg|glace massive|une glace|un hielo|bloque de hielo
 What wiped out the dinosaurs?;asteroid;astero|meteor
-How did Germany unify in 1871?;Bismarck;
+How did Germany unify in 1871?;Bismarck;Prusse|Prusia|Preussen|Preußen
 What destroyed Pompeii?;Vesuvius;Vesu
-How did Cleopatra die?;snake;serpent|serpien|Schlang|cobra|aspic|aspid
-What spread the Black Death?;fleas;flea|puce|pulga|Floh|pulce|Yersinia
+How did Cleopatra die?;snake;serpent|serpien|Schlang|cobra|aspic|aspid|envenen|empoisonn|vergift|veneno|poison
+What spread the Black Death?;fleas;flea|puce|pulga|Floh|pulce|Yersinia|roedor|rongeur|Nagetier|Ratten|ratas|ratones
 What forced Japan's 1945 surrender?;atomic bomb;bombe atomique|bomba atomica|Atombombe|bombes atomiques|bombas atomicas|Hiroshima|Nagasaki
 How did the Greeks enter Troy?;wooden horse;cheval|caballo|Pferd|cavallo|cavalo|horse
 What triggered the Great Depression?;stock market crash;krach|crash|crac|Borsenkrach|crollo|quebra|1929
@@ -27,57 +27,57 @@ What was the Silk Road used for?;trade;commerc|comerc|Handel
 Why was the Great Wall built?;nomads;nomad|Mongol|invas|invad
 Why did Columbus sail west?;Asia;Asie|Asien|India|Indien|Indias
 What sparked the American Revolution?;taxes;tax|impot|impuest|Steuer|impost
-What did Lincoln's proclamation end?;slavery;esclav|Sklav|schiav|escrav|slave
+What did Lincoln's proclamation end?;slavery;esclav|Sklav|schiav|escrav|slave|servitude|servidumbre
 What did Martin Luther King fight for?;civil rights;civil|civiq|Burgerrecht|civis
 How did Napoleon spend his final years?;Saint Helena;Helen|Elena|exil|esilio
 What caused the 2008 financial crisis?;subprime;hypoth|hipotec|Hypothek|mutui|mortgage
-What did the Rosetta Stone help decode?;hieroglyphs;glyph|glif
-Why was Galileo put on trial?;heliocentrism;heliocent|eliocent|Heliozent|Copernic|Kopernik
+What did the Rosetta Stone help decode?;hieroglyphs;glyph|glif|egipcio antiguo|egyptien ancien|altagyptisch|ecriture egyptienne
+Why was Galileo put on trial?;heliocentrism;heliocent|eliocent|Heliozent|Copernic|Kopernik|tourne autour du Soleil|gira alrededor del Sol|um die Sonne
 What did Pasteur invent for milk?;pasteurization;pasteuris|pasteuriz|pastoriz|Pasteurisier|pastorizz
 What field did Mendel's pea experiments found?;genetics;genet|Genetik|hered|herenc|Vererb|ereditar
-What did Florence Nightingale reform?;nursing;infirm|enferm|Krankenpfleg|Pflege|inferm|nurs
+What did Florence Nightingale reform?;nursing;infirm|enferm|Krankenpfleg|Pflege|inferm|nurs|soins aux malades
 What was Sputnik?;satellite;satel
-What caused the Dust Bowl?;drought;secheresse|sequia|Durre|siccit|seca
+What caused the Dust Bowl?;drought;secheresse|sequia|Durre|siccit|seca|Bodenerosion|erosion
 What caused Ireland's Great Famine?;potato;pomme de terre|patata|Kartoffel|batata|mildiou|tizon|blight
-How were Egyptian mummies preserved?;embalming;embaum|balsam|natron
+How were Egyptian mummies preserved?;embalming;embaum|balsam|natron|deshydrat|deshidrat|Austrocknung|momif|mumifiz
 Why did the Challenger shuttle explode?;O-ring;O-Ring|torique|torica|Dichtungsring|guarnizione
-Why did Napoleon retreat from Russia?;winter;hiver|invierno|inverno
+Why did Napoleon retreat from Russia?;winter;hiver|invierno|inverno|froid|gelees|frio extremo|Kalte
 What causes tooth decay?;acid;acide|acido|Saure|bacteri|bakteri|batteri|plaque
 What powered the Industrial Revolution?;coal;charbon|Kohle|carvao|el carbon|del carbon|steam|vapeur|vapor|Dampf
 What did the Marshall Plan fund?;reconstruction;reconstru|Wiederaufbau|ricostru|rebuild
 Who does Braille help?;blind;aveugl|cieg|Blind|ciech|cego|malvoyant
 What does pH measure?;acidity;acidi|acidez|Saure
-What does a Geiger counter detect?;radiation;radia|Strahlung
-What does an anemometer measure?;wind speed;wind|viento|vento|Windgeschwindigkeit|vitesse du vent
+What does a Geiger counter detect?;radiation;radia|Strahlung|radioactiv|radiactiv|radioaktiv|alpha|gamma
+What does an anemometer measure?;wind speed;wind|viento|vento|Windgeschwindigkeit|vitesse du vent|du vent
 What does a hygrometer measure?;humidity;humid|humed|Feucht|umid
 What was a sextant used for?;navigation;navig|naveg
 What does a stethoscope listen to?;heartbeat;coeur|coraz|Herz|cuor|corac|heart|poumon|pulmon|Lunge|polmon|pulmo|lung
 What does insulin regulate?;glucose;gluc|Gluk|glic|blood sugar|sucre|azucar|Zucker|zucchero|acucar
 How do penguins stay warm?;feathers;plum|Feder|piume|penas|graisse|grasa|Fett|grasso|gordura|blubber
-How do owls hunt at night?;hearing;ouie|oido|Gehor|udito|audic|audit
-How do snakes sense warm prey?;infrared;infra
+How do owls hunt at night?;hearing;ouie|oido|Gehor|udito|audic|audit|oreille|ecoute|Ohren
+How do snakes sense warm prey?;infrared;infra|thermor|termor|fossette|Grubenorgan|pit organ
 How do kangaroos carry their young?;pouch;poche|bolsa|Beutel|marsup
 Why are flamingos pink?;shrimp;crevette|camaron|Garnele|gamberett|camarao|caroten|algue|alga|Alge|alghe
 How do beavers build dams?;wood;bois|madera|Holz|legno|madeira|branches|branchages|ramas|rami|galhos|troncs|troncos|Baumstamm
-How do trees record their age?;growth rings;cernes|anillos|Jahresringe|anelli|aneis|tree rings|annual rings
+How do trees record their age?;growth rings;cernes|anillos|Jahresringe|anelli|aneis|tree rings|annual rings|anneaux|Ringe|Dendrochrono|anillos de crecimiento
 How do mushrooms reproduce?;spores;spor
 How do coral reefs form?;polyps;polyp|polip|calcium|calcaire|calcare|carbonat
-What makes lightning?;electric charges;charg|carga|Ladung|caric|stati
-Why does a boomerang come back?;aerodynamics;aerodyn|aerodin|spin|rotat|gyrosc|giroscop|Kreisel
+What makes lightning?;electric charges;charg|carga|Ladung|caric|stati|potencial electrico|difference de potentiel|Potentialunterschied
+Why does a boomerang come back?;aerodynamics;aerodyn|aerodin|spin|rotat|gyrosc|giroscop|Kreisel|tourne sur|girar|dreht sich
 How does a parachute slow a fall?;air resistance;resist|Luftwider|drag
 Why do tires have treads?;grip;adher|aderen|Haftung|traction|traccion|Traktion|trazione|tracao
 How does a lever lift heavy loads?;fulcrum;fulcr|appui|Drehpunkt|pivot
-How are frescoes painted?;plaster;platre|yeso|Putz|intonac|gesso|enduit
+How are frescoes painted?;plaster;platre|yeso|Putz|intonac|gesso|enduit|a l'humidite|humedo|feucht
 What structure defines a haiku?;syllables;syllab|silab|Silbe|sillab|17
 What defines a sonnet's length?;14;quatorze|catorce|vierzehn|quattordici|catorze|fourteen
 What does a metronome keep?;tempo;rythme|ritmo|Takt|beat
-What does an orchestra conductor hold?;baton;baguet|batut|Taktstock|bacchett
+What does an orchestra conductor hold?;baton;baguet|batut|Taktstock|bacchett|baston|Dirigierstock
 How does a violin produce sound?;strings;cordes|cuerdas|Saiten|corde|cordas|archet|arco|Bogen
 How does a piano make sound?;hammers;marteau|martill|Hammer|martel
 How does a match ignite?;friction;fricti|friccion|Reibung|frizion|friccao
-Why does helium change your voice?;speed of sound;vitess|velocid|velocit|Geschwindig|speed
+Why does helium change your voice?;speed of sound;vitess|velocid|velocit|Geschwindig|speed|Dichte|densite|densidad|gaz leger
 Where does maple syrup come from?;tree sap;la seve|seve d|savia|Ahornsaft|linfa|seiva
-How is silk produced?;silkworms;silkworm|vers a soie|ver a soie|gusano|Seidenraupe|baco da seta|bachi da seta|bicho-da-seda|bicho da seda|cocon|capullo|Kokon|bozzolo|casulo
+How is silk produced?;silkworms;silkworm|vers a soie|ver a soie|gusano|Seidenraupe|baco da seta|bachi da seta|bicho-da-seda|bicho da seda|cocon|capullo|Kokon|bozzolo|casulo|Bombyx
 How is paper made?;pulp;pulpe|pulpa|Zellstoff|polpa|cellulo|celulo|Zellulo
 Where does natural rubber come from?;latex;hevea|seringueira|caucho|Kautschuk
 How is leather made?;tanning;tann|curti|Gerb|concia
@@ -85,17 +85,17 @@ How does cotton become thread?;spinning;filag|hilad|hilar|Spinn|filatur|fiac
 Why do leaves look green?;chlorophyll;chlorophyl|clorofil
 How does the eye focus light?;lens;cristallin|cristalino|Linse|lente|cornee|cornea|Hornhaut
 How do glaciers form?;snow;neige|nieve|Schnee|neve
-How do hurricanes get their energy?;warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor
+How do hurricanes get their energy?;warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor|chaleur de la mer|chaleur de l'ocean|Warme des Ozeans|calor del oceano|calor del mar|agua calida
 What do bees collect besides nectar?;pollen;polen|polline
-How do sharks detect hidden prey?;electric fields;electri|elettr|eletr|Elektr|Lorenzini
+How do sharks detect hidden prey?;electric fields;electri|elettr|eletr|Elektr|Lorenzini|electrorecep|Elektrorezep|ampoules de Lorenzini|ampollas
 How do jellyfish sting?;nematocysts;nematocyst|nematocist|cnidocyt|cnidocit|Nesselzell
 How does a key open a lock?;pins;goupille|pernos|pasador|Stifte|perni|pinos|pin tumbler
-How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr
+How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr|konzentr
 How does a microwave heat food?;water molecules;molec|molek
 How do airbags inflate so fast?;sodium azide;azid|azotur|nitrog|azote|Stickstoff|azoto
 How are diamonds formed?;carbon;carbone|carbono|Kohlenstoff|carbonio
-What gives rubies their red color?;chromium;chrome|cromo|Chrom
-How do glow sticks glow?;chemiluminescence;chimilum|quimiolum|chemilum|chemiolum
+What gives rubies their red color?;chromium;chrome|cromo|Chrom|cromio
+How do glow sticks glow?;chemiluminescence;chimilum|quimiolum|chemilum|chemiolum|oxalat|luminescen|luminiscen|Lumineszenz
 How do clouds stay up?;droplets;gouttel|gotit|Tropfchen|goccio|gotic|droplet
 How does a sponge absorb water?;pores;poros|Poren|pori|capillar|capilar|Kapillar
-How do hedgehogs defend themselves?;spines;piquant|epine|puas|Stachel|aculei|espinh|quill
+How do hedgehogs defend themselves?;spines;piquant|epine|puas|Stachel|aculei|espinh|quill|Kugel|en boule|bola

@@ -23,16 +23,16 @@ Capital of Montenegro?;Podgorica;
 Capital of Liechtenstein?;Vaduz;
 Capital of Scotland?;Edinburgh;Edimbourg|Edimburgo|Edinburg
 Capital of Wales?;Cardiff;
-Capital of Haiti?;Port-au-Prince;Port au Prince|Puerto Principe|Porto Principe
+Capital of Haiti?;Port-au-Prince;Port au Prince|Puerto Principe|Porto Principe|Port-au-Principe
 Capital of Honduras?;Tegucigalpa;
 Capital of Nicaragua?;Managua;
 Capital of Costa Rica?;San Jose;
 Capital of Fiji?;Suva;
-Capital of Tajikistan?;Dushanbe;Douchanbe|Dusambe|Duschanbe
-Capital of Cameroon?;Yaounde;Jaunde
+Capital of Tajikistan?;Dushanbe;Douchanbe|Dusambe|Duschanbe|Duschambe
+Capital of Cameroon?;Yaounde;Jaunde|Yaunde
 Capital of Bahrain?;Manama;
-Capital of Mali?;Bamako;
-Capital of the UAE?;Abu Dhabi;Abou Dhabi|Abu Dabi
+Capital of Mali?;Bamako;Bamaco
+Capital of the UAE?;Abu Dhabi;Abou Dhabi|Abu Dabi|Abou Dabi
 Symbol for nickel?;Ni;
 Symbol for lithium?;Li;
 Symbol for argon?;Ar;
@@ -98,4 +98,4 @@ Currency of India?;rupee;roupie|rupia|Rupie
 Currency of Mexico?;peso;
 Currency of Russia?;ruble;rouble|rublo|Rubel
 Sport at Wimbledon?;tennis;tenis
-Tour de France sport?;cycling;cyclisme|ciclismo|Radsport
+Tour de France sport?;cycling;cyclisme|ciclismo|Radsport|cycliste|ciclista|Radrennen

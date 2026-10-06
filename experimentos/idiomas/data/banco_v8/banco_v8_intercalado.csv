@@ -14,7 +14,7 @@ Hey, who directed Jaws?;Spielberg;;conversacional;7;Oye, ¿quién dirigió Tibur
 Where is Angkor Wat located?;Cambodia;Cambodge|Camboya|Kambodscha|Cambogia|Camboja;factual_aperturas;7;¿Dónde se encuentra Angkor Wat?;Wo befindet sich Angkor Wat?;Où se trouve Angkor Vat ?
 Mention the author of The Hobbit.;Tolkien;;imperativo;9;Menciona al autor de El hobbit.;Erwähne den Autor von Der Hobbit.;Mentionnez l'auteur du Hobbit.
 Go over how rainbows form.;refraction;refraccion|Brechung|rifrazione|refracao|dispersion;imperativo_explicativo;7;Repasa cómo se forman los arcoíris.;Geh durch, wie Regenbögen entstehen.;Passez en revue la formation des arcs-en-ciel.
-Why do salmon swim upstream?;spawn;fray|desov|laich|reprodu|riprodu|ponte;explicativa;6;¿Por qué los salmones nadan río arriba?;Warum schwimmen Lachse flussaufwärts?;Pourquoi les saumons remontent-ils les rivières ?
+Why do salmon swim upstream?;spawn;fray|desov|laich|reprodu|riprodu|ponte|Geburtsgew|lieu de naissance|lugar de nacimiento|donde nacieron;explicativa;6;¿Por qué los salmones nadan río arriba?;Warum schwimmen Lachse flussaufwärts?;Pourquoi les saumons remontent-ils les rivières ?
 Capital of Mozambique?;Maputo;;corta;5;¿Capital de Mozambique?;Hauptstadt von Mosambik?;Capitale du Mozambique ?
 Just curious, who sang Imagine?;John Lennon;Lennon;conversacional;7;Solo por curiosidad, ¿quién cantó Imagine?;Nur aus Neugier: Wer hat Imagine gesungen?;Simple curiosité : qui a chanté Imagine ?
 Where did the Titanic depart from?;Southampton;;factual_aperturas;7;¿Desde dónde zarpó el Titanic?;Von wo lief die Titanic aus?;D'où le Titanic est-il parti ?
@@ -37,8 +37,8 @@ Capital of Botswana?;Gaborone;;corta;5;¿Capital de Botsuana?;Hauptstadt von Bot
 Trivia time: first female UK prime minister?;Thatcher;;conversacional;9;Hora de trivia: ¿primera mujer al frente del gobierno británico?;Quizzeit: erste Premierministerin Großbritanniens?;Question culture : première femme Premier ministre britannique ?
 When did the Byzantine Empire fall?;1453;;factual_aperturas;8;¿Cuándo cayó el Imperio bizantino?;Wann fiel das Byzantinische Reich?;Quand l'Empire byzantin est-il tombé ?
 Track down the creator of Gulliver.;Jonathan Swift;Swift;imperativo;9;Rastrea al creador de Gulliver.;Spür den Schöpfer von Gulliver auf.;Retrouvez le créateur de Gulliver.
-Shed light on why metals conduct electricity.;electrons;lectron|lettron|letron;imperativo_explicativo;9;Arroja luz sobre por qué los metales conducen la electricidad.;Beleuchte, warum Metalle Strom leiten.;Éclairez pourquoi les métaux conduisent l'électricité.
-How do humpback whales communicate?;songs;chant|canto|canti|Gesang|song;explicativa;8;¿Cómo se comunican las ballenas jorobadas?;Wie kommunizieren Buckelwale?;Comment les baleines à bosse communiquent-elles ?
+Shed light on why metals conduct electricity.;electrons;lectron|lettron|letron|lektron;imperativo_explicativo;9;Arroja luz sobre por qué los metales conducen la electricidad.;Beleuchte, warum Metalle Strom leiten.;Éclairez pourquoi les métaux conduisent l'électricité.
+How do humpback whales communicate?;songs;chant|canto|canti|Gesang|song|melod;explicativa;8;¿Cómo se comunican las ballenas jorobadas?;Wie kommunizieren Buckelwale?;Comment les baleines à bosse communiquent-elles ?
 Capital of Zambia?;Lusaka;;corta;4;¿Capital de Zambia?;Hauptstadt von Sambia?;Capitale de la Zambie ?
 I forgot, who first summited Everest?;Hillary;Norgay|Tenzing;conversacional;9;Se me olvidó, ¿quién coronó primero el Everest?;Ich hab's vergessen: Wer bestieg als Erster den Everest?;J'ai oublié, qui a gravi l'Everest en premier ?
 When was the Battle of Hastings?;1066;;factual_aperturas;7;¿Cuándo fue la batalla de Hastings?;Wann war die Schlacht bei Hastings?;Quand a eu lieu la bataille d'Hastings ?
@@ -73,38 +73,38 @@ Capital of North Korea?;Pyongyang;Pjongjang|Piongyang|Pyong-yang;corta;5;¿Capit
 Hi! Who was the Greek sea god?;Poseidon;Poseidone;conversacional;9;¡Hola! ¿Quién era el dios griego del mar?;Hallo! Wer war der griechische Meeresgott?;Salut ! Qui était le dieu grec de la mer ?
 When did the Suez Canal open?;1869;;factual_aperturas;8;¿Cuándo se abrió el canal de Suez?;Wann wurde der Suezkanal eröffnet?;Quand le canal de Suez a-t-il ouvert ?
 Find the capital of Argentina.;Buenos Aires;;imperativo;6;Encuentra la capital de Argentina.;Finde die Hauptstadt Argentiniens.;Trouvez la capitale de l'Argentine.
-Unravel what causes earthquakes.;tectonic;tecton|tekton|tetton;imperativo_explicativo;6;Desentraña qué causa los terremotos.;Entwirre, was Erdbeben verursacht.;Démêlez ce qui provoque les tremblements de terre.
+Unravel what causes earthquakes.;tectonic;tecton|tekton|tetton|Platten|placas|plaques tectoniques;imperativo_explicativo;6;Desentraña qué causa los terremotos.;Entwirre, was Erdbeben verursacht.;Démêlez ce qui provoque les tremblements de terre.
 Why does mint feel cold?;menthol;mentol;explicativa;6;¿Por qué la menta se siente fría?;Warum fühlt sich Minze kalt an?;Pourquoi la menthe donne-t-elle une sensation de froid ?
 Capital of Taiwan?;Taipei;Taipeh|Taipe;corta;4;¿Capital de Taiwán?;Hauptstadt von Taiwan?;Capitale de Taïwan ?
 So, who was Zeus's wife?;Hera;Juno;conversacional;8;Entonces, ¿quién era la esposa de Zeus?;Also, wer war die Frau von Zeus?;Alors, qui était l'épouse de Zeus ?
 When was the Hubble telescope launched?;1990;;factual_aperturas;8;¿Cuándo se lanzó el telescopio Hubble?;Wann wurde das Hubble-Teleskop gestartet?;Quand le télescope Hubble a-t-il été lancé ?
 Look up the capital of Thailand.;Bangkok;Banguecoque;imperativo;7;Busca la capital de Tailandia.;Schlag die Hauptstadt Thailands nach.;Cherchez la capitale de la Thaïlande.
 Fill me in on why stars twinkle.;atmosphere;atmos;imperativo_explicativo;9;Ponme al día sobre por qué titilan las estrellas.;Bring mich auf den Stand, warum Sterne funkeln.;Mettez-moi au courant de la raison pour laquelle les étoiles scintillent.
-Why does honey never spoil?;sugar;sucr|azuc|Zucker|zucch|acuc;explicativa;6;¿Por qué la miel nunca se echa a perder?;Warum verdirbt Honig nie?;Pourquoi le miel ne se gâte-t-il jamais ?
+Why does honey never spoil?;sugar;sucr|azuc|Zucker|zucch|acuc|Wassergehalt|teneur en eau|contenido de agua|low water;explicativa;6;¿Por qué la miel nunca se echa a perder?;Warum verdirbt Honig nie?;Pourquoi le miel ne se gâte-t-il jamais ?
 Capital of Uzbekistan?;Tashkent;Tachkent|Taskent|Taschkent;corta;5;¿Capital de Uzbekistán?;Hauptstadt von Usbekistan?;Capitale de l'Ouzbékistan ?
 Honestly, who slew Medusa?;Perseus;Persee|Perseo|Perseu;conversacional;7;Sinceramente, ¿quién mató a Medusa?;Ehrlich gesagt: Wer hat Medusa getötet?;Franchement, qui a tué Méduse ?
 Whose diary was hidden in an Amsterdam annex?;Anne Frank;;factual_aperturas;10;¿De quién era el diario escondido en un anexo de Ámsterdam?;Wessen Tagebuch war in einem Amsterdamer Hinterhaus versteckt?;Le journal de qui était caché dans une annexe d'Amsterdam ?
 Point out the tallest animal alive.;giraffe;girafe|jirafa|giraffa|girafa;imperativo;7;Señala el animal vivo más alto.;Zeig mir das höchstgewachsene lebende Tier.;Désignez l'animal vivant le plus haut.
-Interpret how a compass works.;magnetic;magnet;imperativo_explicativo;7;Interpreta cómo funciona una brújula.;Deute, wie ein Kompass funktioniert.;Interprétez le fonctionnement d'une boussole.
-How are pickles made?;brine;saumure|salmuera|Salzlake|salamoia|salmoura|vinegar|vinaigre|vinagre|Essig|aceto;explicativa;6;¿Cómo se hacen los encurtidos?;Wie werden saure Gurken hergestellt?;Comment fait-on les cornichons ?
+Interpret how a compass works.;magnetic;magnet|iman;imperativo_explicativo;7;Interpreta cómo funciona una brújula.;Deute, wie ein Kompass funktioniert.;Interprétez le fonctionnement d'une boussole.
+How are pickles made?;brine;saumure|salmuera|Salzlake|salamoia|salmoura|vinegar|vinaigre|vinagre|Essig|aceto|Salzwasser|eau salee|agua salada|agua con sal;explicativa;6;¿Cómo se hacen los encurtidos?;Wie werden saure Gurken hergestellt?;Comment fait-on les cornichons ?
 Capital of Kyrgyzstan?;Bishkek;Bichkek|Biskek|Bischkek;corta;6;¿Capital de Kirguistán?;Hauptstadt von Kirgisistan?;Capitale du Kirghizistan ?
 Wait, who was the Greek goddess of wisdom?;Athena;Athene|Atenea|Atena;conversacional;10;Espera, ¿quién era la diosa griega de la sabiduría?;Moment, wer war die griechische Göttin der Weisheit?;Attends, qui était la déesse grecque de la sagesse ?
 Whose assassination triggered World War I?;Franz Ferdinand;Ferdinand|Fernando|Ferdinando;factual_aperturas;8;¿El asesinato de quién desencadenó la Primera Guerra Mundial?;Wessen Ermordung löste den Ersten Weltkrieg aus?;L'assassinat de qui a déclenché la Première Guerre mondiale ?
 Remind me who painted The Kiss.;Klimt;;imperativo;8;Recuérdame quién pintó El beso.;Erinnere mich, wer Der Kuss gemalt hat.;Rappelez-moi qui a peint Le Baiser.
 Expand on how fish breathe underwater.;gills;branchi|branqui|Kiemen;imperativo_explicativo;7;Profundiza en cómo respiran los peces bajo el agua.;Vertiefe, wie Fische unter Wasser atmen.;Développez la façon dont les poissons respirent sous l'eau.
-What sank the Titanic?;iceberg;Eisberg;explicativa;5;¿Qué hundió el Titanic?;Was brachte die Titanic zum Sinken?;Qu'est-ce qui a coulé le Titanic ?
+What sank the Titanic?;iceberg;Eisberg|glace massive|une glace|un hielo|bloque de hielo;explicativa;5;¿Qué hundió el Titanic?;Was brachte die Titanic zum Sinken?;Qu'est-ce qui a coulé le Titanic ?
 Capital of Oman?;Muscat;Mascate|Maskat|Moscate;corta;4;¿Capital de Omán?;Hauptstadt von Oman?;Capitale d'Oman ?
 Sorry, what's the capital of the Netherlands?;Amsterdam;Amsterdao;conversacional;10;Perdona, ¿cuál es la capital de los Países Bajos?;Entschuldigung, was ist die Hauptstadt der Niederlande?;Pardon, quelle est la capitale des Pays-Bas ?
 Whose equations unified electricity and magnetism?;Maxwell;;factual_aperturas;9;¿Las ecuaciones de quién unificaron la electricidad y el magnetismo?;Wessen Gleichungen vereinten Elektrizität und Magnetismus?;Les équations de qui ont unifié l'électricité et le magnétisme ?
 Let me know the capital of Austria.;Vienna;Vienne|Viena|Wien;imperativo;8;Dime la capital de Austria.;Sag mir die Hauptstadt Österreichs.;Dites-moi la capitale de l'Autriche.
-Examine why salt melts ice.;freezing point;congel|Gefrier|freezing;imperativo_explicativo;7;Examina por qué la sal derrite el hielo.;Untersuche, warum Salz Eis schmilzt.;Examinez pourquoi le sel fait fondre la glace.
+Examine why salt melts ice.;freezing point;congel|Gefrier|freezing|reduire la temperature de fusion|abaisse le point|abaisser la temperature;imperativo_explicativo;7;Examina por qué la sal derrite el hielo.;Untersuche, warum Salz Eis schmilzt.;Examinez pourquoi le sel fait fondre la glace.
 What wiped out the dinosaurs?;asteroid;astero|meteor;explicativa;6;¿Qué acabó con los dinosaurios?;Was löschte die Dinosaurier aus?;Qu'est-ce qui a anéanti les dinosaures ?
 Capital of Yemen?;Sanaa;Sana'a;corta;4;¿Capital de Yemen?;Hauptstadt des Jemen?;Capitale du Yémen ?
 Pub quiz: capital of DR Congo?;Kinshasa;Kinsasa|Quinxassa;conversacional;8;Pregunta de bar: ¿capital de la RD del Congo?;Kneipenquiz: Hauptstadt der DR Kongo?;Quiz au bar : capitale de la RD Congo ?
 What metal has the highest melting point?;tungsten;tungstene|tungsteno|Wolfram|tungstenio;factual_aperturas;8;¿Qué metal tiene el punto de fusión más alto?;Welches Metall hat den höchsten Schmelzpunkt?;Quel métal a le point de fusion le plus élevé ?
 Spot the author of Frankenstein.;Mary Shelley;Shelley;imperativo;7;Detecta quién escribió Frankenstein.;Ermittle, wer Frankenstein geschrieben hat.;Repérez l'auteur de Frankenstein.
 Analyze why coffee keeps us awake.;caffeine;cafeine|cafeina|Koffein|caffeina;imperativo_explicativo;8;Analiza por qué el café nos mantiene despiertos.;Analysiere, warum Kaffee uns wach hält.;Analysez pourquoi le café nous tient éveillés.
-How did Germany unify in 1871?;Bismarck;;explicativa;9;¿Cómo se unificó Alemania en 1871?;Wie kam es 1871 zur Einigung Deutschlands?;Comment l'Allemagne s'est-elle unifiée en 1871 ?
+How did Germany unify in 1871?;Bismarck;Prusse|Prusia|Preussen|Preußen;explicativa;9;¿Cómo se unificó Alemania en 1871?;Wie kam es 1871 zur Einigung Deutschlands?;Comment l'Allemagne s'est-elle unifiée en 1871 ?
 Capital of Moldova?;Chisinau;Kichinev|Kischinau|Quixinau;corta;5;¿Capital de Moldavia?;Hauptstadt der Republik Moldau?;Capitale de la Moldavie ?
 Pub quiz: Burkina Faso capital?;Ouagadougou;Uagadugu|Wagadugu;conversacional;9;Pregunta de bar: ¿capital de Burkina Faso?;Kneipenquiz: Hauptstadt von Burkina Faso?;Quiz au bar : capitale du Burkina Faso ?
 Which bird lays the largest eggs?;ostrich;autruche|avestruz|Strauss|Strauß|struzzo;factual_aperturas;7;¿Qué ave pone los huevos más grandes?;Welcher Vogel legt die größten Eier?;Quel oiseau pond les plus gros œufs ?
@@ -116,24 +116,24 @@ Quick question: what's the capital of Liberia?;Monrovia;;conversacional;10;Pregu
 Which country gifted the Statue of Liberty?;France;Francia|Frankreich|Franca;factual_aperturas;8;¿Qué país regaló la Estatua de la Libertad?;Welches Land schenkte die Freiheitsstatue?;Quel pays a offert la statue de la Liberté ?
 Note the capital of Suriname.;Paramaribo;;imperativo;7;Anota la capital de Surinam.;Notiere die Hauptstadt von Suriname.;Notez la capitale du Suriname.
 Clear up why carrots are orange.;carotene;caroten|carotin;imperativo_explicativo;7;Aclara por qué las zanahorias son naranjas.;Kläre, warum Karotten orange sind.;Clarifiez pourquoi les carottes sont orange.
-How did Cleopatra die?;snake;serpent|serpien|Schlang|cobra|aspic|aspid;explicativa;7;¿Cómo murió Cleopatra?;Wie starb Kleopatra?;Comment Cléopâtre est-elle morte ?
+How did Cleopatra die?;snake;serpent|serpien|Schlang|cobra|aspic|aspid|envenen|empoisonn|vergift|veneno|poison;explicativa;7;¿Cómo murió Cleopatra?;Wie starb Kleopatra?;Comment Cléopâtre est-elle morte ?
 Capital of North Macedonia?;Skopje;Skopie|Escopia;corta;5;¿Capital de Macedonia del Norte?;Hauptstadt von Nordmazedonien?;Capitale de la Macédoine du Nord ?
 Hey, what's Greenland's capital?;Nuuk;;conversacional;8;Oye, ¿cuál es la capital de Groenlandia?;Hey, was ist die Hauptstadt Grönlands?;Hé, quelle est la capitale du Groenland ?
 Which instrument has 47 strings?;harp;harpe|arpa|Harfe|harpa;factual_aperturas;7;¿Qué instrumento tiene 47 cuerdas?;Welches Instrument hat 47 Saiten?;Quel instrument a 47 cordes ?
 Reveal who wrote Of Mice and Men.;Steinbeck;;imperativo;10;Revela quién escribió De ratones y hombres.;Verrate, wer Von Mäusen und Menschen schrieb.;Révélez qui a écrit Des souris et des hommes.
-Go over what glass is made from.;sand;sable|arena|Sabbia|areia;imperativo_explicativo;8;Repasa de qué está hecho el vidrio.;Geh durch, woraus Glas hergestellt wird.;Passez en revue la composition du verre.
-What spread the Black Death?;fleas;flea|puce|pulga|Floh|pulce|Yersinia;explicativa;6;¿Qué propagó la peste negra?;Was verbreitete den Schwarzen Tod?;Qu'est-ce qui a propagé la peste noire ?
+Go over what glass is made from.;sand;sable|arena|Sabbia|areia|silice|silica|Quarz|Siliziumdioxid|SiO2;imperativo_explicativo;8;Repasa de qué está hecho el vidrio.;Geh durch, woraus Glas hergestellt wird.;Passez en revue la composition du verre.
+What spread the Black Death?;fleas;flea|puce|pulga|Floh|pulce|Yersinia|roedor|rongeur|Nagetier|Ratten|ratas|ratones;explicativa;6;¿Qué propagó la peste negra?;Was verbreitete den Schwarzen Tod?;Qu'est-ce qui a propagé la peste noire ?
 Capital of Montenegro?;Podgorica;;corta;5;¿Capital de Montenegro?;Hauptstadt von Montenegro?;Capitale du Monténégro ?
 Just curious, capital of the Dominican Republic?;Santo Domingo;Saint-Domingue;conversacional;9;Solo por curiosidad, ¿capital de República Dominicana?;Nur aus Neugier: Hauptstadt der Dominikanischen Republik?;Simple curiosité : capitale de la République dominicaine ?
 Which land animal is the fastest?;cheetah;guepard|guepardo|Gepard|ghepardo|chita;factual_aperturas;7;¿Qué animal terrestre es el más rápido?;Welches Landtier ist das schnellste?;Quel animal terrestre est le plus rapide ?
 Count the stripes on the US flag.;13;;imperativo;8;Cuenta las franjas de la bandera de EE. UU.;Zähle die Streifen der US-Flagge.;Comptez les bandes du drapeau américain.
-Detail what makes soda fizzy.;carbon dioxide;dioxy|dioxi|Kohlendioxid|anidride carbonica|CO2;imperativo_explicativo;7;Detalla qué hace que el refresco tenga burbujas.;Erläutere genau, was Limonade sprudeln lässt.;Détaillez ce qui rend les sodas pétillants.
+Detail what makes soda fizzy.;carbon dioxide;dioxy|dioxi|Kohlendioxid|anidride carbonica|CO2|gaz carbonique|gas carbonico|Kohlensaure;imperativo_explicativo;7;Detalla qué hace que el refresco tenga burbujas.;Erläutere genau, was Limonade sprudeln lässt.;Détaillez ce qui rend les sodas pétillants.
 What forced Japan's 1945 surrender?;atomic bomb;bombe atomique|bomba atomica|Atombombe|bombes atomiques|bombas atomicas|Hiroshima|Nagasaki;explicativa;9;¿Qué forzó la rendición de Japón en 1945?;Was erzwang Japans Kapitulation 1945?;Qu'est-ce qui a forcé la capitulation du Japon en 1945 ?
 Capital of Liechtenstein?;Vaduz;;corta;6;¿Capital de Liechtenstein?;Hauptstadt von Liechtenstein?;Capitale du Liechtenstein ?
 Hi! Capital of Turkmenistan?;Ashgabat;Achgabat|Asjabad|Aschgabat|Asgabat|Ashkhabad|Asgabate;conversacional;8;¡Hola! ¿Capital de Turkmenistán?;Hallo! Hauptstadt von Turkmenistan?;Salut ! Capitale du Turkménistan ?
 How long is a marathon in kilometers?;42;42.195|42,195|42.2|42,2;factual_aperturas;8;¿Cuánto mide un maratón en kilómetros?;Wie lang ist ein Marathon in Kilometern?;Quelle est la longueur d'un marathon en kilomètres ?
 Pin down who composed Pictures at an Exhibition.;Mussorgsky;Moussorgski|Mussorgski|Musorgski|Musorgsky|Mussorgskij;imperativo;9;Precisa quién compuso Cuadros de una exposición.;Bestimme, wer Bilder einer Ausstellung komponierte.;Déterminez qui a composé Tableaux d'une exposition.
-Unpack what causes day and night.;rotation;rotat|rotac|rotaz|Drehung;imperativo_explicativo;8;Desmenuza qué causa el día y la noche.;Schlüssle auf, was Tag und Nacht verursacht.;Décortiquez ce qui provoque le jour et la nuit.
+Unpack what causes day and night.;rotation;rotat|rotac|rotaz|Drehung|dreht sich um ihre|eigene Achse|sobre su eje|sur son axe|sur elle-meme;imperativo_explicativo;8;Desmenuza qué causa el día y la noche.;Schlüssle auf, was Tag und Nacht verursacht.;Décortiquez ce qui provoque le jour et la nuit.
 How did the Greeks enter Troy?;wooden horse;cheval|caballo|Pferd|cavallo|cavalo|horse;explicativa;7;¿Cómo entraron los griegos en Troya?;Wie gelangten die Griechen nach Troja hinein?;Comment les Grecs sont-ils entrés dans Troie ?
 Capital of Scotland?;Edinburgh;Edimbourg|Edimburgo|Edinburg;corta;4;¿Capital de Escocia?;Hauptstadt von Schottland?;Capitale de l'Écosse ?
 Random thought: what's Niger's capital?;Niamey;;conversacional;9;Pensando al azar: ¿cuál es la capital de Níger?;Spontane Frage: Was ist die Hauptstadt von Niger?;Une idée comme ça : quelle est la capitale du Niger ?
@@ -143,13 +143,13 @@ Run through how echoes happen.;reflection;refle|rifless|Reflexion;imperativo_exp
 What triggered the Great Depression?;stock market crash;krach|crash|crac|Borsenkrach|crollo|quebra|1929;explicativa;6;¿Qué desencadenó la Gran Depresión?;Was löste die Weltwirtschaftskrise aus?;Qu'est-ce qui a déclenché la Grande Dépression ?
 Capital of Wales?;Cardiff;;corta;4;¿Capital de Gales?;Hauptstadt von Wales?;Capitale du pays de Galles ?
 Trivia time: capital of Sierra Leone?;Freetown;;conversacional;8;Hora de trivia: ¿capital de Sierra Leona?;Quizzeit: Hauptstadt von Sierra Leone?;Question culture : capitale de la Sierra Leone ?
-How old is the universe?;13.8;13,8;factual_aperturas;6;¿Qué edad tiene el universo?;Wie alt ist das Universum?;Quel âge a l'univers ?
+How old is the universe?;13.8;13,8|13.800|13 800|13,800|13800;factual_aperturas;6;¿Qué edad tiene el universo?;Wie alt ist das Universum?;Quel âge a l'univers ?
 Pick the biggest cat species.;tiger;tigre|Tiger;imperativo;6;Elige la especie de felino más grande.;Wähle die größte Katzenart.;Choisissez la plus grande espèce de félin.
 Lay out how plants absorb water.;roots;racine|raic|raiz|Wurzel|radic;imperativo_explicativo;8;Expón cómo absorben agua las plantas.;Leg dar, wie Pflanzen Wasser aufnehmen.;Exposez comment les plantes absorbent l'eau.
 What was the Silk Road used for?;trade;commerc|comerc|Handel;explicativa;8;¿Para qué se usaba la Ruta de la Seda?;Wofür wurde die Seidenstraße genutzt?;À quoi servait la route de la soie ?
-Capital of Haiti?;Port-au-Prince;Port au Prince|Puerto Principe|Porto Principe;corta;4;¿Capital de Haití?;Hauptstadt von Haiti?;Capitale d'Haïti ?
+Capital of Haiti?;Port-au-Prince;Port au Prince|Puerto Principe|Porto Principe|Port-au-Principe;corta;4;¿Capital de Haití?;Hauptstadt von Haiti?;Capitale d'Haïti ?
 I forgot, Eritrea's capital?;Asmara;;conversacional;9;Se me olvidó, ¿la capital de Eritrea?;Ich hab's vergessen: Hauptstadt von Eritrea?;J'ai oublié, la capitale de l'Érythrée ?
-How long did the Hundred Years' War last?;116;;factual_aperturas;10;¿Cuánto duró la guerra de los Cien Años?;Wie lange dauerte der Hundertjährige Krieg?;Combien de temps a duré la guerre de Cent Ans ?
+How long did the Hundred Years' War last?;116;1337;factual_aperturas;10;¿Cuánto duró la guerra de los Cien Años?;Wie lange dauerte der Hundertjährige Krieg?;Combien de temps a duré la guerre de Cent Ans ?
 Choose the fastest bird in a dive.;peregrine falcon;peregrine|pelerin|peregrino|Wanderfalke|pellegrino;imperativo;8;Escoge el ave más rápida en picada.;Wähle den schnellsten Vogel im Sturzflug.;Choisissez l'oiseau le plus rapide en piqué.
 Account for why we shiver when cold.;muscles;muscl|muscu|Muskel|muscol;imperativo_explicativo;9;Da cuenta de por qué temblamos cuando tenemos frío.;Begründe, warum wir bei Kälte zittern.;Rendez compte de nos frissons quand il fait froid.
 Why was the Great Wall built?;nomads;nomad|Mongol|invas|invad;explicativa;7;¿Por qué se construyó la Gran Muralla?;Warum wurde die Große Mauer gebaut?;Pourquoi la Grande Muraille a-t-elle été construite ?
@@ -157,51 +157,51 @@ Capital of Honduras?;Tegucigalpa;;corta;4;¿Capital de Honduras?;Hauptstadt von 
 Out of curiosity, Gabon's capital?;Libreville;;conversacional;9;Por curiosidad, ¿la capital de Gabón?;Aus Neugier: Hauptstadt von Gabun?;Par curiosité, la capitale du Gabon ?
 Who discovered X-rays?;Rontgen;Roentgen;factual_aperturas;5;¿Quién descubrió los rayos X?;Wer entdeckte die X-Strahlen?;Qui a découvert les rayons X ?
 Retrieve the author of Dracula.;Bram Stoker;Stoker;imperativo;7;Recupera al autor de Drácula.;Ruf den Autor von Dracula ab.;Retrouvez l'auteur de Dracula.
-Shed light on why popcorn pops.;steam;vapeur|vapor|Dampf|vapore;imperativo_explicativo;8;Arroja luz sobre por qué explotan las palomitas.;Beleuchte, warum Popcorn aufplatzt.;Éclairez pourquoi le pop-corn éclate.
+Shed light on why popcorn pops.;steam;vapeur|vapor|Dampf|vapore|humidite|humedad|Feuchtigkeit;imperativo_explicativo;8;Arroja luz sobre por qué explotan las palomitas.;Beleuchte, warum Popcorn aufplatzt.;Éclairez pourquoi le pop-corn éclate.
 Why did Columbus sail west?;Asia;Asie|Asien|India|Indien|Indias;explicativa;6;¿Por qué Colón navegó hacia el oeste?;Warum segelte Kolumbus nach Westen?;Pourquoi Colomb a-t-il navigué vers l'ouest ?
 Capital of Nicaragua?;Managua;;corta;4;¿Capital de Nicaragua?;Hauptstadt von Nicaragua?;Capitale du Nicaragua ?
 Hmm, what's the capital of Mauritania?;Nouakchott;Nuakchot|Nuakschott;conversacional;10;Mmm, ¿cuál es la capital de Mauritania?;Hmm, was ist die Hauptstadt Mauretaniens?;Hum, quelle est la capitale de la Mauritanie ?
 Who invented dynamite?;Nobel;;factual_aperturas;5;¿Quién inventó la dinamita?;Wer erfand das Dynamit?;Qui a inventé la dynamite ?
 Supply the capital of Romania.;Bucharest;Bucarest|Bukarest|Bucareste;imperativo;6;Proporciona la capital de Rumania.;Liefere die Hauptstadt Rumäniens.;Fournissez la capitale de la Roumanie.
-Demystify how airplanes stay airborne.;lift;portance|sustenta|Auftrieb|portanza;imperativo_explicativo;8;Desmitifica cómo se mantienen los aviones en el aire.;Entmystifiziere, wie Flugzeuge in der Luft bleiben.;Démystifiez comment les avions restent en l'air.
+Demystify how airplanes stay airborne.;lift;portance|sustenta|Auftrieb|portanza|levantamiento;imperativo_explicativo;8;Desmitifica cómo se mantienen los aviones en el aire.;Entmystifiziere, wie Flugzeuge in der Luft bleiben.;Démystifiez comment les avions restent en l'air.
 What sparked the American Revolution?;taxes;tax|impot|impuest|Steuer|impost;explicativa;6;¿Qué provocó la Revolución estadounidense?;Was löste die Amerikanische Revolution aus?;Qu'est-ce qui a déclenché la Révolution américaine ?
 Capital of Costa Rica?;San Jose;;corta;5;¿Capital de Costa Rica?;Hauptstadt von Costa Rica?;Capitale du Costa Rica ?
 Settle a bet: where was pizza invented?;Naples;Napoles|Neapel|Napoli;conversacional;10;Para zanjar una apuesta: ¿dónde se inventó la pizza?;Wir haben gewettet: Wo wurde die Pizza erfunden?;Pour trancher un pari : où la pizza a-t-elle été inventée ?
 Who founded the Mongol Empire?;Genghis Khan;Genghis|Gengis|Dschingis|Chinggis;factual_aperturas;7;¿Quién fundó el Imperio mongol?;Wer gründete das Mongolische Reich?;Qui a fondé l'Empire mongol ?
 State the capital of Belgium.;Brussels;Bruxelles|Bruselas|Brussel|Bruxelas;imperativo;6;Indica la capital de Bélgica.;Nenne die Hauptstadt Belgiens.;Indiquez la capitale de la Belgique.
 Elucidate how submarines dive.;ballast;lastre|zavorra|lastro;imperativo_explicativo;7;Dilucida cómo se sumergen los submarinos.;Verdeutliche, wie U-Boote abtauchen.;Élucidez comment les sous-marins plongent.
-What did Lincoln's proclamation end?;slavery;esclav|Sklav|schiav|escrav|slave;explicativa;7;¿A qué puso fin la proclamación de Lincoln?;Was beendete Lincolns Proklamation?;À quoi la proclamation de Lincoln a-t-elle mis fin ?
+What did Lincoln's proclamation end?;slavery;esclav|Sklav|schiav|escrav|slave|servitude|servidumbre;explicativa;7;¿A qué puso fin la proclamación de Lincoln?;Was beendete Lincolns Proklamation?;À quoi la proclamation de Lincoln a-t-elle mis fin ?
 Capital of Fiji?;Suva;;corta;4;¿Capital de Fiyi?;Hauptstadt von Fidschi?;Capitale des Fidji ?
 Just curious, where do kiwi birds live?;New Zealand;Nouvelle-Zelande|Nueva Zelanda|Neuseeland|Nuova Zelanda|Nova Zelandia;conversacional;10;Solo por curiosidad, ¿dónde viven los kiwis?;Nur aus Neugier: Wo leben Kiwivögel?;Simple curiosité : où vivent les kiwis ?
 Who designed the Sagrada Familia?;Gaudi;;factual_aperturas;8;¿Quién diseñó la Sagrada Familia?;Wer entwarf die Sagrada Família?;Qui a conçu la Sagrada Família ?
 Specify the currency of the United Kingdom.;pound sterling;sterling|livre sterling|libra esterlina|Pfund|sterlina|pound;imperativo;8;Especifica la moneda del Reino Unido.;Gib die Währung des Vereinigten Königreichs an.;Précisez la monnaie du Royaume-Uni.
 Spell out why rubber balls bounce.;elastic;elasti|Elastiz;imperativo_explicativo;7;Detalla paso a paso por qué rebotan las pelotas de goma.;Erkläre genau, warum Gummibälle springen.;Explicitez pourquoi les balles en caoutchouc rebondissent.
 What did Martin Luther King fight for?;civil rights;civil|civiq|Burgerrecht|civis;explicativa;8;¿Por qué luchó Martin Luther King?;Wofür kämpfte Martin Luther King?;Pour quoi Martin Luther King s'est-il battu ?
-Capital of Tajikistan?;Dushanbe;Douchanbe|Dusambe|Duschanbe;corta;6;¿Capital de Tayikistán?;Hauptstadt von Tadschikistan?;Capitale du Tadjikistan ?
+Capital of Tajikistan?;Dushanbe;Douchanbe|Dusambe|Duschanbe|Duschambe;corta;6;¿Capital de Tayikistán?;Hauptstadt von Tadschikistan?;Capitale du Tadjikistan ?
 Random thought: what do giant pandas eat?;bamboo;bambou|bambu|Bambus;conversacional;9;Pensando al azar: ¿qué comen los pandas gigantes?;Spontane Frage: Was fressen Große Pandas?;Une idée comme ça : que mangent les pandas géants ?
 Who sculpted The Thinker?;Rodin;;factual_aperturas;7;¿Quién esculpió El pensador?;Wer schuf die Skulptur Der Denker?;Qui a sculpté Le Penseur ?
 Mention who composed William Tell.;Rossini;;imperativo;7;Menciona quién compuso Guillermo Tell.;Erwähne, wer Wilhelm Tell komponierte.;Mentionnez qui a composé Guillaume Tell.
 Cover how solar panels make electricity.;photovoltaic;voltai|photon|foton|semicond;imperativo_explicativo;7;Trata cómo los paneles solares generan electricidad.;Behandle, wie Solarmodule Strom erzeugen.;Traitez la production d'électricité des panneaux solaires.
 How did Napoleon spend his final years?;Saint Helena;Helen|Elena|exil|esilio;explicativa;8;¿Cómo pasó Napoleón sus últimos años?;Wie verbrachte Napoleon seine letzten Jahre?;Comment Napoléon a-t-il passé ses dernières années ?
-Capital of Cameroon?;Yaounde;Jaunde;corta;4;¿Capital de Camerún?;Hauptstadt von Kamerun?;Capitale du Cameroun ?
+Capital of Cameroon?;Yaounde;Jaunde|Yaunde;corta;4;¿Capital de Camerún?;Hauptstadt von Kamerun?;Capitale du Cameroun ?
 I forgot, who authored The Great Gatsby?;Fitzgerald;;conversacional;10;Se me olvidó, ¿quién escribió El gran Gatsby?;Ich hab's vergessen: Wer schrieb Der große Gatsby?;J'ai oublié, qui a écrit Gatsby le Magnifique ?
 Who directed Psycho?;Hitchcock;;factual_aperturas;4;¿Quién dirigió Psicosis?;Wer führte Regie bei Psycho?;Qui a réalisé Psychose ?
 Indicate who discovered DNA's double helix.;Watson;Crick|Rosalind Franklin;imperativo;10;Señala quién descubrió la doble hélice del ADN.;Gib an, wer die Doppelhelix der DNA entdeckte.;Indiquez qui a découvert la double hélice de l'ADN.
-Decode how bats navigate in darkness.;echolocation;ecolocaliz|Echoortung|ultras|Ultraschall;imperativo_explicativo;7;Decodifica cómo se orientan los murciélagos en la oscuridad.;Entschlüssle, wie Fledermäuse sich im Dunkeln orientieren.;Décodez comment les chauves-souris s'orientent dans le noir.
+Decode how bats navigate in darkness.;echolocation;ecolocaliz|Echoortung|ultras|Ultraschall|Echolok|ecoloc|echoloc;imperativo_explicativo;7;Decodifica cómo se orientan los murciélagos en la oscuridad.;Entschlüssle, wie Fledermäuse sich im Dunkeln orientieren.;Décodez comment les chauves-souris s'orientent dans le noir.
 What caused the 2008 financial crisis?;subprime;hypoth|hipotec|Hypothek|mutui|mortgage;explicativa;9;¿Qué causó la crisis financiera de 2008?;Was verursachte die Finanzkrise von 2008?;Qu'est-ce qui a causé la crise financière de 2008 ?
 Capital of Bahrain?;Manama;;corta;4;¿Capital de Baréin?;Hauptstadt von Bahrain?;Capitale de Bahreïn ?
 Hmm, what do koalas eat?;eucalyptus;eucalipto|Eukalyptus;conversacional;9;Mmm, ¿qué comen los koalas?;Hmm, was fressen Koalas?;Hum, que mangent les koalas ?
 Who discovered the electron?;Thomson;;factual_aperturas;5;¿Quién descubrió el electrón?;Wer entdeckte das Elektron?;Qui a découvert l'électron ?
 Recall the first man in space.;Gagarin;Gagarine;imperativo;8;Recuerda al primer hombre en el espacio.;Erinnere dich an den ersten Menschen im All.;Rappelez le premier homme dans l'espace.
 Unravel how salt preserves meat.;osmosis;osmo|dehydrat|deshidrat|deshydrat|disidrat|desidrat;imperativo_explicativo;7;Desentraña cómo la sal conserva la carne.;Entwirre, wie Salz Fleisch haltbar macht.;Démêlez comment le sel conserve la viande.
-What did the Rosetta Stone help decode?;hieroglyphs;glyph|glif;explicativa;9;¿Qué ayudó a descifrar la piedra de Rosetta?;Was half der Stein von Rosetta zu entziffern?;Qu'est-ce que la pierre de Rosette a aidé à déchiffrer ?
-Capital of Mali?;Bamako;;corta;4;¿Capital de Malí?;Hauptstadt von Mali?;Capitale du Mali ?
+What did the Rosetta Stone help decode?;hieroglyphs;glyph|glif|egipcio antiguo|egyptien ancien|altagyptisch|ecriture egyptienne;explicativa;9;¿Qué ayudó a descifrar la piedra de Rosetta?;Was half der Stein von Rosetta zu entziffern?;Qu'est-ce que la pierre de Rosette a aidé à déchiffrer ?
+Capital of Mali?;Bamako;Bamaco;corta;4;¿Capital de Malí?;Hauptstadt von Mali?;Capitale du Mali ?
 Honestly, where did flamenco originate?;Spain;Espagne|Espana|Spanien|Spagna|Espanha|Andalus|Andalous|Andaluc|Andaluz;conversacional;8;Sinceramente, ¿dónde se originó el flamenco?;Ehrlich gesagt: Woher stammt der Flamenco?;Franchement, d'où vient le flamenco ?
 Who patented the phonograph?;Edison;;factual_aperturas;6;¿Quién patentó el fonógrafo?;Wer ließ den Phonographen patentieren?;Qui a breveté le phonographe ?
 Determine the deepest lake in Africa.;Tanganyika;Tanganica|Tanganjika|Tanganica;imperativo;8;Determina el lago más profundo de África.;Bestimme den tiefsten See Afrikas.;Déterminez le lac le plus profond d'Afrique.
 Fill me in on how thermometers work.;expansion;dilata|Ausdehn|expan|espans;imperativo_explicativo;9;Ponme al día sobre cómo funcionan los termómetros.;Bring mich auf den Stand, wie Thermometer funktionieren.;Mettez-moi au courant du fonctionnement des thermomètres.
-Why was Galileo put on trial?;heliocentrism;heliocent|eliocent|Heliozent|Copernic|Kopernik;explicativa;8;¿Por qué juzgaron a Galileo?;Warum wurde Galileo vor Gericht gestellt?;Pourquoi Galilée a-t-il été jugé ?
-Capital of the UAE?;Abu Dhabi;Abou Dhabi|Abu Dabi;corta;5;¿Capital de los EAU?;Hauptstadt der VAE?;Capitale des EAU ?
+Why was Galileo put on trial?;heliocentrism;heliocent|eliocent|Heliozent|Copernic|Kopernik|tourne autour du Soleil|gira alrededor del Sol|um die Sonne;explicativa;8;¿Por qué juzgaron a Galileo?;Warum wurde Galileo vor Gericht gestellt?;Pourquoi Galilée a-t-il été jugé ?
+Capital of the UAE?;Abu Dhabi;Abou Dhabi|Abu Dabi|Abou Dabi;corta;5;¿Capital de los EAU?;Hauptstadt der VAE?;Capitale des EAU ?
 Wait, where is Mount Rushmore?;South Dakota;Dakota;conversacional;8;Espera, ¿dónde está el monte Rushmore?;Moment, wo liegt der Mount Rushmore?;Attends, où se trouve le mont Rushmore ?
 Who sang Thriller?;Michael Jackson;Jackson;factual_aperturas;5;¿Quién cantó Thriller?;Wer sang Thriller?;Qui a chanté Thriller ?
 Disclose the capital of Belize.;Belmopan;;imperativo;7;Desvela la capital de Belice.;Gib die Hauptstadt von Belize preis.;Dévoilez la capitale du Belize.
@@ -217,8 +217,8 @@ Symbol for lithium?;Li;;corta;4;¿Símbolo del litio?;Symbol für Lithium?;Symbo
 Quick question: when was the first World Cup?;1930;;conversacional;10;Pregunta rápida: ¿cuándo fue el primer Mundial?;Kurze Frage: Wann war die erste Fußball-WM?;Petite question : quand a eu lieu la première Coupe du monde ?
 Who proposed the uncertainty principle?;Heisenberg;;factual_aperturas;6;¿Quién propuso el principio de incertidumbre?;Wer stellte die Unschärferelation auf?;Qui a proposé le principe d'incertitude ?
 Pinpoint the capital of Ethiopia.;Addis Ababa;Addis-Abeba|Addis Abeba|Adis Abeba|Adis-Abeba;imperativo;7;Ubica la capital de Etiopía.;Bestimme die Hauptstadt Äthiopiens genau.;Situez la capitale de l'Éthiopie.
-Examine what causes a lunar eclipse.;shadow;ombr|Schatten;imperativo_explicativo;8;Examina qué causa un eclipse lunar.;Untersuche, was eine Mondfinsternis verursacht.;Examinez ce qui provoque une éclipse de Lune.
-What did Florence Nightingale reform?;nursing;infirm|enferm|Krankenpfleg|Pflege|inferm|nurs;explicativa;8;¿Qué reformó Florence Nightingale?;Was reformierte Florence Nightingale?;Qu'a réformé Florence Nightingale ?
+Examine what causes a lunar eclipse.;shadow;ombr|Schatten|entre le Soleil et la Lune|entre el Sol y la Luna|zwischen Sonne und Mond;imperativo_explicativo;8;Examina qué causa un eclipse lunar.;Untersuche, was eine Mondfinsternis verursacht.;Examinez ce qui provoque une éclipse de Lune.
+What did Florence Nightingale reform?;nursing;infirm|enferm|Krankenpfleg|Pflege|inferm|nurs|soins aux malades;explicativa;8;¿Qué reformó Florence Nightingale?;Was reformierte Florence Nightingale?;Qu'a réformé Florence Nightingale ?
 Symbol for argon?;Ar;;corta;5;¿Símbolo del argón?;Symbol für Argon?;Symbole de l'argon ?
 Hey, how far is the Sun from Earth?;150 million;150|149,6|149.6|93 million;conversacional;10;Oye, ¿a qué distancia está el Sol de la Tierra?;Hey, wie weit ist die Sonne von der Erde entfernt?;Hé, à quelle distance le Soleil est-il de la Terre ?
 Who led the Soviet Union during World War II?;Stalin;Staline;factual_aperturas;10;¿Quién dirigió la Unión Soviética durante la Segunda Guerra Mundial?;Wer führte die Sowjetunion im Zweiten Weltkrieg?;Qui dirigeait l'Union soviétique pendant la Seconde Guerre mondiale ?
@@ -226,23 +226,23 @@ Locate the country of Timbuktu.;Mali;;imperativo;10;Localiza el país de Tombuct
 Analyze what colors fireworks.;metal;metaux|metais|Metall;imperativo_explicativo;6;Analiza qué da color a los fuegos artificiales.;Analysiere, was Feuerwerk färbt.;Analysez ce qui colore les feux d'artifice.
 What was Sputnik?;satellite;satel;explicativa;6;¿Qué fue el Sputnik?;Was war Sputnik?;Qu'était Spoutnik ?
 Symbol for bismuth?;Bi;;corta;6;¿Símbolo del bismuto?;Symbol für Bismut?;Symbole du bismuth ?
-Just curious, how old is Earth?;4.5 billion;4.5|4,5|4.54|4,54;conversacional;8;Solo por curiosidad, ¿qué edad tiene la Tierra?;Nur aus Neugier: Wie alt ist die Erde?;Simple curiosité : quel âge a la Terre ?
+Just curious, how old is Earth?;4.5 billion;4.5|4,5|4.54|4,54|4.540|4 540|4,540|4540;conversacional;8;Solo por curiosidad, ¿qué edad tiene la Tierra?;Nur aus Neugier: Wie alt ist die Erde?;Simple curiosité : quel âge a la Terre ?
 Who was Napoleon's first wife?;Josephine;Josefina|Giuseppina;factual_aperturas;7;¿Quién fue la primera esposa de Napoleón?;Wer war Napoleons erste Ehefrau?;Qui était la première épouse de Napoléon ?
 Report the freezing point of water in Fahrenheit.;32;;imperativo;9;Informa el punto de congelación del agua en grados Fahrenheit.;Gib den Gefrierpunkt von Wasser in Fahrenheit an.;Donnez le point de congélation de l'eau en Fahrenheit.
 Review how antibiotics work.;bacteria;bacteri|bakteri|batteri;imperativo_explicativo;5;Revisa cómo funcionan los antibióticos.;Überprüfe, wie Antibiotika wirken.;Revoyez le fonctionnement des antibiotiques.
-What caused the Dust Bowl?;drought;secheresse|sequia|Durre|siccit|seca;explicativa;6;¿Qué causó el Dust Bowl?;Was verursachte die Dust Bowl?;Qu'est-ce qui a causé le Dust Bowl ?
+What caused the Dust Bowl?;drought;secheresse|sequia|Durre|siccit|seca|Bodenerosion|erosion;explicativa;6;¿Qué causó el Dust Bowl?;Was verursachte die Dust Bowl?;Qu'est-ce qui a causé le Dust Bowl ?
 Symbol for strontium?;Sr;;corta;6;¿Símbolo del estroncio?;Symbol für Strontium?;Symbole du strontium ?
 Trivia time: which metal is mainly in brass?;copper;cuivre|cobre|Kupfer;conversacional;10;Hora de trivia: ¿qué metal predomina en el latón?;Quizzeit: Welches Metall steckt hauptsächlich in Messing?;Question culture : quel métal compose surtout le laiton ?
 Who predicted Neptune's position mathematically?;Le Verrier;Leverrier|Verrier|John Couch Adams;factual_aperturas;9;¿Quién predijo matemáticamente la posición de Neptuno?;Wer sagte die Position Neptuns mathematisch voraus?;Qui a prédit mathématiquement la position de Neptune ?
 Cite the author of The Prince.;Machiavelli;Machiavel|Maquiavelo|Maquiavel;imperativo;8;Cita al autor de El príncipe.;Nenne den Autor von Der Fürst.;Citez l'auteur du Prince.
-Clear up what creates wind.;air pressure;Luftdruck|Druckunterschied|pression atmos|pression de l'air|presion atmos|presion del aire|pressione atmos|pressao atmos|differences de pression|diferencias de presion|differenze di pressione|diferencas de pressao;imperativo_explicativo;6;Aclara qué crea el viento.;Kläre, was Wind entstehen lässt.;Clarifiez ce qui crée le vent.
+Clear up what creates wind.;air pressure;Luftdruck|Druckunterschied|pression atmos|pression de l'air|presion atmos|presion del aire|pressione atmos|pressao atmos|differences de pression|diferencias de presion|differenze di pressione|diferencas de pressao|presiones atmosfericas|diferencia de presion;imperativo_explicativo;6;Aclara qué crea el viento.;Kläre, was Wind entstehen lässt.;Clarifiez ce qui crée le vent.
 What caused Ireland's Great Famine?;potato;pomme de terre|patata|Kartoffel|batata|mildiou|tizon|blight;explicativa;8;¿Qué causó la Gran Hambruna de Irlanda?;Was verursachte die Große Hungersnot in Irland?;Qu'est-ce qui a causé la Grande Famine en Irlande ?
 Symbol for barium?;Ba;;corta;5;¿Símbolo del bario?;Symbol für Barium?;Symbole du baryum ?
 I forgot, who sang Purple Rain?;Prince;;conversacional;8;Se me olvidó, ¿quién cantó Purple Rain?;Ich hab's vergessen: Wer sang Purple Rain?;J'ai oublié, qui a chanté Purple Rain ?
 Who led the first circumnavigation expedition?;Magellan;Magallanes|Magellano|Magalhaes|Magalhanes|Elcano;factual_aperturas;8;¿Quién dirigió la primera expedición de circunnavegación?;Wer leitete die erste Weltumsegelung?;Qui a dirigé la première expédition de circumnavigation ?
 Find the capital of Pakistan.;Islamabad;;imperativo;6;Encuentra la capital de Pakistán.;Finde die Hauptstadt Pakistans.;Trouvez la capitale du Pakistan.
-Go over how dams generate electricity.;turbines;turbin;imperativo_explicativo;7;Repasa cómo las represas generan electricidad.;Geh durch, wie Staudämme Strom erzeugen.;Passez en revue la production d'électricité des barrages.
-How were Egyptian mummies preserved?;embalming;embaum|balsam|natron;explicativa;7;¿Cómo se conservaban las momias egipcias?;Wie wurden ägyptische Mumien konserviert?;Comment les momies égyptiennes étaient-elles conservées ?
+Go over how dams generate electricity.;turbines;turbin|hidroelectric|hydroelectr|Wasserkraft;imperativo_explicativo;7;Repasa cómo las represas generan electricidad.;Geh durch, wie Staudämme Strom erzeugen.;Passez en revue la production d'électricité des barrages.
+How were Egyptian mummies preserved?;embalming;embaum|balsam|natron|deshydrat|deshidrat|Austrocknung|momif|mumifiz;explicativa;7;¿Cómo se conservaban las momias egipcias?;Wie wurden ägyptische Mumien konserviert?;Comment les momies égyptiennes étaient-elles conservées ?
 Symbol for xenon?;Xe;;corta;5;¿Símbolo del xenón?;Symbol für Xenon?;Symbole du xénon ?
 Out of curiosity, who directed The Godfather?;Coppola;;conversacional;10;Por curiosidad, ¿quién dirigió El padrino?;Aus Neugier: Wer drehte Der Pate?;Par curiosité, qui a réalisé Le Parrain ?
 Who crossed the Rubicon in 49 BC?;Caesar;Cesar|Cesare|Casar;factual_aperturas;10;¿Quién cruzó el Rubicón en el 49 a. C.?;Wer überschritt 49 v. Chr. den Rubikon?;Qui a franchi le Rubicon en 49 av. J.-C. ?
@@ -254,7 +254,7 @@ Hmm, who founded Rome?;Romulus;Romulo|Romolo|Romule;conversacional;6;Mmm, ¿qui�
 Whose brush created The Night Watch?;Rembrandt;;factual_aperturas;8;¿De qué pincel salió La ronda de noche?;Aus wessen Pinsel stammt Die Nachtwache?;De quel pinceau est née La Ronde de nuit ?
 Point out the smallest bone in the body.;stapes;etrier|estribo|Steigbugel|staffa|stirrup;imperativo;9;Señala el hueso más pequeño del cuerpo.;Zeig den kleinsten Knochen des Körpers.;Désignez le plus petit os du corps.
 Unpack how the Sun produces energy.;fusion;fusione|fusao|Kernfusion;imperativo_explicativo;8;Desmenuza cómo produce energía el Sol.;Schlüssle auf, wie die Sonne Energie erzeugt.;Décortiquez comment le Soleil produit son énergie.
-Why did Napoleon retreat from Russia?;winter;hiver|invierno|inverno;explicativa;7;¿Por qué se retiró Napoleón de Rusia?;Warum zog sich Napoleon aus Russland zurück?;Pourquoi Napoléon s'est-il retiré de Russie ?
+Why did Napoleon retreat from Russia?;winter;hiver|invierno|inverno|froid|gelees|frio extremo|Kalte;explicativa;7;¿Por qué se retiró Napoleón de Rusia?;Warum zog sich Napoleon aus Russland zurück?;Pourquoi Napoléon s'est-il retiré de Russie ?
 Symbol for krypton?;Kr;;corta;5;¿Símbolo del kriptón?;Symbol für Krypton?;Symbole du krypton ?
 Real quick: who wrote The Art of War?;Sun Tzu;Sun Zi|Sunzi;conversacional;10;Rapidito: ¿quién escribió El arte de la guerra?;Ganz kurz: Wer schrieb Die Kunst des Krieges?;Vite fait : qui a écrit L'Art de la guerre ?
 What animal is the largest mammal?;blue whale;baleine|ballena|Blauwal|balenottera|baleia;factual_aperturas;8;¿Qué animal es el mamífero más grande?;Welches Tier ist das größte Säugetier?;Quel animal est le plus grand mammifère ?
@@ -265,19 +265,19 @@ Author of Emma?;Austen;Jane Austen;corta;4;¿Autor de Emma?;Autor von Emma?;Aute
 Okay, who composed Carmina Burana?;Orff;;conversacional;9;Vale, ¿quién compuso Carmina Burana?;Okay, wer komponierte Carmina Burana?;Bon, qui a composé Carmina Burana ?
 What currency does Thailand use?;baht;;factual_aperturas;6;¿Qué moneda usa Tailandia?;Welche Währung verwendet Thailand?;Quelle monnaie utilise la Thaïlande ?
 Let me know the capital of Saudi Arabia.;Riyadh;Riyad|Riad|Riade;imperativo;9;Dime la capital de Arabia Saudita.;Sag mir die Hauptstadt Saudi-Arabiens.;Dites-moi la capitale de l'Arabie saoudite.
-Lay out why lemons taste sour.;citric acid;citri|Zitronens;imperativo_explicativo;9;Expón por qué los limones son ácidos.;Leg dar, warum Zitronen sauer schmecken.;Exposez pourquoi les citrons sont acides.
+Lay out why lemons taste sour.;citric acid;citri|Zitronens|C6H8O7;imperativo_explicativo;9;Expón por qué los limones son ácidos.;Leg dar, warum Zitronen sauer schmecken.;Exposez pourquoi les citrons sont acides.
 What powered the Industrial Revolution?;coal;charbon|Kohle|carvao|el carbon|del carbon|steam|vapeur|vapor|Dampf;explicativa;6;¿Qué impulsó la Revolución Industrial?;Was trieb die Industrielle Revolution an?;Qu'est-ce qui a alimenté la révolution industrielle ?
 Author of Lolita?;Nabokov;;corta;5;¿Autor de Lolita?;Autor von Lolita?;Auteur de Lolita ?
 Hi! Who drafted the Declaration of Independence?;Jefferson;;conversacional;9;¡Hola! ¿Quién redactó la Declaración de Independencia?;Hallo! Wer entwarf die Unabhängigkeitserklärung?;Salut ! Qui a rédigé la Déclaration d'indépendance ?
 What sport uses a shuttlecock?;badminton;Federball;factual_aperturas;7;¿Qué deporte usa un volante?;Welche Sportart nutzt einen Schläger und einen gefiederten Ball?;Quel sport utilise un volant ?
 Spot the creator of Sherlock Holmes.;Conan Doyle;Doyle;imperativo;7;Detecta al creador de Sherlock Holmes.;Ermittle den Schöpfer von Sherlock Holmes.;Repérez le créateur de Sherlock Holmes.
-Account for why pressure cookers cook faster.;boiling point;ebul|eboll|Siede|boiling;imperativo_explicativo;9;Da cuenta de por qué las ollas a presión cocinan más rápido.;Begründe, warum Schnellkochtöpfe schneller garen.;Rendez compte de la rapidité des autocuiseurs.
+Account for why pressure cookers cook faster.;boiling point;ebul|eboll|Siede|boiling|erhohte Temperatur|temperatura mas alta|temperature plus elevee|higher temperature;imperativo_explicativo;9;Da cuenta de por qué las ollas a presión cocinan más rápido.;Begründe, warum Schnellkochtöpfe schneller garen.;Rendez compte de la rapidité des autocuiseurs.
 What did the Marshall Plan fund?;reconstruction;reconstru|Wiederaufbau|ricostru|rebuild;explicativa;7;¿Qué financió el Plan Marshall?;Was finanzierte der Marshallplan?;Qu'a financé le plan Marshall ?
 Author of Candide?;Voltaire;;corta;5;¿Autor de Cándido?;Autor von Candide?;Auteur de Candide ?
 So, who invented basketball?;Naismith;;conversacional;6;Entonces, ¿quién inventó el baloncesto?;Also, wer hat Basketball erfunden?;Alors, qui a inventé le basket-ball ?
 What blood type is the universal donor?;O negative;O-negative|O negatif|O negativo|0 negativ|O negativ|0 negativo;factual_aperturas;8;¿Qué grupo sanguíneo es el donante universal?;Welche Blutgruppe ist der Universalspender?;Quel groupe sanguin est le donneur universel ?
 Fetch the capital of Uruguay.;Montevideo;Montevideu;imperativo;6;Tráeme la capital de Uruguay.;Hol mir die Hauptstadt Uruguays.;Rapportez-moi la capitale de l'Uruguay.
-Shed light on how fog forms.;condensation;condens|kondens;imperativo_explicativo;8;Arroja luz sobre cómo se forma la niebla.;Beleuchte, wie Nebel entsteht.;Éclairez la formation du brouillard.
+Shed light on how fog forms.;condensation;condens|kondens|se refroidit|refroidissement|se enfria|abkuhl;imperativo_explicativo;8;Arroja luz sobre cómo se forma la niebla.;Beleuchte, wie Nebel entsteht.;Éclairez la formation du brouillard.
 Who does Braille help?;blind;aveugl|cieg|Blind|ciech|cego|malvoyant;explicativa;6;¿A quién ayuda el braille?;Wem hilft die Brailleschrift?;À qui le braille vient-il en aide ?
 Author of Siddhartha?;Hesse;;corta;6;¿Autor de Siddhartha?;Autor von Siddhartha?;Auteur de Siddhartha ?
 Pub quiz: who wrote Peter Pan?;Barrie;;conversacional;8;Pregunta de bar: ¿quién escribió Peter Pan?;Kneipenquiz: Wer schrieb Peter Pan?;Quiz au bar : qui a écrit Peter Pan ?
@@ -290,13 +290,13 @@ Pub quiz: which band sang Hey Jude?;The Beatles;Beatles;conversacional;9;Pregunt
 What does a seismograph measure?;earthquakes;earthquake|seisme|tremblement|terremoto|Erdbeben|terremoti;factual_aperturas;8;¿Qué mide un sismógrafo?;Was misst ein Seismograph?;Que mesure un sismographe ?
 Dig up who wrote The Three Musketeers.;Dumas;;imperativo;10;Averigua quién escribió Los tres mosqueteros.;Find heraus, wer Die drei Musketiere schrieb.;Dénichez qui a écrit Les Trois Mousquetaires.
 Elucidate how the Grand Canyon formed.;erosion;erosi|erosao|Colorado;imperativo_explicativo;9;Dilucida cómo se formó el Gran Cañón.;Verdeutliche, wie der Grand Canyon entstand.;Élucidez la formation du Grand Canyon.
-What does a Geiger counter detect?;radiation;radia|Strahlung;explicativa;8;¿Qué detecta un contador Geiger?;Was erfasst ein Geigerzähler?;Que détecte un compteur Geiger ?
+What does a Geiger counter detect?;radiation;radia|Strahlung|radioactiv|radiactiv|radioaktiv|alpha|gamma;explicativa;8;¿Qué detecta un contador Geiger?;Was erfasst ein Geigerzähler?;Que détecte un compteur Geiger ?
 Author of Dune?;Frank Herbert;Herbert;corta;5;¿Autor de Dune?;Autor von Dune?;Auteur de Dune ?
 Be honest: who directed Pulp Fiction?;Tarantino;;conversacional;9;Sé sincero: ¿quién dirigió Pulp Fiction?;Sei ehrlich: Wer drehte Pulp Fiction?;Sois honnête : qui a réalisé Pulp Fiction ?
 Sunlight helps the skin make which vitamin?;vitamin D;vitamine D|vitamina D;factual_aperturas;9;¿La luz solar ayuda a la piel a producir qué vitamina?;Sonnenlicht hilft der Haut, welches Vitamin zu bilden?;La lumière du soleil aide la peau à produire quelle vitamine ?
 Note the capital of Guyana.;Georgetown;;imperativo;7;Anota la capital de Guyana.;Notiere die Hauptstadt von Guyana.;Notez la capitale du Guyana.
 Spell out how fossils form.;sediment;sedim;imperativo_explicativo;6;Detalla paso a paso cómo se forman los fósiles.;Erkläre genau, wie Fossilien entstehen.;Explicitez la formation des fossiles.
-What does an anemometer measure?;wind speed;wind|viento|vento|Windgeschwindigkeit|vitesse du vent;explicativa;8;¿Qué mide un anemómetro?;Was misst ein Anemometer?;Que mesure un anémomètre ?
+What does an anemometer measure?;wind speed;wind|viento|vento|Windgeschwindigkeit|vitesse du vent|du vent;explicativa;8;¿Qué mide un anemómetro?;Was misst ein Anemometer?;Que mesure un anémomètre ?
 Author of Walden?;Thoreau;;corta;5;¿Autor de Walden?;Autor von Walden?;Auteur de Walden ?
 Hmm, Eiffel Tower height?;330;324|300;conversacional;8;Mmm, ¿altura de la torre Eiffel?;Hmm, Höhe des Eiffelturms?;Hum, hauteur de la tour Eiffel ?
 Mount Fuji is in which country?;Japan;Japon|Giappone|Japao;factual_aperturas;7;¿El monte Fuji está en qué país?;Der Fuji liegt in welchem Land?;Le mont Fuji se trouve dans quel pays ?
@@ -307,7 +307,7 @@ Author of Beloved?;Toni Morrison;Morrison;corta;5;¿Autor de Beloved?;Autor von 
 Settle a bet: Beatles breakup year?;1970;;conversacional;9;Para zanjar una apuesta: ¿año de la separación de los Beatles?;Wir haben gewettet: In welchem Jahr trennten sich die Beatles?;Pour trancher un pari : année de la séparation des Beatles ?
 The Alhambra is in which city?;Granada;Grenade;factual_aperturas;10;¿La Alhambra está en qué ciudad?;Die Alhambra liegt in welcher Stadt?;L'Alhambra se trouve dans quelle ville ?
 Choose the tallest building in the world.;Burj Khalifa;;imperativo;8;Escoge el edificio más alto del mundo.;Wähle das höchste Gebäude der Welt.;Choisissez le plus haut bâtiment du monde.
-Decode why the Moon shows one face.;synchronous;synchron|sincron|tidal|maree|marea|Gezeiten;imperativo_explicativo;8;Decodifica por qué la Luna muestra una sola cara.;Entschlüssle, warum der Mond nur eine Seite zeigt.;Décodez pourquoi la Lune montre toujours la même face.
+Decode why the Moon shows one face.;synchronous;synchron|sincron|tidal|maree|marea|Gezeiten|27,3|27.3;imperativo_explicativo;8;Decodifica por qué la Luna muestra una sola cara.;Entschlüssle, warum der Mond nur eine Seite zeigt.;Décodez pourquoi la Lune montre toujours la même face.
 What was a sextant used for?;navigation;navig|naveg;explicativa;8;¿Para qué se usaba un sextante?;Wofür wurde ein Sextant verwendet?;À quoi servait un sextant ?
 Author of The Stranger?;Camus;;corta;5;¿Autor de El extranjero?;Autor von Der Fremde?;Auteur de L'Étranger ?
 Quick question: when did dinosaurs go extinct?;66 million;66|65;conversacional;9;Pregunta rápida: ¿cuándo se extinguieron los dinosaurios?;Kurze Frage: Wann starben die Dinosaurier aus?;Petite question : quand les dinosaures ont-ils disparu ?
@@ -319,7 +319,7 @@ Composer of Aida?;Verdi;;corta;5;¿Compositor de Aida?;Komponist von Aida?;Compo
 Just curious, when was the Mona Lisa painted?;1503;1504|1505|1506|1507|1517|1519;conversacional;10;Solo por curiosidad, ¿cuándo se pintó la Mona Lisa?;Nur aus Neugier: Wann wurde die Mona Lisa gemalt?;Simple curiosité : quand la Joconde a-t-elle été peinte ?
 The Prado Museum is in which city?;Madrid;;factual_aperturas;9;¿El Museo del Prado está en qué ciudad?;Das Prado-Museum liegt in welcher Stadt?;Le musée du Prado se trouve dans quelle ville ?
 Supply the capital of Paraguay.;Asuncion;Assomption|Assuncao;imperativo;7;Proporciona la capital de Paraguay.;Liefere die Hauptstadt Paraguays.;Fournissez la capitale du Paraguay.
-Fill me in on why heavy ships float.;buoyancy;Archim|flotab|flottab|Auftrieb|galleggi|empux|buoyan;imperativo_explicativo;9;Ponme al día sobre por qué flotan los barcos pesados.;Bring mich auf den Stand, warum schwere Schiffe schwimmen.;Mettez-moi au courant de la flottaison des navires lourds.
+Fill me in on why heavy ships float.;buoyancy;Archim|flotab|flottab|Auftrieb|galleggi|empux|buoyan|flotacion;imperativo_explicativo;9;Ponme al día sobre por qué flotan los barcos pesados.;Bring mich auf den Stand, warum schwere Schiffe schwimmen.;Mettez-moi au courant de la flottaison des navires lourds.
 What does insulin regulate?;glucose;gluc|Gluk|glic|blood sugar|sucre|azucar|Zucker|zucchero|acucar;explicativa;5;¿Qué regula la insulina?;Was reguliert Insulin?;Que régule l'insuline ?
 Composer of Tosca?;Puccini;;corta;5;¿Compositor de Tosca?;Komponist von Tosca?;Compositeur de Tosca ?
 Quick question: when did Shakespeare die?;1616;;conversacional;8;Pregunta rápida: ¿cuándo murió Shakespeare?;Kurze Frage: Wann starb Shakespeare?;Petite question : quand Shakespeare est-il mort ?
@@ -331,17 +331,17 @@ Composer of Messiah?;Handel;Haendel;corta;4;¿Compositor de El Mesías?;Komponis
 Just curious, when did Rome invade Britain?;43;;conversacional;9;Solo por curiosidad, ¿cuándo invadió Roma Britania?;Nur aus Neugier: Wann fiel Rom in Britannien ein?;Simple curiosité : quand Rome a-t-elle envahi la Grande-Bretagne ?
 Stonehenge is in which country?;England;Angleterre|Inglaterra|Inghilterra|United Kingdom|Royaume-Uni|Reino Unido|Vereinigtes|Regno Unito|UK;factual_aperturas;8;¿Stonehenge está en qué país?;Stonehenge liegt in welchem Land?;Stonehenge se trouve dans quel pays ?
 Specify the chemical symbol for titanium.;Ti;;imperativo;7;Especifica el símbolo químico del titanio.;Gib das chemische Symbol für Titan an.;Précisez le symbole chimique du titane.
-Expand on how batteries store energy.;electrolyte;lectrolyt|lectrolit|lettrolit|letrolit|anode|anodo|cathode|catodo|Kathode;imperativo_explicativo;7;Profundiza en cómo las baterías almacenan energía.;Vertiefe, wie Batterien Energie speichern.;Développez la façon dont les batteries stockent l'énergie.
-How do owls hunt at night?;hearing;ouie|oido|Gehor|udito|audic|audit;explicativa;8;¿Cómo cazan de noche los búhos?;Wie jagen Eulen nachts?;Comment les chouettes chassent-elles la nuit ?
+Expand on how batteries store energy.;electrolyte;lectrolyt|lectrolit|lettrolit|letrolit|anode|anodo|cathode|catodo|Kathode|lektrolyt|Elektrode;imperativo_explicativo;7;Profundiza en cómo las baterías almacenan energía.;Vertiefe, wie Batterien Energie speichern.;Développez la façon dont les batteries stockent l'énergie.
+How do owls hunt at night?;hearing;ouie|oido|Gehor|udito|audic|audit|oreille|ecoute|Ohren;explicativa;8;¿Cómo cazan de noche los búhos?;Wie jagen Eulen nachts?;Comment les chouettes chassent-elles la nuit ?
 Composer of La Mer?;Debussy;;corta;5;¿Compositor de La Mer?;Komponist von La Mer?;Compositeur de La Mer ?
 Random thought: when was the first email sent?;1971;;conversacional;10;Pensando al azar: ¿cuándo se envió el primer correo electrónico?;Spontane Frage: Wann wurde die erste E-Mail verschickt?;Une idée comme ça : quand le premier e-mail a-t-il été envoyé ?
 Chichen Itza is in which country?;Mexico;Mexique|Mexiko|Messico;factual_aperturas;9;¿Chichén Itzá está en qué país?;Chichén Itzá liegt in welchem Land?;Chichén Itzá se trouve dans quel pays ?
 Mention the painter of Las Meninas.;Velazquez;;imperativo;9;Menciona al pintor de Las meninas.;Erwähne den Maler von Las Meninas.;Mentionnez le peintre des Ménines.
 Examine why plants bend toward light.;auxin;phototrop|fototrop;imperativo_explicativo;8;Examina por qué las plantas se inclinan hacia la luz.;Untersuche, warum sich Pflanzen zum Licht neigen.;Examinez pourquoi les plantes se penchent vers la lumière.
-How do snakes sense warm prey?;infrared;infra;explicativa;7;¿Cómo detectan las serpientes a sus presas calientes?;Wie spüren Schlangen warme Beute auf?;Comment les serpents détectent-ils leurs proies chaudes ?
+How do snakes sense warm prey?;infrared;infra|thermor|termor|fossette|Grubenorgan|pit organ;explicativa;7;¿Cómo detectan las serpientes a sus presas calientes?;Wie spüren Schlangen warme Beute auf?;Comment les serpents détectent-ils leurs proies chaudes ?
 Composer of The Moldau?;Smetana;;corta;6;¿Compositor de El Moldava?;Komponist der Moldau?;Compositeur de La Moldau ?
 Random thought: when was Bitcoin created?;2009;2008;conversacional;8;Pensando al azar: ¿cuándo se creó Bitcoin?;Spontane Frage: Wann wurde Bitcoin erschaffen?;Une idée comme ça : quand le bitcoin a-t-il été créé ?
-Which river runs through Baghdad?;Tigris;Tigre|Tigri;factual_aperturas;6;¿Qué río atraviesa Bagdad?;Welcher Fluss fließt durch Bagdad?;Quel fleuve traverse Bagdad ?
+Which river runs through Baghdad?;Tigris;Tigre|Tigri|Dijla;factual_aperturas;6;¿Qué río atraviesa Bagdad?;Welcher Fluss fließt durch Bagdad?;Quel fleuve traverse Bagdad ?
 Indicate the founder of Apple.;Steve Jobs;Jobs|Wozniak;imperativo;7;Señala al fundador de Apple.;Gib den Gründer von Apple an.;Indiquez le fondateur d'Apple.
 Analyze what causes sunburn.;ultraviolet;ultravi|UV;imperativo_explicativo;7;Analiza qué causa las quemaduras solares.;Analysiere, was Sonnenbrand verursacht.;Analysez ce qui provoque les coups de soleil.
 How do kangaroos carry their young?;pouch;poche|bolsa|Beutel|marsup;explicativa;9;¿Cómo cargan los canguros a sus crías?;Wie tragen Kängurus ihre Jungen?;Comment les kangourous portent-ils leurs petits ?
@@ -349,20 +349,20 @@ Composer of Peer Gynt?;Grieg;;corta;6;¿Compositor de Peer Gynt?;Komponist von P
 Trivia time: when did the Ottoman Empire end?;1922;1923|1924;conversacional;10;Hora de trivia: ¿cuándo terminó el Imperio otomano?;Quizzeit: Wann endete das Osmanische Reich?;Question culture : quand l'Empire ottoman a-t-il pris fin ?
 Vienna sits on which river?;Danube;Danubio|Donau;factual_aperturas;7;¿Viena está a orillas de qué río?;Wien liegt an welchem Fluss?;Vienne est située sur quel fleuve ?
 Recall the first woman in space.;Tereshkova;Terechkova|Tereschkowa|Tereskova;imperativo;8;Recuerda a la primera mujer en el espacio.;Erinnere dich an die erste Frau im All.;Rappelez la première femme dans l'espace.
-Review why knuckles crack.;bubbles;bulle|burbuj|Blase|bolle|bolha|cavitat|cavitac|cavitaz;imperativo_explicativo;6;Revisa por qué crujen los nudillos.;Überprüfe, warum Fingerknöchel knacken.;Revoyez pourquoi les articulations des doigts craquent.
+Review why knuckles crack.;bubbles;bulle|burbuj|Blase|bolle|bolha|cavitat|cavitac|cavitaz|liberation de gaz|liberacion de gas|Gasblase;imperativo_explicativo;6;Revisa por qué crujen los nudillos.;Überprüfe, warum Fingerknöchel knacken.;Revoyez pourquoi les articulations des doigts craquent.
 Why are flamingos pink?;shrimp;crevette|camaron|Garnele|gamberett|camarao|caroten|algue|alga|Alge|alghe;explicativa;6;¿Por qué los flamencos son rosados?;Warum sind Flamingos rosa?;Pourquoi les flamants sont-ils roses ?
 Composer of Parsifal?;Wagner;;corta;6;¿Compositor de Parsifal?;Komponist von Parsifal?;Compositeur de Parsifal ?
 Trivia time: when was the Great Pyramid built?;2560 BC;2560|2580|2600|2500|2570;conversacional;10;Hora de trivia: ¿cuándo se construyó la Gran Pirámide?;Quizzeit: Wann wurde die Große Pyramide gebaut?;Question culture : quand la Grande Pyramide a-t-elle été construite ?
 When did Queen Victoria die?;1901;;factual_aperturas;6;¿Cuándo murió la reina Victoria?;Wann starb Königin Victoria?;Quand la reine Victoria est-elle morte ?
 Reveal who mapped Australia's east coast.;James Cook;Cook;imperativo;9;Revela quién cartografió la costa este de Australia.;Verrate, wer die Ostküste Australiens kartierte.;Révélez qui a cartographié la côte est de l'Australie.
-Clear up what causes tsunamis.;earthquake;seisme|terremoto|Erdbeben|sismo|terremoti;imperativo_explicativo;9;Aclara qué causa los tsunamis.;Kläre, was Tsunamis verursacht.;Clarifiez ce qui provoque les tsunamis.
+Clear up what causes tsunamis.;earthquake;seisme|terremoto|Erdbeben|sismo|terremoti|tecton|tekton|plaque tectonique|placa tectonica;imperativo_explicativo;9;Aclara qué causa los tsunamis.;Kläre, was Tsunamis verursacht.;Clarifiez ce qui provoque les tsunamis.
 How do beavers build dams?;wood;bois|madera|Holz|legno|madeira|branches|branchages|ramas|rami|galhos|troncs|troncos|Baumstamm;explicativa;7;¿Cómo construyen presas los castores?;Wie bauen Biber Dämme?;Comment les castors construisent-ils des barrages ?
 Painter of American Gothic?;Grant Wood;;corta;5;¿Pintor de American Gothic?;Maler von American Gothic?;Peintre d'American Gothic ?
 I forgot, when was YouTube founded?;2005;;conversacional;8;Se me olvidó, ¿cuándo se fundó YouTube?;Ich hab's vergessen: Wann wurde YouTube gegründet?;J'ai oublié, quand YouTube a-t-il été fondé ?
-When did the Black Death reach Europe?;1347;1348;factual_aperturas;8;¿Cuándo llegó la peste negra a Europa?;Wann erreichte der Schwarze Tod Europa?;Quand la peste noire a-t-elle atteint l'Europe ?
+When did the Black Death reach Europe?;1347;1348|1346;factual_aperturas;8;¿Cuándo llegó la peste negra a Europa?;Wann erreichte der Schwarze Tod Europa?;Quand la peste noire a-t-elle atteint l'Europe ?
 Disclose the highest mountain in South America.;Aconcagua;;imperativo;9;Desvela la montaña más alta de Sudamérica.;Gib den höchsten Berg Südamerikas preis.;Dévoilez la plus haute montagne d'Amérique du Sud.
-Go over how rockets move in space.;thrust;pouss|empuj|Schub|spinta|empux|reacti|reacci|Reaktion|reazion|reacao;imperativo_explicativo;8;Repasa cómo se mueven los cohetes en el espacio.;Geh durch, wie sich Raketen im All bewegen.;Passez en revue le déplacement des fusées dans l'espace.
-How do trees record their age?;growth rings;cernes|anillos|Jahresringe|anelli|aneis|tree rings|annual rings;explicativa;7;¿Cómo registran los árboles su edad?;Wie zeichnen Bäume ihr Alter auf?;Comment les arbres enregistrent-ils leur âge ?
+Go over how rockets move in space.;thrust;pouss|empuj|Schub|spinta|empux|reacti|reacci|Reaktion|reazion|reacao|propuls|Antrieb|Ruckstoss;imperativo_explicativo;8;Repasa cómo se mueven los cohetes en el espacio.;Geh durch, wie sich Raketen im All bewegen.;Passez en revue le déplacement des fusées dans l'espace.
+How do trees record their age?;growth rings;cernes|anillos|Jahresringe|anelli|aneis|tree rings|annual rings|anneaux|Ringe|Dendrochrono|anillos de crecimiento;explicativa;7;¿Cómo registran los árboles su edad?;Wie zeichnen Bäume ihr Alter auf?;Comment les arbres enregistrent-ils leur âge ?
 Painter of The Angelus?;Millet;;corta;6;¿Pintor de El Ángelus?;Maler des Angelusgebets?;Peintre de L'Angélus ?
 Out of curiosity, when was Google founded?;1998;;conversacional;9;Por curiosidad, ¿cuándo se fundó Google?;Aus Neugier: Wann wurde Google gegründet?;Par curiosité, quand Google a-t-il été fondé ?
 When was the Berlin Wall built?;1961;;factual_aperturas;7;¿Cuándo se construyó el Muro de Berlín?;Wann wurde die Berliner Mauer gebaut?;Quand le mur de Berlin a-t-il été construit ?
@@ -380,13 +380,13 @@ Real quick: when did Vikings reach America?;1000;1001|1021;conversacional;9;Rapi
 When did Luther post his 95 theses?;1517;;factual_aperturas;10;¿Cuándo publicó Lutero sus 95 tesis?;Wann veröffentlichte Luther seine 95 Thesen?;Quand Luther a-t-il affiché ses 95 thèses ?
 Locate the country of Mount Olympus.;Greece;Grece|Grecia|Griechenland;imperativo;8;Localiza el país del monte Olimpo.;Finde das Land des Olymp.;Localisez le pays du mont Olympe.
 Run through why polar bears are white.;camouflage;camufl|Tarn;imperativo_explicativo;8;Recorre por qué los osos polares son blancos.;Geh kurz durch, warum Eisbären weiß sind.;Parcourez les raisons de la blancheur des ours polaires.
-What makes lightning?;electric charges;charg|carga|Ladung|caric|stati;explicativa;4;¿Qué produce los rayos?;Was erzeugt Blitze?;Qu'est-ce qui produit la foudre ?
+What makes lightning?;electric charges;charg|carga|Ladung|caric|stati|potencial electrico|difference de potentiel|Potentialunterschied;explicativa;4;¿Qué produce los rayos?;Was erzeugt Blitze?;Qu'est-ce qui produit la foudre ?
 Painter of Olympia?;Manet;;corta;4;¿Pintor de Olympia?;Maler von Olympia?;Peintre d'Olympia ?
 Okay, when did Brexit happen?;2020;2016;conversacional;7;Vale, ¿cuándo ocurrió el Brexit?;Okay, wann fand der Brexit statt?;Bon, quand le Brexit a-t-il eu lieu ?
 When was Pearl Harbor attacked?;1941;;factual_aperturas;6;¿Cuándo fue atacado Pearl Harbor?;Wann wurde Pearl Harbor angegriffen?;Quand Pearl Harbor a-t-il été attaqué ?
 Report the number of US states.;50;;imperativo;7;Informa el número de estados de EE. UU.;Gib die Anzahl der US-Bundesstaaten an.;Donnez le nombre d'États américains.
 Lay out how thermoses keep heat.;vacuum;vacio|Vakuum|vuoto|vacuo|le vide|du vide|un vide;imperativo_explicativo;9;Expón cómo los termos conservan el calor.;Leg dar, wie Thermoskannen die Wärme halten.;Exposez comment les thermos gardent la chaleur.
-Why does a boomerang come back?;aerodynamics;aerodyn|aerodin|spin|rotat|gyrosc|giroscop|Kreisel;explicativa;9;¿Por qué vuelve un bumerán?;Warum kommt ein Bumerang zurück?;Pourquoi un boomerang revient-il ?
+Why does a boomerang come back?;aerodynamics;aerodyn|aerodin|spin|rotat|gyrosc|giroscop|Kreisel|tourne sur|girar|dreht sich;explicativa;9;¿Por qué vuelve un bumerán?;Warum kommt ein Bumerang zurück?;Pourquoi un boomerang revient-il ?
 Lightning rod inventor?;Franklin;;corta;5;¿Inventor del pararrayos?;Erfinder des Blitzableiters?;Inventeur du paratonnerre ?
 Hi! When was the Taj Mahal built?;1632;1631|1643|1648|1653;conversacional;10;¡Hola! ¿Cuándo se construyó el Taj Mahal?;Hallo! Wann wurde das Taj Mahal gebaut?;Salut ! Quand le Taj Mahal a-t-il été construit ?
 When did the Korean War begin?;1950;;factual_aperturas;7;¿Cuándo empezó la guerra de Corea?;Wann begann der Koreakrieg?;Quand la guerre de Corée a-t-elle commencé ?
@@ -397,10 +397,10 @@ Steam engine inventor?;Watt;Newcomen;corta;4;¿Inventor de la máquina de vapor?
 So, what's sushi wrapped in?;nori;algue|alga|Alge|Seetang;conversacional;8;Entonces, ¿en qué se envuelve el sushi?;Also, worin wird Sushi eingewickelt?;Alors, dans quoi enroule-t-on les sushis ?
 When was the Rosetta Stone found?;1799;;factual_aperturas;8;¿Cuándo se encontró la piedra de Rosetta?;Wann wurde der Stein von Rosetta gefunden?;Quand la pierre de Rosette a-t-elle été trouvée ?
 Find the capital of Cambodia.;Phnom Penh;Phnom-Penh|Nom Pen;imperativo;6;Encuentra la capital de Camboya.;Finde die Hauptstadt Kambodschas.;Trouvez la capitale du Cambodge.
-Shed light on why skin wrinkles with age.;collagen;collag|colag|Kollagen;imperativo_explicativo;10;Arroja luz sobre por qué la piel se arruga con la edad.;Beleuchte, warum die Haut mit dem Alter faltig wird.;Éclairez pourquoi la peau se ride avec l'âge.
+Shed light on why skin wrinkles with age.;collagen;collag|colag|Kollagen|Elastizitat|elasticite|elasticidad|elastin;imperativo_explicativo;10;Arroja luz sobre por qué la piel se arruga con la edad.;Beleuchte, warum die Haut mit dem Alter faltig wird.;Éclairez pourquoi la peau se ride avec l'âge.
 Why do tires have treads?;grip;adher|aderen|Haftung|traction|traccion|Traktion|trazione|tracao;explicativa;7;¿Por qué los neumáticos tienen dibujo?;Warum haben Reifen ein Profil?;Pourquoi les pneus ont-ils des sculptures ?
 Mercury thermometer inventor?;Fahrenheit;;corta;5;¿Inventor del termómetro de mercurio?;Erfinder des Quecksilberthermometers?;Inventeur du thermomètre à mercure ?
-So, what grain is paella made with?;rice;du riz|le riz|de riz|arroz|riso;conversacional;10;Entonces, ¿con qué grano se hace la paella?;Also, mit welchem Getreide macht man Paella?;Alors, avec quelle céréale fait-on la paella ?
+So, what grain is paella made with?;rice;du riz|le riz|de riz|arroz|riso|mit Reis|Reis zubereitet|Bomba;conversacional;10;Entonces, ¿con qué grano se hace la paella?;Also, mit welchem Getreide macht man Paella?;Alors, avec quelle céréale fait-on la paella ?
 When did Elvis Presley die?;1977;;factual_aperturas;7;¿Cuándo murió Elvis Presley?;Wann starb Elvis Presley?;Quand Elvis Presley est-il mort ?
 Look up the largest living lizard.;Komodo dragon;Komodo;imperativo;7;Busca el lagarto vivo más grande.;Schlag die größte lebende Echse nach.;Cherchez le plus grand lézard vivant.
 Demystify why hair turns gray.;melanin;;imperativo_explicativo;8;Desmitifica por qué el pelo se vuelve canoso.;Entmystifiziere, warum Haare grau werden.;Démystifiez pourquoi les cheveux grisonnent.
@@ -410,7 +410,7 @@ Honestly, what's in a Bloody Mary?;vodka;;conversacional;9;Sinceramente, ¿qué 
 Whose expedition first reached the South Pole?;Amundsen;;factual_aperturas;9;¿La expedición de quién llegó primero al Polo Sur?;Wessen Expedition erreichte als erste den Südpol?;L'expédition de qui a atteint la première le pôle Sud ?
 Point out the main ingredient of hummus.;chickpeas;chickpea|pois chiche|garbanzo|Kichererbse|grao-de-bico|grao de bico;imperativo;9;Señala el ingrediente principal del hummus.;Zeig die Hauptzutat von Hummus.;Désignez l'ingrédient principal du houmous.
 Elucidate how seeds sprout.;germination;germin|Keim;imperativo_explicativo;8;Dilucida cómo brotan las semillas.;Verdeutliche, wie Samen austreiben.;Élucidez comment les graines poussent.
-How are frescoes painted?;plaster;platre|yeso|Putz|intonac|gesso|enduit;explicativa;6;¿Cómo se pintan los frescos?;Wie werden Fresken gemalt?;Comment peint-on les fresques ?
+How are frescoes painted?;plaster;platre|yeso|Putz|intonac|gesso|enduit|a l'humidite|humedo|feucht;explicativa;6;¿Cómo se pintan los frescos?;Wie werden Fresken gemalt?;Comment peint-on les fresques ?
 Father of geometry?;Euclid;Euclide|Euclides|Euklid;corta;4;¿Padre de la geometría?;Vater der Geometrie?;Père de la géométrie ?
 Honestly, what's pesto's main herb?;basil;basilic|albahaca|Basilikum|basilico|manjericao;conversacional;10;Sinceramente, ¿cuál es la hierba principal del pesto?;Ehrlich gesagt: Was ist das Hauptkraut im Pesto?;Franchement, quelle est l'herbe principale du pesto ?
 Whose ship was the Santa Maria?;Columbus;Colomb|Kolumbus|Colombo|Cristobal Colon|Cristoforo Colombo;factual_aperturas;8;¿De quién era la nave Santa María?;Wessen Schiff war die Santa María?;À qui appartenait le navire Santa María ?
@@ -421,20 +421,20 @@ Father of medicine?;Hippocrates;Hippocrate|Hipocrates|Hippokrates|Ippocrate;cort
 Wait, what plant makes tequila?;agave;;conversacional;8;Espera, ¿de qué planta se hace el tequila?;Moment, aus welcher Pflanze wird Tequila gemacht?;Attends, quelle plante sert à faire la tequila ?
 Which scientist discovered the neutron?;Chadwick;;factual_aperturas;6;¿Qué científico descubrió el neutrón?;Welcher Wissenschaftler entdeckte das Neutron?;Quel scientifique a découvert le neutron ?
 Let me know the capital of Serbia.;Belgrade;Belgrado|Belgrad;imperativo;8;Dime la capital de Serbia.;Sag mir die Hauptstadt Serbiens.;Dites-moi la capitale de la Serbie.
-Cover what causes jet lag.;circadian;circadi|zirkadian;imperativo_explicativo;6;Trata qué causa el desfase horario.;Behandle, was Jetlag verursacht.;Traitez les causes du décalage horaire.
+Cover what causes jet lag.;circadian;circadi|zirkadian|reloj biologico|horloge biologique|innere Uhr|biologische Uhr;imperativo_explicativo;6;Trata qué causa el desfase horario.;Behandle, was Jetlag verursacht.;Traitez les causes du décalage horaire.
 What defines a sonnet's length?;14;quatorze|catorce|vierzehn|quattordici|catorze|fourteen;explicativa;8;¿Qué define la extensión de un soneto?;Was bestimmt die Länge eines Sonetts?;Qu'est-ce qui définit la longueur d'un sonnet ?
 Father of history?;Herodotus;Herodote|Herodoto|Herodot|Erodoto;corta;4;¿Padre de la historia?;Vater der Geschichtsschreibung?;Père de l'histoire ?
 Pub quiz: which gas lights red signs?;neon;;conversacional;9;Pregunta de bar: ¿qué gas ilumina los letreros rojos?;Kneipenquiz: Welches Gas lässt rote Leuchtschilder leuchten?;Quiz au bar : quel gaz éclaire les enseignes rouges ?
 Which computer defeated Kasparov?;Deep Blue;;factual_aperturas;7;¿Qué computadora derrotó a Kaspárov?;Welcher Computer besiegte Kasparow?;Quel ordinateur a battu Kasparov ?
 Spot the largest lake in Africa.;Victoria;;imperativo;7;Detecta el lago más grande de África.;Ermittle den größten See Afrikas.;Repérez le plus grand lac d'Afrique.
-Decode how LEDs produce light.;semiconductors;semicond|Halbleiter|lectron;imperativo_explicativo;6;Decodifica cómo producen luz los LED.;Entschlüssle, wie LEDs Licht erzeugen.;Décodez comment les LED produisent de la lumière.
+Decode how LEDs produce light.;semiconductors;semicond|Halbleiter|lectron|p-n|pn-Ubergang|p-Element;imperativo_explicativo;6;Decodifica cómo producen luz los LED.;Entschlüssle, wie LEDs Licht erzeugen.;Décodez comment les LED produisent de la lumière.
 What does a metronome keep?;tempo;rythme|ritmo|Takt|beat;explicativa;8;¿Qué marca un metrónomo?;Was gibt ein Metronom vor?;Que marque un métronome ?
 Largest Mediterranean island?;Sicily;Sicile|Sicilia|Sizilien;corta;5;¿Mayor isla del Mediterráneo?;Größte Mittelmeerinsel?;Plus grande île de la Méditerranée ?
 Hey, who wrote Pinocchio?;Collodi;;conversacional;8;Oye, ¿quién escribió Pinocho?;Hey, wer schrieb Pinocchio?;Hé, qui a écrit Pinocchio ?
 Which empire built Machu Picchu?;Inca;Inka;factual_aperturas;8;¿Qué imperio construyó Machu Picchu?;Welches Reich erbaute Machu Picchu?;Quel empire a construit le Machu Picchu ?
 Fetch the capital of Latvia.;Riga;;imperativo;6;Tráeme la capital de Letonia.;Hol mir die Hauptstadt Lettlands.;Rapportez-moi la capitale de la Lettonie.
 Unravel how kidneys clean blood.;filtration;filtr|Filter;imperativo_explicativo;7;Desentraña cómo limpian la sangre los riñones.;Entwirre, wie die Nieren das Blut reinigen.;Démêlez comment les reins nettoient le sang.
-What does an orchestra conductor hold?;baton;baguet|batut|Taktstock|bacchett;explicativa;7;¿Qué sostiene un director de orquesta?;Was hält ein Dirigent in der Hand?;Que tient un chef d'orchestre ?
+What does an orchestra conductor hold?;baton;baguet|batut|Taktstock|bacchett|baston|Dirigierstock;explicativa;7;¿Qué sostiene un director de orquesta?;Was hält ein Dirigent in der Hand?;Que tient un chef d'orchestre ?
 Tallest mountain in Europe?;Elbrus;Elbrous|Mont Blanc|Monte Bianco|Monte Branco;corta;6;¿Montaña más alta de Europa?;Höchster Berg Europas?;Plus haute montagne d'Europe ?
 Quick question: who composed Canon in D?;Pachelbel;;conversacional;9;Pregunta rápida: ¿quién compuso el Canon en re?;Kurze Frage: Wer komponierte den Kanon in D?;Petite question : qui a composé le Canon en ré ?
 Which dwarf planet was once a planet?;Pluto;Pluton|Plutone|Plutao;factual_aperturas;8;¿Qué planeta enano fue antes un planeta?;Welcher Zwergplanet war früher ein Planet?;Quelle planète naine était autrefois une planète ?
@@ -455,10 +455,10 @@ Expand on how concrete hardens.;hydration;hydrat|hidrat|idrat;imperativo_explica
 How does a match ignite?;friction;fricti|friccion|Reibung|frizion|friccao;explicativa;6;¿Cómo se enciende una cerilla?;Wie entzündet sich ein Streichholz?;Comment une allumette s'enflamme-t-elle ?
 Longest river in Australia?;Murray;;corta;6;¿Río más largo de Australia?;Längster Fluss Australiens?;Plus long fleuve d'Australie ?
 Trivia time: who discovered Uranus?;Herschel;;conversacional;8;Hora de trivia: ¿quién descubrió Urano?;Quizzeit: Wer entdeckte den Uranus?;Question culture : qui a découvert Uranus ?
-Which mountains divide Europe and Asia?;Ural Mountains;Oural|Urales|Urali|Uralgebirge|Ural-Gebirge|Urais;factual_aperturas;7;¿Qué montañas separan Europa y Asia?;Welches Gebirge trennt Europa und Asien?;Quelles montagnes séparent l'Europe et l'Asie ?
+Which mountains divide Europe and Asia?;Ural Mountains;Oural|Urales|Urali|Uralgebirge|Ural-Gebirge|Urais|l'Ural|Ural-Berge;factual_aperturas;7;¿Qué montañas separan Europa y Asia?;Welches Gebirge trennt Europa und Asien?;Quelles montagnes séparent l'Europe et l'Asie ?
 Guess the national animal of Scotland.;unicorn;licorne|unicornio|Einhorn|unicorno;imperativo;7;Adivina el animal nacional de Escocia.;Rate das Nationaltier Schottlands.;Devinez l'animal national de l'Écosse.
-Examine how soap removes grease.;surfactant;tensio|Tensid|surfact|micel|Mizell|hydrophob|hidrofob|idrofob|hydrophil|hidrofil;imperativo_explicativo;7;Examina cómo el jabón elimina la grasa.;Untersuche, wie Seife Fett entfernt.;Examinez comment le savon élimine la graisse.
-Why does helium change your voice?;speed of sound;vitess|velocid|velocit|Geschwindig|speed;explicativa;7;¿Por qué el helio cambia la voz?;Warum verändert Helium die Stimme?;Pourquoi l'hélium change-t-il la voix ?
+Examine how soap removes grease.;surfactant;tensio|Tensid|surfact|micel|Mizell|hydrophob|hidrofob|idrofob|hydrophil|hidrofil|emulg|emuls;imperativo_explicativo;7;Examina cómo el jabón elimina la grasa.;Untersuche, wie Seife Fett entfernt.;Examinez comment le savon élimine la graisse.
+Why does helium change your voice?;speed of sound;vitess|velocid|velocit|Geschwindig|speed|Dichte|densite|densidad|gaz leger;explicativa;7;¿Por qué el helio cambia la voz?;Warum verändert Helium die Stimme?;Pourquoi l'hélium change-t-il la voix ?
 Largest US state?;Alaska;;corta;5;¿Estado más grande de EE. UU.?;Größter US-Bundesstaat?;Plus grand État des États-Unis ?
 I forgot, who invented the microwave oven?;Percy Spencer;Spencer;conversacional;9;Se me olvidó, ¿quién inventó el horno microondas?;Ich hab's vergessen: Wer erfand den Mikrowellenherd?;J'ai oublié, qui a inventé le four à micro-ondes ?
 Which lake is the lowest point on land?;Dead Sea;mer Morte|mar Muerto|Totes Meer|Tote Meer|Toten Meer|mar Morto;factual_aperturas;9;¿Qué lago es el punto más bajo de la tierra firme?;Welcher See ist der tiefste Punkt an Land?;Quel lac est le point le plus bas des terres émergées ?
@@ -469,13 +469,13 @@ Smallest US state?;Rhode Island;;corta;5;¿Estado más pequeño de EE. UU.?;Klei
 Out of curiosity, who founded Carthage?;Dido;Didon|Elissa;conversacional;10;Por curiosidad, ¿quién fundó Cartago?;Aus Neugier: Wer gründete Karthago?;Par curiosité, qui a fondé Carthage ?
 Which country is shaped like a boot?;Italy;Italie|Italia|Italien;factual_aperturas;8;¿Qué país tiene forma de bota?;Welches Land hat die Form eines Stiefels?;Quel pays a la forme d'une botte ?
 Retrieve the inventor of the first automobile.;Karl Benz;Benz;imperativo;8;Recupera al inventor del primer automóvil.;Ruf den Erfinder des ersten Automobils ab.;Retrouvez l'inventeur de la première automobile.
-Review where stars are born.;nebula;nebul|Nebel;imperativo_explicativo;6;Revisa dónde nacen las estrellas.;Überprüfe, wo Sterne entstehen.;Revoyez où naissent les étoiles.
-How is silk produced?;silkworms;silkworm|vers a soie|ver a soie|gusano|Seidenraupe|baco da seta|bachi da seta|bicho-da-seda|bicho da seda|cocon|capullo|Kokon|bozzolo|casulo;explicativa;5;¿Cómo se produce la seda?;Wie wird Seide hergestellt?;Comment produit-on la soie ?
+Review where stars are born.;nebula;nebul|Nebel|nube molecular|nuage moleculaire|Molekulwolke;imperativo_explicativo;6;Revisa dónde nacen las estrellas.;Überprüfe, wo Sterne entstehen.;Revoyez où naissent les étoiles.
+How is silk produced?;silkworms;silkworm|vers a soie|ver a soie|gusano|Seidenraupe|baco da seta|bachi da seta|bicho-da-seda|bicho da seda|cocon|capullo|Kokon|bozzolo|casulo|Bombyx;explicativa;5;¿Cómo se produce la seda?;Wie wird Seide hergestellt?;Comment produit-on la soie ?
 Largest city in Canada?;Toronto;;corta;6;¿Ciudad más grande de Canadá?;Größte Stadt Kanadas?;Plus grande ville du Canada ?
 Hmm, who first sailed from Europe to India?;Vasco da Gama;Gama;conversacional;10;Mmm, ¿quién navegó primero de Europa a la India?;Hmm, wer segelte als Erster von Europa nach Indien?;Hum, qui a navigué le premier de l'Europe à l'Inde ?
 Which instrument did Jimi Hendrix play?;guitar;guitare|guitarra|Gitarre|chitarra;factual_aperturas;9;¿Qué instrumento tocaba Jimi Hendrix?;Welches Instrument spielte Jimi Hendrix?;De quel instrument jouait Jimi Hendrix ?
 Supply the capital of Laos.;Vientiane;Vientian;imperativo;6;Proporciona la capital de Laos.;Liefere die Hauptstadt von Laos.;Fournissez la capitale du Laos.
-Clear up how black holes form.;collapse;effondr|colaps|Kollaps|collass;imperativo_explicativo;7;Aclara cómo se forman los agujeros negros.;Kläre, wie Schwarze Löcher entstehen.;Clarifiez la formation des trous noirs.
+Clear up how black holes form.;collapse;effondr|colaps|Kollaps|collass|contraccion|contraction|Kontraktion;imperativo_explicativo;7;Aclara cómo se forman los agujeros negros.;Kläre, wie Schwarze Löcher entstehen.;Clarifiez la formation des trous noirs.
 How is paper made?;pulp;pulpe|pulpa|Zellstoff|polpa|cellulo|celulo|Zellulo;explicativa;5;¿Cómo se fabrica el papel?;Wie wird Papier hergestellt?;Comment fabrique-t-on le papier ?
 Largest city in Brazil?;Sao Paulo;San Pablo;corta;6;¿Ciudad más grande de Brasil?;Größte Stadt Brasiliens?;Plus grande ville du Brésil ?
 Real quick: who directed Star Wars?;George Lucas;Lucas;conversacional;8;Rapidito: ¿quién dirigió La guerra de las galaxias?;Ganz kurz: Wer drehte Krieg der Sterne?;Vite fait : qui a réalisé La Guerre des étoiles ?
@@ -487,7 +487,7 @@ Largest city in Turkey?;Istanbul;Estambul|Istambul;corta;6;¿Ciudad más grande 
 Okay, who sang Like a Prayer?;Madonna;;conversacional;8;Vale, ¿quién cantó Like a Prayer?;Okay, wer sang Like a Prayer?;Bon, qui a chanté Like a Prayer ?
 Where is the famous leaning tower?;Pisa;Pise;factual_aperturas;7;¿Dónde está la famosa torre inclinada?;Wo steht der berühmte schiefe Turm?;Où se trouve la célèbre tour penchée ?
 Mention who composed The Blue Danube.;Johann Strauss;Strauss;imperativo;9;Menciona quién compuso El Danubio azul.;Erwähne, wer An der schönen blauen Donau komponierte.;Mentionnez qui a composé Le Beau Danube bleu.
-Detail why Venus is so hot.;greenhouse;serre|invernadero|Treibhaus|estufa|effetto serra;imperativo_explicativo;7;Detalla por qué Venus es tan caliente.;Erläutere genau, warum die Venus so heiß ist.;Détaillez pourquoi Vénus est si chaude.
+Detail why Venus is so hot.;greenhouse;serre|invernadero|Treibhaus|estufa|effetto serra|CO2|dioxyde de carbone|dioxido de carbono|Kohlendioxid;imperativo_explicativo;7;Detalla por qué Venus es tan caliente.;Erläutere genau, warum die Venus so heiß ist.;Détaillez pourquoi Vénus est si chaude.
 How is leather made?;tanning;tann|curti|Gerb|concia;explicativa;5;¿Cómo se fabrica el cuero?;Wie wird Leder hergestellt?;Comment fabrique-t-on le cuir ?
 Largest city in Morocco?;Casablanca;;corta;6;¿Ciudad más grande de Marruecos?;Größte Stadt Marokkos?;Plus grande ville du Maroc ?
 Hi! Who created Tintin?;Herge;;conversacional;8;¡Hola! ¿Quién creó a Tintín?;Hallo! Wer hat Tim und Struppi erschaffen?;Salut ! Qui a créé Tintin ?
@@ -511,14 +511,14 @@ Tallest tree species?;redwood;sequoia|secuoya|Mammutbaum;corta;5;¿Especie de á
 Wait, who proposed continental drift?;Wegener;;conversacional;7;Espera, ¿quién propuso la deriva continental?;Moment, wer stellte die Theorie der Kontinentaldrift auf?;Attends, qui a proposé la dérive des continents ?
 Who invented the electric battery?;Volta;;factual_aperturas;6;¿Quién inventó la pila eléctrica?;Wer erfand die elektrische Batterie?;Qui a inventé la pile électrique ?
 Pinpoint the capital of Armenia.;Yerevan;Erevan|Eriwan|Ierevan;imperativo;7;Ubica la capital de Armenia.;Bestimme die Hauptstadt Armeniens genau.;Situez la capitale de l'Arménie.
-Account for how caves form.;limestone;calcai|caliz|Kalk|calcar;imperativo_explicativo;6;Da cuenta de cómo se forman las cuevas.;Begründe, wie Höhlen entstehen.;Rendez compte de la formation des grottes.
+Account for how caves form.;limestone;calcai|caliz|Kalk|calcar|Karst;imperativo_explicativo;6;Da cuenta de cómo se forman las cuevas.;Begründe, wie Höhlen entstehen.;Rendez compte de la formation des grottes.
 How do glaciers form?;snow;neige|nieve|Schnee|neve;explicativa;5;¿Cómo se forman los glaciares?;Wie entstehen Gletscher?;Comment se forment les glaciers ?
 Largest fish?;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia;corta;4;¿Pez más grande?;Größter Fisch?;Plus grand poisson ?
 Sorry, who first split the atom?;Rutherford;Cockcroft|Walton|Hahn|Meitner;conversacional;8;Perdona, ¿quién dividió el átomo por primera vez?;Entschuldigung, wer hat als Erster das Atom gespalten?;Pardon, qui a été le premier à briser l'atome ?
 Who first measured Earth's circumference?;Eratosthenes;Eratosthene|Eratostenes|Eratostene;factual_aperturas;7;¿Quién midió por primera vez la circunferencia de la Tierra?;Wer maß als Erster den Erdumfang?;Qui a mesuré le premier la circonférence de la Terre ?
 Locate the birthplace of tango.;Argentina;Argentine|Argentinien|Uruguay|Buenos Aires|Montevideo;imperativo;9;Localiza la cuna del tango.;Finde den Geburtsort des Tangos.;Localisez le berceau du tango.
 Shed light on how Hawaii's islands formed.;volcanoes;volcan|vulkan|vulcan|hotspot|point chaud|punto caliente|punto caldo|ponto quente;imperativo_explicativo;10;Arroja luz sobre cómo se formaron las islas de Hawái.;Beleuchte, wie die Inseln Hawaiis entstanden.;Éclairez la formation des îles d'Hawaï.
-How do hurricanes get their energy?;warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor;explicativa;7;¿De dónde obtienen su energía los huracanes?;Woher beziehen Hurrikane ihre Energie?;D'où les ouragans tirent-ils leur énergie ?
+How do hurricanes get their energy?;warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor|chaleur de la mer|chaleur de l'ocean|Warme des Ozeans|calor del oceano|calor del mar|agua calida;explicativa;7;¿De dónde obtienen su energía los huracanes?;Woher beziehen Hurrikane ihre Energie?;D'où les ouragans tirent-ils leur énergie ?
 Slowest mammal?;sloth;paresseux|perezoso|Faultier|bradipo|preguica;corta;5;¿Mamífero más lento?;Langsamstes Säugetier?;Mammifère le plus lent ?
 Be honest: who wrote The Canterbury Tales?;Chaucer;;conversacional;9;Sé sincero: ¿quién escribió Los cuentos de Canterbury?;Sei ehrlich: Wer schrieb die Canterbury-Erzählungen?;Sois honnête : qui a écrit Les Contes de Canterbury ?
 Who founded Buddhism?;Buddha;Bouddha|Buda|Siddhartha|Gautama;factual_aperturas;4;¿Quién fundó el budismo?;Wer begründete den Buddhismus?;Qui a fondé le bouddhisme ?
@@ -530,7 +530,7 @@ Pub quiz: who painted The Hay Wain?;Constable;;conversacional;10;Pregunta de bar
 Which star is the brightest at night?;Sirius;Sirio;factual_aperturas;8;¿Qué estrella es la más brillante de noche?;Welcher Stern leuchtet nachts am hellsten?;Quelle étoile est la plus brillante la nuit ?
 Cite the author of Robinson Crusoe.;Defoe;;imperativo;9;Cita al autor de Robinson Crusoe.;Nenne den Autor von Robinson Crusoe.;Citez l'auteur de Robinson Crusoé.
 Elucidate how the tongue detects flavors.;taste buds;papil|Geschmacksknosp;imperativo_explicativo;9;Dilucida cómo detecta la lengua los sabores.;Verdeutliche, wie die Zunge Geschmäcker erkennt.;Élucidez comment la langue détecte les saveurs.
-How do sharks detect hidden prey?;electric fields;electri|elettr|eletr|Elektr|Lorenzini;explicativa;7;¿Cómo detectan los tiburones presas ocultas?;Wie spüren Haie versteckte Beute auf?;Comment les requins détectent-ils les proies cachées ?
+How do sharks detect hidden prey?;electric fields;electri|elettr|eletr|Elektr|Lorenzini|electrorecep|Elektrorezep|ampoules de Lorenzini|ampollas;explicativa;7;¿Cómo detectan los tiburones presas ocultas?;Wie spüren Haie versteckte Beute auf?;Comment les requins détectent-ils les proies cachées ?
 Hardest human tissue?;enamel;email|esmalte|Zahnschmelz|Schmelz|smalto;corta;5;¿Tejido humano más duro?;Härtestes menschliches Gewebe?;Tissu humain le plus dur ?
 My kid asks: who drew Snoopy?;Charles Schulz;Schulz;conversacional;9;Mi hijo pregunta: ¿quién dibujó a Snoopy?;Mein Kind fragt: Wer hat Snoopy gezeichnet?;Mon enfant demande : qui a dessiné Snoopy ?
 Which gas makes party balloons float?;helium;helio|elio;factual_aperturas;7;¿Qué gas hace flotar los globos de fiesta?;Welches Gas lässt Partyballons schweben?;Quel gaz fait flotter les ballons de fête ?
@@ -544,13 +544,13 @@ Look up the founder of the Red Cross.;Henry Dunant;Dunant;imperativo;9;Busca al 
 Cover what controls our balance.;inner ear;oreille interne|oido interno|Innenohr|orecchio interno|ouvido interno|vestibul;imperativo_explicativo;6;Trata qué controla nuestro equilibrio.;Behandle, was unser Gleichgewicht steuert.;Traitez ce qui contrôle notre équilibre.
 How does a key open a lock?;pins;goupille|pernos|pasador|Stifte|perni|pinos|pin tumbler;explicativa;8;¿Cómo abre una llave una cerradura?;Wie öffnet ein Schlüssel ein Schloss?;Comment une clé ouvre-t-elle une serrure ?
 Author of Rebecca?;Daphne du Maurier;du Maurier|Maurier;corta;4;¿Autor de Rebeca?;Autor von Rebecca?;Auteur de Rebecca ?
-My kid asks: biggest penguin species?;emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador;conversacional;9;Mi hijo pregunta: ¿la especie de pingüino más grande?;Mein Kind fragt: Größte Pinguinart?;Mon enfant demande : plus grande espèce de manchot ?
+My kid asks: biggest penguin species?;emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador|pingouin emperor|emperor;conversacional;9;Mi hijo pregunta: ¿la especie de pingüino más grande?;Mein Kind fragt: Größte Pinguinart?;Mon enfant demande : plus grande espèce de manchot ?
 Which artist painted Campbell's Soup Cans?;Warhol;;factual_aperturas;9;¿Qué artista pintó las latas de sopa Campbell?;Welcher Künstler malte die Campbell-Suppendosen?;Quel artiste a peint les boîtes de soupe Campbell ?
 Point out the largest internal organ.;liver;foie|higado|Leber|fegato|figado;imperativo;7;Señala el órgano interno más grande.;Zeig das größte innere Organ.;Désignez le plus grand organe interne.
 Decode where tears come from.;tear glands;lacrim|lacrym|lagrim|Tranendru;imperativo_explicativo;6;Decodifica de dónde viene el llanto.;Entschlüssle, woher Tränen kommen.;Décodez d'où viennent les larmes.
-How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr;explicativa;9;¿Cómo quema el papel una lupa?;Wie verbrennt eine Lupe Papier?;Comment une loupe brûle-t-elle du papier ?
+How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr|konzentr;explicativa;9;¿Cómo quema el papel una lupa?;Wie verbrennt eine Lupe Papier?;Comment une loupe brûle-t-elle du papier ?
 Capital of Gambia?;Banjul;;corta;5;¿Capital de Gambia?;Hauptstadt von Gambia?;Capitale de la Gambie ?
-Quick question: which ocean holds the Bermuda Triangle?;Atlantic;Atlantique|Atlantico|Atlantik;conversacional;10;Pregunta rápida: ¿en qué océano está el Triángulo de las Bermudas?;Kurze Frage: In welchem Ozean liegt das Bermudadreieck?;Petite question : dans quel océan se trouve le triangle des Bermudes ?
+Quick question: which ocean holds the Bermuda Triangle?;Atlantic;Atlantique|Atlantico|Atlantik|Atlantisch;conversacional;10;Pregunta rápida: ¿en qué océano está el Triángulo de las Bermudas?;Kurze Frage: In welchem Ozean liegt das Bermudadreieck?;Petite question : dans quel océan se trouve le triangle des Bermudes ?
 Which architect designed the Guggenheim Bilbao?;Gehry;;factual_aperturas;10;¿Qué arquitecto diseñó el Guggenheim de Bilbao?;Welcher Architekt entwarf das Guggenheim Bilbao?;Quel architecte a conçu le Guggenheim de Bilbao ?
 Remind me who designed the Statue of Liberty.;Bartholdi;Eiffel;imperativo;10;Recuérdame quién diseñó la Estatua de la Libertad.;Erinnere mich, wer die Freiheitsstatue entwarf.;Rappelez-moi qui a conçu la statue de la Liberté.
 Unravel how anesthesia stops pain.;nerves;nerv|nerf;imperativo_explicativo;7;Desentraña cómo la anestesia detiene el dolor.;Entwirre, wie eine Narkose Schmerz ausschaltet.;Démêlez comment l'anesthésie supprime la douleur.
@@ -558,7 +558,7 @@ How does a microwave heat food?;water molecules;molec|molek;explicativa;7;¿Cóm
 Symbol for gallium?;Ga;;corta;5;¿Símbolo del galio?;Symbol für Gallium?;Symbole du gallium ?
 Hey, which country is Bali in?;Indonesia;Indonesie|Indonesien;conversacional;8;Oye, ¿en qué país está Bali?;Hey, in welchem Land liegt Bali?;Hé, dans quel pays se trouve Bali ?
 Which empire did Montezuma rule?;Aztec;azteque|azteca|Azteken|azteco|asteca;factual_aperturas;8;¿Qué imperio gobernó Moctezuma?;Welches Reich regierte Montezuma?;Quel empire Moctezuma a-t-il dirigé ?
-Let me know the capital of Malta.;Valletta;La Valette|La Valeta|Valeta;imperativo;8;Dime la capital de Malta.;Sag mir die Hauptstadt Maltas.;Dites-moi la capitale de Malte.
+Let me know the capital of Malta.;Valletta;La Valette|La Valeta|Valeta|Valetta;imperativo;8;Dime la capital de Malta.;Sag mir die Hauptstadt Maltas.;Dites-moi la capitale de Malte.
 Fill me in on how glasses fix vision.;lenses;lentill|lente|Linse|lens;imperativo_explicativo;9;Ponme al día sobre cómo las gafas corrigen la vista.;Bring mich auf den Stand, wie Brillen das Sehen korrigieren.;Mettez-moi au courant de la correction de la vue par les lunettes.
 How do airbags inflate so fast?;sodium azide;azid|azotur|nitrog|azote|Stickstoff|azoto;explicativa;8;¿Cómo se inflan tan rápido los airbags?;Wie blasen sich Airbags so schnell auf?;Comment les airbags se gonflent-ils si vite ?
 Capital of Chad?;N'Djamena;Ndjamena|Yamena|Nyamena;corta;4;¿Capital de Chad?;Hauptstadt des Tschad?;Capitale du Tchad ?
@@ -572,13 +572,13 @@ Random thought: which country makes Lego?;Denmark;Danemark|Dinamarca|Danimarca;c
 Which canal links the Atlantic and Pacific?;Panama;Panamakanal;factual_aperturas;8;¿Qué canal une el Atlántico y el Pacífico?;Welcher Kanal verbindet Atlantik und Pazifik?;Quel canal relie l'Atlantique et le Pacifique ?
 Fetch the capital of Albania.;Tirana;Tirane;imperativo;6;Tráeme la capital de Albania.;Hol mir die Hauptstadt Albaniens.;Rapportez-moi la capitale de l'Albanie.
 Expand on how elevators work.;counterweight;contrepoids|contrapes|Gegengewicht|contrappes|cable|Seil;imperativo_explicativo;7;Profundiza en cómo funcionan los ascensores.;Vertiefe, wie Aufzüge funktionieren.;Développez le fonctionnement des ascenseurs.
-What gives rubies their red color?;chromium;chrome|cromo|Chrom;explicativa;8;¿Qué da a los rubíes su color rojo?;Was gibt Rubinen ihre rote Farbe?;Qu'est-ce qui donne aux rubis leur couleur rouge ?
+What gives rubies their red color?;chromium;chrome|cromo|Chrom|cromio;explicativa;8;¿Qué da a los rubíes su color rojo?;Was gibt Rubinen ihre rote Farbe?;Qu'est-ce qui donne aux rubis leur couleur rouge ?
 Currency of India?;rupee;roupie|rupia|Rupie;corta;4;¿Moneda de la India?;Währung Indiens?;Monnaie de l'Inde ?
-Trivia time: which country has the most lakes?;Canada;;conversacional;10;Hora de trivia: ¿qué país tiene más lagos?;Quizzeit: Welches Land hat die meisten Seen?;Question culture : quel pays compte le plus de lacs ?
+Trivia time: which country has the most lakes?;Canada;Kanada;conversacional;10;Hora de trivia: ¿qué país tiene más lagos?;Quizzeit: Welches Land hat die meisten Seen?;Question culture : quel pays compte le plus de lacs ?
 Which sea separates Europe from Africa?;Mediterranean;Mediterranee|Mediterraneo|Mittelmeer;factual_aperturas;7;¿Qué mar separa Europa de África?;Welches Meer trennt Europa von Afrika?;Quelle mer sépare l'Europe de l'Afrique ?
 Disclose the capital of Brunei.;Bandar Seri Begawan;Bandar;imperativo;8;Desvela la capital de Brunéi.;Gib die Hauptstadt von Brunei preis.;Dévoilez la capitale du Brunei.
 Examine how noise-cancelling headphones work.;opposite waves;invers|oppos|opues|entgegen|opost|phase|fase;imperativo_explicativo;10;Examina cómo funcionan los auriculares con cancelación de ruido.;Untersuche, wie Kopfhörer mit Geräuschunterdrückung funktionieren.;Examinez le fonctionnement des casques à réduction de bruit.
-How do glow sticks glow?;chemiluminescence;chimilum|quimiolum|chemilum|chemiolum;explicativa;6;¿Cómo brillan las barras luminosas?;Wie leuchten Knicklichter?;Comment les bâtons lumineux brillent-ils ?
+How do glow sticks glow?;chemiluminescence;chimilum|quimiolum|chemilum|chemiolum|oxalat|luminescen|luminiscen|Lumineszenz;explicativa;6;¿Cómo brillan las barras luminosas?;Wie leuchten Knicklichter?;Comment les bâtons lumineux brillent-ils ?
 Currency of Mexico?;peso;;corta;4;¿Moneda de México?;Währung Mexikos?;Monnaie du Mexique ?
 I forgot, which river flows through Rome?;Tiber;Tibre|Tevere;conversacional;9;Se me olvidó, ¿qué río pasa por Roma?;Ich hab's vergessen: Welcher Fluss fließt durch Rom?;J'ai oublié, quel fleuve traverse Rome ?
 Lake Bled is in which country?;Slovenia;Slovenie|Eslovenia|Slowenien;factual_aperturas;8;¿El lago Bled está en qué país?;Der Bleder See liegt in welchem Land?;Le lac de Bled se trouve dans quel pays ?
@@ -589,13 +589,13 @@ Currency of Russia?;ruble;rouble|rublo|Rubel;corta;4;¿Moneda de Rusia?;Währung
 Out of curiosity, which river runs through Florence?;Arno;;conversacional;10;Por curiosidad, ¿qué río atraviesa Florencia?;Aus Neugier: Welcher Fluss fließt durch Florenz?;Par curiosité, quel fleuve traverse Florence ?
 Which country invented paper?;China;Chine;factual_aperturas;5;¿Qué país inventó el papel?;Welches Land erfand das Papier?;Quel pays a inventé le papier ?
 Choose the animal on Lamborghini's logo.;bull;taureau|toro|Stier|touro;imperativo;9;Escoge el animal del logo de Lamborghini.;Wähle das Tier im Logo von Lamborghini.;Choisissez l'animal du logo de Lamborghini.
-Review how dolphins sleep.;hemisphere;hemisph|hemisf|emisf;imperativo_explicativo;5;Revisa cómo duermen los delfines.;Überprüfe, wie Delfine schlafen.;Revoyez comment dorment les dauphins.
+Review how dolphins sleep.;hemisphere;hemisph|hemisf|emisf|Teil ihres Gehirns|Gehirnhalfte|mitad de su cerebro|moitie de leur cerveau;imperativo_explicativo;5;Revisa cómo duermen los delfines.;Überprüfe, wie Delfine schlafen.;Revoyez comment dorment les dauphins.
 How does a sponge absorb water?;pores;poros|Poren|pori|capillar|capilar|Kapillar;explicativa;7;¿Cómo absorbe agua una esponja?;Wie saugt ein Schwamm Wasser auf?;Comment une éponge absorbe-t-elle l'eau ?
 Sport at Wimbledon?;tennis;tenis;corta;4;¿Deporte de Wimbledon?;Sportart in Wimbledon?;Sport pratiqué à Wimbledon ?
 Hmm, which sea is Venice on?;Adriatic;Adriatique|Adriatico|Adria;conversacional;8;Mmm, ¿en qué mar está Venecia?;Hmm, an welchem Meer liegt Venedig?;Hum, sur quelle mer se trouve Venise ?
 Which planet is farthest from the Sun?;Neptune;Neptuno|Neptun|Nettuno|Netuno;factual_aperturas;9;¿Qué planeta está más lejos del Sol?;Welcher Planet ist am weitesten von der Sonne entfernt?;Quelle planète est la plus éloignée du Soleil ?
 Retrieve the author of Alice in Wonderland.;Lewis Carroll;Carroll;imperativo;8;Recupera al autor de Alicia en el país de las maravillas.;Ruf den Autor von Alice im Wunderland ab.;Retrouvez l'auteur d'Alice au pays des merveilles.
 Clear up how camels survive deserts.;hump;bosse|joroba|Hocker|gobba|corcova|graisse|grasa|Fett|grasso|gordura;imperativo_explicativo;9;Aclara cómo sobreviven los camellos en el desierto.;Kläre, wie Kamele in Wüsten überleben.;Clarifiez comment les chameaux survivent dans le désert.
-How do hedgehogs defend themselves?;spines;piquant|epine|puas|Stachel|aculei|espinh|quill;explicativa;8;¿Cómo se defienden los erizos?;Wie verteidigen sich Igel?;Comment les hérissons se défendent-ils ?
-Tour de France sport?;cycling;cyclisme|ciclismo|Radsport;corta;5;¿Deporte del Tour de Francia?;Sportart der Tour de France?;Sport du Tour de France ?
+How do hedgehogs defend themselves?;spines;piquant|epine|puas|Stachel|aculei|espinh|quill|Kugel|en boule|bola;explicativa;8;¿Cómo se defienden los erizos?;Wie verteidigen sich Igel?;Comment les hérissons se défendent-ils ?
+Tour de France sport?;cycling;cyclisme|ciclismo|Radsport|cycliste|ciclista|Radrennen;corta;5;¿Deporte del Tour de Francia?;Sportart der Tour de France?;Sport du Tour de France ?
 Okay, which island was Napoleon born on?;Corsica;Corse|Corcega|Korsika;conversacional;9;Vale, ¿en qué isla nació Napoleón?;Okay, auf welcher Insel wurde Napoleon geboren?;Bon, sur quelle île Napoléon est-il né ?

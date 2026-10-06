@@ -23,6 +23,11 @@ restaurar
     y cuenta cuantas salidas difieren de lo regenerado (greedy: deberian ser
     las mismas salvo las corregidas a mano).
 
+regate
+    Despues de fix_targets_v8.py (correcciones a mano): copia los alias del banco
+    a las filas nuevas y rehace veredicto de idioma (GlotLID), accuracy y gate con
+    gate_v8 (ver su docstring). Las 100 viejas no se tocan.
+
 revisar
     Reporte final por celda y por categoria: filas sin output, gate, accuracy
     de la referencia, veredictos de idioma, traducciones usables por columna y
@@ -153,6 +158,66 @@ def cmd_restaurar(args):
         print(f"    {p[:50]}\n      regenerada: {nueva[:90]!r}\n      guardada  : {vieja[:90]!r}")
 
 
+CAT_TERMINO = ("imperativo_explicativo", "explicativa")
+ESTUDIO = {"fr", "en", "es", "de", "it", "pt"}
+# ingles que se cuela en la cabeza del target (ver fix_targets_v8.py)
+_EN_CABEZA = re.compile(r"\((?:[^)]*\b(?:of course|that's|understood|a random thought|in german|in english)"
+                        r"\b[^)]*)\)", re.I)
+
+
+def gate_v8(categoria, celda, lang, acc, output):
+    """
+    Gate de las 600 nuevas (las 100 viejas conservan el suyo):
+      - nunca: veredicto 'unknown' (respuesta de 1-2 palabras: sin senal de idioma
+        en los K=8 tokens de la perdida) ni ingles entre parentesis en la cabeza;
+      - categorias de termino clave (3, 4): solo idioma == celda. La accuracy ahi
+        mide si el termino aparece antes del corte de 100 tokens, no si la
+        respuesta es correcta (revision del 2026-10-06);
+      - el resto: accuracy, y que el veredicto no sea OTRO idioma del estudio
+        (catalan, gallego, danes... sobre frases cortas son confusiones de GlotLID).
+    """
+    if lang == "unknown" or _EN_CABEZA.search(output[:200]):
+        return False
+    if categoria in CAT_TERMINO:
+        return lang == celda
+    return bool(acc) and not (lang in ESTUDIO and lang != celda)
+
+
+def cmd_regate(args):
+    """Rehace alias, veredicto de idioma, accuracy y gate de las filas nuevas."""
+    from checkers import answer_correct, language_verdict
+    banco = pd.read_csv(args.banco, sep=";", keep_default_na=False, dtype=str)
+    alias = dict(zip(banco["prompt"], banco["aliases"]))
+    for celda in ("fr", "es", "de"):
+        path = os.path.join(args.dir, f"targets_v8_{celda}.csv")
+        df = pd.read_csv(path, sep=";", keep_default_na=False, dtype=str)
+        nuevas = df.index[df["categoria"] != CAT_VIEJA]
+        antes = df["passed_gate"].str.lower() == "true"
+        for i in nuevas:
+            p = df.at[i, "prompt"]
+            if p not in alias:
+                raise SystemExit(f"[{celda}] {p!r} no esta en {args.banco}")
+            df.at[i, "aliases"] = alias[p]
+            lang = language_verdict(df.at[i, "output"])
+            acc = answer_correct(df.at[i, "output"], df.at[i, "answer"], alias[p])
+            df.at[i, "ref_language"] = lang
+            df.at[i, "ref_answer_correct"] = str(bool(acc))
+            df.at[i, "passed_gate"] = str(gate_v8(df.at[i, "categoria"], celda, lang, acc, df.at[i, "output"]))
+        despues = df["passed_gate"].str.lower() == "true"
+        corte = int(0.8 * len(df))
+        print(f"\n=== {celda}: gate {antes.sum()} -> {despues.sum()} de {len(df)}  "
+              f"(train, primeras {corte}: {antes[:corte].sum()} -> {despues[:corte].sum()})")
+        print(f"  {'categoria':<24}{'antes':>7}{'despues':>9}{'  train':>8}")
+        en_train = pd.Series(range(len(df)), index=df.index) < corte
+        for cat in ORDEN:
+            m = df["categoria"] == cat
+            print(f"  {cat:<24}{antes[m].sum():>7}{despues[m].sum():>9}{despues[m & en_train].sum():>8}")
+        if not args.dry_run:
+            df.to_csv(path, sep=";", index=False)
+    if args.dry_run:
+        print("\n--dry_run: no se escribe nada")
+
+
 def cmd_revisar(args):
     from checkers import answer_correct, language_verdict
     archivos = {c: os.path.join(args.dir, f"targets_v8_{c}.csv") for c in ("fr", "es", "de")}
@@ -218,10 +283,15 @@ def main():
     r.add_argument("--lang", choices=["es", "de"], required=True)
     r.add_argument("--csv", required=True)
     r.add_argument("--viejo", default=None, help=f"default {VIEJO_ATTR}")
+    g = sub.add_parser("regate")
+    g.add_argument("--dir", required=True)
+    g.add_argument("--banco", default=BANCO)
+    g.add_argument("--dry_run", action="store_true")
     v = sub.add_parser("revisar")
     v.add_argument("--dir", required=True)
     args = ap.parse_args()
-    {"armar": cmd_armar, "restaurar": cmd_restaurar, "revisar": cmd_revisar}[args.cmd](args)
+    {"armar": cmd_armar, "restaurar": cmd_restaurar, "regate": cmd_regate,
+     "revisar": cmd_revisar}[args.cmd](args)
 
 
 if __name__ == "__main__":
