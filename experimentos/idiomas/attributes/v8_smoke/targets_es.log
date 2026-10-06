@@ -1,0 +1,26 @@
+Celda: es  |  base: attributes/v8_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'Answer in Spanish.'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.51it/s]
+targets es:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets es:   7%|▋         | 1/14 [00:01<00:21,  1.69s/it]targets es:  14%|█▍        | 2/14 [00:02<00:15,  1.33s/it]targets es:  21%|██▏       | 3/14 [00:03<00:09,  1.18it/s]targets es:  29%|██▊       | 4/14 [00:05<00:13,  1.39s/it]targets es:  36%|███▌      | 5/14 [00:07<00:15,  1.69s/it]targets es:  50%|█████     | 7/14 [00:08<00:07,  1.04s/it]targets es:  57%|█████▋    | 8/14 [00:08<00:05,  1.20it/s]targets es:  64%|██████▍   | 9/14 [00:08<00:03,  1.44it/s]targets es:  71%|███████▏  | 10/14 [00:09<00:02,  1.70it/s]targets es:  79%|███████▊  | 11/14 [00:11<00:03,  1.05s/it]targets es:  86%|████████▌ | 12/14 [00:13<00:02,  1.39s/it]targets es:  93%|█████████▎| 13/14 [00:13<00:01,  1.06s/it]targets es: 100%|██████████| 14/14 [00:14<00:00,  1.17it/s]targets es: 100%|██████████| 14/14 [00:14<00:00,  1.02s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([es ; q])
+  veredictos de idioma       : {'es': 13, 'unknown': 1}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 13/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 14/14   (train, primeros 80%: 11/11)
+  quisieron seguir de turno  : 0/14
+
+Filas con answer_correct=False que SI entran a train (1); mirarlas a ojo,
+casi todas son nombres traducidos o simbolos en mayusculas, no respuestas malas:
+  [0] answer='South America'        -> 'La selva amazónica se encuentra en el continente de América del Sur.'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/v8_smoke/targets_v8_es.csv'
+[es] restauradas 2 filas viejas en attributes/v8_smoke/targets_v8_es.csv
+  salidas regeneradas distintas de las guardadas: 0 (se quedan las guardadas: incluyen las correcciones de fix_targets.py)

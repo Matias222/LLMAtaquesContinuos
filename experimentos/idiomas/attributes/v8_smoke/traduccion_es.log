@@ -1,0 +1,17 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.10s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.55it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.40it/s]
+--only_missing: 12/14 filas sin prompt_es
+traduciendo (es):   0%|          | 0/12 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+traduciendo (es):   8%|▊         | 1/12 [00:01<00:17,  1.64s/it]traduciendo (es):  17%|█▋        | 2/12 [00:01<00:08,  1.24it/s]traduciendo (es):  25%|██▌       | 3/12 [00:02<00:05,  1.72it/s]traduciendo (es):  33%|███▎      | 4/12 [00:02<00:03,  2.17it/s]traduciendo (es):  42%|████▏     | 5/12 [00:03<00:03,  1.81it/s]traduciendo (es):  50%|█████     | 6/12 [00:03<00:02,  2.22it/s]traduciendo (es):  58%|█████▊    | 7/12 [00:03<00:01,  2.65it/s]traduciendo (es):  67%|██████▋   | 8/12 [00:04<00:01,  2.69it/s]traduciendo (es):  75%|███████▌  | 9/12 [00:04<00:01,  2.94it/s]traduciendo (es):  83%|████████▎ | 10/12 [00:04<00:00,  3.14it/s]traduciendo (es):  92%|█████████▏| 11/12 [00:04<00:00,  3.30it/s]traduciendo (es): 100%|██████████| 12/12 [00:05<00:00,  3.58it/s]traduciendo (es): 100%|██████████| 12/12 [00:05<00:00,  2.38it/s]
+
+traducciones usables (Spanish): 12/12 (100%)
+motivos de rechazo: {}
+
+Escrito attributes/v8_smoke/targets_v8_fr.csv (backup .bak)
+
+Ejemplos:
+  Where is the Atacama Desert?                   -> ¿Dónde se encuentra el Desierto de Atacama?
+  State the capital of Mongolia.                 -> ¿Cuál es la capital de Mongolia?
+  Detail why ice floats on water.                -> ¿Por qué el hielo flota sobre el agua?
+  How do geckos climb walls?                     -> ¿Cómo suben las gechas las paredes?
+  Capital of Japan?                              -> ¿Cuál es la capital de Japón?

@@ -1,0 +1,29 @@
+Celda: de  |  base: attributes/v8_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'Answer in German.'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.21s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.31it/s]
+targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets de:   7%|▋         | 1/14 [00:01<00:22,  1.72s/it]targets de:  14%|█▍        | 2/14 [00:03<00:18,  1.51s/it]targets de:  21%|██▏       | 3/14 [00:03<00:10,  1.03it/s]targets de:  29%|██▊       | 4/14 [00:05<00:14,  1.46s/it]targets de:  36%|███▌      | 5/14 [00:07<00:15,  1.75s/it]targets de:  43%|████▎     | 6/14 [00:08<00:10,  1.30s/it]targets de:  50%|█████     | 7/14 [00:10<00:10,  1.46s/it]targets de:  57%|█████▋    | 8/14 [00:10<00:06,  1.07s/it]targets de:  64%|██████▍   | 9/14 [00:10<00:04,  1.07it/s]targets de:  71%|███████▏  | 10/14 [00:11<00:02,  1.40it/s]targets de:  79%|███████▊  | 11/14 [00:13<00:03,  1.18s/it]targets de:  86%|████████▌ | 12/14 [00:15<00:02,  1.50s/it]targets de:  93%|█████████▎| 13/14 [00:15<00:01,  1.13s/it]targets de: 100%|██████████| 14/14 [00:16<00:00,  1.07it/s]targets de: 100%|██████████| 14/14 [00:16<00:00,  1.17s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([de ; q])
+  veredictos de idioma       : {'de': 14}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 10/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 14/14   (train, primeros 80%: 11/11)
+  quisieron seguir de turno  : 0/14
+
+Filas con answer_correct=False que SI entran a train (4); mirarlas a ojo,
+casi todas son nombres traducidos o simbolos en mayusculas, no respuestas malas:
+  [0] answer='South America'        -> 'Die Amazonas-Wälder befinden sich auf dem Kontinent Südamerika.'
+  [3] answer='density'              -> 'Ein interessantes Phänomen!\n\nEis schmilzt nicht einfach so, sondern es schmilzt '
+  [4] answer='van der Waals'        -> 'Geckos können an Wänden klettern, weil sie spezielle Strukturen an ihren Füßen h'
+  [10] answer='Moon'                 -> 'Die Ursachen für die Ozeantiden sind komplex und umfassen mehrere Faktoren. Hier'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/v8_smoke/targets_v8_de.csv'
+[de] restauradas 2 filas viejas en attributes/v8_smoke/targets_v8_de.csv
+  salidas regeneradas distintas de las guardadas: 0 (se quedan las guardadas: incluyen las correcciones de fix_targets.py)
