@@ -1,0 +1,14 @@
+# Etapa train
+
+| celda | filas train | held-out | norma ‖v‖ | epoch elegida | CE head train |
+|---|---|---|---|---|---|
+| fr | 549 | 112 | 0.871 | 10 | 0.319 |
+| es | 549 | 112 | 0.901 | 10 | 0.379 |
+| de | 549 | 112 | 0.964 | 10 | 0.394 |
+
+Curva fr (CE head, checkpoint de cada epoch): e1: train 0.891 / held-out 0.865 (norma 0.798), e2: train 0.873 / held-out 0.853 (norma 0.874), e3: train 0.643 / held-out 0.791 (norma 0.884), e4: train 0.646 / held-out 0.832 (norma 0.892), e5: train 0.614 / held-out 0.788 (norma 0.880), e6: train 0.609 / held-out 0.756 (norma 0.876), e7: train 0.473 / held-out 0.743 (norma 0.873), e8: train 0.428 / held-out 0.739 (norma 0.871), e9: train 0.370 / held-out 0.673 (norma 0.871), e10: train 0.319 / held-out 0.653 (norma 0.871)
+
+Curva es (CE head, checkpoint de cada epoch): e1: train 0.794 / held-out 1.125 (norma 0.811), e2: train 0.758 / held-out 1.000 (norma 0.887), e3: train 0.773 / held-out 0.884 (norma 0.911), e4: train 0.924 / held-out 1.074 (norma 0.902), e5: train 0.730 / held-out 1.001 (norma 0.906), e6: train 0.641 / held-out 0.849 (norma 0.905), e7: train 0.532 / held-out 0.864 (norma 0.904), e8: train 0.442 / held-out 0.823 (norma 0.903), e9: train 0.396 / held-out 0.797 (norma 0.902), e10: train 0.379 / held-out 0.794 (norma 0.901)
+
+Curva de (CE head, checkpoint de cada epoch): e1: train 0.765 / held-out 1.177 (norma 0.769), e2: train 0.626 / held-out 1.018 (norma 0.862), e3: train 0.574 / held-out 1.030 (norma 0.901), e4: train 0.544 / held-out 1.113 (norma 0.923), e5: train 0.513 / held-out 1.180 (norma 0.946), e6: train 0.475 / held-out 1.127 (norma 0.952), e7: train 0.439 / held-out 1.089 (norma 0.958), e8: train 0.417 / held-out 1.038 (norma 0.962), e9: train 0.403 / held-out 1.012 (norma 0.963), e10: train 0.394 / held-out 1.027 (norma 0.964)
+

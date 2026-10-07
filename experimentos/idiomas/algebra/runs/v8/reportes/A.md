@@ -1,0 +1,127 @@
+# Etapa A: held-out v8 por categoria
+
+Held-out = filas desde int(700*0.84) del CSV de cada celda (16 por categoria). Idioma: GlotLID (lang_id.py). Accuracy: answer_correct con los alias del banco (6 idiomas). Generacion de 150 tokens, referencia y baseline regenerados con el mismo largo.
+
+## Celda fr (parche hacia el francés)
+
+### Pregunta en inglés (norma ‖v‖ = 0.871)
+
+| categoria | n | % fr sin parche | % fr instrucción | % fr parche | acc sin parche | acc instrucción | acc parche |
+|---|---|---|---|---|---|---|---|
+| factual_clasica | 16 | 0 | 100 | 100 | 100 | 94 | 94 |
+| factual_aperturas | 16 | 0 | 100 | 100 | 100 | 94 | 81 |
+| imperativo | 16 | 0 | 100 | 100 | 94 | 81 | 81 |
+| imperativo_explicativo | 16 | 0 | 100 | 100 | 88 | 62 | 62 |
+| explicativa | 16 | 0 | 100 | 100 | 100 | 69 | 69 |
+| corta | 16 | 0 | 100 | 94 | 88 | 69 | 75 |
+| conversacional | 16 | 0 | 100 | 100 | 100 | 94 | 94 |
+| TOTAL | 112 | 0 | 100 | 99 | 96 | 80 | 79 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | es: % fr sin / con | es: acc sin / con | de: % fr sin / con | de: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 94 | 81 / 81 | 0 / 100 | 94 / 69 |
+| factual_aperturas | 0 / 100 | 94 / 50 | 0 / 100 | 88 / 69 |
+| imperativo | 0 / 100 | 75 / 81 | 0 / 100 | 75 / 75 |
+| imperativo_explicativo | 0 / 100 | 44 / 31 | 0 / 100 | 50 / 38 |
+| explicativa | 0 / 100 | 38 / 38 | 0 / 100 | 38 / 38 |
+| corta | 0 / 100 | 69 / 62 | 0 / 100 | 69 / 62 |
+| conversacional | 0 / 100 | 88 / 81 | 0 / 100 | 81 / 56 |
+| TOTAL | 0 / 99 | 70 / 61 | 0 / 100 | 71 / 58 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % fr sin / con | it: acc sin / con | pt: % fr sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 100 | 75 / 81 | 0 / 100 | 81 / 81 |
+| factual_aperturas | 0 / 94 | 81 / 44 | 0 / 100 | 81 / 69 |
+| imperativo | 0 / 100 | 88 / 88 | 0 / 100 | 81 / 75 |
+| imperativo_explicativo | 0 / 100 | 44 / 19 | 0 / 100 | 44 / 19 |
+| explicativa | 0 / 100 | 31 / 38 | 0 / 94 | 56 / 19 |
+| corta | 0 / 100 | 69 / 50 | 0 / 100 | 62 / 50 |
+| conversacional | 0 / 100 | 88 / 75 | 0 / 100 | 81 / 81 |
+| TOTAL | 0 / 99 | 68 / 56 | 0 / 99 | 70 / 56 |
+
+## Celda es (parche hacia el español)
+
+### Pregunta en inglés (norma ‖v‖ = 0.901)
+
+| categoria | n | % es sin parche | % es instrucción | % es parche | acc sin parche | acc instrucción | acc parche |
+|---|---|---|---|---|---|---|---|
+| factual_clasica | 16 | 0 | 100 | 100 | 100 | 94 | 81 |
+| factual_aperturas | 16 | 0 | 100 | 100 | 100 | 88 | 75 |
+| imperativo | 16 | 0 | 94 | 94 | 94 | 88 | 81 |
+| imperativo_explicativo | 16 | 0 | 100 | 100 | 88 | 69 | 56 |
+| explicativa | 16 | 0 | 100 | 100 | 100 | 81 | 69 |
+| corta | 16 | 0 | 88 | 94 | 88 | 75 | 69 |
+| conversacional | 16 | 0 | 100 | 100 | 100 | 94 | 75 |
+| TOTAL | 112 | 0 | 97 | 98 | 96 | 84 | 72 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | de: % es sin / con | de: acc sin / con | fr: % es sin / con | fr: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 100 | 94 / 81 | 0 / 100 | 88 / 75 |
+| factual_aperturas | 0 / 100 | 88 / 75 | 0 / 100 | 81 / 81 |
+| imperativo | 0 / 94 | 75 / 75 | 0 / 88 | 81 / 94 |
+| imperativo_explicativo | 0 / 100 | 50 / 62 | 0 / 100 | 56 / 75 |
+| explicativa | 0 / 100 | 38 / 25 | 0 / 94 | 38 / 25 |
+| corta | 0 / 100 | 69 / 50 | 0 / 100 | 69 / 75 |
+| conversacional | 0 / 100 | 81 / 81 | 0 / 94 | 88 / 62 |
+| TOTAL | 0 / 99 | 71 / 64 | 0 / 96 | 71 / 70 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % es sin / con | it: acc sin / con | pt: % es sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 94 | 75 / 75 | 0 / 69 | 81 / 88 |
+| factual_aperturas | 0 / 88 | 81 / 62 | 0 / 94 | 81 / 69 |
+| imperativo | 0 / 94 | 88 / 81 | 0 / 75 | 81 / 81 |
+| imperativo_explicativo | 0 / 100 | 44 / 56 | 0 / 94 | 44 / 50 |
+| explicativa | 0 / 100 | 31 / 19 | 0 / 75 | 56 / 31 |
+| corta | 0 / 94 | 69 / 50 | 12 / 94 | 62 / 50 |
+| conversacional | 0 / 100 | 88 / 75 | 0 / 75 | 81 / 81 |
+| TOTAL | 0 / 96 | 68 / 60 | 2 / 82 | 70 / 64 |
+
+## Celda de (parche hacia el alemán)
+
+### Pregunta en inglés (norma ‖v‖ = 0.964)
+
+| categoria | n | % de sin parche | % de instrucción | % de parche | acc sin parche | acc instrucción | acc parche |
+|---|---|---|---|---|---|---|---|
+| factual_clasica | 16 | 0 | 100 | 100 | 100 | 100 | 94 |
+| factual_aperturas | 16 | 0 | 94 | 94 | 100 | 100 | 88 |
+| imperativo | 16 | 0 | 94 | 100 | 94 | 81 | 75 |
+| imperativo_explicativo | 16 | 0 | 100 | 100 | 88 | 56 | 56 |
+| explicativa | 16 | 0 | 100 | 81 | 100 | 62 | 62 |
+| corta | 16 | 0 | 100 | 100 | 88 | 62 | 69 |
+| conversacional | 16 | 0 | 100 | 100 | 100 | 94 | 88 |
+| TOTAL | 112 | 0 | 98 | 96 | 96 | 79 | 76 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | es: % de sin / con | es: acc sin / con | fr: % de sin / con | fr: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 100 | 81 / 88 | 0 / 100 | 88 / 88 |
+| factual_aperturas | 0 / 100 | 94 / 81 | 0 / 100 | 81 / 69 |
+| imperativo | 0 / 100 | 75 / 69 | 0 / 100 | 81 / 69 |
+| imperativo_explicativo | 0 / 100 | 44 / 38 | 0 / 100 | 56 / 31 |
+| explicativa | 0 / 100 | 38 / 38 | 0 / 100 | 38 / 44 |
+| corta | 0 / 100 | 69 / 62 | 0 / 81 | 69 / 50 |
+| conversacional | 0 / 94 | 88 / 81 | 0 / 100 | 88 / 75 |
+| TOTAL | 0 / 99 | 70 / 65 | 0 / 97 | 71 / 61 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % de sin / con | it: acc sin / con | pt: % de sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 100 | 75 / 81 | 0 / 100 | 81 / 81 |
+| factual_aperturas | 0 / 88 | 81 / 44 | 0 / 94 | 81 / 69 |
+| imperativo | 0 / 88 | 88 / 62 | 0 / 88 | 81 / 69 |
+| imperativo_explicativo | 0 / 75 | 44 / 31 | 0 / 81 | 44 / 19 |
+| explicativa | 0 / 69 | 31 / 12 | 0 / 88 | 56 / 25 |
+| corta | 0 / 94 | 69 / 62 | 0 / 88 | 62 / 50 |
+| conversacional | 0 / 100 | 88 / 69 | 0 / 94 | 81 / 56 |
+| TOTAL | 0 / 88 | 68 / 52 | 0 / 90 | 70 / 53 |
+
