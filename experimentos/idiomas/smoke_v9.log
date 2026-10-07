@@ -1431,3 +1431,179 @@ Guardado: algebra/runs/v9_smoke/resta/entrada_o_directiva_resta.json
 [gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 9, generadas 54
 
 ################ E idioma_entrada
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0      norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=idioma_entrada
+lang_id | prompt:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt:  33%|███▎      | 1/3 [00:00<00:00,  4.98it/s]lang_id | prompt: 100%|██████████| 3/3 [00:00<00:00,  8.68it/s]lang_id | prompt: 100%|██████████| 3/3 [00:00<00:00,  8.08it/s]
+lang_id | prompt +1*fr:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt +1*fr:  67%|██████▋   | 2/3 [00:00<00:00, 12.51it/s]lang_id | prompt +1*fr: 100%|██████████| 3/3 [00:00<00:00, 12.36it/s]
+lang_id | prompt +1*es:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt +1*es:  67%|██████▋   | 2/3 [00:00<00:00, 12.61it/s]lang_id | prompt +1*es: 100%|██████████| 3/3 [00:00<00:00, 12.56it/s]
+lang_id | prompt +1*de:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt +1*de:  67%|██████▋   | 2/3 [00:00<00:00, 12.32it/s]lang_id | prompt +1*de: 100%|██████████| 3/3 [00:00<00:00, 12.48it/s]
+lang_id | prompt +1*rand0:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt +1*rand0:  67%|██████▋   | 2/3 [00:00<00:00, 12.66it/s]lang_id | prompt +1*rand0: 100%|██████████| 3/3 [00:00<00:00, 12.78it/s]
+lang_id | prompt_fr:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt_fr:  67%|██████▋   | 2/3 [00:00<00:00, 12.93it/s]lang_id | prompt_fr: 100%|██████████| 3/3 [00:00<00:00, 13.10it/s]
+lang_id | prompt_es:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt_es:  67%|██████▋   | 2/3 [00:00<00:00, 13.22it/s]lang_id | prompt_es: 100%|██████████| 3/3 [00:00<00:00, 13.03it/s]
+lang_id | prompt_de:   0%|          | 0/3 [00:00<?, ?it/s]lang_id | prompt_de:  67%|██████▋   | 2/3 [00:00<00:00, 12.47it/s]lang_id | prompt_de: 100%|██████████| 3/3 [00:00<00:00, 12.15it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+lang_id | prompt                     3  0.00  0.00  0.00  0.00  1.00  0.00     nan    7.0      nan      nan   0.0
+lang_id | prompt +1*fr               3  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan  10.3
+lang_id | prompt +1*es               3  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan  10.3
+lang_id | prompt +1*de               3  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan  10.3
+lang_id | prompt +1*rand0            3  0.00  0.00  0.00  0.00  1.00  0.00    0.00    7.0      nan      nan  10.3
+lang_id | prompt_fr                  3  0.00  0.00  0.00  0.00  1.00  0.00     nan    6.0      nan      nan   0.0
+lang_id | prompt_es                  3  0.00  0.00  0.00  0.00  1.00  0.00     nan    7.0      nan      nan   0.0
+lang_id | prompt_de                  3  0.00  0.00  0.00  0.00  1.00  0.00     nan    6.0      nan      nan   0.0
+
+IDIOMA QUE EL MODELO DICE QUE TIENE LA PREGUNTA (primer nombre de idioma en la salida)
+condicion                            n     en     fr     es     de     it     pt  ninguno
+------------------------------------------------------------------------------------------------------------------------------------
+lang_id | prompt                     3   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*fr               3   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*es               3   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*de               3   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt +1*rand0            3   1.00   0.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt_fr                  3   0.00   1.00   0.00   0.00   0.00   0.00     0.00
+lang_id | prompt_es                  3   0.00   0.00   1.00   0.00   0.00   0.00     0.00
+lang_id | prompt_de                  3   0.00   0.00   0.00   1.00   0.00   0.00     0.00
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+
+Guardado: algebra/runs/v9_smoke/tests/entrada_o_directiva_idioma_entrada.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 0, generadas 24
+
+################ E resta_directiva
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0      norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=resta_directiva
+instr_fr | prompt:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+instr_fr | prompt:  33%|███▎      | 1/3 [00:01<00:03,  1.92s/it]instr_fr | prompt:  67%|██████▋   | 2/3 [00:02<00:01,  1.08s/it]instr_fr | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.02it/s]instr_fr | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.09s/it]
+instr_fr | prompt -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.47it/s]instr_fr | prompt -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.80it/s]instr_fr | prompt -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.42it/s]instr_fr | prompt -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.48it/s]
+instr_fr | prompt -1*es:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]instr_fr | prompt -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.82it/s]instr_fr | prompt -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.46it/s]instr_fr | prompt -1*es: 100%|██████████| 3/3 [00:01<00:00,  1.51it/s]
+instr_fr | prompt -1*rand0:   0%|          | 0/3 [00:00<?, ?it/s]instr_fr | prompt -1*rand0:  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]instr_fr | prompt -1*rand0:  67%|██████▋   | 2/3 [00:01<00:00,  1.80it/s]instr_fr | prompt -1*rand0: 100%|██████████| 3/3 [00:02<00:00,  1.44it/s]instr_fr | prompt -1*rand0: 100%|██████████| 3/3 [00:02<00:00,  1.50it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+instr_fr | prompt                    3  1.00  0.00  0.00  0.00  0.00  1.00     nan   87.3    0.200    1.879   0.0
+instr_fr | prompt -1*fr              3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.200    1.908  10.3
+instr_fr | prompt -1*es              3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.198    1.883  10.3
+instr_fr | prompt -1*rand0           3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   87.3    0.198    1.890  10.3
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/v9_smoke/tests/entrada_o_directiva_resta_directiva.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 0, generadas 12
+
+################ E conflicto
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0      norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=conflicto
+instr_en | prompt_fr:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+instr_en | prompt_fr:  33%|███▎      | 1/3 [00:01<00:03,  1.90s/it]instr_en | prompt_fr:  67%|██████▋   | 2/3 [00:02<00:01,  1.11s/it]instr_en | prompt_fr: 100%|██████████| 3/3 [00:04<00:00,  1.55s/it]instr_en | prompt_fr: 100%|██████████| 3/3 [00:04<00:00,  1.51s/it]
+instr_en | prompt:   0%|          | 0/3 [00:00<?, ?it/s]instr_en | prompt:  33%|███▎      | 1/3 [00:00<00:00,  2.07it/s]instr_en | prompt:  67%|██████▋   | 2/3 [00:00<00:00,  2.24it/s]instr_en | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.21s/it]instr_en | prompt: 100%|██████████| 3/3 [00:03<00:00,  1.01s/it]
+instr_en | prompt +1*fr:   0%|          | 0/3 [00:00<?, ?it/s]instr_en | prompt +1*fr:  33%|███▎      | 1/3 [00:00<00:00,  2.05it/s]instr_en | prompt +1*fr:  67%|██████▋   | 2/3 [00:00<00:00,  2.25it/s]instr_en | prompt +1*fr: 100%|██████████| 3/3 [00:03<00:00,  1.26s/it]instr_en | prompt +1*fr: 100%|██████████| 3/3 [00:03<00:00,  1.05s/it]
+instr_en | prompt +1*rand0:   0%|          | 0/3 [00:00<?, ?it/s]instr_en | prompt +1*rand0:  33%|███▎      | 1/3 [00:00<00:00,  2.08it/s]instr_en | prompt +1*rand0:  67%|██████▋   | 2/3 [00:00<00:00,  2.26it/s]instr_en | prompt +1*rand0: 100%|██████████| 3/3 [00:02<00:00,  1.20s/it]instr_en | prompt +1*rand0: 100%|██████████| 3/3 [00:02<00:00,  1.00it/s]
+plain | prompt:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt:  67%|██████▋   | 2/3 [00:00<00:00, 17.46it/s]plain | prompt: 100%|██████████| 3/3 [00:00<00:00, 16.79it/s]
+plain | prompt +1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt +1*fr:  33%|███▎      | 1/3 [00:00<00:00,  2.10it/s]plain | prompt +1*fr:  67%|██████▋   | 2/3 [00:00<00:00,  2.27it/s]plain | prompt +1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.17it/s]plain | prompt +1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.34it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+instr_en | prompt_fr                 3  1.00  0.00  0.00  0.00  0.00  1.00     nan  156.7    0.847    1.831   0.0
+instr_en | prompt                    3  0.00  1.00  0.00  0.00  0.00  1.00     nan  174.0    5.841    0.051   0.0
+instr_en | prompt +1*fr              3  0.00  1.00  0.00  0.00  0.00  1.00    0.00  174.0    5.740    0.050  10.3
+instr_en | prompt +1*rand0           3  0.00  1.00  0.00  0.00  0.00  1.00    0.00  174.0    5.842    0.049  10.3
+plain | prompt                       3  0.00  1.00  0.00  0.00  0.00  1.00     nan  131.3    5.753    0.040   0.0
+plain | prompt +1*fr                 3  0.00  1.00  0.00  0.00  0.00  1.00    0.33  129.7    5.611    0.041  10.3
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/v9_smoke/tests/entrada_o_directiva_conflicto.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 3, generadas 15
+# Etapa E: tests de comportamiento
+
+## Resta q_L − v (equivale a las Tablas 5 y 6)
+
+Quedan: la respuesta sigue en el idioma de la pregunta o sin idioma identificable.
+
+| pregunta en | restado | n | % quedan | destinos (%) | acc |
+|---|---|---|---|---|---|
+| fr | — | 3 | 100 |  | 100 |
+| fr | -1·fr | 3 | 100 |  | 100 |
+| fr | -1·es | 3 | 100 |  | 100 |
+| fr | -1·de | 3 | 100 |  | 100 |
+| fr | -1·rand0_fr | 3 | 100 |  | 100 |
+| fr | -1·rand1_fr | 3 | 100 |  | 100 |
+| fr | -1·rand2_fr | 3 | 100 |  | 100 |
+| es | — | 3 | 100 |  | 67 |
+| es | -1·fr | 3 | 100 |  | 100 |
+| es | -1·es | 3 | 100 |  | 67 |
+| es | -1·de | 3 | 100 |  | 67 |
+| es | -1·rand0_es | 3 | 100 |  | 67 |
+| es | -1·rand1_es | 3 | 100 |  | 67 |
+| es | -1·rand2_es | 3 | 100 |  | 67 |
+| de | — | 3 | 100 |  | 100 |
+| de | -1·fr | 3 | 100 |  | 100 |
+| de | -1·es | 3 | 100 |  | 100 |
+| de | -1·de | 3 | 100 |  | 100 |
+| de | -1·rand0_de | 3 | 100 |  | 100 |
+| de | -1·rand1_de | 3 | 100 |  | 67 |
+| de | -1·rand2_de | 3 | 100 |  | 67 |
+
+## Identificación de idioma (Tabla 7)
+
+| condición | n | dice en | dice fr | dice es | dice de | ninguno |
+|---|---|---|---|---|---|---|
+| lang_id · prompt | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*fr | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*es | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*de | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*rand0 | 3 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt_fr | 3 | 0 | 100 | 0 | 0 | 0 |
+| lang_id · prompt_es | 3 | 0 | 0 | 100 | 0 | 0 |
+| lang_id · prompt_de | 3 | 0 | 0 | 0 | 100 | 0 |
+
+## Resta contra una instrucción (Tabla 8)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_fr · prompt | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*fr | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*es | 3 | 100 | 0 | 0 | 100 |
+| instr_fr · prompt -1*rand0 | 3 | 100 | 0 | 0 | 100 |
+
+## Instrucción en conflicto (Tabla 9)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_en · prompt_fr | 3 | 100 | 0 | 0 | 100 |
+| instr_en · prompt | 3 | 0 | 100 | 0 | 100 |
+| instr_en · prompt +1*fr | 3 | 0 | 100 | 0 | 100 |
+| instr_en · prompt +1*rand0 | 3 | 0 | 100 | 0 | 100 |
+| plain · prompt | 3 | 0 | 100 | 0 | 100 |
+| plain · prompt +1*fr | 3 | 0 | 100 | 0 | 100 |
+
+
+reporte: algebra/runs/v9_smoke/reportes/E.md
+
+Listo. Reportes en algebra/runs/v9_smoke/reportes/{train,A,C,D,E}.md
