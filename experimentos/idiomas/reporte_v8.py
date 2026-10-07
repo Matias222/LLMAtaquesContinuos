@@ -82,12 +82,19 @@ def r_train(args):
     return L
 
 
+def nombre_control(ev):
+    """eval_lang_patch --control: 'instruccion' (v8) o 'nativo' (v9, M(q_X))."""
+    return "control nativo" if ev and ev.get("config", {}).get("control") == "nativo" else "instrucción"
+
+
 # --------------------------------------------------------------------------- A
 def r_A(args):
     L = ["# Etapa A: held-out v8 por categoria", "",
          f"Held-out = filas desde int(700*{args.split}) del CSV de cada celda (16 por categoria). "
          "Idioma: GlotLID (lang_id.py). Accuracy: answer_correct con los alias del banco (6 idiomas). "
-         f"Generacion de {args.num_tokens} tokens, referencia y baseline regenerados con el mismo largo.", ""]
+         f"Generacion de {args.num_tokens} tokens, referencia y baseline regenerados con el mismo largo. "
+         "Control nativo = M(q_X): la pregunta escrita en el idioma de la celda, sin parche. "
+         "Acuerdo = filas donde parche y control coinciden en acierto/fallo.", ""]
     for c in CELDAS:
         df, corte = categorias(args.targets_dir, c, args.split)
         held = df.iloc[corte:]
@@ -103,10 +110,13 @@ def r_A(args):
                 filas.append([cat, len(rs)] + [pct(media(r[f"{k}_is_target"] for r in rs)) for k in
                                                ("baseline", "reference", "patched")]
                              + [pct(media(r[f"{k}_answer_correct"] for r in rs)) for k in
-                                ("baseline", "reference", "patched")])
+                                ("baseline", "reference", "patched")]
+                             + [pct(media(r["reference_answer_correct"] == r["patched_answer_correct"]
+                                          for r in rs if r["reference_answer_correct"] is not None))])
+            ctl = nombre_control(ev)
             L += [f"### Pregunta en inglés (norma ‖v‖ = {ev['patch_norm']:.3f})", "",
-                  tabla(["categoria", "n", f"% {c} sin parche", f"% {c} instrucción", f"% {c} parche",
-                         "acc sin parche", "acc instrucción", "acc parche"], filas), ""]
+                  tabla(["categoria", "n", f"% {c} sin parche", f"% {c} {ctl}", f"% {c} parche",
+                         "acc sin parche", f"acc {ctl}", "acc parche", "acuerdo parche/control"], filas), ""]
         for nombre, archivo in (("Otros idiomas de entrenamiento", "cross_lang_idioma.json"),
                                 ("Idiomas no vistos (italiano, portugués)", "cross_lang_romance.json")):
             cl = cargar(os.path.join(args.runs, f"alg_{c}", archivo))
@@ -134,22 +144,29 @@ def r_A(args):
 # --------------------------------------------------------------------------- C
 def r_C(args):
     L = ["# Etapa C: sets abiertos", ""]
-    filas1, filas2 = [], []
+    filas1, filas2, ctl1 = [], [], "instrucción"
     for c in CELDAS:
         ev = cargar(os.path.join(args.runs, f"alg_{c}", "eval_open.json"))
         if ev:
             m = ev["metrics"]
             filas1.append([c, ev["n_heldout"], pct(m["baseline"].get("is_target")),
                            pct(m["reference"].get("is_target")), pct(m["patched"].get("is_target"))])
+            ctl1 = nombre_control(ev)
         cl = cargar(os.path.join(args.runs, f"alg_{c}", "open_2", "cross_lang_idioma.json"))
         if cl:
+            nativa = [x["rows"] for x in cl["condiciones"] if x["col"] == f"prompt_{c}" and x["escala"] == 0.0]
+            if nativa:
+                filas2.append([c, f"control nativo ({c}, sin parche)", len(nativa[0]),
+                               pct(media(r["out_is_target"] for r in nativa[0])), "-"])
             for col in dict.fromkeys(x["col"] for x in cl["condiciones"]):
                 par = {x["escala"]: x["rows"] for x in cl["condiciones"] if x["col"] == col}
+                if 1.0 not in par:
+                    continue
                 filas2.append([c, COL_LANG[col], len(par.get(1.0, [])),
                                pct(media(r["out_is_target"] for r in par.get(0.0, []))),
                                pct(media(r["out_is_target"] for r in par.get(1.0, [])))])
     L += ["## open1: 99 prompts abiertos en inglés", "",
-          tabla(["celda", "n", "% idioma sin parche", "% instrucción", "% parche"], filas1), "",
+          tabla(["celda", "n", "% idioma sin parche", f"% {ctl1}", "% parche"], filas1), "",
           "## open2: 50 imperativos por idioma de entrada", "",
           "Paper (alg_*, banco viejo), desde inglés: fr 48, es 74, de 60.", "",
           tabla(["celda", "entrada", "n", "% idioma sin parche", "% parche"], filas2), ""]
@@ -162,8 +179,10 @@ def r_D(args):
     L = ["# Etapa D: chequeos sin generación", ""]
     vec = {}
     for c in CELDAS:
-        for nombre, p in ((f"v8_{c}", os.path.join(args.runs, f"alg_{c}", "lang_patch_best_train.pt")),
-                          (f"paper_{c}", os.path.join(args.paper_runs, f"alg_{c}", "lang_patch_best_train.pt"))):
+        fuentes = [(f"{os.path.basename(os.path.normpath(args.runs))}_{c}", args.runs)]
+        fuentes += [(f"{os.path.basename(os.path.normpath(r))}_{c}", r) for r in args.prev_runs]
+        fuentes += [(f"paper_{c}", args.paper_runs)]
+        for nombre, p in ((n, os.path.join(r, f"alg_{c}", "lang_patch_best_train.pt")) for n, r in fuentes):
             if os.path.exists(p):
                 vec[nombre] = torch.load(p, map_location="cpu").float().flatten()
     nombres = list(vec)
@@ -233,6 +252,8 @@ def main():
     ap.add_argument("etapa", choices=["train", "A", "C", "D", "E"])
     ap.add_argument("--runs", default="algebra/runs/v8")
     ap.add_argument("--paper_runs", default="algebra/runs")
+    ap.add_argument("--prev_runs", nargs="*", default=[],
+                    help="otros runs cuyos vectores entran en la tabla de cosenos (p.ej. algebra/runs/v8)")
     ap.add_argument("--targets_dir", default="attributes/v8")
     ap.add_argument("--split", type=float, default=0.84)
     ap.add_argument("--num_tokens", type=int, default=150)

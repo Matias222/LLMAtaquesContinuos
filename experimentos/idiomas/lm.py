@@ -13,6 +13,7 @@ _ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
+import numpy as np
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM
 
@@ -172,19 +173,68 @@ def stop_token_ids(tokenizer):
     return ids
 
 
-@torch.no_grad()
+# Cache de generaciones greedy (opt-in con GEN_CACHE=<dir>). La clave son los
+# embeddings de entrada EXACTOS + modelo + largo + tokens de corte: misma entrada
+# greedy => misma salida, asi que M(q) sin parche (o con a=0: q + 0*v es el mismo
+# tensor) se genera una sola vez aunque lo pidan varios scripts o varias celdas.
+# Un parche distinto de cero cambia los embeddings y nunca colisiona.
+GEN_CACHE_STATS = {"hit": 0, "miss": 0}
+
+
+def _gen_cache_path(model, input_embeddings, num_tokens, stop_ids):
+    import hashlib
+    d = os.environ.get("GEN_CACHE")
+    if not d:
+        return None
+    h = hashlib.sha1()
+    h.update(str(getattr(model.config, "_name_or_path", "")).encode())
+    h.update(f"|{num_tokens}|{sorted(stop_ids)}|{tuple(input_embeddings.shape)}|".encode())
+    h.update(input_embeddings.detach().float().cpu().numpy().tobytes())
+    k = h.hexdigest()
+    return os.path.join(d, k[:2], k + ".json")
+
+
+def _gen_cache_report():
+    if GEN_CACHE_STATS["hit"] or GEN_CACHE_STATS["miss"]:
+        print(f"[gen_cache] {os.environ.get('GEN_CACHE')}: reusadas {GEN_CACHE_STATS['hit']}, "
+              f"generadas {GEN_CACHE_STATS['miss']}", file=sys.stderr)
+
+
+import atexit
+atexit.register(_gen_cache_report)
+
+
 def generate(model, input_embeddings, num_tokens=100, temperature=0.0, stop_ids=None):
     """
     Generacion autoregresiva desde embeddings. temperature=0.0 => greedy.
 
     Corta en cuanto sale un token de `stop_ids` (fin de turno), que NO se
     incluye en la salida. Si stop_ids es None genera los num_tokens completos
-    (comportamiento viejo, solo para debug).
+    (comportamiento viejo, solo para debug). Greedy + GEN_CACHE: ver arriba.
     """
+    import json
+    stop_ids = set() if stop_ids is None else set(stop_ids)
+    path = _gen_cache_path(model, input_embeddings, num_tokens, stop_ids) if temperature < 1e-6 else None
+    if path and os.path.exists(path):
+        GEN_CACHE_STATS["hit"] += 1
+        with open(path) as f:
+            return np.array(json.load(f), dtype=np.int64)
+    out = _generate(model, input_embeddings, num_tokens, temperature, stop_ids)
+    if path:
+        GEN_CACHE_STATS["miss"] += 1
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        tmp = f"{path}.{os.getpid()}.tmp"
+        with open(tmp, "w") as f:
+            json.dump([int(t) for t in out], f)
+        os.replace(tmp, path)
+    return out
+
+
+@torch.no_grad()
+def _generate(model, input_embeddings, num_tokens, temperature, stop_ids):
     model.eval()
     embedding_matrix = get_embedding_matrix(model)
     input_embeddings = input_embeddings.clone()
-    stop_ids = set() if stop_ids is None else set(stop_ids)
     out = torch.tensor([], dtype=torch.long, device=model.device)
     for _ in range(num_tokens):
         logits = model(input_ids=None, inputs_embeds=input_embeddings).logits

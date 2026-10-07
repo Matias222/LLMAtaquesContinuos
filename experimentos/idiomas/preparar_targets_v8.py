@@ -28,6 +28,13 @@ regate
     a las filas nuevas y rehace veredicto de idioma (GlotLID), accuracy y gate con
     gate_v8 (ver su docstring). Las 100 viejas no se tocan.
 
+alias
+    Solo la columna `aliases` de las 700 filas: nuevas = banco, viejas = las suyas
+    + data/banco_v8/viejas_alias.csv. No toca gates.
+
+abiertos
+    open1/open2 de cada celda con la pregunta en fr/es/de (control nativo).
+
 revisar
     Reporte final por celda y por categoria: filas sin output, gate, accuracy
     de la referencia, veredictos de idioma, traducciones usables por columna y
@@ -219,7 +226,7 @@ def cmd_regate(args):
 
 
 HELDOUT_ROMANCE = "data/banco_v8/traducciones/heldout_romance.csv"
-HELDOUT_ALIAS = "data/banco_v8/heldout_viejas_alias.csv"
+VIEJAS_ALIAS = "data/banco_v8/viejas_alias.csv"
 IMPERATIVAS = ("imperativo", "imperativo_explicativo")
 
 
@@ -227,16 +234,13 @@ def cmd_heldout(args):
     """
     Prepara el held-out (ultimas filas con el split dado) para evaluar:
       - prompt_it / prompt_pt escritos a mano (idiomas de entrada NO vistos en train),
-        solo existen para el held-out, como en el banco del paper;
-      - alias en 6 idiomas para las factuales viejas que caen en el held-out (las
-        viejas traian solo ingles + frances).
+        solo existen para el held-out, como en el banco del paper.
+    Los alias van aparte (subcomando alias).
     Valida: todas las filas del held-out tienen it/pt, sin fuga de la respuesta y
     con la forma de su categoria (imperativo sin '?', el resto con '?').
     """
     from checkers import answer_correct
     tr = pd.read_csv(HELDOUT_ROMANCE, sep=";", keep_default_na=False, dtype=str).set_index("prompt")
-    extra = pd.read_csv(HELDOUT_ALIAS, sep=";", keep_default_na=False, dtype=str)
-    extra = dict(zip(extra["prompt"], extra["aliases_extra"]))
     errores = []
     for celda in ("fr", "es", "de"):
         path = os.path.join(args.dir, f"targets_v8_{celda}.csv")
@@ -249,9 +253,6 @@ def cmd_heldout(args):
                     df[col] = ""
         for i in held:
             p = df.at[i, "prompt"]
-            if p in extra:
-                viejos = [a for a in df.at[i, "aliases"].split("|") if a.strip()]
-                df.at[i, "aliases"] = "|".join(viejos + [a for a in extra[p].split("|") if a not in viejos])
             if p not in tr.index:
                 errores.append(f"[{celda}] falta traduccion it/pt de {p!r}")
                 continue
@@ -278,6 +279,89 @@ def cmd_heldout(args):
     if errores:
         sys.exit(1)
     print("held-out listo" + (" (dry run)" if args.dry_run else ""))
+
+
+def cmd_alias(args):
+    """
+    Solo la columna `aliases`, en las 700 filas de las tres celdas (no toca gate ni
+    accuracy guardada, asi el train queda identico):
+      - nuevas: los alias del banco (data/banco_v8, ampliados tras revisar fallas);
+      - viejas: sus alias de siempre + los de data/banco_v8/viejas_alias.csv (las
+        viejas traian solo ingles + frances; ahora es/de/it/pt).
+    Idempotente.
+    """
+    from checkers import answer_correct
+    banco = pd.read_csv(args.banco, sep=";", keep_default_na=False, dtype=str)
+    banco = dict(zip(banco["prompt"], banco["aliases"]))
+    extra = pd.read_csv(VIEJAS_ALIAS, sep=";", keep_default_na=False, dtype=str)
+    extra = dict(zip(extra["prompt"], extra["aliases_extra"]))
+    for celda in ("fr", "es", "de"):
+        path = os.path.join(args.dir, f"targets_v8_{celda}.csv")
+        df = pd.read_csv(path, sep=";", keep_default_na=False, dtype=str)
+        faltan = set(extra) - set(df.loc[df["categoria"] == CAT_VIEJA, "prompt"])
+        if faltan:
+            raise SystemExit(f"[{celda}] viejas_alias con preguntas que no son viejas: {sorted(faltan)[:3]}")
+        cambios, acc_antes, acc_despues = 0, 0, 0
+        for i in df.index:
+            p, a0 = df.at[i, "prompt"], df.at[i, "aliases"]
+            if df.at[i, "categoria"] == CAT_VIEJA:
+                viejos = [a for a in a0.split("|") if a.strip()]
+                nuevo = "|".join(viejos + [a for a in extra.get(p, "").split("|") if a.strip() and a not in viejos])
+            else:
+                if p not in banco:
+                    raise SystemExit(f"[{celda}] {p!r} no esta en {args.banco}")
+                nuevo = banco[p]
+            acc_antes += answer_correct(df.at[i, "output"], df.at[i, "answer"], a0)
+            acc_despues += answer_correct(df.at[i, "output"], df.at[i, "answer"], nuevo)
+            if nuevo != a0:
+                df.at[i, "aliases"] = nuevo
+                cambios += 1
+        print(f"[{celda}] alias cambiados en {cambios} filas | accuracy del target "
+              f"(700 filas): {acc_antes} -> {acc_despues}")
+        if cambios and not args.dry_run:
+            df.to_csv(path, sep=";", index=False)
+    if args.dry_run:
+        print("--dry_run: no se escribe nada")
+
+
+OPEN1 = {"fr": "attributes/french/targets_open.csv", "es": "algebra/targets/targets_es_open.csv",
+         "de": "algebra/targets/targets_de_open.csv"}
+OPEN2 = {"fr": "attributes/french/targets_open_2.csv", "es": "algebra/targets/targets_es_open_2.csv",
+         "de": "algebra/targets/targets_de_open_2.csv"}
+OPEN1_TRAD = "data/banco_v8/traducciones/open1.csv"
+
+
+def cmd_abiertos(args):
+    """
+    Sets abiertos con la pregunta en los tres idiomas, para el control nativo M(q_X):
+      open1_<celda>.csv = el CSV de la celda + prompt_es/de/fr escritos a mano
+                          (data/banco_v8/traducciones/open1.csv);
+      open2_<celda>.csv = el CSV de la celda + las columnas prompt_<l> que le falten,
+                          copiadas de las otras celdas (fr no traia prompt_fr).
+    Los targets (output) de cada celda no se tocan.
+    """
+    os.makedirs(args.out, exist_ok=True)
+    tr = pd.read_csv(OPEN1_TRAD, sep=";", keep_default_na=False, dtype=str)
+    o2 = {c: pd.read_csv(f, sep=";", keep_default_na=False, dtype=str) for c, f in OPEN2.items()}
+    for celda in ("fr", "es", "de"):
+        df = pd.read_csv(OPEN1[celda], sep=";", keep_default_na=False, dtype=str)
+        if list(df["prompt"]) != list(tr["prompt"]):
+            raise SystemExit(f"[{celda}] open1: las preguntas no coinciden con {OPEN1_TRAD}")
+        for l in ("es", "de", "fr"):
+            df[f"prompt_{l}"], df[f"prompt_{l}_language"], df[f"prompt_{l}_ok"] = tr[f"prompt_{l}"], l, "True"
+        df.to_csv(os.path.join(args.out, f"open1_{celda}.csv"), sep=";", index=False)
+        d2 = o2[celda].copy()
+        for l in ("es", "de", "fr"):
+            if f"prompt_{l}" in d2.columns:
+                continue
+            fuente = next(c for c in ("fr", "es", "de") if f"prompt_{l}" in o2[c].columns)
+            if list(o2[fuente]["prompt"]) != list(d2["prompt"]):
+                raise SystemExit(f"[{celda}] open2: preguntas distintas a las de {fuente}")
+            for suf in ("", "_language", "_ok"):
+                d2[f"prompt_{l}{suf}"] = o2[fuente][f"prompt_{l}{suf}"]
+            print(f"[{celda}] open2: prompt_{l} copiada de la celda {fuente}")
+        d2.to_csv(os.path.join(args.out, f"open2_{celda}.csv"), sep=";", index=False)
+        print(f"[{celda}] open1 {len(df)} filas, open2 {len(d2)} filas -> {args.out}")
 
 
 def cmd_igualar(args):
@@ -397,6 +481,12 @@ def main():
     h.add_argument("--dir", required=True)
     h.add_argument("--split", type=float, default=0.84)
     h.add_argument("--dry_run", action="store_true")
+    al = sub.add_parser("alias")
+    al.add_argument("--dir", required=True)
+    al.add_argument("--banco", default=BANCO)
+    al.add_argument("--dry_run", action="store_true")
+    ab = sub.add_parser("abiertos")
+    ab.add_argument("--out", required=True)
     q = sub.add_parser("igualar")
     q.add_argument("--dir", required=True)
     q.add_argument("--split", type=float, default=0.84)
@@ -406,7 +496,7 @@ def main():
     v.add_argument("--dir", required=True)
     args = ap.parse_args()
     {"armar": cmd_armar, "restaurar": cmd_restaurar, "regate": cmd_regate,
-     "heldout": cmd_heldout, "igualar": cmd_igualar, "revisar": cmd_revisar}[args.cmd](args)
+     "heldout": cmd_heldout, "alias": cmd_alias, "abiertos": cmd_abiertos, "igualar": cmd_igualar, "revisar": cmd_revisar}[args.cmd](args)
 
 
 if __name__ == "__main__":

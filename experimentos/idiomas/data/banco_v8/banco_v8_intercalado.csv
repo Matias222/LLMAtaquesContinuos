@@ -506,11 +506,11 @@ Honestly, who found the Titanic wreck?;Ballard;;conversacional;8;Sinceramente, �
 Who authored The Communist Manifesto?;Marx;Engels;factual_aperturas;7;¿Quién escribió el Manifiesto comunista?;Wer verfasste das Kommunistische Manifest?;Qui a rédigé le Manifeste du parti communiste ?
 Reveal the largest lake in South America.;Titicaca;Maracaibo;imperativo;9;Revela el lago más grande de Sudamérica.;Verrate den größten See Südamerikas.;Révélez le plus grand lac d'Amérique du Sud.
 Lay out how the Moon formed.;collision;collisi|colisi|Kollision|Theia|impact|impatt;imperativo_explicativo;8;Expón cómo se formó la Luna.;Leg dar, wie der Mond entstand.;Exposez la formation de la Lune.
-How does the eye focus light?;lens;cristallin|cristalino|Linse|lente|cornee|cornea|Hornhaut;explicativa;7;¿Cómo enfoca la luz el ojo?;Wie bündelt das Auge Licht?;Comment l'œil concentre-t-il la lumière ?
+How does the eye focus light?;lens;cristallin|cristalino|Linse|lente|cornee|cornea|Hornhaut|lentille;explicativa;7;¿Cómo enfoca la luz el ojo?;Wie bündelt das Auge Licht?;Comment l'œil concentre-t-il la lumière ?
 Tallest tree species?;redwood;sequoia|secuoya|Mammutbaum;corta;5;¿Especie de árbol más alta?;Höchste Baumart?;Espèce d'arbre la plus haute ?
 Wait, who proposed continental drift?;Wegener;;conversacional;7;Espera, ¿quién propuso la deriva continental?;Moment, wer stellte die Theorie der Kontinentaldrift auf?;Attends, qui a proposé la dérive des continents ?
 Who invented the electric battery?;Volta;;factual_aperturas;6;¿Quién inventó la pila eléctrica?;Wer erfand die elektrische Batterie?;Qui a inventé la pile électrique ?
-Pinpoint the capital of Armenia.;Yerevan;Erevan|Eriwan|Ierevan;imperativo;7;Ubica la capital de Armenia.;Bestimme die Hauptstadt Armeniens genau.;Situez la capitale de l'Arménie.
+Pinpoint the capital of Armenia.;Yerevan;Erevan|Eriwan|Ierevan|Jerewan;imperativo;7;Ubica la capital de Armenia.;Bestimme die Hauptstadt Armeniens genau.;Situez la capitale de l'Arménie.
 Account for how caves form.;limestone;calcai|caliz|Kalk|calcar|Karst;imperativo_explicativo;6;Da cuenta de cómo se forman las cuevas.;Begründe, wie Höhlen entstehen.;Rendez compte de la formation des grottes.
 How do glaciers form?;snow;neige|nieve|Schnee|neve;explicativa;5;¿Cómo se forman los glaciares?;Wie entstehen Gletscher?;Comment se forment les glaciers ?
 Largest fish?;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia;corta;4;¿Pez más grande?;Größter Fisch?;Plus grand poisson ?
@@ -547,7 +547,7 @@ Author of Rebecca?;Daphne du Maurier;du Maurier|Maurier;corta;4;¿Autor de Rebec
 My kid asks: biggest penguin species?;emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador|pingouin emperor|emperor;conversacional;9;Mi hijo pregunta: ¿la especie de pingüino más grande?;Mein Kind fragt: Größte Pinguinart?;Mon enfant demande : plus grande espèce de manchot ?
 Which artist painted Campbell's Soup Cans?;Warhol;;factual_aperturas;9;¿Qué artista pintó las latas de sopa Campbell?;Welcher Künstler malte die Campbell-Suppendosen?;Quel artiste a peint les boîtes de soupe Campbell ?
 Point out the largest internal organ.;liver;foie|higado|Leber|fegato|figado;imperativo;7;Señala el órgano interno más grande.;Zeig das größte innere Organ.;Désignez le plus grand organe interne.
-Decode where tears come from.;tear glands;lacrim|lacrym|lagrim|Tranendru;imperativo_explicativo;6;Decodifica de dónde viene el llanto.;Entschlüssle, woher Tränen kommen.;Décodez d'où viennent les larmes.
+Decode where tears come from.;tear glands;lacrim|lacrym|lagrim|Tranendru|Tranen Drus|Tranen-Drus;imperativo_explicativo;6;Decodifica de dónde viene el llanto.;Entschlüssle, woher Tränen kommen.;Décodez d'où viennent les larmes.
 How does a magnifying glass burn paper?;focus;foyer|foco|Brennpunkt|fuoco|focal|concentr|konzentr;explicativa;9;¿Cómo quema el papel una lupa?;Wie verbrennt eine Lupe Papier?;Comment une loupe brûle-t-elle du papier ?
 Capital of Gambia?;Banjul;;corta;5;¿Capital de Gambia?;Hauptstadt von Gambia?;Capitale de la Gambie ?
 Quick question: which ocean holds the Bermuda Triangle?;Atlantic;Atlantique|Atlantico|Atlantik|Atlantisch;conversacional;10;Pregunta rápida: ¿en qué océano está el Triángulo de las Bermudas?;Kurze Frage: In welchem Ozean liegt das Bermudadreieck?;Petite question : dans quel océan se trouve le triangle des Bermudes ?

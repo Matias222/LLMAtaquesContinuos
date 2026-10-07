@@ -5,3 +5,4 @@ __pycache__/
 handoff_sesion_paper.md
 paper_preliminar.pdf
 modelos
+experimentos/idiomas/algebra/runs/*/gen_cache/

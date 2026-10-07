@@ -3,6 +3,8 @@ Paso 2: evaluar el parche sobre el HELD-OUT, en tres condiciones.
 
     baseline    M(q)              -> deberia ser ingles y correcto
     referencia  M([FR ; q])       -> TECHO: la instruccion en texto
+                M(q_fr)           -> con --control nativo: la pregunta escrita en el
+                                     idioma de la celda (columna prompt_<lang>), sin parche
     parche      M(q + v)          -> lo que queremos medir
 
 Metricas, ninguna basada en lexicon tematico:
@@ -71,15 +73,28 @@ def main():
                     help="generar baseline y referencia con este --num_tokens en vez de leerlos "
                          "del CSV (alli se generaron con 100): sin esto, subir --num_tokens le da "
                          "al parche mas tokens que a la referencia")
+    ap.add_argument("--control", choices=["instruccion", "nativo"], default="instruccion",
+                    help="que es la 'referencia': M('Answer in X.' + q) o M(q_X), la pregunta "
+                         "en el idioma de la celda (prompt_<target_lang>; implica --regen_ref). "
+                         "Con nativo, la CE se mide contra el target de entrenamiento (output)")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--out_json", default="eval_report.json")
     ap.add_argument("--out_md", default="eval_report.md")
     args = ap.parse_args()
+    if args.control == "nativo":
+        args.regen_ref = True
 
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     heldout = df.iloc[int(len(df) * args.train_test_split):].reset_index(drop=True)
     if args.n > 0:
         heldout = heldout.head(args.n)
+    col_nativa = f"prompt_{args.target_lang}"
+    if args.control == "nativo":
+        if col_nativa not in heldout.columns:
+            raise SystemExit(f"--control nativo: falta la columna {col_nativa} en {args.targets}")
+        vacias = (heldout[col_nativa].astype(str).str.strip() == "").sum()
+        if vacias:
+            raise SystemExit(f"--control nativo: {vacias} filas sin {col_nativa}")
     # Las metricas de celda solo se escriben si se pidio una celda que no sea
     # "frances normal": asi los reportes viejos salen byte a byte iguales.
     celda = args.target_lang != "fr" or args.upper or args.cell_metrics
@@ -102,9 +117,10 @@ def main():
         # salvo que se pida otro largo de generacion (--regen_ref).
         if args.regen_ref:
             base = generate_one(model, tokenizer, q, args.device, args.num_tokens, args.temperature)
-            ref = generate_one(model, tokenizer,
-                               build_reference_prompt(INSTRUCCION[args.target_lang], q),
-                               args.device, args.num_tokens, args.temperature)
+            q_ref = (str(r[col_nativa]) if args.control == "nativo"
+                     else build_reference_prompt(INSTRUCCION[args.target_lang], q))
+            ref = generate_one(model, tokenizer, q_ref, args.device, args.num_tokens,
+                               args.temperature)
         else:
             base = r["baseline_en"]
             ref = r["output"]
@@ -136,11 +152,16 @@ def main():
         rec["patched_role_leak"] = bool(patched != patched_raw.strip())
         rec["n_patched"] = n_patched_tokens(tokenizer, q, args.num_patch_positions,
                                             args.patch_offset, args.patch_anchor)
+        if args.control == "nativo":
+            rec["prompt_control"] = str(r[col_nativa])
         rows.append(rec)
 
-        nll_b.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=None,
+        # CE del target frances: con el control nativo, contra el target de
+        # entrenamiento (M(instruccion + q)) y no contra la salida del control
+        tgt = str(r["output"]) if args.control == "nativo" and str(r.get("output", "")).strip() else ref
+        nll_b.append(nll_of_target(model, tokenizer, q, tgt, args.device, patch=None,
                                    head_k=args.head_k))
-        nll_p.append(nll_of_target(model, tokenizer, q, ref, args.device, patch=patch,
+        nll_p.append(nll_of_target(model, tokenizer, q, tgt, args.device, patch=patch,
                                    num_patch_positions=args.num_patch_positions,
                                    head_k=args.head_k, patch_offset=args.patch_offset,
                                    patch_anchor=args.patch_anchor))
@@ -181,6 +202,7 @@ def main():
             "scale": args.scale,
             "num_tokens": args.num_tokens,
             "regen_ref": args.regen_ref,
+            "control": args.control,
             "temperature": args.temperature,
             "train_test_split": args.train_test_split,
             **({"target_lang": args.target_lang, "upper": args.upper} if celda else {}),
