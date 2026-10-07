@@ -1,0 +1,31 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:01<00:05,  1.76s/it]eval:  50%|█████     | 2/4 [00:02<00:02,  1.00s/it]eval:  75%|███████▌  | 3/4 [00:03<00:01,  1.20s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  2.15s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  1.82s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])           0.0%      0.000    100.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: de   (celda_ok = idioma de Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.0625      4.9297   -0.1328
+tail (el resto)                 0.4369      0.4212   -0.0157
+toda la respuesta               1.0652      1.0289   -0.0363
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 9.8
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_de/eval_heldout.json
+          algebra/runs/v9_smoke/alg_de/eval_heldout.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4

@@ -1,0 +1,14 @@
+[fr] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[es] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[de] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+held-out listo
+[fr] alias cambiados en 0 filas | accuracy del target (700 filas): 607 -> 607
+[es] alias cambiados en 0 filas | accuracy del target (700 filas): 613 -> 613
+[de] alias cambiados en 0 filas | accuracy del target (700 filas): 598 -> 598
+[fr] train 549 -> 549  (recortadas 0: {})  comparte con fr: 549
+[es] train 549 -> 549  (recortadas 0: {})  comparte con fr: 532
+[de] train 549 -> 549  (recortadas 0: {})  comparte con fr: 525
+[fr] open2: prompt_fr copiada de la celda es
+[fr] open1 99 filas, open2 50 filas -> attributes/v9
+[es] open1 99 filas, open2 50 filas -> attributes/v9
+[de] open1 99 filas, open2 50 filas -> attributes/v9

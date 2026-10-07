@@ -1,0 +1,1433 @@
+### SMOKE: 1 epoch, 1 step/batch, evals de 4 filas -> algebra/runs/v9_smoke
+################ 0 validacion
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+GlotLID ok
+
+################ datos
+[fr] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[es] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+[de] held-out 112 filas (split 0.84: train 588) | por categoria: {'factual_clasica': 16, 'factual_aperturas': 16, 'imperativo': 16, 'imperativo_explicativo': 16, 'explicativa': 16, 'corta': 16, 'conversacional': 16}
+held-out listo
+[fr] alias cambiados en 0 filas | accuracy del target (700 filas): 607 -> 607
+[es] alias cambiados en 0 filas | accuracy del target (700 filas): 613 -> 613
+[de] alias cambiados en 0 filas | accuracy del target (700 filas): 598 -> 598
+[fr] train 549 -> 549  (recortadas 0: {})  comparte con fr: 549
+[es] train 549 -> 549  (recortadas 0: {})  comparte con fr: 532
+[de] train 549 -> 549  (recortadas 0: {})  comparte con fr: 525
+[fr] open2: prompt_fr copiada de la celda es
+[fr] open1 99 filas, open2 50 filas -> attributes/v9
+[es] open1 99 filas, open2 50 filas -> attributes/v9
+[de] open1 99 filas, open2 50 filas -> attributes/v9
+
+################ base
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.51it/s]
+heldout prompt:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+heldout prompt:  25%|██▌       | 1/4 [00:01<00:05,  1.72s/it]heldout prompt:  50%|█████     | 2/4 [00:02<00:01,  1.08it/s]heldout prompt:  75%|███████▌  | 3/4 [00:03<00:01,  1.11s/it]heldout prompt: 100%|██████████| 4/4 [00:06<00:00,  2.05s/it]heldout prompt: 100%|██████████| 4/4 [00:06<00:00,  1.73s/it]
+heldout prompt_es:   0%|          | 0/4 [00:00<?, ?it/s]heldout prompt_es:  25%|██▌       | 1/4 [00:00<00:01,  1.82it/s]heldout prompt_es:  50%|█████     | 2/4 [00:01<00:02,  1.04s/it]heldout prompt_es:  75%|███████▌  | 3/4 [00:02<00:00,  1.13it/s]heldout prompt_es: 100%|██████████| 4/4 [00:06<00:00,  1.90s/it]heldout prompt_es: 100%|██████████| 4/4 [00:06<00:00,  1.52s/it]
+heldout prompt_de:   0%|          | 0/4 [00:00<?, ?it/s]heldout prompt_de:  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]heldout prompt_de:  50%|█████     | 2/4 [00:01<00:01,  1.25it/s]heldout prompt_de:  75%|███████▌  | 3/4 [00:02<00:00,  1.09it/s]heldout prompt_de: 100%|██████████| 4/4 [00:06<00:00,  1.93s/it]heldout prompt_de: 100%|██████████| 4/4 [00:06<00:00,  1.52s/it]
+heldout prompt_fr:   0%|          | 0/4 [00:00<?, ?it/s]heldout prompt_fr:  25%|██▌       | 1/4 [00:00<00:01,  1.60it/s]heldout prompt_fr:  50%|█████     | 2/4 [00:01<00:01,  1.80it/s]heldout prompt_fr:  75%|███████▌  | 3/4 [00:01<00:00,  1.99it/s]heldout prompt_fr: 100%|██████████| 4/4 [00:05<00:00,  1.67s/it]heldout prompt_fr: 100%|██████████| 4/4 [00:05<00:00,  1.26s/it]
+heldout prompt_it:   0%|          | 0/4 [00:00<?, ?it/s]heldout prompt_it:  25%|██▌       | 1/4 [00:00<00:01,  1.73it/s]heldout prompt_it:  50%|█████     | 2/4 [00:01<00:01,  1.78it/s]heldout prompt_it:  75%|███████▌  | 3/4 [00:01<00:00,  1.54it/s]heldout prompt_it: 100%|██████████| 4/4 [00:05<00:00,  1.77s/it]heldout prompt_it: 100%|██████████| 4/4 [00:05<00:00,  1.34s/it]
+heldout prompt_pt:   0%|          | 0/4 [00:00<?, ?it/s]heldout prompt_pt:  25%|██▌       | 1/4 [00:00<00:01,  1.72it/s]heldout prompt_pt:  50%|█████     | 2/4 [00:01<00:00,  2.01it/s]heldout prompt_pt:  75%|███████▌  | 3/4 [00:01<00:00,  1.63it/s]heldout prompt_pt: 100%|██████████| 4/4 [00:05<00:00,  1.73s/it]heldout prompt_pt: 100%|██████████| 4/4 [00:05<00:00,  1.31s/it]
+open1 prompt:   0%|          | 0/4 [00:00<?, ?it/s]open1 prompt:  25%|██▌       | 1/4 [00:03<00:10,  3.48s/it]open1 prompt:  50%|█████     | 2/4 [00:06<00:06,  3.50s/it]open1 prompt:  75%|███████▌  | 3/4 [00:10<00:03,  3.50s/it]open1 prompt: 100%|██████████| 4/4 [00:10<00:00,  2.20s/it]open1 prompt: 100%|██████████| 4/4 [00:10<00:00,  2.68s/it]
+open1 prompt_es:   0%|          | 0/4 [00:00<?, ?it/s]open1 prompt_es:  25%|██▌       | 1/4 [00:01<00:03,  1.24s/it]open1 prompt_es:  50%|█████     | 2/4 [00:04<00:05,  2.56s/it]open1 prompt_es:  75%|███████▌  | 3/4 [00:08<00:02,  2.99s/it]open1 prompt_es: 100%|██████████| 4/4 [00:08<00:00,  1.88s/it]open1 prompt_es: 100%|██████████| 4/4 [00:08<00:00,  2.10s/it]
+open1 prompt_de:   0%|          | 0/4 [00:00<?, ?it/s]open1 prompt_de:  25%|██▌       | 1/4 [00:01<00:03,  1.31s/it]open1 prompt_de:  50%|█████     | 2/4 [00:04<00:05,  2.60s/it]open1 prompt_de:  75%|███████▌  | 3/4 [00:08<00:03,  3.01s/it]open1 prompt_de: 100%|██████████| 4/4 [00:08<00:00,  1.92s/it]open1 prompt_de: 100%|██████████| 4/4 [00:08<00:00,  2.14s/it]
+open1 prompt_fr:   0%|          | 0/4 [00:00<?, ?it/s]open1 prompt_fr:  25%|██▌       | 1/4 [00:03<00:10,  3.51s/it]open1 prompt_fr:  50%|█████     | 2/4 [00:06<00:06,  3.50s/it]open1 prompt_fr:  75%|███████▌  | 3/4 [00:10<00:03,  3.51s/it]open1 prompt_fr: 100%|██████████| 4/4 [00:10<00:00,  2.21s/it]open1 prompt_fr: 100%|██████████| 4/4 [00:10<00:00,  2.68s/it]
+open2 prompt:   0%|          | 0/4 [00:00<?, ?it/s]open2 prompt:  25%|██▌       | 1/4 [00:03<00:10,  3.46s/it]open2 prompt:  50%|█████     | 2/4 [00:06<00:06,  3.49s/it]open2 prompt:  75%|███████▌  | 3/4 [00:10<00:03,  3.49s/it]open2 prompt: 100%|██████████| 4/4 [00:13<00:00,  3.50s/it]open2 prompt: 100%|██████████| 4/4 [00:13<00:00,  3.49s/it]
+open2 prompt_es:   0%|          | 0/4 [00:00<?, ?it/s]open2 prompt_es:  25%|██▌       | 1/4 [00:03<00:10,  3.49s/it]open2 prompt_es:  50%|█████     | 2/4 [00:07<00:07,  3.53s/it]open2 prompt_es:  75%|███████▌  | 3/4 [00:10<00:03,  3.51s/it]open2 prompt_es: 100%|██████████| 4/4 [00:14<00:00,  3.50s/it]open2 prompt_es: 100%|██████████| 4/4 [00:14<00:00,  3.51s/it]
+open2 prompt_de:   0%|          | 0/4 [00:00<?, ?it/s]open2 prompt_de:  25%|██▌       | 1/4 [00:03<00:10,  3.49s/it]open2 prompt_de:  50%|█████     | 2/4 [00:06<00:06,  3.48s/it]open2 prompt_de:  75%|███████▌  | 3/4 [00:10<00:03,  3.50s/it]open2 prompt_de: 100%|██████████| 4/4 [00:13<00:00,  3.50s/it]open2 prompt_de: 100%|██████████| 4/4 [00:13<00:00,  3.49s/it]
+open2 prompt_fr:   0%|          | 0/4 [00:00<?, ?it/s]open2 prompt_fr:  25%|██▌       | 1/4 [00:03<00:10,  3.49s/it]open2 prompt_fr:  50%|█████     | 2/4 [00:06<00:06,  3.33s/it]open2 prompt_fr:  75%|███████▌  | 3/4 [00:10<00:03,  3.40s/it]open2 prompt_fr: 100%|██████████| 4/4 [00:13<00:00,  3.43s/it]open2 prompt_fr: 100%|██████████| 4/4 [00:13<00:00,  3.42s/it]
+# Base v9: salidas sin parche
+
+Generacion greedy de 150 tokens. Idioma: GlotLID. Estas salidas son el baseline, el control nativo M(q_X) y las condiciones a=0 de todas las celdas.
+
+## heldout
+
+| entrada | n | idioma de la salida (%) | acc |
+|---|---|---|---|
+| en | 4 | en 100 | 100 |
+| es | 4 | es 100 | 75 |
+| de | 4 | de 100 | 100 |
+| fr | 4 | fr 100 | 75 |
+| it | 4 | it 100 | 75 |
+| pt | 4 | pt 100 | 75 |
+
+## open1
+
+| entrada | n | idioma de la salida (%) | acc |
+|---|---|---|---|
+| en | 4 | en 75, unknown 25 | - |
+| es | 4 | es 100 | - |
+| de | 4 | de 75, unknown 25 | - |
+| fr | 4 | fr 75, unknown 25 | - |
+
+## open2
+
+| entrada | n | idioma de la salida (%) | acc |
+|---|---|---|---|
+| en | 4 | en 100 | - |
+| es | 4 | es 100 | - |
+| de | 4 | de 100 | - |
+| fr | 4 | fr 100 | - |
+
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 0, generadas 56
+
+################ train fr
+Gate de calidad sobre train: 549/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+
+Train: 549  |  Held-out: 112  |  validacion: 2
+L2: 0.0835  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+  [prompt] parche sobre 15..24 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_es] parche sobre 15..28 (14 tokens) = ['¿', 'En', ' qué', ' contin', 'ente', ' se', ' encuentra', ' la', ' sel', 'va', ' am', 'az', 'ónica', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_de] parche sobre 15..28 (14 tokens) = ['Auf', ' wel', 'chem', ' Kont', 'inent', ' liegt', ' der', ' Amazon', 'as', '-', 'Reg', 'en', 'wald', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  largo del goal en train: media 10.2  min 4  max 25  (el mismo v se suma en cada posicion)
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_es', 'prompt_de']
+  prompt: 549/549 filas de train usables
+  prompt_es: 549/549 filas de train usables
+  prompt_de: 549/549 filas de train usables
+Epochs: 1  |  batch: 28 (20 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/20] CE=4.0837  norma=0.013856  lr=2.50e-04
+  [batch 2/20] CE=4.0175  norma=0.024109  lr=2.48e-04
+  [batch 3/20] CE=3.8950  norma=0.034020  lr=2.43e-04
+  [batch 4/20] CE=3.8972  norma=0.042891  lr=2.35e-04
+  [batch 5/20] CE=3.9132  norma=0.051053  lr=2.24e-04
+  [batch 6/20] CE=3.7187  norma=0.058330  lr=2.10e-04
+  [batch 7/20] CE=3.8006  norma=0.065096  lr=1.93e-04
+  [batch 8/20] CE=3.8630  norma=0.071880  lr=1.75e-04
+  [batch 9/20] CE=3.6594  norma=0.075994  lr=1.56e-04
+  [batch 10/20] CE=3.6887  norma=0.080746  lr=1.35e-04
+  [batch 11/20] CE=4.0294  norma=0.085094  lr=1.15e-04
+  [batch 12/20] CE=3.8702  norma=0.087796  lr=9.43e-05
+  [batch 13/20] CE=3.7901  norma=0.090032  lr=7.48e-05
+  [batch 14/20] CE=3.5248  norma=0.091653  lr=5.66e-05
+  [batch 15/20] CE=3.5828  norma=0.093034  lr=4.03e-05
+  [batch 16/20] CE=3.9631  norma=0.093842  lr=2.64e-05
+  [batch 17/20] CE=3.7436  norma=0.094331  lr=1.51e-05
+  [batch 18/20] CE=3.7444  norma=0.094551  lr=6.77e-06
+  [batch 19/20] CE=3.8486  norma=0.094596  lr=1.70e-06
+  [batch 20/20] CE=3.7124  norma=0.094596  lr=0.00e+00
+  held-out head CE por entrada: prompt=5.6777  prompt_es=3.6670  prompt_de=4.5020
+
+Epoch 1: CE train (trayectoria)=3.8173  norma=0.094596
+  CE head del checkpoint:  train=4.7891   held-out=4.6156   brecha=-0.1735
+  held-out CE  head(primeros 5): con parche=4.6156  sin parche=4.9766  delta=-0.3610
+               toda la respuesta      : con parche=2.1107  sin parche=2.0986  delta=+0.0120
+  * mejor HELD-OUT hasta ahora (head CE 4.6156)
+  * mejor TRAIN hasta ahora (head CE 4.7891)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 4.6156)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    4.7891     4.6156   -0.1735    0.0946  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 4.6156)  -> algebra/runs/v9_smoke/alg_fr/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 4.7891)  -> algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.094596
+  posicion 0: 0.094596
+
+Guardado: algebra/runs/v9_smoke/alg_fr/lang_patch.pt
+          algebra/runs/v9_smoke/alg_fr/lang_metadata.pt
+
+################ train es
+Gate de calidad sobre train: 549/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+
+Train: 549  |  Held-out: 112  |  validacion: 2
+L2: 0.0835  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+  [prompt] parche sobre 15..24 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_de] parche sobre 15..28 (14 tokens) = ['Auf', ' wel', 'chem', ' Kont', 'inent', ' liegt', ' der', ' Amazon', 'as', '-', 'Reg', 'en', 'wald', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_fr] parche sobre 15..25 (11 tokens) = ['Sur', ' quel', ' continent', ' se', ' trouve', ' la', ' for', 'êt', ' amazon', 'ienne', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  largo del goal en train: media 10.3  min 4  max 26  (el mismo v se suma en cada posicion)
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_de', 'prompt_fr']
+  prompt: 549/549 filas de train usables
+  prompt_de: 549/549 filas de train usables
+  prompt_fr: 549/549 filas de train usables
+Epochs: 1  |  batch: 28 (20 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/20] CE=4.1418  norma=0.013856  lr=2.50e-04
+  [batch 2/20] CE=3.9353  norma=0.022578  lr=2.48e-04
+  [batch 3/20] CE=3.7091  norma=0.030785  lr=2.43e-04
+  [batch 4/20] CE=3.8182  norma=0.038300  lr=2.35e-04
+  [batch 5/20] CE=3.6772  norma=0.045992  lr=2.24e-04
+  [batch 6/20] CE=3.4919  norma=0.052502  lr=2.10e-04
+  [batch 7/20] CE=3.6457  norma=0.059076  lr=1.93e-04
+  [batch 8/20] CE=3.5772  norma=0.062808  lr=1.75e-04
+  [batch 9/20] CE=3.7515  norma=0.067842  lr=1.56e-04
+  [batch 10/20] CE=3.8027  norma=0.072293  lr=1.35e-04
+  [batch 11/20] CE=3.7209  norma=0.075636  lr=1.15e-04
+  [batch 12/20] CE=3.3129  norma=0.078300  lr=9.43e-05
+  [batch 13/20] CE=3.6000  norma=0.080716  lr=7.48e-05
+  [batch 14/20] CE=3.6559  norma=0.082489  lr=5.66e-05
+  [batch 15/20] CE=3.5293  norma=0.083734  lr=4.03e-05
+  [batch 16/20] CE=4.0336  norma=0.084580  lr=2.64e-05
+  [batch 17/20] CE=3.5476  norma=0.085042  lr=1.51e-05
+  [batch 18/20] CE=3.7367  norma=0.085275  lr=6.77e-06
+  [batch 19/20] CE=3.5962  norma=0.085317  lr=1.70e-06
+  [batch 20/20] CE=3.6609  norma=0.085317  lr=0.00e+00
+  held-out head CE por entrada: prompt=4.8496  prompt_de=5.0947  prompt_fr=5.0215
+
+Epoch 1: CE train (trayectoria)=3.6972  norma=0.085317
+  CE head del checkpoint:  train=4.0163   held-out=4.9886   brecha=+0.9723
+  held-out CE  head(primeros 5): con parche=4.9886  sin parche=5.1484  delta=-0.1598
+               toda la respuesta      : con parche=2.1750  sin parche=2.1496  delta=+0.0254
+  * mejor HELD-OUT hasta ahora (head CE 4.9886)
+  * mejor TRAIN hasta ahora (head CE 4.0163)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 4.9886)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    4.0163     4.9886   +0.9723    0.0853  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 4.9886)  -> algebra/runs/v9_smoke/alg_es/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 4.0163)  -> algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.085317
+  posicion 0: 0.085317
+
+Guardado: algebra/runs/v9_smoke/alg_es/lang_patch.pt
+          algebra/runs/v9_smoke/alg_es/lang_metadata.pt
+
+################ train de
+Gate de calidad sobre train: 549/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+
+Train: 549  |  Held-out: 112  |  validacion: 2
+L2: 0.0835  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+  [prompt] parche sobre 15..24 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_es] parche sobre 15..28 (14 tokens) = ['¿', 'En', ' qué', ' contin', 'ente', ' se', ' encuentra', ' la', ' sel', 'va', ' am', 'az', 'ónica', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_fr] parche sobre 15..25 (11 tokens) = ['Sur', ' quel', ' continent', ' se', ' trouve', ' la', ' for', 'êt', ' amazon', 'ienne', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  largo del goal en train: media 10.6  min 4  max 26  (el mismo v se suma en cada posicion)
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_es', 'prompt_fr']
+  prompt: 549/549 filas de train usables
+  prompt_es: 549/549 filas de train usables
+  prompt_fr: 549/549 filas de train usables
+Epochs: 1  |  batch: 28 (20 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/20] CE=3.6257  norma=0.013856  lr=2.50e-04
+  [batch 2/20] CE=4.1659  norma=0.023399  lr=2.48e-04
+  [batch 3/20] CE=3.8820  norma=0.032004  lr=2.43e-04
+  [batch 4/20] CE=3.8354  norma=0.039410  lr=2.35e-04
+  [batch 5/20] CE=3.6908  norma=0.046926  lr=2.24e-04
+  [batch 6/20] CE=3.3400  norma=0.053579  lr=2.10e-04
+  [batch 7/20] CE=3.6844  norma=0.059950  lr=1.93e-04
+  [batch 8/20] CE=3.4342  norma=0.065747  lr=1.75e-04
+  [batch 9/20] CE=3.6530  norma=0.071096  lr=1.56e-04
+  [batch 10/20] CE=3.7262  norma=0.075831  lr=1.35e-04
+  [batch 11/20] CE=3.6595  norma=0.079325  lr=1.15e-04
+  [batch 12/20] CE=3.4631  norma=0.081970  lr=9.43e-05
+  [batch 13/20] CE=3.4881  norma=0.083840  lr=7.48e-05
+  [batch 14/20] CE=3.4907  norma=0.084726  lr=5.66e-05
+  [batch 15/20] CE=3.5566  norma=0.085662  lr=4.03e-05
+  [batch 16/20] CE=3.6170  norma=0.086379  lr=2.64e-05
+  [batch 17/20] CE=3.1160  norma=0.086867  lr=1.51e-05
+  [batch 18/20] CE=3.3602  norma=0.087082  lr=6.77e-06
+  [batch 19/20] CE=3.4508  norma=0.087141  lr=1.70e-06
+  [batch 20/20] CE=4.0008  norma=0.087141  lr=0.00e+00
+  held-out head CE por entrada: prompt=4.4863  prompt_es=5.7344  prompt_fr=4.5156
+
+Epoch 1: CE train (trayectoria)=3.6120  norma=0.087141
+  CE head del checkpoint:  train=5.0661   held-out=4.9121   brecha=-0.1540
+  held-out CE  head(primeros 5): con parche=4.9121  sin parche=5.5384  delta=-0.6263
+               toda la respuesta      : con parche=1.4601  sin parche=1.6191  delta=-0.1590
+  * mejor HELD-OUT hasta ahora (head CE 4.9121)
+  * mejor TRAIN hasta ahora (head CE 5.0661)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 4.9121)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    5.0661     4.9121   -0.1540    0.0871  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 4.9121)  -> algebra/runs/v9_smoke/alg_de/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 5.0661)  -> algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.087141
+  posicion 0: 0.087141
+
+Guardado: algebra/runs/v9_smoke/alg_de/lang_patch.pt
+          algebra/runs/v9_smoke/alg_de/lang_metadata.pt
+# Etapa train
+
+| celda | filas train | held-out | norma ‖v‖ | epoch elegida | CE head train |
+|---|---|---|---|---|---|
+| fr | 549 | 112 | 0.095 | 1 | 4.789 |
+| es | 549 | 112 | 0.085 | 1 | 4.016 |
+| de | 549 | 112 | 0.087 | 1 | 5.066 |
+
+Curva fr (CE head, checkpoint de cada epoch): e1: train 4.789 / held-out 4.616 (norma 0.095)
+
+Curva es (CE head, checkpoint de cada epoch): e1: train 4.016 / held-out 4.989 (norma 0.085)
+
+Curva de (CE head, checkpoint de cada epoch): e1: train 5.066 / held-out 4.912 (norma 0.087)
+
+
+reporte: algebra/runs/v9_smoke/reportes/train.md
+
+################ A fr
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.05s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.61it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.46it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:01<00:05,  1.77s/it]eval:  50%|█████     | 2/4 [00:02<00:01,  1.00it/s]eval:  75%|███████▌  | 3/4 [00:03<00:01,  1.19s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  2.14s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  1.81s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])         100.0%      1.000     75.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: fr   (celda_ok = idioma fr Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.2368      5.1245   -0.1123
+tail (el resto)                 0.4864      0.4805   -0.0059
+toda la respuesta               1.5695      1.5344   -0.0351
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 9.8
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_fr/eval_heldout.json
+          algebra/runs/v9_smoke/alg_fr/eval_heldout.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.60it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]
+parche algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  norma 0.0946  |  tail held-out 4 (idx 588..591)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_de a=0', 'prompt_de a=1', 'prompt a=0', 'prompt a=1']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.32s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.59it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.64it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.62it/s]prompt_es a=1:  50%|█████     | 2/4 [00:01<00:01,  1.82it/s]prompt_es a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.89it/s]prompt_es a=1: 100%|██████████| 4/4 [00:05<00:00,  1.77s/it]prompt_es a=1: 100%|██████████| 4/4 [00:05<00:00,  1.32s/it]
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=0:  50%|█████     | 2/4 [00:00<00:00, 15.83it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 15.44it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 15.49it/s]
+prompt_de a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.55it/s]prompt_de a=1:  50%|█████     | 2/4 [00:01<00:01,  1.18it/s]prompt_de a=1:  75%|███████▌  | 3/4 [00:02<00:00,  1.19it/s]prompt_de a=1: 100%|██████████| 4/4 [00:06<00:00,  1.94s/it]prompt_de a=1: 100%|██████████| 4/4 [00:06<00:00,  1.52s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 18.19it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.44it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.67it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  50%|█████     | 2/4 [00:00<00:00, 16.93it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.39it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.46it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.25  0.75     nan  244.2    4.310    3.345  0.00
+prompt_es a=1          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.25  0.75    0.50  193.2    3.770    2.882  0.00
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00  1.00     nan  248.2    5.077    3.129  0.00
+prompt_de a=1          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00  0.75    0.75  227.2    4.490    2.990  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00     nan  268.0    5.237    0.034  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00    0.25  266.8    5.125    0.036  0.00
+============================================================================================================================================
+
+celda target: fr
+condicion             celda_ok    tgt  mayus
+prompt_es a=0             0.00   0.00   0.00
+prompt_es a=1             0.00   0.00   0.00
+prompt_de a=0             0.00   0.00   0.00
+prompt_de a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_fr/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 8
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.48it/s]
+parche algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  norma 0.0946  |  tail held-out 4 (idx 588..591)
+preset=romance  condiciones=['prompt_it a=0', 'prompt_it a=1', 'prompt_pt a=0', 'prompt_pt a=1']
+prompt_it a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_it a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.31s/it]prompt_it a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.62it/s]prompt_it a=0: 100%|██████████| 4/4 [00:01<00:00,  2.68it/s]
+prompt_it a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_it a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.59it/s]prompt_it a=1:  50%|█████     | 2/4 [00:01<00:01,  1.63it/s]prompt_it a=1:  75%|███████▌  | 3/4 [00:02<00:00,  1.43it/s]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.81s/it]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.39s/it]
+prompt_pt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=0:  50%|█████     | 2/4 [00:00<00:00, 17.30it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 15.87it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.06it/s]
+prompt_pt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.61it/s]prompt_pt a=1:  50%|█████     | 2/4 [00:01<00:01,  1.86it/s]prompt_pt a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.52it/s]prompt_pt a=1: 100%|██████████| 4/4 [00:04<00:00,  1.28s/it]prompt_pt a=1: 100%|██████████| 4/4 [00:04<00:00,  1.04s/it]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_it a=0          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.75     nan  206.2    5.261    3.357  0.00
+prompt_it a=1          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.50    0.25  206.8    4.984    3.112  0.00
+prompt_pt a=0          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  0.75     nan  193.0    5.398    2.755  0.00
+prompt_pt a=1          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  0.75    0.25  137.8    4.377    2.176  0.00
+============================================================================================================================================
+
+celda target: fr
+condicion             celda_ok    tgt  mayus
+prompt_it a=0             0.00   0.00   0.00
+prompt_it a=1             0.00   0.00   0.00
+prompt_pt a=0             0.00   0.00   0.00
+prompt_pt a=1             0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la
+transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).
+
+Guardado: algebra/runs/v9_smoke/alg_fr/cross_lang_romance.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 8
+
+################ A es
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:01<00:05,  1.77s/it]eval:  50%|█████     | 2/4 [00:02<00:01,  1.01it/s]eval:  75%|███████▌  | 3/4 [00:03<00:01,  1.19s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  2.15s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  1.81s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])           0.0%      0.000     75.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: es   (celda_ok = idioma es Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.0420      4.9473   -0.0947
+tail (el resto)                 0.3129      0.3094   -0.0034
+toda la respuesta               1.0581      1.0405   -0.0176
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 9.8
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_es/eval_heldout.json
+          algebra/runs/v9_smoke/alg_es/eval_heldout.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+parche algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  norma 0.0853  |  tail held-out 4 (idx 588..591)
+preset=idioma  condiciones=['prompt_de a=0', 'prompt_de a=1', 'prompt_fr a=0', 'prompt_fr a=1', 'prompt a=0', 'prompt a=1']
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_de a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.30s/it]prompt_de a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.63it/s]prompt_de a=0: 100%|██████████| 4/4 [00:01<00:00,  2.69it/s]
+prompt_de a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.57it/s]prompt_de a=1:  50%|█████     | 2/4 [00:01<00:01,  1.15it/s]prompt_de a=1:  75%|███████▌  | 3/4 [00:02<00:00,  1.40it/s]prompt_de a=1: 100%|██████████| 4/4 [00:05<00:00,  1.83s/it]prompt_de a=1: 100%|██████████| 4/4 [00:05<00:00,  1.44s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 17.76it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 16.59it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 16.75it/s]
+prompt_fr a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=1:  25%|██▌       | 1/4 [00:00<00:02,  1.48it/s]prompt_fr a=1:  50%|█████     | 2/4 [00:01<00:01,  1.64it/s]prompt_fr a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.80it/s]prompt_fr a=1: 100%|██████████| 4/4 [00:05<00:00,  1.75s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:05<00:00,  1.33s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 18.16it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.50it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.73it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  50%|█████     | 2/4 [00:00<00:00, 17.33it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.80it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.87it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00  1.00     nan  248.2    4.987    3.129  0.00
+prompt_de a=1          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00  0.75    0.50  221.5    4.545    3.067  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   1.00  0.75     nan  187.8    4.952    2.577  0.00
+prompt_fr a=1          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   1.00  0.75    0.25  186.0    3.833    2.507  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00     nan  268.0    5.042    0.034  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00    0.00  268.0    4.947    0.036  0.00
+============================================================================================================================================
+
+celda target: es
+condicion             celda_ok    tgt  mayus
+prompt_de a=0             0.00   0.00   0.00
+prompt_de a=1             0.00   0.00   0.00
+prompt_fr a=0             0.00   0.00   0.00
+prompt_fr a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_es/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 8
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  norma 0.0853  |  tail held-out 4 (idx 588..591)
+preset=romance  condiciones=['prompt_it a=0', 'prompt_it a=1', 'prompt_pt a=0', 'prompt_pt a=1']
+prompt_it a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_it a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.31s/it]prompt_it a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.63it/s]prompt_it a=0: 100%|██████████| 4/4 [00:01<00:00,  2.68it/s]
+prompt_it a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_it a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.62it/s]prompt_it a=1:  50%|█████     | 2/4 [00:01<00:01,  1.65it/s]prompt_it a=1:  75%|███████▌  | 3/4 [00:02<00:00,  1.44it/s]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.80s/it]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.38s/it]
+prompt_pt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=0:  50%|█████     | 2/4 [00:00<00:00, 18.64it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 17.29it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 17.47it/s]
+prompt_pt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.63it/s]prompt_pt a=1:  50%|█████     | 2/4 [00:01<00:01,  1.87it/s]prompt_pt a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.53it/s]prompt_pt a=1: 100%|██████████| 4/4 [00:05<00:00,  1.77s/it]prompt_pt a=1: 100%|██████████| 4/4 [00:05<00:00,  1.34s/it]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_it a=0          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.75     nan  206.2    4.525    3.357  0.00
+prompt_it a=1          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.50    0.25  202.8    4.413    3.262  0.00
+prompt_pt a=0          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  0.75     nan  193.0    4.083    2.755  0.00
+prompt_pt a=1          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  0.75    0.25  198.2    3.929    2.260  0.00
+============================================================================================================================================
+
+celda target: es
+condicion             celda_ok    tgt  mayus
+prompt_it a=0             0.00   0.00   0.00
+prompt_it a=1             0.00   0.00   0.00
+prompt_pt a=0             0.00   0.00   0.00
+prompt_pt a=1             0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la
+transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).
+
+Guardado: algebra/runs/v9_smoke/alg_es/cross_lang_romance.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 8
+
+################ A de
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:01<00:05,  1.76s/it]eval:  50%|█████     | 2/4 [00:02<00:02,  1.00s/it]eval:  75%|███████▌  | 3/4 [00:03<00:01,  1.20s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  2.15s/it]eval: 100%|██████████| 4/4 [00:07<00:00,  1.82s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])           0.0%      0.000    100.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: de   (celda_ok = idioma de Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.0625      4.9297   -0.1328
+tail (el resto)                 0.4369      0.4212   -0.0157
+toda la respuesta               1.0652      1.0289   -0.0363
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 9.8
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_de/eval_heldout.json
+          algebra/runs/v9_smoke/alg_de/eval_heldout.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  norma 0.0871  |  tail held-out 4 (idx 588..591)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_fr a=0', 'prompt_fr a=1', 'prompt a=0', 'prompt a=1']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.29s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.65it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.71it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.65it/s]prompt_es a=1:  50%|█████     | 2/4 [00:01<00:01,  1.85it/s]prompt_es a=1:  75%|███████▌  | 3/4 [00:02<00:00,  1.39it/s]prompt_es a=1: 100%|██████████| 4/4 [00:05<00:00,  1.84s/it]prompt_es a=1: 100%|██████████| 4/4 [00:05<00:00,  1.40s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 17.68it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 16.67it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 16.81it/s]
+prompt_fr a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=1:  25%|██▌       | 1/4 [00:00<00:02,  1.47it/s]prompt_fr a=1:  50%|█████     | 2/4 [00:01<00:01,  1.64it/s]prompt_fr a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.79it/s]prompt_fr a=1: 100%|██████████| 4/4 [00:05<00:00,  1.74s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:05<00:00,  1.32s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 18.76it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 16.96it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 17.20it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  50%|█████     | 2/4 [00:00<00:00, 17.78it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.82it/s]prompt a=1: 100%|██████████| 4/4 [00:00<00:00, 16.95it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.25  0.75     nan  244.2    6.080    3.345  0.00
+prompt_es a=1          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.25  0.75    0.50  213.2    5.506    2.938  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   1.00  0.75     nan  187.8    5.026    2.577  0.00
+prompt_fr a=1          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   1.00  0.75    0.00  187.8    4.286    2.487  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00     nan  268.0    5.062    0.034  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00  1.00    0.25  266.8    4.930    0.036  0.00
+============================================================================================================================================
+
+celda target: de
+condicion             celda_ok    tgt  mayus
+prompt_es a=0             0.00   0.00   0.00
+prompt_es a=1             0.00   0.00   0.00
+prompt_fr a=0             0.00   0.00   0.00
+prompt_fr a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_de/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 8
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  norma 0.0871  |  tail held-out 4 (idx 588..591)
+preset=romance  condiciones=['prompt_it a=0', 'prompt_it a=1', 'prompt_pt a=0', 'prompt_pt a=1']
+prompt_it a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_it a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.29s/it]prompt_it a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.66it/s]prompt_it a=0: 100%|██████████| 4/4 [00:01<00:00,  2.72it/s]
+prompt_it a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_it a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.60it/s]prompt_it a=1:  50%|█████     | 2/4 [00:01<00:01,  1.65it/s]prompt_it a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.85it/s]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.71s/it]prompt_it a=1: 100%|██████████| 4/4 [00:05<00:00,  1.29s/it]
+prompt_pt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=0:  50%|█████     | 2/4 [00:00<00:00, 18.50it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 17.13it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00, 17.31it/s]
+prompt_pt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=1:  25%|██▌       | 1/4 [00:00<00:01,  1.62it/s]prompt_pt a=1:  50%|█████     | 2/4 [00:01<00:01,  1.87it/s]prompt_pt a=1:  75%|███████▌  | 3/4 [00:01<00:00,  1.53it/s]prompt_pt a=1: 100%|██████████| 4/4 [00:05<00:00,  1.77s/it]prompt_pt a=1: 100%|██████████| 4/4 [00:05<00:00,  1.34s/it]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_it a=0          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.75     nan  206.2    5.536    3.357  0.00
+prompt_it a=1          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  0.50    0.50  185.2    5.271    3.165  0.00
+prompt_pt a=0          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  0.75     nan  193.0    6.209    2.755  0.00
+prompt_pt a=1          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  1.00    0.25  207.0    5.553    2.249  0.00
+============================================================================================================================================
+
+celda target: de
+condicion             celda_ok    tgt  mayus
+prompt_it a=0             0.00   0.00   0.00
+prompt_it a=1             0.00   0.00   0.00
+prompt_pt a=0             0.00   0.00   0.00
+prompt_pt a=1             0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la
+transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).
+
+Guardado: algebra/runs/v9_smoke/alg_de/cross_lang_romance.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 8
+# Etapa A: held-out v8 por categoria
+
+Held-out = filas desde int(700*0.84) del CSV de cada celda (16 por categoria). Idioma: GlotLID (lang_id.py). Accuracy: answer_correct con los alias del banco (6 idiomas). Generacion de 150 tokens, referencia y baseline regenerados con el mismo largo. Control nativo = M(q_X): la pregunta escrita en el idioma de la celda, sin parche. Acuerdo = filas donde parche y control coinciden en acierto/fallo.
+
+## Celda fr (parche hacia el francés)
+
+### Pregunta en inglés (norma ‖v‖ = 0.095)
+
+| categoria | n | % fr sin parche | % fr control nativo | % fr parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
+|---|---|---|---|---|---|---|---|---|
+| factual_clasica | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| factual_aperturas | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| imperativo | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| imperativo_explicativo | 1 | 0 | 100 | 0 | 100 | 0 | 100 | 0 |
+| explicativa | 0 | — | — | — | — | — | — | — |
+| corta | 0 | — | — | — | — | — | — | — |
+| conversacional | 0 | — | — | — | — | — | — | — |
+| TOTAL | 4 | 0 | 100 | 0 | 100 | 75 | 100 | 75 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | es: % fr sin / con | es: acc sin / con | de: % fr sin / con | de: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 |
+| imperativo_explicativo | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 75 / 75 | 0 / 0 | 100 / 75 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % fr sin / con | it: acc sin / con | pt: % fr sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo_explicativo | 0 / 0 | 100 / 0 | 0 / 0 | 0 / 0 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 75 / 50 | 0 / 0 | 75 / 75 |
+
+## Celda es (parche hacia el español)
+
+### Pregunta en inglés (norma ‖v‖ = 0.085)
+
+| categoria | n | % es sin parche | % es control nativo | % es parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
+|---|---|---|---|---|---|---|---|---|
+| factual_clasica | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| factual_aperturas | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| imperativo | 1 | 0 | 100 | 0 | 100 | 0 | 100 | 0 |
+| imperativo_explicativo | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| explicativa | 0 | — | — | — | — | — | — | — |
+| corta | 0 | — | — | — | — | — | — | — |
+| conversacional | 0 | — | — | — | — | — | — | — |
+| TOTAL | 4 | 0 | 100 | 0 | 100 | 75 | 100 | 75 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | de: % es sin / con | de: acc sin / con | fr: % es sin / con | fr: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 100 / 0 | 0 / 0 | 100 / 100 |
+| imperativo_explicativo | 0 / 0 | 100 / 100 | 0 / 0 | 0 / 0 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 100 / 75 | 0 / 0 | 75 / 75 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % es sin / con | it: acc sin / con | pt: % es sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo_explicativo | 0 / 0 | 100 / 0 | 0 / 0 | 0 / 0 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 75 / 50 | 0 / 0 | 75 / 75 |
+
+## Celda de (parche hacia el alemán)
+
+### Pregunta en inglés (norma ‖v‖ = 0.087)
+
+| categoria | n | % de sin parche | % de control nativo | % de parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
+|---|---|---|---|---|---|---|---|---|
+| factual_clasica | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| factual_aperturas | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| imperativo | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| imperativo_explicativo | 1 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+| explicativa | 0 | — | — | — | — | — | — | — |
+| corta | 0 | — | — | — | — | — | — | — |
+| conversacional | 0 | — | — | — | — | — | — | — |
+| TOTAL | 4 | 0 | 100 | 0 | 100 | 100 | 100 | 100 |
+
+### Otros idiomas de entrenamiento
+
+| categoria | es: % de sin / con | es: acc sin / con | fr: % de sin / con | fr: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 100 |
+| imperativo_explicativo | 0 / 0 | 100 / 100 | 0 / 0 | 0 / 0 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 75 / 75 | 0 / 0 | 75 / 75 |
+
+### Idiomas no vistos (italiano, portugués)
+
+| categoria | it: % de sin / con | it: acc sin / con | pt: % de sin / con | pt: acc sin / con |
+|---|---|---|---|---|
+| factual_clasica | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 100 |
+| factual_aperturas | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo | 0 / 0 | 100 / 100 | 0 / 0 | 100 / 100 |
+| imperativo_explicativo | 0 / 0 | 100 / 0 | 0 / 0 | 0 / 100 |
+| explicativa | — / — | — / — | — / — | — / — |
+| corta | — / — | — / — | — / — | — / — |
+| conversacional | — / — | — / — | — / — | — / — |
+| TOTAL | 0 / 0 | 75 / 50 | 0 / 0 | 75 / 100 |
+
+
+reporte: algebra/runs/v9_smoke/reportes/A.md
+
+################ C fr
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:04<00:14,  4.85s/it]eval:  50%|█████     | 2/4 [00:08<00:08,  4.09s/it]eval:  75%|███████▌  | 3/4 [00:11<00:03,  3.84s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  2.43s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  3.06s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])          75.0%      0.875      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: fr   (celda_ok = idioma fr Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])          75.0%      75.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               6.3232      6.1626   -0.1606
+tail (el resto)                 0.4986      0.4866   -0.0119
+toda la respuesta               1.4537      1.4263   -0.0275
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.028
+  overlap baseline(EN) vs referencia        : 0.028
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [0.87, 0.81, 0.87]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_fr/eval_open.json
+          algebra/runs/v9_smoke/alg_fr/eval_open.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  norma 0.0946  |  tail held-out 4 (idx 0..3)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_de a=0', 'prompt_de a=1', 'prompt a=0', 'prompt a=1', 'prompt_fr a=0']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.32s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.53it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.60it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.58s/it]prompt_es a=1:  50%|█████     | 2/4 [00:06<00:05,  2.95s/it]prompt_es a=1:  75%|███████▌  | 3/4 [00:09<00:03,  3.23s/it]prompt_es a=1: 100%|██████████| 4/4 [00:13<00:00,  3.36s/it]prompt_es a=1: 100%|██████████| 4/4 [00:13<00:00,  3.31s/it]
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=0:  50%|█████     | 2/4 [00:00<00:00, 13.84it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 13.98it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 13.96it/s]
+prompt_de a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.55s/it]prompt_de a=1:  50%|█████     | 2/4 [00:07<00:07,  3.56s/it]prompt_de a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.56s/it]prompt_de a=1: 100%|██████████| 4/4 [00:14<00:00,  3.56s/it]prompt_de a=1: 100%|██████████| 4/4 [00:14<00:00,  3.56s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 14.03it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 13.58it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 13.64it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.57s/it]prompt a=1:  50%|█████     | 2/4 [00:07<00:07,  3.55s/it]prompt a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.55s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.55s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.55s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 14.08it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.15it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.13it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  547.2    6.019    3.821  0.00
+prompt_es a=1          4  0.25  0.00  0.75  0.00  0.00  0.00 0.00   0.25   0.25   nan    1.00  493.2    4.149    3.168  0.00
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan     nan  533.8    6.262    4.584  0.00
+prompt_de a=1          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan    1.00  523.5    5.773    4.306  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  684.0    5.765    0.303  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan    0.50  691.8    5.710    0.317  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan     nan  508.5    1.025    3.311  0.00
+============================================================================================================================================
+
+celda target: fr
+condicion             celda_ok    tgt  mayus
+prompt_es a=0             0.00   0.00   0.00
+prompt_es a=1             0.25   0.25   0.00
+prompt_de a=0             0.00   0.00   0.00
+prompt_de a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+prompt_fr a=0             1.00   1.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_fr/open_2/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 12
+
+################ C es
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.45it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:04<00:14,  4.82s/it]eval:  50%|█████     | 2/4 [00:08<00:08,  4.06s/it]eval:  75%|███████▌  | 3/4 [00:11<00:03,  3.82s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  2.42s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  3.04s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])           0.0%      0.000      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: es   (celda_ok = idioma es Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               6.7334      6.6865   -0.0469
+tail (el resto)                 0.5285      0.5055   -0.0230
+toda la respuesta               1.5692      1.5513   -0.0179
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.031
+  overlap baseline(EN) vs referencia        : 0.031
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [1.0, 0.99, 1.0]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_es/eval_open.json
+          algebra/runs/v9_smoke/alg_es/eval_open.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  norma 0.0853  |  tail held-out 4 (idx 0..3)
+preset=idioma  condiciones=['prompt_de a=0', 'prompt_de a=1', 'prompt_fr a=0', 'prompt_fr a=1', 'prompt a=0', 'prompt a=1', 'prompt_es a=0']
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_de a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.31s/it]prompt_de a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.55it/s]prompt_de a=0: 100%|██████████| 4/4 [00:01<00:00,  2.63it/s]
+prompt_de a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.49s/it]prompt_de a=1:  50%|█████     | 2/4 [00:06<00:06,  3.48s/it]prompt_de a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.48s/it]prompt_de a=1: 100%|██████████| 4/4 [00:13<00:00,  3.49s/it]prompt_de a=1: 100%|██████████| 4/4 [00:13<00:00,  3.49s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 15.06it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 15.01it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 15.01it/s]
+prompt_fr a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.47s/it]prompt_fr a=1:  50%|█████     | 2/4 [00:06<00:06,  3.34s/it]prompt_fr a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.42s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:13<00:00,  3.47s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:13<00:00,  3.45s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 14.58it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 14.02it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 14.09it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.55s/it]prompt a=1:  50%|█████     | 2/4 [00:07<00:07,  3.55s/it]prompt a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.53s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.50s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.52s/it]
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=0:  50%|█████     | 2/4 [00:00<00:00, 14.60it/s]prompt_es a=0: 100%|██████████| 4/4 [00:00<00:00, 14.47it/s]prompt_es a=0: 100%|██████████| 4/4 [00:00<00:00, 14.48it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan     nan  533.8    4.953    4.584  0.00
+prompt_de a=1          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan    1.00  521.0    4.515    4.344  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan     nan  508.5    3.620    3.311  0.00
+prompt_fr a=1          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan    0.75  505.8    2.823    2.996  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  684.0    6.045    0.303  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan    0.25  688.8    6.030    0.310  0.00
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  547.2    0.724    3.821  0.00
+============================================================================================================================================
+
+celda target: es
+condicion             celda_ok    tgt  mayus
+prompt_de a=0             0.00   0.00   0.00
+prompt_de a=1             0.00   0.00   0.00
+prompt_fr a=0             0.00   0.00   0.00
+prompt_fr a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+prompt_es a=0             1.00   1.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_es/open_2/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 12
+
+################ C de
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.49it/s]
+Held-out: 4  |  parche: algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:04<00:14,  4.78s/it]eval:  50%|█████     | 2/4 [00:08<00:08,  4.08s/it]eval:  75%|███████▌  | 3/4 [00:11<00:03,  3.83s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  2.42s/it]eval: 100%|██████████| 4/4 [00:12<00:00,  3.04s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])           0.0%      0.125      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: de   (celda_ok = idioma de Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])          75.0%      75.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.1626      5.1562   -0.0063
+tail (el resto)                 0.5087      0.4897   -0.0190
+toda la respuesta               1.0015      0.9861   -0.0153
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.015
+  overlap baseline(EN) vs referencia        : 0.015
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [0.87, 0.87, 0.87]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/v9_smoke/alg_de/eval_open.json
+          algebra/runs/v9_smoke/alg_de/eval_open.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 8, generadas 4
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  norma 0.0871  |  tail held-out 4 (idx 0..3)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_fr a=0', 'prompt_fr a=1', 'prompt a=0', 'prompt a=1', 'prompt_de a=0']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:03,  1.30s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.59it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.66it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.56s/it]prompt_es a=1:  50%|█████     | 2/4 [00:07<00:07,  3.53s/it]prompt_es a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.52s/it]prompt_es a=1: 100%|██████████| 4/4 [00:14<00:00,  3.52s/it]prompt_es a=1: 100%|██████████| 4/4 [00:14<00:00,  3.53s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 14.90it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.76it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.77it/s]
+prompt_fr a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.58s/it]prompt_fr a=1:  50%|█████     | 2/4 [00:06<00:06,  3.40s/it]prompt_fr a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.47s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:13<00:00,  3.50s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:13<00:00,  3.49s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 14.15it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 13.98it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 14.00it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  25%|██▌       | 1/4 [00:03<00:10,  3.56s/it]prompt a=1:  50%|█████     | 2/4 [00:07<00:07,  3.56s/it]prompt a=1:  75%|███████▌  | 3/4 [00:10<00:03,  3.55s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.56s/it]prompt a=1: 100%|██████████| 4/4 [00:14<00:00,  3.56s/it]
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=0:  50%|█████     | 2/4 [00:00<00:00, 14.36it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 14.17it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 14.19it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  547.2    5.823    3.821  0.00
+prompt_es a=1          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.25   nan    1.00  540.0    5.188    3.529  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan     nan  508.5    4.198    3.311  0.00
+prompt_fr a=1          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan    0.75  521.2    3.343    3.106  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  684.0    4.506    0.303  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan    0.50  691.8    4.423    0.314  0.00
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan     nan  533.8    1.224    4.584  0.00
+============================================================================================================================================
+
+celda target: de
+condicion             celda_ok    tgt  mayus
+prompt_es a=0             0.00   0.00   0.00
+prompt_es a=1             0.00   0.00   0.00
+prompt_fr a=0             0.00   0.00   0.00
+prompt_fr a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+prompt_de a=0             1.00   1.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v9_smoke/alg_de/open_2/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 16, generadas 12
+# Etapa C: sets abiertos
+
+## open1: 99 prompts abiertos en inglés
+
+| celda | n | % idioma sin parche | % control nativo | % parche |
+|---|---|---|---|---|
+| fr | 4 | 0 | 75 | 0 |
+| es | 4 | 0 | 100 | 0 |
+| de | 4 | 0 | 75 | 0 |
+
+## open2: 50 imperativos por idioma de entrada
+
+Paper (alg_*, banco viejo), desde inglés: fr 48, es 74, de 60.
+
+| celda | entrada | n | % idioma sin parche | % parche |
+|---|---|---|---|---|
+| fr | control nativo (fr, sin parche) | 4 | 100 | - |
+| fr | es | 4 | 0 | 25 |
+| fr | de | 4 | 0 | 0 |
+| fr | en | 4 | 0 | 0 |
+| es | control nativo (es, sin parche) | 4 | 100 | - |
+| es | de | 4 | 0 | 0 |
+| es | fr | 4 | 0 | 0 |
+| es | en | 4 | 0 | 0 |
+| de | control nativo (de, sin parche) | 4 | 100 | - |
+| de | es | 4 | 0 | 0 |
+| de | fr | 4 | 0 | 0 |
+| de | en | 4 | 0 | 0 |
+
+
+reporte: algebra/runs/v9_smoke/reportes/C.md
+
+################ D fr
+parche algebra/runs/v9_smoke/alg_fr/lang_patch_best_train.pt  ||v|| 0.0946  ||e|| medio del vocab 1.0861  (ratio 0.087)
+||v|| supera la norma de 0.0% de los tokens del vocabulario y de 0.0% de los tokens de las preguntas (mediana preguntas 1.1627)
+held-out 112 filas (idx 588..699)  |  entradas ['prompt', 'prompt_es', 'prompt_de']  |  tokens unicos 1467
+sanity: vecino l2 de W[t] sin parche == t en 100.0%
+gap (distancia al 2do vecino): mediana 0.962  p10 0.666  p90 1.217  |  ||v|| < gap/2 en 100.0%
+
+vec       a  entrada     n_tok  cambia l2  cambia cos  destinos l2 mas frecuentes
+--------------------------------------------------------------------------------------------------------------
+v       0.5  prompt        844       0.0%        0.0%  
+v       0.5  prompt_es    1343       0.0%        0.0%  
+v       0.5  prompt_de    1287       0.0%        0.0%  
+v         1  prompt        844       0.0%        0.0%  
+v         1  prompt_es    1343       0.0%        0.0%  
+v         1  prompt_de    1287       0.0%        0.0%  
+v         2  prompt        844       0.0%        0.0%  
+v         2  prompt_es    1343       0.0%        0.0%  
+v         2  prompt_de    1287       0.0%        0.0%  
+v         4  prompt        844       0.0%        0.0%  
+v         4  prompt_es    1343       0.0%        0.0%  
+v         4  prompt_de    1287       0.0%        0.0%  
+v         8  prompt        844       0.0%        0.0%  
+v         8  prompt_es    1343       0.0%        0.0%  
+v         8  prompt_de    1287       0.0%        0.0%  
+rand    0.5  prompt        844       0.0%        0.0%  
+rand    0.5  prompt_es    1343       0.0%        0.0%  
+rand    0.5  prompt_de    1287       0.0%        0.0%  
+rand      1  prompt        844       0.0%        0.0%  
+rand      1  prompt_es    1343       0.0%        0.0%  
+rand      1  prompt_de    1287       0.0%        0.0%  
+rand      2  prompt        844       0.0%        0.0%  
+rand      2  prompt_es    1343       0.0%        0.0%  
+rand      2  prompt_de    1287       0.0%        0.0%  
+rand      4  prompt        844       0.0%        0.0%  
+rand      4  prompt_es    1343       0.0%        0.0%  
+rand      4  prompt_de    1287       0.0%        0.0%  
+rand      8  prompt        844       0.0%        0.0%  
+rand      8  prompt_es    1343       0.0%        0.0%  
+rand      8  prompt_de    1287       0.0%        0.0%  
+
+## prompt  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? |
+| 589 | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? |
+| 590 | Reveal the largest lake in South America. | Reveal the largest lake in South America. | Reveal the largest lake in South America. |
+| 591 | Lay out how the Moon formed. | Lay out how the Moon formed. | Lay out how the Moon formed. |
+| 592 | How does the eye focus light? | How does the eye focus light? | How does the eye focus light? |
+| 593 | Tallest tree species? | Tallest tree species? | Tallest tree species? |
+| 594 | Wait, who proposed continental drift? | Wait, who proposed continental drift? | Wait, who proposed continental drift? |
+| 595 | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? |
+| 596 | Who invented the electric battery? | Who invented the electric battery? | Who invented the electric battery? |
+| 597 | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. |
+
+## prompt_es  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? |
+| 589 | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? |
+| 590 | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. |
+| 591 | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. |
+| 592 | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? |
+| 593 | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? |
+| 594 | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? |
+| 595 | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? |
+| 596 | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? |
+| 597 | Ubica la capital de Armenia. | Ubica la capital de Armenia. | Ubica la capital de Armenia. |
+
+## prompt_de  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? |
+| 589 | Wer verfasste das Kommunistische Manifest? | Wer verfasste das Kommunistische Manifest? | Wer verfasste das Kommunistische Manifest? |
+| 590 | Verrate den größten See Südamerikas. | Verrate den größten See Südamerikas. | Verrate den größten See Südamerikas. |
+| 591 | Leg dar, wie der Mond entstand. | Leg dar, wie der Mond entstand. | Leg dar, wie der Mond entstand. |
+| 592 | Wie bündelt das Auge Licht? | Wie bündelt das Auge Licht? | Wie bündelt das Auge Licht? |
+| 593 | Höchste Baumart? | Höchste Baumart? | Höchste Baumart? |
+| 594 | Moment, wer stellte die Theorie der Kontinentaldrift auf? | Moment, wer stellte die Theorie der Kontinentaldrift auf? | Moment, wer stellte die Theorie der Kontinentaldrift auf? |
+| 595 | In welchem Jahr fand die islamische Revolution im Iran statt? | In welchem Jahr fand die islamische Revolution im Iran statt? | In welchem Jahr fand die islamische Revolution im Iran statt? |
+| 596 | Wer erfand die elektrische Batterie? | Wer erfand die elektrische Batterie? | Wer erfand die elektrische Batterie? |
+| 597 | Bestimme die Hauptstadt Armeniens genau. | Bestimme die Hauptstadt Armeniens genau. | Bestimme die Hauptstadt Armeniens genau. |
+
+Guardado: algebra/runs/v9_smoke/alg_fr/nearest_token/nearest_token.json  algebra/runs/v9_smoke/alg_fr/nearest_token/nearest_token.md
+
+################ D es
+parche algebra/runs/v9_smoke/alg_es/lang_patch_best_train.pt  ||v|| 0.0853  ||e|| medio del vocab 1.0861  (ratio 0.079)
+||v|| supera la norma de 0.0% de los tokens del vocabulario y de 0.0% de los tokens de las preguntas (mediana preguntas 1.1639)
+held-out 112 filas (idx 588..699)  |  entradas ['prompt', 'prompt_de', 'prompt_fr']  |  tokens unicos 1465
+sanity: vecino l2 de W[t] sin parche == t en 100.0%
+gap (distancia al 2do vecino): mediana 0.959  p10 0.667  p90 1.208  |  ||v|| < gap/2 en 100.0%
+
+vec       a  entrada     n_tok  cambia l2  cambia cos  destinos l2 mas frecuentes
+--------------------------------------------------------------------------------------------------------------
+v       0.5  prompt        844       0.0%        0.0%  
+v       0.5  prompt_de    1287       0.0%        0.0%  
+v       0.5  prompt_fr    1417       0.0%        0.0%  
+v         1  prompt        844       0.0%        0.0%  
+v         1  prompt_de    1287       0.0%        0.0%  
+v         1  prompt_fr    1417       0.0%        0.0%  
+v         2  prompt        844       0.0%        0.0%  
+v         2  prompt_de    1287       0.0%        0.0%  
+v         2  prompt_fr    1417       0.0%        0.0%  
+v         4  prompt        844       0.0%        0.0%  
+v         4  prompt_de    1287       0.0%        0.0%  
+v         4  prompt_fr    1417       0.0%        0.0%  
+v         8  prompt        844       0.0%        0.0%  
+v         8  prompt_de    1287       0.0%        0.0%  
+v         8  prompt_fr    1417       0.0%        0.0%  
+rand    0.5  prompt        844       0.0%        0.0%  
+rand    0.5  prompt_de    1287       0.0%        0.0%  
+rand    0.5  prompt_fr    1417       0.0%        0.0%  
+rand      1  prompt        844       0.0%        0.0%  
+rand      1  prompt_de    1287       0.0%        0.0%  
+rand      1  prompt_fr    1417       0.0%        0.0%  
+rand      2  prompt        844       0.0%        0.0%  
+rand      2  prompt_de    1287       0.0%        0.0%  
+rand      2  prompt_fr    1417       0.0%        0.0%  
+rand      4  prompt        844       0.0%        0.0%  
+rand      4  prompt_de    1287       0.0%        0.0%  
+rand      4  prompt_fr    1417       0.0%        0.0%  
+rand      8  prompt        844       0.0%        0.0%  
+rand      8  prompt_de    1287       0.0%        0.0%  
+rand      8  prompt_fr    1417       0.0%        0.0%  
+
+## prompt  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? |
+| 589 | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? |
+| 590 | Reveal the largest lake in South America. | Reveal the largest lake in South America. | Reveal the largest lake in South America. |
+| 591 | Lay out how the Moon formed. | Lay out how the Moon formed. | Lay out how the Moon formed. |
+| 592 | How does the eye focus light? | How does the eye focus light? | How does the eye focus light? |
+| 593 | Tallest tree species? | Tallest tree species? | Tallest tree species? |
+| 594 | Wait, who proposed continental drift? | Wait, who proposed continental drift? | Wait, who proposed continental drift? |
+| 595 | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? |
+| 596 | Who invented the electric battery? | Who invented the electric battery? | Who invented the electric battery? |
+| 597 | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. |
+
+## prompt_de  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? | Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet? |
+| 589 | Wer verfasste das Kommunistische Manifest? | Wer verfasste das Kommunistische Manifest? | Wer verfasste das Kommunistische Manifest? |
+| 590 | Verrate den größten See Südamerikas. | Verrate den größten See Südamerikas. | Verrate den größten See Südamerikas. |
+| 591 | Leg dar, wie der Mond entstand. | Leg dar, wie der Mond entstand. | Leg dar, wie der Mond entstand. |
+| 592 | Wie bündelt das Auge Licht? | Wie bündelt das Auge Licht? | Wie bündelt das Auge Licht? |
+| 593 | Höchste Baumart? | Höchste Baumart? | Höchste Baumart? |
+| 594 | Moment, wer stellte die Theorie der Kontinentaldrift auf? | Moment, wer stellte die Theorie der Kontinentaldrift auf? | Moment, wer stellte die Theorie der Kontinentaldrift auf? |
+| 595 | In welchem Jahr fand die islamische Revolution im Iran statt? | In welchem Jahr fand die islamische Revolution im Iran statt? | In welchem Jahr fand die islamische Revolution im Iran statt? |
+| 596 | Wer erfand die elektrische Batterie? | Wer erfand die elektrische Batterie? | Wer erfand die elektrische Batterie? |
+| 597 | Bestimme die Hauptstadt Armeniens genau. | Bestimme die Hauptstadt Armeniens genau. | Bestimme die Hauptstadt Armeniens genau. |
+
+## prompt_fr  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? |
+| 589 | Qui a rédigé le Manifeste du parti communiste? | Qui a rédigé le Manifeste du parti communiste? | Qui a rédigé le Manifeste du parti communiste? |
+| 590 | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. |
+| 591 | Exposez la formation de la Lune. | Exposez la formation de la Lune. | Exposez la formation de la Lune. |
+| 592 | Comment l'œil concentre-t-il la lumière? | Comment l'œil concentre-t-il la lumière? | Comment l'œil concentre-t-il la lumière? |
+| 593 | Espèce d'arbre la plus haute? | Espèce d'arbre la plus haute? | Espèce d'arbre la plus haute? |
+| 594 | Attends, qui a proposé la dérive des continents? | Attends, qui a proposé la dérive des continents? | Attends, qui a proposé la dérive des continents? |
+| 595 | Quel an a eu lieu la révolution islamique en Iran? | Quel an a eu lieu la révolution islamique en Iran? | Quel an a eu lieu la révolution islamique en Iran? |
+| 596 | Qui a inventé la pile électrique? | Qui a inventé la pile électrique? | Qui a inventé la pile électrique? |
+| 597 | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. |
+
+Guardado: algebra/runs/v9_smoke/alg_es/nearest_token/nearest_token.json  algebra/runs/v9_smoke/alg_es/nearest_token/nearest_token.md
+
+################ D de
+parche algebra/runs/v9_smoke/alg_de/lang_patch_best_train.pt  ||v|| 0.0871  ||e|| medio del vocab 1.0861  (ratio 0.080)
+||v|| supera la norma de 0.0% de los tokens del vocabulario y de 0.0% de los tokens de las preguntas (mediana preguntas 1.1611)
+held-out 112 filas (idx 588..699)  |  entradas ['prompt', 'prompt_es', 'prompt_fr']  |  tokens unicos 1393
+sanity: vecino l2 de W[t] sin parche == t en 100.0%
+gap (distancia al 2do vecino): mediana 0.954  p10 0.669  p90 1.198  |  ||v|| < gap/2 en 100.0%
+
+vec       a  entrada     n_tok  cambia l2  cambia cos  destinos l2 mas frecuentes
+--------------------------------------------------------------------------------------------------------------
+v       0.5  prompt        844       0.0%        0.0%  
+v       0.5  prompt_es    1343       0.0%        0.0%  
+v       0.5  prompt_fr    1417       0.0%        0.0%  
+v         1  prompt        844       0.0%        0.0%  
+v         1  prompt_es    1343       0.0%        0.0%  
+v         1  prompt_fr    1417       0.0%        0.0%  
+v         2  prompt        844       0.0%        0.0%  
+v         2  prompt_es    1343       0.0%        0.0%  
+v         2  prompt_fr    1417       0.0%        0.0%  
+v         4  prompt        844       0.0%        0.0%  
+v         4  prompt_es    1343       0.0%        0.0%  
+v         4  prompt_fr    1417       0.0%        0.0%  
+v         8  prompt        844       0.0%        0.0%  
+v         8  prompt_es    1343       0.0%        0.0%  
+v         8  prompt_fr    1417       0.0%        0.0%  
+rand    0.5  prompt        844       0.0%        0.0%  
+rand    0.5  prompt_es    1343       0.0%        0.0%  
+rand    0.5  prompt_fr    1417       0.0%        0.0%  
+rand      1  prompt        844       0.0%        0.0%  
+rand      1  prompt_es    1343       0.0%        0.0%  
+rand      1  prompt_fr    1417       0.0%        0.0%  
+rand      2  prompt        844       0.0%        0.0%  
+rand      2  prompt_es    1343       0.0%        0.0%  
+rand      2  prompt_fr    1417       0.0%        0.0%  
+rand      4  prompt        844       0.0%        0.0%  
+rand      4  prompt_es    1343       0.0%        0.0%  
+rand      4  prompt_fr    1417       0.0%        0.0%  
+rand      8  prompt        844       0.0%        0.0%  
+rand      8  prompt_es    1343       0.0%        0.0%  
+rand      8  prompt_fr    1417       0.0%        0.0%  
+
+## prompt  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? |
+| 589 | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? |
+| 590 | Reveal the largest lake in South America. | Reveal the largest lake in South America. | Reveal the largest lake in South America. |
+| 591 | Lay out how the Moon formed. | Lay out how the Moon formed. | Lay out how the Moon formed. |
+| 592 | How does the eye focus light? | How does the eye focus light? | How does the eye focus light? |
+| 593 | Tallest tree species? | Tallest tree species? | Tallest tree species? |
+| 594 | Wait, who proposed continental drift? | Wait, who proposed continental drift? | Wait, who proposed continental drift? |
+| 595 | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? |
+| 596 | Who invented the electric battery? | Who invented the electric battery? | Who invented the electric battery? |
+| 597 | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. |
+
+## prompt_es  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? |
+| 589 | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? |
+| 590 | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. |
+| 591 | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. |
+| 592 | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? |
+| 593 | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? |
+| 594 | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? |
+| 595 | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? |
+| 596 | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? |
+| 597 | Ubica la capital de Armenia. | Ubica la capital de Armenia. | Ubica la capital de Armenia. |
+
+## prompt_fr  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? |
+| 589 | Qui a rédigé le Manifeste du parti communiste? | Qui a rédigé le Manifeste du parti communiste? | Qui a rédigé le Manifeste du parti communiste? |
+| 590 | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. |
+| 591 | Exposez la formation de la Lune. | Exposez la formation de la Lune. | Exposez la formation de la Lune. |
+| 592 | Comment l'œil concentre-t-il la lumière? | Comment l'œil concentre-t-il la lumière? | Comment l'œil concentre-t-il la lumière? |
+| 593 | Espèce d'arbre la plus haute? | Espèce d'arbre la plus haute? | Espèce d'arbre la plus haute? |
+| 594 | Attends, qui a proposé la dérive des continents? | Attends, qui a proposé la dérive des continents? | Attends, qui a proposé la dérive des continents? |
+| 595 | Quel an a eu lieu la révolution islamique en Iran? | Quel an a eu lieu la révolution islamique en Iran? | Quel an a eu lieu la révolution islamique en Iran? |
+| 596 | Qui a inventé la pile électrique? | Qui a inventé la pile électrique? | Qui a inventé la pile électrique? |
+| 597 | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. |
+
+Guardado: algebra/runs/v9_smoke/alg_de/nearest_token/nearest_token.json  algebra/runs/v9_smoke/alg_de/nearest_token/nearest_token.md
+# Etapa D: chequeos sin generación
+
+## Normas y cosenos
+
+Referencia del paper: réplica de alg_fr con otro orden de batches = 0.49; dos direcciones al azar en d=3072 = ±0.018.
+
+| vector | ‖v‖ | v9_smoke_fr | v8_fr | paper_fr | v9_smoke_es | v8_es | paper_es | v9_smoke_de | v8_de | paper_de |
+|---|---|---|---|---|---|---|---|---|---|---|
+| v9_smoke_fr | 0.095 | 1.00 | 0.11 | 0.17 | 0.03 | -0.01 | 0.02 | 0.36 | 0.02 | 0.06 |
+| v8_fr | 0.871 | 0.11 | 1.00 | 0.25 | -0.02 | 0.31 | 0.14 | -0.00 | 0.20 | 0.12 |
+| paper_fr | 0.842 | 0.17 | 0.25 | 1.00 | 0.02 | 0.17 | 0.25 | 0.05 | 0.14 | 0.19 |
+| v9_smoke_es | 0.085 | 0.03 | -0.02 | 0.02 | 1.00 | 0.14 | 0.16 | 0.18 | -0.01 | 0.04 |
+| v8_es | 0.901 | -0.01 | 0.31 | 0.17 | 0.14 | 1.00 | 0.25 | 0.04 | 0.22 | 0.14 |
+| paper_es | 0.865 | 0.02 | 0.14 | 0.25 | 0.16 | 0.25 | 1.00 | 0.06 | 0.13 | 0.17 |
+| v9_smoke_de | 0.087 | 0.36 | -0.00 | 0.05 | 0.18 | 0.04 | 0.06 | 1.00 | 0.11 | 0.18 |
+| v8_de | 0.964 | 0.02 | 0.20 | 0.14 | -0.01 | 0.22 | 0.13 | 0.11 | 1.00 | 0.24 |
+| paper_de | 0.849 | 0.06 | 0.12 | 0.19 | 0.04 | 0.14 | 0.17 | 0.18 | 0.24 | 1.00 |
+
+Celda fr: ‖v‖ = 0.095; supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.96.
+
+Celda es: ‖v‖ = 0.085; supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.96.
+
+Celda de: ‖v‖ = 0.087; supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.95.
+
+## Token más cercano de e + α·v (§4.1)
+
+| celda | α | entrada | tokens | % cambia (L2) | % cambia (coseno) |
+|---|---|---|---|---|---|
+| fr | 0.5 | en | 844 | 0 | 0 |
+| fr | 0.5 | es | 1343 | 0 | 0 |
+| fr | 0.5 | de | 1287 | 0 | 0 |
+| fr | 1.0 | en | 844 | 0 | 0 |
+| fr | 1.0 | es | 1343 | 0 | 0 |
+| fr | 1.0 | de | 1287 | 0 | 0 |
+| fr | 2.0 | en | 844 | 0 | 0 |
+| fr | 2.0 | es | 1343 | 0 | 0 |
+| fr | 2.0 | de | 1287 | 0 | 0 |
+| fr | 4.0 | en | 844 | 0 | 0 |
+| fr | 4.0 | es | 1343 | 0 | 0 |
+| fr | 4.0 | de | 1287 | 0 | 0 |
+| fr | 8.0 | en | 844 | 0 | 0 |
+| fr | 8.0 | es | 1343 | 0 | 0 |
+| fr | 8.0 | de | 1287 | 0 | 0 |
+| es | 0.5 | en | 844 | 0 | 0 |
+| es | 0.5 | de | 1287 | 0 | 0 |
+| es | 0.5 | fr | 1417 | 0 | 0 |
+| es | 1.0 | en | 844 | 0 | 0 |
+| es | 1.0 | de | 1287 | 0 | 0 |
+| es | 1.0 | fr | 1417 | 0 | 0 |
+| es | 2.0 | en | 844 | 0 | 0 |
+| es | 2.0 | de | 1287 | 0 | 0 |
+| es | 2.0 | fr | 1417 | 0 | 0 |
+| es | 4.0 | en | 844 | 0 | 0 |
+| es | 4.0 | de | 1287 | 0 | 0 |
+| es | 4.0 | fr | 1417 | 0 | 0 |
+| es | 8.0 | en | 844 | 0 | 0 |
+| es | 8.0 | de | 1287 | 0 | 0 |
+| es | 8.0 | fr | 1417 | 0 | 0 |
+| de | 0.5 | en | 844 | 0 | 0 |
+| de | 0.5 | es | 1343 | 0 | 0 |
+| de | 0.5 | fr | 1417 | 0 | 0 |
+| de | 1.0 | en | 844 | 0 | 0 |
+| de | 1.0 | es | 1343 | 0 | 0 |
+| de | 1.0 | fr | 1417 | 0 | 0 |
+| de | 2.0 | en | 844 | 0 | 0 |
+| de | 2.0 | es | 1343 | 0 | 0 |
+| de | 2.0 | fr | 1417 | 0 | 0 |
+| de | 4.0 | en | 844 | 0 | 0 |
+| de | 4.0 | es | 1343 | 0 | 0 |
+| de | 4.0 | fr | 1417 | 0 | 0 |
+| de | 8.0 | en | 844 | 0 | 0 |
+| de | 8.0 | es | 1343 | 0 | 0 |
+| de | 8.0 | fr | 1417 | 0 | 0 |
+
+
+reporte: algebra/runs/v9_smoke/reportes/D.md
+
+################ E resta
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+parche fr         norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche es         norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche de         norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand0_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand1_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand2_fr   norma 0.0946  forma (1, 1, 3072)  anchor goal_all
+parche rand0_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand1_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand2_es   norma 0.0853  forma (1, 1, 3072)  anchor goal_all
+parche rand0_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand1_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+parche rand2_de   norma 0.0871  forma (1, 1, 3072)  anchor goal_all
+tail held-out 3  |  preset=resta
+plain | prompt_fr:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+plain | prompt_fr:  33%|███▎      | 1/3 [00:01<00:02,  1.32s/it]plain | prompt_fr: 100%|██████████| 3/3 [00:01<00:00,  2.58it/s]plain | prompt_fr: 100%|██████████| 3/3 [00:01<00:00,  2.08it/s]
+plain | prompt_fr -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.46it/s]plain | prompt_fr -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.23it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.49it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.43it/s]
+plain | prompt_fr -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.45it/s]plain | prompt_fr -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.23it/s]plain | prompt_fr -1*es: 100%|██████████| 3/3 [00:02<00:00,  1.50it/s]plain | prompt_fr -1*es: 100%|██████████| 3/3 [00:02<00:00,  1.44it/s]
+plain | prompt_fr -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.47it/s]plain | prompt_fr -1*de:  67%|██████▋   | 2/3 [00:01<00:00,  1.25it/s]plain | prompt_fr -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.51it/s]plain | prompt_fr -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.46it/s]
+plain | prompt_fr -1*rand0_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand0_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]plain | prompt_fr -1*rand0_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.63it/s]plain | prompt_fr -1*rand0_fr: 100%|██████████| 3/3 [00:01<00:00,  1.79it/s]plain | prompt_fr -1*rand0_fr: 100%|██████████| 3/3 [00:01<00:00,  1.72it/s]
+plain | prompt_fr -1*rand1_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand1_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.47it/s]plain | prompt_fr -1*rand1_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.63it/s]plain | prompt_fr -1*rand1_fr: 100%|██████████| 3/3 [00:01<00:00,  1.79it/s]plain | prompt_fr -1*rand1_fr: 100%|██████████| 3/3 [00:01<00:00,  1.73it/s]
+plain | prompt_fr -1*rand2_fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand2_fr:  33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]plain | prompt_fr -1*rand2_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.64it/s]plain | prompt_fr -1*rand2_fr: 100%|██████████| 3/3 [00:01<00:00,  1.80it/s]plain | prompt_fr -1*rand2_fr: 100%|██████████| 3/3 [00:01<00:00,  1.73it/s]
+plain | prompt_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es:  67%|██████▋   | 2/3 [00:00<00:00, 16.06it/s]plain | prompt_es: 100%|██████████| 3/3 [00:00<00:00, 15.99it/s]
+plain | prompt_es -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.63it/s]plain | prompt_es -1*fr:  67%|██████▋   | 2/3 [00:04<00:02,  2.36s/it]plain | prompt_es -1*fr: 100%|██████████| 3/3 [00:07<00:00,  2.91s/it]plain | prompt_es -1*fr: 100%|██████████| 3/3 [00:07<00:00,  2.58s/it]
+plain | prompt_es -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.63it/s]plain | prompt_es -1*es:  67%|██████▋   | 2/3 [00:04<00:02,  2.40s/it]plain | prompt_es -1*es: 100%|██████████| 3/3 [00:05<00:00,  1.65s/it]plain | prompt_es -1*es: 100%|██████████| 3/3 [00:05<00:00,  1.67s/it]
+plain | prompt_es -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.63it/s]plain | prompt_es -1*de:  67%|██████▋   | 2/3 [00:04<00:02,  2.35s/it]plain | prompt_es -1*de: 100%|██████████| 3/3 [00:04<00:00,  1.62s/it]plain | prompt_es -1*de: 100%|██████████| 3/3 [00:04<00:00,  1.64s/it]
+plain | prompt_es -1*rand0_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand0_es:  33%|███▎      | 1/3 [00:00<00:01,  1.65it/s]plain | prompt_es -1*rand0_es:  67%|██████▋   | 2/3 [00:02<00:01,  1.10s/it]plain | prompt_es -1*rand0_es: 100%|██████████| 3/3 [00:02<00:00,  1.06it/s]plain | prompt_es -1*rand0_es: 100%|██████████| 3/3 [00:02<00:00,  1.07it/s]
+plain | prompt_es -1*rand1_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand1_es:  33%|███▎      | 1/3 [00:00<00:01,  1.61it/s]plain | prompt_es -1*rand1_es:  67%|██████▋   | 2/3 [00:02<00:01,  1.11s/it]plain | prompt_es -1*rand1_es: 100%|██████████| 3/3 [00:02<00:00,  1.06it/s]plain | prompt_es -1*rand1_es: 100%|██████████| 3/3 [00:02<00:00,  1.06it/s]
+plain | prompt_es -1*rand2_es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_es -1*rand2_es:  33%|███▎      | 1/3 [00:00<00:01,  1.65it/s]plain | prompt_es -1*rand2_es:  67%|██████▋   | 2/3 [00:02<00:01,  1.10s/it]plain | prompt_es -1*rand2_es: 100%|██████████| 3/3 [00:02<00:00,  1.07it/s]plain | prompt_es -1*rand2_es: 100%|██████████| 3/3 [00:02<00:00,  1.08it/s]
+plain | prompt_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de:  67%|██████▋   | 2/3 [00:00<00:00, 15.85it/s]plain | prompt_de: 100%|██████████| 3/3 [00:00<00:00, 15.26it/s]
+plain | prompt_de -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*fr:  33%|███▎      | 1/3 [00:00<00:01,  1.37it/s]plain | prompt_de -1*fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.10it/s]plain | prompt_de -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.03it/s]plain | prompt_de -1*fr: 100%|██████████| 3/3 [00:02<00:00,  1.07it/s]
+plain | prompt_de -1*es:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*es:  33%|███▎      | 1/3 [00:00<00:01,  1.42it/s]plain | prompt_de -1*es:  67%|██████▋   | 2/3 [00:01<00:00,  1.11it/s]plain | prompt_de -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.92s/it]plain | prompt_de -1*es: 100%|██████████| 3/3 [00:04<00:00,  1.63s/it]
+plain | prompt_de -1*de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*de:  33%|███▎      | 1/3 [00:00<00:01,  1.43it/s]plain | prompt_de -1*de:  67%|██████▋   | 2/3 [00:01<00:00,  1.16it/s]plain | prompt_de -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.05it/s]plain | prompt_de -1*de: 100%|██████████| 3/3 [00:02<00:00,  1.10it/s]
+plain | prompt_de -1*rand0_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand0_de:  33%|███▎      | 1/3 [00:00<00:01,  1.42it/s]plain | prompt_de -1*rand0_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.11it/s]plain | prompt_de -1*rand0_de: 100%|██████████| 3/3 [00:02<00:00,  1.01it/s]plain | prompt_de -1*rand0_de: 100%|██████████| 3/3 [00:02<00:00,  1.05it/s]
+plain | prompt_de -1*rand1_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand1_de:  33%|███▎      | 1/3 [00:00<00:01,  1.51it/s]plain | prompt_de -1*rand1_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.14it/s]plain | prompt_de -1*rand1_de: 100%|██████████| 3/3 [00:02<00:00,  1.23it/s]plain | prompt_de -1*rand1_de: 100%|██████████| 3/3 [00:02<00:00,  1.24it/s]
+plain | prompt_de -1*rand2_de:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_de -1*rand2_de:  33%|███▎      | 1/3 [00:00<00:01,  1.56it/s]plain | prompt_de -1*rand2_de:  67%|██████▋   | 2/3 [00:01<00:00,  1.16it/s]plain | prompt_de -1*rand2_de: 100%|██████████| 3/3 [00:02<00:00,  1.25it/s]plain | prompt_de -1*rand2_de: 100%|██████████| 3/3 [00:02<00:00,  1.26it/s]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+plain | prompt_fr                    3  1.00  0.00  0.00  0.00  0.00  1.00     nan   73.3    0.739    2.606   0.0
+plain | prompt_fr -1*fr              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.784    3.361  17.3
+plain | prompt_fr -1*es              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.773    2.824  17.3
+plain | prompt_fr -1*de              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33   89.0    0.826    2.936  17.3
+plain | prompt_fr -1*rand0_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.742    2.635  17.3
+plain | prompt_fr -1*rand1_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.737    2.630  17.3
+plain | prompt_fr -1*rand2_fr        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00   73.3    0.762    2.624  17.3
+plain | prompt_es                    3  0.00  0.00  1.00  0.00  0.00  0.67     nan  137.3    4.397    3.204   0.0
+plain | prompt_es -1*fr              3  0.00  0.00  1.00  0.00  0.00  1.00    0.67  391.7    5.040    3.482  16.3
+plain | prompt_es -1*es              3  0.00  0.00  1.00  0.00  0.00  0.67    0.33  254.7    3.931    3.331  16.3
+plain | prompt_es -1*de              3  0.00  0.00  1.00  0.00  0.00  0.67    0.33  248.0    4.842    3.436  16.3
+plain | prompt_es -1*rand0_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.334    3.188  16.3
+plain | prompt_es -1*rand1_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.331    3.206  16.3
+plain | prompt_es -1*rand2_es        3  0.00  0.00  1.00  0.00  0.00  0.67    0.00  137.3    4.385    3.184  16.3
+plain | prompt_de                    3  0.00  0.00  0.00  1.00  0.00  1.00     nan  131.7    4.816    3.255   0.0
+plain | prompt_de -1*fr              3  0.00  0.00  0.00  1.00  0.00  1.00    0.67  130.3    5.479    3.548  15.7
+plain | prompt_de -1*es              3  0.00  0.00  0.00  1.00  0.00  1.00    0.67  233.0    4.904    3.574  15.7
+plain | prompt_de -1*de              3  0.00  0.00  0.00  1.00  0.00  1.00    1.00  127.0    4.818    3.694  15.7
+plain | prompt_de -1*rand0_de        3  0.00  0.00  0.00  1.00  0.00  1.00    0.33  134.7    4.790    3.281  15.7
+plain | prompt_de -1*rand1_de        3  0.00  0.00  0.00  1.00  0.00  0.67    0.33  110.3    4.771    3.239  15.7
+plain | prompt_de -1*rand2_de        3  0.00  0.00  0.00  1.00  0.00  0.67    0.33  110.3    4.809    3.299  15.7
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/v9_smoke/resta/entrada_o_directiva_resta.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v9_smoke/gen_cache: reusadas 9, generadas 54
+
+################ E idioma_entrada
