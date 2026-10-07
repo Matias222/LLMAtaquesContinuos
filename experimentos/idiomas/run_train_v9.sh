@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run v9: las direcciones fr, es, de sobre el banco v8 (attributes/v8, 549 filas de
 # train por celda), en algebra/runs/v9. Cambios respecto de run_train_v8.sh:
-#   L2 0.0835 (v8: 0.08)
+#   L2 0.09 (v8: 0.08; con 0.0835 la norma de fr ya pasaba 0.87 en la epoch 3)
 #   control = M(q_X), la pregunta escrita en el idioma de la celda y sin parche, en
 #     vez de M("Answer in X." + q) (eval_lang_patch.py --control nativo). La
 #     instruccion ya no se genera en A ni en C; en E sigue (ahi es el objeto de estudio)
@@ -42,7 +42,7 @@ STAGES="${STAGES:-datos base train A C D E}"
 TDIR=attributes/v8
 ODIR=attributes/v9
 SPLIT=0.84
-L2=0.0835
+L2=0.09
 BATCH=28
 EPOCHS=10
 STEPS=20
