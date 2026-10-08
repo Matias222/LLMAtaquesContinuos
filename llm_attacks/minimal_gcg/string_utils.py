@@ -1,12 +1,16 @@
 import torch
 import fastchat 
-from .clase_prompts import Llama32ConversationTemplate
+from .clase_prompts import Llama32ConversationTemplate, Qwen3ConversationTemplate
 
 def load_conversation_template(template_name):
     
     if(template_name=="llama-3.2"):
         
         return Llama32ConversationTemplate()
+
+    elif(template_name=="qwen3"):
+
+        return Qwen3ConversationTemplate()
 
     else:
         
@@ -40,7 +44,7 @@ class SuffixManager:
         encoding = self.tokenizer(prompt)
         toks = encoding.input_ids
 
-        if self.conv_template.name == 'llama-2' or self.conv_template.name == 'llama-3.2':
+        if self.conv_template.name in ('llama-2', 'llama-3.2', 'qwen3'):
             
             self.conv_template.messages = []
 
@@ -68,7 +72,7 @@ class SuffixManager:
 
             #print("Nombre plantilla", self.conv_template.name)
 
-            if(self.conv_template.name == "llama-3.2"):
+            if(self.conv_template.name in ("llama-3.2", "qwen3")):
                 
                 #print("Llama 3.2 en cadena",end='\n')
 
