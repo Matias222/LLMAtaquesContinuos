@@ -79,6 +79,9 @@ def main():
 
     tok = AutoTokenizer.from_pretrained(args.model, use_fast=False)
     W = load_embeddings(args.model, "cpu")
+    # Qwen rellena la matriz hasta un multiplo (151936 filas, 151669 tokens): las filas
+    # de relleno no son tokens y no pueden ser vecinas. En Llama no cambia nada.
+    W = W[:len(tok)]
     W_sq = (W * W).sum(1)
     W_unit = W / W.norm(dim=1, keepdim=True)
     v = torch.load(args.patch, map_location="cpu").float().reshape(-1)
