@@ -1,0 +1,202 @@
+{
+  "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v8/alg_fr/lang_patch_best_train.pt",
+  "model_path": "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
+  "patch_norm": 0.8710815906524658,
+  "lang_id": {
+    "backend": "glotlid",
+    "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
+    "idiomas": [
+      "fr",
+      "en",
+      "es",
+      "de",
+      "it",
+      "pt",
+      "ca",
+      "nl",
+      "sv",
+      "no",
+      "da",
+      "ro",
+      "gl"
+    ],
+    "min_palabras": 3,
+    "variedades": {
+      "ext": "es",
+      "cbk": "es",
+      "ast": "es"
+    },
+    "p_revisar": 0.5,
+    "revisar_siempre": [
+      "ca"
+    ],
+    "min_palabras_oracion": 4
+  },
+  "patch_shape": [
+    1,
+    1,
+    3072
+  ],
+  "n_heldout": 2,
+  "config": {
+    "num_patch_positions": 1,
+    "patch_offset": 0,
+    "patch_anchor": "goal_all",
+    "scale": 1.0,
+    "num_tokens": 250,
+    "regen_ref": true,
+    "control": "instruccion",
+    "temperature": 0.0,
+    "train_test_split": 0.0,
+    "target_lang": "fr",
+    "upper": false
+  },
+  "metrics": {
+    "baseline": {
+      "is_french": 0.0,
+      "french_score": 1.442280324732584e-05,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 0.0,
+      "target_score": 1.442280324732584e-05,
+      "is_uppercase": 0.0,
+      "attr_ok": 0.0
+    },
+    "reference": {
+      "is_french": 1.0,
+      "french_score": 0.9998272911422281,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 1.0,
+      "target_score": 0.9998272911422281,
+      "is_uppercase": 0.0,
+      "attr_ok": 1.0
+    },
+    "patched": {
+      "is_french": 1.0,
+      "french_score": 0.9998291664254448,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 1.0,
+      "target_score": 0.9998291664254448,
+      "is_uppercase": 0.0,
+      "attr_ok": 1.0
+    },
+    "nll_fr_baseline": 0.422119140625,
+    "nll_fr_patched": 0.265869140625,
+    "nll_fr_head_baseline": 4.8974609375,
+    "nll_fr_head_patched": 0.121185302734375,
+    "nll_fr_tail_baseline": 0.330810546875,
+    "nll_fr_tail_patched": 0.268798828125,
+    "head_k": 5,
+    "n_patched_media": 7.5
+  },
+  "splits": {
+    "heldout": [
+      {
+        "idx": 0,
+        "prompt": "Lay out how the Moon formed.",
+        "answer": "collision",
+        "has_answer": true,
+        "baseline": "The formation of the Moon is a complex and still somewhat debated topic in the field of astrophysics. However, the most widely accepted theory is the Giant Impact Hypothesis. Here's a simplified overview of how the Moon is thought to have formed:\n\n**The Giant Impact Hypothesis**\n\nAbout 4.5 billion years ago, when the solar system was still in its early stages of formation, the Sun was much smaller and the planets were still in the process of accreting (growing) in size. The Earth is thought to have formed from a disk of material that surrounded the Sun, known as the protoplanetary disk.\n\nAt this time, the Earth was still a small, rocky planet, and it was surrounded by a large disk of debris, including small rocks and dust. This debris disk was likely the result of collisions between smaller bodies in the solar system.\n\nOne of the most massive objects in the solar system at this time was a Mars-sized planet called Theia. Theia is thought to have formed in the same region of the solar system as the Earth, and it's believed to have been a terrestrial planet, similar in composition to the Earth.\n\n**The Collision**\n\nOne day, Theia and the Earth collided",
+        "reference": "La formation de la Lune est un sujet fascinant qui a été étudié par les scientifiques pendant des siècles. Voici une vue d'ensemble de la théorie la plus acceptée :\n\n**La théorie de la formation de la Lune**\n\nSelon la théorie la plus acceptée, la Lune a été formée il y a environ 4,5 milliards d'années, à la même époque que la Terre. Il y a eu un grand impact dans le système solaire, qui a provoqué une grande éjection de matière de la Terre. Cette matière a été attirée par la Terre et a formé une grande boule de roche qui a commencé à tourner autour de notre planète.\n\n**Les étapes de la formation de la Lune**\n\nVoici les étapes clés de la formation de la Lune :\n\n1. **L'impact initial** : un grand objet, appelé \"Théia\", a frappé la Terre il y a environ 4,5 milliards d'années. Cette collision a provoqué une grande éjection de matière de la Terre",
+        "patched": "La formation de la Lune est un sujet fascinant qui a été étudié par les scientifiques pendant des siècles. Voici une vue d'ensemble de la théorie la plus acceptée :\n\nSelon la théorie de la formation de la Lune, la Lune a été créée il y a environ 4,5 milliards d'années, à la même époque que la Terre. À cette époque, le système solaire était encore en formation et les planètes étaient en train de se former.\n\nIl est croyé que la Lune a été formée à partir de débris qui ont été projetés hors de la Terre lors d'un grand impact. Ce impact, appelé l'impact gigantesque, a eu lieu lorsque une grande planète, appelée Theia, a heurté la Terre. La collision a été si violente que la Terre a été dévastée et que des débris ont été projetés dans l'espace.\n\nCes débris, qui comprenaient des roches et des métaux, ont commencé à tourner autour de la Terre, formant une orbite qui",
+        "baseline_is_french": false,
+        "baseline_french_score": 1.01492968884367e-05,
+        "baseline_lang": "en",
+        "baseline_lang_revisar": true,
+        "baseline_is_target": false,
+        "baseline_target_score": 1.01492968884367e-05,
+        "baseline_is_uppercase": false,
+        "baseline_attr_ok": false,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 0.9998265905890852,
+        "reference_lang": "fr",
+        "reference_lang_revisar": true,
+        "reference_is_target": true,
+        "reference_target_score": 0.9998265905890852,
+        "reference_is_uppercase": false,
+        "reference_attr_ok": true,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 0.9998297171584156,
+        "patched_lang": "fr",
+        "patched_lang_revisar": false,
+        "patched_is_target": true,
+        "patched_target_score": 0.9998297171584156,
+        "patched_is_uppercase": false,
+        "patched_attr_ok": true,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "n_patched": 8,
+        "nll_baseline": {
+          "all": 0.3642578125,
+          "head": 3.685546875,
+          "tail": 0.29638671875,
+          "n": 250
+        },
+        "nll_patched": {
+          "all": 0.2265625,
+          "head": 0.08184814453125,
+          "tail": 0.2294921875,
+          "n": 250
+        }
+      },
+      {
+        "idx": 1,
+        "prompt": "How does the eye focus light?",
+        "answer": "lens",
+        "has_answer": true,
+        "baseline": "The eye focuses light through a complex process involving multiple structures and mechanisms. Here's a simplified explanation:\n\n**The Structure of the Eye**\n\nThe eye consists of several layers, including:\n\n1. **Cornea**: The transparent outer layer of the eye that helps focus light.\n2. **Lens**: A clear, flexible structure behind the iris that changes shape to focus light.\n3. **Iris**: The colored part of the eye that controls the amount of light entering the eye.\n4. **Pupil**: The opening in the center of the iris that regulates light entry.\n5. **Retina**: The innermost layer of the eye that converts light into electrical signals.\n\n**The Focusing Process**\n\nWhen light enters the eye, it passes through the cornea and pupil. The cornea bends (refracts) the light, and the pupil regulates the amount of light that enters.\n\nThe light then passes through the lens, which changes shape to focus the light on the retina. This process is called accommodation.\n\n**How the Lens Focalizes Light**\n\nThe lens has two main parts:\n\n1. **Ciliary muscles**: These muscles surround the lens and control its shape. When they contract, the lens becomes more rounded and the focal length",
+        "reference": "L'œil se concentre la lumière grâce à un système complexe de muscles et de structures anatomiques. Voici les étapes clés :\n\n1. La lumière pénètre dans l'œil à travers la cornée, qui est la couche transparente qui recouvre la surface de l'œil.\n2. La lumière est ensuite réfléchie vers l'intérieur de l'œil par la cornée et la membrane conjonctive.\n3. La lumière est ensuite focalisée sur la rétine, qui est la couche de tissu photorécepteur située à l'arrière de l'œil.\n4. La rétine contient des cellules photoréceptrices appelées cones et bastoncellules, qui convertissent la lumière en signaux électriques.\n5. Les signaux électriques sont ensuite transmis au cerveau via le nerf optique, qui transmet les informations visuelles.\n6. Le cerveau interprète ces signaux et nous permet de voir les objets et les images.\n\nEn résumé, l'œil se concent",
+        "patched": "L'œil se concentre la lumière de la manière suivante :\n\nL'œil est composé de plusieurs parties, notamment :\n\n* Les iris, qui contrôlent la quantité de lumière entrant dans l'œil\n* La corne, qui focalise la lumière sur la rétine\n* La rétine, qui détecte la lumière et envoie des signaux au cerveau\n\nLorsque la lumière entre dans l'œil, elle est focalisée sur la rétine par la corne. La corne est une lentille transparente qui se déforme légèrement pour focaliser la lumière sur la rétine. C'est pourquoi les lunettes ont une courbe qui ressemble à celle de la corne pour correcter la vision.\n\nLa rétine est composée de cellules photoréceptrices appelées cones et bastoncellules. Les cones détectent la couleur et la luminosité, tandis que les bastoncellules détectent la quantité de lumière. Les signaux provenant des cones et des bastoncellules sont ensuite transmis au",
+        "baseline_is_french": false,
+        "baseline_french_score": 1.869630960621498e-05,
+        "baseline_lang": "en",
+        "baseline_lang_revisar": true,
+        "baseline_is_target": false,
+        "baseline_target_score": 1.869630960621498e-05,
+        "baseline_is_uppercase": false,
+        "baseline_attr_ok": false,
+        "baseline_answer_correct": true,
+        "reference_is_french": true,
+        "reference_french_score": 0.999827991695371,
+        "reference_lang": "fr",
+        "reference_lang_revisar": false,
+        "reference_is_target": true,
+        "reference_target_score": 0.999827991695371,
+        "reference_is_uppercase": false,
+        "reference_attr_ok": true,
+        "reference_answer_correct": true,
+        "patched_is_french": true,
+        "patched_french_score": 0.9998286156924742,
+        "patched_lang": "fr",
+        "patched_lang_revisar": false,
+        "patched_is_target": true,
+        "patched_target_score": 0.9998286156924742,
+        "patched_is_uppercase": false,
+        "patched_attr_ok": true,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "n_patched": 7,
+        "nll_baseline": {
+          "all": 0.47998046875,
+          "head": 6.109375,
+          "tail": 0.365234375,
+          "n": 250
+        },
+        "nll_patched": {
+          "all": 0.30517578125,
+          "head": 0.1605224609375,
+          "tail": 0.30810546875,
+          "n": 250
+        }
+      }
+    ]
+  }
+}

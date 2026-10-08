@@ -1,0 +1,202 @@
+{
+  "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v8/alg_de/lang_patch_best_train.pt",
+  "model_path": "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct",
+  "patch_norm": 0.9637619256973267,
+  "lang_id": {
+    "backend": "glotlid",
+    "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
+    "idiomas": [
+      "fr",
+      "en",
+      "es",
+      "de",
+      "it",
+      "pt",
+      "ca",
+      "nl",
+      "sv",
+      "no",
+      "da",
+      "ro",
+      "gl"
+    ],
+    "min_palabras": 3,
+    "variedades": {
+      "ext": "es",
+      "cbk": "es",
+      "ast": "es"
+    },
+    "p_revisar": 0.5,
+    "revisar_siempre": [
+      "ca"
+    ],
+    "min_palabras_oracion": 4
+  },
+  "patch_shape": [
+    1,
+    1,
+    3072
+  ],
+  "n_heldout": 2,
+  "config": {
+    "num_patch_positions": 1,
+    "patch_offset": 0,
+    "patch_anchor": "goal_all",
+    "scale": 1.0,
+    "num_tokens": 250,
+    "regen_ref": true,
+    "control": "instruccion",
+    "temperature": 0.0,
+    "train_test_split": 0.0,
+    "target_lang": "de",
+    "upper": false
+  },
+  "metrics": {
+    "baseline": {
+      "is_french": 0.0,
+      "french_score": 1.442280324732584e-05,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 0.0,
+      "target_score": 1.381905211536734e-05,
+      "is_uppercase": 0.0,
+      "attr_ok": 0.0
+    },
+    "reference": {
+      "is_french": 0.0,
+      "french_score": 1.0132185974440906e-05,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 1.0,
+      "target_score": 0.9998266119696,
+      "is_uppercase": 0.0,
+      "attr_ok": 1.0
+    },
+    "patched": {
+      "is_french": 0.0,
+      "french_score": 1.0167575175194661e-05,
+      "answer_correct": 1.0,
+      "role_leak": 0.0,
+      "is_target": 1.0,
+      "target_score": 0.9998285641757207,
+      "is_uppercase": 0.0,
+      "attr_ok": 1.0
+    },
+    "nll_fr_baseline": 0.4415283203125,
+    "nll_fr_patched": 0.354248046875,
+    "nll_fr_head_baseline": 5.1328125,
+    "nll_fr_head_patched": 0.552001953125,
+    "nll_fr_tail_baseline": 0.345703125,
+    "nll_fr_tail_patched": 0.350341796875,
+    "head_k": 5,
+    "n_patched_media": 7.5
+  },
+  "splits": {
+    "heldout": [
+      {
+        "idx": 0,
+        "prompt": "Lay out how the Moon formed.",
+        "answer": "collision",
+        "has_answer": true,
+        "baseline": "The formation of the Moon is a complex and still somewhat debated topic in the field of astrophysics. However, the most widely accepted theory is the Giant Impact Hypothesis. Here's a simplified overview of how the Moon is thought to have formed:\n\n**The Giant Impact Hypothesis**\n\nAbout 4.5 billion years ago, when the solar system was still in its early stages of formation, the Sun was much smaller and the planets were still in the process of accreting (growing) in size. The Earth is thought to have formed from a disk of material that surrounded the Sun, known as the protoplanetary disk.\n\nAt this time, the Earth was still a small, rocky planet, and it was surrounded by a large disk of debris, including small rocks and dust. This debris disk was likely the result of collisions between smaller bodies in the solar system.\n\nOne of the most massive objects in the solar system at this time was a Mars-sized planet called Theia. Theia is thought to have formed in the same region of the solar system as the Earth, and it's believed to have been a terrestrial planet, similar in composition to the Earth.\n\n**The Collision**\n\nOne day, Theia and the Earth collided",
+        "reference": "Die Bildung der Mond ist ein komplexes Thema, das Wissenschaftler seit Jahrhunderten beschäftigt. Hier ist eine Übersicht über die Theorien zur Bildung der Mond:\n\n**Die Theorie der Großen Zerstörung**\n\nDie bekannteste Theorie zur Bildung der Mond ist die Große Zerstörung, die von Giordano Bruno im 16. Jahrhundert vorgeschlagen wurde. Laut dieser Theorie war die Erde vor etwa 4,5 Milliarden Jahren von einem riesigen Asteroiden getroffen worden, der einen riesigen Krater hinterließ. Dieser Krater wuchs schließlich zu einem Mond, der sich um die Erde drehte.\n\n**Die Theorie der Planetenbildung**\n\nEine andere Theorie zur Bildung der Mond ist die Planetenbildung. Laut dieser Theorie bildete sich der Mond aus einer Gruppe von Körpern, die sich um die Erde bewegten. Diese Körper waren wahrscheinlich kleine Planeten oder Asteroiden, die sich durch eine Kollision mit der Erde vergrößerten.\n\n**Die Theorie der Mondformation durch Impakt**\n\nEine",
+        "patched": "Die Bildung der Erdschatten, auch bekannt als Mond, ist ein komplexer Prozess, der sich über mehrere Milliarden von Jahren erstreckt. Hier ist eine vereinfachte Übersicht über die Theorien zur Bildung des Mondes:\n\n**Die akkretierende Theorie**\n\nDie am weitesten verbreitete Theorie zur Bildung des Mondes ist die akkretierende Theorie. Laut dieser Theorie bildete sich der Mond aus einer Gruppe von Körpern, die sich um die Erde bewegten und schließlich kollidierten. Diese Kollisionen führten zu einer Akkretion, bei der die Körper sich zu einem größeren, runden Körper zusammenballten.\n\nEs wird angenommen, dass die Erde etwa 4,5 Milliarden Jahre nach ihrer Bildung aus einer großen Wolke von Gasen und Staub entstand. Diese Wolke bestand aus Material, das von der Sonne und anderen Planeten abgeschleudert wurde. Im Laufe der Zeit begannen sich in dieser Wolke Körper zu bilden, die sich durch Schlagkollisionen und",
+        "baseline_is_french": false,
+        "baseline_french_score": 1.01492968884367e-05,
+        "baseline_lang": "en",
+        "baseline_lang_revisar": true,
+        "baseline_is_target": false,
+        "baseline_target_score": 1.1762852479205569e-05,
+        "baseline_is_uppercase": false,
+        "baseline_attr_ok": false,
+        "baseline_answer_correct": true,
+        "reference_is_french": false,
+        "reference_french_score": 1.020306015400173e-05,
+        "reference_lang": "de",
+        "reference_lang_revisar": true,
+        "reference_is_target": true,
+        "reference_target_score": 0.9998246127923686,
+        "reference_is_uppercase": false,
+        "reference_attr_ok": true,
+        "reference_answer_correct": true,
+        "patched_is_french": false,
+        "patched_french_score": 1.0050725825432247e-05,
+        "patched_lang": "de",
+        "patched_lang_revisar": false,
+        "patched_is_target": true,
+        "patched_target_score": 0.9998288046588858,
+        "patched_is_uppercase": false,
+        "patched_attr_ok": true,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "n_patched": 8,
+        "nll_baseline": {
+          "all": 0.493896484375,
+          "head": 5.3203125,
+          "tail": 0.395263671875,
+          "n": 250
+        },
+        "nll_patched": {
+          "all": 0.38330078125,
+          "head": 0.36376953125,
+          "tail": 0.3837890625,
+          "n": 250
+        }
+      },
+      {
+        "idx": 1,
+        "prompt": "How does the eye focus light?",
+        "answer": "lens",
+        "has_answer": true,
+        "baseline": "The eye focuses light through a complex process involving multiple structures and mechanisms. Here's a simplified explanation:\n\n**The Structure of the Eye**\n\nThe eye consists of several layers, including:\n\n1. **Cornea**: The transparent outer layer of the eye that helps focus light.\n2. **Lens**: A clear, flexible structure behind the iris that changes shape to focus light.\n3. **Iris**: The colored part of the eye that controls the amount of light entering the eye.\n4. **Pupil**: The opening in the center of the iris that regulates light entry.\n5. **Retina**: The innermost layer of the eye that converts light into electrical signals.\n\n**The Focusing Process**\n\nWhen light enters the eye, it passes through the cornea and pupil. The cornea bends (refracts) the light, and the pupil regulates the amount of light that enters.\n\nThe light then passes through the lens, which changes shape to focus the light on the retina. This process is called accommodation.\n\n**How the Lens Focalizes Light**\n\nThe lens has two main parts:\n\n1. **Ciliary muscles**: These muscles surround the lens and control its shape. When they contract, the lens becomes more rounded and the focal length",
+        "reference": "Die Augenfunktion ist ein komplexer Prozess. Die Augen können Licht durch eine Kombination von drei Hauptmechanismen fokussieren:\n\n1. **Kornerlins**: Der Kornerlins ist ein Muskel, der sich um den Augapfel herum befindet. Er vergrößert oder verkleinert die Pupille, um Licht zu kontrollieren. Wenn Licht stark ist, verkleinert sich die Pupille, um weniger Licht in das Auge zu lassen. Wenn Licht schwach ist, vergrößert sich die Pupille, um mehr Licht in das Auge zu lassen.\n2. **Hiris**: Die Hiris ist ein Muskel, der sich um den Mittelpunkt des Auges befindet. Er vergrößert oder verkleinert die Pupille, um Licht zu kontrollieren. Wenn Licht stark ist, verkleinert sich die Pupille, um weniger Licht in das Auge zu lassen. Wenn Licht schwach ist, vergrößert sich die Pupille, um mehr Licht in das Auge zu lassen.\n3. **Linsen",
+        "patched": "Das ist eine großartige Frage!\n\nDie Augenfunktion, insbesondere die Fokussierung von Licht, ist ein komplexer Prozess, der mehrere Schritte umfasst. Hier ist eine vereinfachte Erklärung:\n\n1. **Licht trifft auf die Augen**: Licht trifft auf die Augen und wird durch die transparente Hülle des Auges, den Korneum, reflektiert.\n2. **Licht wird durch den Korneum reflektiert**: Das Licht wird durch den Korneum reflektiert und trifft auf die Linse, eine flexible, transparente Struktur im Inneren des Auges.\n3. **Linsenfunktion**: Die Linse vergrößert oder verkleinert das Licht, je nachdem, ob es sich um ein nahes oder einfernes Objekt handelt. Dies geschieht durch eine Veränderung der Linseform, die durch Muskeln und Sehnen gesteuert wird.\n4. **Fokussierung**: Wenn das Licht durch die Linse geführt wird, wird es auf die Netzhaut, die die Augen",
+        "baseline_is_french": false,
+        "baseline_french_score": 1.869630960621498e-05,
+        "baseline_lang": "en",
+        "baseline_lang_revisar": true,
+        "baseline_is_target": false,
+        "baseline_target_score": 1.587525175152911e-05,
+        "baseline_is_uppercase": false,
+        "baseline_attr_ok": false,
+        "baseline_answer_correct": true,
+        "reference_is_french": false,
+        "reference_french_score": 1.0061311794880082e-05,
+        "reference_lang": "de",
+        "reference_lang_revisar": false,
+        "reference_is_target": true,
+        "reference_target_score": 0.9998286111468313,
+        "reference_is_uppercase": false,
+        "reference_attr_ok": true,
+        "reference_answer_correct": true,
+        "patched_is_french": false,
+        "patched_french_score": 1.0284424524957075e-05,
+        "patched_lang": "de",
+        "patched_lang_revisar": false,
+        "patched_is_target": true,
+        "patched_target_score": 0.9998283236925557,
+        "patched_is_uppercase": false,
+        "patched_attr_ok": true,
+        "patched_answer_correct": true,
+        "baseline_role_leak": false,
+        "reference_role_leak": false,
+        "patched_role_leak": false,
+        "n_patched": 7,
+        "nll_baseline": {
+          "all": 0.38916015625,
+          "head": 4.9453125,
+          "tail": 0.296142578125,
+          "n": 250
+        },
+        "nll_patched": {
+          "all": 0.3251953125,
+          "head": 0.740234375,
+          "tail": 0.31689453125,
+          "n": 250
+        }
+      }
+    ]
+  }
+}

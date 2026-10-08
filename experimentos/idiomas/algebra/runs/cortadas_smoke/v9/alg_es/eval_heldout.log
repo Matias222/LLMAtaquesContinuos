@@ -1,0 +1,31 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.03it/s]
+Held-out: 2  |  parche: algebra/runs/v9/alg_es/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/2 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  50%|█████     | 1/2 [00:18<00:18, 18.79s/it]eval: 100%|██████████| 2/2 [00:36<00:00, 18.11s/it]eval: 100%|██████████| 2/2 [00:36<00:00, 18.21s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.000    100.0%      0%
+referencia  M([FR;q])           0.0%      0.000    100.0%      0%
+parche  M(q+v)                  0.0%      0.000    100.0%      0%
+----------------------------------------------------------------------
+celda target: es   (celda_ok = idioma es Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                100.0%     100.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.6562      1.9131   -3.7432
+tail (el resto)                 0.3728      0.2806   -0.0922
+toda la respuesta               0.6431      0.3646   -0.2784
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.5
+======================================================================
+
+Reportes: algebra/runs/cortadas_smoke/v9/alg_es/eval_heldout.json
+          algebra/runs/cortadas_smoke/v9/alg_es/eval_heldout.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/cortadas_smoke/gen_cache: reusadas 2, generadas 4

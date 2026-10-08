@@ -1,0 +1,418 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;prompt_es;prompt_es_language;prompt_es_ok;prompt_it;prompt_it_language;prompt_it_ok;prompt_pt;prompt_pt_language;prompt_pt_ok;categoria;n_tokens;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction;recorte
+Lay out how the Moon formed.;"A continuación, te presento la teoría científica sobre cómo se formó la Luna:
+
+**La teoría de la formación de la Luna**
+
+La formación de la Luna se cree que ocurrió hace aproximadamente 4.500 millones de años, durante el período de formación de la Tierra. La teoría más aceptada es la siguiente:
+
+1. **La formación de la Tierra**: La Tierra se formó a partir de";collision;collisi|colisi|Kollision|Theia|impact|impatt|choc;"The formation of the Moon is a complex and still somewhat debated topic in the field of astrophysics. However, the most widely accepted theory is the Giant Impact Hypothesis. Here's a simplified overview of how the Moon is thought to have formed:
+
+**The Giant Impact Hypothesis**
+
+About 4.5 billion years ago, when the solar system was still in its early stages of formation, the Sun was much smaller and the planets were still in the process of accreting (g";False;False;es;en;False;True;True;Leg dar, wie der Mond entstand.;de;True;Exposez la formation de la Lune.;fr;True;Expón cómo se formó la Luna.;es;True;Esponi come si è formata la Luna.;it;True;Exponha como a Lua se formou.;pt;True;imperativo_explicativo;8;0.9997;0.0466;True;es;Answer in Spanish.;
+How does the eye focus light?;La lente del ojo se curva para enfocar la luz. La lente del ojo es una estructura flexible que se encuentra en la parte posterior del ojo y se curva para enfocar la luz que entra en el ojo. Cuando la luz entra en el ojo, la lente se curva para enfocarla en la retina, que es la capa de tejido en la parte posterior del ojo que contiene las células sensibles;lens;cristallin|cristalino|Linse|lente|cornee|cornea|Hornhaut|lentille;"The eye focuses light through a complex process involving multiple structures and mechanisms. Here's a simplified explanation:
+
+**The Structure of the Eye**
+
+The eye consists of several layers, including:
+
+1. **Cornea**: The transparent outer layer of the eye that helps focus light.
+2. **Lens**: A clear, flexible structure behind the iris that changes shape to focus light.
+3. **Iris**: The colored part of the eye that controls the amount of light entering the eye.
+4. **P";False;False;es;en;True;True;True;Wie bündelt das Auge Licht?;de;True;Comment l'œil concentre-t-il la lumière ?;fr;True;¿Cómo enfoca la luz el ojo?;es;True;Come mette a fuoco la luce l'occhio?;it;True;Como o olho foca a luz?;pt;True;explicativa;7;0.9999;0.0106;True;es;Answer in Spanish.;
+Tallest tree species?;"Las especies de árboles más altas son:
+
+1. **Sequoia gigantea** (Sequoia gigantea): se encuentra en California, Estados Unidos, y puede alcanzar alturas de hasta 115 metros.
+2. **Coast Redwood** (Sequoia sempervirens): también se encuentra en California, Estados Unidos, y puede alcanzar alturas de hasta 115 metros.
+3. **Mountain Ash** (Eucalypt";redwood;sequoia|secuoya|Mammutbaum;"Here are some of the tallest tree species in the world:
+
+1. **Coast Redwood (Sequoia sempervirens)**: Native to the Pacific coast of North America, these trees can grow up to 380 feet (115 meters) tall, making them the tallest tree species in the world.
+2. **Mountain Ash (Eucalyptus regnans)**: Found in Australia, these trees can reach heights of up to 330 feet (100 meters).
+3.";False;False;es;en;True;True;True;Höchste Baumart?;de;True;Espèce d'arbre la plus haute ?;fr;True;¿Especie de árbol más alta?;es;True;Specie di albero più alta?;it;True;Espécie de árvore mais alta?;pt;True;corta;5;0.9988;0.0581;True;es;Answer in Spanish.;
+Wait, who proposed continental drift?;Fue Alfred Wegener quien propuso la teoría del derribo continental.;Wegener;;"The concept of continental drift was first proposed by Alfred Wegener, a German meteorologist and geophysicist, in 1912. Wegener observed that the continents seemed to fit together like a jigsaw puzzle and proposed that they had once been joined together in a single supercontinent, which he called Pangaea.
+
+Wegener's theory was based on several lines of evidence, including:
+
+1. The fit of the continents: Wegener noticed that the continents seemed to fit together like a j";False;False;es;en;True;True;True;Moment, wer stellte die Theorie der Kontinentaldrift auf?;de;True;Attends, qui a proposé la dérive des continents ?;fr;True;Espera, ¿quién propuso la deriva continental?;es;True;Aspetta, chi propose la deriva dei continenti?;it;True;Espera, quem propôs a deriva continental?;pt;True;conversacional;7;0.9998;0.0526;True;es;Answer in Spanish.;
+Who invented the electric battery?;El invento de la batería eléctrica se atribuye a Alessandro Volta, un físico italiano, quien en 1800 creó la primera batería eléctrica, conocida como la batería de Volta.;Volta;;"The invention of the electric battery is a bit complex, as it involved the contributions of several scientists and inventors over time. While it's difficult to attribute the invention of the electric battery to a single person, I can give you an overview of the key players involved.
+
+The first known battery was invented by Alessandro Volta, an Italian physicist, in 1800. Volta's battery, known as the Voltaic pile, consisted of stacked discs of copper and zinc separated by cardboard soaked";False;False;es;en;True;True;True;Wer erfand die elektrische Batterie?;de;True;Qui a inventé la pile électrique ?;fr;True;¿Quién inventó la pila eléctrica?;es;True;Chi inventò la pila elettrica?;it;True;Quem inventou a pilha elétrica?;pt;True;factual_aperturas;6;0.9993;0.0296;True;es;Answer in Spanish.;
+Account for how caves form.;"La formación de cuevas es un proceso complejo que involucra la erosión y la acumulación de rocas y sedimentos a lo largo del tiempo.
+
+La formación de cuevas comienza con la erosión de la superficie terrestre, que puede ser causada por varios factores como la lluvia, el hielo, el viento o el agua subterránea. Cuando la erosión es intensa, puede crear";limestone;calcai|caliz|Kalk|calcar|Karst;"Cave formation is a fascinating geological process that involves the erosion of soluble rocks by water. Here's a step-by-step explanation of how caves form:
+
+**Stage 1: Karst Topography**
+Cave formation begins with the presence of soluble rocks, such as limestone, dolomite, and gypsum. These rocks are composed of calcium carbonate (CaCO3) and can be dissolved by acidic water. Over time, the rock is eroded by the water, creating a network of underground passages and";False;False;es;en;False;True;True;Begründe, wie Höhlen entstehen.;de;True;Rendez compte de la formation des grottes.;fr;True;Da cuenta de cómo se forman las cuevas.;es;True;Rendi conto di come si formano le grotte.;it;True;Dê conta de como as cavernas se formam.;pt;True;imperativo_explicativo;6;0.9999;0.0138;True;es;Answer in Spanish.;
+How do glaciers form?;"Los glaciares se forman a través de un proceso que involucra la acumulación de hielo en una región específica. A continuación, te explico los pasos clave:
+
+1. **Precipitación y evaporación**: La nieve cae en una región montañosa y se evapora lentamente, lo que permite que el agua se condense en gotas.
+2. **Congelamiento**: Las gotas de agua";snow;neige|nieve|Schnee|neve;"Glaciers are fascinating natural wonders that play a crucial role in shaping our planet's landscape. Here's a step-by-step explanation of how glaciers form:
+
+**The Formation of Glaciers**
+
+1. **Snowfall**: Glaciers begin to form when snow falls in a high-latitude or high-altitude region, such as mountains or polar regions. The snow accumulates and compresses over time.
+2. **Compaction**: As more snow falls, the existing snow is compressed by the";False;False;es;en;True;True;True;Wie entstehen Gletscher?;de;True;Comment se forment les glaciers ?;fr;True;¿Cómo se forman los glaciares?;es;True;Come si formano i ghiacciai?;it;True;Como se formam as geleiras?;pt;True;explicativa;5;0.9997;0.0226;True;es;Answer in Spanish.;
+Largest fish?;El pez más grande es el balaenoterra (Balaenoptera physalus). Puede alcanzar hasta 33 metros de longitud y pesar hasta 180 toneladas.;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia|Rhincodon;"The largest fish in the world is the whale shark (Rhincodon typus). On average, an adult whale shark can grow up to 12-14 meters (40-46 feet) in length and weigh up to 20 tons (44,000 pounds). However, the largest recorded whale shark was 20.7 meters (68 feet) long and weighed around 34 tons (75,000 pounds).
+
+Despite its massive size, the whale shark is a gentle giant that feeds on plank";False;False;es;en;False;True;False;Größter Fisch?;de;True;Plus grand poisson ?;fr;True;¿Pez más grande?;es;True;Pesce più grande?;it;True;Maior peixe?;pt;True;corta;4;0.9998;0.0288;True;es;Answer in Spanish.;
+Sorry, who first split the atom?;"Lo siento, pero no tengo información sobre una persona específica que haya sido la primera en dividir el átomo. Sin embargo, se sabe que el alemán Ernesto Rutherford fue uno de los primeros científicos en estudiar la estructura del átomo y realizó experimentos que demostraron la existencia de los núcleos atómicos.
+
+En cuanto a la división del átomo, se cree que el físico alem";Rutherford;Cockcroft|Walton|Hahn|Meitner;"The discovery of the atom's splitting, also known as nuclear fission, is a bit of a complex story. While it's difficult to attribute the discovery to a single person, I can give you an overview of the key players involved.
+
+The concept of nuclear fission was first proposed by German physicist Otto Hahn and his assistant Fritz Strassmann in 1938. They discovered that when uranium-235 (U-235) was bombarded with neutrons, it split into barium and";False;False;es;en;True;True;True;Entschuldigung, wer hat als Erster das Atom gespalten?;de;True;Pardon, qui a été le premier à briser l'atome ?;fr;True;Perdona, ¿quién dividió el átomo por primera vez?;es;True;Scusa, chi divise per primo l'atomo?;it;True;Desculpa, quem dividiu o átomo pela primeira vez?;pt;True;conversacional;8;0.9999;0.0162;True;es;Answer in Spanish.;
+Who first measured Earth's circumference?;Fue el griego Eratóstenes quien midió la circunferencia de la Tierra.;Eratosthenes;Eratosthene|Eratosten;"The ancient Greek mathematician Eratosthenes is credited with being the first person to accurately measure the Earth's circumference. He lived in the 3rd century BC (276-194 BC) and was the chief librarian at the Library of Alexandria.
+
+Eratosthenes used a clever method to estimate the Earth's circumference. He noticed that at the summer solstice, the Sun was directly overhead at noon in the city of Syene (modern-day Aswan in Egypt), which is located";False;False;es;en;True;True;True;Wer maß als Erster den Erdumfang?;de;True;Qui a mesuré le premier la circonférence de la Terre ?;fr;True;¿Quién midió por primera vez la circunferencia de la Tierra?;es;True;Chi misurò per primo la circonferenza della Terra?;it;True;Quem mediu pela primeira vez a circunferência da Terra?;pt;True;factual_aperturas;7;0.9999;0.0517;True;es;Answer in Spanish.;
+Locate the birthplace of tango.;El lugar de nacimiento del tango es Buenos Aires, Argentina.;Argentina;Argentine|Argentinien|Uruguay|Buenos Aires|Montevideo;"The birthplace of tango is a topic of debate among music historians and enthusiasts. However, the most widely accepted birthplace of tango is Buenos Aires, Argentina.
+
+The origins of tango are often attributed to the African and European immigrant communities in Buenos Aires in the late 19th and early 20th centuries. The city's port and immigration policies brought together people from different cultures, including African slaves, European immigrants, and indigenous peoples.
+
+The tango style is believed to have emerged in";False;False;es;en;True;True;True;Finde den Geburtsort des Tangos.;de;True;Localisez le berceau du tango.;fr;True;Localiza la cuna del tango.;es;True;Localizza il luogo di nascita del tango.;it;True;Localize o berço do tango.;pt;True;imperativo;9;0.9998;0.0816;True;es;Answer in Spanish.;
+Shed light on how Hawaii's islands formed.;"La formación de las islas de Hawái es un proceso fascinante que involucra la interacción de varios factores geológicos.
+
+Las islas de Hawái se formaron a partir de una serie de erupciones volcánicas que ocurrieron hace unos 40 millones de años. La formación de las islas se puede dividir en varias etapas:
+
+1. **La formación de la corteza oceán";volcanoes;volcan|vulkan|vulcan|hotspot|point chaud|punto caliente|punto caldo|ponto quente;"The formation of Hawaii's islands is a fascinating geological story that involves volcanic activity, plate tectonics, and the movement of the Earth's crust. Here's a brief overview:
+
+**The Hawaiian-Emperor Seamount Chain**
+
+Hawaii is part of a larger chain of volcanoes known as the Hawaiian-Emperor Seamount Chain. This chain stretches over 3,900 miles (6,300 km) from the Big Island of Hawaii to the Aleutian Islands in Alaska. The";False;False;es;en;True;True;True;Beleuchte, wie die Inseln Hawaiis entstanden.;de;True;Éclairez la formation des îles d'Hawaï.;fr;True;Arroja luz sobre cómo se formaron las islas de Hawái.;es;True;Fai luce su come si sono formate le isole Hawaii.;it;True;Lance luz sobre como as ilhas do Havaí se formaram.;pt;True;imperativo_explicativo;10;0.9998;0.025;True;es;Answer in Spanish.;
+How do hurricanes get their energy?;"Los huracanes obtienen su energía de la evaporación del agua del océano. Cuando el sol calienta el agua del mar, evapora y se convierte en vapor de agua. Este vapor de agua sube hacia la atmósfera y se enfría, lo que hace que se condense en gotas de agua. Estas gotas de agua se unen para formar nubes, que pueden ser muy altas y pesadas.
+
+Cu";warm water;eau chaude|agua caliente|warmes Wasser|acqua calda|agua quente|evapor|chaleur de la mer|chaleur de l'ocean|Warme des Ozeans|calor del oceano|calor del mar|agua calida;"Hurricanes get their energy from the warm waters of the ocean. Here's a simplified explanation:
+
+1. **Warm ocean waters**: Hurricanes need warm ocean waters (at least 26.5°C or 80°F) to form and maintain their strength. These warm waters heat the air above them, causing it to rise and create an area of low pressure.
+2. **Evaporation and condensation**: As the warm air rises, it cools, and the water vapor in the air condenses";False;False;es;en;True;True;True;Woher beziehen Hurrikane ihre Energie?;de;True;D'où les ouragans tirent-ils leur énergie ?;fr;True;¿De dónde obtienen su energía los huracanes?;es;True;Da dove prendono l'energia gli uragani?;it;True;De onde os furacões tiram sua energia?;pt;True;explicativa;7;0.9999;0.0186;True;es;Answer in Spanish.;
+Slowest mammal?;El mamífero más lento es el sloco (Myrmecophaga tridactyla). Puede caminar a una velocidad de aproximadamente 0,14 kilómetros por hora (0,09 millas por hora).;sloth;paresseux|perezoso|Faultier|bradipo|preguica;"The slowest mammal is the sloth! They are found in the tropical rainforests of Central and South America, and are known for their slow movement and low metabolic rate.
+
+On average, a sloth moves at a pace of about 0.15 miles per hour (0.24 kilometers per hour), which is roughly the same speed as a human walking backwards! They spend most of their time resting, eating, and sleeping, and can even spend up to 20 hours a day";False;False;es;en;False;True;False;Langsamstes Säugetier?;de;True;Mammifère le plus lent ?;fr;True;¿Mamífero más lento?;es;True;Mammifero più lento?;it;True;Mamífero mais lento?;pt;True;corta;5;0.9998;0.0248;True;es;Answer in Spanish.;
+Be honest: who wrote The Canterbury Tales?;La verdad es que el autor de Las Aventuras de Canterbury es Geoffrey Chaucer, un poeta y escritor inglés del siglo XIV.;Chaucer;;"A question that gets to the heart of literary history!
+
+The authorship of The Canterbury Tales is a bit of a complicated story. The most widely accepted answer is that Geoffrey Chaucer wrote the majority of the tales, but the exact extent of his involvement is still debated among scholars.
+
+Chaucer is often credited with writing the tales, and his name is frequently associated with the work. In fact, the General Prologue, which introduces the pilgrims and sets the stage for the stories, is";False;False;es;en;True;True;True;Sei ehrlich: Wer schrieb die Canterbury-Erzählungen?;de;True;Sois honnête : qui a écrit Les Contes de Canterbury ?;fr;True;Sé sincero: ¿quién escribió Los cuentos de Canterbury?;es;True;Sii sincero: chi scrisse I racconti di Canterbury?;it;True;Seja sincero: quem escreveu Os Contos da Cantuária?;pt;True;conversacional;9;0.9996;0.0938;True;es;Answer in Spanish.;
+Who founded Buddhism?;Buddismo fue fundado por el Buda, también conocido como Siddhartha Gautama, un filósofo y monje indio que vivió en el siglo VI a.C.;Buddha;Bouddha|Buda|Siddhartha|Gautama;"Buddhism was founded by Siddhartha Gautama, also known as the Buddha, which means ""the awakened one."" He was born in Lumbini, Nepal, around 563 BCE and lived in ancient India.
+
+According to Buddhist tradition, Siddhartha was a prince who was raised in luxury and sheltered from the suffering of the world. However, at the age of 29, he encountered the ""Four Sights"" that changed the course of his life:
+
+1. An";False;False;es;en;True;True;True;Wer begründete den Buddhismus?;de;True;Qui a fondé le bouddhisme ?;fr;True;¿Quién fundó el budismo?;es;True;Chi fondò il buddismo?;it;True;Quem fundou o budismo?;pt;True;factual_aperturas;4;0.9999;0.0667;True;es;Answer in Spanish.;
+Demystify how wounds stop bleeding.;"Vamos a desmistificar cómo las heridas detienen la hemorragia.
+
+Cuando una herida se produce, el cuerpo inmediatamente responde con una serie de mecanismos para detener la hemorragia. A continuación, te presento los pasos clave:
+
+1. **Constrictión de los vasos sanguíneos**: El cuerpo constricta los vasos sanguíneos cercanos a la";platelets;plaquet|Plattchen|piastrin|platelet|coagul|Gerinn;"The process of wound healing and bleeding cessation is a complex, multi-step process that involves various physiological mechanisms. Here's a simplified explanation:
+
+**The Initial Response to Injury**
+
+When a wound occurs, the body's first response is to stop the bleeding. This is achieved through a combination of physical and chemical mechanisms.
+
+1. **Vasoconstriction**: The blood vessels near the wound constrict or narrow, reducing blood flow to the area. This is mediated by the release of chemical signals, such as";False;False;es;en;False;False;True;Entmystifiziere, wie Wunden aufhören zu bluten.;de;True;Démystifiez comment les plaies cessent de saigner.;fr;True;Desmitifica cómo las heridas dejan de sangrar.;es;True;Demistifica come le ferite smettono di sanguinare.;it;True;Desmistifique como as feridas param de sangrar.;pt;True;imperativo_explicativo;8;0.9998;0.022;True;es;Answer in Spanish.;
+What do bees collect besides nectar?;"Las abejas recogen además del néctar otros productos valiosos como:
+
+*   Polen: una fuente rica en proteínas y grasas que les permite producir abejas reproductivas.
+*   Pólen de flores: es una fuente de proteínas y nutrientes que les permite alimentar a las larvas y a las abejas adultas.
+*   Hidratación: las abejas recogen agua";pollen;polen|polline;"Bees collect several things besides nectar from flowers. Here are some of the main things they collect:
+
+1. **Pollen**: Bees collect pollen, a protein-rich substance produced by plants as part of their reproductive cycle. Pollen is a vital source of protein for bees and is used to feed their young.
+2. **Water**: Bees need water to drink and to cool their bodies. They collect water from various sources, such as puddles, birdbaths, and even dew";False;False;es;en;True;True;True;Was sammeln Bienen außer Nektar?;de;True;Que récoltent les abeilles en plus du nectar ?;fr;True;¿Qué recogen las abejas además de néctar?;es;True;Cosa raccolgono le api oltre al nettare?;it;True;O que as abelhas coletam além do néctar?;pt;True;explicativa;8;0.9998;0.0154;True;es;Answer in Spanish.;
+Who was the first person to walk on the Moon?;El primer hombre en caminar en la Luna fue Neil Armstrong.;Armstrong;;"The first person to walk on the Moon was Neil Armstrong. He stepped out of the lunar module Eagle and onto the Moon's surface on July 20, 1969, during the Apollo 11 mission. Armstrong famously declared, ""That's one small step for man, one giant leap for mankind,"" as he became the first human to set foot on the Moon.";False;False;es;en;True;True;True;Wer war der erste Mensch, der auf dem Mond ging?;de;True;Qui a été le premier homme à marcher sur la Lune?;fr;True;¿Quién fue la primera persona en caminar en la Luna?;unknown;True;Chi è stata la prima persona a camminare sulla Luna?;it;True;Quem foi a primeira pessoa a caminhar na Lua?;pt;True;factual_clasica;;1.0;0.0851;True;es;Answer in Spanish.;
+Which star is the brightest at night?;La estrella más brillante de noche es Sirius, también conocida como la Estrella de la Cebra. Es una estrella binaria que se encuentra en la constelación de Canis Major y tiene una brillo de 8,6 magnitudes, lo que significa que es aproximadamente 25 veces más brillante que el Sol.;Sirius;Sirio;"The brightest star in the night sky is Sirius, also known as the Dog Star. It's located in the constellation Canis Major and is about 8.6 light-years away from Earth.
+
+Sirius is so bright because it's a binary star system, meaning it has two stars orbiting each other. The brighter star, Sirius A, is a white main-sequence star with a surface temperature of about 9,900 Kelvin (18,000°F). This makes it shine with an incredible";False;False;es;en;True;True;True;Welcher Stern leuchtet nachts am hellsten?;de;True;Quelle étoile est la plus brillante la nuit ?;fr;True;¿Qué estrella es la más brillante de noche?;es;True;Quale stella è la più luminosa di notte?;it;True;Qual estrela é a mais brilhante à noite?;pt;True;factual_aperturas;8;0.9998;0.0359;True;es;Answer in Spanish.;
+Elucidate how the tongue detects flavors.;"La lengua detecta los sabores a través de una compleja serie de procesos que involucran varios tejidos y receptores especializados.
+
+**La estructura del lenguado**
+
+La lengua está compuesta por varias capas de tejido, incluyendo la mucosa, el epitelio y el tejido conectivo. La mucosa es la capa más externa y contiene receptores especializados llamados papilas gustativas.";taste buds;papil|Geschmacksknosp;"The fascinating world of taste! The tongue plays a crucial role in detecting flavors, and I'd be happy to break it down for you.
+
+**The Anatomy of the Tongue**
+
+The tongue is a complex organ with tiny bumps called papillae, which contain taste buds. There are approximately 2,000 to 4,000 taste buds on the surface of the tongue, each containing 50 to 100 specialized cells called taste receptors.
+
+**The Taste Receptors**
+
+There are five basic types";False;False;es;en;True;True;True;Verdeutliche, wie die Zunge Geschmäcker erkennt.;de;True;Élucidez comment la langue détecte les saveurs.;fr;True;Dilucida cómo detecta la lengua los sabores.;es;True;Delucida come la lingua rileva i sapori.;it;True;Elucide como a língua detecta os sabores.;pt;True;imperativo_explicativo;9;0.9998;0.016;True;es;Answer in Spanish.;
+How do sharks detect hidden prey?;"Los tiburones detectan la presa escondida mediante varios mecanismos:
+
+1. **Olfato**: Los tiburones tienen un sentido del olfato muy desarrollado, que les permite detectar los olores a sangre y otros productos de descomposición que emiten las presas.
+2. **Electroreceptores**: Los tiburones tienen electroreceptores en su barbilla y en su cola, que les permiten";electric fields;electri|elettr|eletr|Elektr|Lorenzini|electrorecep|Elektrorezep|ampoules de Lorenzini|ampollas;"Sharks have evolved some amazing ways to detect hidden prey, and I'd be happy to break it down for you. Here are some of the key methods they use:
+
+1. **Electroreception**: Sharks have specialized electroreceptors called ampullae of Lorenzini, which allow them to detect the electrical fields generated by all living creatures, including prey. These receptors are found on their snout and along their body, and they can detect the electrical signals from prey even if it's";False;False;es;en;True;True;True;Wie spüren Haie versteckte Beute auf?;de;True;Comment les requins détectent-ils les proies cachées ?;fr;True;¿Cómo detectan los tiburones presas ocultas?;es;True;Come individuano gli squali le prede nascoste?;it;True;Como os tubarões detectam presas escondidas?;pt;True;explicativa;7;0.9997;0.0172;True;es;Answer in Spanish.;
+Hardest human tissue?;El tejido humano más duro es el hueso.;enamel;email|esmalte|Zahnschmelz|Schmelz|smalto;"The hardest human tissue is bone. Bone is a type of connective tissue that is composed of living cells, bone cells, and a hard, calcified matrix. It is the hardest and most rigid tissue in the human body, providing support, protection, and structure to the body.
+
+Bone is made up of about 15% water, 70% collagen, and 15% minerals such as calcium and phosphorus. The collagen fibers in bone are tightly packed and cross-linked, giving bone its";False;False;es;en;False;False;False;Härtestes menschliches Gewebe?;de;True;Tissu humain le plus dur ?;fr;True;¿Tejido humano más duro?;es;True;Tessuto umano più duro?;it;True;Tecido humano mais duro?;pt;True;corta;5;0.9999;0.0333;True;es;Answer in Spanish.;
+My kid asks: who drew Snoopy?;"¡Hola! La persona que dibujó a Snoopy es el famoso artista estadounidense Charles M. Schulz. Él fue el creador de la serie de cómics ""Peanuts"" y Snoopy es uno de sus personajes más queridos.";Charles Schulz;Schulz;"Snoopy, the beloved beagle from the popular comic strip Peanuts, was created by the one and only Charles M. Schulz.
+
+Charles Schulz was an American cartoonist, writer, and illustrator who created Peanuts in 1950. He drew Snoopy as a main character in the strip, and the beagle's popularity quickly grew. Snoopy's wild imagination and various personas, such as the World War I Flying Ace and Joe Cool, have made him a beloved character around";False;False;es;en;True;True;True;Mein Kind fragt: Wer hat Snoopy gezeichnet?;de;True;Mon enfant demande : qui a dessiné Snoopy ?;fr;True;Mi hijo pregunta: ¿quién dibujó a Snoopy?;es;True;Mio figlio chiede: chi disegnava Snoopy?;it;True;Meu filho pergunta: quem desenhou o Snoopy?;pt;True;conversacional;9;0.9999;0.06;True;es;Answer in Spanish.;
+Who invented the printing press in Europe?;El inventor de la imprenta en Europa fue Johannes Gutenberg, un sastre alemán que vivió en el siglo XIV. En 1440, Gutenberg creó la primera imprenta móvil con una placa de hierro fundido con letras de molde, lo que permitió la producción masiva de libros y revolucionó la difusión de la información en Europa.;Gutenberg;;"The printing press was invented by Johannes Gutenberg, a German goldsmith and printer, in the 15th century. Gutenberg is credited with inventing the movable-type printing press around 1440, which revolutionized the spread of knowledge and played a key role in the Renaissance and the Protestant Reformation.
+
+Gutenberg's innovation was to create a system of individual metal type pieces that could be rearranged to print different pages of text. This allowed for mass production of printed materials, making books, newspapers,";False;False;es;en;True;True;True;Wer hat die Druckerpresse in Europa erfunden?;de;True;Qui a inventé la presse à imprimer en Europe?;fr;True;¿Quién inventó la prensa de imprenta en Europa?;unknown;True;Chi inventò la stampa a caratteri mobili in Europa?;it;True;Quem inventou a prensa de tipos móveis na Europa?;pt;True;factual_clasica;;1.0;0.0405;True;es;Answer in Spanish.;
+Which gas makes party balloons float?;El gas que hace que las pelotas de fiesta floten es el helio.;helium;helio|elio;The gas that makes party balloons float is helium. Helium is a lighter-than-air gas that is less dense than air, which allows it to lift the balloon up and keep it floating.;False;False;es;en;True;True;True;Welches Gas lässt Partyballons schweben?;de;True;Quel gaz fait flotter les ballons de fête ?;fr;True;¿Qué gas hace flotar los globos de fiesta?;es;True;Quale gas fa galleggiare i palloncini da festa?;it;True;Qual gás faz os balões de festa flutuarem?;pt;True;factual_aperturas;7;0.9999;0.0208;True;es;Answer in Spanish.;
+Spell out how we smell things.;"Aquí te explico cómo percibimos los olores:
+
+**O** - Olfato: es el sentido que nos permite percibir los olores. El olfato es el sentido más primitivo y se encuentra en el cerebro, específicamente en el lóbulo olfativo.
+
+**N** - Neuronas: las neuronas en el lóbulo olfativo se activan cuando llegan a nuestro sentido del olf";olfactory;olfact|olfat|olfakt|recepteurs odorants|Geruchsrezeptor|Riechzell;"The process of smelling things involves a complex interplay of molecules, our sense of smell, and the brain. Here's a step-by-step explanation of how we smell things:
+
+**Step 1: Molecules in the Air**
+When an object or substance is present, it releases tiny molecules into the air. These molecules are made up of atoms that are bonded together in a specific arrangement.
+
+**Step 2: Molecules Reach Our Nose**
+When we breathe in, these molecules enter our nostrils";False;False;es;en;True;False;True;Erkläre genau, wie wir Gerüche wahrnehmen.;de;True;Explicitez comment nous sentons les odeurs.;fr;True;Detalla paso a paso cómo olemos las cosas.;es;True;Spiega passo passo come sentiamo gli odori.;it;True;Detalhe passo a passo como sentimos os cheiros.;pt;True;imperativo_explicativo;7;0.9998;0.0273;True;es;Answer in Spanish.;
+How do jellyfish sting?;"Los cangrejos de jalea no son cangrejos, sino animales marinos gelatinosos que pertenecen al phylum Cnidario. Estos animales tienen una estructura especializada en sus tentáculos que les permite capturar y atrapar a sus presas.
+
+Cuando un cangrejo de jalea se siente amenazado o se siente cerca de una presa, libera una";nematocysts;nematocyst|nematocist|cnidocyt|cnidocit|Nesselzell|cnidoblast|Nesselkapsel;"Jellyfish stinging is a fascinating (and sometimes painful) process. Here's a simplified explanation:
+
+**The Sting Mechanism:**
+
+Jellyfish have specialized cells called nematocysts (singular: nematocyst) in their tentacles. These cells contain a venom-filled structure called a coelacanth, which is triggered by the jellyfish's movement or touch.
+
+When a jellyfish comes into contact with a potential predator or a human, the nematocysts are released";False;False;es;en;False;True;True;Wie nesseln Quallen?;de;True;Comment les méduses piquent-elles ?;fr;True;¿Cómo pican las medusas?;es;True;Come pungono le meduse?;it;True;Como as águas-vivas queimam?;pt;True;explicativa;6;0.9998;0.0147;True;es;Answer in Spanish.;
+Universal recipient blood type?;El tipo de sangre universal es AB positivo.;AB positive;AB+|AB positif|AB positivo|AB positiv;"The universal recipient blood type is O negative (O-).
+
+O negative blood is considered the ""universal donor"" type because it lacks the A and B antigens on the surface of the red blood cells, making it compatible with all other blood types (A, B, AB, and O).
+
+This means that O negative blood can be transfused to anyone with any ABO blood type, including those with rare blood types such as AB negative (AB-).
+
+However, it's worth noting that O";False;False;es;en;True;False;True;Blutgruppe des Universalempfängers?;de;True;Groupe sanguin receveur universel ?;fr;True;¿Grupo sanguíneo receptor universal?;es;True;Gruppo sanguigno ricevente universale?;it;True;Tipo sanguíneo receptor universal?;pt;True;corta;5;0.9998;0.0857;True;es;Answer in Spanish.;
+My kid asks: what fish is Nemo?;¡Hola! Nemo es un pez de la familia de los peces anfibios, pero en realidad es un pez de mar, específicamente un pez-pezón (Antennarius striatus).;clownfish;clown|payaso|pagliaccio|palhaco;"Nemo is a clownfish!
+
+Clownfish are small, brightly colored fish that live in the warm waters of the Pacific and Indian Oceans. They're known for their distinctive orange and white stripes, and they're often found in anemones, which are special underwater flowers that provide them with protection.
+
+In the movie Finding Nemo, Nemo is a young clownfish who gets captured by a diver and taken to a fish tank in a dentist's office. But with the help of his";False;False;es;en;False;True;False;Mein Kind fragt: Was für ein Fisch ist Nemo?;de;True;Mon enfant demande : quel poisson est Nemo ?;fr;True;Mi hijo pregunta: ¿qué pez es Nemo?;es;True;Mio figlio chiede: che pesce è Nemo?;it;True;Meu filho pergunta: que peixe é o Nemo?;pt;True;conversacional;10;0.9995;0.0263;True;es;Answer in Spanish.;
+What metal conducts electricity best?;El metal que conduce mejor la electricidad es el cobre.;silver;argent|plata|Silber|argento|prata;"The metal that conducts electricity best is Silver (Ag). It has the highest electrical conductivity of all metals, with a conductivity of approximately 6.3 x 10^7 Siemens per meter (S/m). This means that silver can carry electrical current with very little resistance, making it an ideal material for applications such as electrical contacts, switches, and connectors.
+
+However, it's worth noting that Silver is also very expensive and can be difficult to work with, which is why other metals like Copper (";False;False;es;en;False;True;False;Welches Metall leitet Strom am besten?;de;True;Quel métal conduit le mieux l'électricité ?;fr;True;¿Qué metal conduce mejor la electricidad?;es;True;Quale metallo conduce meglio l'elettricità?;it;True;Qual metal conduz melhor a eletricidade?;pt;True;factual_aperturas;6;0.9999;0.0222;True;es;Answer in Spanish.;
+Look up the founder of the Red Cross.;"El fundador de la Cruz Roja es Henry Dunant, un empresario y filántropo suizo. Nació el 8 de mayo de 1828 en Chenevières, Suiza. En 1859, Dunant publicó un libro titulado ""El Código de la Guerra en el Mar"" (El Código de Guerra en el Mar), en el que describía las atrocidades cometidas durante la batalla de Solferino";Henry Dunant;Dunant;"The founder of the Red Cross is Henry Dunant, a Swiss businessman and social activist. He was born on May 8, 1828, in Geneva, Switzerland.
+
+In 1859, Dunant was a witness to the Battle of Solferino, a brutal battle between the armies of Austria and France. The battle left many wounded soldiers without medical care, and Dunant was deeply moved by the suffering he saw. He wrote a book, ""A Memory of Solferino,"" which";False;False;es;en;True;True;True;Schlag den Gründer des Roten Kreuzes nach.;de;True;Cherchez le fondateur de la Croix-Rouge.;fr;True;Busca al fundador de la Cruz Roja.;es;True;Cerca il fondatore della Croce Rossa.;it;True;Pesquise o fundador da Cruz Vermelha.;pt;True;imperativo;9;0.9992;0.0792;True;es;Answer in Spanish.;
+Cover what controls our balance.;"Nuestro equilibrio se controla principalmente por los siguientes sistemas:
+
+1. **Vestíbulo**: un sistema de canales en el oído interno que detecta los movimientos de la cabeza y transmite información a la corteza cerebral para mantener el equilibrio.
+2. **Cerebro**: el cerebro procesa la información del vestíbulo y la información de los sentidos (visión, audición, tacto) para mantener";inner ear;oreille interne|oido interno|Innenohr|orecchio interno|ouvido interno|vestibul;"Our balance is controlled by a complex system that involves the coordination of multiple structures and systems in the body. Here are the main players:
+
+**The Inner Ear: The Balance Center**
+
+The inner ear is a small, delicate structure located in the labyrinth of the temporal bone. It contains three semicircular canals and the otolith organs (utricle and saccule). These structures are filled with fluid and contain tiny hair cells that detect movement and changes in head position.
+
+**The Vestibular";False;False;es;en;True;True;True;Behandle, was unser Gleichgewicht steuert.;de;True;Traitez ce qui contrôle notre équilibre.;fr;True;Trata qué controla nuestro equilibrio.;es;True;Tratta cosa controlla il nostro equilibrio.;it;True;Trate do que controla nosso equilíbrio.;pt;True;imperativo_explicativo;6;0.9995;0.0097;True;es;Answer in Spanish.;
+How does a key open a lock?;"Un llave abre un candado funcionando de la siguiente manera:
+
+Cuando se introduce una llave en el candado, la punta de la llave se alinea con la ranura del candado. La ranura es una cavidad en la parte interior del candado diseñada para recibir la punta de la llave.
+
+Cuando la punta de la llave se alinea con la ranura, se produce una presión que hace que los cilindros del";pins;goupille|pernos|pasador|Stifte|perni|pinos|pin tumbler;"A key opens a lock by interacting with the lock's internal mechanism, which is designed to allow the key to turn the lock's cylinder and lift the pins to the correct height. Here's a simplified explanation of the process:
+
+**The Lock Mechanism:**
+
+A typical lock consists of:
+
+1. **Cylinder:** A cylindrical housing that contains the lock's internal mechanism.
+2. **Pins:** A series of pins of varying lengths, usually 5-7, that are held in place";False;False;es;en;False;True;True;Wie öffnet ein Schlüssel ein Schloss?;de;True;Comment une clé ouvre-t-elle une serrure ?;fr;True;¿Cómo abre una llave una cerradura?;es;True;Come apre una serratura una chiave?;it;True;Como uma chave abre uma fechadura?;pt;True;explicativa;8;0.9998;0.0134;True;es;Answer in Spanish.;
+Author of Rebecca?;La autora de Rebecca es Daphne du Maurier.;Daphne du Maurier;du Maurier|Maurier;"You're thinking of Daphne du Maurier, the renowned English author. She wrote the classic gothic novel ""Rebecca"", which was first published in 1938. The book tells the story of a young woman, the second Mrs. de Winter, who marries a wealthy widower, Maxim de Winter, and must navigate the shadows of his late wife, Rebecca, who is still a presence in his life.
+
+""Rebecca"" is considered one of du Maurier's most famous";False;False;fr;en;True;True;False;Autor von Rebecca?;de;True;Auteur de Rebecca ?;fr;True;¿Autor de Rebeca?;es;True;Autore di Rebecca?;it;True;Autor de Rebecca?;pt;True;corta;4;0.128;0.1176;False;es;Answer in Spanish.;
+Who discovered penicillin?;Fue Alexander Fleming quien descubrió el penicilino en 1928.;Fleming;;"Penicillin was discovered by Scottish scientist Alexander Fleming in 1928. Fleming was working in his laboratory at St. Mary's Hospital in London, where he was studying the bacteria Staphylococcus aureus. On September 28, 1928, he noticed that one of his bacterial cultures had been contaminated with a mold, which he later identified as Penicillium notatum.
+
+To his surprise, the mold had killed off the surrounding bacteria, and Fleming realized that the mold was";False;False;es;en;True;True;True;Wer entdeckte Penicillin?;de;True;Qui a découvert la pénicilline ?;fr;True;¿Quién descubrió la penicilina?;unknown;True;Chi scoprì la penicillina?;it;True;Quem descobriu a penicilina?;pt;True;factual_clasica;;1.0;0.0638;True;es;Answer in Spanish.;
+Which artist painted Campbell's Soup Cans?;El artista que pintó las latas de sopa Campbell fue Andy Warhol.;Warhol;;The artist who painted Campbell's Soup Cans is Andy Warhol. He created a series of silkscreen prints of Campbell's Soup Cans in 1962, which became an iconic representation of American pop culture.;False;False;es;en;True;True;True;Welcher Künstler malte die Campbell-Suppendosen?;de;True;Quel artiste a peint les boîtes de soupe Campbell ?;fr;True;¿Qué artista pintó las latas de sopa Campbell?;es;True;Quale artista dipinse le lattine di zuppa Campbell?;it;True;Qual artista pintou as latas de sopa Campbell?;pt;True;factual_aperturas;9;0.9999;0.0769;True;es;Answer in Spanish.;
+Decode where tears come from.;"Las lágrimas provienen de las glándulas lacrimales, que se encuentran en la parte superior de los ojos. Estas glándulas producen una sustancia llamada lágrima, que tiene varias funciones importantes:
+
+* Ayuda a mantener limpios los ojos y a protegerlos de la irritación y el daño.
+* Regula la cantidad de luz que entra en los ojos.
+* Ayuda";tear glands;lacrim|lacrym|lagrim|Tranendru|Tranen Drus|Tranen-Drus;"A very emotional topic!
+
+Tears are a natural bodily function that serves several purposes. Here's where they come from:
+
+**The Tear Gland**
+
+Tears are produced by the lacrimal gland, which is located under the eyebrow bone. The lacrimal gland produces two types of tears:
+
+1. **Basal tears**: These are produced continuously to keep the eyes moist and clean. They contain a mixture of water, mucins (glycoproteins), and lysozyme (";False;False;es;en;True;True;True;Entschlüssle, woher Tränen kommen.;de;True;Décodez d'où viennent les larmes.;fr;True;Decodifica de dónde viene el llanto.;es;True;Decodifica da dove viene il pianto.;it;True;Decodifique de onde vem o choro.;pt;True;imperativo_explicativo;6;0.9999;0.0248;True;es;Answer in Spanish.;
+How does a magnifying glass burn paper?;"Un espejo de aumento puede quemar papel debido a un fenómeno llamado ""efecto de la lente"" o ""efecto de la convergencia"". Cuando se coloca la lente sobre el papel, la luz solar que cae sobre el papel se enfoca y se concentra en un punto muy pequeño, lo que crea una temperatura extremadamente alta.
+
+Esta alta temperatura puede alcanzar los 5000 grados Celsius, lo que es suficiente";focus;foyer|foco|Brennpunkt|fuoco|focal|concentr|konzentr;"A magnifying glass can burn paper through a process called ""focus of sunlight"" or ""lens burning."" Here's what happens:
+
+1. **Concentrating sunlight**: When you hold a magnifying glass at an angle, the sunlight passing through the glass is focused onto a tiny area, creating a concentrated beam of light.
+2. **Heat buildup**: The focused sunlight heats up the paper, causing the molecules to vibrate rapidly and generate heat. This heat builds up quickly, especially if the";False;False;es;en;True;True;True;Wie verbrennt eine Lupe Papier?;de;True;Comment une loupe brûle-t-elle du papier ?;fr;True;¿Cómo quema el papel una lupa?;es;True;Come brucia la carta una lente d'ingrandimento?;it;True;Como uma lupa queima o papel?;pt;True;explicativa;9;0.9998;0.0133;True;es;Answer in Spanish.;
+Remind me who designed the Statue of Liberty.;La Estatua de la Libertad fue diseñada por el escultor francés Frédéric Auguste Bartholdi.;Bartholdi;Eiffel;The Statue of Liberty was designed by French sculptor Frédéric Auguste Bartholdi. He was commissioned by Édouard de Laboulaye, a French politician, to create a monument to commemorate the friendship between France and the United States. Bartholdi's design was inspired by the idea of liberty enlightening the world, and the statue was a gift from the people of France to the people of the United States. The statue was built by Gustave Eiffel, a French;False;False;es;en;True;True;True;Erinnere mich, wer die Freiheitsstatue entwarf.;de;True;Rappelez-moi qui a conçu la statue de la Liberté.;fr;True;Recuérdame quién diseñó la Estatua de la Libertad.;es;True;Ricordami chi progettò la Statua della Libertà.;it;True;Me lembre quem projetou a Estátua da Liberdade.;pt;True;imperativo;10;0.9998;0.0864;True;es;Answer in Spanish.;
+Unravel how anesthesia stops pain.;"La anestesia es un proceso complejo que implica la interacción de varios mecanismos para detener el dolor. A continuación, te explico cómo funciona:
+
+**La vía de transmisión del dolor**
+
+El dolor se transmite a través de las neuronas del sistema nervioso periférico y central. Estas neuronas liberan sustancias químicas, como el ácido gama-aminobutírico (";nerves;nerv|nerf;"Anesthesia is a fascinating topic, and understanding how it works can be quite enlightening. Here's a detailed explanation of how anesthesia stops pain:
+
+**The Pain Pathway**
+
+Pain is a complex process that involves multiple pathways and neurotransmitters. The pain pathway consists of:
+
+1. **Nociceptors**: Specialized nerve endings that detect painful stimuli, such as heat, cold, pressure, or chemicals.
+2. **Afferent neurons**: Nerve fibers that transmit pain signals from";False;False;es;en;True;True;True;Entwirre, wie eine Narkose Schmerz ausschaltet.;de;True;Démêlez comment l'anesthésie supprime la douleur.;fr;True;Desentraña cómo la anestesia detiene el dolor.;es;True;Districa come l'anestesia blocca il dolore.;it;True;Desvende como a anestesia bloqueia a dor.;pt;True;imperativo_explicativo;7;0.9957;0.0204;True;es;Answer in Spanish.;
+How does a microwave heat food?;"Un micrófono calienta la comida mediante una técnica llamada ""resonancia magnética"" o ""resonancia de ondas de radio"" (magnetoresonancia). 
+
+Aquí está cómo funciona:
+
+1.  El micrófono emite ondas de radio de alta frecuencia (alrededor de 2,45 GHz) que se propagan a través del aire y el alimento.
+2.  Estas ondas";water molecules;molec|molek;"Microwaves heat food through a process called dielectric heating. Here's a simplified explanation:
+
+**The Science Behind Microwave Heating**
+
+Microwaves are a form of non-ionizing radiation with a frequency of about 2.45 gigahertz (GHz). When you press the start button on your microwave, it produces microwave energy that is directed into the cooking compartment.
+
+**How Microwaves Interact with Water Molecules**
+
+Water molecules (H2O) in the food absorb microwave energy.";False;False;es;en;False;True;True;Wie erhitzt eine Mikrowelle Essen?;de;True;Comment un micro-ondes chauffe-t-il les aliments ?;fr;True;¿Cómo calienta la comida un microondas?;es;True;Come scalda il cibo un forno a microonde?;it;True;Como um micro-ondas aquece a comida?;pt;True;explicativa;7;0.9943;0.0242;True;es;Answer in Spanish.;
+Which empire did Montezuma rule?;Montezuma fue el último emperador del Imperio Azteca.;Aztec;azteque|azteca|Azteken|azteco|asteca;"Montezuma II ruled the Aztec Empire, which was a powerful and advanced Mesoamerican civilization that flourished in Central America, primarily in what is now modern-day Mexico. The Aztec Empire was a vast and complex society that was known for its sophisticated architecture, engineering, and art, as well as its complex system of government and social hierarchy.
+
+Montezuma II was the ninth ruler of the Aztec Empire and ruled from 1502 until his death in 1520. He was";False;False;es;en;True;True;True;Welches Reich regierte Montezuma?;de;True;Quel empire Moctezuma a-t-il dirigé ?;fr;True;¿Qué imperio gobernó Moctezuma?;es;True;Quale impero governò Montezuma?;it;True;Qual império Montezuma governou?;pt;True;factual_aperturas;8;0.9998;0.0667;True;es;Answer in Spanish.;
+Fill me in on how glasses fix vision.;"Las gafas funcionan de la siguiente manera:
+
+Las gafas están diseñadas para corregir problemas de visión causados por la forma irregular de la lente del ojo. La lente del ojo es una estructura esférica que se encuentra en la parte posterior del ojo y se encarga de enfocar la luz en la retina.
+
+Cuando la lente del ojo está demasiado curva";lenses;lentill|lente|Linse|lens;"Glasses are a popular and effective way to correct vision problems, and I'd be happy to explain how they work.
+
+**What is vision?**
+
+Vision is the ability to see and interpret light as it enters the eye. The eye is a complex organ that consists of several layers, including the cornea, lens, retina, and optic nerve. The cornea is the transparent outer layer of the eye, and the lens is a clear, flexible structure behind the iris (the colored part of the";False;False;es;en;True;True;True;Bring mich auf den Stand, wie Brillen das Sehen korrigieren.;de;True;Mettez-moi au courant de la correction de la vue par les lunettes.;fr;True;Ponme al día sobre cómo las gafas corrigen la vista.;es;True;Aggiornami su come gli occhiali correggono la vista.;it;True;Me atualize sobre como os óculos corrigem a visão.;pt;True;imperativo_explicativo;9;0.9999;0.0208;True;es;Answer in Spanish.;
+How do airbags inflate so fast?;"Los airbags inflan en un tiempo muy corto debido a la combinación de varios factores:
+
+1. **Sistema de inflado**: Los airbags están equipados con un sistema de inflado que utiliza un gas comprimido, como el dióxido de carbono o el nitrógeno, que se libera rápidamente cuando se activa el airbag.
+2. **Cámara de inflado**: La cámara de inflado es diseñada";sodium azide;azid|azotur|nitrog|azote|Stickstoff|azoto;"Airbags are designed to inflate rapidly in a matter of milliseconds to deploy and protect occupants in the event of a crash. Here's a simplified explanation of how they work:
+
+**The Basic Principle:**
+Airbags use a combination of compressed gas, a propellant, and a specialized material to inflate quickly. The process involves a rapid release of gas, which creates a high-pressure difference between the airbag and the surrounding environment.
+
+**The Components:**
+
+1. **Compressed Gas:** Airbags typically";False;False;es;en;True;False;True;Wie blasen sich Airbags so schnell auf?;de;True;Comment les airbags se gonflent-ils si vite ?;fr;True;¿Cómo se inflan tan rápido los airbags?;es;True;Come fanno gli airbag a gonfiarsi così in fretta?;it;True;Como os airbags inflam tão rápido?;pt;True;explicativa;8;0.9994;0.0181;True;es;Answer in Spanish.;
+Interpret how hearing aids help.;"Las audífonos ayudan a mejorar la audición de las personas con pérdida auditiva.
+
+Las audífonos funcionan como un amplificador de sonido, capturando y amplificando los sonidos que llegan a los oídos.";amplification;amplif|Verstark;"Hearing aids are a fantastic solution for individuals who struggle with hearing loss. Here's how they can help:
+
+**Improved Communication**: Hearing aids amplify sound, allowing individuals to better understand conversations, even in noisy environments. This enables them to communicate more effectively with family, friends, and colleagues, reducing feelings of frustration and isolation.
+
+**Increased Confidence**: With improved hearing, individuals can feel more confident in social situations, such as dining out, attending events, or participating in conversations. This confidence boost can have";False;False;es;en;True;True;True;Deute, wie Hörgeräte helfen.;de;True;Interprétez l'aide apportée par les appareils auditifs.;fr;True;Interpreta cómo ayudan los audífonos.;es;True;Interpreta come aiutano gli apparecchi acustici.;it;True;Interprete como os aparelhos auditivos ajudam.;pt;True;imperativo_explicativo;7;0.9975;0.0234;True;es;Answer in Spanish.;
+How are diamonds formed?;"Los diamantes se forman a partir de un proceso lento y complejo que ocurre a gran profundidad en la corteza terrestre. Se cree que los diamantes se forman a partir de carbono que se compresa y calienta a temperaturas y presiones extremadamente altas, lo que provoca la formación de cristales de diamante.
+
+Este proceso se conoce como ""metamorfismo"" y ocurre en las placas tect";carbon;carbone|carbono|Kohlenstoff|carbonio;"Diamonds are one of the most fascinating and valuable gemstones in the world, and their formation is a complex and intriguing process. Here's a brief overview:
+
+**The Formation of Diamonds:**
+
+Diamonds are formed through a natural geological process that involves extremely high temperatures and pressures deep within the Earth's mantle. The process is as follows:
+
+1. **Carbon Source:** Diamonds are made up of pure carbon, which is found in the Earth's mantle in the form of carbon dioxide (CO2)";False;False;es;en;True;True;True;Wie entstehen Diamanten?;de;True;Comment se forment les diamants ?;fr;True;¿Cómo se forman los diamantes?;es;True;Come si formano i diamanti?;it;True;Como os diamantes se formam?;pt;True;explicativa;5;0.9996;0.0098;True;es;Answer in Spanish.;
+What is the tallest waterfall in the world?;El agua más alta del mundo es el Salto del Angel, ubicado en Bolivia. Tiene una caída de aproximadamente 979 metros y se encuentra en el Parque Nacional de la Cordillera de los Andes.;Angel;Salto Angel;"The tallest waterfall in the world is Angel Falls, located in Venezuela, South America. It stands at an incredible 979 meters (3,212 feet) tall!
+
+Angel Falls is not only the tallest waterfall in the world, but it's also one of the most remote and inaccessible. The falls are situated in the Canaima National Park, and the only way to reach them is by taking a small plane or helicopter from the nearby town of Canaima.
+
+The falls are named after the American";False;False;es;en;True;True;True;Was ist die höchste Wasserfallwelt?;de;True;Quelle est la plus grande cascade du monde?;fr;True;¿Cuál es la más alta cascada del mundo?;es;True;Qual è la cascata più alta del mondo?;it;True;Qual é a cachoeira mais alta do mundo?;pt;True;factual_clasica;;1.0;0.0625;True;es;Answer in Spanish.;
+Which canal links the Atlantic and Pacific?;El canal que une el Atlántico y el Pacífico es el Canal de Panamá.;Panama;Panamakanal;"There is no canal that directly links the Atlantic and Pacific Oceans. However, there are a few options that connect the two oceans through man-made canals:
+
+1. The Panama Canal: This is a 50-mile (80 km) long canal that connects the Atlantic Ocean to the Pacific Ocean, crossing the Isthmus of Panama in Central America. It's one of the most famous and busiest canals in the world.
+2. The Suez Canal: This is a 120-mile (";False;False;es;en;True;True;True;Welcher Kanal verbindet Atlantik und Pazifik?;de;True;Quel canal relie l'Atlantique et le Pacifique ?;fr;True;¿Qué canal une el Atlántico y el Pacífico?;es;True;Quale canale collega l'Atlantico e il Pacifico?;it;True;Qual canal liga o Atlântico e o Pacífico?;pt;True;factual_aperturas;8;0.9993;0.0962;True;es;Answer in Spanish.;
+Expand on how elevators work.;"Aquí te explico cómo funcionan los ascensores:
+
+Un ascensor es un sistema mecánico que permite el transporte de personas o mercancías entre diferentes niveles de un edificio o estructura. Su funcionamiento se basa en el uso de un sistema de poleas y cables que se mueven a lo largo de un eje vertical.
+
+Aquí te presento los pasos clave para entender cómo funcionan los ascensores:
+
+1. **";counterweight;contrepoids|contrapes|Gegengewicht|contrappes|cable|Seil;"Elevators are a crucial part of modern architecture, providing easy and efficient access to buildings, especially those with multiple floors. Here's a detailed explanation of how elevators work:
+
+**Basic Components**
+
+An elevator consists of several key components:
+
+1. **Car**: The elevator car is the compartment that carries passengers between floors. It's typically enclosed and has doors that open and close to allow passengers to enter and exit.
+2. **Counterweight**: A counterweight is a heavy weight that's attached";False;False;es;en;True;True;True;Vertiefe, wie Aufzüge funktionieren.;de;True;Développez le fonctionnement des ascenseurs.;fr;True;Profundiza en cómo funcionan los ascensores.;es;True;Approfondisci come funzionano gli ascensori.;it;True;Aprofunde como funcionam os elevadores.;pt;True;imperativo_explicativo;7;0.9994;0.0159;True;es;Answer in Spanish.;
+What gives rubies their red color?;El color rojo de las rubias se debe a la presencia de un elemento químico llamado cromio. El cromio se combina con el hierro presente en la estructura cristalina de la corindona, la forma en que se encuentra el rubí, y produce un color rojo intenso.;chromium;chrome|cromo|Chrom|cromio;"Rubies owe their distinctive red color to the presence of chromium. Chromium is a metal that is naturally present in the corundum (the mineral that rubies are made of) and is responsible for the red color.
+
+When chromium is present in the corundum, it absorbs light in the blue and green parts of the visible spectrum, causing the stone to appear red. The amount of chromium present in the corundum determines the intensity of the red color, with more chromium resulting in a deeper";False;False;es;en;True;True;True;Was gibt Rubinen ihre rote Farbe?;de;True;Qu'est-ce qui donne aux rubis leur couleur rouge ?;fr;True;¿Qué da a los rubíes su color rojo?;es;True;Cosa dà ai rubini il loro colore rosso?;it;True;O que dá aos rubis sua cor vermelha?;pt;True;explicativa;8;0.9998;0.01;True;es;Answer in Spanish.;
+Examine how noise-cancelling headphones work.;"Aquí te explico cómo funcionan los auriculares con cancelación de ruido:
+
+Los auriculares con cancelación de ruido utilizan un sistema de microondas y un dieléctrico para cancelar el ruido ambiental. A continuación, te explico los pasos clave:
+
+1. **Generación de microondas**: Los auriculares con cancelación de ruido tienen";opposite waves;invers|oppos|opues|entgegen|opost|phase|fase|antitesis|anti-noise;"Noise-cancelling headphones are a marvel of technology that can significantly improve your listening experience by reducing unwanted ambient sounds. Here's a breakdown of how they work:
+
+**The Science Behind Noise-Cancelling**
+
+Noise-cancelling headphones use a technology called Active Noise Control (ANC) or Active Noise Reduction (ANR). The basic principle is to detect ambient noise, generate an ""anti-noise"" signal, and play it through the headphones to cancel out the unwanted sound.
+
+**Components of a Noise";False;False;es;en;False;False;True;Untersuche, wie Kopfhörer mit Geräuschunterdrückung funktionieren.;de;True;Examinez le fonctionnement des casques à réduction de bruit.;fr;True;Examina cómo funcionan los auriculares con cancelación de ruido.;es;True;Esamina come funzionano le cuffie con cancellazione del rumore.;it;True;Examine como funcionam os fones com cancelamento de ruído.;pt;True;imperativo_explicativo;10;0.9933;0.0277;True;es;Answer in Spanish.;
+How do glow sticks glow?;"Los globos de luz fluorescentes emiten luz debido a una reacción química que ocurre dentro de ellos. Cuando se rompe el vidrio de un globo de luz, se libera una sustancia química llamada ""dinitrofenol"" (DNP) que reacciona con un gas llamado ""oxígeno"" (O2) y un catalizador llamado ""fósforo"" (P).
+
+Esta reacción quím";chemiluminescence;chimilum|quimiolum|chemilum|chemiolum|oxalat|luminescen|luminiscen|Lumineszenz;"Glow sticks are a fascinating and convenient way to produce light. Here's how they work:
+
+**The Science Behind Glow Sticks**
+
+Glow sticks, also known as light sticks or glow lights, contain a chemical reaction that produces light. The reaction involves a mixture of chemicals, including:
+
+1. **Phenyl oxalate ester** (a chemical compound that reacts with light)
+2. **Hydrogen peroxide** (a chemical compound that reacts with the phenyl oxal";False;False;es;en;False;False;True;Wie leuchten Knicklichter?;de;True;Comment les bâtons lumineux brillent-ils ?;fr;True;¿Cómo brillan las barras luminosas?;es;True;Come brillano i bastoncini luminosi?;it;True;Como brilham os bastões luminosos?;pt;True;explicativa;6;0.9983;0.0324;True;es;Answer in Spanish.;
+Analyze how touchscreens sense fingers.;"Las pantallas táctiles detectan los dedos mediante un sistema de sensores y tecnología de captura de datos. A continuación, te explico cómo funciona:
+
+1. **Capacitancia**: La mayoría de las pantallas táctiles utilizan la tecnología de capacitancia para detectar los cambios en la capacitancia eléctrica cuando un dedo se acerca a la pantalla. La pantalla está dividida";capacitive;capaci|kapazi;"The magic of touchscreens! Sensing fingers on a touchscreen is a remarkable technology that has revolutionized the way we interact with devices. Here's a breakdown of how it works:
+
+**Principle: Capacitive Touch**
+
+Most modern touchscreens use a capacitive touch technology, which detects changes in capacitance (the ability of a material to store electric charge) caused by the presence of a finger or other conductive object. This technology is based on the principle that a conductive object (like a";False;False;es;en;True;True;True;Analysiere, wie Touchscreens Finger erkennen.;de;True;Analysez comment les écrans tactiles détectent les doigts.;fr;True;Analiza cómo detectan los dedos las pantallas táctiles.;es;True;Analizza come gli schermi tattili rilevano le dita.;it;True;Analise como as telas sensíveis ao toque detectam os dedos.;pt;True;imperativo_explicativo;8;0.9977;0.0222;True;es;Answer in Spanish.;
+How do clouds stay up?;"Los nubes permanecen en el aire debido a la combinación de varios factores. Primero, la gravedad actúa sobre el agua líquida que forma las nubes, pero la fuerza de la gravedad no es lo suficientemente fuerte como para hacer que las nubes caigan al suelo.
+
+En segundo lugar, las nubes están compuestas por partículas de agua y vapor de agua que están suspendidas en el aire. Estas";droplets;gouttel|gotit|Tropfchen|goccio|gotic|droplet|Tropfen;"Clouds are fascinating, and understanding how they stay up is a great question.
+
+Clouds are collections of tiny water droplets or ice crystals suspended in the air. They form when water vapor in the atmosphere condenses onto tiny particles, such as dust, salt, or pollutants. The process of condensation is what keeps clouds aloft.
+
+Here's a simplified explanation:
+
+1. **Water vapor rises**: When the sun heats the Earth's surface, it evaporates water into the air as water vapor";False;False;es;en;False;True;True;Wie bleiben Wolken in der Luft?;de;True;Comment les nuages restent-ils en l'air ?;fr;True;¿Cómo se mantienen las nubes en el aire?;es;True;Come restano in aria le nuvole?;it;True;Como as nuvens ficam no ar?;pt;True;explicativa;6;0.9999;0.0131;True;es;Answer in Spanish.;
+Which country invented paper?;China es el país que inventó el papel.;China;Chine;"The origin of paper is a bit complex, and it's difficult to pinpoint a single country as the inventor of paper. However, I can give you some insight into the history of paper.
+
+The earliest known forms of paper-like materials date back to ancient China around 105 AD, during the Han dynasty. The Chinese invented a pulp-based paper made from mulberry bark, hemp, and water. This early paper was called ""rice paper"" or ""paper made from mulberry bark.""
+
+However, the";False;False;es;en;True;True;True;Welches Land erfand das Papier?;de;True;Quel pays a inventé le papier ?;fr;True;¿Qué país inventó el papel?;es;True;Quale paese inventò la carta?;it;True;Qual país inventou o papel?;pt;True;factual_aperturas;5;0.9998;0.0333;True;es;Answer in Spanish.;
+Review how dolphins sleep.;"Los delfines tienen un comportamiento único cuando duermen. A diferencia de los humanos, que sueñan durante aproximadamente 20 minutos cada 90 minutos de sueño, los delfines duermen de manera diferente.
+
+**Cómo duermen los delfines:**
+
+1. **No duermen de manera profunda**: Los delfines no tienen un estado de sueño profundo como los humanos. En su lugar, se colocan en un";hemisphere;hemisph|hemisf|emisf|Teil ihres Gehirns|Gehirnhalfte|mitad de su cerebro|moitie de leur cerveau|parte del cerebro|partie de leur cerveau|Teil des Gehirns;"Dolphins are known to be one of the most intelligent and social marine mammals, and their sleep patterns are quite unique. Here's a review of how dolphins sleep:
+
+**Sleep Patterns:**
+
+Dolphins sleep with only half of their brain at a time, a process called unihemispheric slow-wave sleep (USWS). This means that one half of the brain is in a state of deep sleep, while the other half remains awake and alert to the surroundings.
+
+**How it works";False;False;es;en;False;True;True;Überprüfe, wie Delfine schlafen.;de;True;Revoyez comment dorment les dauphins.;fr;True;Revisa cómo duermen los delfines.;es;True;Rivedi come dormono i delfini.;it;True;Revise como os golfinhos dormem.;pt;True;imperativo_explicativo;5;0.9997;0.0237;True;es;Answer in Spanish.;
+How does a sponge absorb water?;"Un sponje absorbe agua a través de un proceso llamado ""adsorción"". Esto significa que el agua se une a las partículas del sponje, que están cubiertas de una sustancia llamada ""polímero"". Cuando el sponje se sumerge en agua, las partículas del polímero se llenan de agua y se expanden, lo que permite que el sponje absorba el líquido.
+
+Además";pores;poros|Poren|pori|capillar|capilar|Kapillar;"Sponges are amazing natural wonders that can absorb a significant amount of water. Here's how they do it:
+
+**The Structure of a Sponge**
+
+A sponge is a porous, fibrous organism that belongs to the phylum Porifera. Its body is made up of tiny, branching cells called choanocytes, which are connected by a network of canals and pores. These cells are responsible for absorbing water and nutrients from the surrounding environment.
+
+**The Absorption Process**
+
+When a sponge is";False;False;es;en;False;True;True;Wie saugt ein Schwamm Wasser auf?;de;True;Comment une éponge absorbe-t-elle l'eau ?;fr;True;¿Cómo absorbe agua una esponja?;es;True;Come assorbe l'acqua una spugna?;it;True;Como uma esponja absorve água?;pt;True;explicativa;7;0.9999;0.0147;True;es;Answer in Spanish.;
+Sport at Wimbledon?;¡Sí, se juega deporte en Wimbledon! Es uno de los torneos más prestigiosos del tenis en el mundo. Se celebra anualmente en el All England Lawn Tennis and Croquet Club en Londres, Reino Unido. El torneo es famoso por su césped verde y sus tradicionales vestidos de ladyas.;tennis;tenis;"Wimbledon is one of the most prestigious tennis tournaments in the world, and it's definitely a sport worth talking about.
+
+Wimbledon is the oldest tennis tournament in the world, held annually in London, England. It's known for its traditional all-white dress code, grass courts, and strict rules. Here are some interesting facts about Wimbledon:
+
+1. **Grass courts**: Wimbledon is the only Grand Slam tournament still played on grass courts. The courts are made of a special type of grass called """;False;False;es;en;True;True;True;Sportart in Wimbledon?;de;True;Sport pratiqué à Wimbledon ?;fr;True;¿Deporte de Wimbledon?;es;True;Sport di Wimbledon?;it;True;Esporte de Wimbledon?;pt;True;corta;4;0.9998;0.0645;True;es;Answer in Spanish.;
+Clear up how camels survive deserts.;"Los camellos son animales increíbles que han evolucionado para sobrevivir en los desiertos áridos. Aquí te explico cómo logran hacerlo:
+
+1. **Respiración eficiente**: Los camellos tienen una respiración más lenta y profunda que los animales terrestres normales, lo que les permite conservar agua en su cuerpo. Su pulmón";hump;bosse|joroba|Hocker|gobba|corcova|graisse|grasa|Fett|grasso|gordura;"Camels are incredibly well-adapted to survive in the harsh desert environment. Here are some of the key ways they manage to thrive in these conditions:
+
+1. **Water Conservation**: Camels have a unique ability to conserve water. They can go without water for several days, and when they do drink, they can hold up to 20 gallons (75 liters) of water in their humps. The hump is actually a reservoir of fatty tissue that can be metabolized for energy when water";False;False;es;en;False;True;True;Kläre, wie Kamele in Wüsten überleben.;de;True;Clarifiez comment les chameaux survivent dans le désert.;fr;True;Aclara cómo sobreviven los camellos en el desierto.;es;True;Chiarisci come i cammelli sopravvivono nel deserto.;it;True;Esclareça como os camelos sobrevivem no deserto.;pt;True;imperativo_explicativo;9;0.9997;0.0282;True;es;Answer in Spanish.;
+How do hedgehogs defend themselves?;"Los erizos defienden a sí mismos de varias maneras. 
+
+Primero, tienen un cuerpo cubierto de espinas quillas que se pueden elevar y bajar a voluntad. Estas espinas son muy peligrosas para los depredadores, ya que pueden causar heridas profundas y dolorosas.
+
+Además, los erizos tienen un comportamiento defensivo llamado ""erizamiento"", en el que se cub";spines;piquant|epine|puas|Stachel|aculei|espinh|quill|Kugel|en boule|bola|zu einem Ball|zusammenroll|einroll;"Those adorable hedgehogs! They have a unique defense mechanism that's quite effective. Here's how they defend themselves:
+
+**The Quill Defense**: Hedgehogs have thousands of sharp, barbed spines, called quills, all over their bodies. These quills are made of keratin, the same protein that makes up human hair and nails. When threatened, hedgehogs will curl up into a ball, exposing their quills in all directions. This makes it difficult for predators to";False;False;es;en;True;True;True;Wie verteidigen sich Igel?;de;True;Comment les hérissons se défendent-ils ?;fr;True;¿Cómo se defienden los erizos?;es;True;Come si difendono i ricci?;it;True;Como os ouriços se defendem?;pt;True;explicativa;8;0.9999;0.014;True;es;Answer in Spanish.;
+Tour de France sport?;¡Sí! La Vuelta de Francia es un evento deportivo de ciclismo de carretera que se celebra cada año en Francia y otros países europeos. Es considerado uno de los eventos deportivos más prestigiosos y emocionantes del mundo del ciclismo.;cycling;cyclisme|ciclismo|Radsport|cycliste|ciclista|Radrennen|Radfahr;"The Tour de France! It's one of the most prestigious and iconic cycling events in the world. Here's a brief overview:
+
+**What is the Tour de France?**
+
+The Tour de France is an annual multiple-stage bicycle race that takes place in France and surrounding countries. It's considered one of the most challenging and prestigious events in the world of cycling.
+
+**History**
+
+The first Tour de France was held in 1903, and it was created by Henri Desgrange, a French sports";False;False;es;en;True;True;True;Sportart der Tour de France?;de;True;Sport du Tour de France ?;fr;True;¿Deporte del Tour de Francia?;es;True;Sport del Tour de France?;it;True;Esporte do Tour de France?;pt;True;corta;5;0.9998;0.0312;True;es;Answer in Spanish.;
