@@ -35,6 +35,12 @@ alias
 abiertos
     open1/open2 de cada celda con la pregunta en fr/es/de (control nativo).
 
+Para otro modelo (run_targets_qwen3.sh): `armar --regenerar_viejas` deja las 100
+viejas sin output/baseline/gate (las genera el modelo nuevo; las guardadas son de
+Llama), `regate --incluir_viejas` les aplica gate_v8 con sus alias, y
+`abiertos --sin_output` vacia el target de Llama de los sets abiertos (la CE del
+control nativo se mide entonces contra M(q_X) del modelo nuevo).
+
 revisar
     Reporte final por celda y por categoria: filas sin output, gate, accuracy
     de la referencia, veredictos de idioma, traducciones usables por columna y
@@ -83,6 +89,14 @@ def cmd_armar(args):
     if args.n_viejas > corte:
         raise SystemExit(f"--n_viejas {args.n_viejas} entra en el held-out del banco viejo (desde {corte})")
     viejas = viejo.iloc[:args.n_viejas].copy()
+    if args.regenerar_viejas:
+        # targets de otro modelo: se conservan pregunta, respuesta, alias y traducciones;
+        # todo lo generado por Llama (target, baseline, veredictos, gate) queda vacio
+        generadas = [c for c in viejas.columns
+                     if c in ("output", "baseline_en", "passed_gate", "output_hand_fixed")
+                     or c.startswith("ref_") or c.startswith("baseline_")]
+        viejas[generadas] = ""
+        print(f"--regenerar_viejas: vaciadas {generadas}")
     nuevas = pd.read_csv(args.banco, sep=";", keep_default_na=False, dtype=str)
 
     # --- repeticiones -------------------------------------------------------
@@ -198,15 +212,20 @@ def cmd_regate(args):
     for celda in ("fr", "es", "de"):
         path = os.path.join(args.dir, f"targets_v8_{celda}.csv")
         df = pd.read_csv(path, sep=";", keep_default_na=False, dtype=str)
-        nuevas = df.index[df["categoria"] != CAT_VIEJA]
+        nuevas = df.index[df["categoria"] != CAT_VIEJA] if not args.incluir_viejas else df.index
         antes = df["passed_gate"].str.lower() == "true"
         for i in nuevas:
             p = df.at[i, "prompt"]
-            if p not in alias:
+            if df.at[i, "categoria"] == CAT_VIEJA:
+                al = df.at[i, "aliases"]          # las viejas: sus alias (correr `alias` antes)
+            elif p not in alias:
                 raise SystemExit(f"[{celda}] {p!r} no esta en {args.banco}")
-            df.at[i, "aliases"] = alias[p]
+            else:
+                al = df.at[i, "aliases"] = alias[p]
+            if not df.at[i, "output"].strip():
+                raise SystemExit(f"[{celda}] {p!r} sin output: generar los targets antes del regate")
             lang = language_verdict(df.at[i, "output"])
-            acc = answer_correct(df.at[i, "output"], df.at[i, "answer"], alias[p])
+            acc = answer_correct(df.at[i, "output"], df.at[i, "answer"], al)
             df.at[i, "ref_language"] = lang
             df.at[i, "ref_answer_correct"] = str(bool(acc))
             df.at[i, "passed_gate"] = str(gate_v8(df.at[i, "categoria"], celda, lang, acc, df.at[i, "output"]))
@@ -349,6 +368,8 @@ def cmd_abiertos(args):
             raise SystemExit(f"[{celda}] open1: las preguntas no coinciden con {OPEN1_TRAD}")
         for l in ("es", "de", "fr"):
             df[f"prompt_{l}"], df[f"prompt_{l}_language"], df[f"prompt_{l}_ok"] = tr[f"prompt_{l}"], l, "True"
+        if args.sin_output:
+            df["output"] = df["baseline_en"] = ""
         df.to_csv(os.path.join(args.out, f"open1_{celda}.csv"), sep=";", index=False)
         d2 = o2[celda].copy()
         for l in ("es", "de", "fr"):
@@ -360,6 +381,8 @@ def cmd_abiertos(args):
             for suf in ("", "_language", "_ok"):
                 d2[f"prompt_{l}{suf}"] = o2[fuente][f"prompt_{l}{suf}"]
             print(f"[{celda}] open2: prompt_{l} copiada de la celda {fuente}")
+        if args.sin_output:
+            d2["output"] = d2["baseline_en"] = ""
         d2.to_csv(os.path.join(args.out, f"open2_{celda}.csv"), sep=";", index=False)
         print(f"[{celda}] open1 {len(df)} filas, open2 {len(d2)} filas -> {args.out}")
 
@@ -469,6 +492,8 @@ def main():
     a.add_argument("--out", required=True)
     a.add_argument("--n", type=int, default=0, help="humo: n filas por categoria")
     a.add_argument("--force", action="store_true")
+    a.add_argument("--regenerar_viejas", action="store_true",
+                   help="las 100 viejas sin output/baseline/gate (targets de otro modelo)")
     r = sub.add_parser("restaurar")
     r.add_argument("--lang", choices=["es", "de"], required=True)
     r.add_argument("--csv", required=True)
@@ -477,6 +502,8 @@ def main():
     g.add_argument("--dir", required=True)
     g.add_argument("--banco", default=BANCO)
     g.add_argument("--dry_run", action="store_true")
+    g.add_argument("--incluir_viejas", action="store_true",
+                   help="aplicar gate_v8 tambien a las 100 viejas (targets de otro modelo)")
     h = sub.add_parser("heldout")
     h.add_argument("--dir", required=True)
     h.add_argument("--split", type=float, default=0.84)
@@ -487,6 +514,8 @@ def main():
     al.add_argument("--dry_run", action="store_true")
     ab = sub.add_parser("abiertos")
     ab.add_argument("--out", required=True)
+    ab.add_argument("--sin_output", action="store_true",
+                    help="vaciar output y baseline_en (de Llama) de los sets abiertos: para otro modelo")
     q = sub.add_parser("igualar")
     q.add_argument("--dir", required=True)
     q.add_argument("--split", type=float, default=0.84)

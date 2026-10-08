@@ -185,12 +185,22 @@ def r_D(args):
         for nombre, p in ((n, os.path.join(r, f"alg_{c}", "lang_patch_best_train.pt")) for n, r in fuentes):
             if os.path.exists(p):
                 vec[nombre] = torch.load(p, map_location="cpu").float().flatten()
+    # otro modelo (Qwen d=2560 contra Llama d=3072): el coseno entre espacios distintos
+    # no existe; entran solo los vectores con la dimension del run
+    d = next((vec[k].numel() for k in vec if k.startswith(os.path.basename(os.path.normpath(args.runs)))), None)
+    otra_dim = [k for k in vec if vec[k].numel() != d]
+    for k in otra_dim:
+        print(f"AVISO: {k} tiene d={vec[k].numel()} (el run, d={d}): fuera de la tabla de cosenos")
+        del vec[k]
     nombres = list(vec)
     filas = [[a, f"{vec[a].norm():.3f}"] + [f"{torch.nn.functional.cosine_similarity(vec[a], vec[b], dim=0):.2f}"
                                             for b in nombres] for a in nombres]
+    azar = f"±{1 / d ** 0.5:.3f}" if d else "?"
     L += ["## Normas y cosenos", "", "Referencia del paper: réplica de alg_fr con otro orden de batches = 0.49; "
-          "dos direcciones al azar en d=3072 = ±0.018.", "",
+          f"dos direcciones al azar en d={d} = {azar} (1/√d).", "",
           tabla(["vector", "‖v‖"] + nombres, filas), ""]
+    if otra_dim:
+        L += [f"Fuera de la tabla por tener otra dimensión: {', '.join(otra_dim)}.", ""]
     filas = []
     for c in CELDAS:
         nt = cargar(os.path.join(args.runs, f"alg_{c}", "nearest_token", "nearest_token.json"))
@@ -200,7 +210,8 @@ def r_D(args):
             if x["vec"] == "v":
                 filas.append([c, x["alpha"], COL_LANG.get(x["col"], x["col"]), x["n_tok"],
                               pct(x["cambia_l2"]), pct(x["cambia_cos"])])
-        L += [f"Celda {c}: ‖v‖ = {nt['v_norm']:.3f}; supera la norma del {100 * nt['pct_norma_vocab']:.1f}% "
+        L += [f"Celda {c}: ‖v‖ = {nt['v_norm']:.3f} (‖v‖/‖e‖ medio del vocabulario = "
+              f"{nt['v_norm'] / nt['vocab_norm_mean']:.3f}; Llama v9: 0.78-0.87); supera la norma del {100 * nt['pct_norma_vocab']:.1f}% "
               f"del vocabulario y del {100 * nt['pct_norma_preguntas']:.1f}% de los tokens de las preguntas; "
               f"distancia mediana token-vecino {nt['gap_median']:.2f}.", ""]
     if filas:

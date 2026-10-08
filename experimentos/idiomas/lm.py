@@ -4,6 +4,13 @@ Helpers de modelo compartidos por el experimento de idiomas.
 Mismas convenciones que legacy/christmas_final_train.py y legacy/test_xmas_patch.py:
 Llama-3.2 fp16, tokenizer use_fast=False, template 'llama-3.2', parche aditivo
 sobre las primeras N posiciones del goal slice, generacion greedy desde embeddings.
+
+Familias soportadas (MODELOS, por config.model_type):
+  llama  Llama-3.2-Instruct: fp16, plantilla 'llama-3.2' (el paper; sin cambios)
+  qwen3  Qwen3-4B-Instruct-2507: bf16 (los pesos son bf16; fp16 desborda en Qwen),
+         plantilla 'qwen3' (ChatML sin thinking, clase_prompts.Qwen3ConversationTemplate)
+La plantilla se elige por el tokenizer (plantilla()), asi que los scripts que
+solo cargan el tokenizer (nearest_token_patch.py) eligen la misma.
 """
 
 import os
@@ -15,7 +22,7 @@ if _ROOT not in sys.path:
 
 import numpy as np
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, LlamaForCausalLM
 
 from llm_attacks.minimal_gcg.string_utils import SuffixManager, load_conversation_template
 
@@ -24,10 +31,22 @@ from checkers import truncate_at_role_leak
 DEFAULT_MODEL = "/home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct"
 
 
+# model_type -> (dtype, plantilla)
+MODELOS = {"llama": (torch.float16, "llama-3.2"), "qwen3": (torch.bfloat16, "qwen3")}
+
+
+def familia(model_path):
+    mt = AutoConfig.from_pretrained(model_path, trust_remote_code=True).model_type
+    if mt not in MODELOS:
+        raise ValueError(f"model_type {mt!r} no soportado ({model_path}); validos: {sorted(MODELOS)}")
+    return mt
+
+
 def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", **kwargs):
+    dtype, nombre = MODELOS[familia(model_path)]
     model = (
         AutoModelForCausalLM.from_pretrained(
-            model_path, torch_dtype=torch.float16, trust_remote_code=True, **kwargs
+            model_path, torch_dtype=dtype, trust_remote_code=True, **kwargs
         )
         .to(device)
         .eval()
@@ -39,25 +58,42 @@ def load_model_and_tokenizer(model_path, tokenizer_path=None, device="cuda:0", *
         tokenizer.padding_side = "left"
     if not tokenizer.pad_token:
         tokenizer.pad_token = tokenizer.eos_token
+    if plantilla(tokenizer) != nombre:
+        raise ValueError(f"el tokenizer de {tokenizer_path} usa la plantilla {plantilla(tokenizer)!r} "
+                         f"pero el modelo es {nombre!r}")
     return model, tokenizer
+
+
+def plantilla(tokenizer):
+    """'qwen3' si el vocabulario tiene <|im_start|> (ChatML), si no 'llama-3.2'.
+    Se calcula una vez por tokenizer (get_vocab de 150k entradas es caro)."""
+    p = getattr(tokenizer, "_plantilla", None)
+    if p is None:
+        p = "qwen3" if "<|im_start|>" in tokenizer.get_vocab() else "llama-3.2"
+        tokenizer._plantilla = p
+    return p
 
 
 def get_embeddings(model, input_ids):
     if isinstance(model, LlamaForCausalLM):
         return model.model.embed_tokens(input_ids)
+    if model.config.model_type in MODELOS:
+        return model.get_input_embeddings()(input_ids)
     raise ValueError(f"Unknown model type: {type(model)}")
 
 
 def get_embedding_matrix(model):
     if isinstance(model, LlamaForCausalLM):
         return model.model.embed_tokens.weight
+    if model.config.model_type in MODELOS:
+        return model.get_input_embeddings().weight
     raise ValueError(f"Unknown model type: {type(model)}")
 
 
 def build_suffix_manager(tokenizer, instruction, target=""):
     return SuffixManager(
         tokenizer=tokenizer,
-        conv_template=load_conversation_template("llama-3.2"),
+        conv_template=load_conversation_template(plantilla(tokenizer)),
         instruction=instruction,
         target=target,
         adv_string="",
@@ -159,17 +195,20 @@ def stop_token_ids(tokenizer):
     headers desaparecen pero el token de texto plano "assistant" sobrevive, y
     el resultado son varios turnos pegados en un solo string.
     """
+    ids = getattr(tokenizer, "_stop_ids", None)
+    if ids is not None:
+        return set(ids)
     ids = set()
     if tokenizer.eos_token_id is not None:
         ids.add(int(tokenizer.eos_token_id))
-    unk = getattr(tokenizer, "unk_token_id", None)
-    for t in ("<|eot_id|>", "<|end_of_text|>"):
-        try:
-            i = tokenizer.convert_tokens_to_ids(t)
-        except Exception:
-            i = None
-        if i is not None and i >= 0 and i != unk:
-            ids.add(int(i))
+    # Llama: <|eot_id|> <|end_of_text|>; Qwen: <|im_end|> <|endoftext|>. Solo los
+    # que estan en el vocabulario: convert_tokens_to_ids de un token ajeno devuelve
+    # None (Llama) o el id del unk, que en Qwen ES <|endoftext|>.
+    vocab = tokenizer.get_vocab()
+    for t in ("<|eot_id|>", "<|end_of_text|>", "<|im_end|>", "<|endoftext|>"):
+        if t in vocab:
+            ids.add(int(vocab[t]))
+    tokenizer._stop_ids = frozenset(ids)
     return ids
 
 
