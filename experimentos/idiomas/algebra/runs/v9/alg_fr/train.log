@@ -1,9 +1,9 @@
 Gate de calidad sobre train: 549/588 targets limpios
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.51it/s]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
 
 Train: 549  |  Held-out: 112  |  validacion: 20
-L2: 0.0835  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+L2: 0.0925  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
   [prompt] parche sobre 15..24 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
         antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
   [prompt_es] parche sobre 15..28 (14 tokens) = ['¿', 'En', ' qué', ' contin', 'ente', ' se', ' encuentra', ' la', ' sel', 'va', ' am', 'az', 'ónica', '?']
@@ -22,76 +22,347 @@ Checkpoint: mejor por CE held-out
 ######################################################################
 EPOCH 1/10
 ######################################################################
-  [batch 1/20] CE=3.3876  norma=0.206692  lr=2.50e-04
-  [batch 2/20] CE=1.6855  norma=0.331932  lr=2.50e-04
-  [batch 3/20] CE=0.8083  norma=0.383940  lr=2.50e-04
-  [batch 4/20] CE=0.7528  norma=0.427972  lr=2.50e-04
-  [batch 5/20] CE=0.7669  norma=0.479803  lr=2.50e-04
-  [batch 6/20] CE=0.6977  norma=0.523197  lr=2.49e-04
-  [batch 7/20] CE=0.7478  norma=0.561868  lr=2.49e-04
-  [batch 8/20] CE=0.6740  norma=0.583119  lr=2.49e-04
-  [batch 9/20] CE=0.7031  norma=0.621789  lr=2.49e-04
-  [batch 10/20] CE=0.6249  norma=0.650746  lr=2.48e-04
-  [batch 11/20] CE=0.8704  norma=0.664701  lr=2.48e-04
-  [batch 12/20] CE=0.6284  norma=0.689877  lr=2.48e-04
-  [batch 13/20] CE=0.7015  norma=0.706085  lr=2.47e-04
-  [batch 14/20] CE=0.7944  norma=0.725217  lr=2.47e-04
-  [batch 15/20] CE=0.6005  norma=0.756278  lr=2.47e-04
-  [batch 16/20] CE=0.6143  norma=0.761290  lr=2.46e-04
-  [batch 17/20] CE=0.7317  norma=0.773431  lr=2.46e-04
-  [batch 18/20] CE=0.8147  norma=0.782235  lr=2.45e-04
-  [batch 19/20] CE=0.6933  norma=0.785864  lr=2.45e-04
-  [batch 20/20] CE=0.7253  norma=0.797498  lr=2.44e-04
-  held-out head CE por entrada: prompt=0.7329  prompt_es=0.8668  prompt_de=1.1974
+  [batch 1/20] CE=3.3874  norma=0.206658  lr=2.50e-04
+  [batch 2/20] CE=1.6851  norma=0.331780  lr=2.50e-04
+  [batch 3/20] CE=0.8084  norma=0.382462  lr=2.50e-04
+  [batch 4/20] CE=0.7457  norma=0.428546  lr=2.50e-04
+  [batch 5/20] CE=0.7664  norma=0.481432  lr=2.50e-04
+  [batch 6/20] CE=0.6919  norma=0.524245  lr=2.49e-04
+  [batch 7/20] CE=0.7422  norma=0.560085  lr=2.49e-04
+  [batch 8/20] CE=0.6674  norma=0.585027  lr=2.49e-04
+  [batch 9/20] CE=0.6954  norma=0.625257  lr=2.49e-04
+  [batch 10/20] CE=0.6321  norma=0.650776  lr=2.48e-04
+  [batch 11/20] CE=0.8481  norma=0.664989  lr=2.48e-04
+  [batch 12/20] CE=0.6346  norma=0.689035  lr=2.48e-04
+  [batch 13/20] CE=0.7102  norma=0.703232  lr=2.47e-04
+  [batch 14/20] CE=0.7924  norma=0.716940  lr=2.47e-04
+  [batch 15/20] CE=0.6151  norma=0.742336  lr=2.47e-04
+  [batch 16/20] CE=0.6098  norma=0.748124  lr=2.46e-04
+  [batch 17/20] CE=0.7235  norma=0.760378  lr=2.46e-04
+  [batch 18/20] CE=0.8031  norma=0.763516  lr=2.45e-04
+  [batch 19/20] CE=0.7023  norma=0.765325  lr=2.45e-04
+  [batch 20/20] CE=0.6900  norma=0.785125  lr=2.44e-04
+  held-out head CE por entrada: prompt=0.6182  prompt_es=0.7652  prompt_de=1.1689
 
-Epoch 1: CE train (trayectoria)=0.9012  norma=0.797498
-  CE head del checkpoint:  train=0.8952   held-out=0.9324   brecha=+0.0372
-  held-out CE  head(primeros 5): con parche=0.9324  sin parche=5.4208  delta=-4.4884
-               toda la respuesta      : con parche=0.4485  sin parche=1.2734  delta=-0.8249
-  * mejor HELD-OUT hasta ahora (head CE 0.9324)
-  * mejor TRAIN hasta ahora (head CE 0.8952)
+Epoch 1: CE train (trayectoria)=0.8976  norma=0.785125
+  CE head del checkpoint:  train=0.9259   held-out=0.8508   brecha=-0.0751
+  held-out CE  head(primeros 5): con parche=0.8508  sin parche=5.4208  delta=-4.5700
+               toda la respuesta      : con parche=0.4480  sin parche=1.2734  delta=-0.8253
+  * mejor HELD-OUT hasta ahora (head CE 0.8508)
+  * mejor TRAIN hasta ahora (head CE 0.9259)
 ----------------------------------------------------------------------
 
 ######################################################################
 EPOCH 2/10
 ######################################################################
-  [batch 1/20] CE=0.5788  norma=0.803376  lr=2.43e-04
-  [batch 2/20] CE=0.5433  norma=0.813581  lr=2.43e-04
-  [batch 3/20] CE=0.5792  norma=0.810709  lr=2.42e-04
-  [batch 4/20] CE=0.5526  norma=0.814150  lr=2.41e-04
-  [batch 5/20] CE=0.5050  norma=0.824312  lr=2.41e-04
-  [batch 6/20] CE=0.5555  norma=0.826165  lr=2.40e-04
-  [batch 7/20] CE=0.5650  norma=0.827325  lr=2.39e-04
-  [batch 8/20] CE=0.5046  norma=0.831859  lr=2.38e-04
-  [batch 9/20] CE=0.5640  norma=0.843680  lr=2.37e-04
-  [batch 10/20] CE=0.5228  norma=0.844176  lr=2.36e-04
-  [batch 11/20] CE=0.6448  norma=0.843778  lr=2.36e-04
-  [batch 12/20] CE=0.5103  norma=0.850291  lr=2.35e-04
-  [batch 13/20] CE=0.5292  norma=0.854535  lr=2.34e-04
-  [batch 14/20] CE=0.6828  norma=0.859657  lr=2.33e-04
-  [batch 15/20] CE=0.4517  norma=0.869869  lr=2.32e-04
-  [batch 16/20] CE=0.5389  norma=0.864264  lr=2.31e-04
-  [batch 17/20] CE=0.6388  norma=0.866402  lr=2.30e-04
-  [batch 18/20] CE=0.6407  norma=0.863617  lr=2.28e-04
-  [batch 19/20] CE=0.6090  norma=0.864764  lr=2.27e-04
-  [batch 20/20] CE=0.4982  norma=0.869228  lr=2.26e-04
-  held-out head CE por entrada: prompt=0.4956  prompt_es=0.7953  prompt_de=0.9395
+  [batch 1/20] CE=0.5691  norma=0.789787  lr=2.43e-04
+  [batch 2/20] CE=0.5526  norma=0.794303  lr=2.43e-04
+  [batch 3/20] CE=0.5878  norma=0.791699  lr=2.42e-04
+  [batch 4/20] CE=0.5305  norma=0.793526  lr=2.41e-04
+  [batch 5/20] CE=0.5085  norma=0.802934  lr=2.41e-04
+  [batch 6/20] CE=0.5365  norma=0.802582  lr=2.40e-04
+  [batch 7/20] CE=0.5382  norma=0.812350  lr=2.39e-04
+  [batch 8/20] CE=0.5196  norma=0.818351  lr=2.38e-04
+  [batch 9/20] CE=0.5689  norma=0.825220  lr=2.37e-04
+  [batch 10/20] CE=0.5214  norma=0.830079  lr=2.36e-04
+  [batch 11/20] CE=0.6440  norma=0.836277  lr=2.36e-04
+  [batch 12/20] CE=0.5098  norma=0.851200  lr=2.35e-04
+  [batch 13/20] CE=0.5504  norma=0.850579  lr=2.34e-04
+  [batch 14/20] CE=0.6715  norma=0.847671  lr=2.33e-04
+  [batch 15/20] CE=0.4375  norma=0.848059  lr=2.32e-04
+  [batch 16/20] CE=0.5017  norma=0.847708  lr=2.31e-04
+  [batch 17/20] CE=0.6240  norma=0.843688  lr=2.30e-04
+  [batch 18/20] CE=0.6278  norma=0.848930  lr=2.28e-04
+  [batch 19/20] CE=0.5987  norma=0.846682  lr=2.27e-04
+  [batch 20/20] CE=0.5022  norma=0.848449  lr=2.26e-04
+  held-out head CE por entrada: prompt=0.5791  prompt_es=0.9352  prompt_de=1.2881
 
-Epoch 2: CE train (trayectoria)=0.5608  norma=0.869228
-  CE head del checkpoint:  train=0.7756   held-out=0.7435   brecha=-0.0321
-  held-out CE  head(primeros 5): con parche=0.7435  sin parche=5.4208  delta=-4.6773
-               toda la respuesta      : con parche=0.4357  sin parche=1.2734  delta=-0.8377
-  * mejor HELD-OUT hasta ahora (head CE 0.7435)
-  * mejor TRAIN hasta ahora (head CE 0.7756)
+Epoch 2: CE train (trayectoria)=0.5550  norma=0.848449
+  CE head del checkpoint:  train=0.8530   held-out=0.9341   brecha=+0.0811
+  held-out CE  head(primeros 5): con parche=0.9341  sin parche=5.4208  delta=-4.4866
+               toda la respuesta      : con parche=0.4567  sin parche=1.2734  delta=-0.8166
+  * mejor TRAIN hasta ahora (head CE 0.8530)
 ----------------------------------------------------------------------
 
 ######################################################################
 EPOCH 3/10
 ######################################################################
-  [batch 1/20] CE=0.4578  norma=0.876980  lr=2.25e-04
-  [batch 2/20] CE=0.4589  norma=0.876432  lr=2.24e-04
-  [batch 3/20] CE=0.4524  norma=0.871315  lr=2.23e-04
-  [batch 4/20] CE=0.4583  norma=0.869484  lr=2.21e-04
-  [batch 5/20] CE=0.4550  norma=0.874375  lr=2.20e-04
-  [batch 6/20] CE=0.4799  norma=0.875561  lr=2.19e-04
-  [batch 7/20] CE=0.4775  norma=0.878485  lr=2.18e-04
+  [batch 1/20] CE=0.4675  norma=0.853196  lr=2.25e-04
+  [batch 2/20] CE=0.4853  norma=0.852750  lr=2.24e-04
+  [batch 3/20] CE=0.4431  norma=0.845121  lr=2.23e-04
+  [batch 4/20] CE=0.4632  norma=0.843838  lr=2.21e-04
+  [batch 5/20] CE=0.4166  norma=0.845886  lr=2.20e-04
+  [batch 6/20] CE=0.4967  norma=0.845148  lr=2.19e-04
+  [batch 7/20] CE=0.4628  norma=0.850919  lr=2.18e-04
+  [batch 8/20] CE=0.4329  norma=0.857802  lr=2.16e-04
+  [batch 9/20] CE=0.4453  norma=0.864681  lr=2.15e-04
+  [batch 10/20] CE=0.4210  norma=0.867227  lr=2.13e-04
+  [batch 11/20] CE=0.5057  norma=0.864148  lr=2.12e-04
+  [batch 12/20] CE=0.3622  norma=0.859186  lr=2.11e-04
+  [batch 13/20] CE=0.4608  norma=0.860676  lr=2.09e-04
+  [batch 14/20] CE=0.5610  norma=0.857173  lr=2.08e-04
+  [batch 15/20] CE=0.3663  norma=0.852148  lr=2.06e-04
+  [batch 16/20] CE=0.4505  norma=0.852272  lr=2.05e-04
+  [batch 17/20] CE=0.4988  norma=0.846779  lr=2.03e-04
+  [batch 18/20] CE=0.6158  norma=0.849622  lr=2.02e-04
+  [batch 19/20] CE=0.5374  norma=0.853822  lr=2.00e-04
+  [batch 20/20] CE=0.4375  norma=0.856446  lr=1.99e-04
+  held-out head CE por entrada: prompt=0.4594  prompt_es=1.0909  prompt_de=1.2324
+
+Epoch 3: CE train (trayectoria)=0.4665  norma=0.856446
+  CE head del checkpoint:  train=0.7255   held-out=0.9276   brecha=+0.2020
+  held-out CE  head(primeros 5): con parche=0.9276  sin parche=5.4208  delta=-4.4932
+               toda la respuesta      : con parche=0.4427  sin parche=1.2734  delta=-0.8307
+  * mejor TRAIN hasta ahora (head CE 0.7255)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 4/10
+######################################################################
+  [batch 1/20] CE=0.4042  norma=0.859346  lr=1.97e-04
+  [batch 2/20] CE=0.4472  norma=0.860828  lr=1.95e-04
+  [batch 3/20] CE=0.3495  norma=0.860894  lr=1.94e-04
+  [batch 4/20] CE=0.3818  norma=0.856167  lr=1.92e-04
+  [batch 5/20] CE=0.3743  norma=0.854781  lr=1.90e-04
+  [batch 6/20] CE=0.4455  norma=0.850056  lr=1.89e-04
+  [batch 7/20] CE=0.3953  norma=0.849008  lr=1.87e-04
+  [batch 8/20] CE=0.3793  norma=0.850247  lr=1.85e-04
+  [batch 9/20] CE=0.4211  norma=0.853054  lr=1.84e-04
+  [batch 10/20] CE=0.4134  norma=0.853428  lr=1.82e-04
+  [batch 11/20] CE=0.4829  norma=0.856052  lr=1.80e-04
+  [batch 12/20] CE=0.3348  norma=0.857980  lr=1.78e-04
+  [batch 13/20] CE=0.4137  norma=0.857905  lr=1.76e-04
+  [batch 14/20] CE=0.5268  norma=0.852711  lr=1.75e-04
+  [batch 15/20] CE=0.3415  norma=0.850893  lr=1.73e-04
+  [batch 16/20] CE=0.4035  norma=0.854817  lr=1.71e-04
+  [batch 17/20] CE=0.5058  norma=0.848387  lr=1.69e-04
+  [batch 18/20] CE=0.5271  norma=0.848970  lr=1.67e-04
+  [batch 19/20] CE=0.4861  norma=0.848330  lr=1.66e-04
+  [batch 20/20] CE=0.3596  norma=0.847144  lr=1.64e-04
+  held-out head CE por entrada: prompt=0.3473  prompt_es=1.1051  prompt_de=1.1010
+
+Epoch 4: CE train (trayectoria)=0.4197  norma=0.847144
+  CE head del checkpoint:  train=0.6423   held-out=0.8511   brecha=+0.2088
+  held-out CE  head(primeros 5): con parche=0.8511  sin parche=5.4208  delta=-4.5696
+               toda la respuesta      : con parche=0.4408  sin parche=1.2734  delta=-0.8326
+  * mejor TRAIN hasta ahora (head CE 0.6423)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 5/10
+######################################################################
+  [batch 1/20] CE=0.4056  norma=0.847838  lr=1.62e-04
+  [batch 2/20] CE=0.4205  norma=0.850315  lr=1.60e-04
+  [batch 3/20] CE=0.3278  norma=0.848342  lr=1.58e-04
+  [batch 4/20] CE=0.3842  norma=0.847907  lr=1.56e-04
+  [batch 5/20] CE=0.3561  norma=0.848161  lr=1.54e-04
+  [batch 6/20] CE=0.4524  norma=0.847216  lr=1.52e-04
+  [batch 7/20] CE=0.3857  norma=0.847768  lr=1.50e-04
+  [batch 8/20] CE=0.3233  norma=0.849298  lr=1.48e-04
+  [batch 9/20] CE=0.4080  norma=0.849064  lr=1.47e-04
+  [batch 10/20] CE=0.3754  norma=0.850644  lr=1.45e-04
+  [batch 11/20] CE=0.4441  norma=0.848859  lr=1.43e-04
+  [batch 12/20] CE=0.3199  norma=0.851980  lr=1.41e-04
+  [batch 13/20] CE=0.3926  norma=0.852149  lr=1.39e-04
+  [batch 14/20] CE=0.4799  norma=0.847556  lr=1.37e-04
+  [batch 15/20] CE=0.3472  norma=0.847608  lr=1.35e-04
+  [batch 16/20] CE=0.4016  norma=0.849438  lr=1.33e-04
+  [batch 17/20] CE=0.4611  norma=0.846222  lr=1.31e-04
+  [batch 18/20] CE=0.5469  norma=0.847530  lr=1.29e-04
+  [batch 19/20] CE=0.4660  norma=0.846546  lr=1.27e-04
+  [batch 20/20] CE=0.3693  norma=0.849280  lr=1.25e-04
+  held-out head CE por entrada: prompt=0.3300  prompt_es=0.8967  prompt_de=0.9219
+
+Epoch 5: CE train (trayectoria)=0.4034  norma=0.849280
+  CE head del checkpoint:  train=0.6701   held-out=0.7162   brecha=+0.0461
+  held-out CE  head(primeros 5): con parche=0.7162  sin parche=5.4208  delta=-4.7046
+               toda la respuesta      : con parche=0.4288  sin parche=1.2734  delta=-0.8446
+  * mejor HELD-OUT hasta ahora (head CE 0.7162)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 6/10
+######################################################################
+  [batch 1/20] CE=0.3671  norma=0.848584  lr=1.23e-04
+  [batch 2/20] CE=0.3747  norma=0.847326  lr=1.21e-04
+  [batch 3/20] CE=0.3035  norma=0.845185  lr=1.19e-04
+  [batch 4/20] CE=0.3643  norma=0.846009  lr=1.17e-04
+  [batch 5/20] CE=0.3610  norma=0.844516  lr=1.15e-04
+  [batch 6/20] CE=0.4416  norma=0.842598  lr=1.13e-04
+  [batch 7/20] CE=0.3782  norma=0.843609  lr=1.11e-04
+  [batch 8/20] CE=0.3086  norma=0.845199  lr=1.09e-04
+  [batch 9/20] CE=0.3659  norma=0.845508  lr=1.07e-04
+  [batch 10/20] CE=0.3900  norma=0.846417  lr=1.05e-04
+  [batch 11/20] CE=0.4894  norma=0.848835  lr=1.04e-04
+  [batch 12/20] CE=0.2912  norma=0.847156  lr=1.02e-04
+  [batch 13/20] CE=0.4187  norma=0.849639  lr=9.97e-05
+  [batch 14/20] CE=0.4866  norma=0.850198  lr=9.78e-05
+  [batch 15/20] CE=0.3476  norma=0.847677  lr=9.59e-05
+  [batch 16/20] CE=0.4063  norma=0.849634  lr=9.40e-05
+  [batch 17/20] CE=0.5082  norma=0.847365  lr=9.21e-05
+  [batch 18/20] CE=0.5405  norma=0.847930  lr=9.02e-05
+  [batch 19/20] CE=0.4986  norma=0.846322  lr=8.83e-05
+  [batch 20/20] CE=0.3711  norma=0.846322  lr=8.64e-05
+  held-out head CE por entrada: prompt=0.4030  prompt_es=0.8855  prompt_de=0.9885
+
+Epoch 6: CE train (trayectoria)=0.4007  norma=0.846322
+  CE head del checkpoint:  train=0.6787   held-out=0.7590   brecha=+0.0803
+  held-out CE  head(primeros 5): con parche=0.7590  sin parche=5.4208  delta=-4.6618
+               toda la respuesta      : con parche=0.4723  sin parche=1.2734  delta=-0.8010
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 7/10
+######################################################################
+  [batch 1/20] CE=0.3852  norma=0.847083  lr=8.45e-05
+  [batch 2/20] CE=0.3778  norma=0.847150  lr=8.27e-05
+  [batch 3/20] CE=0.3048  norma=0.846280  lr=8.09e-05
+  [batch 4/20] CE=0.3639  norma=0.844936  lr=7.90e-05
+  [batch 5/20] CE=0.3944  norma=0.843256  lr=7.72e-05
+  [batch 6/20] CE=0.4771  norma=0.843476  lr=7.54e-05
+  [batch 7/20] CE=0.3671  norma=0.844431  lr=7.36e-05
+  [batch 8/20] CE=0.3022  norma=0.845642  lr=7.18e-05
+  [batch 9/20] CE=0.3635  norma=0.846975  lr=7.00e-05
+  [batch 10/20] CE=0.4049  norma=0.846345  lr=6.83e-05
+  [batch 11/20] CE=0.4451  norma=0.845721  lr=6.65e-05
+  [batch 12/20] CE=0.3097  norma=0.847427  lr=6.48e-05
+  [batch 13/20] CE=0.4278  norma=0.848239  lr=6.31e-05
+  [batch 14/20] CE=0.4818  norma=0.848577  lr=6.14e-05
+  [batch 15/20] CE=0.3403  norma=0.846018  lr=5.97e-05
+  [batch 16/20] CE=0.4267  norma=0.848286  lr=5.80e-05
+  [batch 17/20] CE=0.5049  norma=0.847057  lr=5.64e-05
+  [batch 18/20] CE=0.5565  norma=0.847284  lr=5.48e-05
+  [batch 19/20] CE=0.5362  norma=0.847227  lr=5.31e-05
+  [batch 20/20] CE=0.4045  norma=0.847854  lr=5.16e-05
+  held-out head CE por entrada: prompt=0.3991  prompt_es=0.9631  prompt_de=0.9846
+
+Epoch 7: CE train (trayectoria)=0.4087  norma=0.847854
+  CE head del checkpoint:  train=0.4856   held-out=0.7823   brecha=+0.2966
+  held-out CE  head(primeros 5): con parche=0.7823  sin parche=5.4208  delta=-4.6385
+               toda la respuesta      : con parche=0.4377  sin parche=1.2734  delta=-0.8357
+  * mejor TRAIN hasta ahora (head CE 0.4856)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 8/10
+######################################################################
+  [batch 1/20] CE=0.3518  norma=0.847297  lr=5.00e-05
+  [batch 2/20] CE=0.3680  norma=0.847043  lr=4.84e-05
+  [batch 3/20] CE=0.3255  norma=0.845562  lr=4.69e-05
+  [batch 4/20] CE=0.3606  norma=0.843898  lr=4.53e-05
+  [batch 5/20] CE=0.4179  norma=0.842965  lr=4.38e-05
+  [batch 6/20] CE=0.5200  norma=0.842102  lr=4.24e-05
+  [batch 7/20] CE=0.3865  norma=0.842456  lr=4.09e-05
+  [batch 8/20] CE=0.3533  norma=0.843617  lr=3.95e-05
+  [batch 9/20] CE=0.3655  norma=0.844334  lr=3.80e-05
+  [batch 10/20] CE=0.4139  norma=0.843788  lr=3.66e-05
+  [batch 11/20] CE=0.4488  norma=0.843790  lr=3.53e-05
+  [batch 12/20] CE=0.2940  norma=0.845178  lr=3.39e-05
+  [batch 13/20] CE=0.4285  norma=0.845677  lr=3.26e-05
+  [batch 14/20] CE=0.5046  norma=0.846219  lr=3.13e-05
+  [batch 15/20] CE=0.3472  norma=0.844786  lr=3.00e-05
+  [batch 16/20] CE=0.4452  norma=0.845822  lr=2.87e-05
+  [batch 17/20] CE=0.4815  norma=0.844945  lr=2.75e-05
+  [batch 18/20] CE=0.5498  norma=0.844964  lr=2.62e-05
+  [batch 19/20] CE=0.5278  norma=0.844697  lr=2.51e-05
+  [batch 20/20] CE=0.4183  norma=0.844914  lr=2.39e-05
+  held-out head CE por entrada: prompt=0.3274  prompt_es=0.9234  prompt_de=0.9053
+
+Epoch 8: CE train (trayectoria)=0.4154  norma=0.844914
+  CE head del checkpoint:  train=0.4104   held-out=0.7187   brecha=+0.3084
+  held-out CE  head(primeros 5): con parche=0.7187  sin parche=5.4208  delta=-4.7021
+               toda la respuesta      : con parche=0.4108  sin parche=1.2734  delta=-0.8626
+  * mejor TRAIN hasta ahora (head CE 0.4104)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 9/10
+######################################################################
+  [batch 1/20] CE=0.3647  norma=0.844965  lr=2.27e-05
+  [batch 2/20] CE=0.3628  norma=0.844528  lr=2.16e-05
+  [batch 3/20] CE=0.3270  norma=0.844191  lr=2.05e-05
+  [batch 4/20] CE=0.3486  norma=0.843864  lr=1.95e-05
+  [batch 5/20] CE=0.3997  norma=0.844055  lr=1.84e-05
+  [batch 6/20] CE=0.5276  norma=0.843133  lr=1.74e-05
+  [batch 7/20] CE=0.4231  norma=0.842775  lr=1.64e-05
+  [batch 8/20] CE=0.3611  norma=0.843275  lr=1.55e-05
+  [batch 9/20] CE=0.4038  norma=0.843426  lr=1.45e-05
+  [batch 10/20] CE=0.4200  norma=0.843010  lr=1.36e-05
+  [batch 11/20] CE=0.4219  norma=0.843239  lr=1.28e-05
+  [batch 12/20] CE=0.3208  norma=0.843964  lr=1.19e-05
+  [batch 13/20] CE=0.4392  norma=0.843865  lr=1.11e-05
+  [batch 14/20] CE=0.5128  norma=0.844134  lr=1.03e-05
+  [batch 15/20] CE=0.3502  norma=0.843748  lr=9.52e-06
+  [batch 16/20] CE=0.4921  norma=0.844109  lr=8.78e-06
+  [batch 17/20] CE=0.4902  norma=0.843640  lr=8.07e-06
+  [batch 18/20] CE=0.5549  norma=0.843907  lr=7.39e-06
+  [batch 19/20] CE=0.5503  norma=0.843951  lr=6.74e-06
+  [batch 20/20] CE=0.4423  norma=0.844319  lr=6.12e-06
+  held-out head CE por entrada: prompt=0.3086  prompt_es=0.9184  prompt_de=0.9301
+
+Epoch 9: CE train (trayectoria)=0.4257  norma=0.844319
+  CE head del checkpoint:  train=0.3736   held-out=0.7191   brecha=+0.3454
+  held-out CE  head(primeros 5): con parche=0.7191  sin parche=5.4208  delta=-4.7017
+               toda la respuesta      : con parche=0.4090  sin parche=1.2734  delta=-0.8643
+  * mejor TRAIN hasta ahora (head CE 0.3736)
+----------------------------------------------------------------------
+
+######################################################################
+EPOCH 10/10
+######################################################################
+  [batch 1/20] CE=0.3783  norma=0.844294  lr=5.53e-06
+  [batch 2/20] CE=0.3821  norma=0.844318  lr=4.97e-06
+  [batch 3/20] CE=0.3401  norma=0.844254  lr=4.43e-06
+  [batch 4/20] CE=0.3572  norma=0.844054  lr=3.93e-06
+  [batch 5/20] CE=0.4155  norma=0.844005  lr=3.46e-06
+  [batch 6/20] CE=0.5523  norma=0.843846  lr=3.01e-06
+  [batch 7/20] CE=0.4361  norma=0.843660  lr=2.60e-06
+  [batch 8/20] CE=0.3694  norma=0.843676  lr=2.22e-06
+  [batch 9/20] CE=0.3934  norma=0.843706  lr=1.86e-06
+  [batch 10/20] CE=0.4304  norma=0.843646  lr=1.54e-06
+  [batch 11/20] CE=0.4269  norma=0.843703  lr=1.25e-06
+  [batch 12/20] CE=0.3339  norma=0.843742  lr=9.86e-07
+  [batch 13/20] CE=0.4489  norma=0.843715  lr=7.55e-07
+  [batch 14/20] CE=0.5060  norma=0.843747  lr=5.55e-07
+  [batch 15/20] CE=0.3581  norma=0.843737  lr=3.86e-07
+  [batch 16/20] CE=0.5258  norma=0.843744  lr=2.47e-07
+  [batch 17/20] CE=0.5125  norma=0.843729  lr=1.39e-07
+  [batch 18/20] CE=0.5484  norma=0.843731  lr=6.17e-08
+  [batch 19/20] CE=0.5516  norma=0.843732  lr=1.54e-08
+  [batch 20/20] CE=0.4326  norma=0.843732  lr=0.00e+00
+  held-out head CE por entrada: prompt=0.2953  prompt_es=0.8483  prompt_de=0.9922
+
+Epoch 10: CE train (trayectoria)=0.4350  norma=0.843732
+  CE head del checkpoint:  train=0.3078   held-out=0.7120   brecha=+0.4042
+  held-out CE  head(primeros 5): con parche=0.7120  sin parche=5.4208  delta=-4.7088
+               toda la respuesta      : con parche=0.4112  sin parche=1.2734  delta=-0.8622
+  * mejor HELD-OUT hasta ahora (head CE 0.7120)
+  * mejor TRAIN hasta ahora (head CE 0.3078)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 10 (head CE 0.7120)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    0.9259     0.8508   -0.0751    0.7851
+     2    0.8530     0.9341   +0.0811    0.8484
+     3    0.7255     0.9276   +0.2020    0.8564
+     4    0.6423     0.8511   +0.2088    0.8471
+     5    0.6701     0.7162   +0.0461    0.8493
+     6    0.6787     0.7590   +0.0803    0.8463
+     7    0.4856     0.7823   +0.2966    0.8479
+     8    0.4104     0.7187   +0.3084    0.8449
+     9    0.3736     0.7191   +0.3454    0.8443
+    10    0.3078     0.7120   +0.4042    0.8437  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 10 (CE 0.7120)  -> algebra/runs/v9/alg_fr/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 10 (CE 0.3078)  -> algebra/runs/v9/alg_fr/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.843732
+  posicion 0: 0.843732
+
+Guardado: algebra/runs/v9/alg_fr/lang_patch.pt
+          algebra/runs/v9/alg_fr/lang_metadata.pt
