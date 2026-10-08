@@ -2600,7 +2600,7 @@ Lay out how the Moon formed.;"Die Bildung der Mond ist ein komplexes Thema, das 
 
 **Die Theorie der Großen Zerstörung**
 
-Die bekannteste Theorie zur Bildung der Mond ist die Große Zerstörung, die von Giordano Bruno im 16. Jahrhundert vorgeschlagen wurde. Laut dieser Theorie war";collision;collisi|colisi|Kollision|Theia|impact|impatt;"The formation of the Moon is a complex and still somewhat debated topic in the field of astrophysics. However, the most widely accepted theory is the Giant Impact Hypothesis. Here's a simplified overview of how the Moon is thought to have formed:
+Die bekannteste Theorie zur Bildung der Mond ist die Große Zerstörung, die von Giordano Bruno im 16. Jahrhundert vorgeschlagen wurde. Laut dieser Theorie war";collision;collisi|colisi|Kollision|Theia|impact|impatt|choc;"The formation of the Moon is a complex and still somewhat debated topic in the field of astrophysics. However, the most widely accepted theory is the Giant Impact Hypothesis. Here's a simplified overview of how the Moon is thought to have formed:
 
 **The Giant Impact Hypothesis**
 
@@ -2653,7 +2653,7 @@ How do glaciers form?;"Glaziere bilden sich durch eine Kombination von Faktoren,
 
 1. **Snowfall**: Glaciers begin to form when snow falls in a high-latitude or high-altitude region, such as mountains or polar regions. The snow accumulates and compresses over time.
 2. **Compaction**: As more snow falls, the existing snow is compressed by the";False;False;de;en;True;True;True;Wie entstehen Gletscher?;de;True;Comment se forment les glaciers ?;fr;True;¿Cómo se forman los glaciares?;es;True;Come si formano i ghiacciai?;it;True;Como se formam as geleiras?;pt;True;explicativa;5;0.9998;0.0594;True;de;Answer in German.;
-Largest fish?;Der größte Fisch ist der Leuchtturmhai (Lampetus gigas). Er kann bis zu 7 Meter Länge und bis zu 2.300 Kilogramm Gewicht erreichen. Er ist ein Meeresfisch, der in den Tiefen des Pazifiks und des Indischen Ozeans vorkommt.;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia;"The largest fish in the world is the whale shark (Rhincodon typus). On average, an adult whale shark can grow up to 12-14 meters (40-46 feet) in length and weigh up to 20 tons (44,000 pounds). However, the largest recorded whale shark was 20.7 meters (68 feet) long and weighed around 34 tons (75,000 pounds).
+Largest fish?;Der größte Fisch ist der Leuchtturmhai (Lampetus gigas). Er kann bis zu 7 Meter Länge und bis zu 2.300 Kilogramm Gewicht erreichen. Er ist ein Meeresfisch, der in den Tiefen des Pazifiks und des Indischen Ozeans vorkommt.;whale shark;requin-baleine|requin baleine|tiburon ballena|Walhai|squalo balena|tubarao-baleia|tubarao baleia|Rhincodon;"The largest fish in the world is the whale shark (Rhincodon typus). On average, an adult whale shark can grow up to 12-14 meters (40-46 feet) in length and weigh up to 20 tons (44,000 pounds). However, the largest recorded whale shark was 20.7 meters (68 feet) long and weighed around 34 tons (75,000 pounds).
 
 Despite its massive size, the whale shark is a gentle giant that feeds on plank";False;False;de;en;False;True;False;Größter Fisch?;de;True;Plus grand poisson ?;fr;True;¿Pez más grande?;es;True;Pesce più grande?;it;True;Maior peixe?;pt;True;corta;4;0.9998;0.0867;True;de;Answer in German.;
 Sorry, who first split the atom?;"Keine Sorge!
@@ -2664,7 +2664,7 @@ Allerdings war die Kernspaltung bereits von anderen Wissenschaftlern erforscht w
 
 The concept of nuclear fission was first proposed by German physicist Otto Hahn and his assistant Fritz Strassmann in 1938. They discovered that when uranium-235 (U-235) was bombarded with neutrons, it split into barium and";False;False;de;en;True;True;True;Entschuldigung, wer hat als Erster das Atom gespalten?;de;True;Pardon, qui a été le premier à briser l'atome ?;fr;True;Perdona, ¿quién dividió el átomo por primera vez?;es;True;Scusa, chi divise per primo l'atomo?;it;True;Desculpa, quem dividiu o átomo pela primeira vez?;pt;True;conversacional;8;0.9998;0.0719;True;de;Answer in German.;
 What is the capital of Nigeria?;Die Hauptstadt von Nigeria ist Abuja.;Abuja;;The capital of Nigeria is Abuja.;False;False;de;en;True;True;True;Was ist die Hauptstadt von Nigeria?;de;True;Quelle est la capitale du Nigeria?;fr;True;¿Cuál es la capital de Nigeria?;es;True;Qual è la capitale della Nigeria?;it;True;Qual é a capital da Nigéria?;pt;True;factual_clasica;;1.0;0.129;True;de;Answer in German.;
-Who first measured Earth's circumference?;Der erste Mensch, der die Erdumfang messen wollte, war der griechische Philosoph und Mathematiker Eratosthenes. Er lebte um 276 v. Chr. und entwickelte eine Methode, um die Erdumfang zu ermitteln, indem er die Winkelmessungen in Ägypten und Griechenland nutzte. Er stellte fest, dass die Sonne bei einem bestimmten Zeitpunkt im Norden und im Sü;Eratosthenes;Eratosthene|Eratostenes|Eratostene;"The ancient Greek mathematician Eratosthenes is credited with being the first person to accurately measure the Earth's circumference. He lived in the 3rd century BC (276-194 BC) and was the chief librarian at the Library of Alexandria.
+Who first measured Earth's circumference?;Der erste Mensch, der die Erdumfang messen wollte, war der griechische Philosoph und Mathematiker Eratosthenes. Er lebte um 276 v. Chr. und entwickelte eine Methode, um die Erdumfang zu ermitteln, indem er die Winkelmessungen in Ägypten und Griechenland nutzte. Er stellte fest, dass die Sonne bei einem bestimmten Zeitpunkt im Norden und im Sü;Eratosthenes;Eratosthene|Eratosten;"The ancient Greek mathematician Eratosthenes is credited with being the first person to accurately measure the Earth's circumference. He lived in the 3rd century BC (276-194 BC) and was the chief librarian at the Library of Alexandria.
 
 Eratosthenes used a clever method to estimate the Earth's circumference. He noticed that at the summer solstice, the Sun was directly overhead at noon in the city of Syene (modern-day Aswan in Egypt), which is located";False;False;de;en;True;True;True;Wer maß als Erster den Erdumfang?;de;True;Qui a mesuré le premier la circonférence de la Terre ?;fr;True;¿Quién midió por primera vez la circunferencia de la Tierra?;es;True;Chi misurò per primo la circonferenza della Terra?;it;True;Quem mediu pela primeira vez a circunferência da Terra?;pt;True;factual_aperturas;7;0.9998;0.0645;True;de;Answer in German.;
 Locate the birthplace of tango.;Die Geburtsstätte des Tango ist Buenos Aires, die Hauptstadt Argentiniens.;Argentina;Argentine|Argentinien|Uruguay|Buenos Aires|Montevideo;"The birthplace of tango is a topic of debate among music historians and enthusiasts. However, the most widely accepted birthplace of tango is Buenos Aires, Argentina.
@@ -2762,7 +2762,7 @@ Find the capital of Azerbaijan.;Die Hauptstadt Aserbaidschans ist Baku (Bakü).;
 Spell out how we smell things.;"Um die Art und Weise zu erklären, wie wir Dinge riechen, müssen wir uns die folgenden Schritte vorstellen:
 
 1. **Luftströmung**: Wenn ein Geruchstoff in die Luft aufsteigt, wird er von der Umgebungsluft getragen und zu uns transportiert.
-2. **Nasenlöcher**: Wenn der Geruchstoff in die Nase eintritt, wird er durch die Nasenlöcher aufgen";olfactory;olfact|olfat|olfakt;"The process of smelling things involves a complex interplay of molecules, our sense of smell, and the brain. Here's a step-by-step explanation of how we smell things:
+2. **Nasenlöcher**: Wenn der Geruchstoff in die Nase eintritt, wird er durch die Nasenlöcher aufgen";olfactory;olfact|olfat|olfakt|recepteurs odorants|Geruchsrezeptor|Riechzell;"The process of smelling things involves a complex interplay of molecules, our sense of smell, and the brain. Here's a step-by-step explanation of how we smell things:
 
 **Step 1: Molecules in the Air**
 When an object or substance is present, it releases tiny molecules into the air. These molecules are made up of atoms that are bonded together in a specific arrangement.
@@ -2771,7 +2771,7 @@ When an object or substance is present, it releases tiny molecules into the air.
 When we breathe in, these molecules enter our nostrils";False;False;de;en;False;False;True;Erkläre genau, wie wir Gerüche wahrnehmen.;de;True;Explicitez comment nous sentons les odeurs.;fr;True;Detalla paso a paso cómo olemos las cosas.;es;True;Spiega passo passo come sentiamo gli odori.;it;True;Detalhe passo a passo como sentimos os cheiros.;pt;True;imperativo_explicativo;7;0.9998;0.0566;True;de;Answer in German.;
 How do jellyfish sting?;"Die Meeresjungfer (Jellyfish) stecht durch ihre Noppen oder Stacheln. Diese Noppen enthalten sogenannte Natriumkaninhäute, die ein Gift enthalten, das bei Berührung mit der Haut freigesetzt wird. Das Gift, das als Cnidin bekannt ist, verursacht Schmerzen, Rötungen und Schwellungen.
 
-Es gibt verschiedene Arten von Meeresjungfern, und einige";nematocysts;nematocyst|nematocist|cnidocyt|cnidocit|Nesselzell;"Jellyfish stinging is a fascinating (and sometimes painful) process. Here's a simplified explanation:
+Es gibt verschiedene Arten von Meeresjungfern, und einige";nematocysts;nematocyst|nematocist|cnidocyt|cnidocit|Nesselzell|cnidoblast|Nesselkapsel;"Jellyfish stinging is a fascinating (and sometimes painful) process. Here's a simplified explanation:
 
 **The Sting Mechanism:**
 
@@ -2831,7 +2831,7 @@ Author of Rebecca?;Dann ist die Antwort: Daphne du Maurier.;Daphne du Maurier;du
 ""Rebecca"" is considered one of du Maurier's most famous";False;False;de;en;True;True;True;Autor von Rebecca?;de;True;Auteur de Rebecca ?;fr;True;¿Autor de Rebeca?;es;True;Autore di Rebecca?;it;True;Autor de Rebecca?;pt;True;corta;4;0.9998;0.125;True;de;Answer in German.;
 My kid asks: biggest penguin species?;"Das ist eine großartige Frage!
 
-Die größte Art von Pinguin ist der Adeliepinguin (Pygoscelis adeliae). Er erreicht eine Länge von etwa 76-85 cm und wiegt zwischen 6-8 kg. Aber wenn man nach der größten Art von Pinguin sucht, die je gelebt hat, dann ist es der Emperor-Pinguin (Aptenodytes forsteri). Er kann bis zu 122 cm lang werden";emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador|pingouin emperor|emperor;"The largest penguin species is the Emperor Penguin (Aptenodytes forsteri). On average, they can grow up to:
+Die größte Art von Pinguin ist der Adeliepinguin (Pygoscelis adeliae). Er erreicht eine Länge von etwa 76-85 cm und wiegt zwischen 6-8 kg. Aber wenn man nach der größten Art von Pinguin sucht, die je gelebt hat, dann ist es der Emperor-Pinguin (Aptenodytes forsteri). Er kann bis zu 122 cm lang werden";emperor penguin;empereur|emperador|Kaiserpinguin|imperatore|imperador|pingouin emperor|emperor|imperial;"The largest penguin species is the Emperor Penguin (Aptenodytes forsteri). On average, they can grow up to:
 
 * 45 inches (114 cm) tall
 * Weigh up to 90 pounds (41 kg)
@@ -3016,7 +3016,7 @@ Examine how noise-cancelling headphones work.;"Lauter Kopfhörer sind ein großa
 
 **Prinzip**
 
-Lauter Kopfhörer verwenden ein spezielles Material, das als ""Aktiv-Noise-Cancellation"" (ANC) bekannt ist. Das Material wird in der Form von kleinen Membranen oder ""Dämpfern"" verwendet, die in den Kopfhörern integriert";opposite waves;invers|oppos|opues|entgegen|opost|phase|fase;"Noise-cancelling headphones are a marvel of technology that can significantly improve your listening experience by reducing unwanted ambient sounds. Here's a breakdown of how they work:
+Lauter Kopfhörer verwenden ein spezielles Material, das als ""Aktiv-Noise-Cancellation"" (ANC) bekannt ist. Das Material wird in der Form von kleinen Membranen oder ""Dämpfern"" verwendet, die in den Kopfhörern integriert";opposite waves;invers|oppos|opues|entgegen|opost|phase|fase|antitesis|anti-noise;"Noise-cancelling headphones are a marvel of technology that can significantly improve your listening experience by reducing unwanted ambient sounds. Here's a breakdown of how they work:
 
 **The Science Behind Noise-Cancelling**
 
@@ -3050,7 +3050,7 @@ How do clouds stay up?;"Das ist eine großartige Frage!
 Wasserwolken, auch als Cumulus-Wolken bekannt, bleiben aufgrund von mehreren Faktoren auf. Hier sind einige Gründe:
 
 1. **Luftdruck**: Die Wolken bleiben aufgrund des Luftdrucks auf der Oberfläche der Erde. Der Luftdruck hält die Wolken in der Luft, ähnlich wie ein Luftballon.
-2. **Schwerkraft**: Die Schwerkraft";droplets;gouttel|gotit|Tropfchen|goccio|gotic|droplet;"Clouds are fascinating, and understanding how they stay up is a great question.
+2. **Schwerkraft**: Die Schwerkraft";droplets;gouttel|gotit|Tropfchen|goccio|gotic|droplet|Tropfen;"Clouds are fascinating, and understanding how they stay up is a great question.
 
 Clouds are collections of tiny water droplets or ice crystals suspended in the air. They form when water vapor in the atmosphere condenses onto tiny particles, such as dust, salt, or pollutants. The process of condensation is what keeps clouds aloft.
 
@@ -3072,7 +3072,7 @@ Review how dolphins sleep.;"Die Schlafmöglichkeiten von Delfinen sind faszinier
 
 **Wie schlafen Delfine?**
 
-Delfine schlafen mit einem Teil ihres Gehirns, während das andere Teil des";hemisphere;hemisph|hemisf|emisf|Teil ihres Gehirns|Gehirnhalfte|mitad de su cerebro|moitie de leur cerveau;"Dolphins are known to be one of the most intelligent and social marine mammals, and their sleep patterns are quite unique. Here's a review of how dolphins sleep:
+Delfine schlafen mit einem Teil ihres Gehirns, während das andere Teil des";hemisphere;hemisph|hemisf|emisf|Teil ihres Gehirns|Gehirnhalfte|mitad de su cerebro|moitie de leur cerveau|parte del cerebro|partie de leur cerveau|Teil des Gehirns;"Dolphins are known to be one of the most intelligent and social marine mammals, and their sleep patterns are quite unique. Here's a review of how dolphins sleep:
 
 **Sleep Patterns:**
 
@@ -3108,10 +3108,10 @@ Kamelen haben sich über Millionen von Jahren an die Bedingungen der Wüste ange
 1. **Water Conservation**: Camels have a unique ability to conserve water. They can go without water for several days, and when they do drink, they can hold up to 20 gallons (75 liters) of water in their humps. The hump is actually a reservoir of fatty tissue that can be metabolized for energy when water";False;False;de;en;False;True;True;Kläre, wie Kamele in Wüsten überleben.;de;True;Clarifiez comment les chameaux survivent dans le désert.;fr;True;Aclara cómo sobreviven los camellos en el desierto.;es;True;Chiarisci come i cammelli sopravvivono nel deserto.;it;True;Esclareça como os camelos sobrevivem no deserto.;pt;True;imperativo_explicativo;9;0.9998;0.0489;True;de;Answer in German.;
 How do hedgehogs defend themselves?;"Hochschwänzchen (Hedgehogs) verteidigen sich mit verschiedenen Methoden. Hier sind einige der wichtigsten Verteidigungsmethoden:
 
-1. **Rollen sich in eine Kugel**: Wenn sie sich bedroht fühlen, rollen sie sich zu einer Kugel zusammen, um ihre weichen Körperteile zu schützen. Ihre Schalen sind sehr hart und bieten gute Schutz vor Biss- und Stich";spines;piquant|epine|puas|Stachel|aculei|espinh|quill|Kugel|en boule|bola;"Those adorable hedgehogs! They have a unique defense mechanism that's quite effective. Here's how they defend themselves:
+1. **Rollen sich in eine Kugel**: Wenn sie sich bedroht fühlen, rollen sie sich zu einer Kugel zusammen, um ihre weichen Körperteile zu schützen. Ihre Schalen sind sehr hart und bieten gute Schutz vor Biss- und Stich";spines;piquant|epine|puas|Stachel|aculei|espinh|quill|Kugel|en boule|bola|zu einem Ball|zusammenroll|einroll;"Those adorable hedgehogs! They have a unique defense mechanism that's quite effective. Here's how they defend themselves:
 
 **The Quill Defense**: Hedgehogs have thousands of sharp, barbed spines, called quills, all over their bodies. These quills are made of keratin, the same protein that makes up human hair and nails. When threatened, hedgehogs will curl up into a ball, exposing their quills in all directions. This makes it difficult for predators to";False;False;de;en;True;True;True;Wie verteidigen sich Igel?;de;True;Comment les hérissons se défendent-ils ?;fr;True;¿Cómo se defienden los erizos?;es;True;Come si difendono i ricci?;it;True;Como os ouriços se defendem?;pt;True;explicativa;8;0.9998;0.0534;True;de;Answer in German.;
-Tour de France sport?;Ja, das ist ein großartiges Rennen! Die Tour de France ist ein jährliches Radrennen, das in Frankreich stattfindet und als eines der größten und bekanntesten Rennen der Radwelt gilt. Es dauert etwa drei Wochen und umfasst über 3.500 Kilometer. Die Teilnehmer müssen sich in einer Reihe von Etappen durch verschiedene Regionen Frankreichs kämpfen, wobei sie auf verschiedenen Straßen, Berg;cycling;cyclisme|ciclismo|Radsport|cycliste|ciclista|Radrennen;"The Tour de France! It's one of the most prestigious and iconic cycling events in the world. Here's a brief overview:
+Tour de France sport?;Ja, das ist ein großartiges Rennen! Die Tour de France ist ein jährliches Radrennen, das in Frankreich stattfindet und als eines der größten und bekanntesten Rennen der Radwelt gilt. Es dauert etwa drei Wochen und umfasst über 3.500 Kilometer. Die Teilnehmer müssen sich in einer Reihe von Etappen durch verschiedene Regionen Frankreichs kämpfen, wobei sie auf verschiedenen Straßen, Berg;cycling;cyclisme|ciclismo|Radsport|cycliste|ciclista|Radrennen|Radfahr;"The Tour de France! It's one of the most prestigious and iconic cycling events in the world. Here's a brief overview:
 
 **What is the Tour de France?**
 
