@@ -1,31 +1,31 @@
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
 
-=== fr: gate 10 -> 11 de 14  (train, primeras 11: 8 -> 9)
+=== fr: gate 12 -> 13 de 14  (train, primeras 11: 10 -> 11)
   categoria                 antes  despues   train
-  factual_clasica               1        1       1
+  factual_clasica               2        2       2
   factual_aperturas             2        2       2
   imperativo                    2        2       2
-  imperativo_explicativo        1        2       2
-  explicativa                   2        2       1
-  corta                         1        1       1
-  conversacional                1        1       0
+  imperativo_explicativo        2        2       2
+  explicativa                   1        2       1
+  corta                         2        2       1
+  conversacional                1        1       1
 
-=== es: gate 12 -> 12 de 14  (train, primeras 11: 9 -> 9)
+=== es: gate 11 -> 12 de 14  (train, primeras 11: 10 -> 10)
   categoria                 antes  despues   train
   factual_clasica               1        1       1
   factual_aperturas             2        2       2
   imperativo                    2        2       2
   imperativo_explicativo        2        2       2
-  explicativa                   2        2       1
+  explicativa                   1        2       1
   corta                         2        2       1
-  conversacional                1        1       0
+  conversacional                1        1       1
 
-=== de: gate 12 -> 12 de 14  (train, primeras 11: 9 -> 9)
+=== de: gate 10 -> 12 de 14  (train, primeras 11: 9 -> 10)
   categoria                 antes  despues   train
   factual_clasica               1        1       1
   factual_aperturas             2        2       2
   imperativo                    2        2       2
   imperativo_explicativo        2        2       2
-  explicativa                   2        2       1
+  explicativa                   0        2       1
   corta                         2        2       1
-  conversacional                1        1       0
+  conversacional                1        1       1

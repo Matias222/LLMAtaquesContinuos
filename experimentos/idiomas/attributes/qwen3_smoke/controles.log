@@ -1,6 +1,5 @@
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-[fr] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 11/14  idiomas {'fr': 14}
-[es] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 3  gate 12/14  idiomas {'es': 14}
-  AVISO [es]: 3 salidas identicas a las de Llama (respuestas cortas pueden coincidir)
-[de] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 1  gate 12/14  idiomas {'de': 14}
+[fr] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 13/14  idiomas {'fr': 14}
+[es] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 12/14  idiomas {'es': 12, 'ca': 2}
+[de] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 12/14  idiomas {'de': 14}
 controles de targets: OK

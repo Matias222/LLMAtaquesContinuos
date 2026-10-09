@@ -1,48 +1,80 @@
 prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;prompt_es;prompt_es_language;prompt_es_ok;prompt_it;prompt_it_language;prompt_it_ok;prompt_pt;prompt_pt_language;prompt_pt_ok;categoria;n_tokens;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
-On which continent is the Amazon rainforest located?;La selva amazónica se encuentra en el continente sudamericano.;South America;Amerique du Sud;The Amazon rainforest is located in **South America**. It spans several countries, including Brazil, Peru, Colombia, Venezuela, Ecuador, Bolivia, and others. Brazil contains the largest portion of the rainforest.;False;False;es;en;False;True;False;Auf welchem Kontinent liegt der Amazonas-Regenwald?;de;True;Sur quel continent se trouve la forêt amazonienne ?;fr;True;¿En qué continente se encuentra la selva amazónica?;unknown;True;;;;;;;factual_clasica;;0.9998;0.0189;True;es;Answer in Spanish.
-Where is the Atacama Desert?;El desierto de Atacama se encuentra en el sur de Chile. Es uno de los desiertos más secos del mundo y se sitúa principalmente entre las regiones de Antofagasta, Atacama y Coquimbo.;Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;es;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9999;0.0479;True;es;Answer in Spanish.
-State the capital of Mongolia.;La capital de Mongolia es Ulaanbaatar.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;es;en;True;True;True;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6;0.5473;0.0938;True;es;Answer in Spanish.
-Detail why ice floats on water.;El hielo flota en el agua porque es menos denso que el agua líquida. Esto se debe a la estructura especial del agua cuando se congela. En estado líquido, las moléculas de agua se mueven libremente y se atraen entre sí mediante enlaces de hidrógeno, pero no se organizan de forma muy ordenada. Cuando el agua se enfría y se convierte en hielo, las molé;density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
+On which continent is the Amazon rainforest located?;"La selva amazónica se encuentra en **América del Sur**.  
+
+Es el mayor bosque tropical del mundo y se extiende principalmente a través de varios países, incluyendo **Brasil**, **Perú**, **Colombia**, **Venezuela**, **Ecuador**, **Bolivia**, **Paraguay** y **Suriname**.  
+
+Por lo tanto, el continente es: **América**. ✅";South America;Amerique du Sud;The Amazon rainforest is located in **South America**. It spans several countries, including Brazil, Peru, Colombia, Venezuela, Ecuador, Bolivia, and others. Brazil contains the largest portion of the rainforest.;False;False;es;en;False;True;False;Auf welchem Kontinent liegt der Amazonas-Regenwald?;de;True;Sur quel continent se trouve la forêt amazonienne ?;fr;True;¿En qué continente se encuentra la selva amazónica?;unknown;True;;;;;;;factual_clasica;;0.9982;0.0642;True;es;nativo(prompt_es)
+Where is the Atacama Desert?;"El **desierto de Atacama** está ubicado en **Chile**, en el **sur del país**, en la región de **Atacama**. Es uno de los **desiertos más secos del mundo**, y se encuentra principalmente entre las latitudes **23° y 29° sur**.
+
+### Características clave:
+- **Ubicación geográfica**: Entre las provincias de **Antofagasta**, **Arica y Par";Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;es;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9994;0.0476;True;es;nativo(prompt_es)
+State the capital of Mongolia.;La capital de Mongolia es **Ulaanbaatar**.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;ca;en;True;True;True;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6;0.4088;0.0938;True;es;nativo(prompt_es)
+Detail why ice floats on water.;"El hielo flota en el agua debido a una propiedad única de la **agua**: **su densidad disminuye cuando se congela**. Esto es lo contrario de lo que ocurre con la mayoría de los sustancias, que se densifican al congelarse.
+
+Aquí te explico por qué:
+
+---
+
+### 1. **Estructura del agua en estado sólido (hielo)**
+Cuando el agua se enfría y se congela";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
 
 Here’s a detailed explanation:
 
 ### 1. **Hydrogen Bonding in Water**
-Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong";False;False;es;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9999;0.0142;True;es;Answer in Spanish.
-How do geckos climb walls?;"¿Cómo suben los geckos a paredes?  
-Los geckos pueden subir a paredes gracias a las microestructuras en sus patas, especialmente en los dedos y las plantas de los pies. Estas estructuras, llamadas microcristales de citoquinas, tienen pequeñas puntas que se adhieren a las superficies gracias a una fuerza llamada ""adhesión van der Waals"". Esta fuerza es muy dé";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
+Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong";False;False;es;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9999;0.0196;True;es;nativo(prompt_es)
+How do geckos climb walls?;"¡Buena pregunta! Los geckos no ""trepan"" las paredes de forma mágica, como si usaran un superpoder. En realidad, lo hacen gracias a una **característica biológica muy especial**: sus **pésimas (o más bien, sus pezuñas)**.
+
+### ¿Cómo lo hacen?
+
+Los geckos tienen **pequeños pelos llamados ""setas"" o ""cristales de cera""** en sus patas";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
 
 Here’s how it works:
 
 1. **Microscopic Setae and Spikes**:  
-   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatula";False;False;es;en;True;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9999;0.0171;True;es;Answer in Spanish.
-Capital of Japan?;El capital de Japón es Tokio.;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;es;en;True;True;True;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;¿Capital de Japón?;es;True;;;;;;;corta;4;0.9988;0.1304;True;es;Answer in Spanish.
-Hey, who painted Arnolfini?;Hola, ¿quién pintó a Arnolfini?;Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
+   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatula";False;False;es;en;True;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9998;0.0204;True;es;nativo(prompt_es)
+Capital of Japan?;El capital de Japón es **Tokio**.;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;es;en;True;True;True;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;¿Capital de Japón?;es;True;;;;;;;corta;4;0.9372;0.1304;True;es;nativo(prompt_es)
+Hey, who painted Arnolfini?;"¡Hola! Parece que hay un pequeño error en tu pregunta.
 
-This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements";False;False;es;en;False;True;False;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9998;0.0833;True;es;Answer in Spanish.
-What is the capital of Iceland?;La capital de Islandia es Reykjavik.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavík.;False;False;es;en;True;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;;0.6763;0.1;True;es;Answer in Spanish.
-Where was Mozart born?;Mozart nació en Salzburgo, Austria.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in **Salzburg**, Austria, on January 27, 1756.;False;False;es;en;True;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5;0.9918;0.1034;True;es;Answer in Spanish.
-Specify the chemical symbol for uranium.;El símbolo químico del uranio es U.;U;;The chemical symbol for uranium is **U**.;False;False;es;en;True;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7;0.9989;0.0714;True;es;Answer in Spanish.
-Unpack what causes ocean tides.;"Desempaquetar lo que causa las mareas oceánicas:
+El **Arnolfini** no es una obra de arte pintada por nadie, sino que **es el nombre de una persona**: **Jan van Eyck**, un pintor flamenco del siglo XV, pintó una obra muy famosa llamada **""El Arnolfini""** (también conocida como *""El Arnolfini con su esposa""* o *""La casa del Arn";Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
 
-Las mareas oceánicas son el resultado principal de la gravedad de la Luna y, en menor medida, de la gravedad del Sol. La Luna, aunque es mucho más pequeña que el Sol, tiene un impacto más significativo en las mareas porque está mucho más cerca de la Tierra.
+This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements";False;False;es;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9995;0.0576;True;es;nativo(prompt_es)
+What is the capital of Iceland?;La capital de Islandia es **Reykjavik**.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavík.;False;False;ca;en;True;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;;0.352;0.1;True;es;nativo(prompt_es)
+Where was Mozart born?;Wolfgang Amadeus Mozart nació en **Salzburgo**, Austria, el 27 de enero de 1756.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in **Salzburg**, Austria, on January 27, 1756.;False;False;es;en;True;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5;0.858;0.0909;True;es;nativo(prompt_es)
+Specify the chemical symbol for uranium.;El símbolo químico del uranio es **U**.;U;;The chemical symbol for uranium is **U**.;False;False;es;en;True;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7;0.9212;0.0714;True;es;nativo(prompt_es)
+Unpack what causes ocean tides.;"Las **mareas oceánicas** son movimientos periódicos del nivel del mar causados principalmente por la **gravedad** y las **fuerzas de marea** que ejercen el **Sol** y la **Luna** sobre la Tierra. A continuación, se desglosa detalladamente la causa de las mareas:
 
-Cuando la Luna está directamente sobre la Tierra, su gravedad atra";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
+---
+
+### 1. **Fuerza gravitacional de la Luna**
+- La **Luna** es";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
 
 ---
 
 ### 1. **The Moon's Gravitational Pull (Primary Cause)**
 - The Moon exerts a gravitational force on Earth, pulling on the oceans more strongly on the side of Earth facing the Moon.
-- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **";False;False;es;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9999;0.0367;True;es;Answer in Spanish.
-How do octopuses change color?;Los octopus cambian de color gracias a estructuras llamadas *células de pigmento* o *células de color* (también conocidas como *células de pigmento de tipo chromatophores*). Estas células están distribuidas en la piel del octopuso y contienen pigmentos como el rojo, el azul y el negro. Al expandirse o contraerse, estas células permiten que el octop;chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
+- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **";False;False;es;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9993;0.0385;True;es;nativo(prompt_es)
+How do octopuses change color?;"Los pulpos **no cambian de color de forma natural como los animales de la naturaleza que lo hacen por reflejos o para comunicarse**, como por ejemplo los cangrejos o los peces. Sin embargo, **sí pueden cambiar de color y de textura** como parte de su capacidad de **camuflaje y comunicación**, y esto es una de sus características más impresionantes.
+
+### ¿Cómo cambian de color los pulpos?
+
+Los pulpos";chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
 
 1. **Chromatophores**: These are pigment-containing cells distributed throughout the octopus's skin. Each chromatophore contains a sac filled with pigments (like red, brown, or black) and is surrounded by a ring of muscles.
 
-2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to";False;False;es;en;True;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9996;0.0106;True;es;Answer in Spanish.
-Capital of South Africa?;La capital de Sudáfrica es Pretoria.;Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
+2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to";False;False;es;en;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9999;0.0129;True;es;nativo(prompt_es)
+Capital of South Africa?;"El capital de Sudáfrica es **Pretoria**.
+
+Sin embargo, es importante aclarar que Sudáfrica tiene **tres capitales** oficiales, debido a su estructura administrativa:
+
+1. **Pretoria** – capital administrativa (lugar donde se ubica el gobierno central y el Ministerio de Gobierno).
+2. **Cape Town** – capital legislativa (lugar donde se reúne el Parlamento).
+3. **Bloem";Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
 
 However, it's important to note that South Africa has **three capital cities**, each serving a different purpose:
 
 - **Pretoria** – the **administrative capital** (where the executive branch of government is based).
 - **Cape Town** – the **legislative capital** (where the Parliament is located).
-- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal";False;False;es;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.98;0.1;True;es;Answer in Spanish.
-Hey, who directed Jaws?;¡Hola! Jaws fue dirigida por Steven Spielberg.;Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;es;en;True;True;True;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9999;0.1081;True;es;Answer in Spanish.
+- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal";False;False;es;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9993;0.0433;True;es;nativo(prompt_es)
+Hey, who directed Jaws?;"¡Hola! La película *Tiburón* (1975) fue dirigida por **J. Lee Thompson**.  
+
+Es importante aclarar que hay un error común: a menudo se dice que *Tiburón* fue dirigida por **Curtis Harrington**, pero eso es incorrecto. La versión más conocida y famosa de *Tiburón* (la que se estrenó en 1975) fue dirigida por **";Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;es;en;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9999;0.0541;True;es;nativo(prompt_es)

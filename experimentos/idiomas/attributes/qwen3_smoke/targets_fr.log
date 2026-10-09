@@ -1,25 +1,30 @@
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 59.16it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 57.95it/s]
 --fill attributes/qwen3_smoke/targets_v8_fr.csv: 14/14 filas sin referencia, se generan solo esas
+referencia NATIVA: M(prompt_fr), sin instruccion
 targets (fill):   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets (fill):   7%|▋         | 1/14 [00:03<00:51,  3.99s/it]targets (fill):  14%|█▍        | 2/14 [00:10<01:04,  5.39s/it]targets (fill):  21%|██▏       | 3/14 [00:11<00:37,  3.44s/it]targets (fill):  29%|██▊       | 4/14 [00:20<00:56,  5.63s/it]targets (fill):  36%|███▌      | 5/14 [00:29<01:01,  6.82s/it]targets (fill):  43%|████▎     | 6/14 [00:30<00:38,  4.76s/it]targets (fill):  50%|█████     | 7/14 [00:35<00:34,  4.88s/it]targets (fill):  57%|█████▋    | 8/14 [00:36<00:22,  3.69s/it]targets (fill):  64%|██████▍   | 9/14 [00:38<00:16,  3.20s/it]targets (fill):  71%|███████▏  | 10/14 [00:39<00:09,  2.50s/it]targets (fill):  79%|███████▊  | 11/14 [00:48<00:13,  4.50s/it]targets (fill):  86%|████████▌ | 12/14 [00:57<00:11,  5.86s/it]targets (fill):  93%|█████████▎| 13/14 [01:02<00:05,  5.65s/it]targets (fill): 100%|██████████| 14/14 [01:03<00:00,  4.32s/it]targets (fill): 100%|██████████| 14/14 [01:03<00:00,  4.56s/it]
+targets (fill):   7%|▋         | 1/14 [00:07<01:32,  7.11s/it]targets (fill):  14%|█▍        | 2/14 [00:16<01:39,  8.25s/it]targets (fill):  21%|██▏       | 3/14 [00:17<00:55,  5.07s/it]targets (fill):  29%|██▊       | 4/14 [00:26<01:06,  6.64s/it]targets (fill):  36%|███▌      | 5/14 [00:35<01:07,  7.52s/it]targets (fill):  43%|████▎     | 6/14 [00:36<00:42,  5.27s/it]targets (fill):  50%|█████     | 7/14 [00:45<00:45,  6.51s/it]targets (fill):  57%|█████▋    | 8/14 [00:46<00:29,  4.85s/it]targets (fill):  64%|██████▍   | 9/14 [00:49<00:20,  4.20s/it]targets (fill):  71%|███████▏  | 10/14 [00:50<00:13,  3.27s/it]targets (fill):  79%|███████▊  | 11/14 [00:59<00:15,  5.05s/it]targets (fill):  86%|████████▌ | 12/14 [01:08<00:12,  6.27s/it]targets (fill):  93%|█████████▎| 13/14 [01:17<00:07,  7.11s/it]targets (fill): 100%|██████████| 14/14 [01:23<00:00,  6.50s/it]targets (fill): 100%|██████████| 14/14 [01:23<00:00,  5.93s/it]
 
-Filas completadas: 14  |  pasan el gate: 10/14
-  [XX] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve sur le continent américain.
-  [ok] Where is the Atacama Desert?                            -> Le désert d'Atacama se trouve en Chile, dans l'extrême sud de l'Amériq
-  [ok] State the capital of Mongolia.                          -> La capitale de Mongolie est Ulaanbaatar.
-  [XX] Detail why ice floats on water.                         -> La glace flotte sur l'eau à cause de la structure particulière de l'ea
-  [ok] How do geckos climb walls?                              -> Les geckos peuvent grimper aux murs grâce à des poils minuscules situé
-  [ok] Capital of Japan?                                       -> La capitale du Japon est Tokyo.
-  [XX] Hey, who painted Arnolfini?                             -> Salut, qui a peint l'Arnolfini ?
-  [ok] What is the capital of Iceland?                         -> La capitale de l'Iceland est Reykjavik.
-  [ok] Where was Mozart born?                                  -> Wolfgang Amadeus Mozart est né à Salzbourg, en Autriche.
-  [ok] Specify the chemical symbol for uranium.                -> Le symbole chimique du uranium est U.
-  [ok] Unpack what causes ocean tides.                         -> Découvrez ce qui cause les marées océaniques.
+Filas completadas: 14  |  pasan el gate: 12/14
+  [ok] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve en **Amérique du Sud**, principalement 
+  [ok] Where is the Atacama Desert?                            -> Le **désert d'Atacama** se trouve en **Chili**, dans le **sud-ouest du
+  [ok] State the capital of Mongolia.                          -> La capitale de la Mongolie est **Ulaanbaatar**.
+  [ok] Detail why ice floats on water.                         -> La glace flotte sur l'eau en raison d'une **propriété physique fondame
+  [XX] How do geckos climb walls?                              -> Les geckos peuvent grimpers aux murs grâce à une **adhérence naturelle
+  [ok] Capital of Japan?                                       -> La capitale du Japon est **Tokyo**.
+  [ok] Hey, who painted Arnolfini?                             -> Hé ! 😊 C’est une excellente question !
 
-Les marées sont causées
-  [ok] How do octopuses change color?                          -> Les octopodes changent de couleur grâce à des cellules appelées chroma
-  [XX] Capital of South Africa?                                -> La capitale de l'Afrique du Sud est Pétrou.
-  [ok] Hey, who directed Jaws?                                 -> Salut, *Jaws* a été dirigé par Steven Spielberg.
+Les **Arnolfini** (ou *L’Arnol
+  [ok] What is the capital of Iceland?                         -> La capitale de l'Islande est **Reykjavik**.
+  [ok] Where was Mozart born?                                  -> Wolfgang Amadeus Mozart est né à **Salzbourg**, en Autriche, le 27 jan
+  [ok] Specify the chemical symbol for uranium.                -> Le symbole chimique de l'uranium est **U**.
+  [ok] Unpack what causes ocean tides.                         -> Les **marées océaniques** sont des variations régulières du niveau de 
+  [ok] How do octopuses change color?                          -> Les pieuvres changent de couleur grâce à un système complexe appelé **
+  [ok] Capital of South Africa?                                -> La capitale de l'Afrique du Sud est **Pretoria**.  
+
+Cependant, il est
+  [XX] Hey, who directed Jaws?                                 -> *Les Dents de la mer* a été réalisé par **Jean-Pierre Jeunet**.
+
+C’est
 
 Escrito attributes/qwen3_smoke/targets_v8_fr.csv (backup .bak)
