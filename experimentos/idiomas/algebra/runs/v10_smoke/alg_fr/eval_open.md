@@ -9,10 +9,12 @@
 | condicion | **celda ok** (idioma y formato) | idioma = fr | score fr | mayusculas | is_french | accuracy | role leak |
 |---|---|---|---|---|---|---|---|
 | baseline  M(q) | 0.00% | 0.00% | 0.125 | 0.00% | 0.00% | nan% | 0.00% |
-| referencia  M([frances;q]) | 75.00% | 75.00% | 0.874 | 0.00% | 75.00% | nan% | 0.00% |
+| control nativo  M(q_fr) | 75.00% | 75.00% | 0.874 | 0.00% | 75.00% | nan% | 0.00% |
 | parche  M(q+v) | 0.00% | 0.00% | 0.125 | 0.00% | 0.00% | nan% | 0.00% |
 
-`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en mayusculas). La accuracy en espanol/aleman esta subestimada: los alias son ingles y frances.
+`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en mayusculas). Accuracy: answer_correct con los alias del banco (en, es, de, fr, it, pt).
+
+El control nativo es la pregunta escrita en frances, sin parche ni instruccion, generada en vivo: es el modelo crudo, sin las correcciones a mano de los targets.
 
 ### CE del target (frances) (teacher forcing)
 
@@ -22,26 +24,26 @@
 | tail (el resto) | 0.1831 | 0.1830 | -0.0002 |
 | toda la respuesta | 0.2832 | 0.2785 | -0.0047 |
 
-La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo frances correcto en cada paso, asi que el tail solo mide 'continuar una oracion francesa', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal.
+La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en frances correcto en cada paso, asi que el tail solo mide 'continuar una oracion en frances', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 
 ### Prompts abiertos (n=4, sin respuesta verificable)
 
 | medida | valor |
 |---|---|
-| overlap de contenido parche vs referencia | 0.050 |
-| overlap baseline (EN) vs referencia | 0.050 |
+| overlap de contenido parche vs control nativo | 0.050 |
+| overlap baseline (EN) vs control nativo | 0.050 |
 | control de azar (parche vs otra pregunta) | 0.000 |
 
 | tercio de la respuesta | 1 | 2 | 3 |
 |---|---|---|---|
 | parche | 0.13 | 0.13 | 0.13 |
-| referencia | 0.87 | 0.85 | 0.87 |
+| control nativo | 0.87 | 0.85 | 0.87 |
 
 El parche vive en todos los tokens de la pregunta del **prompt** (las filas de la tabla son el score de `fr` por tercio). Si cae en el tercer tercio, el efecto es local y decae con la distancia; si se sostiene, el parche fija un modo que persiste toda la generacion.
 
 ## Outputs
 
-| # | pregunta | baseline | referencia | parche |
+| # | pregunta | baseline | control nativo | parche |
 |---|---|---|---|---|
 | 0 | What is the weather like? | I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can... | Je suis désolé, mais je ne suis pas en mesure de vous fournir la météo actuelle ou prévue pour votre emplacement spécifique. Cependant, je peux vous s... | I'd be happy to help you with the weather. However, I'm a large language model, I don't have real-time access to current weather conditions. But I can... |
 | 1 | How do I sort a list in Python? | Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here a... | En Python, vous pouvez trier une liste en utilisant plusieurs méthodes. Voici quelques-unes des plus courantes : /  / ### 1. Tri par ordre aléatoire /... | Sorting a list in Python can be done in several ways, depending on the type of sort you want to perform and the version of Python you're using. Here a... |
