@@ -1,0 +1,182 @@
+{
+  "v8/es/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v8/es/reference": {
+    "cortadas": 33,
+    "correctas_antes": 26,
+    "correctas_ahora": 27,
+    "siguen_cortadas": 25,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 95,
+    "heldout_ahora": 96
+  },
+  "v8/es/patched": {
+    "cortadas": 32,
+    "correctas_antes": 21,
+    "correctas_ahora": 23,
+    "siguen_cortadas": 31,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 82,
+    "heldout_ahora": 84
+  },
+  "v8/fr/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v8/fr/reference": {
+    "cortadas": 27,
+    "correctas_antes": 16,
+    "correctas_ahora": 20,
+    "siguen_cortadas": 21,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 91,
+    "heldout_ahora": 95
+  },
+  "v8/fr/patched": {
+    "cortadas": 33,
+    "correctas_antes": 24,
+    "correctas_ahora": 25,
+    "siguen_cortadas": 28,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 90,
+    "heldout_ahora": 91
+  },
+  "v8/de/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v8/de/reference": {
+    "cortadas": 36,
+    "correctas_antes": 22,
+    "correctas_ahora": 29,
+    "siguen_cortadas": 30,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 89,
+    "heldout_ahora": 96
+  },
+  "v8/de/patched": {
+    "cortadas": 34,
+    "correctas_antes": 22,
+    "correctas_ahora": 25,
+    "siguen_cortadas": 28,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 87,
+    "heldout_ahora": 90
+  },
+  "v9/es/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v9/es/reference": {
+    "cortadas": 49,
+    "correctas_antes": 30,
+    "correctas_ahora": 31,
+    "siguen_cortadas": 41,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 80,
+    "heldout_ahora": 81
+  },
+  "v9/es/patched": {
+    "cortadas": 32,
+    "correctas_antes": 22,
+    "correctas_ahora": 24,
+    "siguen_cortadas": 27,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 88,
+    "heldout_ahora": 90
+  },
+  "v9/fr/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v9/fr/reference": {
+    "cortadas": 50,
+    "correctas_antes": 29,
+    "correctas_ahora": 33,
+    "siguen_cortadas": 41,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 80,
+    "heldout_ahora": 84
+  },
+  "v9/fr/patched": {
+    "cortadas": 36,
+    "correctas_antes": 27,
+    "correctas_ahora": 27,
+    "siguen_cortadas": 25,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 86,
+    "heldout_ahora": 86
+  },
+  "v9/de/baseline": {
+    "cortadas": 57,
+    "correctas_antes": 54,
+    "correctas_ahora": 55,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 108,
+    "heldout_ahora": 109
+  },
+  "v9/de/reference": {
+    "cortadas": 53,
+    "correctas_antes": 31,
+    "correctas_ahora": 35,
+    "siguen_cortadas": 45,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 83,
+    "heldout_ahora": 87
+  },
+  "v9/de/patched": {
+    "cortadas": 41,
+    "correctas_antes": 25,
+    "correctas_ahora": 32,
+    "siguen_cortadas": 32,
+    "no_prefijo": 0,
+    "n": 112,
+    "heldout_antes": 88,
+    "heldout_ahora": 95
+  }
+}
