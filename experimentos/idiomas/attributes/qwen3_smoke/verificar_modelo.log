@@ -1,0 +1,83 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:06<00:12,  6.18s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:15<00:07,  7.75s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  4.30s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.07s/it]
+modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507  model_type qwen3  plantilla qwen3
+
+## 1 modelo
+  [OK   ] dtype de los pesos  -- torch.bfloat16 (esperado torch.bfloat16)
+  [OK   ] d de la matriz == hidden_size  -- d=2560
+  [OK   ] embeddings de entrada y salida atados  -- atados
+  [OK   ] filas de la matriz >= vocabulario del tokenizer  -- 151936 filas, tokenizer 151669 (las de mas son relleno y no se usan)
+  ||e|| media 1.0885  mediana 1.1143  std por dimension 0.02176  (Llama-3.2-3B: ||e|| media 1.086, d=3072)
+  un v de norma 0.85 seria ||v||/||e|| = 0.781 (v9 en Llama: 0.78-0.87)
+  [OK   ] espaciado del dtype en |e+v| tipico vs paso de sign-SGD  -- espaciado ~3.01e-04, paso 3e-04 (v se acumula en fp32; el forward ve e+v redondeado)
+
+## 2 plantilla
+  [OK   ] ids == apply_chat_template (3204 prompts)  -- 0 distintos, p.ej. []
+  [OK   ] decode(goal) == pregunta (3204)  -- []
+  [OK   ] sin tokens especiales dentro del goal  -- []
+  [OK   ] header del user exacto  -- []
+  [OK   ] header del assistant exacto y pegado al goal  -- []
+  [OK   ] decode(target) == output  -- 0 filas, []
+  [OK   ] loss slice = target - 1, target pegado al header  -- []
+  tokens de la pregunta en ingles por categoria (el banco se armo con <= 10 en Llama):
+                        mean  min   max
+categoria                              
+conversacional           8.8  6.0  10.0
+corta                    4.8  4.0   6.0
+explicativa              7.0  4.0  11.0
+factual_aperturas        7.6  4.0  12.0
+factual_clasica          8.9  5.0  15.0
+imperativo               7.8  6.0  10.0
+imperativo_explicativo   7.6  5.0  10.0
+  [AVISO] preguntas en ingles con <= 10 tokens  -- 31 de 700 pasan de 10 (no se filtran: con goal_all el largo multiplica la perturbacion total)
+
+## 3 parche: solo las posiciones del goal
+  [OK   ] fuera del goal nada cambia, bit a bit (300 prompts)  -- []
+  [OK   ] todas las posiciones del goal cambian  -- []
+  [OK   ] el cambio en cada posicion es v (coseno minimo)  -- 0.999995
+  [OK   ] error relativo |cambio - v| / |v| por el redondeo del dtype  -- maximo 0.0032 (torch.bfloat16)
+  [OK   ] patch_positions y n_patched_tokens == largo del goal  -- []
+  [OK   ] la entrada de generacion termina en el header del assistant  -- []
+  [OK   ] goal_all rechaza un parche [1,3,d]
+
+## 4 forward: causalidad y gradiente
+  [OK   ] logits antes del goal identicos con y sin parche  -- []
+  [OK   ] logits desde el goal cambian con el parche  -- []
+  [OK   ] gradiente del parche: forma [1,1,d], finito, no nulo  -- |grad| 1.934e+01, dtype torch.float32
+  [OK   ] 5 pasos de sign-SGD no suben la CE del target (fila 0)  -- 5.1875 -> 4.9375 -> 4.7812 -> 4.5625 -> 4.4688 -> 4.4688
+
+## 5 generacion
+  tokens de corte: {151643: <|endoftext|>, 151645: <|im_end|>}
+  [OK   ] fin de turno entre los tokens de corte
+  'On which continent is the Amazon rainforest locate': 'The Amazon rainforest is located in **South America**. It spans several countries, includi'
+  'Where is the Atacama Desert?': 'The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountai'
+  'State the capital of Mongolia.': 'The capital of Mongolia is Ulaanbaatar.'
+  'Detail why ice floats on water.': 'Ice floats on water due to a unique property of water called **hydrogen bonding**, which l'
+  'How do geckos climb walls?': 'Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkabl'
+  'Capital of Japan?': 'The capital of Japan is Tokyo.'
+  'Hey, who painted Arnolfini?': '"Arnolfini" is not a painting — it\'s actually the name of a well-known art gallery located'
+  'What is the capital of Iceland?': 'The capital of Iceland is Reykjavík.'
+  [OK   ] greedy determinista (dos corridas iguales)  -- 8/8
+  [OK   ] parche de ceros == sin parche  -- 8/8
+  [OK   ] generate_one (sin cache) == model.generate (con cache)  -- 8/8 identicas; divergencias tardias = redondeo bf16 con/sin KV cache
+  [OK   ] sin divergencias en los primeros 5 tokens  -- 0 tempranas: []
+  [OK   ] corta en fin de turno antes del limite (mayoria)  -- 4/8 cortaron antes de 60 tokens
+  [OK   ] sin fuga de rol ni tokens de control en la salida  -- 0/8
+  [OK   ] sin <think>  -- 0/8
+  [OK   ] un v al azar de norma 0.85 cambia la salida  -- 7/8
+  segundos por token (mediana, sin KV cache, respuestas cortas): 0.045
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  [OK   ] M(q) en ingles  -- 8/8
+  [OK   ] M('Answer in French.' + q) en fr  -- 8/8
+  [OK   ] M('Answer in Spanish.' + q) en es  -- 8/8
+  [OK   ] M('Answer in German.' + q) en de  -- 8/8
+  [OK   ] M(q_fr) en frances  -- 8/8
+  [OK   ] accuracy del baseline en ingles  -- 8/8
+
+## 6 nll_of_target
+  CE head propia 0.012  ajena 6.661
+  [OK   ] CE de la propia respuesta greedy finita y baja  -- 0.012
+  [OK   ] CE propia < CE ajena  -- 0.012 < 6.661
+
+======================================================================
+41 controles: 40 OK, 1 AVISO, 0 FALLA

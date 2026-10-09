@@ -1,0 +1,44 @@
+
+=== fr: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+  sin output: 0
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%       50%
+  explicativa                2   100%       100%      100%
+  corta                      2    50%       100%       50%
+  conversacional             2    50%       100%       50%
+  veredictos: {'fr': 14}
+
+=== es: attributes/qwen3_smoke/targets_v8_es.csv (14 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%      100%
+  explicativa                2   100%       100%      100%
+  corta                      2   100%       100%      100%
+  conversacional             2    50%       100%       50%
+  veredictos: {'es': 14}
+
+=== de: attributes/qwen3_smoke/targets_v8_de.csv (14 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%      100%
+  explicativa                2   100%       100%      100%
+  corta                      2   100%       100%      100%
+  conversacional             2    50%       100%       50%
+  veredictos: {'de': 14}
+
+=== traducciones (en el CSV fr)
+  prompt_es: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_de: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_fr: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+
+Revisar a mano: traducciones rechazadas o con fuga, y filas sin gate, antes de entrenar.

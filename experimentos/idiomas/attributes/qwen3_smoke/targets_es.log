@@ -1,0 +1,24 @@
+Celda: es  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'Answer in Spanish.'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 63.16it/s]
+targets es:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets es:   7%|▋         | 1/14 [00:02<00:30,  2.32s/it]targets es:  14%|█▍        | 2/14 [00:04<00:27,  2.30s/it]targets es:  21%|██▏       | 3/14 [00:05<00:16,  1.48s/it]targets es:  29%|██▊       | 4/14 [00:09<00:26,  2.66s/it]targets es:  36%|███▌      | 5/14 [00:14<00:30,  3.34s/it]targets es:  43%|████▎     | 6/14 [00:14<00:18,  2.37s/it]targets es:  50%|█████     | 7/14 [00:15<00:12,  1.79s/it]targets es:  57%|█████▋    | 8/14 [00:15<00:08,  1.39s/it]targets es:  64%|██████▍   | 9/14 [00:16<00:05,  1.15s/it]targets es:  71%|███████▏  | 10/14 [00:16<00:03,  1.02it/s]targets es:  79%|███████▊  | 11/14 [00:21<00:06,  2.06s/it]targets es:  86%|████████▌ | 12/14 [00:26<00:05,  2.82s/it]targets es:  93%|█████████▎| 13/14 [00:26<00:02,  2.11s/it]targets es: 100%|██████████| 14/14 [00:27<00:00,  1.64s/it]targets es: 100%|██████████| 14/14 [00:27<00:00,  1.93s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([es ; q])
+  veredictos de idioma       : {'es': 14}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 9/11)
+  quisieron seguir de turno  : 0/14
+
+Filas que NO pasan el gate:
+  [0] On which continent is the Amazon rainforest locate -> [es] 'La selva amazónica se encuentra en el continente sudamericano.'
+  [6] Hey, who painted Arnolfini?                        -> [es] 'Hola, ¿quién pintó a Arnolfini?'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_es.csv'

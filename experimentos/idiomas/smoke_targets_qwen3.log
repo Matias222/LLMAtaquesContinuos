@@ -1,0 +1,272 @@
+### SMOKE: 2 filas por categoria -> attributes/qwen3_smoke
+################ validacion
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+modelo qwen3, GlotLID ok
+
+################ 0 verificar_modelo
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:06<00:12,  6.18s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:15<00:07,  7.75s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  4.30s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.07s/it]
+modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507  model_type qwen3  plantilla qwen3
+
+## 1 modelo
+  [OK   ] dtype de los pesos  -- torch.bfloat16 (esperado torch.bfloat16)
+  [OK   ] d de la matriz == hidden_size  -- d=2560
+  [OK   ] embeddings de entrada y salida atados  -- atados
+  [OK   ] filas de la matriz >= vocabulario del tokenizer  -- 151936 filas, tokenizer 151669 (las de mas son relleno y no se usan)
+  ||e|| media 1.0885  mediana 1.1143  std por dimension 0.02176  (Llama-3.2-3B: ||e|| media 1.086, d=3072)
+  un v de norma 0.85 seria ||v||/||e|| = 0.781 (v9 en Llama: 0.78-0.87)
+  [OK   ] espaciado del dtype en |e+v| tipico vs paso de sign-SGD  -- espaciado ~3.01e-04, paso 3e-04 (v se acumula en fp32; el forward ve e+v redondeado)
+
+## 2 plantilla
+  [OK   ] ids == apply_chat_template (3204 prompts)  -- 0 distintos, p.ej. []
+  [OK   ] decode(goal) == pregunta (3204)  -- []
+  [OK   ] sin tokens especiales dentro del goal  -- []
+  [OK   ] header del user exacto  -- []
+  [OK   ] header del assistant exacto y pegado al goal  -- []
+  [OK   ] decode(target) == output  -- 0 filas, []
+  [OK   ] loss slice = target - 1, target pegado al header  -- []
+  tokens de la pregunta en ingles por categoria (el banco se armo con <= 10 en Llama):
+                        mean  min   max
+categoria                              
+conversacional           8.8  6.0  10.0
+corta                    4.8  4.0   6.0
+explicativa              7.0  4.0  11.0
+factual_aperturas        7.6  4.0  12.0
+factual_clasica          8.9  5.0  15.0
+imperativo               7.8  6.0  10.0
+imperativo_explicativo   7.6  5.0  10.0
+  [AVISO] preguntas en ingles con <= 10 tokens  -- 31 de 700 pasan de 10 (no se filtran: con goal_all el largo multiplica la perturbacion total)
+
+## 3 parche: solo las posiciones del goal
+  [OK   ] fuera del goal nada cambia, bit a bit (300 prompts)  -- []
+  [OK   ] todas las posiciones del goal cambian  -- []
+  [OK   ] el cambio en cada posicion es v (coseno minimo)  -- 0.999995
+  [OK   ] error relativo |cambio - v| / |v| por el redondeo del dtype  -- maximo 0.0032 (torch.bfloat16)
+  [OK   ] patch_positions y n_patched_tokens == largo del goal  -- []
+  [OK   ] la entrada de generacion termina en el header del assistant  -- []
+  [OK   ] goal_all rechaza un parche [1,3,d]
+
+## 4 forward: causalidad y gradiente
+  [OK   ] logits antes del goal identicos con y sin parche  -- []
+  [OK   ] logits desde el goal cambian con el parche  -- []
+  [OK   ] gradiente del parche: forma [1,1,d], finito, no nulo  -- |grad| 1.934e+01, dtype torch.float32
+  [OK   ] 5 pasos de sign-SGD no suben la CE del target (fila 0)  -- 5.1875 -> 4.9375 -> 4.7812 -> 4.5625 -> 4.4688 -> 4.4688
+
+## 5 generacion
+  tokens de corte: {151643: <|endoftext|>, 151645: <|im_end|>}
+  [OK   ] fin de turno entre los tokens de corte
+  'On which continent is the Amazon rainforest locate': 'The Amazon rainforest is located in **South America**. It spans several countries, includi'
+  'Where is the Atacama Desert?': 'The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountai'
+  'State the capital of Mongolia.': 'The capital of Mongolia is Ulaanbaatar.'
+  'Detail why ice floats on water.': 'Ice floats on water due to a unique property of water called **hydrogen bonding**, which l'
+  'How do geckos climb walls?': 'Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkabl'
+  'Capital of Japan?': 'The capital of Japan is Tokyo.'
+  'Hey, who painted Arnolfini?': '"Arnolfini" is not a painting — it\'s actually the name of a well-known art gallery located'
+  'What is the capital of Iceland?': 'The capital of Iceland is Reykjavík.'
+  [OK   ] greedy determinista (dos corridas iguales)  -- 8/8
+  [OK   ] parche de ceros == sin parche  -- 8/8
+  [OK   ] generate_one (sin cache) == model.generate (con cache)  -- 8/8 identicas; divergencias tardias = redondeo bf16 con/sin KV cache
+  [OK   ] sin divergencias en los primeros 5 tokens  -- 0 tempranas: []
+  [OK   ] corta en fin de turno antes del limite (mayoria)  -- 4/8 cortaron antes de 60 tokens
+  [OK   ] sin fuga de rol ni tokens de control en la salida  -- 0/8
+  [OK   ] sin <think>  -- 0/8
+  [OK   ] un v al azar de norma 0.85 cambia la salida  -- 7/8
+  segundos por token (mediana, sin KV cache, respuestas cortas): 0.045
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  [OK   ] M(q) en ingles  -- 8/8
+  [OK   ] M('Answer in French.' + q) en fr  -- 8/8
+  [OK   ] M('Answer in Spanish.' + q) en es  -- 8/8
+  [OK   ] M('Answer in German.' + q) en de  -- 8/8
+  [OK   ] M(q_fr) en frances  -- 8/8
+  [OK   ] accuracy del baseline en ingles  -- 8/8
+
+## 6 nll_of_target
+  CE head propia 0.012  ajena 6.661
+  [OK   ] CE de la propia respuesta greedy finita y baja  -- 0.012
+  [OK   ] CE propia < CE ajena  -- 0.012 < 6.661
+
+======================================================================
+41 controles: 40 OK, 1 AVISO, 0 FALLA
+
+################ 1 armar attributes/qwen3_smoke/targets_v8_fr.csv
+--regenerar_viejas: vaciadas ['output', 'baseline_en', 'ref_role_leak', 'baseline_role_leak', 'ref_french_score', 'ref_language', 'baseline_language', 'ref_is_french', 'ref_answer_correct', 'baseline_is_french', 'baseline_answer_correct', 'passed_gate', 'output_hand_fixed']
+viejas: 100 (filas 0-99 de attributes/french/targets_french_v5.csv)  |  nuevas: 600
+respuestas compartidas entre nuevas y viejas: 4 (misma respuesta, otra pregunta)
+  aviso  'Moon': 'Unpack what causes ocean tides.'  <->  ["What is the name of Earth's only natural satellite?"]
+  aviso  '1789': 'Cite the year the Bastille was stormed.'  <->  ['In what year was the Declaration of the Rights of Man adopted in France?']
+  aviso  '1970': 'Settle a bet: Beatles breakup year?'  <->  ['In what year did the Apollo 13 mission take place?']
+  aviso  '8': 'Report the atomic number of oxygen.'  <->  ['How many planets are in the Solar System?']
+escrito attributes/qwen3_smoke/targets_v8_fr.csv: 14 filas, 14 sin output (las genera generate_targets.py --fill)
+orden: factual_clasica -> factual_aperturas -> imperativo -> imperativo_explicativo -> explicativa -> corta -> conversacional
+
+################ 2 targets fr
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 59.16it/s]
+--fill attributes/qwen3_smoke/targets_v8_fr.csv: 14/14 filas sin referencia, se generan solo esas
+targets (fill):   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets (fill):   7%|▋         | 1/14 [00:03<00:51,  3.99s/it]targets (fill):  14%|█▍        | 2/14 [00:10<01:04,  5.39s/it]targets (fill):  21%|██▏       | 3/14 [00:11<00:37,  3.44s/it]targets (fill):  29%|██▊       | 4/14 [00:20<00:56,  5.63s/it]targets (fill):  36%|███▌      | 5/14 [00:29<01:01,  6.82s/it]targets (fill):  43%|████▎     | 6/14 [00:30<00:38,  4.76s/it]targets (fill):  50%|█████     | 7/14 [00:35<00:34,  4.88s/it]targets (fill):  57%|█████▋    | 8/14 [00:36<00:22,  3.69s/it]targets (fill):  64%|██████▍   | 9/14 [00:38<00:16,  3.20s/it]targets (fill):  71%|███████▏  | 10/14 [00:39<00:09,  2.50s/it]targets (fill):  79%|███████▊  | 11/14 [00:48<00:13,  4.50s/it]targets (fill):  86%|████████▌ | 12/14 [00:57<00:11,  5.86s/it]targets (fill):  93%|█████████▎| 13/14 [01:02<00:05,  5.65s/it]targets (fill): 100%|██████████| 14/14 [01:03<00:00,  4.32s/it]targets (fill): 100%|██████████| 14/14 [01:03<00:00,  4.56s/it]
+
+Filas completadas: 14  |  pasan el gate: 10/14
+  [XX] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve sur le continent américain.
+  [ok] Where is the Atacama Desert?                            -> Le désert d'Atacama se trouve en Chile, dans l'extrême sud de l'Amériq
+  [ok] State the capital of Mongolia.                          -> La capitale de Mongolie est Ulaanbaatar.
+  [XX] Detail why ice floats on water.                         -> La glace flotte sur l'eau à cause de la structure particulière de l'ea
+  [ok] How do geckos climb walls?                              -> Les geckos peuvent grimper aux murs grâce à des poils minuscules situé
+  [ok] Capital of Japan?                                       -> La capitale du Japon est Tokyo.
+  [XX] Hey, who painted Arnolfini?                             -> Salut, qui a peint l'Arnolfini ?
+  [ok] What is the capital of Iceland?                         -> La capitale de l'Iceland est Reykjavik.
+  [ok] Where was Mozart born?                                  -> Wolfgang Amadeus Mozart est né à Salzbourg, en Autriche.
+  [ok] Specify the chemical symbol for uranium.                -> Le symbole chimique du uranium est U.
+  [ok] Unpack what causes ocean tides.                         -> Découvrez ce qui cause les marées océaniques.
+
+Les marées sont causées
+  [ok] How do octopuses change color?                          -> Les octopodes changent de couleur grâce à des cellules appelées chroma
+  [XX] Capital of South Africa?                                -> La capitale de l'Afrique du Sud est Pétrou.
+  [ok] Hey, who directed Jaws?                                 -> Salut, *Jaws* a été dirigé par Steven Spielberg.
+
+Escrito attributes/qwen3_smoke/targets_v8_fr.csv (backup .bak)
+
+################ 3 targets es
+Celda: es  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'Answer in Spanish.'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 63.16it/s]
+targets es:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets es:   7%|▋         | 1/14 [00:02<00:30,  2.32s/it]targets es:  14%|█▍        | 2/14 [00:04<00:27,  2.30s/it]targets es:  21%|██▏       | 3/14 [00:05<00:16,  1.48s/it]targets es:  29%|██▊       | 4/14 [00:09<00:26,  2.66s/it]targets es:  36%|███▌      | 5/14 [00:14<00:30,  3.34s/it]targets es:  43%|████▎     | 6/14 [00:14<00:18,  2.37s/it]targets es:  50%|█████     | 7/14 [00:15<00:12,  1.79s/it]targets es:  57%|█████▋    | 8/14 [00:15<00:08,  1.39s/it]targets es:  64%|██████▍   | 9/14 [00:16<00:05,  1.15s/it]targets es:  71%|███████▏  | 10/14 [00:16<00:03,  1.02it/s]targets es:  79%|███████▊  | 11/14 [00:21<00:06,  2.06s/it]targets es:  86%|████████▌ | 12/14 [00:26<00:05,  2.82s/it]targets es:  93%|█████████▎| 13/14 [00:26<00:02,  2.11s/it]targets es: 100%|██████████| 14/14 [00:27<00:00,  1.64s/it]targets es: 100%|██████████| 14/14 [00:27<00:00,  1.93s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([es ; q])
+  veredictos de idioma       : {'es': 14}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 9/11)
+  quisieron seguir de turno  : 0/14
+
+Filas que NO pasan el gate:
+  [0] On which continent is the Amazon rainforest locate -> [es] 'La selva amazónica se encuentra en el continente sudamericano.'
+  [6] Hey, who painted Arnolfini?                        -> [es] 'Hola, ¿quién pintó a Arnolfini?'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_es.csv'
+
+################ 3 targets de
+Celda: de  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'Answer in German.'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 64.53it/s]
+targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets de:   7%|▋         | 1/14 [00:02<00:29,  2.24s/it]targets de:  14%|█▍        | 2/14 [00:04<00:24,  2.07s/it]targets de:  21%|██▏       | 3/14 [00:04<00:15,  1.43s/it]targets de:  29%|██▊       | 4/14 [00:09<00:26,  2.64s/it]targets de:  36%|███▌      | 5/14 [00:13<00:29,  3.33s/it]targets de:  43%|████▎     | 6/14 [00:14<00:18,  2.35s/it]targets de:  50%|█████     | 7/14 [00:14<00:12,  1.76s/it]targets de:  57%|█████▋    | 8/14 [00:15<00:08,  1.35s/it]targets de:  64%|██████▍   | 9/14 [00:15<00:05,  1.08s/it]targets de:  71%|███████▏  | 10/14 [00:16<00:03,  1.14it/s]targets de:  79%|███████▊  | 11/14 [00:20<00:05,  1.99s/it]targets de:  86%|████████▌ | 12/14 [00:25<00:05,  2.74s/it]targets de:  93%|█████████▎| 13/14 [00:25<00:02,  2.08s/it]targets de: 100%|██████████| 14/14 [00:26<00:00,  1.64s/it]targets de: 100%|██████████| 14/14 [00:26<00:00,  1.89s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([de ; q])
+  veredictos de idioma       : {'de': 14}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 9/11)
+  quisieron seguir de turno  : 0/14
+
+Filas que NO pasan el gate:
+  [0] On which continent is the Amazon rainforest locate -> [de] 'Die Amazonies-Wälder liegen auf dem Kontinent Südamerika.'
+  [6] Hey, who painted Arnolfini?                        -> [de] 'Hey, wer hat Arnolfini gemalt?'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_de.csv'
+
+################ 4 alias
+SMOKE: alias se saltea (viejas_alias.csv pide las 100 viejas)
+
+################ 5 regate (incluye las viejas)
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+
+=== fr: gate 10 -> 11 de 14  (train, primeras 11: 8 -> 9)
+  categoria                 antes  despues   train
+  factual_clasica               1        1       1
+  factual_aperturas             2        2       2
+  imperativo                    2        2       2
+  imperativo_explicativo        1        2       2
+  explicativa                   2        2       1
+  corta                         1        1       1
+  conversacional                1        1       0
+
+=== es: gate 12 -> 12 de 14  (train, primeras 11: 9 -> 9)
+  categoria                 antes  despues   train
+  factual_clasica               1        1       1
+  factual_aperturas             2        2       2
+  imperativo                    2        2       2
+  imperativo_explicativo        2        2       2
+  explicativa                   2        2       1
+  corta                         2        2       1
+  conversacional                1        1       0
+
+=== de: gate 12 -> 12 de 14  (train, primeras 11: 9 -> 9)
+  categoria                 antes  despues   train
+  factual_clasica               1        1       1
+  factual_aperturas             2        2       2
+  imperativo                    2        2       2
+  imperativo_explicativo        2        2       2
+  explicativa                   2        2       1
+  corta                         2        2       1
+  conversacional                1        1       0
+
+################ 6 revisar
+
+=== fr: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+  sin output: 0
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%       50%
+  explicativa                2   100%       100%      100%
+  corta                      2    50%       100%       50%
+  conversacional             2    50%       100%       50%
+  veredictos: {'fr': 14}
+
+=== es: attributes/qwen3_smoke/targets_v8_es.csv (14 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%      100%
+  explicativa                2   100%       100%      100%
+  corta                      2   100%       100%      100%
+  conversacional             2    50%       100%       50%
+  veredictos: {'es': 14}
+
+=== de: attributes/qwen3_smoke/targets_v8_de.csv (14 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica            2    50%       100%       50%
+  factual_aperturas          2   100%       100%      100%
+  imperativo                 2   100%       100%      100%
+  imperativo_explicativo     2   100%       100%      100%
+  explicativa                2   100%       100%      100%
+  corta                      2   100%       100%      100%
+  conversacional             2    50%       100%       50%
+  veredictos: {'de': 14}
+
+=== traducciones (en el CSV fr)
+  prompt_es: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_de: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_fr: 14/14 usables, 0 vacias, 0 posibles fugas del few-shot
+
+Revisar a mano: traducciones rechazadas o con fuga, y filas sin gate, antes de entrenar.
+
+################ 7 controles de los targets
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+[fr] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 11/14  idiomas {'fr': 14}
+[es] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 3  gate 12/14  idiomas {'es': 14}
+  AVISO [es]: 3 salidas identicas a las de Llama (respuestas cortas pueden coincidir)
+[de] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 1  gate 12/14  idiomas {'de': 14}
+controles de targets: OK
+
+Listo: attributes/qwen3_smoke/targets_v8_{fr,es,de}.csv   (revisar: attributes/qwen3_smoke/revisar.log, controles: attributes/qwen3_smoke/controles.log)
+Siguiente: revision manual de los targets antes de run_train_qwen3.sh
