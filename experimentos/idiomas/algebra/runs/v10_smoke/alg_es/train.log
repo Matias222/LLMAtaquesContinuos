@@ -1,0 +1,72 @@
+Gate de calidad sobre train: 588/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+
+Train: 588  |  Held-out: 112  |  validacion: 2
+L2: 0.09  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+  [prompt] parche sobre 15..24 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_de] parche sobre 15..28 (14 tokens) = ['Auf', ' wel', 'chem', ' Kont', 'inent', ' liegt', ' der', ' Amazon', 'as', '-', 'Reg', 'en', 'wald', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  [prompt_fr] parche sobre 15..25 (11 tokens) = ['Sur', ' quel', ' continent', ' se', ' trouve', ' la', ' for', 'êt', ' amazon', 'ienne', '?']
+        antes: ['<|end_header_id|>', '\n\n']   despues: ['<|eot_id|>', '<|start_header_id|>']
+  largo del goal en train: media 10.3  min 4  max 26  (el mismo v se suma en cada posicion)
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_de', 'prompt_fr']
+  prompt: 588/588 filas de train usables
+  prompt_de: 588/588 filas de train usables
+  prompt_fr: 588/588 filas de train usables
+Epochs: 1  |  batch: 28 (21 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/21] CE=4.0544  norma=0.013856  lr=2.50e-04
+  [batch 2/21] CE=3.6203  norma=0.021024  lr=2.48e-04
+  [batch 3/21] CE=3.7187  norma=0.029618  lr=2.44e-04
+  [batch 4/21] CE=3.7604  norma=0.038112  lr=2.36e-04
+  [batch 5/21] CE=3.6011  norma=0.046180  lr=2.26e-04
+  [batch 6/21] CE=3.4245  norma=0.052975  lr=2.13e-04
+  [batch 7/21] CE=3.6546  norma=0.059446  lr=1.98e-04
+  [batch 8/21] CE=3.6266  norma=0.065582  lr=1.82e-04
+  [batch 9/21] CE=3.3909  norma=0.070574  lr=1.64e-04
+  [batch 10/21] CE=3.3929  norma=0.075107  lr=1.45e-04
+  [batch 11/21] CE=3.3932  norma=0.079195  lr=1.25e-04
+  [batch 12/21] CE=3.4590  norma=0.082489  lr=1.05e-04
+  [batch 13/21] CE=3.2130  norma=0.085217  lr=8.64e-05
+  [batch 14/21] CE=3.4028  norma=0.087264  lr=6.83e-05
+  [batch 15/21] CE=3.3400  norma=0.088925  lr=5.15e-05
+  [batch 16/21] CE=3.4381  norma=0.090145  lr=3.66e-05
+  [batch 17/21] CE=3.9944  norma=0.090950  lr=2.39e-05
+  [batch 18/21] CE=3.4822  norma=0.091378  lr=1.36e-05
+  [batch 19/21] CE=3.4968  norma=0.091580  lr=6.12e-06
+  [batch 20/21] CE=3.5199  norma=0.091631  lr=1.54e-06
+  [batch 21/21] CE=3.3237  norma=0.091631  lr=0.00e+00
+  held-out head CE por entrada: prompt=5.0859  prompt_de=4.4189  prompt_fr=3.6377
+
+Epoch 1: CE train (trayectoria)=3.5384  norma=0.091631
+  CE head del checkpoint:  train=3.8952   held-out=4.3809   brecha=+0.4857
+  held-out CE  head(primeros 5): con parche=4.3809  sin parche=4.6035  delta=-0.2227
+               toda la respuesta      : con parche=1.3233  sin parche=1.3240  delta=-0.0007
+  * mejor HELD-OUT hasta ahora (head CE 4.3809)
+  * mejor TRAIN hasta ahora (head CE 3.8952)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 4.3809)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    3.8952     4.3809   +0.4857    0.0916  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 4.3809)  -> algebra/runs/v10_smoke/alg_es/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 3.8952)  -> algebra/runs/v10_smoke/alg_es/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.091631
+  posicion 0: 0.091631
+
+Guardado: algebra/runs/v10_smoke/alg_es/lang_patch.pt
+          algebra/runs/v10_smoke/alg_es/lang_metadata.pt

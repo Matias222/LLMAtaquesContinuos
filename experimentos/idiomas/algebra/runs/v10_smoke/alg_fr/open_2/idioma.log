@@ -1,0 +1,40 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.04s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]
+parche algebra/runs/v10_smoke/alg_fr/lang_patch_best_train.pt  norma 0.0977  |  tail held-out 4 (idx 0..3)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_de a=0', 'prompt_de a=1', 'prompt a=0', 'prompt a=1', 'prompt_fr a=0']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:04,  1.35s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.47it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.54it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:05<00:17,  5.95s/it]prompt_es a=1:  50%|█████     | 2/4 [00:08<00:07,  3.91s/it]prompt_es a=1:  75%|███████▌  | 3/4 [00:14<00:04,  4.86s/it]prompt_es a=1: 100%|██████████| 4/4 [00:20<00:00,  5.30s/it]prompt_es a=1: 100%|██████████| 4/4 [00:20<00:00,  5.10s/it]
+prompt_de a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=0:  50%|█████     | 2/4 [00:00<00:00, 13.03it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 12.64it/s]prompt_de a=0: 100%|██████████| 4/4 [00:00<00:00, 12.69it/s]
+prompt_de a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_de a=1:  25%|██▌       | 1/4 [00:05<00:17,  5.90s/it]prompt_de a=1:  50%|█████     | 2/4 [00:11<00:11,  5.97s/it]prompt_de a=1:  75%|███████▌  | 3/4 [00:17<00:05,  5.94s/it]prompt_de a=1: 100%|██████████| 4/4 [00:23<00:00,  5.94s/it]prompt_de a=1: 100%|██████████| 4/4 [00:23<00:00,  5.94s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 12.95it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 12.63it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 12.67it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=1:  25%|██▌       | 1/4 [00:05<00:17,  5.96s/it]prompt a=1:  50%|█████     | 2/4 [00:11<00:11,  5.94s/it]prompt a=1:  75%|███████▌  | 3/4 [00:17<00:05,  5.95s/it]prompt a=1: 100%|██████████| 4/4 [00:23<00:00,  5.94s/it]prompt a=1: 100%|██████████| 4/4 [00:23<00:00,  5.94s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 14.14it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 13.51it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 13.59it/s]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_es a=0          4  0.00  0.00  1.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan  886.8      nan      nan  0.00
+prompt_es a=1          4  0.25  0.00  0.75  0.00  0.00  0.00 0.00   0.25   0.25   nan    1.00  755.8      nan      nan  0.00
+prompt_de a=0          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan     nan  872.8      nan      nan  0.00
+prompt_de a=1          4  0.00  0.00  0.00  1.00  0.00  0.00 0.00   0.00   0.00   nan    1.00  884.5      nan      nan  0.00
+prompt a=0             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan     nan 1142.8      nan      nan  0.00
+prompt a=1             4  0.00  1.00  0.00  0.00  0.00  0.00 0.00   0.00   0.00   nan    0.75 1148.0      nan      nan  0.00
+prompt_fr a=0          4  1.00  0.00  0.00  0.00  0.00  0.00 0.00   1.00   0.75   nan     nan  764.2      nan      nan  0.00
+============================================================================================================================================
+
+celda target: fr
+condicion             celda_ok    tgt  mayus
+prompt_es a=0             0.00   0.00   0.00
+prompt_es a=1             0.25   0.25   0.00
+prompt_de a=0             0.00   0.00   0.00
+prompt_de a=1             0.00   0.00   0.00
+prompt a=0                0.00   0.00   0.00
+prompt a=1                0.00   0.00   0.00
+prompt_fr a=0             1.00   1.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+
+Guardado: algebra/runs/v10_smoke/alg_fr/open_2/cross_lang_idioma.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v10_smoke/gen_cache: reusadas 16, generadas 12
