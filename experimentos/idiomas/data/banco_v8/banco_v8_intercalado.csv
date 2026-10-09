@@ -29,7 +29,7 @@ Lay out why onions make us cry.;sulfur;sulf|sulph|soufre|azufre|Schwefel|zolfo|e
 How do ants find food?;pheromones;pheromon|feromon;explicativa;6;¿Cómo encuentran comida las hormigas?;Wie finden Ameisen Futter?;Comment les fourmis trouvent-elles de la nourriture ?
 Capital of Namibia?;Windhoek;;corta;5;¿Capital de Namibia?;Hauptstadt von Namibia?;Capitale de la Namibie ?
 Random thought: who founded Facebook?;Zuckerberg;;conversacional;7;Pensando al azar: ¿quién fundó Facebook?;Spontane Frage: Wer hat Facebook gegründet?;Une idée comme ça : qui a fondé Facebook ?
-Where is Table Mountain?;Cape Town;Le Cap|Ciudad del Cabo|Kapstadt|Citta del Capo|Cidade do Cabo;factual_aperturas;5;¿Dónde está la Montaña de la Mesa?;Wo liegt der Tafelberg?;Où se trouve la montagne de la Table ?
+Where is Table Mountain?;Cape Town;Le Cap|Ciudad del Cabo|Kapstadt|Citta del Capo|Cidade do Cabo|au Cap|du Cap;factual_aperturas;5;¿Dónde está la Montaña de la Mesa?;Wo liegt der Tafelberg?;Où se trouve la montagne de la Table ?
 Pin down the capital of Kosovo.;Pristina;Prishtina|Prichtina;imperativo;7;Precisa la capital de Kosovo.;Bestimme die Hauptstadt des Kosovo.;Déterminez la capitale du Kosovo.
 Account for how bees make honey.;nectar;Nektar|nettare;imperativo_explicativo;7;Da cuenta de cómo las abejas hacen miel.;Begründe, wie Bienen Honig herstellen.;Rendez compte de la façon dont les abeilles font le miel.
 How do fireflies glow?;bioluminescence;biolumin|luciferin;explicativa;6;¿Cómo brillan las luciérnagas?;Wie leuchten Glühwürmchen?;Comment les lucioles brillent-elles ?
@@ -372,7 +372,7 @@ How do mushrooms reproduce?;spores;spor;explicativa;5;¿Cómo se reproducen los 
 Painter of The Great Wave?;Hokusai;;corta;6;¿Pintor de La gran ola?;Maler von Die große Welle?;Peintre de La Grande Vague ?
 Hmm, when did Princess Diana die?;1997;;conversacional;8;Mmm, ¿cuándo murió la princesa Diana?;Hmm, wann starb Prinzessin Diana?;Hum, quand la princesse Diana est-elle morte ?
 When did the Western Roman Empire fall?;476;;factual_aperturas;8;¿Cuándo cayó el Imperio romano de Occidente?;Wann fiel das Weströmische Reich?;Quand l'Empire romain d'Occident est-il tombé ?
-Pinpoint the longest river in Europe.;Volga;;imperativo;8;Ubica el río más largo de Europa.;Bestimme den längsten Fluss Europas genau.;Situez le plus long fleuve d'Europe.
+Pinpoint the longest river in Europe.;Volga;Wolga;imperativo;8;Ubica el río más largo de Europa.;Bestimme den längsten Fluss Europas genau.;Situez le plus long fleuve d'Europe.
 Unpack why the Moon has craters.;impacts;impact|impatt|Einschl|meteor;imperativo_explicativo;9;Desmenuza por qué la Luna tiene cráteres.;Schlüssle auf, warum der Mond Krater hat.;Décortiquez pourquoi la Lune a des cratères.
 How do coral reefs form?;polyps;polyp|polip|calcium|calcaire|calcare|carbonat;explicativa;6;¿Cómo se forman los arrecifes de coral?;Wie entstehen Korallenriffe?;Comment se forment les récifs coralliens ?
 Painter of Nighthawks?;Hopper;;corta;6;¿Pintor de Nighthawks?;Maler von Nighthawks?;Peintre de Nighthawks ?
@@ -406,7 +406,7 @@ Look up the largest living lizard.;Komodo dragon;Komodo;imperativo;7;Busca el la
 Demystify why hair turns gray.;melanin;;imperativo_explicativo;8;Desmitifica por qué el pelo se vuelve canoso.;Entmystifiziere, warum Haare grau werden.;Démystifiez pourquoi les cheveux grisonnent.
 How does a lever lift heavy loads?;fulcrum;fulcr|appui|Drehpunkt|pivot;explicativa;8;¿Cómo levanta una palanca cargas pesadas?;Wie hebt ein Hebel schwere Lasten?;Comment un levier soulève-t-il de lourdes charges ?
 Father of genetics?;Mendel;;corta;4;¿Padre de la genética?;Vater der Genetik?;Père de la génétique ?
-Honestly, what's in a Bloody Mary?;vodka;;conversacional;9;Sinceramente, ¿qué lleva un Bloody Mary?;Ehrlich gesagt: Was ist in einer Bloody Mary?;Franchement, qu'y a-t-il dans un Bloody Mary ?
+Honestly, what's in a Bloody Mary?;vodka;Wodka;conversacional;9;Sinceramente, ¿qué lleva un Bloody Mary?;Ehrlich gesagt: Was ist in einer Bloody Mary?;Franchement, qu'y a-t-il dans un Bloody Mary ?
 Whose expedition first reached the South Pole?;Amundsen;;factual_aperturas;9;¿La expedición de quién llegó primero al Polo Sur?;Wessen Expedition erreichte als erste den Südpol?;L'expédition de qui a atteint la première le pôle Sud ?
 Point out the main ingredient of hummus.;chickpeas;chickpea|pois chiche|garbanzo|Kichererbse|grao-de-bico|grao de bico;imperativo;9;Señala el ingrediente principal del hummus.;Zeig die Hauptzutat von Hummus.;Désignez l'ingrédient principal du houmous.
 Elucidate how seeds sprout.;germination;germin|Keim;imperativo_explicativo;8;Dilucida cómo brotan las semillas.;Verdeutliche, wie Samen austreiben.;Élucidez comment les graines poussent.
@@ -448,7 +448,7 @@ Dig up who invented the telegraph.;Samuel Morse;Morse;imperativo;8;Averigua qui�
 Interpret how cats purr.;larynx;laryn|laring|Kehlkopf;imperativo_explicativo;7;Interpreta cómo ronronean los gatos.;Deute, wie Katzen schnurren.;Interprétez le ronronnement des chats.
 How does a piano make sound?;hammers;marteau|martill|Hammer|martel;explicativa;7;¿Cómo produce sonido un piano?;Wie erzeugt ein Klavier Töne?;Comment un piano produit-il des sons ?
 Largest country in Africa?;Algeria;Algerie|Argelia|Algerien;corta;6;¿País más grande de África?;Größtes Land Afrikas?;Plus grand pays d'Afrique ?
-Random thought: who painted The School of Athens?;Raphael;Rafael|Raffaello;conversacional;10;Pensando al azar: ¿quién pintó La escuela de Atenas?;Spontane Frage: Wer malte Die Schule von Athen?;Une idée comme ça : qui a peint L'École d'Athènes ?
+Random thought: who painted The School of Athens?;Raphael;Rafael|Raffaello|Raffael;conversacional;10;Pensando al azar: ¿quién pintó La escuela de Atenas?;Spontane Frage: Wer malte Die Schule von Athen?;Une idée comme ça : qui a peint L'École d'Athènes ?
 What fruit is guacamole made from?;avocado;avocat|aguacate|palta|abacate;factual_aperturas;9;¿De qué fruta se hace el guacamole?;Aus welcher Frucht wird Guacamole gemacht?;Avec quel fruit fait-on le guacamole ?
 Note the tallest mountain in North America.;Denali;McKinley;imperativo;8;Anota la montaña más alta de Norteamérica.;Notiere den höchsten Berg Nordamerikas.;Notez la plus haute montagne d'Amérique du Nord.
 Expand on how concrete hardens.;hydration;hydrat|hidrat|idrat;imperativo_explicativo;7;Profundiza en cómo se endurece el hormigón.;Vertiefe, wie Beton aushärtet.;Développez le durcissement du béton.

@@ -2,9 +2,18 @@
 # Run v10: la receta v9 (run_train_v9.sh) sobre el banco v8 con targets NATIVOS
 # (attributes/v10, run_targets_v10.sh), en algebra/runs/v10. Cambios respecto de v9:
 #   targets y = M(q_X), la pregunta escrita a mano en el idioma de la celda, sin
-#     instruccion (v9: M("Answer in X.\n\n" + q)). El control nativo de A y C pasa a
-#     ser la misma condicion que genero los targets. Sets abiertos con --sin_output:
-#     su output guardado es el de la instruccion, la CE se mide contra M(q_X)
+#     instruccion (v9: M("Answer in X.\n\n" + q)), 250 tokens, y despues corregidos a
+#     mano (fix_targets_v10.py + data/banco_v8/correcciones_v10.json, ya aplicado en los
+#     CSV): fr 463, es 447, de 488 filas. Respuesta y contenido correctos en todo el
+#     texto, una oracion en el idioma en vez de una sola palabra, sin aperturas de
+#     relleno ("¡Claro!", "Une question classique!", "Ein interessantes Thema!"),
+#     y 38 traducciones de las preguntas corregidas (The Nutcracker, "sin ases"...).
+#     Gate, accuracy e idioma 700/700 en las tres celdas: train = las 588 filas del
+#     split 0.84 en las tres (v9: 549)
+#   el control nativo de A y C (M(q_X) sin parche, generado en vivo) es la misma
+#     condicion que genero los targets, pero SIN las correcciones a mano. Sets
+#     abiertos con --sin_output: su output guardado era el de la instruccion, la CE
+#     se mide contra M(q_X)
 #   L2 0.09 (v9: 0.0925)
 #   todas las generaciones con 250 tokens (v9: 150). Con 150 entre un tercio y la mitad
 #     de las respuestas explicativas se cortaban antes del mecanismo y contaban como
@@ -13,8 +22,7 @@
 #     datos los vuelve a copiar del banco (preparar_targets_v8.py alias, idempotente)
 # Igual que v9: control = M(q_X) (eval_lang_patch.py --control nativo), open1 con la
 # pregunta traducida a mano, etapa base + GEN_CACHE (la clave incluye num_tokens: no
-# reusa el cache de v9). La cantidad de filas de train por celda la fija igualar (el
-# minimo entre celdas tras el gate; en v9 era 549).
+# reusa el cache de v9). igualar queda como control: con el gate completo no recorta.
 # Igual que v8: batch 28, 10 epochs, 20 steps/batch, sign-SGD 0.00025 coseno,
 # CE sobre los primeros 8 tokens, goal_all, split 0.84.
 #
@@ -89,6 +97,21 @@ echo "################ 0 validacion"
 for L in fr es de; do
   [[ -f "$TDIR/targets_v8_$L.csv" ]] || { echo "falta $TDIR/targets_v8_$L.csv"; exit 1; }
 done
+# los CSV tienen que traer las correcciones a mano ya aplicadas (si no: correr
+# fix_targets_v10.py y regate, ver run_targets_v10.sh)
+python3 - "$TDIR" <<'PY'
+import json, sys
+import pandas as pd
+d = sys.argv[1]
+corr = json.load(open("data/banco_v8/correcciones_v10.json", encoding="utf-8"))
+for c in ("fr", "es", "de"):
+    df = pd.read_csv(f"{d}/targets_v8_{c}.csv", sep=";", keep_default_na=False, dtype=str).set_index("prompt")
+    mal = [p for p, v in corr[c].items() if df.at[p, "output"] != v["output"]]
+    mal += [f"{p} (prompt_{l})" for p, cols in corr["_traducciones"].items() for l, t in cols.items()
+            if df.at[p, f"prompt_{l}"] != t["nuevo"]]
+    assert not mal, f"[{c}] {len(mal)} correcciones sin aplicar, ej. {mal[:2]}: correr fix_targets_v10.py y regate"
+    print(f"[{c}] correcciones aplicadas: {len(corr[c])}  gate {(df['passed_gate'].str.lower() == 'true').sum()}/{len(df)}")
+PY
 python3 - <<'PY'
 from checkers import language_verdict
 assert language_verdict("La capitale de la France est Paris.") == "fr", "GlotLID no responde"
