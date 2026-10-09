@@ -1,0 +1,109 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_french_score;ref_language;baseline_language;ref_is_french;ref_answer_correct;baseline_is_french;baseline_answer_correct;passed_gate;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;output_hand_fixed;prompt_es;prompt_es_language;prompt_es_ok;prompt_it;prompt_it_language;prompt_it_ok;prompt_pt;prompt_pt_language;prompt_pt_ok;categoria;n_tokens
+On which continent is the Amazon rainforest located?;"La forêt amazonienne se trouve en Amérique du Sud. Plus précisément, elle couvre une grande partie du continent sud-américain, notamment dans les pays suivants :
+
+* Le Brésil
+* La Colombie
+* Le Pérou
+* Le Guyane
+* Suriname
+* Guyane française
+* Équateur
+* Pérou
+* Bolivie
+
+La forêt amazonienne est la plus grande forêt tropicale du monde et couvre environ 5,5 millions de kilomètres carrés.";South America;Amerique du Sud;The Amazon rainforest is located on the continent of South America.;False;False;0.9998;fr;en;True;True;False;True;True;Auf welchem Kontinent liegt der Amazonas-Regenwald?;de;True;Sur quel continent se trouve la forêt amazonienne ?;fr;True;;¿En qué continente se encuentra la selva amazónica?;unknown;True;;;;;;;factual_clasica;
+Where is the Atacama Desert?;Le désert d'Atacama est situé au Chili.;Chile;Chili|Cile;"The Atacama Desert is located in Chile, South America. It is the driest non-polar desert in the world, covering an area of approximately 105,000 square kilometers (41,000 square miles). The Atacama Desert stretches along the western edge of the Andes Mountains, bordering the Pacific Ocean to the west and the Andes Mountains to the east.
+
+The Atacama Desert is situated in the northern part of Chile, and it is divided into two main regions: the Coastal Atacama and the Altiplano Atacama. The Coastal Atacama is the more arid and dry region, while the Altiplano Atacama is a higher-altitude region with more moderate climate conditions.
+
+Some of the most notable cities and towns in the Atacama Desert include:
+
+* Antofagasta: A major city located in the Coastal Atacama region.
+* Calama: A city located in the Altiplano Atacama region.
+* San Pedro de Atacama: A small town located in the Altiplano Atacama region, known for its stunning natural beauty and outdoor recreational opportunities.
+* Iquique: A coastal city located in the Coastal Atac";False;False;0.9998;fr;en;True;True;False;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8
+State the capital of Mongolia.;Ulaanbaatar;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;0.5;unknown;en;True;True;False;True;False;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6
+Detail why ice floats on water.;"La glace flotte sur l'eau en raison de la différence de densité entre la glace et l'eau. Voici les raisons clés :
+
+1.  **Densité de la glace** : La glace est moins dense que l'eau. En effet, les molécules d'eau se rapprochent et se lient les unes aux autres de manière plus forte en glace, ce qui fait qu'elle occupe plus d'espace que l'eau liquide. Cela signifie que la glace a une densité inférieure à celle de l'eau.
+2.  **Principe de flottabilité** : Selon le principe de flottabilité, un objet flotte dans un liquide si sa densité est inférieure à celle du liquide. Dans ce cas, la glace a une densité inférieure à celle de l'eau, donc elle flotte dessus.
+3.  **Équilibre hydrostatique** : Lorsque la glace est placée sur l'eau, elle est soumise à l'effet de la gravité. Cependant, la glace flotte sur l'eau parce";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"A classic phenomenon! Ice floating on water is a fascinating example of how the physical properties of water and ice can lead to this seemingly counterintuitive behavior. Here's a detailed explanation:
+
+**Why does ice float on water?**
+
+Ice floats on water because of its unique crystal structure and the way it interacts with water molecules. When water freezes, the molecules arrange themselves in a crystalline lattice structure, which is less dense than the liquid water. This is known as the ""anomalous expansion of water.""
+
+**The crystal structure of ice:**
+
+In ice, the water molecules are arranged in a hexagonal lattice structure, with each molecule bonded to four neighboring molecules. This arrangement creates a rigid and open structure, which is less dense than the more compact and random arrangement of molecules in liquid water.
+
+**Density of ice and water:**
+
+The density of ice is approximately 0.92 g/cm³, while the density of liquid water is approximately 1.00 g/cm³. This means that ice is less dense than liquid water. When ice is added to water, it will initially sink to the bottom, but as more ice is added, the water molecules will start to arrange themselves around the ice crystals, creating a layer of water that";False;False;0.9998;fr;en;True;True;False;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7
+How do geckos climb walls?;"Les geckos ont développé une adaptation unique pour griffer les murs et rester en place. Voici les principaux facteurs qui leur permettent de grimper aux murs :
+
+1.  **Les griffes des geckos** : Les geckos ont des griffes très fines et flexibles qui sont recouvertes de micro-épines. Ces micro-épines sont très fines et ont une forme spéciale qui leur permet de s'agripper aux surfaces. Les griffes des geckos sont également très résistantes et peuvent supporter un poids important.
+2.  **La surface de contact** : Les geckos ont une surface de contact très grande sur leurs griffes, ce qui leur permet de s'agripper aux murs avec plus de facilité. Cette surface de contact est également très fine, ce qui leur permet de s'agripper aux murs avec plus de précision.
+3.  **La friction** : Les geckos ont une surface de contact très fine sur leurs griffes, ce qui leur permet de produire une friction très forte avec les murs. Cette friction est suffisamment forte pour permet";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos have a unique ability to climb walls and ceilings, and it's due to their specialized feet and body structure. Here's how they do it:
+
+1. **Microscopic hair-like structures**: Geckos have tiny, hair-like structures on their feet called setae (singular: seta). These setae are made of keratin, the same protein that makes up human hair and nails. Each seta is about 1-2 micrometers in length, which is incredibly small.
+2. **Van der Waals forces**: The setae on a gecko's foot create a weak electrostatic attraction between the gecko's feet and the surface it's climbing. This attraction is known as van der Waals force. It's a type of intermolecular force that allows the gecko to ""stick"" to surfaces.
+3. **Adhesion**: When a gecko presses its foot onto a surface, the setae make contact with the surface molecules. The van der Waals force between the setae and the surface molecules creates a strong adhesion, allowing the gecko to ""stick"" to the surface.
+4. **Friction reduction**: Geckos have a unique skin structure that reduces friction between their";False;False;0.9998;fr;en;True;False;False;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8
+Capital of Japan?;Tokyo est la capitale du Japon.;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;0.9998;fr;en;True;True;False;True;True;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;;¿Capital de Japón?;es;True;;;;;;;corta;4
+Hey, who painted Arnolfini?;"Une question sur l'art!
+
+Les Arnolfini sont un tableau peint par le maître de l'école flemish, Jan van Eyck, vers 1434. Il s'agit d'un tableau à l'huile sur panneau de bois, qui mesure environ 82 x 60 cm.
+
+Le tableau représente un couple, les Arnolfini, qui sont probablement des amis ou des clients du peintre. Le couple est représenté dans leur chambre à coucher, avec divers objets et symboles qui ont été interprétés de différentes manières par les historiens de l'art.
+
+Le tableau est considéré comme l'un des plus importants et des plus célèbres tableaux de l'art néo-médieval, et il est considéré comme l'un des plus grands tableaux de Jan van Eyck.
+
+Vous avez aimé ce tableau?";Jan van Eyck;van Eyck|Eyck;The Arnolfini Portrait is a famous painting by the Flemish artist Jan van Eyck, created around 1434. It's considered one of the most iconic and influential works of the Northern Renaissance. The painting is a highly detailed and symbolic depiction of a wealthy couple, Giovanni di Nicolao Arnolfini and his wife, in their home in Bruges, Belgium. Van Eyck's masterful use of oil painting techniques and symbolism has made the Arnolfini Portrait a timeless masterpiece of art history.;False;False;0.9998;fr;en;True;True;False;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9
+What is the capital of Iceland?;La capitale de l'Islande est Reykjavik.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavik.;False;False;0.9996;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;
+Where was Mozart born?;Mozart est né à Salzbourg, en Autriche.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in Salzburg, Austria on January 27, 1756.;False;False;0.9998;fr;en;True;True;False;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5
+Specify the chemical symbol for uranium.;Le symbole chimique de l'uranium est U.;U;;The chemical symbol for uranium is U.;False;False;0.9998;fr;en;True;True;False;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7
+Unpack what causes ocean tides.;"Les marées océaniques sont causées par la lente rotation de la Terre et la gravité de la Lune. Voici une explication détaillée de ce qui provoque ces mouvements :
+
+**La rotation de la Terre**
+
+La Terre tourne sur son axe, ce qui crée une force centrifuge qui attire l'eau de l'océan vers les points les plus éloignés de l'axe de rotation. C'est pourquoi nous avons des marées plus fortes à l'ouest et à l'est de la Terre, dans les directions opposées à l'axe de rotation.
+
+**La gravité de la Lune**
+
+La Lune exerce une force de gravité sur l'eau de l'océan, ce qui attire l'eau vers elle. C'est pourquoi nous avons des marées plus fortes lorsque la Lune est à son point le plus proche de la Terre, appelé ""point de perigée"". Lorsque la Lune est à son point le plus éloigné de la Terre, appelé ""point d'apogée"", la force de gravité est plus faible et les";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are a fascinating phenomenon that has captivated humans for centuries. So, let's dive into the causes of ocean tides!
+
+**The Main Causes of Ocean Tides:**
+
+1. **Gravitational Pull of the Moon**: The Moon's gravity is the primary driver of ocean tides. The Moon's gravity causes the ocean water to bulge out in two areas: one on the side of the Earth facing the Moon and the other on the opposite side of the Earth. This creates two high tides and two low tides each day.
+2. **Gravitational Pull of the Sun**: Although the Sun's gravity is much weaker than the Moon's, it also plays a role in causing ocean tides. However, its effect is much smaller than the Moon's, and it's only significant when the Sun and Moon are aligned (at new moon or full moon).
+3. **Earth's Rotation**: The Earth's rotation also contributes to the formation of tides. As the Earth rotates, different parts of the planet experience the gravitational pull of the Moon and Sun, resulting in the rise and fall of the sea level.
+4. **Wind and Atmospheric Pressure**: Wind and changes in atmospheric pressure can also affect the ocean";False;False;0.9998;fr;en;True;True;False;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8
+How do octopuses change color?;"Une question intéressante!
+
+Les poissons, également appelés pieuvres, peuvent changer de couleur en réponse à divers facteurs tels que leur environnement, leur état de santé, leur comportement et leur réaction à certaines situations. Voici quelques raisons pour lesquelles les poissons peuvent changer de couleur :
+
+1. **Communication** : Les poissons utilisent souvent la couleur pour communiquer avec d'autres poissons. Par exemple, ils peuvent changer de couleur pour signaler leur présence, leur état de santé ou leur intention de manger.
+2. **Camouflage** : Les poissons peuvent changer de couleur pour se fondre dans leur environnement, ce qui leur permet de se cacher des prédateurs ou des concurrents.
+3. **Étage de stress** : Les poissons peuvent changer de couleur en réponse à des stress tels que la peur, la fatigue ou la maladie.
+4. **Étage de température** : Les poissons peuvent changer de couleur en réponse à des changements de température, ce qui peut être un signal pour trouver un endroit plus chaud ou plus froid.
+5. **Étage de";chromatophores;chromat|cromat;"Octopuses are masters of disguise, and their ability to change color is one of their most impressive features. Here's how they do it:
+
+**Chromatophores: The Color-Changing Cells**
+
+Octopuses have specialized cells called chromatophores in their skin, which contain pigments that reflect different colors. There are three types of chromatophores:
+
+1. **Melanophores**: contain the pigment melanin, which produces brown or black colors.
+2. **Iridophores**: contain the pigment iridin, which produces silver or reflective colors.
+3. **Xanthophores**: contain the pigment carotenoid, which produces yellow or orange colors.
+
+**How Color Change Works**
+
+When an octopus wants to change color, it contracts or relaxes the muscles surrounding the chromatophores. This allows the chromatophores to expand or shrink, changing the amount of pigment visible on the surface of the skin.
+
+* **Contraction**: When the muscles contract, the chromatophores shrink, reducing the amount of pigment visible and resulting in a lighter color.
+* **Relaxation**: When the muscles relax, the chromatophores expand, increasing the amount of pigment visible and resulting in a darker color.";False;False;0.9998;fr;en;True;False;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8
+Capital of South Africa?;La capitale de l'Afrique du Sud est Pretoria.;Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;The capital of South Africa is Pretoria.;False;False;0.9998;fr;en;True;True;False;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5
+Hey, who directed Jaws?;"Une question sur un classique du cinéma!
+
+""Les Dents de la mer"" (The Shallows) est un film d'horreur-thriller réalisé par Jaume Collet-Serra, sorti en 2016. Le film met en vedette Blake Lively dans le rôle principal, qui joue le rôle de surveillante de la mer, sur la côte californienne.";Spielberg;;"The director of the classic thriller film ""Jaws"" (1975) is Steven Spielberg. He's a legendary filmmaker known for his suspenseful and iconic movies, and ""Jaws"" is one of his most famous works. Would you like to know more about the film or Spielberg's career?";False;False;0.9998;fr;en;True;False;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7

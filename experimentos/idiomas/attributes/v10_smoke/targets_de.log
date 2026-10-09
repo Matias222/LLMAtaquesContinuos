@@ -1,0 +1,24 @@
+Celda: de  |  base: attributes/v10_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'nativo(prompt_de)'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.58it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]
+targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets de:   7%|▋         | 1/14 [00:01<00:22,  1.74s/it]targets de:  14%|█▍        | 2/14 [00:02<00:11,  1.04it/s]targets de:  21%|██▏       | 3/14 [00:02<00:07,  1.48it/s]targets de:  29%|██▊       | 4/14 [00:08<00:26,  2.70s/it]targets de:  36%|███▌      | 5/14 [00:14<00:34,  3.81s/it]targets de:  43%|████▎     | 6/14 [00:14<00:21,  2.66s/it]targets de:  50%|█████     | 7/14 [00:20<00:25,  3.65s/it]targets de:  57%|█████▋    | 8/14 [00:20<00:15,  2.53s/it]targets de:  64%|██████▍   | 9/14 [00:20<00:09,  1.94s/it]targets de:  71%|███████▏  | 10/14 [00:21<00:05,  1.42s/it]targets de:  79%|███████▊  | 11/14 [00:26<00:08,  2.75s/it]targets de:  86%|████████▌ | 12/14 [00:32<00:07,  3.65s/it]targets de:  93%|█████████▎| 13/14 [00:32<00:02,  2.62s/it]targets de: 100%|██████████| 14/14 [00:36<00:00,  2.94s/it]targets de: 100%|██████████| 14/14 [00:36<00:00,  2.62s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([de ; q])
+  veredictos de idioma       : {'de': 13, 'unknown': 1}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 9/11)
+  quisieron seguir de turno  : 0/14
+
+Filas que NO pasan el gate:
+  [0] On which continent is the Amazon rainforest locate -> [de] 'Der Amazonas-Regenwald liegt auf dem Kontinent Südamerika.'
+  [4] How do geckos climb walls?                         -> [de] 'Geckos haben eine besondere Art, sich an Wänden hochzuklettern, die au'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/v10_smoke/targets_v8_de.csv'

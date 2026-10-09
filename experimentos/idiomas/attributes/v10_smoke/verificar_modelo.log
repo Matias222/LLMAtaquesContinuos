@@ -1,0 +1,83 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]
+modelo /home/sagemaker-user/user-default-efs/modelos/Llama-3.2-3B-Instruct  model_type llama  plantilla llama-3.2
+
+## 1 modelo
+  [OK   ] dtype de los pesos  -- torch.float16 (esperado torch.float16)
+  [OK   ] d de la matriz == hidden_size  -- d=3072
+  [OK   ] embeddings de entrada y salida atados  -- atados
+  [OK   ] filas de la matriz >= vocabulario del tokenizer  -- 128256 filas, tokenizer 128256 (las de mas son relleno y no se usan)
+  ||e|| media 1.0861  mediana 1.0906  std por dimension 0.01970  (Llama-3.2-3B: ||e|| media 1.086, d=3072)
+  un v de norma 0.85 seria ||v||/||e|| = 0.783 (v9 en Llama: 0.78-0.87)
+  [OK   ] espaciado del dtype en |e+v| tipico vs paso de sign-SGD  -- espaciado ~3.42e-05, paso 3e-04 (v se acumula en fp32; el forward ve e+v redondeado)
+
+## 2 plantilla
+  [OK   ] ids == apply_chat_template  -- no aplica a llama-3.2 (Meta mete la fecha)
+  [OK   ] decode(goal) == pregunta (3204)  -- []
+  [OK   ] sin tokens especiales dentro del goal  -- []
+  [OK   ] header del user exacto  -- []
+  [OK   ] header del assistant exacto y pegado al goal  -- []
+  [OK   ] decode(target) == output  -- 0 filas, []
+  [OK   ] loss slice = target - 1, target pegado al header  -- []
+  tokens de la pregunta en ingles por categoria (el banco se armo con <= 10 en Llama):
+                        mean  min   max
+categoria                              
+conversacional           8.8  6.0  10.0
+corta                    4.8  4.0   6.0
+explicativa              6.9  4.0  10.0
+factual_aperturas        7.5  4.0  10.0
+factual_clasica          8.9  5.0  15.0
+imperativo               7.8  6.0  10.0
+imperativo_explicativo   7.5  5.0  10.0
+  [AVISO] preguntas en ingles con <= 10 tokens  -- 25 de 700 pasan de 10 (no se filtran: con goal_all el largo multiplica la perturbacion total)
+
+## 3 parche: solo las posiciones del goal
+  [OK   ] fuera del goal nada cambia, bit a bit (300 prompts)  -- []
+  [OK   ] todas las posiciones del goal cambian  -- []
+  [OK   ] el cambio en cada posicion es v (coseno minimo)  -- 1.000000
+  [OK   ] error relativo |cambio - v| / |v| por el redondeo del dtype  -- maximo 0.0004 (torch.float16)
+  [OK   ] patch_positions y n_patched_tokens == largo del goal  -- []
+  [OK   ] la entrada de generacion termina en el header del assistant  -- []
+  [OK   ] goal_all rechaza un parche [1,3,d]
+
+## 4 forward: causalidad y gradiente
+  [OK   ] logits antes del goal identicos con y sin parche  -- []
+  [OK   ] logits desde el goal cambian con el parche  -- []
+  [OK   ] gradiente del parche: forma [1,1,d], finito, no nulo  -- |grad| 8.430e+00, dtype torch.float32
+  [OK   ] 5 pasos de sign-SGD no suben la CE del target (fila 0)  -- 4.4648 -> 4.3750 -> 4.2852 -> 4.1953 -> 4.0977 -> 4.0039
+
+## 5 generacion
+  tokens de corte: {128001: <|end_of_text|>, 128009: <|eot_id|>}
+  [OK   ] fin de turno entre los tokens de corte
+  'On which continent is the Amazon rainforest locate': 'The Amazon rainforest is located on the continent of South America.'
+  'Where is the Atacama Desert?': 'The Atacama Desert is located in Chile, South America. It is the driest non-polar desert i'
+  'State the capital of Mongolia.': 'The capital of Mongolia is Ulaanbaatar.'
+  'Detail why ice floats on water.': 'A classic phenomenon! Ice floating on water is a fascinating example of how the physical p'
+  'How do geckos climb walls?': "Geckos have a unique ability to climb walls and ceilings, and it's due to their specialize"
+  'Capital of Japan?': 'The capital of Japan is Tokyo.'
+  'Hey, who painted Arnolfini?': 'The Arnolfini Portrait is a famous painting by the Flemish artist Jan van Eyck, created ar'
+  'What is the capital of Iceland?': 'The capital of Iceland is Reykjavik.'
+  [OK   ] greedy determinista (dos corridas iguales)  -- 8/8
+  [OK   ] parche de ceros == sin parche  -- 8/8
+  [OK   ] generate_one (sin cache) == model.generate (con cache)  -- 8/8 identicas; divergencias tardias = redondeo bf16 con/sin KV cache
+  [OK   ] sin divergencias en los primeros 5 tokens  -- 0 tempranas: []
+  [OK   ] corta en fin de turno antes del limite (mayoria)  -- 4/8 cortaron antes de 60 tokens
+  [OK   ] sin fuga de rol ni tokens de control en la salida  -- 0/8
+  [OK   ] sin <think>  -- 0/8
+  [AVISO] un v al azar de norma 0.85 cambia la salida  -- 3/8
+  segundos por token (mediana, sin KV cache, respuestas cortas): 0.024
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  [OK   ] M(q) en ingles  -- 8/8
+  [OK   ] M('Answer in French.' + q) en fr  -- 8/8
+  [OK   ] M('Answer in Spanish.' + q) en es  -- 7/8
+  [OK   ] M('Answer in German.' + q) en de  -- 8/8
+  [OK   ] M(q_fr) en frances  -- 7/8
+  [OK   ] accuracy del baseline en ingles  -- 8/8
+
+## 6 nll_of_target
+  CE head propia 0.148  ajena 4.578
+  [OK   ] CE de la propia respuesta greedy finita y baja  -- 0.148
+  [OK   ] CE propia < CE ajena  -- 0.148 < 4.578
+
+======================================================================
+41 controles: 39 OK, 2 AVISO, 0 FALLA

@@ -1,0 +1,30 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.50it/s]
+--fill attributes/v10_smoke/targets_v8_fr.csv: 14/14 filas sin referencia, se generan solo esas
+referencia NATIVA: M(prompt_fr), sin instruccion
+targets (fill):   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets (fill):   7%|▋         | 1/14 [00:04<00:56,  4.32s/it]targets (fill):  14%|█▍        | 2/14 [00:10<01:04,  5.40s/it]targets (fill):  21%|██▏       | 3/14 [00:10<00:34,  3.12s/it]targets (fill):  29%|██▊       | 4/14 [00:22<01:04,  6.49s/it]targets (fill):  36%|███▌      | 5/14 [00:34<01:15,  8.36s/it]targets (fill):  43%|████▎     | 6/14 [00:34<00:45,  5.66s/it]targets (fill):  50%|█████     | 7/14 [00:41<00:42,  6.08s/it]targets (fill):  57%|█████▋    | 8/14 [00:42<00:26,  4.35s/it]targets (fill):  64%|██████▍   | 9/14 [00:43<00:16,  3.28s/it]targets (fill):  71%|███████▏  | 10/14 [00:43<00:09,  2.43s/it]targets (fill):  79%|███████▊  | 11/14 [00:55<00:15,  5.27s/it]targets (fill):  86%|████████▌ | 12/14 [01:07<00:14,  7.28s/it]targets (fill):  93%|█████████▎| 13/14 [01:07<00:05,  5.25s/it]targets (fill): 100%|██████████| 14/14 [01:11<00:00,  4.71s/it]targets (fill): 100%|██████████| 14/14 [01:11<00:00,  5.09s/it]
+
+Filas completadas: 14  |  pasan el gate: 11/14
+  [ok] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve en Amérique du Sud. Plus précisément, e
+  [ok] Where is the Atacama Desert?                            -> Le désert d'Atacama est situé au Chili.
+  [ok] State the capital of Mongolia.                          -> Ulaanbaatar
+  [ok] Detail why ice floats on water.                         -> La glace flotte sur l'eau en raison de la différence de densité entre 
+  [XX] How do geckos climb walls?                              -> Les geckos ont développé une adaptation unique pour griffer les murs e
+  [ok] Capital of Japan?                                       -> Tokyo est la capitale du Japon.
+  [ok] Hey, who painted Arnolfini?                             -> Une question sur l'art!
+
+Les Arnolfini sont un tableau peint par le ma
+  [ok] What is the capital of Iceland?                         -> La capitale de l'Islande est Reykjavik.
+  [ok] Where was Mozart born?                                  -> Mozart est né à Salzbourg, en Autriche.
+  [ok] Specify the chemical symbol for uranium.                -> Le symbole chimique de l'uranium est U.
+  [ok] Unpack what causes ocean tides.                         -> Les marées océaniques sont causées par la lente rotation de la Terre e
+  [XX] How do octopuses change color?                          -> Une question intéressante!
+
+Les poissons, également appelés pieuvres, 
+  [ok] Capital of South Africa?                                -> La capitale de l'Afrique du Sud est Pretoria.
+  [XX] Hey, who directed Jaws?                                 -> Une question sur un classique du cinéma!
+
+"Les Dents de la mer" (The S
+
+Escrito attributes/v10_smoke/targets_v8_fr.csv (backup .bak)

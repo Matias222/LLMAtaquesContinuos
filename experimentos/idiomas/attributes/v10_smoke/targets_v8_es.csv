@@ -1,0 +1,103 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok;prompt_es;prompt_es_language;prompt_es_ok;prompt_it;prompt_it_language;prompt_it_ok;prompt_pt;prompt_pt_language;prompt_pt_ok;categoria;n_tokens;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction
+On which continent is the Amazon rainforest located?;La selva amazónica se encuentra en el continente americano.;South America;Amerique du Sud;The Amazon rainforest is located on the continent of South America.;False;False;es;en;False;True;False;Auf welchem Kontinent liegt der Amazonas-Regenwald?;de;True;Sur quel continent se trouve la forêt amazonienne ?;fr;True;¿En qué continente se encuentra la selva amazónica?;unknown;True;;;;;;;factual_clasica;;0.9998;0.02;True;es;nativo(prompt_es)
+Where is the Atacama Desert?;El desierto de Atacama es un desierto árido ubicado en el norte de Chile, en América del Sur. Se encuentra en la región de Atacama, que es una de las regiones más áridas del planeta. El desierto de Atacama es conocido por ser uno de los lugares más secos del mundo, con algunas áreas que no han visto la lluvia en más de 400 años.;Chile;Chili|Cile;"The Atacama Desert is located in Chile, South America. It is the driest non-polar desert in the world, covering an area of approximately 105,000 square kilometers (41,000 square miles). The Atacama Desert stretches along the western edge of the Andes Mountains, bordering the Pacific Ocean to the west and the Andes Mountains to the east.
+
+The Atacama Desert is situated in the northern part of Chile, and it is divided into two main regions: the Coastal Atacama and the Altiplano Atacama. The Coastal Atacama is the more arid and dry region, while the Altiplano Atacama is a higher-altitude region with more moderate climate conditions.
+
+Some of the most notable cities and towns in the Atacama Desert include:
+
+* Antofagasta: A major city located in the Coastal Atacama region.
+* Calama: A city located in the Altiplano Atacama region.
+* San Pedro de Atacama: A small town located in the Altiplano Atacama region, known for its stunning natural beauty and outdoor recreational opportunities.
+* Iquique: A coastal city located in the Coastal Atac";False;False;es;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9999;0.035;True;es;nativo(prompt_es)
+State the capital of Mongolia.;La capital de Mongolia es Ulaanbaatar.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;es;en;True;True;True;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6;0.5473;0.0938;True;es;nativo(prompt_es)
+Detail why ice floats on water.;"El hielo flota en el agua debido a su densidad menor que la del agua. A continuación, te explico por qué esto es así:
+
+1.  **Estructura del hielo**: El hielo está compuesto por agua congelada en una estructura cristalina. Esta estructura es más densa que la del agua líquida, lo que significa que el hielo tiene una mayor masa por unidad de volumen que el agua líquida.
+2.  **Densidad del agua**: El agua líquida tiene una densidad promedio de aproximadamente 1 gramo por mililitro (g/mL). El hielo, por otro lado, tiene una densidad promedio de aproximadamente 0,92 g/mL, lo que significa que es menos denso que el agua líquida.
+3.  **Flotabilidad del hielo**: Debido a su menor densidad que el agua líquida, el hielo flota en la superficie del agua. Esto se debe a que la fuerza de flotabilidad del hielo es mayor que la fuerza de sustentación del agua, lo que";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"A classic phenomenon! Ice floating on water is a fascinating example of how the physical properties of water and ice can lead to this seemingly counterintuitive behavior. Here's a detailed explanation:
+
+**Why does ice float on water?**
+
+Ice floats on water because of its unique crystal structure and the way it interacts with water molecules. When water freezes, the molecules arrange themselves in a crystalline lattice structure, which is less dense than the liquid water. This is known as the ""anomalous expansion of water.""
+
+**The crystal structure of ice:**
+
+In ice, the water molecules are arranged in a hexagonal lattice structure, with each molecule bonded to four neighboring molecules. This arrangement creates a rigid and open structure, which is less dense than the more compact and random arrangement of molecules in liquid water.
+
+**Density of ice and water:**
+
+The density of ice is approximately 0.92 g/cm³, while the density of liquid water is approximately 1.00 g/cm³. This means that ice is less dense than liquid water. When ice is added to water, it will initially sink to the bottom, but as more ice is added, the water molecules will start to arrange themselves around the ice crystals, creating a layer of water that";False;False;es;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9999;0.0196;True;es;nativo(prompt_es)
+How do geckos climb walls?;"Los geckos tienen una capacidad única para trepar por paredes y superficies ligeramente resbalosas, lo que se debe a sus patas y la secreción de sustancias en sus pies. Aquí te explico cómo lo hacen:
+
+1. **Patas delgadas y fuertes**: Los geckos tienen patas muy delgadas y fuertes, con garras que están diseñadas para agarrar superficies. Estas garras están cubiertas de pequeñas espinas que permiten una buena tracción.
+
+2. **Sustancias secretoras en los pies**: Los geckos secretan una sustancia llamada ""geckina"" en sus pies. La geckina es una sustancia adhesiva que se forma en las garras del gecko y se extiende por la superficie de las patas. Esta sustancia crea una fuerza adhesiva muy fuerte, lo suficiente como para permitir que el gecko se sostenga en superficies muy resbalosas.
+
+3. **Microscopía de la geckina**: La geckina se compone de pequeñas partículas que";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos have a unique ability to climb walls and ceilings, and it's due to their specialized feet and body structure. Here's how they do it:
+
+1. **Microscopic hair-like structures**: Geckos have tiny, hair-like structures on their feet called setae (singular: seta). These setae are made of keratin, the same protein that makes up human hair and nails. Each seta is about 1-2 micrometers in length, which is incredibly small.
+2. **Van der Waals forces**: The setae on a gecko's foot create a weak electrostatic attraction between the gecko's feet and the surface it's climbing. This attraction is known as van der Waals force. It's a type of intermolecular force that allows the gecko to ""stick"" to surfaces.
+3. **Adhesion**: When a gecko presses its foot onto a surface, the setae make contact with the surface molecules. The van der Waals force between the setae and the surface molecules creates a strong adhesion, allowing the gecko to ""stick"" to the surface.
+4. **Friction reduction**: Geckos have a unique skin structure that reduces friction between their";False;False;es;en;False;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9999;0.0158;True;es;nativo(prompt_es)
+Capital of Japan?;Tokio;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;unknown;en;True;True;False;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;¿Capital de Japón?;es;True;;;;;;;corta;4;0.5;0.2;True;es;nativo(prompt_es)
+Hey, who painted Arnolfini?;"¡Hola! Me alegra ayudarte.
+
+El cuadro ""El Arnolfini"" (también conocido como ""El matrimonio de la nobleza"" o ""El retablo de los Arnolfini"") es una obra maestra del arte flamenco, creada por el pintor holandés Jan van Eyck en el siglo XV.
+
+Se cree que el cuadro fue pintado entre 1434 y 1436, en Bruselas, Flandes (actualmente Bélgica). La obra es considerada una de las más importantes y emblemáticas de la pintura medieval, y es famosa por su gran detalle y realismo.
+
+El cuadro representa a un matrimonio noble, el señor y la señora Arnolfini, en su hogar en Bruselas. La obra es llena de simbolismo y alusiones a la religión y la sociedad de la época, y es considerada una de las obras más importantes del arte medieval.
+
+¿Quieres saber más sobre este cuadro o sobre Jan van Eyck?";Jan van Eyck;van Eyck|Eyck;The Arnolfini Portrait is a famous painting by the Flemish artist Jan van Eyck, created around 1434. It's considered one of the most iconic and influential works of the Northern Renaissance. The painting is a highly detailed and symbolic depiction of a wealthy couple, Giovanni di Nicolao Arnolfini and his wife, in their home in Bruges, Belgium. Van Eyck's masterful use of oil painting techniques and symbolism has made the Arnolfini Portrait a timeless masterpiece of art history.;False;False;es;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9998;0.0397;True;es;nativo(prompt_es)
+What is the capital of Iceland?;La capital de Islandia es Reykjavik.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavik.;False;False;es;en;True;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;;0.6763;0.1;True;es;nativo(prompt_es)
+Where was Mozart born?;Wolfgang Amadeus Mozart nació en Salzburgo, Alemania.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in Salzburg, Austria on January 27, 1756.;False;False;es;en;True;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5;0.9475;0.1111;True;es;nativo(prompt_es)
+Specify the chemical symbol for uranium.;El símbolo químico del uranio es U.;U;;The chemical symbol for uranium is U.;False;False;es;en;True;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7;0.9989;0.0714;True;es;nativo(prompt_es)
+Unpack what causes ocean tides.;"¡Claro! Me alegra ayudarte a entender este fenómeno fascinante.
+
+Las mareas oceánicas son el movimiento periódico del nivel del mar, que se produce debido a la interacción entre la gravedad de la Luna y el Sol con la masa del océano. A continuación, te explico los factores que causan las mareas:
+
+**La Luna:**
+
+1. **Gravedad**: La Luna atrae hacia sí la masa del océano, lo que provoca un aumento del nivel del mar en la región cercana a la Luna.
+2. **Inercia**: La Luna tiene una velocidad de rotación lenta, lo que significa que tarda un tiempo en completar una órbita alrededor de la Tierra. Esto provoca un efecto de ""inercia"" que hace que la masa del océano se mueva en la dirección opuesta a la Luna.
+
+**El Sol:**
+
+1. **Gravedad**: El Sol también atrae hacia sí la masa del océano, aunque con una fuerza mucho menor que la Luna.
+2. **Efecto combinado**: La";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are a fascinating phenomenon that has captivated humans for centuries. So, let's dive into the causes of ocean tides!
+
+**The Main Causes of Ocean Tides:**
+
+1. **Gravitational Pull of the Moon**: The Moon's gravity is the primary driver of ocean tides. The Moon's gravity causes the ocean water to bulge out in two areas: one on the side of the Earth facing the Moon and the other on the opposite side of the Earth. This creates two high tides and two low tides each day.
+2. **Gravitational Pull of the Sun**: Although the Sun's gravity is much weaker than the Moon's, it also plays a role in causing ocean tides. However, its effect is much smaller than the Moon's, and it's only significant when the Sun and Moon are aligned (at new moon or full moon).
+3. **Earth's Rotation**: The Earth's rotation also contributes to the formation of tides. As the Earth rotates, different parts of the planet experience the gravitational pull of the Moon and Sun, resulting in the rise and fall of the sea level.
+4. **Wind and Atmospheric Pressure**: Wind and changes in atmospheric pressure can also affect the ocean";False;False;es;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9997;0.0399;True;es;nativo(prompt_es)
+How do octopuses change color?;"Los pulpos son animales fascinantes que tienen la capacidad de cambiar de color para adaptarse a su entorno. Este proceso se conoce como ""cambio de color"" o ""camuflaje"". Los pulpos tienen células especiales en su piel llamadas ""celulas de melanina"" que contienen pigmentos que les permiten cambiar de color.
+
+Hay dos tipos principales de melanina: eumelanina y feomelanina. La eumelanina es responsable del color negro y marrón, mientras que la feomelanina es responsable del color rojo y amarillo. Los pulpos pueden combinar estas dos tipos de melanina para crear una amplia gama de colores.
+
+Cuando un pulpo quiere cambiar de color, se contrae o se relaja las células de melanina en su piel. Esto permite que el color de la piel del pulpo cambie. Los pulpos pueden cambiar de color rápidamente, a menudo en cuestión de segundos.
+
+Los pulpos cambian de color para varias razones:
+
+1. **Camuflaje**: Los pulpos cambian de color para mezclarse con su entorno y evitar";chromatophores;chromat|cromat;"Octopuses are masters of disguise, and their ability to change color is one of their most impressive features. Here's how they do it:
+
+**Chromatophores: The Color-Changing Cells**
+
+Octopuses have specialized cells called chromatophores in their skin, which contain pigments that reflect different colors. There are three types of chromatophores:
+
+1. **Melanophores**: contain the pigment melanin, which produces brown or black colors.
+2. **Iridophores**: contain the pigment iridin, which produces silver or reflective colors.
+3. **Xanthophores**: contain the pigment carotenoid, which produces yellow or orange colors.
+
+**How Color Change Works**
+
+When an octopus wants to change color, it contracts or relaxes the muscles surrounding the chromatophores. This allows the chromatophores to expand or shrink, changing the amount of pigment visible on the surface of the skin.
+
+* **Contraction**: When the muscles contract, the chromatophores shrink, reducing the amount of pigment visible and resulting in a lighter color.
+* **Relaxation**: When the muscles relax, the chromatophores expand, increasing the amount of pigment visible and resulting in a darker color.";False;False;es;en;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9998;0.0154;True;es;nativo(prompt_es)
+Capital of South Africa?;La capital de Sudáfrica es Ciudad del Cabo.;Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;The capital of South Africa is Pretoria.;False;False;es;en;False;True;False;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9959;0.1143;True;es;nativo(prompt_es)
+Hey, who directed Jaws?;"¡Hola!
+
+El director de la película ""Tiburón"" (1975) es Steven Spielberg. Es considerada una de las mejores películas de terror de todos los tiempos y es conocida por su tensión y suspense. ¿Quieres saber más sobre esta película o sobre Spielberg en general?";Spielberg;;"The director of the classic thriller film ""Jaws"" (1975) is Steven Spielberg. He's a legendary filmmaker known for his suspenseful and iconic movies, and ""Jaws"" is one of his most famous works. Would you like to know more about the film or Spielberg's career?";False;False;es;en;True;True;True;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9999;0.04;True;es;nativo(prompt_es)
