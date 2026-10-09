@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
-# Targets del banco v8 con Qwen3-4B-Instruct-2507 (attributes/qwen3). Misma receta
-# que run_targets_v8.sh (y = M("Answer in X.\n\n" + q), greedy, 100 tokens, gate_v8),
-# con tres diferencias porque lo guardado es de Llama:
+# Targets del banco v8 con Qwen3-4B-Instruct-2507 (attributes/qwen3). Receta de
+# run_targets_v8.sh (greedy, 100 tokens, gate_v8) con una diferencia de receta:
+#   - REFERENCIA NATIVA: y = M(q_X), la pregunta escrita a mano en el idioma de la
+#     celda, sin instruccion (en Llama: M("Answer in X.\n\n" + q)). En el smoke del
+#     2026-10-08 Qwen, con la instruccion, a veces traducia la pregunta en vez de
+#     responderla ("Salut, qui a peint l'Arnolfini ?"). Las 700 tienen prompt_fr/es/de.
+#     Consecuencia: el control nativo de la eval ES la condicion del target.
+# y tres porque lo guardado es de Llama:
 #   - las 100 viejas tambien se regeneran (armar --regenerar_viejas, sin restaurar)
 #   - sin fix_targets_v8.py: sus correcciones son texto de Llama. Si Qwen tiene tics
 #     propios se escriben despues de la revision manual (fix_targets_qwen3.py)
@@ -10,8 +15,8 @@
 #   0 verificar  verificar_modelo.py (plantilla, parche solo en la pregunta, causalidad,
 #                gradiente, generacion): con alguna FALLA no se sigue
 #   1 armar      700 filas sin output (traducciones y alias se conservan)
-#   2 fr         generate_targets.py --fill
-#   3 attr       es / de con --gate_accuracy (heredan baseline_en y traducciones de fr)
+#   2 fr         generate_targets.py --fill --nativo prompt_fr
+#   3 attr       es / de con --nativo --gate_accuracy (heredan baseline_en y traducciones de fr)
 #   4 alias      alias de 6 idiomas (viejas + banco). En SMOKE no corre (pide las 700)
 #   5 regate     gate_v8 sobre las 700
 #   6 revisar    reporte por celda y categoria
@@ -69,7 +74,8 @@ fi
 
 if has fr; then
   echo; echo "################ 2 targets fr"
-  python3 -u generate_targets.py --model "$MODEL" --device "$DEVICE" --fill "$FR" 2>&1 | tee "$OUT/targets_fr.log"
+  python3 -u generate_targets.py --model "$MODEL" --device "$DEVICE" --fill "$FR" --nativo prompt_fr \
+      2>&1 | tee "$OUT/targets_fr.log"
 fi
 
 if has attr; then
@@ -80,7 +86,7 @@ if has attr; then
       echo "ya existe $T (FORCE_ATTR=1 para regenerar)"; continue
     fi
     python3 -u algebra/generate_targets_attr.py --model "$MODEL" --device "$DEVICE" \
-        --lang "$L" --base_csv "$FR" --out "$T" --gate_accuracy 2>&1 | tee "$OUT/targets_$L.log"
+        --lang "$L" --base_csv "$FR" --out "$T" --nativo --gate_accuracy 2>&1 | tee "$OUT/targets_$L.log"
   done
 fi
 

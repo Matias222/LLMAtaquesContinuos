@@ -4,6 +4,8 @@
 # v9 sin reescalar (decision 2026-10-08): L2 0.0925, batch 28, 10 epochs, 20 steps/batch,
 # sign-SGD 0.00025 coseno, CE sobre 8 tokens, goal_all, split 0.84, evals de 150 tokens.
 # El reporte D da ||v||/||e|| para comparar la norma relativa con Llama (v9: 0.78-0.87).
+# Targets NATIVOS (y = M(q_X), run_targets_qwen3.sh): el control nativo de A y C es la
+# misma condicion que genero los targets (con 150 tokens en vez de 100).
 #
 # Diferencias con run_train_v9.sh:
 #   - TDIR=ODIR=attributes/qwen3, R=algebra/runs/qwen3_v1, GEN_CACHE propio

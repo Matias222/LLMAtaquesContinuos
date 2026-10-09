@@ -1,7 +1,7 @@
 """
 Targets de teacher forcing para UNA celda de {fr, es, de} x {normal, MAYUSCULAS}.
 
-    y_i = M([INSTRUCCION_de_la_celda ; q_i])
+    y_i = M([INSTRUCCION_de_la_celda ; q_i])        (o, con --nativo, y_i = M(prompt_<lang>))
 
 Mismo diseno que generate_targets.py / generate_targets_upper.py, con una
 diferencia que aca es lo que importa: NO parte de data/questions.csv sino de un
@@ -84,6 +84,9 @@ def main():
     ap.add_argument("--upper_from", default=None,
                     help="con --upper: CSV de la celda normal cuyo `output` se pasa a mayusculas "
                          "(no se genera nada; ver docstring)")
+    ap.add_argument("--nativo", action="store_true",
+                    help="referencia = M(prompt_<lang>), la pregunta escrita en el idioma, sin "
+                         "instruccion (receta de Qwen: con 'Answer in X.' a veces traduce la pregunta)")
     ap.add_argument("--gate_accuracy", action="store_true",
                     help="exigir ademas answer_correct (ver docstring: subestima en es/de/mayusculas)")
     ap.add_argument("--n", type=int, default=0, help="limitar filas (humo). Rompe el split: no entrenar con eso")
@@ -107,6 +110,13 @@ def main():
     instr = args.instruction or instruction_for(args.lang, args.upper)
     if desde is not None:
         instr = f"upper({os.path.basename(args.upper_from)})"
+    col_nativa = f"prompt_{args.lang}"
+    if args.nativo:
+        if args.upper or desde is not None:
+            raise SystemExit("--nativo no se combina con --upper")
+        if col_nativa not in base.columns or (base[col_nativa].str.strip() == "").any():
+            raise SystemExit(f"--nativo: falta {col_nativa} o tiene filas vacias en {args.base_csv}")
+        instr = f"nativo({col_nativa})"
     celda = args.lang + ("_up" if args.upper else "")
     otros = [l for l in LANGS if l != args.lang]
 
@@ -129,7 +139,8 @@ def main():
         if desde is not None:
             ref_raw = ref = str(desde.at[i, "output"]).upper()
         else:
-            ref_raw = generate_one(model, tokenizer, build_reference_prompt(instr, q), args.device,
+            q_ref = str(r[col_nativa]) if args.nativo else build_reference_prompt(instr, q)
+            ref_raw = generate_one(model, tokenizer, q_ref, args.device,
                                    args.num_tokens, args.temperature, clean=False)
             ref = truncate_at_role_leak(ref_raw)
         has_answer = str(ans).strip() != ""

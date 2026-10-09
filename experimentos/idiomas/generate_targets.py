@@ -7,6 +7,11 @@ El modelo se genera sus propios targets. No hay CSV curado a mano, y la
 condicion "instruccion en texto" queda medida y disponible como REFERENCIA
 NATURAL del eval (el techo contra el que se compara el parche).
 
+Con --nativo COL la referencia es la pregunta ya escrita en el idioma, sin
+instruccion:  y_i = M(q_i^X)  con q_i^X = la columna COL (p.ej. prompt_fr). Es la
+receta de Qwen (run_targets_qwen3.sh): con "Answer in French.\n\n" + q, Qwen a veces
+TRADUCE la pregunta en vez de responderla (smoke del 2026-10-08).
+
 Importante: el CSV de salida guarda `prompt` = q_i SOLA, sin la instruccion.
 El parche tiene que reemplazar a la instruccion, no acompaniarla.
 
@@ -37,11 +42,15 @@ def build_reference_prompt(instruction: str, question: str) -> str:
     """Como se le pasa la instruccion al modelo en la condicion de referencia."""
     return f"{instruction}\n\n{question}"
 
-def make_row(model, tokenizer, q, ans, al, instruction, device, num_tokens, temperature):
-    """Genera referencia M([FR;q]) y baseline M(q) para una pregunta y arma la fila."""
+def make_row(model, tokenizer, q, ans, al, instruction, device, num_tokens, temperature,
+             ref_prompt=None):
+    """Genera referencia M([FR;q]) (o M(ref_prompt), la pregunta nativa) y baseline
+    M(q) para una pregunta y arma la fila."""
     # clean=False para poder contar cuantas veces el modelo quiso seguir
     # con otro turno pese al corte en <|eot_id|>.
-    ref_raw = generate_one(model, tokenizer, build_reference_prompt(instruction, q),
+    if ref_prompt is None:
+        ref_prompt = build_reference_prompt(instruction, q)
+    ref_raw = generate_one(model, tokenizer, ref_prompt,
                            device, num_tokens, temperature, clean=False)
     base_raw = generate_one(model, tokenizer, q, device, num_tokens, temperature, clean=False)
     ref = truncate_at_role_leak(ref_raw)
@@ -87,10 +96,16 @@ def fill_missing(args, model, tokenizer):
     df = pd.read_csv(args.fill, sep=";", keep_default_na=False, dtype=str)
     faltan = df.index[df["output"].str.strip() == ""]
     print(f"--fill {args.fill}: {len(faltan)}/{len(df)} filas sin referencia, se generan solo esas")
+    if args.nativo:
+        vacias = [df.at[i, "prompt"] for i in faltan if not str(df.at[i, args.nativo]).strip()]
+        if args.nativo not in df.columns or vacias:
+            raise SystemExit(f"--nativo {args.nativo}: falta la columna o hay {len(vacias)} filas vacias {vacias[:3]}")
+        print(f"referencia NATIVA: M({args.nativo}), sin instruccion")
     for i in tqdm.tqdm(faltan, desc="targets (fill)"):
         r = df.loc[i]
         row = make_row(model, tokenizer, r["prompt"], r["answer"], r["aliases"],
-                       args.instruction, args.device, args.num_tokens, args.temperature)
+                       args.instruction, args.device, args.num_tokens, args.temperature,
+                       ref_prompt=str(r[args.nativo]) if args.nativo else None)
         for k, v in row.items():
             if k in df.columns:
                 df.at[i, k] = str(v)
@@ -117,7 +132,11 @@ def main():
     ap.add_argument("--fill", default=None,
                     help="targets CSV existente: generar solo las filas con output vacio "
                          "(ignora --questions y --out)")
+    ap.add_argument("--nativo", default=None, metavar="COL",
+                    help="con --fill: referencia = M(columna COL, p.ej. prompt_fr), sin instruccion")
     args = ap.parse_args()
+    if args.nativo and not args.fill:
+        raise SystemExit("--nativo solo esta implementado con --fill")
 
     if args.fill:
         model, tokenizer = load_model_and_tokenizer(args.model, device=args.device)
