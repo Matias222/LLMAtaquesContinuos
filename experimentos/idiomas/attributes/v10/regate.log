@@ -1,0 +1,31 @@
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+
+=== fr: gate 573 -> 601 de 700  (train, primeras 560: 470 -> 483)
+  categoria                 antes  despues   train
+  factual_clasica              89       86      68
+  factual_aperturas            78       73      60
+  imperativo                   83       74      59
+  imperativo_explicativo       72      100      80
+  explicativa                  76      100      80
+  corta                        83       76      62
+  conversacional               92       92      74
+
+=== es: gate 549 -> 606 de 700  (train, primeras 560: 447 -> 486)
+  categoria                 antes  despues   train
+  factual_clasica              75       90      73
+  factual_aperturas            79       79      62
+  imperativo                   84       82      67
+  imperativo_explicativo       68      100      80
+  explicativa                  73      100      80
+  corta                        80       67      54
+  conversacional               90       88      70
+
+=== de: gate 547 -> 601 de 700  (train, primeras 560: 443 -> 486)
+  categoria                 antes  despues   train
+  factual_clasica              78       77      62
+  factual_aperturas            83       80      63
+  imperativo                   84       83      68
+  imperativo_explicativo       64      100      80
+  explicativa                  70       99      79
+  corta                        81       78      65
+  conversacional               87       84      69

@@ -1,0 +1,45 @@
+
+=== fr: attributes/v10/targets_v8_fr.csv (700 filas)
+  sin output: 0
+[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica          100    86%        95%       91%
+  factual_aperturas        100    73%        94%       78%
+  imperativo               100    74%        91%       83%
+  imperativo_explicativo   100   100%       100%       72%
+  explicativa              100   100%       100%       76%
+  corta                    100    76%        92%       84%
+  conversacional           100    92%       100%       92%
+  veredictos: {'fr': 672, 'unknown': 23, 'it': 2, 'es': 1, 'nl': 1, 'en': 1}
+
+=== es: attributes/v10/targets_v8_es.csv (700 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica          100    90%        98%       90%
+  factual_aperturas        100    79%       100%       79%
+  imperativo               100    82%        95%       85%
+  imperativo_explicativo   100   100%       100%       68%
+  explicativa              100   100%       100%       73%
+  corta                    100    67%        76%       82%
+  conversacional           100    88%        98%       90%
+  veredictos: {'es': 667, 'unknown': 22, 'ca': 6, 'it': 2, 'pt': 1, 'gl': 1, 'en': 1}
+
+=== de: attributes/v10/targets_v8_de.csv (700 filas)
+  sin output: 0
+  categoria                  n   gate  idioma ok  accuracy
+  factual_clasica          100    77%        89%       88%
+  factual_aperturas        100    80%        95%       85%
+  imperativo               100    83%        99%       84%
+  imperativo_explicativo   100   100%       100%       64%
+  explicativa              100    99%        99%       70%
+  corta                    100    78%        96%       82%
+  conversacional           100    84%        94%       89%
+  veredictos: {'de': 672, 'unknown': 22, 'en': 5, 'pt': 1}
+
+=== traducciones (en el CSV fr)
+  prompt_es: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_de: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
+  prompt_fr: 700/700 usables, 0 vacias, 1 posibles fugas del few-shot
+      'Which river flows through Paris?' -> 'Quelle est la capitale du Japon?'
+
+Revisar a mano: traducciones rechazadas o con fuga, y filas sin gate, antes de entrenar.
