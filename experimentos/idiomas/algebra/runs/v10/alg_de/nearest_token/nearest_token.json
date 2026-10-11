@@ -1,0 +1,374 @@
+{
+ "patch": "algebra/runs/v10/alg_de/lang_patch_best_train.pt",
+ "v_norm": 0.9361369013786316,
+ "vocab_norm_mean": 1.0861295461654663,
+ "n_unique": 1390,
+ "sanity_self": 1.0,
+ "gap_median": 0.9543604254722595,
+ "pct_norma_vocab": 0.08680295944213867,
+ "pct_norma_preguntas": 0.02733813039958477,
+ "norma_mediana_preguntas": 1.1612719297409058,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.10545023696682465,
+   "cambia_cos": 0.1066350710900474,
+   "destinos_l2": [
+    [
+     " von",
+     81
+    ],
+    [
+     " TAKE",
+     1
+    ],
+    [
+     " Metal",
+     1
+    ],
+    [
+     " CROSS",
+     1
+    ],
+    [
+     " Element",
+     1
+    ],
+    [
+     "stay",
+     1
+    ],
+    [
+     "Seleccione",
+     1
+    ],
+    [
+     " Animal",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.10604929051530994,
+   "cambia_cos": 0.10380881254667662,
+   "destinos_l2": [
+    [
+     " von",
+     133
+    ],
+    [
+     " знов",
+     2
+    ],
+    [
+     "Los",
+     1
+    ],
+    [
+     "\tbar",
+     1
+    ],
+    [
+     "universal",
+     1
+    ],
+    [
+     " Metal",
+     1
+    ],
+    [
+     "Micro",
+     1
+    ],
+    [
+     "cancel",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.04098939929328622,
+   "cambia_cos": 0.039575971731448764,
+   "destinos_l2": [
+    [
+     " von",
+     51
+    ],
+    [
+     " Formation",
+     3
+    ],
+    [
+     "\tbar",
+     1
+    ],
+    [
+     "Ball",
+     1
+    ],
+    [
+     " знов",
+     1
+    ],
+    [
+     "Micro",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0014936519790888724,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0014134275618374558,
+   "destinos_l2": []
+  }
+ ]
+}

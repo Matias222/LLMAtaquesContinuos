@@ -3,4 +3,38 @@
 Held-out: 4  |  parche: algebra/runs/v10_smoke/alg_es/lang_patch_best_train.pt  |  escala: 1.0
 ======================================================================
 eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-eval:  25%|██▌       | 1/4 [00:05<00:16,  5.34s/it]
+eval:  25%|██▌       | 1/4 [00:05<00:16,  5.34s/it]eval:  50%|█████     | 2/4 [00:11<00:11,  5.78s/it]eval:  75%|███████▌  | 3/4 [00:17<00:05,  5.92s/it]eval: 100%|██████████| 4/4 [00:17<00:00,  3.69s/it]eval: 100%|██████████| 4/4 [00:17<00:00,  4.45s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])           0.0%      0.000      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: es   (celda_ok = idioma es Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])         100.0%     100.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               5.6289      5.4707   -0.1582
+tail (el resto)                 0.4638      0.4323   -0.0315
+toda la respuesta               1.3979      1.3743   -0.0236
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.040
+  overlap baseline(EN) vs referencia        : 0.040
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [1.0, 0.99, 0.81]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/v10_smoke/alg_es/eval_open.json
+          algebra/runs/v10_smoke/alg_es/eval_open.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/v10_smoke/gen_cache: reusadas 8, generadas 4

@@ -1,0 +1,11 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.43it/s]
+parche algebra/runs/v10_smoke/alg_de/lang_patch_best_train.pt  norma 0.0936  |  tail held-out 4 (idx 0..3)
+preset=idioma  condiciones=['prompt_es a=0', 'prompt_es a=1', 'prompt_fr a=0', 'prompt_fr a=1', 'prompt a=0', 'prompt a=1', 'prompt_de a=0']
+prompt_es a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_es a=0:  25%|██▌       | 1/4 [00:01<00:04,  1.34s/it]prompt_es a=0:  75%|███████▌  | 3/4 [00:01<00:00,  2.51it/s]prompt_es a=0: 100%|██████████| 4/4 [00:01<00:00,  2.58it/s]
+prompt_es a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_es a=1:  25%|██▌       | 1/4 [00:05<00:17,  5.87s/it]prompt_es a=1:  50%|█████     | 2/4 [00:11<00:11,  5.88s/it]prompt_es a=1:  75%|███████▌  | 3/4 [00:17<00:05,  5.87s/it]prompt_es a=1: 100%|██████████| 4/4 [00:23<00:00,  5.86s/it]prompt_es a=1: 100%|██████████| 4/4 [00:23<00:00,  5.86s/it]
+prompt_fr a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=0:  50%|█████     | 2/4 [00:00<00:00, 14.88it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.60it/s]prompt_fr a=0: 100%|██████████| 4/4 [00:00<00:00, 14.63it/s]
+prompt_fr a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_fr a=1:  25%|██▌       | 1/4 [00:05<00:17,  5.91s/it]prompt_fr a=1:  50%|█████     | 2/4 [00:09<00:08,  4.37s/it]prompt_fr a=1:  75%|███████▌  | 3/4 [00:15<00:05,  5.07s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:20<00:00,  5.02s/it]prompt_fr a=1: 100%|██████████| 4/4 [00:20<00:00,  5.01s/it]
+prompt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt a=0:  50%|█████     | 2/4 [00:00<00:00, 13.54it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 13.12it/s]prompt a=0: 100%|██████████| 4/4 [00:00<00:00, 13.18it/s]
+prompt a=1:   0%|          | 0/4 [00:00<?, ?it/s]

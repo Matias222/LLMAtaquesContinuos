@@ -1,0 +1,382 @@
+{
+ "patch": "algebra/runs/v10/alg_fr/lang_patch_best_train.pt",
+ "v_norm": 0.8782814145088196,
+ "vocab_norm_mean": 1.0861295461654663,
+ "n_unique": 1467,
+ "sanity_self": 1.0,
+ "gap_median": 0.9623653292655945,
+ "pct_norma_vocab": 0.03383077681064606,
+ "pct_norma_preguntas": 0.01158827543258667,
+ "norma_mediana_preguntas": 1.1626721620559692,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.2334123222748815,
+   "cambia_cos": 0.2559241706161137,
+   "destinos_l2": [
+    [
+     "ÅŸ",
+     176
+    ],
+    [
+     "\tIn",
+     4
+    ],
+    [
+     "makes",
+     2
+    ],
+    [
+     "Islamic",
+     1
+    ],
+    [
+     "Hay",
+     1
+    ],
+    [
+     "\tN",
+     1
+    ],
+    [
+     "_red",
+     1
+    ],
+    [
+     "ANS",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.16803584764749813,
+   "cambia_cos": 0.1650485436893204,
+   "destinos_l2": [
+    [
+     "ÅŸ",
+     199
+    ],
+    [
+     "Las",
+     13
+    ],
+    [
+     "_Des",
+     3
+    ],
+    [
+     "\to",
+     2
+    ],
+    [
+     "\tU",
+     2
+    ],
+    [
+     "Ti",
+     1
+    ],
+    [
+     "\tN",
+     1
+    ],
+    [
+     "९",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.17906976744186046,
+   "cambia_cos": 0.1813953488372093,
+   "destinos_l2": [
+    [
+     "ÅŸ",
+     171
+    ],
+    [
+     " Von",
+     14
+    ],
+    [
+     "\tIn",
+     8
+    ],
+    [
+     "\tent",
+     4
+    ],
+    [
+     "\tN",
+     3
+    ],
+    [
+     "_me",
+     3
+    ],
+    [
+     "Für",
+     3
+    ],
+    [
+     "\tA",
+     2
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1339,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0007468259895444362,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  }
+ ]
+}

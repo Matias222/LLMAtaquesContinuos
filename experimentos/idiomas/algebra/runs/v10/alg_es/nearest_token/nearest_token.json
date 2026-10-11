@@ -1,0 +1,362 @@
+{
+ "patch": "algebra/runs/v10/alg_es/lang_patch_best_train.pt",
+ "v_norm": 0.9115507006645203,
+ "vocab_norm_mean": 1.0861295461654663,
+ "n_unique": 1465,
+ "sanity_self": 1.0,
+ "gap_median": 0.9603250026702881,
+ "pct_norma_vocab": 0.058367639780044556,
+ "pct_norma_preguntas": 0.019795222207903862,
+ "norma_mediana_preguntas": 1.163865566253662,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.1018957345971564,
+   "cambia_cos": 0.1018957345971564,
+   "destinos_l2": [
+    [
+     "In",
+     80
+    ],
+    [
+     "_In",
+     2
+    ],
+    [
+     "Red",
+     1
+    ],
+    [
+     "Cross",
+     1
+    ],
+    [
+     " Microwave",
+     1
+    ],
+    [
+     ".Never",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.06821705426356589,
+   "cambia_cos": 0.07209302325581396,
+   "destinos_l2": [
+    [
+     "In",
+     80
+    ],
+    [
+     "Der",
+     1
+    ],
+    [
+     "Was",
+     1
+    ],
+    [
+     "Pen",
+     1
+    ],
+    [
+     "Gro",
+     1
+    ],
+    [
+     "Air",
+     1
+    ],
+    [
+     "Die",
+     1
+    ],
+    [
+     ".Never",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.01342756183745583,
+   "cambia_cos": 0.012014134275618375,
+   "destinos_l2": [
+    [
+     "_In",
+     8
+    ],
+    [
+     "In",
+     7
+    ],
+    [
+     " �",
+     2
+    ],
+    [
+     ".Never",
+     1
+    ],
+    [
+     " hasta",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1290,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.002325581395348837,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1415,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0014134275618374558,
+   "destinos_l2": []
+  }
+ ]
+}

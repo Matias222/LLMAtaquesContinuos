@@ -1,0 +1,74 @@
+# Etapa D: chequeos sin generación
+
+## Normas y cosenos
+
+Referencia del paper: réplica de alg_fr con otro orden de batches = 0.49; dos direcciones al azar en d=3072 = ±0.018 (1/√d).
+
+| vector | ‖v‖ | v10_fr | v9_fr | paper_fr | v10_es | v9_es | paper_es | v10_de | v9_de | paper_de |
+|---|---|---|---|---|---|---|---|---|---|---|
+| v10_fr | 0.878 | 1.00 | 0.33 | 0.21 | 0.25 | 0.25 | 0.12 | 0.18 | 0.18 | 0.12 |
+| v9_fr | 0.844 | 0.33 | 1.00 | 0.25 | 0.17 | 0.26 | 0.15 | 0.17 | 0.19 | 0.11 |
+| paper_fr | 0.842 | 0.21 | 0.25 | 1.00 | 0.14 | 0.17 | 0.25 | 0.12 | 0.14 | 0.19 |
+| v10_es | 0.912 | 0.25 | 0.17 | 0.14 | 1.00 | 0.27 | 0.21 | 0.17 | 0.16 | 0.12 |
+| v9_es | 0.863 | 0.25 | 0.26 | 0.17 | 0.27 | 1.00 | 0.25 | 0.20 | 0.22 | 0.12 |
+| paper_es | 0.865 | 0.12 | 0.15 | 0.25 | 0.21 | 0.25 | 1.00 | 0.12 | 0.14 | 0.17 |
+| v10_de | 0.936 | 0.18 | 0.17 | 0.12 | 0.17 | 0.20 | 0.12 | 1.00 | 0.31 | 0.21 |
+| v9_de | 0.942 | 0.18 | 0.19 | 0.14 | 0.16 | 0.22 | 0.14 | 0.31 | 1.00 | 0.28 |
+| paper_de | 0.849 | 0.12 | 0.11 | 0.19 | 0.12 | 0.12 | 0.17 | 0.21 | 0.28 | 1.00 |
+
+Celda fr: ‖v‖ = 0.878 (‖v‖/‖e‖ medio del vocabulario = 0.809; Llama v9: 0.78-0.87); supera la norma del 3.4% del vocabulario y del 1.2% de los tokens de las preguntas; distancia mediana token-vecino 0.96.
+
+Celda es: ‖v‖ = 0.912 (‖v‖/‖e‖ medio del vocabulario = 0.839; Llama v9: 0.78-0.87); supera la norma del 5.8% del vocabulario y del 2.0% de los tokens de las preguntas; distancia mediana token-vecino 0.96.
+
+Celda de: ‖v‖ = 0.936 (‖v‖/‖e‖ medio del vocabulario = 0.862; Llama v9: 0.78-0.87); supera la norma del 8.7% del vocabulario y del 2.7% de los tokens de las preguntas; distancia mediana token-vecino 0.95.
+
+## Token más cercano de e + α·v (§4.1)
+
+| celda | α | entrada | tokens | % cambia (L2) | % cambia (coseno) |
+|---|---|---|---|---|---|
+| fr | 0.5 | en | 844 | 0 | 0 |
+| fr | 0.5 | es | 1339 | 0 | 0 |
+| fr | 0.5 | de | 1290 | 0 | 0 |
+| fr | 1.0 | en | 844 | 0 | 0 |
+| fr | 1.0 | es | 1339 | 0 | 0 |
+| fr | 1.0 | de | 1290 | 0 | 0 |
+| fr | 2.0 | en | 844 | 0 | 0 |
+| fr | 2.0 | es | 1339 | 0 | 0 |
+| fr | 2.0 | de | 1290 | 0 | 0 |
+| fr | 4.0 | en | 844 | 0 | 0 |
+| fr | 4.0 | es | 1339 | 0 | 0 |
+| fr | 4.0 | de | 1290 | 0 | 0 |
+| fr | 8.0 | en | 844 | 23 | 26 |
+| fr | 8.0 | es | 1339 | 17 | 17 |
+| fr | 8.0 | de | 1290 | 18 | 18 |
+| es | 0.5 | en | 844 | 0 | 0 |
+| es | 0.5 | de | 1290 | 0 | 0 |
+| es | 0.5 | fr | 1415 | 0 | 0 |
+| es | 1.0 | en | 844 | 0 | 0 |
+| es | 1.0 | de | 1290 | 0 | 0 |
+| es | 1.0 | fr | 1415 | 0 | 0 |
+| es | 2.0 | en | 844 | 0 | 0 |
+| es | 2.0 | de | 1290 | 0 | 0 |
+| es | 2.0 | fr | 1415 | 0 | 0 |
+| es | 4.0 | en | 844 | 0 | 0 |
+| es | 4.0 | de | 1290 | 0 | 0 |
+| es | 4.0 | fr | 1415 | 0 | 0 |
+| es | 8.0 | en | 844 | 10 | 10 |
+| es | 8.0 | de | 1290 | 7 | 7 |
+| es | 8.0 | fr | 1415 | 1 | 1 |
+| de | 0.5 | en | 844 | 0 | 0 |
+| de | 0.5 | es | 1339 | 0 | 0 |
+| de | 0.5 | fr | 1415 | 0 | 0 |
+| de | 1.0 | en | 844 | 0 | 0 |
+| de | 1.0 | es | 1339 | 0 | 0 |
+| de | 1.0 | fr | 1415 | 0 | 0 |
+| de | 2.0 | en | 844 | 0 | 0 |
+| de | 2.0 | es | 1339 | 0 | 0 |
+| de | 2.0 | fr | 1415 | 0 | 0 |
+| de | 4.0 | en | 844 | 0 | 0 |
+| de | 4.0 | es | 1339 | 0 | 0 |
+| de | 4.0 | fr | 1415 | 0 | 0 |
+| de | 8.0 | en | 844 | 11 | 11 |
+| de | 8.0 | es | 1339 | 11 | 10 |
+| de | 8.0 | fr | 1415 | 4 | 4 |
+
