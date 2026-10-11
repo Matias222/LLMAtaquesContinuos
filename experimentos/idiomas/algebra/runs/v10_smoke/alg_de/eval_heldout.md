@@ -9,10 +9,12 @@
 | condicion | **celda ok** (idioma y formato) | idioma = de | score de | mayusculas | is_french | accuracy | role leak |
 |---|---|---|---|---|---|---|---|
 | baseline  M(q) | 0.00% | 0.00% | 0.000 | 0.00% | 0.00% | 100.00% | 0.00% |
-| referencia  M([aleman;q]) | 100.00% | 100.00% | 1.000 | 0.00% | 0.00% | 100.00% | 0.00% |
+| control nativo  M(q_de) | 100.00% | 100.00% | 1.000 | 0.00% | 0.00% | 100.00% | 0.00% |
 | parche  M(q+v) | 0.00% | 0.00% | 0.000 | 0.00% | 0.00% | 100.00% | 0.00% |
 
-`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en mayusculas). La accuracy en espanol/aleman esta subestimada: los alias son ingles y frances.
+`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en mayusculas). Accuracy: answer_correct con los alias del banco (en, es, de, fr, it, pt).
+
+El control nativo es la pregunta escrita en aleman, sin parche ni instruccion, generada en vivo: es el modelo crudo, sin las correcciones a mano de los targets.
 
 ### CE del target (aleman) (teacher forcing)
 
@@ -22,11 +24,11 @@
 | tail (el resto) | 0.7294 | 0.7260 | -0.0034 |
 | toda la respuesta | 1.4233 | 1.4030 | -0.0204 |
 
-La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo frances correcto en cada paso, asi que el tail solo mide 'continuar una oracion francesa', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal.
+La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en aleman correcto en cada paso, asi que el tail solo mide 'continuar una oracion en aleman', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 
 ## Outputs
 
-| # | pregunta | baseline | referencia | parche |
+| # | pregunta | baseline | control nativo | parche |
 |---|---|---|---|---|
 | 0 | What is the speed of light in vacuum in kilometers per secon... | The speed of light in a vacuum is approximately 299,792 kilometers per second. | Die Geschwindigkeit des Lichts im Vakuum beträgt 299.792 Kilometer pro Sekunde. | The speed of light in a vacuum is approximately 299,792 kilometers per second. |
 | 1 | Who authored The Communist Manifesto? | The Communist Manifesto was authored by Karl Marx and Friedrich Engels. | Das Kommunistische Manifest wurde von Karl Marx und Friedrich Engels verfasst. Es wurde 1848 in London veröffentlicht und gilt als eines der wichtigst... | The Communist Manifesto was authored by Karl Marx and Friedrich Engels. |

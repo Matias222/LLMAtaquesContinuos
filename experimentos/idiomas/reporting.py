@@ -78,6 +78,10 @@ def write_markdown(report, path):
     tl, up = cfg.get("target_lang", "fr"), bool(cfg.get("upper", False))
     celda = {"fr": "frances", "es": "espanol", "de": "aleman"}.get(tl, tl) + (" + MAYUSCULAS" if up else "")
     con_celda = "attr_ok" in m.get("patched", {})
+    nativo = cfg.get("control") == "nativo"
+    idioma = {"fr": "frances", "es": "espanol", "de": "aleman"}.get(tl, tl)
+    ref_label = f"control nativo  M(q_{tl})" if nativo else f"referencia  M([{celda};q])"
+    ref = "control nativo" if nativo else "referencia"
     L = [f"# Eval parche de idioma ({celda})", ""]
     L.append(f"- Parche: `{report['patch_path']}`")
     L.append(f"- Norma: {report['patch_norm']:.4f}  |  shape: {report['patch_shape']}")
@@ -91,17 +95,23 @@ def write_markdown(report, path):
         L.append("|---|---|---|---|---|---|---|---|")
         for cond, label in CONDITIONS:
             c = m[cond]
-            L.append(f"| {label.replace('FR;q', celda + ';q')} | {c['attr_ok']:.2%} | {c['is_target']:.2%} "
+            label = ref_label if cond == "reference" else label
+            L.append(f"| {label} | {c['attr_ok']:.2%} | {c['is_target']:.2%} "
                      f"| {c['target_score']:.3f} | {c['is_uppercase']:.2%} | {c['is_french']:.2%} "
                      f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
         L.append("")
         L.append("`celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en "
-                 "mayusculas). La accuracy en espanol/aleman esta subestimada: los alias son ingles y frances.")
+                 "mayusculas). Accuracy: answer_correct con los alias del banco (en, es, de, fr, it, pt).")
+        if nativo:
+            L.append("")
+            L.append(f"El control nativo es la pregunta escrita en {idioma}, sin parche ni instruccion, "
+                     "generada en vivo: es el modelo crudo, sin las correcciones a mano de los targets.")
     else:
         L.append("| condicion | compliance (is_french) | french_score | accuracy | role leak |")
         L.append("|---|---|---|---|---|")
         for cond, label in CONDITIONS:
             c = m[cond]
+            label = ref_label if cond == "reference" else label
             L.append(f"| {label} | {c['is_french']:.2%} | {c['french_score']:.3f} "
                      f"| {c['answer_correct']:.2%} | {c['role_leak']:.2%} |")
     L.append("")
@@ -117,10 +127,11 @@ def write_markdown(report, path):
             continue
         L.append(f"| {lbl} | {m[kb]:.4f} | {m[kp]:.4f} | {m[kp] - m[kb]:+.4f} |")
     L.append("")
-    L.append("La decision de idioma vive en el **head**. Como esto se mide con teacher "
-             "forcing, el modelo ve el prefijo frances correcto en cada paso, asi que "
-             "el tail solo mide 'continuar una oracion francesa', que es facil y casi "
-             "no deberia moverse. Promediar sobre toda la respuesta diluye la señal.")
+    L.append(f"La decision de idioma vive en el **head**. Como esto se mide con teacher "
+             f"forcing, el modelo ve el prefijo en {idioma} correcto en cada paso, asi que "
+             f"el tail solo mide 'continuar una oracion en {idioma}', que es facil y casi "
+             f"no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target "
+             f"es la columna `output` del CSV de la celda.")
     L.append("")
     o = m.get("open")
     if o:
@@ -128,15 +139,15 @@ def write_markdown(report, path):
         L.append("")
         L.append("| medida | valor |")
         L.append("|---|---|")
-        L.append(f"| overlap de contenido parche vs referencia | {o['overlap_patched_reference']:.3f} |")
-        L.append(f"| overlap baseline (EN) vs referencia | {o['overlap_baseline_reference']:.3f} |")
+        L.append(f"| overlap de contenido parche vs {ref} | {o['overlap_patched_reference']:.3f} |")
+        L.append(f"| overlap baseline (EN) vs {ref} | {o['overlap_baseline_reference']:.3f} |")
         L.append(f"| control de azar (parche vs otra pregunta) | {o['overlap_shuffled_control']:.3f} |")
         L.append("")
         L.append("| tercio de la respuesta | 1 | 2 | 3 |")
         L.append("|---|---|---|---|")
         tp, tr = o["french_thirds_patched"], o["french_thirds_reference"]
         L.append(f"| parche | {tp[0]:.2f} | {tp[1]:.2f} | {tp[2]:.2f} |")
-        L.append(f"| referencia | {tr[0]:.2f} | {tr[1]:.2f} | {tr[2]:.2f} |")
+        L.append(f"| {ref} | {tr[0]:.2f} | {tr[1]:.2f} | {tr[2]:.2f} |")
         L.append("")
         donde = {"goal_all": "en todos los tokens de la pregunta",
                  "header": "en el header del assistant"}.get(
@@ -147,7 +158,7 @@ def write_markdown(report, path):
         L.append("")
     L.append("## Outputs")
     L.append("")
-    L.append("| # | pregunta | baseline | referencia | parche |")
+    L.append(f"| # | pregunta | baseline | {ref} | parche |")
     L.append("|---|---|---|---|---|")
     for r in report["splits"]["heldout"]:
         L.append(f"| {r['idx']} | {_t(r['prompt'], 60)} | {_t(r['baseline'])} | "
