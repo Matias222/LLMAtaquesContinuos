@@ -1,40 +1,40 @@
 
 === fr: attributes/qwen3/targets_v8_fr.csv (700 filas)
   sin output: 0
-[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+[lang_id] GlotLID: /home/matias-avendano/Desktop/evolucion/LLMAtaquesContinuos/modelos/glotlid/model.bin
   categoria                  n   gate  idioma ok  accuracy
-  factual_clasica          100    99%       100%       99%
-  factual_aperturas        100    89%       100%       89%
-  imperativo               100    89%        99%       90%
-  imperativo_explicativo   100   100%       100%       81%
-  explicativa              100   100%       100%       88%
-  corta                    100    89%        99%       89%
-  conversacional           100    94%       100%       94%
-  veredictos: {'fr': 698, 'ro': 1, 'es': 1}
+  factual_clasica          100   100%       100%      100%
+  factual_aperturas        100   100%       100%      100%
+  imperativo               100   100%       100%      100%
+  imperativo_explicativo   100   100%       100%      100%
+  explicativa              100   100%       100%      100%
+  corta                    100   100%       100%      100%
+  conversacional           100   100%       100%      100%
+  veredictos: {'fr': 700}
 
 === es: attributes/qwen3/targets_v8_es.csv (700 filas)
   sin output: 0
   categoria                  n   gate  idioma ok  accuracy
-  factual_clasica          100    97%        96%       97%
-  factual_aperturas        100    87%       100%       87%
-  imperativo               100    93%        92%       93%
-  imperativo_explicativo   100   100%       100%       88%
-  explicativa              100   100%       100%       82%
-  corta                    100    89%        97%       89%
-  conversacional           100    94%       100%       94%
-  veredictos: {'es': 685, 'ca': 12, 'gl': 2, 'ro': 1}
+  factual_clasica          100   100%       100%      100%
+  factual_aperturas        100   100%       100%      100%
+  imperativo               100   100%       100%      100%
+  imperativo_explicativo   100   100%       100%      100%
+  explicativa              100   100%       100%      100%
+  corta                    100   100%       100%      100%
+  conversacional           100   100%       100%      100%
+  veredictos: {'es': 700}
 
 === de: attributes/qwen3/targets_v8_de.csv (700 filas)
   sin output: 0
   categoria                  n   gate  idioma ok  accuracy
-  factual_clasica          100    96%        98%       97%
-  factual_aperturas        100    88%        97%       90%
-  imperativo               100    85%       100%       85%
-  imperativo_explicativo   100   100%       100%       78%
-  explicativa              100   100%       100%       75%
-  corta                    100    84%        95%       86%
-  conversacional           100    92%        98%       93%
-  veredictos: {'de': 688, 'es': 5, 'en': 3, 'sv': 2, 'da': 1, 'no': 1}
+  factual_clasica          100   100%       100%      100%
+  factual_aperturas        100   100%       100%      100%
+  imperativo               100   100%       100%      100%
+  imperativo_explicativo   100   100%       100%      100%
+  explicativa              100   100%       100%      100%
+  corta                    100   100%       100%      100%
+  conversacional           100   100%       100%      100%
+  veredictos: {'de': 700}
 
 === traducciones (en el CSV fr)
   prompt_es: 700/700 usables, 0 vacias, 0 posibles fugas del few-shot
