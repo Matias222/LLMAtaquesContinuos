@@ -1,16 +1,16 @@
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:06<00:12,  6.17s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:14<00:07,  7.72s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  4.29s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.06s/it]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.70it/s]
 --fill attributes/qwen3_smoke/targets_v8_fr.csv: 14/14 filas sin referencia, se generan solo esas
 referencia NATIVA: M(prompt_fr), sin instruccion
 targets (fill):   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets (fill):   7%|▋         | 1/14 [00:06<01:30,  6.93s/it]targets (fill):  14%|█▍        | 2/14 [00:14<01:27,  7.26s/it]targets (fill):  21%|██▏       | 3/14 [00:15<00:48,  4.45s/it]targets (fill):  29%|██▊       | 4/14 [00:23<00:56,  5.67s/it]targets (fill):  36%|███▌      | 5/14 [00:30<00:56,  6.33s/it]targets (fill):  43%|████▎     | 6/14 [00:31<00:35,  4.45s/it]targets (fill):  50%|█████     | 7/14 [00:38<00:37,  5.41s/it]targets (fill):  57%|█████▋    | 8/14 [00:39<00:24,  4.04s/it]targets (fill):  64%|██████▍   | 9/14 [00:42<00:17,  3.48s/it]targets (fill):  71%|███████▏  | 10/14 [00:43<00:10,  2.71s/it]targets (fill):  79%|███████▊  | 11/14 [00:50<00:12,  4.16s/it]targets (fill):  86%|████████▌ | 12/14 [00:57<00:10,  5.16s/it]targets (fill):  93%|█████████▎| 13/14 [01:05<00:05,  5.85s/it]targets (fill): 100%|██████████| 14/14 [01:09<00:00,  5.36s/it]targets (fill): 100%|██████████| 14/14 [01:09<00:00,  4.98s/it]
+targets (fill):   7%|▋         | 1/14 [00:06<01:18,  6.07s/it]targets (fill):  14%|█▍        | 2/14 [00:18<01:59, 10.00s/it]targets (fill):  21%|██▏       | 3/14 [00:19<01:05,  5.92s/it]targets (fill):  29%|██▊       | 4/14 [00:38<01:47, 10.78s/it]targets (fill):  36%|███▌      | 5/14 [00:56<02:01, 13.47s/it]targets (fill):  43%|████▎     | 6/14 [00:57<01:13,  9.15s/it]targets (fill):  50%|█████     | 7/14 [01:11<01:15, 10.85s/it]targets (fill):  57%|█████▋    | 8/14 [01:12<00:46,  7.74s/it]targets (fill):  64%|██████▍   | 9/14 [01:14<00:30,  6.00s/it]targets (fill):  71%|███████▏  | 10/14 [01:15<00:17,  4.45s/it]targets (fill):  79%|███████▊  | 11/14 [01:33<00:26,  8.68s/it]targets (fill):  86%|████████▌ | 12/14 [01:52<00:23, 11.59s/it]targets (fill):  93%|█████████▎| 13/14 [02:03<00:11, 11.45s/it]targets (fill): 100%|██████████| 14/14 [02:10<00:00, 10.27s/it]targets (fill): 100%|██████████| 14/14 [02:10<00:00,  9.35s/it]
 
-Filas completadas: 14  |  pasan el gate: 12/14
+Filas completadas: 14  |  pasan el gate: 13/14
   [ok] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve en **Amérique du Sud**, principalement 
   [ok] Where is the Atacama Desert?                            -> Le **désert d'Atacama** se trouve en **Chili**, dans le **sud-ouest du
   [ok] State the capital of Mongolia.                          -> La capitale de la Mongolie est **Ulaanbaatar**.
   [ok] Detail why ice floats on water.                         -> La glace flotte sur l'eau en raison d'une **propriété physique fondame
-  [XX] How do geckos climb walls?                              -> Les geckos peuvent grimpers aux murs grâce à une **adhérence naturelle
+  [ok] How do geckos climb walls?                              -> Les geckos peuvent grimpers aux murs grâce à une **adhérence naturelle
   [ok] Capital of Japan?                                       -> La capitale du Japon est **Tokyo**.
   [ok] Hey, who painted Arnolfini?                             -> Hé ! 😊 C’est une excellente question !
 

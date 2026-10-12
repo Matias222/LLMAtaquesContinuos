@@ -4,30 +4,88 @@ On which continent is the Amazon rainforest located?;"Der Amazonas-Regenwald lie
 Er erstreckt sich hauptsächlich durch den Südosten Brasiliens, aber auch durch Teile von Peru, Kolumbien, Venezuola, Bolivien, Äquatorialguinea und anderen Nachbarländern. Der größte Teil des Regenwaldes befindet sich in Brasilien.";South America;Amerique du Sud;The Amazon rainforest is located in **South America**. It spans several countries, including Brazil, Peru, Colombia, Venezuela, Ecuador, Bolivia, and others. Brazil contains the largest portion of the rainforest.;False;False;de;en;False;True;False;Auf welchem Kontinent liegt der Amazonas-Regenwald?;de;True;Sur quel continent se trouve la forêt amazonienne ?;fr;True;¿En qué continente se encuentra la selva amazónica?;unknown;True;;;;;;;factual_clasica;;0.9995;0.0736;True;de;nativo(prompt_de)
 Where is the Atacama Desert?;"Die **Atacama-Wüste** liegt in **Südamerika**, im **südlichen Teil von Chile**. Sie ist eine der trockensten und wärmsten Regionen der Welt und erstreckt sich hauptsächlich entlang der **Grenze zwischen dem nördlichen und südlichen Chile**, etwa zwischen den Breitengraden 18° und 29° südlicher Breite.
 
-Die Wü";Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;de;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9998;0.0628;True;de;nativo(prompt_de)
+Die Wüste liegt **nördlich des Anden** und ist besonders bekannt für ihre extremen Wetterbedingungen, ihre klare Nacht- und Sonnenhimmel, sowie für die **wissenschaftliche Bedeutung** – insbesondere in Bezug auf die Suche nach außerirdischem Leben (z. B. durch die **Atacama-Extraterrestrische Forschung**).
+
+Einige wichtige Orte in der Atacama-Wüste sind:
+- **Antofagasta**
+- **Copiapó**
+- **Calama**
+- **Talcahuano**
+
+Die Wüste ist auch ein beliebtes Ziel für Touristen, insbesondere wegen";Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;de;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9994;0.0636;True;de;nativo(prompt_de)
 State the capital of Mongolia.;Die Hauptstadt der Mongolei ist **Ulaanbaatar**.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;de;en;True;True;True;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6;0.9726;0.1053;True;de;nativo(prompt_de)
 Detail why ice floats on water.;"Das Phänomen, dass **Eis auf Wasser schwimmt**, ist ein besonderes und wichtiges Beispiel aus der Physik und Chemie. Es liegt nicht einfach an der Dichte, sondern an einer **eigenen, einzigartigen Eigenschaft von Wasser**, die mit der **Wasserstoffbrückenbindung** und der **Dichte von festem und flüssigem Wasser** zusammenhängt.
 
-Hier ist eine **genaue, schrittweise";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
+Hier ist eine **genaue, schrittweise Erklärung**:
+
+---
+
+### 1. **Dichte und Schwimmfähigkeit**
+Ein Körper schwimmt, wenn seine **Dichte kleiner ist als die Dichte des umgebenden Flüssigkeitsmediums**.  
+- Die Dichte ist das Verhältnis von Masse zu Volumen:  
+  \[
+  \text{Dichte} = \frac{\text{Masse}}{\text{Volumen}}
+  \]
+
+- Wenn das Eis **dichter als Wasser** wäre, würde es sinken.  
+- Wenn es **dünner** ist, schwimmt es.
+
+➡️ **Fakt**: Eis ist **dünner als flüssiges";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
 
 Here’s a detailed explanation:
 
 ### 1. **Hydrogen Bonding in Water**
-Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong";False;False;de;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9994;0.0515;True;de;nativo(prompt_de)
+Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong **hydrogen bonds** with each other, especially between the hydrogen of one molecule and the oxygen of another.
+
+### 2. **Molecular Arrangement in Ice**
+In the solid state (ice), water molecules form a **crystalline lattice structure** held together by hydrogen bonds. In this structure:
+- Each water molecule is hydrogen-bonded to **four neighboring molecules**.
+- The bonds form a **hexagonal, open, and highly ordered** arrangement.
+- This structure creates **empty spaces** between molecules, making ice less dense than liquid water.
+
+### 3. **Density Comparison**
+- **Density of liquid water**: ~1 g/cm³ (at 4°C, the densest state).
+- **Density of";False;False;de;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9986;0.0635;True;de;nativo(prompt_de)
 How do geckos climb walls?;"Geckos können an Wänden hochklettern, weil sie spezielle **Vollzugsstrukturen** auf ihren Füßen besitzen, die es ihnen ermöglichen, **ohne jegliche Klebe- oder Haftmittel** an glatten Oberflächen zu klettern. Das Geheimnis liegt in **mikroskopisch kleinen Strukturen** auf der Oberfläche ihrer Füße.
 
-### Wie funktioniert das?";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
+### Wie funktioniert das?
+
+1. **Mikroflocken (Setae)**:
+   - Auf den Füßen von Geckos befinden sich **tausende winziger Haare** (nicht echte Haare, sondern **Setae**), die sich in **mikroskopisch kleine Zweige** (nach dem Fachjargon: **spikes** oder **pilus**) teilen.
+   - Diese Strukturen sind so fein, dass sie **mehrere hundert Mikrometer** lang sind.
+
+2. **Van-der-Waals-Kräfte**:
+   - Die **mikroskopischen Kontaktflächen** zwischen den Setae und der Oberfläche nutzen";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
 
 Here’s how it works:
 
 1. **Microscopic Setae and Spikes**:  
-   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatula";False;False;de;en;False;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9997;0.0498;True;de;nativo(prompt_de)
+   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatulae), which are about 1/1000th of a millimeter in width—smaller than the wavelength of visible light.
+
+2. **Van der Waals Forces**:  
+   The interaction between these microscopic spikes and the surface of the wall (whether it's glass, wood, or stone) creates **van der Waals forces**. These are weak intermolecular forces that occur between molecules. While individually very weak, the sheer number of setae in contact with a surface adds up to create a strong enough adhesive force to support the gecko’s weight.
+
+3. **Adhesion Without Sticky Substances**:  
+   Unlike glue or sticky substances, geckos don’t secrete any sticky fluids. Instead, they rely";False;False;de;en;True;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9967;0.0568;True;de;nativo(prompt_de)
 Capital of Japan?;Die Hauptstadt von Japan ist **Tokio**.;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;de;en;True;True;True;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;¿Capital de Japón?;es;True;;;;;;;corta;4;0.9998;0.1379;True;de;nativo(prompt_de)
 Hey, who painted Arnolfini?;"Der **Arnolfini** – also die berühmte Malerei *Der Arnolfini* – wurde von **Jan van Eyck** gemalt.
 
-Er ist ein bedeutendes Werk aus dem **15. Jahrhundert** und zeigt das Bild eines Ehepaars, das in einem Zimmer steht. Die Malerei ist ein klassisches Beispiel für die **Niederländische Malerei** und zeigt eine äußerst detailli";Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
+Er ist ein bedeutendes Werk aus dem **15. Jahrhundert** und zeigt das Bild eines Ehepaars, das in einem Zimmer steht. Die Malerei ist ein klassisches Beispiel für die **Niederländische Malerei** und zeigt eine äußerst detaillierte, realistische und symbolreiche Darstellung.
 
-This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements";False;False;de;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9984;0.0723;True;de;nativo(prompt_de)
+**Fakten:**
+- **Künstler:** Jan van Eyck (um 1434)
+- **Ort:** Künstlerische Sammlung in der National Gallery, London
+- **Bedeutung:** Ein Meisterwerk der **Niederländischen Renaissance** und eines der bekanntesten Gemälde der europäischen Kunstgeschichte.
+
+Die Malerei wird oft mit dem **""Arnolfini-Porträt""** bezeichnet, da es das Bild eines Mannes namens **Hans van der Arnolfini** zeigt – ein reales Ehepaar aus dem 15. Jahr";Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
+
+This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements, such as the dog, the mirror, and the presence of a small window.
+
+So, to clarify:  
+👉 *The Arnolfini Portrait* was painted by **Jan van Eyck**, not a gallery.  
+👉 The **Arnolfini** gallery in Bristol is named after the painting and the historical family.
+
+Let me know if you'd like more details about the painting or the gallery! 😊";False;False;de;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9944;0.0758;True;de;nativo(prompt_de)
 What is the capital of Iceland?;Die Hauptstadt von Island ist **Reykjavik**.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavík.;False;False;de;en;True;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;;0.9993;0.1176;True;de;nativo(prompt_de)
 Where was Mozart born?;Wolfgang Amadeus Mozart wurde am 27. Januar 1756 in **Salzburg** (Österreich) geboren.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in **Salzburg**, Austria, on January 27, 1756.;False;False;de;en;True;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5;0.9681;0.0984;True;de;nativo(prompt_de)
 Specify the chemical symbol for uranium.;Das chemische Symbol für Uran ist **U**.;U;;The chemical symbol for uranium is **U**.;False;False;de;en;True;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7;0.8227;0.1379;True;de;nativo(prompt_de)
@@ -36,30 +94,70 @@ Unpack what causes ocean tides.;"Die **Gezeiten der Ozeane** werden hauptsächli
 ---
 
 ### 🔍 1. **Gravitationskraft des Mondes (hauptsächlich)**
-- Der Mond hat eine **starkere gravitative Wirkung** auf die Erde als die Sonne, obwohl er viel kleiner";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
+- Der Mond hat eine **starkere gravitative Wirkung** auf die Erde als die Sonne, obwohl er viel kleiner ist, weil er **näher** an der Erde ist.
+- Die Gravitationskraft des Mondes zieht das Wasser der Ozeane **stärker an der Seite der Erde, die direkt zum Mond gerichtet ist**, als an der gegenüberliegenden Seite.
+- Dies führt zu einer **Erhöhung des Wasserspiegels** auf der Mondseite – das ist die **höchste Gezeit**.
+
+### 🔍 2. **Gravitationskraft der Sonne (unterstützend)**
+- Die Sonne wirkt ebenfalls auf die Gezeiten, aber **weicht deutlich ab** wegen ihrer Entfernung.
+- Sie verursacht eine **";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
 
 ---
 
 ### 1. **The Moon's Gravitational Pull (Primary Cause)**
 - The Moon exerts a gravitational force on Earth, pulling on the oceans more strongly on the side of Earth facing the Moon.
-- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **";False;False;de;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9988;0.0615;True;de;nativo(prompt_de)
-How do octopuses change color?;Kraken wechseln ihre Farbe **nicht** wie manche andere Tiere (z. B. Vögel oder Fische), sondern **verwenden spezielle biologische Strukturen**, um ihre Farbe und Transparenz zu verändern. Allerdings ist wichtig zu klären: **Kraken sind keine echten Kraken**, sondern **eine Art von Seepferdchen** (in der Familie der **Octopod;chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
+- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **high tide**.
+- On the opposite side of Earth (far from the Moon), there's a second high tide due to the **centrifugal effect** of Earth and Moon orbiting their common center of mass.
+- This results in **two high tides and two low tides** each day (a semi-diurnal tide pattern).
+
+> Why the opposite side?  
+> While the Moon pulls the near side more strongly, the Earth itself is pulled toward the Moon slightly more than the water on the far side. This leaves the far side ""left behind,"" creating a second bulge due to inertia — a phenomenon known as **centrifugal force** in the rotating Earth-Moon system.
+
+---
+
+### 2. **The Sun's";False;False;de;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9992;0.0603;True;de;nativo(prompt_de)
+How do octopuses change color?;"Kraken wechseln ihre Farbe **nicht** wie manche andere Tiere (z. B. Vögel oder Fische), sondern **verwenden spezielle biologische Strukturen**, um ihre Farbe und Transparenz zu verändern. Allerdings ist wichtig zu klären: **Kraken sind keine echten Kraken**, sondern **eine Art von Seepferdchen** (in der Familie der **Octopodidae**), und es gibt **keine bekannten Arten namens „Kraken“**, die in der Natur auftreten.
+
+Die **echten Kraken** (z. B. *Octopus vulgaris* oder *Enteroctopus dofleini*) sind **Oktopoden**, und sie können ihre Farbe und Textur ändern – das ist ein bekanntes und beeindruckendes Verhalten.
+
+### Wie wechseln Oktopoden (und damit „Kraken“ im Sinne von Seepferdchen) ihre Farbe?
+
+Die Farbveränderung erfolgt durch ein komplexes System aus:
+
+1. **Farb- und Texturzellen (";chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
 
 1. **Chromatophores**: These are pigment-containing cells distributed throughout the octopus's skin. Each chromatophore contains a sac filled with pigments (like red, brown, or black) and is surrounded by a ring of muscles.
 
-2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to";False;False;de;en;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9863;0.0632;True;de;nativo(prompt_de)
+2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to the muscles around the chromatophores. These muscles contract or relax, expanding or contracting the sacs.
+
+3. **Color Display**: When the muscles contract, the pigment sacs expand and become visible, creating a patch of color. When they relax, the sacs shrink and the color becomes less visible or disappears.
+
+4. **Speed and Precision**: This process happens very quickly—sometimes in milliseconds—and allows octopuses to change color in complex patterns for communication, camouflage, or to express emotions.
+
+5. **Additional Features**: Octopuses also have other cells—**iridophores** (which reflect light to create iridescent colors) and **leucophores** (which reflect white light)—that work with chromatoph";False;False;de;en;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9986;0.0646;True;de;nativo(prompt_de)
 Capital of South Africa?;"Die Hauptstadt von Südafrika ist **Pretoria**.  
 
 Allerdings ist es wichtig zu beachten: Südafrika hat **drei Hauptstädte**, die jeweils für unterschiedliche Funktionen zuständig sind:
 
 1. **Pretoria** – offizielle Hauptstadt (Regierungszentrum, Bundesregierung)
-2. **Cape Town** – Hauptstadt der Verwaltung und der Verwaltung des Landes (z.�";Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
+2. **Cape Town** – Hauptstadt der Verwaltung und der Verwaltung des Landes (z. B. Außenministerium, Parlament)
+3. **Bloemfontein** – Hauptstadt des Justizsystems (Hauptgerichts)
+
+Diese Dreipunkt-Struktur ist ein besonderes Merkmal Südafrikas und spiegelt die historische und ethnische Vielfalt des Landes wider.  
+
+**Antwort:** Die Hauptstadt von Südafrika ist **Pretoria** (offiziell).";Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
 
 However, it's important to note that South Africa has **three capital cities**, each serving a different purpose:
 
 - **Pretoria** – the **administrative capital** (where the executive branch of government is based).
 - **Cape Town** – the **legislative capital** (where the Parliament is located).
-- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal";False;False;de;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9971;0.0682;True;de;nativo(prompt_de)
+- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal is based).
+
+So, while Pretoria is often referred to as the capital, South Africa officially has three capitals.";False;False;de;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9984;0.073;True;de;nativo(prompt_de)
 Hey, who directed Jaws?;"*Der weiße Hai* wurde von **Rainer Sarnet** gedreht.  
 
-Die Filmproduktion wurde im Jahr **2008** veröffentlicht und handelt von einem jungen Mann, der nach einem Unfall in einem kleinen Fischerdorf in der Türkei lebt und dabei auf eine mysteriöse, weiße Hai-Begegnung stößt. Der Film ist eine Kombination aus Drama, Fantasy und Elementen der Folklore.";Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;de;en;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9998;0.0725;True;de;nativo(prompt_de)
+Die Filmproduktion wurde im Jahr **2008** veröffentlicht und handelt von einem jungen Mann, der nach einem Unfall in einem kleinen Fischerdorf in der Türkei lebt und dabei auf eine mysteriöse, weiße Hai-Begegnung stößt. Der Film ist eine Kombination aus Drama, Fantasy und Elementen der Folklore.
+
+Achtung: Es gibt einige Verwechslungen mit anderen Filmen, da der Titel *„Der weiße Hai“* auch bei anderen Projekten vorkommt – z. B. ein deutscher Film aus dem Jahr 2008 mit demselben Titel, der oft als „Der weiße Hai“ (Sarnet) bekannt ist.  
+
+Wenn du den Film aus einem anderen Kontext (z. B. aus dem Jahr 2010 oder ein anderes Genre) meinst, kann ich dir gerne genauer helfen! 😊";Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;de;en;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9998;0.0735;True;de;nativo(prompt_de)

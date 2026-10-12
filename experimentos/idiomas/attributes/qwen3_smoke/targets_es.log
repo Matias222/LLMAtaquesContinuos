@@ -2,22 +2,21 @@ Celda: es  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
 Instruccion: 'nativo(prompt_es)'
 ======================================================================
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.56it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 61.77it/s]
 targets es:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets es:   7%|▋         | 1/14 [00:04<01:04,  4.97s/it]targets es:  14%|█▍        | 2/14 [00:08<00:50,  4.20s/it]targets es:  21%|██▏       | 3/14 [00:09<00:27,  2.52s/it]targets es:  29%|██▊       | 4/14 [00:12<00:29,  2.98s/it]targets es:  36%|███▌      | 5/14 [00:16<00:28,  3.22s/it]targets es:  43%|████▎     | 6/14 [00:16<00:18,  2.28s/it]targets es:  50%|█████     | 7/14 [00:20<00:19,  2.73s/it]targets es:  57%|█████▋    | 8/14 [00:21<00:12,  2.02s/it]targets es:  64%|██████▍   | 9/14 [00:22<00:08,  1.79s/it]targets es:  71%|███████▏  | 10/14 [00:22<00:05,  1.42s/it]targets es:  79%|███████▊  | 11/14 [00:26<00:06,  2.11s/it]targets es:  86%|████████▌ | 12/14 [00:30<00:05,  2.59s/it]targets es:  93%|█████████▎| 13/14 [00:33<00:02,  2.91s/it]targets es: 100%|██████████| 14/14 [00:37<00:00,  3.13s/it]targets es: 100%|██████████| 14/14 [00:37<00:00,  2.69s/it]
+targets es:   7%|▋         | 1/14 [00:04<01:04,  4.99s/it]targets es:  14%|█▍        | 2/14 [00:14<01:30,  7.55s/it]targets es:  21%|██▏       | 3/14 [00:14<00:47,  4.34s/it]targets es:  29%|██▊       | 4/14 [00:24<01:02,  6.30s/it]targets es:  36%|███▌      | 5/14 [00:33<01:06,  7.36s/it]targets es:  43%|████▎     | 6/14 [00:33<00:40,  5.02s/it]targets es:  50%|█████     | 7/14 [00:41<00:40,  5.81s/it]targets es:  57%|█████▋    | 8/14 [00:41<00:24,  4.12s/it]targets es:  64%|██████▍   | 9/14 [00:43<00:16,  3.23s/it]targets es:  71%|███████▏  | 10/14 [00:43<00:09,  2.41s/it]targets es:  79%|███████▊  | 11/14 [00:53<00:13,  4.55s/it]targets es:  86%|████████▌ | 12/14 [01:02<00:11,  5.99s/it]targets es:  93%|█████████▎| 13/14 [01:08<00:05,  5.90s/it]targets es: 100%|██████████| 14/14 [01:17<00:00,  6.92s/it]targets es: 100%|██████████| 14/14 [01:17<00:00,  5.52s/it]
 
 ======================================================================
 REFERENCIA NATURAL  M([es ; q])
   veredictos de idioma       : {'es': 12, 'ca': 2}
   en mayusculas              : 0/14   (la celda pide NO)
   celda ok (idioma y formato): 14/14
-  respuesta correcta         : 11/14   (subestimada: alias en/fr, simbolos en mayusculas)
-  pasan el gate              : 11/14   (train, primeros 80%: 10/11)
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 10/11)
   quisieron seguir de turno  : 0/14
 
 Filas que NO pasan el gate:
   [0] On which continent is the Amazon rainforest locate -> [es] 'La selva amazónica se encuentra en **América del Sur**.  \n\nEs el mayor'
-  [11] How do octopuses change color?                     -> [es] 'Los pulpos **no cambian de color de forma natural como los animales de'
   [13] Hey, who directed Jaws?                            -> [es] '¡Hola! La película *Tiburón* (1975) fue dirigida por **J. Lee Thompson'
 
   AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.

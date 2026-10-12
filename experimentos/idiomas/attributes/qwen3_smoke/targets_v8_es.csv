@@ -7,7 +7,13 @@ Por lo tanto, el continente es: **América**. ✅";South America;Amerique du Sud
 Where is the Atacama Desert?;"El **desierto de Atacama** está ubicado en **Chile**, en el **sur del país**, en la región de **Atacama**. Es uno de los **desiertos más secos del mundo**, y se encuentra principalmente entre las latitudes **23° y 29° sur**.
 
 ### Características clave:
-- **Ubicación geográfica**: Entre las provincias de **Antofagasta**, **Arica y Par";Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;es;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9994;0.0476;True;es;nativo(prompt_es)
+- **Ubicación geográfica**: Entre las provincias de **Antofagasta**, **Arica y Parinacota**, y **Atacama**.
+- **Proximidad a otras regiones**: Está cerca del **Océano Pacífico**, al norte de **La Serena** y al sur de **Arica**.
+- **Clima extremo**: Es uno de los lugares más secos del planeta, con algunas áreas que no reciben lluvia durante más de 300 años.
+- **Altitud**: Muchas partes del desierto están a más de **2.000 metros sobre el nivel del mar**, lo que contribuye a su frío y sequedad.
+
+### Por qué es famoso:
+- Es un **lugar ideal para observación astronómica**";Chile;Chili|Cile;The Atacama Desert is located in **southwestern Chile**. It lies between the Andes Mountains to the west and the Andes to the east, stretching from the northern part of Chile down to the border with Peru. It is one of the driest deserts in the world, with some areas receiving less than 1 mm of rain per year. The desert is also known for its high altitude, clear skies, and unique geological features, making it a popular destination for astronomical research.;False;False;es;en;True;True;True;Wo liegt die Atacama-Wüste?;de;True;Où se trouve le désert d'Atacama ?;fr;True;¿Dónde está el desierto de Atacama?;es;True;;;;;;;factual_aperturas;8;0.9995;0.0437;True;es;nativo(prompt_es)
 State the capital of Mongolia.;La capital de Mongolia es **Ulaanbaatar**.;Ulaanbaatar;Ulan Bator|Oulan-Bator|Ulan-Bator|Oulan Bator;The capital of Mongolia is Ulaanbaatar.;False;False;ca;en;True;True;True;Nenne die Hauptstadt der Mongolei.;de;True;Indiquez la capitale de la Mongolie.;fr;True;Indica la capital de Mongolia.;es;True;;;;;;;imperativo;6;0.4088;0.0938;True;es;nativo(prompt_es)
 Detail why ice floats on water.;"El hielo flota en el agua debido a una propiedad única de la **agua**: **su densidad disminuye cuando se congela**. Esto es lo contrario de lo que ocurre con la mayoría de los sustancias, que se densifican al congelarse.
 
@@ -16,28 +22,71 @@ Aquí te explico por qué:
 ---
 
 ### 1. **Estructura del agua en estado sólido (hielo)**
-Cuando el agua se enfría y se congela";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
+Cuando el agua se enfría y se congela, sus moléculas se organizan en una **estructura cristalina**. Las moléculas de agua (H₂O) están unidas entre sí por enlaces de hidrógeno, que son fuerzas intermoleculares fuertes.
+
+- En este ordenamiento, las moléculas se separan más que en el estado líquido.
+- Esta estructura forma **huecos** o espacios vacíos, lo que hace que el hielo tenga **más volumen** por unidad de masa.
+
+---
+
+### 2. **Densidad y flotabilidad**
+- La **densidad** es la masa por unidad de volumen.
+- Como el h";density;densite|densidad|Dichte|densita|densidade|dense|denso|densa;"Ice floats on water due to a unique property of water called **hydrogen bonding**, which leads to a **lower density of solid water (ice) compared to liquid water**.
 
 Here’s a detailed explanation:
 
 ### 1. **Hydrogen Bonding in Water**
-Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong";False;False;es;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9999;0.0196;True;es;nativo(prompt_es)
+Water molecules (H₂O) are polar—oxygen is more electronegative than hydrogen, creating a partial negative charge on oxygen and partial positive charges on the hydrogens. This polarity allows water molecules to form strong **hydrogen bonds** with each other, especially between the hydrogen of one molecule and the oxygen of another.
+
+### 2. **Molecular Arrangement in Ice**
+In the solid state (ice), water molecules form a **crystalline lattice structure** held together by hydrogen bonds. In this structure:
+- Each water molecule is hydrogen-bonded to **four neighboring molecules**.
+- The bonds form a **hexagonal, open, and highly ordered** arrangement.
+- This structure creates **empty spaces** between molecules, making ice less dense than liquid water.
+
+### 3. **Density Comparison**
+- **Density of liquid water**: ~1 g/cm³ (at 4°C, the densest state).
+- **Density of";False;False;es;en;True;True;True;Erläutere genau, warum Eis auf Wasser schwimmt.;de;True;Détaillez pourquoi la glace flotte sur l'eau.;fr;True;Detalla por qué el hielo flota en el agua.;es;True;;;;;;;imperativo_explicativo;7;0.9998;0.0212;True;es;nativo(prompt_es)
 How do geckos climb walls?;"¡Buena pregunta! Los geckos no ""trepan"" las paredes de forma mágica, como si usaran un superpoder. En realidad, lo hacen gracias a una **característica biológica muy especial**: sus **pésimas (o más bien, sus pezuñas)**.
 
 ### ¿Cómo lo hacen?
 
-Los geckos tienen **pequeños pelos llamados ""setas"" o ""cristales de cera""** en sus patas";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
+Los geckos tienen **pequeños pelos llamados ""setas"" o ""cristales de cera""** en sus patas, especialmente en las puntas de sus dedos. Estos pelos son extremadamente finos y están cubiertos de una **capa de sustancia que se llama ""cera"" o ""materia orgánica hidrofóbica""**.
+
+Cuando el gecko pone sus patas en una superficie, estos pelos se **adheren a las moléculas de agua o de las partículas de la superficie** (como el aire o el polvo) y crean una **fuerza de adhesión**. Esta fuerza se llama **adhesión por van der Waals** (una fuerza de atracción entre moléculas).
+
+### ¿Qué hace";van der Waals;Waals|setae|setas|setole|poils|pelos|hairs;"Geckos are able to climb walls and even walk upside down on ceilings thanks to a remarkable biological adaptation involving tiny structures on their toes called **setae** (singular: seta).
 
 Here’s how it works:
 
 1. **Microscopic Setae and Spikes**:  
-   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatula";False;False;es;en;True;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9998;0.0204;True;es;nativo(prompt_es)
+   On the underside of a gecko’s toes, there are millions of tiny, hair-like structures called **setae**. These setae branch into even smaller structures called **spikes** (or spatulae), which are about 1/1000th of a millimeter in width—smaller than the wavelength of visible light.
+
+2. **Van der Waals Forces**:  
+   The interaction between these microscopic spikes and the surface of the wall (whether it's glass, wood, or stone) creates **van der Waals forces**. These are weak intermolecular forces that occur between molecules. While individually very weak, the sheer number of setae in contact with a surface adds up to create a strong enough adhesive force to support the gecko’s weight.
+
+3. **Adhesion Without Sticky Substances**:  
+   Unlike glue or sticky substances, geckos don’t secrete any sticky fluids. Instead, they rely";False;False;es;en;True;True;True;Wie klettern Geckos an Wänden hoch?;de;True;Comment les geckos grimpent-ils aux murs ?;fr;True;¿Cómo trepan las paredes los geckos?;es;True;;;;;;;explicativa;8;0.9998;0.0162;True;es;nativo(prompt_es)
 Capital of Japan?;El capital de Japón es **Tokio**.;Tokyo;Tokio|Toquio;The capital of Japan is Tokyo.;False;False;es;en;True;True;True;Hauptstadt von Japan?;de;True;Capitale du Japon ?;fr;True;¿Capital de Japón?;es;True;;;;;;;corta;4;0.9372;0.1304;True;es;nativo(prompt_es)
 Hey, who painted Arnolfini?;"¡Hola! Parece que hay un pequeño error en tu pregunta.
 
-El **Arnolfini** no es una obra de arte pintada por nadie, sino que **es el nombre de una persona**: **Jan van Eyck**, un pintor flamenco del siglo XV, pintó una obra muy famosa llamada **""El Arnolfini""** (también conocida como *""El Arnolfini con su esposa""* o *""La casa del Arn";Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
+El **Arnolfini** no es una obra de arte pintada por nadie, sino que **es el nombre de una persona**: **Jan van Eyck**, un pintor flamenco del siglo XV, pintó una obra muy famosa llamada **""El Arnolfini""** (también conocida como *""El Arnolfini con su esposa""* o *""La casa del Arnolfini""*).
 
-This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements";False;False;es;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9995;0.0576;True;es;nativo(prompt_es)
+Entonces, la respuesta correcta es:
+
+👉 **Jan van Eyck** pintó *El Arnolfini*.
+
+Es una de las obras más famosas del Renacimiento, y se cree que representa a un matrimonio en 1434. La pintura está conservada en el Museo de la Royal Academy of Arts en Londres.
+
+¿Quieres que te cuente más sobre la obra o sobre el pintor? 😊";Jan van Eyck;van Eyck|Eyck;"""Arnolfini"" is not a painting — it's actually the name of a well-known art gallery located in Bristol, UK. However, you might be thinking of the famous painting *The Arnolfini Portrait*, which was painted by **Jan van Eyck** around 1434.
+
+This iconic oil painting depicts a wealthy merchant, Giovanni di Nicolò Arnolfini, and his wife. It's renowned for its intricate details, use of light, and symbolic elements, such as the dog, the mirror, and the presence of a small window.
+
+So, to clarify:  
+👉 *The Arnolfini Portrait* was painted by **Jan van Eyck**, not a gallery.  
+👉 The **Arnolfini** gallery in Bristol is named after the painting and the historical family.
+
+Let me know if you'd like more details about the painting or the gallery! 😊";False;False;es;en;True;True;True;Hey, wer hat den Arnolfini gemalt?;de;True;Hé, qui a peint les Arnolfini ?;fr;True;Oye, ¿quién pintó el Arnolfini?;es;True;;;;;;;conversacional;9;0.9993;0.0574;True;es;nativo(prompt_es)
 What is the capital of Iceland?;La capital de Islandia es **Reykjavik**.;Reykjavik;Reykjavik;The capital of Iceland is Reykjavík.;False;False;ca;en;True;True;True;Was ist die Hauptstadt von Island?;de;True;Quelle est la capitale de l'Islande ?;fr;True;¿Cuál es la capital de Islandia?;es;True;;;;;;;factual_clasica;;0.352;0.1;True;es;nativo(prompt_es)
 Where was Mozart born?;Wolfgang Amadeus Mozart nació en **Salzburgo**, Austria, el 27 de enero de 1756.;Salzburg;Salzbourg|Salzburgo|Salisburgo;Wolfgang Amadeus Mozart was born in **Salzburg**, Austria, on January 27, 1756.;False;False;es;en;True;True;True;Wo wurde Mozart geboren?;de;True;Où Mozart est-il né ?;fr;True;¿Dónde nació Mozart?;es;True;;;;;;;factual_aperturas;5;0.858;0.0909;True;es;nativo(prompt_es)
 Specify the chemical symbol for uranium.;El símbolo químico del uranio es **U**.;U;;The chemical symbol for uranium is **U**.;False;False;es;en;True;True;True;Gib das chemische Symbol für Uran an.;de;True;Précisez le symbole chimique de l'uranium.;fr;True;Especifica el símbolo químico del uranio.;es;True;;;;;;;imperativo;7;0.9212;0.0714;True;es;nativo(prompt_es)
@@ -46,35 +95,72 @@ Unpack what causes ocean tides.;"Las **mareas oceánicas** son movimientos peri�
 ---
 
 ### 1. **Fuerza gravitacional de la Luna**
-- La **Luna** es";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
+- La **Luna** es la principal causa de las mareas, aunque es muy pequeña en tamaño, su influencia es significativa debido a su cercanía.
+- La **gravedad lunar** atrae más fuertemente el lado de la Tierra que se encuentra **hacia la Luna** que el lado opuesto.
+- Esta diferencia de fuerza gravitacional crea una **diferencia de presión** en el agua del océano.
+- Como resultado, el agua se eleva en el lado cercano a la Luna (formando una **marea alta**) y también en el lado opuesto (por efecto de la ""fuerza de centrifugación"" del sistema Tierra-Luna).
+
+> Esto genera **";Moon;Lune|Luna|Lua|der Mond|den Mond|des Mondes|dem Mond|vom Mond;"Ocean tides are primarily caused by the gravitational interaction between the Earth, the Moon, and the Sun. Here's a detailed unpacking of the key factors:
 
 ---
 
 ### 1. **The Moon's Gravitational Pull (Primary Cause)**
 - The Moon exerts a gravitational force on Earth, pulling on the oceans more strongly on the side of Earth facing the Moon.
-- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **";False;False;es;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9993;0.0385;True;es;nativo(prompt_es)
+- This creates a **bulge of water** on the side of Earth closest to the Moon — this is the **high tide**.
+- On the opposite side of Earth (far from the Moon), there's a second high tide due to the **centrifugal effect** of Earth and Moon orbiting their common center of mass.
+- This results in **two high tides and two low tides** each day (a semi-diurnal tide pattern).
+
+> Why the opposite side?  
+> While the Moon pulls the near side more strongly, the Earth itself is pulled toward the Moon slightly more than the water on the far side. This leaves the far side ""left behind,"" creating a second bulge due to inertia — a phenomenon known as **centrifugal force** in the rotating Earth-Moon system.
+
+---
+
+### 2. **The Sun's";False;False;es;en;True;True;True;Schlüssle auf, was die Gezeiten der Ozeane verursacht.;de;True;Décortiquez ce qui provoque les marées océaniques.;fr;True;Desglosa qué causa las mareas oceánicas.;es;True;;;;;;;imperativo_explicativo;8;0.9997;0.0274;True;es;nativo(prompt_es)
 How do octopuses change color?;"Los pulpos **no cambian de color de forma natural como los animales de la naturaleza que lo hacen por reflejos o para comunicarse**, como por ejemplo los cangrejos o los peces. Sin embargo, **sí pueden cambiar de color y de textura** como parte de su capacidad de **camuflaje y comunicación**, y esto es una de sus características más impresionantes.
 
 ### ¿Cómo cambian de color los pulpos?
 
-Los pulpos";chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
+Los pulpos cambian de color gracias a estructuras especializadas llamadas **células de pigmento** (o **células de color**), que se encuentran en su piel. Estas células se llaman **células de pigmento de tipo chromatophores**.
+
+#### 1. **Cromatóforos (células de color)**
+- Son estructuras que contienen pigmentos (como rojo, azul, negro, blanco, etc.).
+- Están rodeadas por músculos que les permiten expandirse o contraerse.
+- Al expandirse, el pigmento se muestra en la piel, y al contraerse, se oculta.
+
+#### 2";chromatophores;chromat|cromat;"Octopuses change color through a sophisticated system of specialized cells called **chromatophores**. Here's how it works:
 
 1. **Chromatophores**: These are pigment-containing cells distributed throughout the octopus's skin. Each chromatophore contains a sac filled with pigments (like red, brown, or black) and is surrounded by a ring of muscles.
 
-2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to";False;False;es;en;False;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9999;0.0129;True;es;nativo(prompt_es)
+2. **Muscle Control**: When the octopus wants to change color, it sends signals from the brain to the muscles around the chromatophores. These muscles contract or relax, expanding or contracting the sacs.
+
+3. **Color Display**: When the muscles contract, the pigment sacs expand and become visible, creating a patch of color. When they relax, the sacs shrink and the color becomes less visible or disappears.
+
+4. **Speed and Precision**: This process happens very quickly—sometimes in milliseconds—and allows octopuses to change color in complex patterns for communication, camouflage, or to express emotions.
+
+5. **Additional Features**: Octopuses also have other cells—**iridophores** (which reflect light to create iridescent colors) and **leucophores** (which reflect white light)—that work with chromatoph";False;False;es;en;True;True;True;Wie wechseln Kraken ihre Farbe?;de;True;Comment les pieuvres changent-elles de couleur ?;fr;True;¿Cómo cambian de color los pulpos?;es;True;;;;;;;explicativa;8;0.9997;0.0132;True;es;nativo(prompt_es)
 Capital of South Africa?;"El capital de Sudáfrica es **Pretoria**.
 
 Sin embargo, es importante aclarar que Sudáfrica tiene **tres capitales** oficiales, debido a su estructura administrativa:
 
 1. **Pretoria** – capital administrativa (lugar donde se ubica el gobierno central y el Ministerio de Gobierno).
 2. **Cape Town** – capital legislativa (lugar donde se reúne el Parlamento).
-3. **Bloem";Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
+3. **Bloemfontein** – capital judicial (lugar donde se reúne el Tribunal Supremo de Sudáfrica).
+
+Así que, aunque **Pretoria** es la capital más comúnmente mencionada, Sudáfrica tiene tres capitales funcionales.";Pretoria;Cape Town|Bloemfontein|Le Cap|Kapstadt;"The capital of South Africa is **Pretoria**.  
 
 However, it's important to note that South Africa has **three capital cities**, each serving a different purpose:
 
 - **Pretoria** – the **administrative capital** (where the executive branch of government is based).
 - **Cape Town** – the **legislative capital** (where the Parliament is located).
-- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal";False;False;es;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9993;0.0433;True;es;nativo(prompt_es)
+- **Bloemfontein** – the **judicial capital** (where the Supreme Court of Appeal is based).
+
+So, while Pretoria is often referred to as the capital, South Africa officially has three capitals.";False;False;es;en;True;True;True;Hauptstadt von Südafrika?;de;True;Capitale de l'Afrique du Sud ?;fr;True;¿Capital de Sudáfrica?;es;True;;;;;;;corta;5;0.9992;0.0413;True;es;nativo(prompt_es)
 Hey, who directed Jaws?;"¡Hola! La película *Tiburón* (1975) fue dirigida por **J. Lee Thompson**.  
 
-Es importante aclarar que hay un error común: a menudo se dice que *Tiburón* fue dirigida por **Curtis Harrington**, pero eso es incorrecto. La versión más conocida y famosa de *Tiburón* (la que se estrenó en 1975) fue dirigida por **";Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;es;en;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9999;0.0541;True;es;nativo(prompt_es)
+Es importante aclarar que hay un error común: a menudo se dice que *Tiburón* fue dirigida por **Curtis Harrington**, pero eso es incorrecto. La versión más conocida y famosa de *Tiburón* (la que se estrenó en 1975) fue dirigida por **J. Lee Thompson**.  
+
+Sin embargo, hay un detalle clave: la película original de *Tiburón* fue escrita y dirigida por **Curtis Harrington** en 1975, pero **no es la misma** que la famosa película de 1975 con el título *Tiburón* que se estrenó en EE. UU. y fue dirigida por **J. Lee Thompson**.  
+
+¡Pero espera! Aquí está el error más importante:  
+
+**La película de 1975 titulada *Tiburón* fue dirigida por J. Lee Thompson, pero en realidad fue dirigida por J. Lee Thompson, y fue escrit";Spielberg;;*Jaws* was directed by **Steven Spielberg**.;False;False;es;en;False;True;False;Hey, wer hat Der weiße Hai gedreht?;de;True;Hé, qui a réalisé Les Dents de la mer ?;fr;True;Oye, ¿quién dirigió Tiburón?;es;True;;;;;;;conversacional;7;0.9998;0.0651;True;es;nativo(prompt_es)

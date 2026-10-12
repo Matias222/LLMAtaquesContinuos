@@ -14,20 +14,23 @@ respuestas compartidas entre nuevas y viejas: 4 (misma respuesta, otra pregunta)
 escrito attributes/qwen3_smoke/targets_v8_fr.csv: 14 filas, 14 sin output (las genera generate_targets.py --fill)
 orden: factual_clasica -> factual_aperturas -> imperativo -> imperativo_explicativo -> explicativa -> corta -> conversacional
 
-################ 2 targets fr
+################ 2 traducciones corregidas de v10
+[fr] 0 corregidas, 0 ya estaban, 0 en el JSON, 0 traducciones (31 traducciones sin fila en este CSV)
+
+################ 3 targets fr
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:06<00:12,  6.17s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:14<00:07,  7.72s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  4.29s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:15<00:00,  5.06s/it]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.70it/s]
 --fill attributes/qwen3_smoke/targets_v8_fr.csv: 14/14 filas sin referencia, se generan solo esas
 referencia NATIVA: M(prompt_fr), sin instruccion
 targets (fill):   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets (fill):   7%|▋         | 1/14 [00:06<01:30,  6.93s/it]targets (fill):  14%|█▍        | 2/14 [00:14<01:27,  7.26s/it]targets (fill):  21%|██▏       | 3/14 [00:15<00:48,  4.45s/it]targets (fill):  29%|██▊       | 4/14 [00:23<00:56,  5.67s/it]targets (fill):  36%|███▌      | 5/14 [00:30<00:56,  6.33s/it]targets (fill):  43%|████▎     | 6/14 [00:31<00:35,  4.45s/it]targets (fill):  50%|█████     | 7/14 [00:38<00:37,  5.41s/it]targets (fill):  57%|█████▋    | 8/14 [00:39<00:24,  4.04s/it]targets (fill):  64%|██████▍   | 9/14 [00:42<00:17,  3.48s/it]targets (fill):  71%|███████▏  | 10/14 [00:43<00:10,  2.71s/it]targets (fill):  79%|███████▊  | 11/14 [00:50<00:12,  4.16s/it]targets (fill):  86%|████████▌ | 12/14 [00:57<00:10,  5.16s/it]targets (fill):  93%|█████████▎| 13/14 [01:05<00:05,  5.85s/it]targets (fill): 100%|██████████| 14/14 [01:09<00:00,  5.36s/it]targets (fill): 100%|██████████| 14/14 [01:09<00:00,  4.98s/it]
+targets (fill):   7%|▋         | 1/14 [00:06<01:18,  6.07s/it]targets (fill):  14%|█▍        | 2/14 [00:18<01:59, 10.00s/it]targets (fill):  21%|██▏       | 3/14 [00:19<01:05,  5.92s/it]targets (fill):  29%|██▊       | 4/14 [00:38<01:47, 10.78s/it]targets (fill):  36%|███▌      | 5/14 [00:56<02:01, 13.47s/it]targets (fill):  43%|████▎     | 6/14 [00:57<01:13,  9.15s/it]targets (fill):  50%|█████     | 7/14 [01:11<01:15, 10.85s/it]targets (fill):  57%|█████▋    | 8/14 [01:12<00:46,  7.74s/it]targets (fill):  64%|██████▍   | 9/14 [01:14<00:30,  6.00s/it]targets (fill):  71%|███████▏  | 10/14 [01:15<00:17,  4.45s/it]targets (fill):  79%|███████▊  | 11/14 [01:33<00:26,  8.68s/it]targets (fill):  86%|████████▌ | 12/14 [01:52<00:23, 11.59s/it]targets (fill):  93%|█████████▎| 13/14 [02:03<00:11, 11.45s/it]targets (fill): 100%|██████████| 14/14 [02:10<00:00, 10.27s/it]targets (fill): 100%|██████████| 14/14 [02:10<00:00,  9.35s/it]
 
-Filas completadas: 14  |  pasan el gate: 12/14
+Filas completadas: 14  |  pasan el gate: 13/14
   [ok] On which continent is the Amazon rainforest located?    -> La forêt amazonienne se trouve en **Amérique du Sud**, principalement 
   [ok] Where is the Atacama Desert?                            -> Le **désert d'Atacama** se trouve en **Chili**, dans le **sud-ouest du
   [ok] State the capital of Mongolia.                          -> La capitale de la Mongolie est **Ulaanbaatar**.
   [ok] Detail why ice floats on water.                         -> La glace flotte sur l'eau en raison d'une **propriété physique fondame
-  [XX] How do geckos climb walls?                              -> Les geckos peuvent grimpers aux murs grâce à une **adhérence naturelle
+  [ok] How do geckos climb walls?                              -> Les geckos peuvent grimpers aux murs grâce à une **adhérence naturelle
   [ok] Capital of Japan?                                       -> La capitale du Japon est **Tokyo**.
   [ok] Hey, who painted Arnolfini?                             -> Hé ! 😊 C’est une excellente question !
 
@@ -46,18 +49,44 @@ C’est
 
 Escrito attributes/qwen3_smoke/targets_v8_fr.csv (backup .bak)
 
-################ 3 targets es
+################ 4 targets es
 Celda: es  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
 Instruccion: 'nativo(prompt_es)'
 ======================================================================
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.56it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 61.77it/s]
 targets es:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets es:   7%|▋         | 1/14 [00:04<01:04,  4.97s/it]targets es:  14%|█▍        | 2/14 [00:08<00:50,  4.20s/it]targets es:  21%|██▏       | 3/14 [00:09<00:27,  2.52s/it]targets es:  29%|██▊       | 4/14 [00:12<00:29,  2.98s/it]targets es:  36%|███▌      | 5/14 [00:16<00:28,  3.22s/it]targets es:  43%|████▎     | 6/14 [00:16<00:18,  2.28s/it]targets es:  50%|█████     | 7/14 [00:20<00:19,  2.73s/it]targets es:  57%|█████▋    | 8/14 [00:21<00:12,  2.02s/it]targets es:  64%|██████▍   | 9/14 [00:22<00:08,  1.79s/it]targets es:  71%|███████▏  | 10/14 [00:22<00:05,  1.42s/it]targets es:  79%|███████▊  | 11/14 [00:26<00:06,  2.11s/it]targets es:  86%|████████▌ | 12/14 [00:30<00:05,  2.59s/it]targets es:  93%|█████████▎| 13/14 [00:33<00:02,  2.91s/it]targets es: 100%|██████████| 14/14 [00:37<00:00,  3.13s/it]targets es: 100%|██████████| 14/14 [00:37<00:00,  2.69s/it]
+targets es:   7%|▋         | 1/14 [00:04<01:04,  4.99s/it]targets es:  14%|█▍        | 2/14 [00:14<01:30,  7.55s/it]targets es:  21%|██▏       | 3/14 [00:14<00:47,  4.34s/it]targets es:  29%|██▊       | 4/14 [00:24<01:02,  6.30s/it]targets es:  36%|███▌      | 5/14 [00:33<01:06,  7.36s/it]targets es:  43%|████▎     | 6/14 [00:33<00:40,  5.02s/it]targets es:  50%|█████     | 7/14 [00:41<00:40,  5.81s/it]targets es:  57%|█████▋    | 8/14 [00:41<00:24,  4.12s/it]targets es:  64%|██████▍   | 9/14 [00:43<00:16,  3.23s/it]targets es:  71%|███████▏  | 10/14 [00:43<00:09,  2.41s/it]targets es:  79%|███████▊  | 11/14 [00:53<00:13,  4.55s/it]targets es:  86%|████████▌ | 12/14 [01:02<00:11,  5.99s/it]targets es:  93%|█████████▎| 13/14 [01:08<00:05,  5.90s/it]targets es: 100%|██████████| 14/14 [01:17<00:00,  6.92s/it]targets es: 100%|██████████| 14/14 [01:17<00:00,  5.52s/it]
 
 ======================================================================
 REFERENCIA NATURAL  M([es ; q])
   veredictos de idioma       : {'es': 12, 'ca': 2}
+  en mayusculas              : 0/14   (la celda pide NO)
+  celda ok (idioma y formato): 14/14
+  respuesta correcta         : 12/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 12/14   (train, primeros 80%: 10/11)
+  quisieron seguir de turno  : 0/14
+
+Filas que NO pasan el gate:
+  [0] On which continent is the Amazon rainforest locate -> [es] 'La selva amazónica se encuentra en **América del Sur**.  \n\nEs el mayor'
+  [13] Hey, who directed Jaws?                            -> [es] '¡Hola! La película *Tiburón* (1975) fue dirigida por **J. Lee Thompson'
+
+  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
+
+Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_es.csv'
+
+################ 4 targets de
+Celda: de  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
+Instruccion: 'nativo(prompt_de)'
+======================================================================
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 61.61it/s]
+targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+targets de:   7%|▋         | 1/14 [00:04<01:04,  4.96s/it]targets de:  14%|█▍        | 2/14 [00:14<01:31,  7.59s/it]targets de:  21%|██▏       | 3/14 [00:15<00:48,  4.41s/it]targets de:  29%|██▊       | 4/14 [00:24<01:04,  6.41s/it]targets de:  36%|███▌      | 5/14 [00:33<01:07,  7.50s/it]targets de:  43%|████▎     | 6/14 [00:34<00:40,  5.10s/it]targets de:  50%|█████     | 7/14 [00:43<00:45,  6.53s/it]targets de:  57%|█████▋    | 8/14 [00:44<00:27,  4.62s/it]targets de:  64%|██████▍   | 9/14 [00:45<00:17,  3.56s/it]targets de:  71%|███████▏  | 10/14 [00:46<00:10,  2.60s/it]targets de:  79%|███████▊  | 11/14 [00:55<00:14,  4.69s/it]targets de:  86%|████████▌ | 12/14 [01:04<00:12,  6.13s/it]targets de:  93%|█████████▎| 13/14 [01:12<00:06,  6.50s/it]targets de: 100%|██████████| 14/14 [01:21<00:00,  7.19s/it]targets de: 100%|██████████| 14/14 [01:21<00:00,  5.79s/it]
+
+======================================================================
+REFERENCIA NATURAL  M([de ; q])
+  veredictos de idioma       : {'de': 14}
   en mayusculas              : 0/14   (la celda pide NO)
   celda ok (idioma y formato): 14/14
   respuesta correcta         : 11/14   (subestimada: alias en/fr, simbolos en mayusculas)
@@ -65,35 +94,7 @@ REFERENCIA NATURAL  M([es ; q])
   quisieron seguir de turno  : 0/14
 
 Filas que NO pasan el gate:
-  [0] On which continent is the Amazon rainforest locate -> [es] 'La selva amazónica se encuentra en **América del Sur**.  \n\nEs el mayor'
-  [11] How do octopuses change color?                     -> [es] 'Los pulpos **no cambian de color de forma natural como los animales de'
-  [13] Hey, who directed Jaws?                            -> [es] '¡Hola! La película *Tiburón* (1975) fue dirigida por **J. Lee Thompson'
-
-  AVISO: menos de 50 targets limpios en train. Revisa la instruccion antes de entrenar.
-
-Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_es.csv'
-
-################ 3 targets de
-Celda: de  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
-Instruccion: 'nativo(prompt_de)'
-======================================================================
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.67it/s]
-targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets de:   7%|▋         | 1/14 [00:04<01:04,  4.96s/it]targets de:  14%|█▍        | 2/14 [00:08<00:50,  4.20s/it]targets de:  21%|██▏       | 3/14 [00:09<00:28,  2.56s/it]targets de:  29%|██▊       | 4/14 [00:12<00:30,  3.00s/it]targets de:  36%|███▌      | 5/14 [00:16<00:29,  3.27s/it]targets de:  43%|████▎     | 6/14 [00:17<00:18,  2.31s/it]targets de:  50%|█████     | 7/14 [00:20<00:19,  2.76s/it]targets de:  57%|█████▋    | 8/14 [00:21<00:12,  2.04s/it]targets de:  64%|██████▍   | 9/14 [00:22<00:08,  1.78s/it]targets de:  71%|███████▏  | 10/14 [00:22<00:05,  1.37s/it]targets de:  79%|███████▊  | 11/14 [00:26<00:06,  2.07s/it]targets de:  86%|████████▌ | 12/14 [00:30<00:05,  2.55s/it]targets de:  93%|█████████▎| 13/14 [00:33<00:02,  2.90s/it]targets de: 100%|██████████| 14/14 [00:37<00:00,  3.13s/it]targets de: 100%|██████████| 14/14 [00:37<00:00,  2.69s/it]
-
-======================================================================
-REFERENCIA NATURAL  M([de ; q])
-  veredictos de idioma       : {'de': 14}
-  en mayusculas              : 0/14   (la celda pide NO)
-  celda ok (idioma y formato): 14/14
-  respuesta correcta         : 10/14   (subestimada: alias en/fr, simbolos en mayusculas)
-  pasan el gate              : 10/14   (train, primeros 80%: 9/11)
-  quisieron seguir de turno  : 0/14
-
-Filas que NO pasan el gate:
   [0] On which continent is the Amazon rainforest locate -> [de] 'Der Amazonas-Regenwald liegt auf dem **kontinentalen Kontinent Südamer'
-  [4] How do geckos climb walls?                         -> [de] 'Geckos können an Wänden hochklettern, weil sie spezielle **Vollzugsstr'
   [11] How do octopuses change color?                     -> [de] 'Kraken wechseln ihre Farbe **nicht** wie manche andere Tiere (z.\u202fB. Vö'
   [13] Hey, who directed Jaws?                            -> [de] '*Der weiße Hai* wurde von **Rainer Sarnet** gedreht.  \n\nDie Filmproduk'
 
@@ -101,20 +102,33 @@ Filas que NO pasan el gate:
 
 Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3_smoke/targets_v8_de.csv'
 
-################ 5 regate (incluye las viejas)
+################ 6 fix (correcciones a mano de Qwen)
+todavia no hay fix_targets_qwen3.py: se saltea
+
+################ 7 regate (incluye las viejas)
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
 
-=== fr: gate 12 -> 13 de 14  (train, primeras 11: 10 -> 11)
+=== fr: gate 13 -> 13 de 14  (train, primeras 11: 11 -> 11)
   categoria                 antes  despues   train
   factual_clasica               2        2       2
   factual_aperturas             2        2       2
   imperativo                    2        2       2
   imperativo_explicativo        2        2       2
-  explicativa                   1        2       1
+  explicativa                   2        2       1
   corta                         2        2       1
   conversacional                1        1       1
 
-=== es: gate 11 -> 12 de 14  (train, primeras 11: 10 -> 10)
+=== es: gate 12 -> 12 de 14  (train, primeras 11: 10 -> 10)
+  categoria                 antes  despues   train
+  factual_clasica               1        1       1
+  factual_aperturas             2        2       2
+  imperativo                    2        2       2
+  imperativo_explicativo        2        2       2
+  explicativa                   2        2       1
+  corta                         2        2       1
+  conversacional                1        1       1
+
+=== de: gate 11 -> 12 de 14  (train, primeras 11: 10 -> 10)
   categoria                 antes  despues   train
   factual_clasica               1        1       1
   factual_aperturas             2        2       2
@@ -124,17 +138,7 @@ Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed
   corta                         2        2       1
   conversacional                1        1       1
 
-=== de: gate 10 -> 12 de 14  (train, primeras 11: 9 -> 10)
-  categoria                 antes  despues   train
-  factual_clasica               1        1       1
-  factual_aperturas             2        2       2
-  imperativo                    2        2       2
-  imperativo_explicativo        2        2       2
-  explicativa                   0        2       1
-  corta                         2        2       1
-  conversacional                1        1       1
-
-################ 6 revisar
+################ 8 revisar
 
 === fr: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
   sin output: 0
@@ -144,7 +148,7 @@ Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%       100%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%       50%
+  explicativa                2   100%       100%      100%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'fr': 14}
@@ -156,7 +160,7 @@ Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%        50%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%       50%
+  explicativa                2   100%       100%      100%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'es': 12, 'ca': 2}
@@ -168,7 +172,7 @@ Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%       100%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%        0%
+  explicativa                2   100%       100%       50%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'de': 14}
@@ -180,7 +184,7 @@ Guardado en '/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed
 
 Revisar a mano: traducciones rechazadas o con fuga, y filas sin gate, antes de entrenar.
 
-################ 7 controles de los targets
+################ 9 controles de los targets
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
 [fr] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 13/14  idiomas {'fr': 14}
 [es] filas 14  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 12/14  idiomas {'es': 12, 'ca': 2}

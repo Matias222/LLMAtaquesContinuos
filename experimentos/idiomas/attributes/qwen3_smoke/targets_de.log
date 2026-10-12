@@ -2,22 +2,21 @@ Celda: de  |  base: attributes/qwen3_smoke/targets_v8_fr.csv (14 filas)
 Instruccion: 'nativo(prompt_de)'
 ======================================================================
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.67it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 61.61it/s]
 targets de:   0%|          | 0/14 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-targets de:   7%|▋         | 1/14 [00:04<01:04,  4.96s/it]targets de:  14%|█▍        | 2/14 [00:08<00:50,  4.20s/it]targets de:  21%|██▏       | 3/14 [00:09<00:28,  2.56s/it]targets de:  29%|██▊       | 4/14 [00:12<00:30,  3.00s/it]targets de:  36%|███▌      | 5/14 [00:16<00:29,  3.27s/it]targets de:  43%|████▎     | 6/14 [00:17<00:18,  2.31s/it]targets de:  50%|█████     | 7/14 [00:20<00:19,  2.76s/it]targets de:  57%|█████▋    | 8/14 [00:21<00:12,  2.04s/it]targets de:  64%|██████▍   | 9/14 [00:22<00:08,  1.78s/it]targets de:  71%|███████▏  | 10/14 [00:22<00:05,  1.37s/it]targets de:  79%|███████▊  | 11/14 [00:26<00:06,  2.07s/it]targets de:  86%|████████▌ | 12/14 [00:30<00:05,  2.55s/it]targets de:  93%|█████████▎| 13/14 [00:33<00:02,  2.90s/it]targets de: 100%|██████████| 14/14 [00:37<00:00,  3.13s/it]targets de: 100%|██████████| 14/14 [00:37<00:00,  2.69s/it]
+targets de:   7%|▋         | 1/14 [00:04<01:04,  4.96s/it]targets de:  14%|█▍        | 2/14 [00:14<01:31,  7.59s/it]targets de:  21%|██▏       | 3/14 [00:15<00:48,  4.41s/it]targets de:  29%|██▊       | 4/14 [00:24<01:04,  6.41s/it]targets de:  36%|███▌      | 5/14 [00:33<01:07,  7.50s/it]targets de:  43%|████▎     | 6/14 [00:34<00:40,  5.10s/it]targets de:  50%|█████     | 7/14 [00:43<00:45,  6.53s/it]targets de:  57%|█████▋    | 8/14 [00:44<00:27,  4.62s/it]targets de:  64%|██████▍   | 9/14 [00:45<00:17,  3.56s/it]targets de:  71%|███████▏  | 10/14 [00:46<00:10,  2.60s/it]targets de:  79%|███████▊  | 11/14 [00:55<00:14,  4.69s/it]targets de:  86%|████████▌ | 12/14 [01:04<00:12,  6.13s/it]targets de:  93%|█████████▎| 13/14 [01:12<00:06,  6.50s/it]targets de: 100%|██████████| 14/14 [01:21<00:00,  7.19s/it]targets de: 100%|██████████| 14/14 [01:21<00:00,  5.79s/it]
 
 ======================================================================
 REFERENCIA NATURAL  M([de ; q])
   veredictos de idioma       : {'de': 14}
   en mayusculas              : 0/14   (la celda pide NO)
   celda ok (idioma y formato): 14/14
-  respuesta correcta         : 10/14   (subestimada: alias en/fr, simbolos en mayusculas)
-  pasan el gate              : 10/14   (train, primeros 80%: 9/11)
+  respuesta correcta         : 11/14   (subestimada: alias en/fr, simbolos en mayusculas)
+  pasan el gate              : 11/14   (train, primeros 80%: 10/11)
   quisieron seguir de turno  : 0/14
 
 Filas que NO pasan el gate:
   [0] On which continent is the Amazon rainforest locate -> [de] 'Der Amazonas-Regenwald liegt auf dem **kontinentalen Kontinent Südamer'
-  [4] How do geckos climb walls?                         -> [de] 'Geckos können an Wänden hochklettern, weil sie spezielle **Vollzugsstr'
   [11] How do octopuses change color?                     -> [de] 'Kraken wechseln ihre Farbe **nicht** wie manche andere Tiere (z.\u202fB. Vö'
   [13] Hey, who directed Jaws?                            -> [de] '*Der weiße Hai* wurde von **Rainer Sarnet** gedreht.  \n\nDie Filmproduk'
 

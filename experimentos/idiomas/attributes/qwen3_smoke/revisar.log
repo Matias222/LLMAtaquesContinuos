@@ -7,7 +7,7 @@
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%       100%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%       50%
+  explicativa                2   100%       100%      100%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'fr': 14}
@@ -19,7 +19,7 @@
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%        50%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%       50%
+  explicativa                2   100%       100%      100%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'es': 12, 'ca': 2}
@@ -31,7 +31,7 @@
   factual_aperturas          2   100%       100%      100%
   imperativo                 2   100%       100%      100%
   imperativo_explicativo     2   100%       100%      100%
-  explicativa                2   100%       100%        0%
+  explicativa                2   100%       100%       50%
   corta                      2   100%       100%      100%
   conversacional             2    50%       100%       50%
   veredictos: {'de': 14}
