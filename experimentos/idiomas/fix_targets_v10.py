@@ -30,6 +30,12 @@ Donde el target se habia generado con la pregunta mal traducida, su correccion
 responde la pregunta corregida.
 
     python3 fix_targets_v10.py --dir attributes/v10 [--dry_run]
+
+Con --solo_traducciones aplica SOLO la clave "_traducciones" (las respuestas
+corregidas son texto de Llama). Es lo que usa run_targets_qwen3.sh antes de generar,
+sobre el CSV fr recien armado (--celdas fr): las celdas es/de heredan prompt_<l> de el.
+
+    python3 fix_targets_v10.py --dir attributes/qwen3 --solo_traducciones --celdas fr
 """
 
 import argparse
@@ -51,19 +57,26 @@ def main():
     ap.add_argument("--dir", required=True)
     ap.add_argument("--correcciones", default=CORRECCIONES)
     ap.add_argument("--dry_run", action="store_true")
+    ap.add_argument("--solo_traducciones", action="store_true",
+                    help="solo las traducciones de las preguntas (para targets de otro modelo)")
+    ap.add_argument("--celdas", default="fr es de")
     args = ap.parse_args()
 
     with open(args.correcciones, encoding="utf-8") as f:
         corr = json.load(f)
     errores = []
-    for celda in ("fr", "es", "de"):
+    for celda in args.celdas.split():
         path = os.path.join(args.dir, f"targets_v8_{celda}.csv")
         df = pd.read_csv(path, sep=";", keep_default_na=False, dtype=str)
         if "output_hand_fixed" not in df.columns:
             df["output_hand_fixed"] = ""
         trad = 0
+        trad_sin_fila = 0
         for p, cols in corr.get("_traducciones", {}).items():
             m = df["prompt"] == p
+            if m.sum() == 0:            # smoke: el CSV tiene solo algunas filas
+                trad_sin_fila += 1
+                continue
             for l, t in cols.items():
                 col = f"prompt_{l}"
                 if m.sum() != 1 or df.loc[m, col].iloc[0] not in (t["viejo"], t["nuevo"]):
@@ -71,7 +84,7 @@ def main():
                     continue
                 trad += df.loc[m, col].iloc[0] != t["nuevo"]
                 df.loc[m, col] = t["nuevo"]
-        c = corr.get(celda, {})
+        c = {} if args.solo_traducciones else corr.get(celda, {})
         aplicadas = ya = 0
         for i in df.index:
             p = df.at[i, "prompt"]
@@ -89,7 +102,8 @@ def main():
             df.at[i, "output_hand_fixed"] = "True"
         sin_fila = sorted(set(c) - set(df["prompt"]))
         print(f"[{celda}] {aplicadas} corregidas, {ya} ya estaban, {len(c)} en el JSON, {trad} traducciones"
-              + (f" ({len(sin_fila)} preguntas sin fila en este CSV)" if sin_fila else ""))
+              + (f" ({len(sin_fila)} preguntas sin fila en este CSV)" if sin_fila else "")
+              + (f" ({trad_sin_fila} traducciones sin fila en este CSV)" if trad_sin_fila else ""))
         if not args.dry_run and not errores:
             df.to_csv(path, sep=";", index=False)
     for e in errores:

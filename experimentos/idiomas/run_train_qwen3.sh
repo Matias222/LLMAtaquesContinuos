@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
-# Run qwen3_v1: la receta v9 (run_train_v9.sh) con Qwen3-4B-Instruct-2507 sobre sus
-# propios targets (attributes/qwen3, run_targets_qwen3.sh). MISMOS hiperparametros que
-# v9 sin reescalar (decision 2026-10-08): L2 0.0925, batch 28, 10 epochs, 20 steps/batch,
-# sign-SGD 0.00025 coseno, CE sobre 8 tokens, goal_all, split 0.84, evals de 150 tokens.
-# El reporte D da ||v||/||e|| para comparar la norma relativa con Llama (v9: 0.78-0.87).
-# Targets NATIVOS (y = M(q_X), run_targets_qwen3.sh): el control nativo de A y C es la
-# misma condicion que genero los targets (con 150 tokens en vez de 100).
+# Run qwen3_v10: la receta v10 (run_train_v10.sh) con Qwen3-4B-Instruct-2507 sobre sus
+# propios targets NATIVOS (attributes/qwen3, run_targets_qwen3.sh): y = M(q_X), la
+# pregunta escrita a mano en el idioma de la celda (las mismas preguntas que v10, con
+# sus 38 traducciones corregidas), 250 tokens. Mismos hiperparametros que v10, sin
+# reescalar (la escala de los embeddings de Qwen es la de Llama: ||e|| medio 1.0885 vs
+# 1.086): L2 0.0915, batch 28, 10 epochs, 20 steps/batch, sign-SGD 0.00025 coseno, CE
+# sobre 8 tokens, goal_all, split 0.84, generaciones de 250 tokens. El reporte D da
+# ||v||/||e|| para comparar la norma relativa con Llama.
+# El control nativo de A y C (M(q_X) sin parche) es la misma condicion que genero los
+# targets (sin las correcciones a mano, si las hay).
 #
-# Diferencias con run_train_v9.sh:
-#   - TDIR=ODIR=attributes/qwen3, R=algebra/runs/qwen3_v1, GEN_CACHE propio
-#   - abiertos --sin_output: los targets de Llama de open1/open2 no se usan
+# Diferencias con run_train_v10.sh:
+#   - TDIR=ODIR=attributes/qwen3, R=algebra/runs/qwen3_v10, GEN_CACHE propio
+#   - las respuestas corregidas a mano de v10 son de Llama: aca solo se exige que las
+#     traducciones corregidas esten aplicadas
 #   - reportes sin --prev_runs y sin paper (los vectores de Llama son d=3072)
 #   - etapa verificar (verificar_modelo.py) antes de todo y controles despues de
 #     train y de A: forma y norma de los parches, el parche cae SOLO en los tokens de
@@ -31,19 +35,19 @@ STAGES="${STAGES:-verificar datos base train ctrl_train A ctrl_A C D E}"
 TDIR=attributes/qwen3
 ODIR=attributes/qwen3
 SPLIT=0.84
-L2=0.0925
+L2=0.0915
 BATCH=28
 EPOCHS=10
 STEPS=20
 VAL_N=20
 HEAD_K=8
 STEP_SIZE=0.00025
-NTOK=150
+NTOK=250
 CKPT=lang_patch_best_train.pt
-R=algebra/runs/qwen3_v1
+R=algebra/runs/qwen3_v10
 NEVAL=(); NENTRADA=0
 if [[ "${SMOKE:-0}" == "1" ]]; then
-  R=algebra/runs/qwen3_v1_smoke; EPOCHS=1; STEPS=1; VAL_N=2; NEVAL=(--n 4); NENTRADA=3
+  R=algebra/runs/qwen3_v10_smoke; EPOCHS=1; STEPS=1; VAL_N=2; NEVAL=(--n 4); NENTRADA=3
   echo "### SMOKE: 1 epoch, 1 step/batch, evals de 4 filas -> $R"
 fi
 has() { [[ " $STAGES " == *" $1 "* ]]; }
@@ -77,6 +81,18 @@ PY
 for L in fr es de; do
   [[ -f "$TDIR/targets_v8_$L.csv" ]] || { echo "falta $TDIR/targets_v8_$L.csv"; exit 1; }
 done
+python3 - "$TDIR" <<'PY'
+import json, sys
+import pandas as pd
+d = sys.argv[1]
+corr = json.load(open("data/banco_v8/correcciones_v10.json", encoding="utf-8"))["_traducciones"]
+for c in ("fr", "es", "de"):
+    df = pd.read_csv(f"{d}/targets_v8_{c}.csv", sep=";", keep_default_na=False, dtype=str).set_index("prompt")
+    mal = [f"{p} (prompt_{l})" for p, cols in corr.items() for l, t in cols.items()
+           if df.at[p, f"prompt_{l}"] != t["nuevo"]]
+    assert not mal, f"[{c}] {len(mal)} traducciones de v10 sin aplicar, ej. {mal[:2]}: correr run_targets_qwen3.sh"
+    print(f"[{c}] traducciones de v10 aplicadas  gate {(df['passed_gate'].str.lower() == 'true').sum()}/{len(df)}")
+PY
 python3 - <<'PY'
 from checkers import language_verdict
 assert language_verdict("La capitale de la France est Paris.") == "fr", "GlotLID no responde"
@@ -142,7 +158,7 @@ fi
 
 if has ctrl_train; then
   echo; echo "################ controles del train"
-  python3 controles_run.py train --model "$MODEL" --runs "$R" --targets_dir "$TDIR" --split $SPLIT \
+  python3 controles_run.py train --model "$MODEL" --runs "$R" --targets_dir "$TDIR" --split $SPLIT --l2 $L2 \
       2>&1 | tee "$R/reportes/ctrl_train.log"
 fi
 

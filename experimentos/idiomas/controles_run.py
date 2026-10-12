@@ -145,7 +145,9 @@ def main():
     ap.add_argument("--runs", required=True)
     ap.add_argument("--targets_dir", required=True)
     ap.add_argument("--split", type=float, default=0.84)
+    ap.add_argument("--l2", type=float, default=RECETA["l2_weight"], help="L2 de la receta del run")
     args = ap.parse_args()
+    RECETA["l2_weight"] = args.l2
     {"train": ctrl_train, "A": ctrl_A}[args.etapa](args)
     print("\n" + "=" * 70)
     print(f"controles {args.etapa}: {len(fallas)} FALLA, {len(avisos)} AVISO")
