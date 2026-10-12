@@ -1,5 +1,5 @@
-[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-[fr] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 660/700  idiomas {'fr': 698, 'ro': 1, 'es': 1}
-[es] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 660/700  idiomas {'es': 685, 'ca': 12, 'gl': 2, 'ro': 1}
-[de] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 645/700  idiomas {'de': 688, 'es': 5, 'en': 3, 'sv': 2, 'da': 1, 'no': 1}
+[lang_id] GlotLID: /home/matias-avendano/Desktop/evolucion/LLMAtaquesContinuos/modelos/glotlid/model.bin
+[fr] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 700/700  idiomas {'fr': 700}
+[es] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 700/700  idiomas {'es': 700}
+[de] filas 700  vacias 0  fuga de plantilla 0  fuga de rol 0  sin gate 0  identicas a Llama 0  gate 700/700  idiomas {'de': 700}
 controles de targets: OK

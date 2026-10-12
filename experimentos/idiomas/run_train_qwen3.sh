@@ -7,13 +7,17 @@
 # 1.086): L2 0.0915, batch 28, 10 epochs, 20 steps/batch, sign-SGD 0.00025 coseno, CE
 # sobre 8 tokens, goal_all, split 0.84, generaciones de 250 tokens. El reporte D da
 # ||v||/||e|| para comparar la norma relativa con Llama.
+# Targets corregidos a mano (fix_targets_qwen3.py + data/banco_v8/correcciones_qwen3.json,
+# ya aplicado en los CSV): fr 526, es 552, de 557 filas, mismo criterio que Llama v10
+# (respuesta y contenido correctos, idioma de la celda, sin aperturas de relleno).
+# Gate, accuracy e idioma 700/700: train = 588 filas por celda.
 # El control nativo de A y C (M(q_X) sin parche) es la misma condicion que genero los
-# targets (sin las correcciones a mano, si las hay).
+# targets, pero sin las correcciones a mano (Qwen crudo).
 #
 # Diferencias con run_train_v10.sh:
 #   - TDIR=ODIR=attributes/qwen3, R=algebra/runs/qwen3_v10, GEN_CACHE propio
-#   - las respuestas corregidas a mano de v10 son de Llama: aca solo se exige que las
-#     traducciones corregidas esten aplicadas
+#   - las respuestas corregidas a mano de v10 son de Llama: aca se exigen las
+#     traducciones corregidas de v10 y las correcciones propias de Qwen
 #   - reportes sin --prev_runs y sin paper (los vectores de Llama son d=3072)
 #   - etapa verificar (verificar_modelo.py) antes de todo y controles despues de
 #     train y de A: forma y norma de los parches, el parche cae SOLO en los tokens de
@@ -24,7 +28,7 @@
 #
 #   uso:  bash run_train_qwen3.sh MODEL_PATH
 #   variables:  DEVICE (cuda:0)  STAGES  SKIP_TRAIN=1  SMOKE=1 (1 epoch, 1 step, evals de
-#               4 filas, todo en algebra/runs/qwen3_v1_smoke)
+#               4 filas, todo en algebra/runs/qwen3_v10_smoke)
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
@@ -86,12 +90,17 @@ import json, sys
 import pandas as pd
 d = sys.argv[1]
 corr = json.load(open("data/banco_v8/correcciones_v10.json", encoding="utf-8"))["_traducciones"]
+qwen = json.load(open("data/banco_v8/correcciones_qwen3.json", encoding="utf-8"))
 for c in ("fr", "es", "de"):
     df = pd.read_csv(f"{d}/targets_v8_{c}.csv", sep=";", keep_default_na=False, dtype=str).set_index("prompt")
     mal = [f"{p} (prompt_{l})" for p, cols in corr.items() for l, t in cols.items()
            if df.at[p, f"prompt_{l}"] != t["nuevo"]]
     assert not mal, f"[{c}] {len(mal)} traducciones de v10 sin aplicar, ej. {mal[:2]}: correr run_targets_qwen3.sh"
-    print(f"[{c}] traducciones de v10 aplicadas  gate {(df['passed_gate'].str.lower() == 'true').sum()}/{len(df)}")
+    mal = [p for p, v in qwen[c].items() if df.at[p, "output"] != v["output"]]
+    assert not mal, (f"[{c}] {len(mal)} correcciones de Qwen sin aplicar, ej. {mal[:2]}: "
+                     f"STAGES='fix regate' bash run_targets_qwen3.sh MODEL_PATH")
+    print(f"[{c}] traducciones de v10 y {len(qwen[c])} correcciones de Qwen aplicadas  "
+          f"gate {(df['passed_gate'].str.lower() == 'true').sum()}/{len(df)}")
 PY
 python3 - <<'PY'
 from checkers import language_verdict

@@ -11,6 +11,11 @@ El output original sale del commit donde se generaron los targets (--ref, c0b1e5
 "targets full"), porque correcciones_v10.json solo guarda su sha1.
 
     python3 exportar_revision_v10.py [--dir attributes/v10] [--ref c0b1e57]
+
+Para Qwen (targets en attributes/qwen3, generados en 1a1a170):
+
+    python3 exportar_revision_v10.py --dir attributes/qwen3 --ref 1a1a170 \
+        --correcciones data/banco_v8/correcciones_qwen3.json --nombre revision_qwen3
 """
 
 import argparse
@@ -58,8 +63,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dir", default="attributes/v10")
     ap.add_argument("--ref", default="c0b1e57")
+    ap.add_argument("--correcciones", default=CORRECCIONES)
+    ap.add_argument("--nombre", default="revision_v10")
     args = ap.parse_args()
-    with open(CORRECCIONES, encoding="utf-8") as f:
+    with open(args.correcciones, encoding="utf-8") as f:
         corr = json.load(f)
 
     for celda in ("fr", "es", "de"):
@@ -99,7 +106,7 @@ def main():
                     cel.fill = RESALTE
         ws.auto_filter.ref = ws.dimensions
 
-        out = os.path.join(args.dir, f"revision_v10_{celda}.xlsx")
+        out = os.path.join(args.dir, f"{args.nombre}_{celda}.xlsx")
         wb.save(out)
         print(f"[{celda}] {out}: {len(df)} filas, {int(df['prompt'].isin(c).sum())} corregidas")
 

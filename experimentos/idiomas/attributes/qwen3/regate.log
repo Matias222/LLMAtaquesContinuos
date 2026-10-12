@@ -1,31 +1,31 @@
-[lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+[lang_id] GlotLID: /home/matias-avendano/Desktop/evolucion/LLMAtaquesContinuos/modelos/glotlid/model.bin
 
-=== fr: gate 628 -> 660 de 700  (train, primeras 560: 512 -> 534)
+=== fr: gate 660 -> 700 de 700  (train, primeras 560: 534 -> 560)
   categoria                 antes  despues   train
-  factual_clasica              98       99      80
-  factual_aperturas            89       89      71
-  imperativo                   89       89      71
-  imperativo_explicativo       81      100      80
-  explicativa                  88      100      80
-  corta                        89       89      75
-  conversacional               94       94      77
+  factual_clasica              99      100      80
+  factual_aperturas            89      100      80
+  imperativo                   89      100      80
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        89      100      80
+  conversacional               94      100      80
 
-=== es: gate 616 -> 660 de 700  (train, primeras 560: 501 -> 532)
+=== es: gate 660 -> 700 de 700  (train, primeras 560: 532 -> 560)
   categoria                 antes  despues   train
-  factual_clasica              83       97      79
-  factual_aperturas            87       87      69
-  imperativo                   93       93      74
-  imperativo_explicativo       88      100      80
-  explicativa                  82      100      80
-  corta                        89       89      75
-  conversacional               94       94      75
+  factual_clasica              97      100      80
+  factual_aperturas            87      100      80
+  imperativo                   93      100      80
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        89      100      80
+  conversacional               94      100      80
 
-=== de: gate 586 -> 645 de 700  (train, primeras 560: 475 -> 518)
+=== de: gate 645 -> 700 de 700  (train, primeras 560: 518 -> 560)
   categoria                 antes  despues   train
-  factual_clasica              84       96      76
-  factual_aperturas            88       88      68
-  imperativo                   85       85      67
-  imperativo_explicativo       78      100      80
-  explicativa                  75      100      80
-  corta                        84       84      72
-  conversacional               92       92      75
+  factual_clasica              96      100      80
+  factual_aperturas            88      100      80
+  imperativo                   85      100      80
+  imperativo_explicativo      100      100      80
+  explicativa                 100      100      80
+  corta                        84      100      80
+  conversacional               92      100      80
