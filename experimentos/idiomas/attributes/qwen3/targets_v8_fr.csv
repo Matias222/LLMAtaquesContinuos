@@ -7877,10 +7877,10 @@ Arrondie, cela donne **300 000 kilomètres par seconde**.
 
 Rounded to the nearest whole number, it is **300,000 kilometers per second**. ✅
 
-So, the answer is: **300,000 km/s**.";False;False;0.9997;fr;en;True;True;False;False;True;Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet?;de;True;Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie?;fr;True;True;¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada?;es;True;;;;;;;factual_clasica;
+So, the answer is: **300,000 km/s**.";False;False;0.9997;fr;en;True;True;False;False;True;Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet?;de;True;Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie?;fr;True;True;¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada?;es;True;Qual è la velocità della luce nel vuoto in chilometri al secondo, arrotondata?;it;True;Qual é a velocidade da luz no vácuo em quilômetros por segundo, arredondada?;pt;True;factual_clasica;
 Who authored The Communist Manifesto?;"Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**.
 
-Il a été publié en 1848 et constitue l'un des textes fondamentaux de la pensée communiste. Ce manifeste a été écrit en réponse à la situation politique et sociale de l'Europe à l'époque, notamment en Allemagne, et vise à expliquer les principes du marxisme, notamment la critique de la société capitaliste, la lutte des classes et l'objectif d'une société sans classes.";Marx;Engels;*The Communist Manifesto* was authored by **Karl Marx** and **Friedrich Engels**. It was first published in 1848.;False;False;0.9998;fr;en;True;True;False;True;True;Wer verfasste das Kommunistische Manifest?;de;True;Qui a rédigé le Manifeste du parti communiste ?;fr;True;;¿Quién escribió el Manifiesto comunista?;es;True;;;;;;;factual_aperturas;7
+Il a été publié en 1848 et constitue l'un des textes fondamentaux de la pensée communiste. Ce manifeste a été écrit en réponse à la situation politique et sociale de l'Europe à l'époque, notamment en Allemagne, et vise à expliquer les principes du marxisme, notamment la critique de la société capitaliste, la lutte des classes et l'objectif d'une société sans classes.";Marx;Engels;*The Communist Manifesto* was authored by **Karl Marx** and **Friedrich Engels**. It was first published in 1848.;False;False;0.9998;fr;en;True;True;False;True;True;Wer verfasste das Kommunistische Manifest?;de;True;Qui a rédigé le Manifeste du parti communiste ?;fr;True;;¿Quién escribió el Manifiesto comunista?;es;True;Chi scrisse il Manifesto del Partito Comunista?;it;True;Quem escreveu o Manifesto Comunista?;pt;True;factual_aperturas;7
 Reveal the largest lake in South America.;"Le plus grand lac d'Amérique du Sud est **le lac Titicaca**.
 
 Il se trouve dans les **Andes**, à la frontière entre le **Pérou** et la **Bolivie**, avec une superficie d’environ **8 370 km²**.
@@ -7901,7 +7901,7 @@ The **largest lake in South America** by surface area is **Lake Titicaca**, loca
 - **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  
 
 So, the correct and final answer is:  
-👉 **Lake Titicaca** is the largest lake in South America. ✅";False;False;0.9996;fr;en;True;True;False;True;True;Verrate den größten See Südamerikas.;de;True;Révélez le plus grand lac d'Amérique du Sud.;fr;True;True;Revela el lago más grande de Sudamérica.;es;True;;;;;;;imperativo;9
+👉 **Lake Titicaca** is the largest lake in South America. ✅";False;False;0.9996;fr;en;True;True;False;True;True;Verrate den größten See Südamerikas.;de;True;Révélez le plus grand lac d'Amérique du Sud.;fr;True;True;Revela el lago más grande de Sudamérica.;es;True;Rivela il lago più grande del Sud America.;it;True;Revele o maior lago da América do Sul.;pt;True;imperativo;9
 Lay out how the Moon formed.;"La formation de la Lune est un sujet scientifique bien étudié, et la théorie la plus largement acceptée aujourd’hui est la **théorie de l'impact géant**. Voici une explication claire et complète de cette formation :
 
 ---
@@ -7943,7 +7943,7 @@ Earth was forming in the inner part of the solar nebula, where temperatures were
 ---
 
 ### 3. **The Giant Impact**
-About 4.5 billion years ago, Theia collided with the early Earth at a glancing angle";False;False;0.9998;fr;en;True;True;False;True;True;Leg dar, wie der Mond entstand.;de;True;Exposez la formation de la Lune.;fr;True;True;Expón cómo se formó la Luna.;es;True;;;;;;;imperativo_explicativo;8
+About 4.5 billion years ago, Theia collided with the early Earth at a glancing angle";False;False;0.9998;fr;en;True;True;False;True;True;Leg dar, wie der Mond entstand.;de;True;Exposez la formation de la Lune.;fr;True;True;Expón cómo se formó la Luna.;es;True;Esponi come si è formata la Luna.;it;True;Exponha como a Lua se formou.;pt;True;imperativo_explicativo;8
 How does the eye focus light?;"L'œil concentre la lumière grâce à une série de structures spécialisées travaillant ensemble pour diriger et focaliser la lumière sur la rétine, où elle est transformée en signaux nerveux. Voici les étapes clés de ce processus :
 
 1. **Entrée de la lumière** : La lumière traverse d’abord la **cornée** (la membrane transparente et bombée qui couvre l’avant de l’œil), puis entre dans l'œil par la **pupille**, une ouverture située au centre de l’**iris**.
@@ -7967,7 +7967,7 @@ Here’s a step-by-step explanation of how the eye focuses light:
 
 3. **Lens – Fine-Tuning Focus**  
    The lens, located behind the pupil, is the key structure responsible for adjusting focus. It changes shape through a process called **accommodation**:
-   - When looking at **near objects**, the ciliary muscles contract, causing the lens to become **thicker and more curved**, increasing";False;False;0.9998;fr;en;True;True;False;True;True;Wie bündelt das Auge Licht?;de;True;Comment l'œil concentre-t-il la lumière ?;fr;True;True;¿Cómo enfoca la luz el ojo?;es;True;;;;;;;explicativa;7
+   - When looking at **near objects**, the ciliary muscles contract, causing the lens to become **thicker and more curved**, increasing";False;False;0.9998;fr;en;True;True;False;True;True;Wie bündelt das Auge Licht?;de;True;Comment l'œil concentre-t-il la lumière ?;fr;True;True;¿Cómo enfoca la luz el ojo?;es;True;Come mette a fuoco la luce l'occhio?;it;True;Como o olho foca a luz?;pt;True;explicativa;7
 Tallest tree species?;"L'espèce d'arbre la plus haute du monde est le **séquoia à feuilles d'if**, aussi appelé **séquoia côtier** ou **redwood** (*Sequoia sempervirens*).
 
 Le record de **hauteur absolue** est détenu par un séquoia côtier nommé **""Hyperion""**, situé dans le parc national de Redwood, en Californie.
@@ -7993,7 +7993,7 @@ So, to clarify:
 - **Tallest individual tree**: Giant Sequoia (General Sherman Tree) — ~275 feet  
 - **Tallest tree species**: Coast Redwood — up to ~380 feet
 
-✅ Therefore, the **tallest tree species** is the **Coast Redwood** (*Sequoia sempervirens*).";False;False;0.9997;fr;en;True;True;False;True;True;Höchste Baumart?;de;True;Espèce d'arbre la plus haute ?;fr;True;True;¿Especie de árbol más alta?;es;True;;;;;;;corta;5
+✅ Therefore, the **tallest tree species** is the **Coast Redwood** (*Sequoia sempervirens*).";False;False;0.9997;fr;en;True;True;False;True;True;Höchste Baumart?;de;True;Espèce d'arbre la plus haute ?;fr;True;True;¿Especie de árbol más alta?;es;True;Specie di albero più alta?;it;True;Espécie de árvore mais alta?;pt;True;corta;5
 Wait, who proposed continental drift?;"La théorie de la **dérive des continents** a été proposée par **Alfred Wegener** en 1912.
 
 Il était un géologue allemand qui a suggéré que les continents étaient autrefois unis dans un seul massif, appelé **Pangée**, et qu’ils se sont ensuite déplacés progressivement sur la surface de la Terre. Cette idée, initialement controversée, a été confirmée par des preuves géologiques, magnétiques et sismiques au cours des décennies suivantes.
@@ -8010,10 +8010,10 @@ Although Wegener's theory was initially met with skepticism—especially because
 
 So, to clarify:  
 👉 **Alfred Wegener** proposed the idea of continental drift.  
-✅ This was later refined and supported by the theory of **plate tectonics**.";False;False;0.9998;fr;en;True;True;False;True;True;Moment, wer stellte die Theorie der Kontinentaldrift auf?;de;True;Attends, qui a proposé la dérive des continents ?;fr;True;;Espera, ¿quién propuso la deriva continental?;es;True;;;;;;;conversacional;7
+✅ This was later refined and supported by the theory of **plate tectonics**.";False;False;0.9998;fr;en;True;True;False;True;True;Moment, wer stellte die Theorie der Kontinentaldrift auf?;de;True;Attends, qui a proposé la dérive des continents ?;fr;True;;Espera, ¿quién propuso la deriva continental?;es;True;Aspetta, chi propose la deriva dei continenti?;it;True;Espera, quem propôs a deriva continental?;pt;True;conversacional;7
 In what year did the Islamic Revolution take place in Iran?;"La Révolution islamique en Iran a eu lieu en **1979**.  
 
-C'est à cette année que s'est produite la chute du régime autoritaire de Mohammad Reza Pahlavi, suivi de l'instauration d'un régime islamique sous la direction de Ruhollah Khomeyni. La révolution a été un événement majeur dans l'histoire du pays et dans la politique mondiale, marquant le début d'un système politique fondé sur le principe de l'islamisme politique.";1979;;The Islamic Revolution in Iran took place in **1979**.;False;False;0.9998;fr;en;True;True;False;True;True;In welchem Jahr fand die islamische Revolution im Iran statt?;de;True;En quelle année a eu lieu la révolution islamique en Iran ?;fr;True;;¿En qué año tuvo lugar la Revolución Islámica en Irán?;unknown;True;;;;;;;factual_clasica;
+C'est à cette année que s'est produite la chute du régime autoritaire de Mohammad Reza Pahlavi, suivi de l'instauration d'un régime islamique sous la direction de Ruhollah Khomeyni. La révolution a été un événement majeur dans l'histoire du pays et dans la politique mondiale, marquant le début d'un système politique fondé sur le principe de l'islamisme politique.";1979;;The Islamic Revolution in Iran took place in **1979**.;False;False;0.9998;fr;en;True;True;False;True;True;In welchem Jahr fand die islamische Revolution im Iran statt?;de;True;En quelle année a eu lieu la révolution islamique en Iran ?;fr;True;;¿En qué año tuvo lugar la Revolución Islámica en Irán?;unknown;True;In che anno ebbe luogo la Rivoluzione islamica in Iran?;it;True;Em que ano ocorreu a Revolução Islâmica no Irã?;pt;True;factual_clasica;
 Who invented the electric battery?;"La pile électrique a été inventée par **Alessandro Volta**, un physicien italien, en **1800**.
 
 Il a conçu ce qu'on appelle la **pile voltaïque**, le premier appareil capable de produire un courant électrique de manière continue. Cette invention repose sur l'empilement de disques de deux métaux (souvent cuivre et zinc) séparés par du carton ou du tissu imprégné d’eau salée ou d'acide dilué, ce qui permet de générer une différence de potentiel électrique.
@@ -8022,12 +8022,12 @@ Ce dispositif fut un tournant majeur dans l'histoire de l'électricité, car c'�
 
 Ainsi, **Alessandro Volta** est considéré comme le père de la pile électrique.";Volta;;"The electric battery was invented by **Alessandro Volta**, an Italian physicist, in **1800**. He created the first true battery, known as the **Voltaic Pile**, which produced a steady electric current. The Voltaic Pile consisted of alternating layers of zinc and copper separated by pieces of cloth or cardboard soaked in saltwater (an electrolyte). This invention was a major breakthrough in the study of electricity and laid the foundation for future developments in electrochemistry and electrical technology.
 
-Volta's invention is also why the unit of electric potential, the **volt**, is named in his honor.";False;False;0.9998;fr;en;True;True;False;True;True;Wer erfand die elektrische Batterie?;de;True;Qui a inventé la pile électrique ?;fr;True;True;¿Quién inventó la pila eléctrica?;es;True;;;;;;;factual_aperturas;6
+Volta's invention is also why the unit of electric potential, the **volt**, is named in his honor.";False;False;0.9998;fr;en;True;True;False;True;True;Wer erfand die elektrische Batterie?;de;True;Qui a inventé la pile électrique ?;fr;True;True;¿Quién inventó la pila eléctrica?;es;True;Chi inventò la pila elettrica?;it;True;Quem inventou a pilha elétrica?;pt;True;factual_aperturas;6
 Pinpoint the capital of Armenia.;"La capitale de l'Arménie est **Erevan**.
 
 Elle se situe dans l’ouest du pays, sur la rivière **Hrazdan**, à une trentaine de kilomètres de la frontière turque, face au **mont Ararat**. C’est l’une des plus anciennes villes habitées du monde, fondée en 782 av. J.-C. sous le nom d’Erebouni.
 
-**Réponse : Erevan**. ✅";Yerevan;Erevan|Eriwan|Ierevan|Jerewan;The capital of Armenia is Yerevan.;False;False;0.9994;fr;en;True;True;False;True;True;Bestimme die Hauptstadt Armeniens genau.;de;True;Situez la capitale de l'Arménie.;fr;True;True;Ubica la capital de Armenia.;es;True;;;;;;;imperativo;7
+**Réponse : Erevan**. ✅";Yerevan;Erevan|Eriwan|Ierevan|Jerewan;The capital of Armenia is Yerevan.;False;False;0.9994;fr;en;True;True;False;True;True;Bestimme die Hauptstadt Armeniens genau.;de;True;Situez la capitale de l'Arménie.;fr;True;True;Ubica la capital de Armenia.;es;True;Individua la capitale dell'Armenia.;it;True;Aponte a capital da Armênia.;pt;True;imperativo;7
 Account for how caves form.;"La formation des grottes, ou des grottes souterraines, est un phénomène géologique qui se produit principalement par **l’action de l’eau sur les roches calcaires** (comme le calcaire, la dolomie, ou le gypse) dans des zones où la roche est fissurée et soluble. Ce processus s’appelle la **dissolution** et se déroule sur des milliers ou des millions d’années.
 
 Voici une explication détaillée de la formation des grottes :
@@ -8065,7 +8065,7 @@ This slightly acidic water is the primary agent in dissolving soluble rocks.
 ### 3. **Dissolution Process**
 When this acidic water seeps into cracks, joints, or fractures in the rock, it begins to dissolve the calcium carbonate:
 \[
-\text";False;False;0.9998;fr;en;True;True;False;True;True;Begründe, wie Höhlen entstehen.;de;True;Rendez compte de la formation des grottes.;fr;True;True;Da cuenta de cómo se forman las cuevas.;es;True;;;;;;;imperativo_explicativo;6
+\text";False;False;0.9998;fr;en;True;True;False;True;True;Begründe, wie Höhlen entstehen.;de;True;Rendez compte de la formation des grottes.;fr;True;True;Da cuenta de cómo se forman las cuevas.;es;True;Rendi conto di come si formano le grotte.;it;True;Dê conta de como as cavernas se formam.;pt;True;imperativo_explicativo;6
 How do glaciers form?;"Les **glaciers** se forment par un processus naturel qui se déroule sur une période longue, principalement en raison de la **neige accumulée** dans des régions froides.
 
 Voici les étapes principales de la formation des glaciers :
@@ -8100,7 +8100,7 @@ Voici les étapes principales de la formation des glaciers :
 
 3. **Recrystallization and Ice Formation**: Continued pressure and low temperatures cause the firn to undergo further changes. The ice crystals grow larger and merge, forming solid ice. This process, known as recrystallization, occurs over decades or centuries.
 
-4. **Glacier Formation**: When the accumulated ice becomes thick enough—typically more than about 50 meters (160 feet)—it begins to flow under its own weight. This flow is due";False;False;0.9997;fr;en;True;True;False;True;True;Wie entstehen Gletscher?;de;True;Comment se forment les glaciers ?;fr;True;True;¿Cómo se forman los glaciares?;es;True;;;;;;;explicativa;5
+4. **Glacier Formation**: When the accumulated ice becomes thick enough—typically more than about 50 meters (160 feet)—it begins to flow under its own weight. This flow is due";False;False;0.9997;fr;en;True;True;False;True;True;Wie entstehen Gletscher?;de;True;Comment se forment les glaciers ?;fr;True;True;¿Cómo se forman los glaciares?;es;True;Come si formano i ghiacciai?;it;True;Como se formam as geleiras?;pt;True;explicativa;5
 Largest fish?;"Le **plus grand poisson du monde** est le **requin-baleine** (*Rhincodon typus*).
 
 - **Taille** : il mesure en moyenne **12 mètres**, et certains individus dépasseraient **18 mètres**.
@@ -8120,7 +8120,7 @@ So, to clarify:
 ✅ **Largest fish by weight**: **Bluefin tuna**  
 ✅ **Largest fish by length**: **Great white shark** (though it's a shark, which is a type of fish)
 
-👉 Therefore, the **bluefin tuna** is widely recognized as";False;False;0.7547;fr;en;True;True;False;False;True;Größter Fisch?;de;True;Plus grand poisson ?;fr;True;True;¿Pez más grande?;es;True;;;;;;;corta;4
+👉 Therefore, the **bluefin tuna** is widely recognized as";False;False;0.7547;fr;en;True;True;False;False;True;Größter Fisch?;de;True;Plus grand poisson ?;fr;True;True;¿Pez más grande?;es;True;Pesce più grande?;it;True;Maior peixe?;pt;True;corta;4
 Sorry, who first split the atom?;"Tout dépend de ce qu’on entend par « briser l’atome », mais le nom qui revient le plus souvent est **Ernest Rutherford**.
 
 En **1917**, Rutherford a réalisé la **première transmutation nucléaire artificielle** : en bombardant de l’azote avec des particules alpha, il a transformé des noyaux d’azote en oxygène en en arrachant des protons. C’est souvent considéré comme la première fois qu’on a « brisé » un noyau atomique.
@@ -8141,7 +8141,7 @@ Here’s a breakdown:
 
 So, while Hahn and Strassmann performed the experiment, **Lise Meitner and Otto Frisch** were the first to correctly interpret the phenomenon as nuclear fission.
 
-Therefore, the **first splitting of the atom** (in the sense of nuclear";False;False;0.9998;fr;en;True;True;False;True;True;Entschuldigung, wer hat als Erster das Atom gespalten?;de;True;Pardon, qui a été le premier à briser l'atome ?;fr;True;True;Perdona, ¿quién dividió el átomo por primera vez?;es;True;;;;;;;conversacional;8
+Therefore, the **first splitting of the atom** (in the sense of nuclear";False;False;0.9998;fr;en;True;True;False;True;True;Entschuldigung, wer hat als Erster das Atom gespalten?;de;True;Pardon, qui a été le premier à briser l'atome ?;fr;True;True;Perdona, ¿quién dividió el átomo por primera vez?;es;True;Scusa, chi divise per primo l'atomo?;it;True;Desculpa, quem dividiu o átomo pela primeira vez?;pt;True;conversacional;8
 What is the capital of Nigeria?;"La capitale du Nigeria est **Abuja**.
 
 Abuja a remplacé **Lagos** comme capitale officielle en **1991**. La ville a été construite au centre du pays, dans une zone plus neutre entre les grands groupes ethniques et religieux.
@@ -8150,7 +8150,7 @@ Abuja a remplacé **Lagos** comme capitale officielle en **1991**. La ville a é
 
 ✅ **Réponse finale : Abuja**.";Abuja;;"The capital of Nigeria is **Abuja**. 
 
-It became the capital in 1991, replacing Lagos. Abuja is located in the central part of the country and serves as the political and administrative center of Nigeria.";False;False;0.9995;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Nigeria?;de;True;Quelle est la capitale du Nigeria?;fr;True;True;¿Cuál es la capital de Nigeria?;es;True;;;;;;;factual_clasica;
+It became the capital in 1991, replacing Lagos. Abuja is located in the central part of the country and serves as the political and administrative center of Nigeria.";False;False;0.9995;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Nigeria?;de;True;Quelle est la capitale du Nigeria?;fr;True;True;¿Cuál es la capital de Nigeria?;es;True;Qual è la capitale della Nigeria?;it;True;Qual é a capital da Nigéria?;pt;True;factual_clasica;
 Who first measured Earth's circumference?;"Le premier à avoir mesuré avec précision la circonférence de la Terre a été **Ératosthène**, un savant, géographe et mathématicien grec du IIIe siècle av. J.-C.
 
 ### Comment a-t-il mesuré la circonférence de la Terre ?
@@ -8169,7 +8169,7 @@ Around **240 BCE**, Eratosthenes used a clever method involving shadows and angl
 
 Using this angle and the known distance between the two cities, he deduced that the Earth was curved and calculated its circumference with remarkable accuracy—within about 1% of the modern value.
 
-Eratosthenes' measurement is considered one of the earliest and most accurate scientific measurements in history.";False;False;0.9998;fr;en;True;True;False;True;True;Wer maß als Erster den Erdumfang?;de;True;Qui a mesuré le premier la circonférence de la Terre ?;fr;True;True;¿Quién midió por primera vez la circunferencia de la Tierra?;es;True;;;;;;;factual_aperturas;7
+Eratosthenes' measurement is considered one of the earliest and most accurate scientific measurements in history.";False;False;0.9998;fr;en;True;True;False;True;True;Wer maß als Erster den Erdumfang?;de;True;Qui a mesuré le premier la circonférence de la Terre ?;fr;True;True;¿Quién midió por primera vez la circunferencia de la Tierra?;es;True;Chi misurò per primo la circonferenza della Terra?;it;True;Quem mediu pela primeira vez a circunferência da Terra?;pt;True;factual_aperturas;7
 Locate the birthplace of tango.;"Le berceau du tango est **l'Argentine**, plus précisément **la région de Buenos Aires**, sur les rives du Río de la Plata.
 
 Le tango est né à la fin du XIXe siècle, dans les quartiers populaires de Buenos Aires, notamment dans des zones comme **La Boca**, **San Telmo** et **Barracas**. Ces lieux étaient des milieux de travailleurs, de migrants et de cultures mixtes (européennes, africaines, créoles), ce qui a favorisé l'émergence d'une musique et d'une danse à la fois expressives, émotionnelles et rythmées. La ville voisine de **Montevideo**, en Uruguay, a aussi joué un rôle dans sa naissance.
@@ -8180,7 +8180,7 @@ Bien que le tango ait été popularisé dans les années 1910-1930, notamment en
 
 The dance developed in the **Porteño (Buenos Aires) slums**, particularly in areas like **La Boca** and **San Telmo**, where people of African, European, and Indigenous descent mixed culturally. It was influenced by African rhythms, European dance styles (especially candombe and the habanera), and the social dynamics of immigrant communities.
 
-While tango is now globally recognized, its birthplace is most commonly attributed to **Buenos Aires, Argentina**, where it evolved into a distinct social dance in the 1880s and gained popularity in the early 20th century.";False;False;0.9998;fr;en;True;True;False;True;True;Finde den Geburtsort des Tangos.;de;True;Localisez le berceau du tango.;fr;True;True;Localiza la cuna del tango.;es;True;;;;;;;imperativo;9
+While tango is now globally recognized, its birthplace is most commonly attributed to **Buenos Aires, Argentina**, where it evolved into a distinct social dance in the 1880s and gained popularity in the early 20th century.";False;False;0.9998;fr;en;True;True;False;True;True;Finde den Geburtsort des Tangos.;de;True;Localisez le berceau du tango.;fr;True;True;Localiza la cuna del tango.;es;True;Localizza il luogo di nascita del tango.;it;True;Localize o berço do tango.;pt;True;imperativo;9
 Shed light on how Hawaii's islands formed.;"La formation des îles d’Hawaï est un exemple classique de **formation des îles volcaniques**. Voici une explication claire et complète de ce processus :
 
 ---
@@ -8212,7 +8212,7 @@ As the Pacific tectonic plate moves slowly (about 7–10 cm per year) over this 
 - Once the volcano moves away, it becomes inactive and erodes over time.
 - A new volcano forms over the hotspot, and the process repeats.
 
-This creates a **chain of volcanic islands** stretching";False;False;0.9998;fr;en;True;True;False;True;True;Beleuchte, wie die Inseln Hawaiis entstanden.;de;True;Éclairez la formation des îles d'Hawaï.;fr;True;True;Arroja luz sobre cómo se formaron las islas de Hawái.;es;True;;;;;;;imperativo_explicativo;10
+This creates a **chain of volcanic islands** stretching";False;False;0.9998;fr;en;True;True;False;True;True;Beleuchte, wie die Inseln Hawaiis entstanden.;de;True;Éclairez la formation des îles d'Hawaï.;fr;True;True;Arroja luz sobre cómo se formaron las islas de Hawái.;es;True;Fai luce su come si sono formate le isole Hawaii.;it;True;Lance luz sobre como as ilhas do Havaí se formaram.;pt;True;imperativo_explicativo;10
 How do hurricanes get their energy?;"Les ouragans tirent leur énergie principalement de **l'eau chaude** des océans tropicaux et de **l'humidité de l'air chaud** qui s’en dégage.
 
 Voici une explication plus détaillée :
@@ -8238,7 +8238,7 @@ Here’s a step-by-step explanation of how hurricanes obtain their energy:
 
 4. **Fuel for the Storm**: This released heat warms the air, making it even more buoyant and causing it to rise faster. This creates a strong updraft, which feeds the storm’s circulation.
 
-5. **Sustained Circulation**: The rising air spirals inward toward the center (the eye) due to the Coriolis effect, creating a low-pressure system.";False;False;0.9998;fr;en;True;True;False;True;True;Woher beziehen Hurrikane ihre Energie?;de;True;D'où les ouragans tirent-ils leur énergie ?;fr;True;True;¿De dónde obtienen su energía los huracanes?;es;True;;;;;;;explicativa;7
+5. **Sustained Circulation**: The rising air spirals inward toward the center (the eye) due to the Coriolis effect, creating a low-pressure system.";False;False;0.9998;fr;en;True;True;False;True;True;Woher beziehen Hurrikane ihre Energie?;de;True;D'où les ouragans tirent-ils leur énergie ?;fr;True;True;¿De dónde obtienen su energía los huracanes?;es;True;Da dove prendono l'energia gli uragani?;it;True;De onde os furacões tiram sua energia?;pt;True;explicativa;7
 Slowest mammal?;"Le mammifère le plus lent est le **paresseux**.
 
 Il vit dans les forêts tropicales d’Amérique centrale et d’Amérique du Sud, et passe la plupart de son temps suspendu aux branches.
@@ -8253,21 +8253,21 @@ Sloths move extremely slowly—often just a few inches per minute—due to their
 
 While some might argue about other slow-moving mammals like the **manatee** or **pangolin**, the **three-toed sloth** holds the title of the slowest *mammal* in terms of overall movement and daily activity.
 
-So, the answer is: **the three-toed sloth**. 🐾🌳";False;False;0.9998;fr;en;True;True;False;True;True;Langsamstes Säugetier?;de;True;Mammifère le plus lent ?;fr;True;True;¿Mamífero más lento?;es;True;;;;;;;corta;5
+So, the answer is: **the three-toed sloth**. 🐾🌳";False;False;0.9998;fr;en;True;True;False;True;True;Langsamstes Säugetier?;de;True;Mammifère le plus lent ?;fr;True;True;¿Mamífero más lento?;es;True;Mammifero più lento?;it;True;Mamífero mais lento?;pt;True;corta;5
 Be honest: who wrote The Canterbury Tales?;"Les *Contes de Canterbury* ont été écrits par **Geoffrey Chaucer**.
 
 C’est lui, le plus grand poète anglais du XIVe siècle, qui a composé ce recueil de contes racontés par des personnages venant de différentes classes sociales, lors d’un pèlerinage vers Canterbury. Le livre, écrit en moyen anglais, est considéré comme l’une des premières œuvres majeures de la littérature anglaise.
 
 Oui, je suis honnête : c’est **Geoffrey Chaucer**. 😊";Chaucer;;"The *Canterbury Tales* were written by **Geoffrey Chaucer**, an English poet from the 14th century. He is widely regarded as the father of English literature. The work, composed around 1387–1400, is a collection of 24 stories told by a group of pilgrims traveling from London to Canterbury Cathedral. Chaucer wrote it in Middle English, making it one of the most important works in the development of the English language.  
 
-So, yes — **Geoffrey Chaucer** is the honest and correct author.";False;False;0.9998;fr;en;True;True;False;True;True;Sei ehrlich: Wer schrieb die Canterbury-Erzählungen?;de;True;Sois honnête : qui a écrit Les Contes de Canterbury ?;fr;True;True;Sé sincero: ¿quién escribió Los cuentos de Canterbury?;es;True;;;;;;;conversacional;9
-What is the capital of Peru?;La capitale du Pérou est **Lima**.;Lima;;The capital of Peru is Lima.;False;False;0.9998;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Peru?;de;True;Quelle est la capitale du Pérou?;fr;True;;¿Cuál es la capital de Perú?;es;True;;;;;;;factual_clasica;
+So, yes — **Geoffrey Chaucer** is the honest and correct author.";False;False;0.9998;fr;en;True;True;False;True;True;Sei ehrlich: Wer schrieb die Canterbury-Erzählungen?;de;True;Sois honnête : qui a écrit Les Contes de Canterbury ?;fr;True;True;Sé sincero: ¿quién escribió Los cuentos de Canterbury?;es;True;Sii sincero: chi scrisse I racconti di Canterbury?;it;True;Seja sincero: quem escreveu Os Contos da Cantuária?;pt;True;conversacional;9
+What is the capital of Peru?;La capitale du Pérou est **Lima**.;Lima;;The capital of Peru is Lima.;False;False;0.9998;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Peru?;de;True;Quelle est la capitale du Pérou?;fr;True;;¿Cuál es la capital de Perú?;es;True;Qual è la capitale del Perù?;it;True;Qual é a capital do Peru?;pt;True;factual_clasica;
 Who founded Buddhism?;"Le bouddhisme a été fondé par **Siddhartha Gautama**, connu sous le nom de **Bouddha** (« l’Éveillé »). Il est né vers 563 av. J.-C. à Lumbini, près de Kapilavastu, dans l’actuel Népal, et il a vécu dans le contexte de la société indienne de l'époque, où les philosophies et les religions étaient nombreuses.
 
 Après avoir vécu une vie de luxe puis d'ascétisme, Siddhartha a atteint l'**Éveil** en comprenant la nature de la souffrance, son origine, sa cessation et le chemin qui y mène. C'est à ce moment-là qu'il a commencé à enseigner, et ses enseignements ont formé les fondements du bouddhisme.
 
-C’est donc **Siddhartha Gautama** qui a fondé le bouddhisme, et il est généralement appelé **le Bouddha** (« celui qui est éveillé »).";Buddha;Bouddha|Buda|Siddhartha|Gautama;Buddhism was founded by **Siddhartha Gautama**, who is commonly known as the **Buddha**. He was born around 563 BCE in Lumbini, which is in present-day Nepal, and he lived and taught in the Indian subcontinent during the 6th century BCE. After attaining enlightenment under the Bodhi tree, he began teaching a path to end suffering and achieve liberation (nirvana) through mindfulness, meditation, and ethical living. His teachings form the foundation of Buddhism.;False;False;0.9998;fr;en;True;True;False;True;True;Wer begründete den Buddhismus?;de;True;Qui a fondé le bouddhisme ?;fr;True;True;¿Quién fundó el budismo?;es;True;;;;;;;factual_aperturas;4
-Report the atomic number of oxygen.;Le numéro atomique de l'oxygène est **8**.;8;;The atomic number of oxygen is **8**.;False;False;0.9998;fr;en;True;True;False;True;True;Gib die Ordnungszahl von Sauerstoff an.;de;True;Donnez le numéro atomique de l'oxygène.;fr;True;;Informa el número atómico del oxígeno.;es;True;;;;;;;imperativo;7
+C’est donc **Siddhartha Gautama** qui a fondé le bouddhisme, et il est généralement appelé **le Bouddha** (« celui qui est éveillé »).";Buddha;Bouddha|Buda|Siddhartha|Gautama;Buddhism was founded by **Siddhartha Gautama**, who is commonly known as the **Buddha**. He was born around 563 BCE in Lumbini, which is in present-day Nepal, and he lived and taught in the Indian subcontinent during the 6th century BCE. After attaining enlightenment under the Bodhi tree, he began teaching a path to end suffering and achieve liberation (nirvana) through mindfulness, meditation, and ethical living. His teachings form the foundation of Buddhism.;False;False;0.9998;fr;en;True;True;False;True;True;Wer begründete den Buddhismus?;de;True;Qui a fondé le bouddhisme ?;fr;True;True;¿Quién fundó el budismo?;es;True;Chi fondò il buddismo?;it;True;Quem fundou o budismo?;pt;True;factual_aperturas;4
+Report the atomic number of oxygen.;Le numéro atomique de l'oxygène est **8**.;8;;The atomic number of oxygen is **8**.;False;False;0.9998;fr;en;True;True;False;True;True;Gib die Ordnungszahl von Sauerstoff an.;de;True;Donnez le numéro atomique de l'oxygène.;fr;True;;Informa el número atómico del oxígeno.;es;True;Riporta il numero atomico dell'ossigeno.;it;True;Informe o número atômico do oxigênio.;pt;True;imperativo;7
 Demystify how wounds stop bleeding.;"Voici une explication claire et accessible de **comment les plaies cessent de saigner** — sans jargon scientifique trop complexe.
 
 ---
@@ -8316,7 +8316,7 @@ When you get a cut or injury, blood starts to flow out. But your body has a smar
 ### 2. **Platelets Rush to the Wound (Form a Plug)**
 - **What happens?** Platelets (tiny cell fragments in your blood) detect the injury and **rush to the site**.
 - They stick to the damaged blood vessel walls and **clump together** to form a temporary ""plug"" — like a patch.
-- This plug helps seal the break in the vessel";False;False;0.9998;fr;en;True;True;False;True;True;Entmystifiziere, wie Wunden aufhören zu bluten.;de;True;Démystifiez comment les plaies cessent de saigner.;fr;True;True;Desmitifica cómo las heridas dejan de sangrar.;es;True;;;;;;;imperativo_explicativo;8
+- This plug helps seal the break in the vessel";False;False;0.9998;fr;en;True;True;False;True;True;Entmystifiziere, wie Wunden aufhören zu bluten.;de;True;Démystifiez comment les plaies cessent de saigner.;fr;True;True;Desmitifica cómo las heridas dejan de sangrar.;es;True;Demistifica come le ferite smettono di sanguinare.;it;True;Desmistifique como as feridas param de sangrar.;pt;True;imperativo_explicativo;8
 What do bees collect besides nectar?;"En plus du nectar, les abeilles récoltent **le pollen**, qui est une source essentielle de protéines, de lipides et de vitamines pour les abeilles.
 
 ### Détails :
@@ -8337,7 +8337,7 @@ In addition to nectar and pollen, bees also collect:
 - **Propolis** – a resinous substance collected from tree bark, used to seal and strengthen hive structures.
 - **Honeydew** – a sugary secretion from certain insects (like aphids), which some bees collect, especially in specific environments.
 
-So, while nectar is the primary source of sugar for honey, **pollen is essential for the protein and nutrients** needed by bee larvae and adult bees.";False;False;0.9998;fr;en;True;True;False;True;True;Was sammeln Bienen außer Nektar?;de;True;Que récoltent les abeilles en plus du nectar ?;fr;True;True;¿Qué recogen las abejas además de néctar?;es;True;;;;;;;explicativa;8
+So, while nectar is the primary source of sugar for honey, **pollen is essential for the protein and nutrients** needed by bee larvae and adult bees.";False;False;0.9998;fr;en;True;True;False;True;True;Was sammeln Bienen außer Nektar?;de;True;Que récoltent les abeilles en plus du nectar ?;fr;True;True;¿Qué recogen las abejas además de néctar?;es;True;Cosa raccolgono le api oltre al nettare?;it;True;O que as abelhas coletam além do néctar?;pt;True;explicativa;8
 National bird of the US?;"L'**oiseau national des États-Unis** est le **pygargue à tête blanche** (*Haliaeetus leucocephalus*), souvent appelé « aigle à tête blanche ».
 
 Il figure sur le **Grand sceau des États-Unis** depuis **1782**, et a été officiellement désigné oiseau national par une loi en **2024**.
@@ -8351,7 +8351,7 @@ While the **American eagle** is often recognized as the national bird, the U.S. 
 
 The **bald eagle** (*Haliaeetus leucocephalus*) is the **official national bird** of the United States. It was designated as such by a congressional resolution in 1963, and it is a prominent symbol of the nation, especially on the Great Seal of the United States.
 
-✅ So, the correct answer is: **The bald eagle**.";False;False;0.9998;fr;en;True;True;False;True;True;Nationalvogel der USA?;de;True;Oiseau national des États-Unis ?;fr;True;True;¿Ave nacional de EE. UU.?;es;True;;;;;;;corta;6
+✅ So, the correct answer is: **The bald eagle**.";False;False;0.9998;fr;en;True;True;False;True;True;Nationalvogel der USA?;de;True;Oiseau national des États-Unis ?;fr;True;True;¿Ave nacional de EE. UU.?;es;True;Uccello nazionale degli USA?;it;True;Ave nacional dos EUA?;pt;True;corta;6
 Pub quiz: who painted The Hay Wain?;"*La Charrette de foin* a été peinte par **John Constable**, le grand paysagiste anglais.
 
 Il l’a achevée en **1821**. Le tableau montre une charrette tirée par des chevaux qui traverse une rivière, la Stour, près du moulin de Flatford, dans le Suffolk, sous un grand ciel nuageux.
@@ -8362,8 +8362,8 @@ Peu apprécié d’abord en Angleterre, il a remporté une **médaille d’or au
 
 **John Constable** 🎨";Constable;;"The Hay Wain was painted by **John Constable**.
 
-It is one of his most famous works, created in 1821. The painting depicts a rural scene in the English countryside, showing a hay wagon resting by a river, and it is celebrated for its realistic portrayal of nature and its influence on the development of Romanticism in art.";False;False;0.9998;fr;en;True;True;False;True;True;Kneipenquiz: Wer malte Der Heuwagen?;de;True;Quiz au bar : qui a peint La Charrette de foin ?;fr;True;True;Pregunta de bar: ¿quién pintó La carreta de heno?;es;True;;;;;;;conversacional;10
-Who was the first person to walk on the Moon?;"Le premier homme à marcher sur la Lune était **Neil Armstrong**. Il a posé le pied sur la surface lunaire le **20 juillet 1969**, lors de la mission **Apollo 11**. Il a dit à l'heure de son premier pas : *""Un petit pas pour l'homme, un grand saut pour l'humanité.""*";Armstrong;;"The first person to walk on the Moon was **Neil Armstrong**. He stepped onto the lunar surface on **July 20, 1969**, during NASA's **Apollo 11** mission. Armstrong famously said, *""That's one small step for [a] man, one giant leap for mankind.""* as he descended from the lunar module Eagle.";False;False;0.9998;fr;en;True;True;False;True;True;Wer war der erste Mensch, der auf dem Mond ging?;de;True;Qui a été le premier homme à marcher sur la Lune?;fr;True;;¿Quién fue la primera persona en caminar en la Luna?;unknown;True;;;;;;;factual_clasica;
+It is one of his most famous works, created in 1821. The painting depicts a rural scene in the English countryside, showing a hay wagon resting by a river, and it is celebrated for its realistic portrayal of nature and its influence on the development of Romanticism in art.";False;False;0.9998;fr;en;True;True;False;True;True;Kneipenquiz: Wer malte Der Heuwagen?;de;True;Quiz au bar : qui a peint La Charrette de foin ?;fr;True;True;Pregunta de bar: ¿quién pintó La carreta de heno?;es;True;Quiz al pub: chi dipinse Il carro di fieno?;it;True;Pergunta de bar: quem pintou A Carroça de Feno?;pt;True;conversacional;10
+Who was the first person to walk on the Moon?;"Le premier homme à marcher sur la Lune était **Neil Armstrong**. Il a posé le pied sur la surface lunaire le **20 juillet 1969**, lors de la mission **Apollo 11**. Il a dit à l'heure de son premier pas : *""Un petit pas pour l'homme, un grand saut pour l'humanité.""*";Armstrong;;"The first person to walk on the Moon was **Neil Armstrong**. He stepped onto the lunar surface on **July 20, 1969**, during NASA's **Apollo 11** mission. Armstrong famously said, *""That's one small step for [a] man, one giant leap for mankind.""* as he descended from the lunar module Eagle.";False;False;0.9998;fr;en;True;True;False;True;True;Wer war der erste Mensch, der auf dem Mond ging?;de;True;Qui a été le premier homme à marcher sur la Lune?;fr;True;;¿Quién fue la primera persona en caminar en la Luna?;unknown;True;Chi è stata la prima persona a camminare sulla Luna?;it;True;Quem foi a primeira pessoa a caminhar na Lua?;pt;True;factual_clasica;
 Which star is the brightest at night?;"La **plus brillante étoile visible à l’œil nu la nuit** est **Sirius**.
 
 ### Pourquoi Sirius ?
@@ -8379,8 +8379,8 @@ Which star is the brightest at night?;"La **plus brillante étoile visible à l�
 
 Sirius is often called the ""Bright Star"" and is the brightest star in the night sky as seen from Earth. It is located in the constellation **Canis Major** (the Greater Dog). Sirius has an apparent magnitude of about **−1.46**, which makes it significantly brighter than other stars, even though it's not the most luminous star in the universe.
 
-Note: While the Sun is the brightest star, it is not visible at night. Among the stars visible to the naked eye, **Sirius** is the brightest.";False;False;0.9996;fr;en;True;True;False;True;True;Welcher Stern leuchtet nachts am hellsten?;de;True;Quelle étoile est la plus brillante la nuit ?;fr;True;True;¿Qué estrella es la más brillante de noche?;es;True;;;;;;;factual_aperturas;8
-Cite the author of Robinson Crusoe.;L'auteur de *Robinson Crusoé* est **Daniel Defoe**.;Defoe;;The author of *Robinson Crusoe* is **Daniel Defoe**.;False;False;0.9902;fr;en;True;True;False;True;True;Nenne den Autor von Robinson Crusoe.;de;True;Citez l'auteur de Robinson Crusoé.;fr;True;;Cita al autor de Robinson Crusoe.;es;True;;;;;;;imperativo;9
+Note: While the Sun is the brightest star, it is not visible at night. Among the stars visible to the naked eye, **Sirius** is the brightest.";False;False;0.9996;fr;en;True;True;False;True;True;Welcher Stern leuchtet nachts am hellsten?;de;True;Quelle étoile est la plus brillante la nuit ?;fr;True;True;¿Qué estrella es la más brillante de noche?;es;True;Quale stella è la più luminosa di notte?;it;True;Qual estrela é a mais brilhante à noite?;pt;True;factual_aperturas;8
+Cite the author of Robinson Crusoe.;L'auteur de *Robinson Crusoé* est **Daniel Defoe**.;Defoe;;The author of *Robinson Crusoe* is **Daniel Defoe**.;False;False;0.9902;fr;en;True;True;False;True;True;Nenne den Autor von Robinson Crusoe.;de;True;Citez l'auteur de Robinson Crusoé.;fr;True;;Cita al autor de Robinson Crusoe.;es;True;Cita l'autore di Robinson Crusoe.;it;True;Cite o autor de Robinson Crusoé.;pt;True;imperativo;9
 Elucidate how the tongue detects flavors.;"La langue **ne détecte pas directement les saveurs** comme on pourrait le croire au sens littéral. En réalité, ce que nous appelons les **saveurs** sont des **signaux chimiques** détectés par des cellules spécialisées situées sur la langue, qui sont ensuite interprétés par le cerveau comme des sensations.
 
 Voici une explication claire et scientifique de ce processus :
@@ -8418,7 +8418,7 @@ There are **five primary taste qualities**:
 - **Bitter** (e.g., quinine, coffee)
 - **Umami** (e.g., glutamate in meat, soy sauce)
 
-Each taste quality is detected by specific types of **G protein-coupled receptors (GPCRs)** on the surface of taste";False;False;0.9998;fr;en;True;True;False;True;True;Verdeutliche, wie die Zunge Geschmäcker erkennt.;de;True;Élucidez comment la langue détecte les saveurs.;fr;True;True;Dilucida cómo detecta la lengua los sabores.;es;True;;;;;;;imperativo_explicativo;9
+Each taste quality is detected by specific types of **G protein-coupled receptors (GPCRs)** on the surface of taste";False;False;0.9998;fr;en;True;True;False;True;True;Verdeutliche, wie die Zunge Geschmäcker erkennt.;de;True;Élucidez comment la langue détecte les saveurs.;fr;True;True;Dilucida cómo detecta la lengua los sabores.;es;True;Delucida come la lingua rileva i sapori.;it;True;Elucide como a língua detecta os sabores.;pt;True;imperativo_explicativo;9
 How do sharks detect hidden prey?;"Les requins sont des prédateurs extrêmement efficaces, et ils détectent les proies cachées grâce à une combinaison de sens très développés, notamment :
 
 ### 1. **La détection des champs électriques (électroréception)**
@@ -8443,7 +8443,7 @@ Leur odorat est extraordinaire : certains requins peuvent sentir une goutte de s
 - **Range**: Some sharks can detect electrical signals from prey up to several meters away, even in murky or dark water.
 
 ### 2. **Chemoreception (Olfaction)**
-- **How it works**: Sharks have an excellent sense of smell, with nostrils (nares) that can detect **trace amounts of chemicals** (like blood, amino acids,";False;False;0.9998;fr;en;True;True;False;True;True;Wie spüren Haie versteckte Beute auf?;de;True;Comment les requins détectent-ils les proies cachées ?;fr;True;True;¿Cómo detectan los tiburones presas ocultas?;es;True;;;;;;;explicativa;7
+- **How it works**: Sharks have an excellent sense of smell, with nostrils (nares) that can detect **trace amounts of chemicals** (like blood, amino acids,";False;False;0.9998;fr;en;True;True;False;True;True;Wie spüren Haie versteckte Beute auf?;de;True;Comment les requins détectent-ils les proies cachées ?;fr;True;True;¿Cómo detectan los tiburones presas ocultas?;es;True;Come individuano gli squali le prede nascoste?;it;True;Como os tubarões detectam presas escondidas?;pt;True;explicativa;7
 Hardest human tissue?;"Le tissu humain le plus dur est l’**émail dentaire**.
 
 ### Explication :
@@ -8467,7 +8467,7 @@ Even though bone and cartilage are strong and flexible, enamel is the hardest be
 - It does not regenerate once it's formed, which is why dental damage is often permanent.
 - Enamel is vulnerable to acid erosion from foods and drinks, which can weaken it over time.
 
-So, the answer is: **Enamel**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Härtestes menschliches Gewebe?;de;True;Tissu humain le plus dur ?;fr;True;True;¿Tejido humano más duro?;es;True;;;;;;;corta;5
+So, the answer is: **Enamel**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Härtestes menschliches Gewebe?;de;True;Tissu humain le plus dur ?;fr;True;True;¿Tejido humano más duro?;es;True;Tessuto umano più duro?;it;True;Tecido humano mais duro?;pt;True;corta;5
 My kid asks: who drew Snoopy?;"👉 **Snoopy a été dessiné par Charles M. Schulz**, un dessinateur américain. Il a commencé à dessiner Snoopy dans sa bande dessinée *Peanuts* en 1950. Snoopy est un chien très original, qui fait des choses très imaginaires comme voler, écrire des romans, ou même devenir un pilote de chasse ! Il est aussi connu pour ses expressions drôles et ses histoires pleines d’humour.
 
 Et voilà ! C’est un petit peu comme si Snoopy avait inventé son propre monde… 🐶✨
@@ -8483,14 +8483,14 @@ So, to answer your kid:
 
 You can even tell your child that Schulz drew Snoopy every day for over 50 years — and that’s how Snoopy became a friend to millions of kids (and adults!) around the world.
 
-It’s a perfect chance to share a little history and maybe even show them a classic Peanuts strip together! 🐶✨";False;False;0.9998;fr;en;True;True;False;True;True;Mein Kind fragt: Wer hat Snoopy gezeichnet?;de;True;Mon enfant demande : qui a dessiné Snoopy ?;fr;True;True;Mi hijo pregunta: ¿quién dibujó a Snoopy?;es;True;;;;;;;conversacional;9
+It’s a perfect chance to share a little history and maybe even show them a classic Peanuts strip together! 🐶✨";False;False;0.9998;fr;en;True;True;False;True;True;Mein Kind fragt: Wer hat Snoopy gezeichnet?;de;True;Mon enfant demande : qui a dessiné Snoopy ?;fr;True;True;Mi hijo pregunta: ¿quién dibujó a Snoopy?;es;True;Mio figlio chiede: chi disegnava Snoopy?;it;True;Meu filho pergunta: quem desenhou o Snoopy?;pt;True;conversacional;9
 Who invented the printing press in Europe?;"La presse à imprimer en Europe a été inventée par **Johannes Gutenberg** vers **1440** en Allemagne.
 
 Gutenberg, un artisan et inventeur de la fin du Moyen Âge, a conçu une presse à imprimer à l’aide de **caractères mobiles en métal** (un alliage de plomb, d’étain et d’antimoine), ce qui permettait de produire des textes de manière rapide et précise. Son œuvre la plus célèbre est la **Bible à 42 lignes**, imprimée vers 1455, souvent appelée *Bible de Gutenberg*.
 
 Cette révolution a profondément transformé la diffusion des connaissances, facilité l’éducation, et joué un rôle clé dans la Renaissance et la Réforme protestante.
 
-👉 Donc, **Johannes Gutenberg** est considéré comme l’inventeur de la presse à imprimer en Europe.";Gutenberg;;The printing press in Europe was invented by **Johannes Gutenberg** around **1440** in Mainz, Germany. Gutenberg's invention revolutionized the spread of knowledge by enabling the mass production of books, which played a crucial role in the Renaissance, the Reformation, and the Scientific Revolution. His press used movable metal type, a key innovation that allowed for efficient and accurate printing.;False;False;0.9997;fr;en;True;True;False;True;True;Wer hat die Druckerpresse in Europa erfunden?;de;True;Qui a inventé la presse à imprimer en Europe?;fr;True;True;¿Quién inventó la imprenta en Europa?;unknown;True;;;;;;;factual_clasica;
+👉 Donc, **Johannes Gutenberg** est considéré comme l’inventeur de la presse à imprimer en Europe.";Gutenberg;;The printing press in Europe was invented by **Johannes Gutenberg** around **1440** in Mainz, Germany. Gutenberg's invention revolutionized the spread of knowledge by enabling the mass production of books, which played a crucial role in the Renaissance, the Reformation, and the Scientific Revolution. His press used movable metal type, a key innovation that allowed for efficient and accurate printing.;False;False;0.9997;fr;en;True;True;False;True;True;Wer hat die Druckerpresse in Europa erfunden?;de;True;Qui a inventé la presse à imprimer en Europe?;fr;True;True;¿Quién inventó la imprenta en Europa?;unknown;True;Chi inventò la stampa a caratteri mobili in Europa?;it;True;Quem inventou a prensa de tipos móveis na Europa?;pt;True;factual_clasica;
 Which gas makes party balloons float?;"Les ballons de fête flottent grâce à l’**hélium**.
 
 L’hélium est un gaz léger, plus léger que l’air (qui est principalement composé d’azote et d’oxygène), donc il permet aux ballons de flotter.
@@ -8505,8 +8505,8 @@ Helium is less dense than the air around it (which is mostly nitrogen and oxygen
 
 While hydrogen is also lighter than air and could make balloons float, it is highly flammable and unsafe for use in party balloons. Therefore, **helium** is the safe and popular choice.
 
-✅ Answer: **Helium**.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Gas lässt Partyballons schweben?;de;True;Quel gaz fait flotter les ballons de fête ?;fr;True;True;¿Qué gas hace flotar los globos de fiesta?;es;True;;;;;;;factual_aperturas;7
-Find the capital of Azerbaijan.;La capitale de l'Azerbaïdjan est **Bakou**.;Baku;Bakou;The capital of Azerbaijan is Baku.;False;False;0.9995;fr;en;True;True;False;True;True;Finde die Hauptstadt Aserbaidschans.;de;True;Trouvez la capitale de l'Azerbaïdjan.;fr;True;;Encuentra la capital de Azerbaiyán.;es;True;;;;;;;imperativo;6
+✅ Answer: **Helium**.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Gas lässt Partyballons schweben?;de;True;Quel gaz fait flotter les ballons de fête ?;fr;True;True;¿Qué gas hace flotar los globos de fiesta?;es;True;Quale gas fa galleggiare i palloncini da festa?;it;True;Qual gás faz os balões de festa flutuarem?;pt;True;factual_aperturas;7
+Find the capital of Azerbaijan.;La capitale de l'Azerbaïdjan est **Bakou**.;Baku;Bakou;The capital of Azerbaijan is Baku.;False;False;0.9995;fr;en;True;True;False;True;True;Finde die Hauptstadt Aserbaidschans.;de;True;Trouvez la capitale de l'Azerbaïdjan.;fr;True;;Encuentra la capital de Azerbaiyán.;es;True;Trova la capitale dell'Azerbaigian.;it;True;Encontre a capital do Azerbaijão.;pt;True;imperativo;6
 Spell out how we smell things.;"Nous sentons les odeurs grâce à un système complexe impliquant le **système olfactif**, qui repose sur des étapes biologiques et neurologiques précises. Voici une explication claire et progressive de ce processus :
 
 ---
@@ -8545,7 +8545,7 @@ Inside the nasal cavity, there are tiny structures called **olfactory receptors*
 
 ---
 
-###";False;False;0.9998;fr;en;True;True;False;True;True;Erkläre genau, wie wir Gerüche wahrnehmen.;de;True;Explicitez comment nous sentons les odeurs.;fr;True;True;Detalla paso a paso cómo olemos las cosas.;es;True;;;;;;;imperativo_explicativo;7
+###";False;False;0.9998;fr;en;True;True;False;True;True;Erkläre genau, wie wir Gerüche wahrnehmen.;de;True;Explicitez comment nous sentons les odeurs.;fr;True;True;Detalla paso a paso cómo olemos las cosas.;es;True;Spiega passo passo come sentiamo gli odori.;it;True;Detalhe passo a passo como sentimos os cheiros.;pt;True;imperativo_explicativo;7
 How do jellyfish sting?;"Les méduses **piquent** grâce à des cellules spécialisées présentes sur leurs **tentacules**, appelées **cnidocytes**, qui contiennent de minuscules harpons venimeux.
 
 Voici comment cela fonctionne :
@@ -8573,7 +8573,7 @@ Voici comment cela fonctionne :
    Once triggered, the nematocyst rapidly expands and releases its thread, which shoots out like a spring-loaded harpoon. The thread is extremely fast—often in milliseconds—and can penetrate the skin.
 
 4. **Toxin Delivery**:  
-   The thread has a venomous tip that injects **toxins** (called **cnidotoxins**)";False;False;0.999;fr;en;True;True;False;True;True;Wie nesseln Quallen?;de;True;Comment les méduses piquent-elles ?;fr;True;True;¿Cómo pican las medusas?;es;True;;;;;;;explicativa;6
+   The thread has a venomous tip that injects **toxins** (called **cnidotoxins**)";False;False;0.999;fr;en;True;True;False;True;True;Wie nesseln Quallen?;de;True;Comment les méduses piquent-elles ?;fr;True;True;¿Cómo pican las medusas?;es;True;Come pungono le meduse?;it;True;Como as águas-vivas queimam?;pt;True;explicativa;6
 Universal recipient blood type?;"Le **groupe sanguin receveur universel** est le **groupe AB positif** (AB+).
 
 ### Explication :
@@ -8604,7 +8604,7 @@ In blood typing, the **AB blood type** is considered the ""universal recipient""
 - Can receive blood from: A, B, AB, or O (all ABO types)
 - But must be **positive** to avoid Rh incompatibility
 
-✅ So, the answer is: **AB positive**.";False;False;0.9987;fr;en;True;True;False;True;True;Blutgruppe des Universalempfängers?;de;True;Groupe sanguin receveur universel ?;fr;True;True;¿Grupo sanguíneo receptor universal?;es;True;;;;;;;corta;5
+✅ So, the answer is: **AB positive**.";False;False;0.9987;fr;en;True;True;False;True;True;Blutgruppe des Universalempfängers?;de;True;Groupe sanguin receveur universel ?;fr;True;True;¿Grupo sanguíneo receptor universal?;es;True;Gruppo sanguigno ricevente universale?;it;True;Tipo sanguíneo receptor universal?;pt;True;corta;5
 My kid asks: what fish is Nemo?;"Nemo est un **poisson clown** ! 😊
 
 Il est le héros du célèbre film *Le Monde de Nemo*, créé par les studios **Pixar** et sorti par **Disney** en 2003. Nemo est un petit poisson clown qui vit dans un récif de corail, près d’une anémone. Il est capturé et placé dans un aquarium, et son père, Marin, traverse l’océan pour le retrouver. Il est connu pour son caractère curieux, son courage et sa tendresse.
@@ -8622,8 +8622,8 @@ So, to answer your kid:
 
 And guess what? He’s also super brave, curious, and loves adventure — just like your kid! 🌊🐠
 
-Want to know more about clownfish or sea anemones? I’d be happy to share! 😊";False;False;0.9998;fr;en;True;True;False;True;True;Mein Kind fragt: Was für ein Fisch ist Nemo?;de;True;Mon enfant demande : quel poisson est Nemo ?;fr;True;True;Mi hijo pregunta: ¿qué pez es Nemo?;es;True;;;;;;;conversacional;10
-What is the capital of South Korea?;La capitale de la Corée du Sud est **Séoul**.;Seoul;Séoul|Seúl|Seul;The capital of South Korea is Seoul.;False;False;0.9998;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Südkorea?;de;True;Quelle est la capitale de la Corée du Sud ?;fr;True;True;¿Cuál es la capital de Corea del Sur?;es;True;;;;;;;factual_clasica;
+Want to know more about clownfish or sea anemones? I’d be happy to share! 😊";False;False;0.9998;fr;en;True;True;False;True;True;Mein Kind fragt: Was für ein Fisch ist Nemo?;de;True;Mon enfant demande : quel poisson est Nemo ?;fr;True;True;Mi hijo pregunta: ¿qué pez es Nemo?;es;True;Mio figlio chiede: che pesce è Nemo?;it;True;Meu filho pergunta: que peixe é o Nemo?;pt;True;conversacional;10
+What is the capital of South Korea?;La capitale de la Corée du Sud est **Séoul**.;Seoul;Séoul|Seúl|Seul;The capital of South Korea is Seoul.;False;False;0.9998;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Südkorea?;de;True;Quelle est la capitale de la Corée du Sud ?;fr;True;True;¿Cuál es la capital de Corea del Sur?;es;True;Qual è la capitale della Corea del Sud?;it;True;Qual é a capital da Coreia do Sul?;pt;True;factual_clasica;
 What metal conducts electricity best?;"Le métal qui conduit le mieux l'électricité est **l'argent**.
 
 À température ambiante, l'argent possède la **conductivité électrique la plus élevée** de tous les métaux.
@@ -8646,7 +8646,7 @@ Silver has the highest electrical conductivity of all metals at room temperature
 - **Copper:** ~59.6 × 10⁶ S/m
 - **Gold:** ~45.2 × 10⁶ S/m
 
-Despite silver's superior conductivity, it is less commonly used in everyday electrical applications because it is more expensive and more prone to tarnishing than copper. However, silver is used in specialized applications such as high-frequency circuits, contact materials, and in some types of sensors and connectors where maximum conductivity is essential.";False;False;0.9996;fr;en;True;True;False;True;True;Welches Metall leitet Strom am besten?;de;True;Quel métal conduit le mieux l'électricité ?;fr;True;True;¿Qué metal conduce mejor la electricidad?;es;True;;;;;;;factual_aperturas;6
+Despite silver's superior conductivity, it is less commonly used in everyday electrical applications because it is more expensive and more prone to tarnishing than copper. However, silver is used in specialized applications such as high-frequency circuits, contact materials, and in some types of sensors and connectors where maximum conductivity is essential.";False;False;0.9996;fr;en;True;True;False;True;True;Welches Metall leitet Strom am besten?;de;True;Quel métal conduit le mieux l'électricité ?;fr;True;True;¿Qué metal conduce mejor la electricidad?;es;True;Quale metallo conduce meglio l'elettricità?;it;True;Qual metal conduz melhor a eletricidade?;pt;True;factual_aperturas;6
 Look up the founder of the Red Cross.;"Le fondateur de la Croix-Rouge est **Henry Dunant**.
 
 Ce Suisse a été bouleversé par le sort des blessés après la bataille de **Solferino**, en Italie, en 1859, qu’il raconte dans son livre *Un souvenir de Solferino*. Il a été inspiré par l'idée de protéger les combattants blessés, indépendamment de leur appartenance nationale. Son travail a conduit à la création en 1863, à Genève, du comité qui deviendra le **Comité international de la Croix-Rouge**, puis à la première **Convention de Genève** en 1864, qui vise à protéger les victimes de conflits armés.
@@ -8655,7 +8655,7 @@ Henry Dunant a reçu le premier prix Nobel de la paix en 1901, partagé avec Fr�
 
 Henry Dunant was a Swiss businessman and humanitarian who, in 1864, proposed the establishment of an international organization to care for wounded soldiers during war, regardless of nationality. His efforts led to the creation of the **International Committee of the Red Cross (ICRC)**, which was officially founded in 1864. The Red Cross movement was later expanded to include national Red Cross societies and became a global humanitarian organization.
 
-Dunant is widely recognized for his vision and compassion, and he was awarded the first Nobel Peace Prize in 1901 for his contributions to humanitarian efforts.";False;False;0.9998;fr;en;True;True;False;True;True;Schlag den Gründer des Roten Kreuzes nach.;de;True;Cherchez le fondateur de la Croix-Rouge.;fr;True;True;Busca al fundador de la Cruz Roja.;es;True;;;;;;;imperativo;9
+Dunant is widely recognized for his vision and compassion, and he was awarded the first Nobel Peace Prize in 1901 for his contributions to humanitarian efforts.";False;False;0.9998;fr;en;True;True;False;True;True;Schlag den Gründer des Roten Kreuzes nach.;de;True;Cherchez le fondateur de la Croix-Rouge.;fr;True;True;Busca al fundador de la Cruz Roja.;es;True;Cerca il fondatore della Croce Rossa.;it;True;Pesquise o fundador da Cruz Vermelha.;pt;True;imperativo;9
 Cover what controls our balance.;"Ce qui contrôle notre équilibre est un système complexe impliquant plusieurs parties du corps, principalement le **système vestibulaire**, le **système sensoriel** et le **système nerveux**. Voici une explication claire et structurée de ce qui régule notre équilibre :
 
 ---
@@ -8701,7 +8701,7 @@ This is the primary sensor for balance and spatial orientation.
 
 ➡️ These sensors send information to the brain about head motion and orientation.
 
----";False;False;0.9995;fr;en;True;True;False;True;True;Behandle, was unser Gleichgewicht steuert.;de;True;Traitez ce qui contrôle notre équilibre.;fr;True;True;Trata qué controla nuestro equilibrio.;es;True;;;;;;;imperativo_explicativo;6
+---";False;False;0.9995;fr;en;True;True;False;True;True;Behandle, was unser Gleichgewicht steuert.;de;True;Traitez ce qui contrôle notre équilibre.;fr;True;True;Trata qué controla nuestro equilibrio.;es;True;Tratta cosa controlla il nostro equilibrio.;it;True;Trate do que controla nosso equilíbrio.;pt;True;imperativo_explicativo;6
 How does a key open a lock?;"Une clé ouvre une serrure grâce à un mécanisme de correspondance entre les **dents de la clé** et une série de petites **goupilles** à l’intérieur de la serrure. Voici une explication simple et claire du processus, pour la serrure à cylindre la plus courante :
 
 ---
@@ -8731,12 +8731,12 @@ La clé est un objet en métal avec des **dents** de différentes hauteurs. Chaq
 
 3. **Inserting the Key**: When the key is inserted into the lock, the grooves in the key align with the pin chambers.
 
-4. **Lifting the Pins**: As the key turns, the grooves lift the upper and lower parts of the pins to the same height. This is only possible when the key's cuts are precisely matched to the pin";False;False;0.9996;fr;en;True;True;False;True;True;Wie öffnet ein Schlüssel ein Schloss?;de;True;Comment une clé ouvre-t-elle une serrure ?;fr;True;True;¿Cómo abre una llave una cerradura?;es;True;;;;;;;explicativa;8
+4. **Lifting the Pins**: As the key turns, the grooves lift the upper and lower parts of the pins to the same height. This is only possible when the key's cuts are precisely matched to the pin";False;False;0.9996;fr;en;True;True;False;True;True;Wie öffnet ein Schlüssel ein Schloss?;de;True;Comment une clé ouvre-t-elle une serrure ?;fr;True;True;¿Cómo abre una llave una cerradura?;es;True;Come apre una serratura una chiave?;it;True;Como uma chave abre uma fechadura?;pt;True;explicativa;8
 Author of Rebecca?;"L'auteur de *Rebecca* est **Daphne du Maurier**.
 
 *Rebecca*, publiée en 1938, est un roman gothique et de suspense qui raconte l'histoire d'une jeune femme, la narratrice, dont on ne connaît jamais le prénom, qui se marie avec un homme, Maxim de Winter, et doit faire face à la présence puissante de sa femme défunte, Rebecca, qui continue d'exercer une influence sur elle. Le roman a été très populaire et a inspiré plusieurs adaptations cinématographiques, notamment une célèbre version de 1940 réalisée par Alfred Hitchcock, avec Laurence Olivier et Joan Fontaine.";Daphne du Maurier;du Maurier|Maurier;"The author of *Rebecca* is **Daphne du Maurier**.
 
-Published in 1938, *Rebecca* is a classic gothic novel that tells the story of a young woman who marries into a wealthy family and finds herself overshadowed by the memory of her late husband's first wife, Rebecca. The novel is renowned for its atmospheric tension, psychological depth, and enduring influence on the gothic and thriller genres.";False;False;0.9998;fr;en;True;True;False;True;True;Autor von Rebecca?;de;True;Auteur de Rebecca ?;fr;True;True;¿Autor de Rebeca?;es;True;;;;;;;corta;4
+Published in 1938, *Rebecca* is a classic gothic novel that tells the story of a young woman who marries into a wealthy family and finds herself overshadowed by the memory of her late husband's first wife, Rebecca. The novel is renowned for its atmospheric tension, psychological depth, and enduring influence on the gothic and thriller genres.";False;False;0.9998;fr;en;True;True;False;True;True;Autor von Rebecca?;de;True;Auteur de Rebecca ?;fr;True;True;¿Autor de Rebeca?;es;True;Autore di Rebecca?;it;True;Autor de Rebecca?;pt;True;corta;4
 My kid asks: biggest penguin species?;"La **plus grande espèce de manchot** est le **manchot empereur** ! 🐧
 
 - **Taille** : il peut mesurer environ **1,10 à 1,20 mètre** de haut, presque la taille d’un enfant de 6 ans !
@@ -8754,19 +8754,19 @@ They live in the coldest parts of the world, mainly around Antarctica, and are k
 So, if your kid is asking, you can say:  
 👉 ""The biggest penguin is the Emperor penguin — they're like the superheroes of the penguin world, tall, strong, and brave!"" 🐧❄️
 
-Let me know if you'd like to know about other penguin species too! 😊";False;False;0.9982;fr;en;True;True;False;True;True;Mein Kind fragt: Größte Pinguinart?;de;True;Mon enfant demande : plus grande espèce de manchot ?;fr;True;True;Mi hijo pregunta: ¿la especie de pingüino más grande?;es;True;;;;;;;conversacional;9
+Let me know if you'd like to know about other penguin species too! 😊";False;False;0.9982;fr;en;True;True;False;True;True;Mein Kind fragt: Größte Pinguinart?;de;True;Mon enfant demande : plus grande espèce de manchot ?;fr;True;True;Mi hijo pregunta: ¿la especie de pingüino más grande?;es;True;Mio figlio chiede: la specie di pinguino più grande?;it;True;Meu filho pergunta: a maior espécie de pinguim?;pt;True;conversacional;9
 Who discovered penicillin?;"La pénicilline a été découverte par **Alexander Fleming** en 1928.
 
 Il était un bactériologiste britannique qui a observé, par hasard, qu’une moisissure appelée *Penicillium notatum* produisait une substance, la pénicilline, capable de tuer certaines bactéries. Cette découverte a marqué un tournant dans la médecine en permettant de traiter de nombreuses infections bactériennes, ce qui a conduit à l'essor des antibiotiques.
 
-Fleming a publié ses résultats en 1929, mais il a fallu plusieurs années de recherche et de développement (notamment par Howard Florey et Ernst Boris Chain) pour que la pénicilline soit purifiée et utilisée de manière efficace en médecine. Pour cette découverte, Fleming, Florey et Chain ont reçu le **prix Nobel de médecine en 1945**.";Fleming;;Penicillin was discovered by **Alexander Fleming** in 1929. He was a Scottish bacteriologist who noticed that a mold called *Penicillium notatum* had accidentally contaminated a petri dish of Staphylococcus bacteria and had killed the surrounding bacteria. This led to the discovery of the first true antibiotic, penicillin, which revolutionized medicine by providing an effective treatment for bacterial infections.;False;False;0.9998;fr;en;True;True;False;True;True;Wer entdeckte Penicillin?;de;True;Qui a découvert la pénicilline ?;fr;True;True;¿Quién descubrió la penicilina?;unknown;True;;;;;;;factual_clasica;
+Fleming a publié ses résultats en 1929, mais il a fallu plusieurs années de recherche et de développement (notamment par Howard Florey et Ernst Boris Chain) pour que la pénicilline soit purifiée et utilisée de manière efficace en médecine. Pour cette découverte, Fleming, Florey et Chain ont reçu le **prix Nobel de médecine en 1945**.";Fleming;;Penicillin was discovered by **Alexander Fleming** in 1929. He was a Scottish bacteriologist who noticed that a mold called *Penicillium notatum* had accidentally contaminated a petri dish of Staphylococcus bacteria and had killed the surrounding bacteria. This led to the discovery of the first true antibiotic, penicillin, which revolutionized medicine by providing an effective treatment for bacterial infections.;False;False;0.9998;fr;en;True;True;False;True;True;Wer entdeckte Penicillin?;de;True;Qui a découvert la pénicilline ?;fr;True;True;¿Quién descubrió la penicilina?;unknown;True;Chi scoprì la penicillina?;it;True;Quem descobriu a penicilina?;pt;True;factual_clasica;
 Which artist painted Campbell's Soup Cans?;"Les célèbres tableaux des **boîtes de soupe Campbell** ont été peints par **Andy Warhol**.
 
 Il s’agit d’une série de **32 toiles**, réalisée en **1962**, représentant chacune une variété de soupe vendue à l’époque par la marque Campbell. Elles ont été exposées pour la première fois la même année à la Ferus Gallery de Los Angeles.
 
 Cette œuvre est devenue l’un des symboles du **pop art** : en reproduisant un produit de consommation banal, Warhol interrogeait la frontière entre l’art et la publicité, entre l’œuvre unique et la production en série.
 
-Elle est aujourd’hui conservée au **Museum of Modern Art (MoMA)** de New York. 🥫";Warhol;;The artist who painted *Campbell's Soup Cans* is **Andy Warhol**. He created the iconic series in 1962, using silkscreen printing to produce a large number of identical images of different Campbell's soup cans. This work is a hallmark of the Pop Art movement.;False;False;0.9998;fr;en;True;True;False;True;True;Welcher Künstler malte die Campbell-Suppendosen?;de;True;Quel artiste a peint les boîtes de soupe Campbell ?;fr;True;True;¿Qué artista pintó las latas de sopa Campbell?;es;True;;;;;;;factual_aperturas;9
+Elle est aujourd’hui conservée au **Museum of Modern Art (MoMA)** de New York. 🥫";Warhol;;The artist who painted *Campbell's Soup Cans* is **Andy Warhol**. He created the iconic series in 1962, using silkscreen printing to produce a large number of identical images of different Campbell's soup cans. This work is a hallmark of the Pop Art movement.;False;False;0.9998;fr;en;True;True;False;True;True;Welcher Künstler malte die Campbell-Suppendosen?;de;True;Quel artiste a peint les boîtes de soupe Campbell ?;fr;True;True;¿Qué artista pintó las latas de sopa Campbell?;es;True;Quale artista dipinse le lattine di zuppa Campbell?;it;True;Qual artista pintou as latas de sopa Campbell?;pt;True;factual_aperturas;9
 Point out the largest internal organ.;"Le plus grand organe interne de l'organisme humain est le **foie**.
 
 Le foie est un organe situé en haut à droite de l'abdomen, sous la cage thoracique. Il joue un rôle essentiel dans de nombreuses fonctions vitales, notamment :
@@ -8782,7 +8782,7 @@ En termes de taille, le foie est le plus grand organe interne, avec un poids d�
 
 The liver weighs about 3 to 4 pounds (1.4 to 1.8 kilograms) in an average adult and is located in the upper right portion of the abdominal cavity, beneath the diaphragm. It performs over 500 vital functions, including detoxifying harmful substances, producing bile for digestion, storing energy, and synthesizing proteins essential for blood clotting and other bodily processes.
 
-While the skin is the largest organ by surface area, the liver is the largest internal organ by mass and functional complexity.";False;False;0.9998;fr;en;True;True;False;True;True;Zeig das größte innere Organ.;de;True;Désignez le plus grand organe interne.;fr;True;True;Señala el órgano interno más grande.;es;True;;;;;;;imperativo;7
+While the skin is the largest organ by surface area, the liver is the largest internal organ by mass and functional complexity.";False;False;0.9998;fr;en;True;True;False;True;True;Zeig das größte innere Organ.;de;True;Désignez le plus grand organe interne.;fr;True;True;Señala el órgano interno más grande.;es;True;Indica l'organo interno più grande.;it;True;Aponte o maior órgão interno.;pt;True;imperativo;7
 Decode where tears come from.;"Les larmes viennent principalement des **glandes lacrymales**. Voici une réponse complète, en plusieurs niveaux :
 
 ---
@@ -8823,7 +8823,7 @@ Tears come from the **eyes**, specifically from the **lacrimal glands** in the u
 
 Tears often come from:
 - **Unresolved grief** (loss of a loved one, a dream, a relationship)
-- **Emotional pain";False;False;0.9998;fr;en;True;True;False;True;True;Entschlüssle, woher Tränen kommen.;de;True;Décodez d'où viennent les larmes.;fr;True;True;Decodifica de dónde viene el llanto.;es;True;;;;;;;imperativo_explicativo;6
+- **Emotional pain";False;False;0.9998;fr;en;True;True;False;True;True;Entschlüssle, woher Tränen kommen.;de;True;Décodez d'où viennent les larmes.;fr;True;True;Decodifica de dónde viene el llanto.;es;True;Decodifica da dove viene il pianto.;it;True;Decodifique de onde vem o choro.;pt;True;imperativo_explicativo;6
 How does a magnifying glass burn paper?;"Une **loupe** ne brûle pas directement du papier comme un feu, mais elle peut **concentrer la lumière du soleil** pour **brûler du papier** si elle est utilisée correctement. Voici comment cela fonctionne :
 
 ---
@@ -8851,18 +8851,18 @@ At this focal point, the sunlight is concentrated into a small area. This causes
 If the focused beam of sunlight hits a flammable material like paper, and the temperature gets high enough (typically above 233°C or 450°F), the paper can **catch fire** and burn.
 
 ### Important Notes:
-- **It doesn’t burn paper by itself** — it only burns paper when **sunlight is strong";False;False;0.9995;fr;en;True;True;False;True;True;Wie verbrennt eine Lupe Papier?;de;True;Comment une loupe brûle-t-elle du papier ?;fr;True;True;¿Cómo quema el papel una lupa?;es;True;;;;;;;explicativa;9
-Capital of Gambia?;La capitale de la Gambie est **Banjul**.;Banjul;;The capital of The Gambia is **Banjul**.;False;False;0.9962;fr;en;True;True;False;True;True;Hauptstadt von Gambia?;de;True;Capitale de la Gambie ?;fr;True;True;¿Capital de Gambia?;es;True;;;;;;;corta;5
+- **It doesn’t burn paper by itself** — it only burns paper when **sunlight is strong";False;False;0.9995;fr;en;True;True;False;True;True;Wie verbrennt eine Lupe Papier?;de;True;Comment une loupe brûle-t-elle du papier ?;fr;True;True;¿Cómo quema el papel una lupa?;es;True;Come brucia la carta una lente d'ingrandimento?;it;True;Como uma lupa queima o papel?;pt;True;explicativa;9
+Capital of Gambia?;La capitale de la Gambie est **Banjul**.;Banjul;;The capital of The Gambia is **Banjul**.;False;False;0.9962;fr;en;True;True;False;True;True;Hauptstadt von Gambia?;de;True;Capitale de la Gambie ?;fr;True;True;¿Capital de Gambia?;es;True;Capitale del Gambia?;it;True;Capital da Gâmbia?;pt;True;corta;5
 Quick question: which ocean holds the Bermuda Triangle?;"Le triangle des Bermudes se trouve dans l'**océan Atlantique**.
 
-Plus précisément, il est situé entre les **Bermudes**, **l'île de Porto Rico** et **la Floride** (États-Unis). Ce triangle est donc dans l'**océan Atlantique Nord**.";Atlantic;Atlantique|Atlantico|Atlantik|Atlantisch;The Bermuda Triangle is not located in a single ocean, but rather is a region in the **Atlantic Ocean**. It is generally defined as the area between Bermuda, Florida, and Puerto Rico. So, the correct answer is: **the Atlantic Ocean**. 🌊;False;False;0.9996;fr;en;True;True;False;True;True;Kurze Frage: In welchem Ozean liegt das Bermudadreieck?;de;True;Petite question : dans quel océan se trouve le triangle des Bermudes ?;fr;True;True;Pregunta rápida: ¿en qué océano está el Triángulo de las Bermudas?;es;True;;;;;;;conversacional;10
+Plus précisément, il est situé entre les **Bermudes**, **l'île de Porto Rico** et **la Floride** (États-Unis). Ce triangle est donc dans l'**océan Atlantique Nord**.";Atlantic;Atlantique|Atlantico|Atlantik|Atlantisch;The Bermuda Triangle is not located in a single ocean, but rather is a region in the **Atlantic Ocean**. It is generally defined as the area between Bermuda, Florida, and Puerto Rico. So, the correct answer is: **the Atlantic Ocean**. 🌊;False;False;0.9996;fr;en;True;True;False;True;True;Kurze Frage: In welchem Ozean liegt das Bermudadreieck?;de;True;Petite question : dans quel océan se trouve le triangle des Bermudes ?;fr;True;True;Pregunta rápida: ¿en qué océano está el Triángulo de las Bermudas?;es;True;Domanda veloce: in quale oceano si trova il Triangolo delle Bermuda?;it;True;Pergunta rápida: em que oceano fica o Triângulo das Bermudas?;pt;True;conversacional;10
 What is the chemical symbol for mercury?;"Le symbole chimique du mercure est **Hg**.
 
 Ce symbole provient du latin *hydrargyrum*, qui signifie ""l'argent liquide"", car le mercure est un métal liquide à température ambiante.";Hg;;"The chemical symbol for mercury is **Hg**. 
 
-It comes from the Latin word *hydrargyrum*, meaning ""liquid silver.""";False;False;0.9997;fr;en;True;True;False;True;True;Was ist das chemische Symbol für Quecksilber?;de;True;Quel est le symbole chimique du mercure?;fr;True;True;¿Cuál es el símbolo químico de mercurio?;es;True;;;;;;;factual_clasica;
-Which architect designed the Guggenheim Bilbao?;Le Guggenheim de Bilbao a été conçu par l'architecte **Frank Gehry**.;Gehry;;The Guggenheim Bilbao was designed by the renowned Spanish architect **Frank Gehry**.;False;False;0.9996;fr;en;True;True;False;True;True;Welcher Architekt entwarf das Guggenheim Bilbao?;de;True;Quel architecte a conçu le Guggenheim de Bilbao ?;fr;True;;¿Qué arquitecto diseñó el Guggenheim de Bilbao?;es;True;;;;;;;factual_aperturas;10
-Remind me who designed the Statue of Liberty.;La statue de la Liberté a été conçue par **Frédéric Auguste Bartholdi**, un sculpteur français. Elle a été réalisée entre 1875 et 1886, et est située à New York, aux États-Unis. Le monument a été offert par la France : la statue a été financée par des souscriptions françaises, et le piédestal par des citoyens américains, tandis que la structure métallique interne a été conçue par l'ingénieur **Gustave Eiffel**, connu pour sa tour Eiffel.;Bartholdi;Eiffel;The Statue of Liberty was designed by the French sculptor **Frédéric Auguste Bartholdi**. He created the statue as a gift from France to the United States to celebrate the centennial of American independence and to symbolize the friendship between the two nations. The internal structure and the pedestal were designed by American engineer **Richard Morris Hunt**.;False;False;0.9998;fr;en;True;True;False;True;True;Erinnere mich, wer die Freiheitsstatue entwarf.;de;True;Rappelez-moi qui a conçu la statue de la Liberté.;fr;True;True;Recuérdame quién diseñó la Estatua de la Libertad.;es;True;;;;;;;imperativo;10
+It comes from the Latin word *hydrargyrum*, meaning ""liquid silver.""";False;False;0.9997;fr;en;True;True;False;True;True;Was ist das chemische Symbol für Quecksilber?;de;True;Quel est le symbole chimique du mercure?;fr;True;True;¿Cuál es el símbolo químico de mercurio?;es;True;Qual è il simbolo chimico del mercurio?;it;True;Qual é o símbolo químico do mercúrio?;pt;True;factual_clasica;
+Which architect designed the Guggenheim Bilbao?;Le Guggenheim de Bilbao a été conçu par l'architecte **Frank Gehry**.;Gehry;;The Guggenheim Bilbao was designed by the renowned Spanish architect **Frank Gehry**.;False;False;0.9996;fr;en;True;True;False;True;True;Welcher Architekt entwarf das Guggenheim Bilbao?;de;True;Quel architecte a conçu le Guggenheim de Bilbao ?;fr;True;;¿Qué arquitecto diseñó el Guggenheim de Bilbao?;es;True;Quale architetto progettò il Guggenheim di Bilbao?;it;True;Qual arquiteto projetou o Guggenheim de Bilbao?;pt;True;factual_aperturas;10
+Remind me who designed the Statue of Liberty.;La statue de la Liberté a été conçue par **Frédéric Auguste Bartholdi**, un sculpteur français. Elle a été réalisée entre 1875 et 1886, et est située à New York, aux États-Unis. Le monument a été offert par la France : la statue a été financée par des souscriptions françaises, et le piédestal par des citoyens américains, tandis que la structure métallique interne a été conçue par l'ingénieur **Gustave Eiffel**, connu pour sa tour Eiffel.;Bartholdi;Eiffel;The Statue of Liberty was designed by the French sculptor **Frédéric Auguste Bartholdi**. He created the statue as a gift from France to the United States to celebrate the centennial of American independence and to symbolize the friendship between the two nations. The internal structure and the pedestal were designed by American engineer **Richard Morris Hunt**.;False;False;0.9998;fr;en;True;True;False;True;True;Erinnere mich, wer die Freiheitsstatue entwarf.;de;True;Rappelez-moi qui a conçu la statue de la Liberté.;fr;True;True;Recuérdame quién diseñó la Estatua de la Libertad.;es;True;Ricordami chi progettò la Statua della Libertà.;it;True;Me lembre quem projetou a Estátua da Liberdade.;pt;True;imperativo;10
 Unravel how anesthesia stops pain.;"L’anesthésie ne « supprime » pas la douleur de manière magique ou instantanée, mais elle **interfère avec la transmission des signaux de douleur** au cerveau, empêchant ainsi que ces signaux soient perçus comme une douleur. Voici une explication détaillée et claire de ce processus :
 
 ---
@@ -8897,7 +8897,7 @@ Anesthesia works by targeting different parts of this pain signal pathway. The e
 #### A. **Local Anesthetics** (e.g., lidocaine)
 - **Action**: Block sodium channels in nerve cell membranes.
 - **Effect**: Prevent the generation and conduction of nerve impulses in specific nerves.
-- **Where**: Applied directly to";False;False;0.9998;fr;en;True;True;False;True;True;Entwirre, wie eine Narkose Schmerz ausschaltet.;de;True;Démêlez comment l'anesthésie supprime la douleur.;fr;True;True;Desentraña cómo la anestesia detiene el dolor.;es;True;;;;;;;imperativo_explicativo;7
+- **Where**: Applied directly to";False;False;0.9998;fr;en;True;True;False;True;True;Entwirre, wie eine Narkose Schmerz ausschaltet.;de;True;Démêlez comment l'anesthésie supprime la douleur.;fr;True;True;Desentraña cómo la anestesia detiene el dolor.;es;True;Districa come l'anestesia blocca il dolore.;it;True;Desvende como a anestesia bloqueia a dor.;pt;True;imperativo_explicativo;7
 How does a microwave heat food?;"Un micro-ondes chauffe les aliments grâce à une forme d’**électromagnétisme** appelée **rayonnement micro-ondes**. Voici une explication simple et claire du processus :
 
 ---
@@ -8928,16 +8928,16 @@ Quand les micro-ondes pénètrent dans l’aliment :
    This rapid rotation creates **molecular friction** between adjacent molecules. This friction generates **thermal energy**, which we perceive as heat.
 
 5. **Heat Distribution**:  
-   The heat is generated **within the food itself**, not just on the surface. This";False;False;0.9997;fr;en;True;True;False;True;True;Wie erhitzt eine Mikrowelle Essen?;de;True;Comment un micro-ondes chauffe-t-il les aliments ?;fr;True;True;¿Cómo calienta la comida un microondas?;es;True;;;;;;;explicativa;7
-Symbol for gallium?;Le symbole du gallium est **Ga**.;Ga;;The chemical symbol for gallium is **Ga**.;False;False;0.9997;fr;en;True;True;False;True;True;Symbol für Gallium?;de;True;Symbole du gallium ?;fr;True;;¿Símbolo del galio?;es;True;;;;;;;corta;5
+   The heat is generated **within the food itself**, not just on the surface. This";False;False;0.9997;fr;en;True;True;False;True;True;Wie erhitzt eine Mikrowelle Essen?;de;True;Comment un micro-ondes chauffe-t-il les aliments ?;fr;True;True;¿Cómo calienta la comida un microondas?;es;True;Come scalda il cibo un forno a microonde?;it;True;Como um micro-ondas aquece a comida?;pt;True;explicativa;7
+Symbol for gallium?;Le symbole du gallium est **Ga**.;Ga;;The chemical symbol for gallium is **Ga**.;False;False;0.9997;fr;en;True;True;False;True;True;Symbol für Gallium?;de;True;Symbole du gallium ?;fr;True;;¿Símbolo del galio?;es;True;Simbolo del gallio?;it;True;Símbolo do gálio?;pt;True;corta;5
 Hey, which country is Bali in?;"Bali se trouve en **Indonésie**.
 
-C'est une île située dans l'archipel indonésien, en Asie du Sud-Est. Bali est connue pour ses paysages magnifiques, ses temples, sa culture traditionnelle et ses activités de tourisme comme le yoga, la plongée ou les visites de villages traditionnels. 🌴🌊";Indonesia;Indonesie|Indonesien;Bali is an island in Indonesia. It is part of the Indonesian archipelago and is one of the most popular tourist destinations in Southeast Asia.;False;False;0.9998;fr;en;True;True;False;True;True;Hey, in welchem Land liegt Bali?;de;True;Hé, dans quel pays se trouve Bali ?;fr;True;True;Oye, ¿en qué país está Bali?;es;True;;;;;;;conversacional;8
-In what year did India gain independence from Britain?;L'Inde a obtenu son indépendance de la Grande-Bretagne en **1947**.;1947;;India gained independence from Britain on **August 15, 1947**.;False;False;0.993;fr;en;True;True;False;True;True;In welchem Jahr hat Indien die Unabhängigkeit von Großbritannien erlangt?;de;True;En quelle année l'Inde a-t-elle obtenu son indépendance de la Grande-Bretagne ?;fr;True;;¿En qué año obtuvo la India la independencia de Gran Bretaña?;unknown;True;;;;;;;factual_clasica;
+C'est une île située dans l'archipel indonésien, en Asie du Sud-Est. Bali est connue pour ses paysages magnifiques, ses temples, sa culture traditionnelle et ses activités de tourisme comme le yoga, la plongée ou les visites de villages traditionnels. 🌴🌊";Indonesia;Indonesie|Indonesien;Bali is an island in Indonesia. It is part of the Indonesian archipelago and is one of the most popular tourist destinations in Southeast Asia.;False;False;0.9998;fr;en;True;True;False;True;True;Hey, in welchem Land liegt Bali?;de;True;Hé, dans quel pays se trouve Bali ?;fr;True;True;Oye, ¿en qué país está Bali?;es;True;Ehi, in quale paese si trova Bali?;it;True;Ei, em que país fica Bali?;pt;True;conversacional;8
+In what year did India gain independence from Britain?;L'Inde a obtenu son indépendance de la Grande-Bretagne en **1947**.;1947;;India gained independence from Britain on **August 15, 1947**.;False;False;0.993;fr;en;True;True;False;True;True;In welchem Jahr hat Indien die Unabhängigkeit von Großbritannien erlangt?;de;True;En quelle année l'Inde a-t-elle obtenu son indépendance de la Grande-Bretagne ?;fr;True;;¿En qué año obtuvo la India la independencia de Gran Bretaña?;unknown;True;In che anno l'India ottenne l'indipendenza dalla Gran Bretagna?;it;True;Em que ano a Índia conquistou a independência da Grã-Bretanha?;pt;True;factual_clasica;
 Which empire did Montezuma rule?;"Moctezuma II a dirigé l'**empire aztèque**.
 
-Cet empire, également connu sous le nom d'**empire mexica**, était l'un des plus puissants et des plus influents des empires amérindiens. Il s'est établi au cœur du Mexique, principalement dans la région de la vallée de Mexico, autour de sa capitale **Tenochtitlan**, et a atteint son apogée au début du XVIe siècle. Moctezuma II a régné de 1502 à 1520, et c’est sous son règne qu’arrivèrent les conquérants espagnols menés par Hernán Cortés ; l’empire tomba en 1521, sous son successeur Cuauhtémoc.";Aztec;azteque|azteca|Azteken|azteco|asteca;Montezuma II ruled the **Aztec Empire** (also known as the **Mexica Empire**). He was the ruler of the capital city of Tenochtitlán, which was the center of the Aztec civilization in central Mexico during the 16th century. His reign lasted from approximately 1502 until his death in 1521, when the city fell to Spanish conquistadors led by Hernán Cortés.;False;False;0.9998;fr;en;True;True;False;True;True;Über welches Reich herrschte Montezuma?;de;True;Quel empire Moctezuma a-t-il dirigé ?;fr;True;True;¿Qué imperio gobernó Moctezuma?;es;True;;;;;;;factual_aperturas;8
-Let me know the capital of Malta.;La capitale de Malte est **La Valette**.;Valletta;La Valette|La Valeta|Valeta|Valetta;The capital of Malta is Valletta.;False;False;0.9973;fr;en;True;True;False;True;True;Sag mir die Hauptstadt Maltas.;de;True;Dites-moi la capitale de Malte.;fr;True;True;Dime la capital de Malta.;es;True;;;;;;;imperativo;8
+Cet empire, également connu sous le nom d'**empire mexica**, était l'un des plus puissants et des plus influents des empires amérindiens. Il s'est établi au cœur du Mexique, principalement dans la région de la vallée de Mexico, autour de sa capitale **Tenochtitlan**, et a atteint son apogée au début du XVIe siècle. Moctezuma II a régné de 1502 à 1520, et c’est sous son règne qu’arrivèrent les conquérants espagnols menés par Hernán Cortés ; l’empire tomba en 1521, sous son successeur Cuauhtémoc.";Aztec;azteque|azteca|Azteken|azteco|asteca;Montezuma II ruled the **Aztec Empire** (also known as the **Mexica Empire**). He was the ruler of the capital city of Tenochtitlán, which was the center of the Aztec civilization in central Mexico during the 16th century. His reign lasted from approximately 1502 until his death in 1521, when the city fell to Spanish conquistadors led by Hernán Cortés.;False;False;0.9998;fr;en;True;True;False;True;True;Über welches Reich herrschte Montezuma?;de;True;Quel empire Moctezuma a-t-il dirigé ?;fr;True;True;¿Qué imperio gobernó Moctezuma?;es;True;Su quale impero regnò Montezuma?;it;True;Qual império Montezuma governou?;pt;True;factual_aperturas;8
+Let me know the capital of Malta.;La capitale de Malte est **La Valette**.;Valletta;La Valette|La Valeta|Valeta|Valetta;The capital of Malta is Valletta.;False;False;0.9973;fr;en;True;True;False;True;True;Sag mir die Hauptstadt Maltas.;de;True;Dites-moi la capitale de Malte.;fr;True;True;Dime la capital de Malta.;es;True;Dimmi la capitale di Malta.;it;True;Me diga a capital de Malta.;pt;True;imperativo;8
 Fill me in on how glasses fix vision.;"Voici une explication claire et accessible de **la correction de la vue par les lunettes** :
 
 ---
@@ -8970,7 +8970,7 @@ Vision problems like **nearsightedness (myopia)**, **farsightedness (hyperopia)*
 
 - **Nearsightedness (Myopia):** Light focuses *in front* of the retina. You can see nearby objects clearly, but distant objects appear blurry.
 - **Farsightedness (Hyperopia):** Light focuses *behind* the retina. You can see distant objects clearly, but close objects appear blurry.
-- **Astigmatism:** The cornea or lens is irregularly shaped (like";False;False;0.9997;fr;en;True;True;False;True;True;Bring mich auf den Stand, wie Brillen das Sehen korrigieren.;de;True;Mettez-moi au courant de la correction de la vue par les lunettes.;fr;True;True;Ponme al día sobre cómo las gafas corrigen la vista.;es;True;;;;;;;imperativo_explicativo;9
+- **Astigmatism:** The cornea or lens is irregularly shaped (like";False;False;0.9997;fr;en;True;True;False;True;True;Bring mich auf den Stand, wie Brillen das Sehen korrigieren.;de;True;Mettez-moi au courant de la correction de la vue par les lunettes.;fr;True;True;Ponme al día sobre cómo las gafas corrigen la vista.;es;True;Aggiornami su come gli occhiali correggono la vista.;it;True;Me atualize sobre como os óculos corrigem a visão.;pt;True;imperativo_explicativo;9
 How do airbags inflate so fast?;"Les airbags se gonflent **très rapidement**, en **moins de 0,05 seconde** (soit 50 millisecondes), grâce à une **réaction chimique** ultra-rapide qui produit un grand volume de gaz. Voici comment cela fonctionne :
 
 ---
@@ -9008,16 +9008,16 @@ If the sensors confirm a crash, they send a signal to the **airbag control unit*
 ### 3. **Ignition of the Chemical Reaction**
 Once the control unit approves deployment, it sends an electrical signal to a **pyrotechnic module** (also called a ""squib"" or ""igniter""). This ignites a small, highly reactive chemical compound—usually **nitrogen gas-producing mixtures** like **sodium azide (NaN₃)**, which reacts rapidly to produce nitrogen gas (N₂).
 
-#### The Chemical Reaction (";False;False;0.9992;fr;en;True;True;False;True;True;Wie blasen sich Airbags so schnell auf?;de;True;Comment les airbags se gonflent-ils si vite ?;fr;True;True;¿Cómo se inflan tan rápido los airbags?;es;True;;;;;;;explicativa;8
-Capital of Chad?;La capitale du Tchad est **N'Djamena**.;N'Djamena;Ndjamena|Yamena|Nyamena;The capital of Chad is **N'Djamena**.;False;False;0.9989;fr;en;True;True;False;True;True;Hauptstadt des Tschad?;de;True;Capitale du Tchad ?;fr;True;;¿Capital de Chad?;es;True;;;;;;;corta;4
+#### The Chemical Reaction (";False;False;0.9992;fr;en;True;True;False;True;True;Wie blasen sich Airbags so schnell auf?;de;True;Comment les airbags se gonflent-ils si vite ?;fr;True;True;¿Cómo se inflan tan rápido los airbags?;es;True;Come fanno gli airbag a gonfiarsi così in fretta?;it;True;Como os airbags inflam tão rápido?;pt;True;explicativa;8
+Capital of Chad?;La capitale du Tchad est **N'Djamena**.;N'Djamena;Ndjamena|Yamena|Nyamena;The capital of Chad is **N'Djamena**.;False;False;0.9989;fr;en;True;True;False;True;True;Hauptstadt des Tschad?;de;True;Capitale du Tchad ?;fr;True;;¿Capital de Chad?;es;True;Capitale del Ciad?;it;True;Capital do Chade?;pt;True;corta;4
 Just curious, which country is Transylvania in?;"La **Transylvanie** se trouve en **Roumanie**.
 
 C’est une région historique et géographique située dans le centre et le nord-ouest de la Roumanie, entourée par l’arc des **Carpates**, connue pour sa richesse historique (notamment le château de Bran et les villes médiévales de Sibiu, Brașov et Sighișoara), et son patrimoine culturel, notamment le folklore roumain et les traditions populaires.
 
-Bien que la Transylvanie ait longtemps appartenu au royaume de **Hongrie** puis à l’Autriche-Hongrie, elle est rattachée à la Roumanie depuis 1918-1920 et est aujourd’hui **entièrement située en Roumanie**.";Romania;Roumanie|Rumania|Rumanien|Romenia;Transylvania is a historical and cultural region in **Romania**. It is located in the central part of the country, in the Carpathian Mountains. While it's not an official administrative region today, Transylvania is widely recognized as one of Romania's most important and culturally rich areas. It's also known for its rich history, folklore, and the presence of the Romanian language and traditions.;False;False;0.9998;fr;en;True;True;False;True;True;Nur aus Neugier: In welchem Land liegt Transsilvanien?;de;True;Simple curiosité : dans quel pays se trouve la Transylvanie ?;fr;True;True;Solo por curiosidad, ¿en qué país está Transilvania?;es;True;;;;;;;conversacional;10
+Bien que la Transylvanie ait longtemps appartenu au royaume de **Hongrie** puis à l’Autriche-Hongrie, elle est rattachée à la Roumanie depuis 1918-1920 et est aujourd’hui **entièrement située en Roumanie**.";Romania;Roumanie|Rumania|Rumanien|Romenia;Transylvania is a historical and cultural region in **Romania**. It is located in the central part of the country, in the Carpathian Mountains. While it's not an official administrative region today, Transylvania is widely recognized as one of Romania's most important and culturally rich areas. It's also known for its rich history, folklore, and the presence of the Romanian language and traditions.;False;False;0.9998;fr;en;True;True;False;True;True;Nur aus Neugier: In welchem Land liegt Transsilvanien?;de;True;Simple curiosité : dans quel pays se trouve la Transylvanie ?;fr;True;True;Solo por curiosidad, ¿en qué país está Transilvania?;es;True;Solo per curiosità, in quale paese si trova la Transilvania?;it;True;Só por curiosidade, em que país fica a Transilvânia?;pt;True;conversacional;10
 Who composed The Magic Flute?;"*La Flûte enchantée* a été composée par **Wolfgang Amadeus Mozart**.
 
-Il s'agit d'un opéra en deux actes, écrit en 1791, et considéré comme l'une des œuvres les plus importantes de la musique classique. C'est un opéra de type *singspiel*, c'est-à-dire un opéra en allemand avec des dialogues parlés entre les airs chantés. Il mêle éléments de conte merveilleux, de philosophie et de symbolique maçonnique, et est particulièrement connu pour ses thèmes de connaissance, de sagesse et d’initiation, ainsi que pour l’air de la Reine de la Nuit.";Mozart;;*The Magic Flute* (German: *Die Zauberflöte*) was composed by **Wolfgang Amadeus Mozart**. It is an opera in two acts, premiered on September 30, 1791, in Vienna. It is one of Mozart's most famous works and is considered a cornerstone of the German opera tradition.;False;False;0.9998;fr;en;True;True;False;True;True;Wer hat Die Zauberflöte komponiert?;de;True;Qui a composé La Flûte enchantée ?;fr;True;True;¿Quién compuso La flauta mágica?;unknown;True;;;;;;;factual_clasica;
+Il s'agit d'un opéra en deux actes, écrit en 1791, et considéré comme l'une des œuvres les plus importantes de la musique classique. C'est un opéra de type *singspiel*, c'est-à-dire un opéra en allemand avec des dialogues parlés entre les airs chantés. Il mêle éléments de conte merveilleux, de philosophie et de symbolique maçonnique, et est particulièrement connu pour ses thèmes de connaissance, de sagesse et d’initiation, ainsi que pour l’air de la Reine de la Nuit.";Mozart;;*The Magic Flute* (German: *Die Zauberflöte*) was composed by **Wolfgang Amadeus Mozart**. It is an opera in two acts, premiered on September 30, 1791, in Vienna. It is one of Mozart's most famous works and is considered a cornerstone of the German opera tradition.;False;False;0.9998;fr;en;True;True;False;True;True;Wer hat Die Zauberflöte komponiert?;de;True;Qui a composé La Flûte enchantée ?;fr;True;True;¿Quién compuso La flauta mágica?;unknown;True;Chi compose Il flauto magico?;it;True;Quem compôs A Flauta Mágica?;pt;True;factual_clasica;
 Which capital had a wall until 1989?;"La capitale qui avait un mur jusqu'en 1989 est **Berlin**.
 
 Plus précisément, c’est le **mur de Berlin** qui a été construit en 1961 et est tombé le 9 novembre 1989. Il séparait Berlin-Est, capitale de l’Allemagne de l'Est (RDA), de Berlin-Ouest, rattaché à l'Allemagne de l'Ouest (RFA), et symbolisait la division de l’Europe pendant la Guerre froide. La chute du mur en 1989 a marqué un tournant majeur dans l'histoire de l'Europe de l'Est et a ouvert la voie à la réunification de l'Allemagne en 1990.
@@ -9034,14 +9034,14 @@ So, to answer your question accurately:
 
 👉 **The capital that had a wall until 1989 was Berlin.**
 
-✅ Final Answer: **Berlin**.";False;False;0.9998;fr;en;True;True;False;True;True;Welche Hauptstadt hatte bis 1989 eine Mauer?;de;True;Quelle capitale avait un mur jusqu'en 1989 ?;fr;True;True;¿Qué capital tuvo un muro hasta 1989?;es;True;;;;;;;factual_aperturas;10
+✅ Final Answer: **Berlin**.";False;False;0.9998;fr;en;True;True;False;True;True;Welche Hauptstadt hatte bis 1989 eine Mauer?;de;True;Quelle capitale avait un mur jusqu'en 1989 ?;fr;True;True;¿Qué capital tuvo un muro hasta 1989?;es;True;Quale capitale ebbe un muro fino al 1989?;it;True;Qual capital teve um muro até 1989?;pt;True;factual_aperturas;10
 Spot the lightest chemical element.;"L'élément chimique le plus léger est **l'hydrogène**.
 
 Il a un numéro atomique de 1 et une masse atomique approximative de **1 u** (unité de masse atomique). Il est composé d'un seul proton dans son noyau et, généralement, d'un seul électron. L'hydrogène est le plus abondant dans l'univers et constitue la matière principale des étoiles.
 
 ✅ Réponse : **l'hydrogène**.";hydrogen;hydrogene|hidrogeno|Wasserstoff|idrogeno|hidrogenio;"The lightest chemical element is **hydrogen**.
 
-Hydrogen has an atomic number of 1 and the lowest atomic mass of all elements, approximately **1.008 atomic mass units (u)**. It consists of one proton and one electron, with no neutrons in its most common isotope (protium).";False;False;0.9998;fr;en;True;True;False;True;True;Ermittle das leichteste chemische Element.;de;True;Repérez l'élément chimique le plus léger.;fr;True;;Detecta el elemento químico más ligero.;es;True;;;;;;;imperativo;7
+Hydrogen has an atomic number of 1 and the lowest atomic mass of all elements, approximately **1.008 atomic mass units (u)**. It consists of one proton and one electron, with no neutrons in its most common isotope (protium).";False;False;0.9998;fr;en;True;True;False;True;True;Ermittle das leichteste chemische Element.;de;True;Repérez l'élément chimique le plus léger.;fr;True;;Detecta el elemento químico más ligero.;es;True;Individua l'elemento chimico più leggero.;it;True;Identifique o elemento químico mais leve.;pt;True;imperativo;7
 Interpret how hearing aids help.;"L’aide apportée par les appareils auditifs consiste à améliorer la perception du son pour les personnes souffrant de perte auditive. Ces dispositifs sont conçus pour capter les sons environnants, les amplifier et les transmettre de manière plus claire à l’oreille du porteur, en fonction de ses besoins spécifiques.
 
 Voici une interprétation détaillée de l’aide apportée par les appareils auditifs :
@@ -9069,7 +9069,7 @@ La perte auditive peut entraîner un sentiment";amplification;amplif|Verstark;"H
 
 4. **Enhanced Quality of Life**: With better hearing, individuals can enjoy music, phone calls, and other auditory experiences more fully. This contributes to improved mental health, reduced feelings of isolation, and greater participation in social and professional activities.
 
-5. **Support for Daily Activities**: Hearing aids assist in everyday tasks such as cooking, driving, or following instructions";False;False;0.9998;fr;en;True;True;False;True;True;Deute, wie Hörgeräte helfen.;de;True;Interprétez l'aide apportée par les appareils auditifs.;fr;True;;Interpreta cómo ayudan los audífonos.;es;True;;;;;;;imperativo_explicativo;7
+5. **Support for Daily Activities**: Hearing aids assist in everyday tasks such as cooking, driving, or following instructions";False;False;0.9998;fr;en;True;True;False;True;True;Deute, wie Hörgeräte helfen.;de;True;Interprétez l'aide apportée par les appareils auditifs.;fr;True;;Interpreta cómo ayudan los audífonos.;es;True;Interpreta come aiutano gli apparecchi acustici.;it;True;Interprete como os aparelhos auditivos ajudam.;pt;True;imperativo_explicativo;7
 How are diamonds formed?;"Les diamants se forment **dans les profondeurs de la Terre**, sous des conditions extrêmes de **pression et de température**. Voici comment ils se forment étape par étape :
 
 ---
@@ -9106,14 +9106,14 @@ Ils sont remontés lors d’éruptions volcaniques profondes et très rapides, �
 3. **Carbon Source**:  
    The carbon that forms diamonds comes from organic matter (like ancient plants and animals) that sank into the Earth over geological time. It may also originate from meteorites or volcanic activity.
 
-4";False;False;0.9988;fr;en;True;True;False;True;True;Wie entstehen Diamanten?;de;True;Comment se forment les diamants ?;fr;True;True;¿Cómo se forman los diamantes?;es;True;;;;;;;explicativa;5
+4";False;False;0.9988;fr;en;True;True;False;True;True;Wie entstehen Diamanten?;de;True;Comment se forment les diamants ?;fr;True;True;¿Cómo se forman los diamantes?;es;True;Come si formano i diamanti?;it;True;Como os diamantes se formam?;pt;True;explicativa;5
 Currency of Switzerland?;"La monnaie de la Suisse est le **franc suisse**, dont le symbole est **CHF**.  
 
 Il est divisé en 100 **centimes** (ou **centimes de franc suisse**).  
 
 Le franc suisse est l'une des monnaies les plus stables au monde et est largement utilisé dans les échanges internationaux, notamment en raison de la stabilité économique de la Suisse.";Swiss franc;CHF|franc suisse|franco suizo|Schweizer Franken|franco svizzero|franco suico;"The currency of Switzerland is the **Swiss Franc**.  
 
-Its currency code is **CHF** and it is divided into 100 **cent**. The Swiss Franc is one of the strongest and most stable currencies in the world.";False;False;0.9998;fr;en;True;True;False;True;True;Währung der Schweiz?;de;True;Monnaie de la Suisse ?;fr;True;;¿Moneda de Suiza?;es;True;;;;;;;corta;4
+Its currency code is **CHF** and it is divided into 100 **cent**. The Swiss Franc is one of the strongest and most stable currencies in the world.";False;False;0.9998;fr;en;True;True;False;True;True;Währung der Schweiz?;de;True;Monnaie de la Suisse ?;fr;True;;¿Moneda de Suiza?;es;True;Valuta della Svizzera?;it;True;Moeda da Suíça?;pt;True;corta;4
 Random thought: which country makes Lego?;"Les **Lego** viennent du **Danemark**.
 
 👉 **Lego a été fondé en 1932 à Billund, au Danemark**, par Ole Kirk Christiansen. Le nom vient du danois *leg godt*, qui signifie « joue bien ». C’est donc le **Danemark** qui a inventé et créé la marque Lego.
@@ -9132,7 +9132,7 @@ Mais **le design, la conception, la marque et la direction stratégique** resten
 ✅ En résumé :
 **Le Danemark fabrique les Lego (en tant que marque et en tant que siège), même si les briques sortent aussi d’usines dans d’autres pays.**";Denmark;Danemark|Dinamarca|Danimarca;"Lego is made in **Denmark**.  
 
-The company was founded in 1932 by Ole Kirk Christiansen in Billund, Denmark. While Lego products are manufactured in several countries around the world (including China, Vietnam, and others), the brand is originally Danish and is still headquartered in Billund. The design, innovation, and brand identity remain deeply rooted in Denmark. So, while production happens globally, **Denmark is the country that makes Lego** — in origin and spirit. 🇩🇰🧱";False;False;0.9997;fr;en;True;True;False;True;True;Spontane Frage: Aus welchem Land kommt Lego?;de;True;Une idée comme ça : quel pays fabrique les Lego ?;fr;True;True;Pensando al azar: ¿qué país fabrica Lego?;es;True;;;;;;;conversacional;8
+The company was founded in 1932 by Ole Kirk Christiansen in Billund, Denmark. While Lego products are manufactured in several countries around the world (including China, Vietnam, and others), the brand is originally Danish and is still headquartered in Billund. The design, innovation, and brand identity remain deeply rooted in Denmark. So, while production happens globally, **Denmark is the country that makes Lego** — in origin and spirit. 🇩🇰🧱";False;False;0.9997;fr;en;True;True;False;True;True;Spontane Frage: Aus welchem Land kommt Lego?;de;True;Une idée comme ça : quel pays fabrique les Lego ?;fr;True;True;Pensando al azar: ¿qué país fabrica Lego?;es;True;Pensiero a caso: quale paese produce i Lego?;it;True;Pensamento aleatório: que país fabrica Lego?;pt;True;conversacional;8
 What is the tallest waterfall in the world?;"La plus haute chute d'eau du monde est **le Salto Ángel** (ou **chute Angel**), située au **Venezuela**.
 
 Elle mesure environ **979 mètres** de hauteur totale, dont environ **807 mètres** de chute ininterrompue, ce qui en fait la plus haute chute d’eau du monde.
@@ -9145,13 +9145,13 @@ Elle doit son nom à l’aviateur américain **Jimmie Angel**, qui l’a survol�
 
 Angel Falls is located in the Canaima National Park in the Gran Sabana region of Venezuela. It is named after the local indigenous people and is considered one of the most spectacular waterfalls in the world. The waterfall is formed by the Churún River, which flows from the Andes Mountains into the Amazon Basin. 
 
-Note: While some sources may cite other waterfalls as being taller when including the full cascade or total drop, Angel Falls is recognized as the tallest with a free-fall height.";False;False;0.9997;fr;en;True;True;False;True;True;Was ist der höchste Wasserfall der Welt?;de;True;Quelle est la plus haute chute d'eau du monde ?;fr;True;True;¿Cuál es la más alta cascada del mundo?;es;True;;;;;;;factual_clasica;
+Note: While some sources may cite other waterfalls as being taller when including the full cascade or total drop, Angel Falls is recognized as the tallest with a free-fall height.";False;False;0.9997;fr;en;True;True;False;True;True;Was ist der höchste Wasserfall der Welt?;de;True;Quelle est la plus haute chute d'eau du monde ?;fr;True;True;¿Cuál es la más alta cascada del mundo?;es;True;Qual è la cascata più alta del mondo?;it;True;Qual é a cachoeira mais alta do mundo?;pt;True;factual_clasica;
 Which canal links the Atlantic and Pacific?;"Le canal qui relie l'Atlantique et le Pacifique est le **canal de Panama**.
 
 Il se situe au **Panama**, en Amérique centrale, et permet aux navires de passer d'un océan à l'autre sans avoir à contourner l'Amérique du Sud (par le cap Horn ou le détroit de Magellan, ce qui serait beaucoup plus long). Le canal a été ouvert en 1914 et est aujourd'hui un des plus importants axes de transport maritime mondial.";Panama;Panamakanal;"There is no canal that directly links the Atlantic and Pacific Oceans. However, the **Panama Canal** connects the Atlantic Ocean (to the east) with the Pacific Ocean (to the west), passing through Central America. It is the primary man-made waterway that allows ships to travel between these two oceans without going around South America.
 
-So, the correct answer is: **Panama Canal**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Welcher Kanal verbindet Atlantik und Pazifik?;de;True;Quel canal relie l'Atlantique et le Pacifique ?;fr;True;True;¿Qué canal une el Atlántico y el Pacífico?;es;True;;;;;;;factual_aperturas;8
-Fetch the capital of Albania.;La capitale de l'Albanie est **Tirana**.;Tirana;Tirane;The capital of Albania is Tirana.;False;False;0.999;fr;en;True;True;False;True;True;Hol mir die Hauptstadt Albaniens.;de;True;Rapportez-moi la capitale de l'Albanie.;fr;True;;Tráeme la capital de Albania.;es;True;;;;;;;imperativo;6
+So, the correct answer is: **Panama Canal**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Welcher Kanal verbindet Atlantik und Pazifik?;de;True;Quel canal relie l'Atlantique et le Pacifique ?;fr;True;True;¿Qué canal une el Atlántico y el Pacífico?;es;True;Quale canale collega l'Atlantico e il Pacifico?;it;True;Qual canal liga o Atlântico e o Pacífico?;pt;True;factual_aperturas;8
+Fetch the capital of Albania.;La capitale de l'Albanie est **Tirana**.;Tirana;Tirane;The capital of Albania is Tirana.;False;False;0.999;fr;en;True;True;False;True;True;Hol mir die Hauptstadt Albaniens.;de;True;Rapportez-moi la capitale de l'Albanie.;fr;True;;Tráeme la capital de Albania.;es;True;Portami la capitale dell'Albania.;it;True;Traga a capital da Albânia.;pt;True;imperativo;6
 Expand on how elevators work.;"Voici une **explication détaillée et structurée du fonctionnement des ascenseurs**, en partant des principes fondamentaux jusqu’aux composants clés et aux mécanismes qui les rendent fonctionnels.
 
 ---
@@ -9206,7 +9206,7 @@ An elevator system consists of several key parts:
 ### 2. **How the Elevator Moves: The Physics Behind It**
 
 #### A. **Counterweight System**
-- The";False;False;0.9998;fr;en;True;True;False;True;True;Vertiefe, wie Aufzüge funktionieren.;de;True;Développez le fonctionnement des ascenseurs.;fr;True;True;Profundiza en cómo funcionan los ascensores.;es;True;;;;;;;imperativo_explicativo;7
+- The";False;False;0.9998;fr;en;True;True;False;True;True;Vertiefe, wie Aufzüge funktionieren.;de;True;Développez le fonctionnement des ascenseurs.;fr;True;True;Profundiza en cómo funcionan los ascensores.;es;True;Approfondisci come funzionano gli ascensori.;it;True;Aprofunde como funcionam os elevadores.;pt;True;imperativo_explicativo;7
 What gives rubies their red color?;"La couleur rouge des rubis est due à la **présence d'ions de chrome (Cr³⁺)** dans la structure du **corindon**, le minéral qui forme le rubis, qui est de l'oxyde d'aluminium (Al₂O₃).
 
 Lorsque des atomes d'**aluminium** sont remplacés par des **ions de chrome (Cr³⁺)** dans le cristal de corindon, ces ions absorbent certaines longueurs d'onde de la lumière visible, notamment le jaune-vert et le violet. Cela laisse passer surtout la lumière rouge, ce qui donne au rubis sa couleur caractéristique rouge vif.
@@ -9220,14 +9220,14 @@ Specifically, when chromium ions (Cr³⁺) substitute for some of the aluminum i
 
 The concentration and arrangement of chromium atoms influence the intensity and shade of the red—higher chromium content typically results in a more vivid red, which is desirable in high-quality rubies.
 
-So, in short: **Chromium** is what gives rubies their red color.";False;False;0.9998;fr;en;True;True;False;True;True;Was gibt Rubinen ihre rote Farbe?;de;True;Qu'est-ce qui donne aux rubis leur couleur rouge ?;fr;True;True;¿Qué da a los rubíes su color rojo?;es;True;;;;;;;explicativa;8
+So, in short: **Chromium** is what gives rubies their red color.";False;False;0.9998;fr;en;True;True;False;True;True;Was gibt Rubinen ihre rote Farbe?;de;True;Qu'est-ce qui donne aux rubis leur couleur rouge ?;fr;True;True;¿Qué da a los rubíes su color rojo?;es;True;Cosa dà ai rubini il loro colore rosso?;it;True;O que dá aos rubis sua cor vermelha?;pt;True;explicativa;8
 Currency of India?;"La monnaie de l'Inde est la **roupie indienne**.
 
 Son symbole est **₹** et son code ISO est **INR**.
 
 La roupie indienne est divisée en 100 *paise* (ou *paisa*), bien que les paiements en paise soient de moins en moins courants dans la vie quotidienne.";rupee;roupie|rupia|Rupie;"The currency of India is the **Indian Rupee (INR)**.  
 
-The symbol for the Indian Rupee is ₹, and it is divided into 100 paise. The Indian Rupee is the official currency used throughout the country for all financial transactions.";False;False;0.9997;fr;en;True;True;False;True;True;Währung Indiens?;de;True;Monnaie de l'Inde ?;fr;True;True;¿Moneda de la India?;es;True;;;;;;;corta;4
+The symbol for the Indian Rupee is ₹, and it is divided into 100 paise. The Indian Rupee is the official currency used throughout the country for all financial transactions.";False;False;0.9997;fr;en;True;True;False;True;True;Währung Indiens?;de;True;Monnaie de l'Inde ?;fr;True;True;¿Moneda de la India?;es;True;Valuta dell'India?;it;True;Moeda da Índia?;pt;True;corta;4
 Trivia time: which country has the most lakes?;"Le pays qui compte le plus de lacs est **le Canada**.
 
 ### Pourquoi le Canada ?
@@ -9241,7 +9241,7 @@ Canada has over **31,000 lakes** larger than 100 square meters, and it's estimat
 
 Canada's lake count far surpasses that of any other country, making it the clear leader in the number of lakes globally. 🏔️💧
 
-Bonus fact: The Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) are the largest group of freshwater lakes in the world and are shared between Canada and the United States.";False;False;0.9998;fr;en;True;True;False;True;True;Quizzeit: Welches Land hat die meisten Seen?;de;True;Question culture : quel pays compte le plus de lacs ?;fr;True;True;Hora de trivia: ¿qué país tiene más lagos?;es;True;;;;;;;conversacional;10
+Bonus fact: The Great Lakes (Superior, Michigan, Huron, Erie, and Ontario) are the largest group of freshwater lakes in the world and are shared between Canada and the United States.";False;False;0.9998;fr;en;True;True;False;True;True;Quizzeit: Welches Land hat die meisten Seen?;de;True;Question culture : quel pays compte le plus de lacs ?;fr;True;True;Hora de trivia: ¿qué país tiene más lagos?;es;True;Ora del quiz: quale paese ha più laghi?;it;True;Hora do quiz: que país tem mais lagos?;pt;True;conversacional;10
 What is the largest organ of the human body?;"Le plus grand organe du corps humain est la **peau**.
 
 👉 La peau couvre tout le corps, avec une surface d’environ **1,5 à 2 mètres carrés** chez l’adulte et un poids d’environ **4 kilogrammes** (selon la taille de la personne), et c’est l’organe le plus étendu. Elle protège le corps, régule la température, retient l’eau, et joue un rôle dans la perception des stimuli comme le toucher, la chaleur ou la douleur.
@@ -9250,13 +9250,13 @@ Si l’on ne considère que les organes **internes**, le plus grand est le **foi
 
 ✅ **Réponse finale : La peau est le plus grand organe du corps humain.**";skin;peau|piel|Haut|pelle|pele;"The largest organ of the human body is the **skin**.
 
-The skin covers the entire surface of the body and serves as a protective barrier against pathogens, UV radiation, and physical damage. It also helps regulate body temperature, retains moisture, and aids in the sensation of touch, pressure, and temperature. The skin is made up of three main layers: the epidermis, dermis, and hypodermis (subcutaneous layer), and it can weigh up to 10 pounds (about 4.5 kilograms) in an average adult.";False;False;0.9998;fr;en;True;True;False;True;True;Was ist das größte Organ des menschlichen Körpers?;de;True;Quel est le plus grand organe du corps humain ?;fr;True;True;¿Cuál es el órgano más grande del cuerpo humano?;es;True;;;;;;;factual_clasica;
+The skin covers the entire surface of the body and serves as a protective barrier against pathogens, UV radiation, and physical damage. It also helps regulate body temperature, retains moisture, and aids in the sensation of touch, pressure, and temperature. The skin is made up of three main layers: the epidermis, dermis, and hypodermis (subcutaneous layer), and it can weigh up to 10 pounds (about 4.5 kilograms) in an average adult.";False;False;0.9998;fr;en;True;True;False;True;True;Was ist das größte Organ des menschlichen Körpers?;de;True;Quel est le plus grand organe du corps humain ?;fr;True;True;¿Cuál es el órgano más grande del cuerpo humano?;es;True;Qual è l'organo più grande del corpo umano?;it;True;Qual é o maior órgão do corpo humano?;pt;True;factual_clasica;
 Which sea separates Europe from Africa?;"La mer qui sépare l'Europe de l'Afrique est la **Méditerranée**.
 
 Elle forme une large étendue d'eau entre le sud de l'Europe (notamment l’Espagne, la France, l'Italie, la Grèce, etc.) et le nord de l'Afrique (notamment le Maroc, l’Algérie, la Tunisie, la Libye, l'Égypte, etc.). Au détroit de Gibraltar, les deux continents ne sont séparés que d’environ 14 kilomètres.";Mediterranean;Mediterranee|Mediterraneo|Mittelmeer;"The sea that separates Europe from Africa is the **Mediterranean Sea**. 
 
-It lies between the eastern coast of Europe and the western coast of Africa, with the Strait of Gibraltar marking the narrowest point between the two continents.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Meer trennt Europa von Afrika?;de;True;Quelle mer sépare l'Europe de l'Afrique ?;fr;True;True;¿Qué mar separa Europa de África?;es;True;;;;;;;factual_aperturas;7
-Disclose the capital of Brunei.;La capitale du Brunei est **Bandar Seri Begawan**.;Bandar Seri Begawan;Bandar;The capital of Brunei is Bandar Seri Begawan.;False;False;0.8594;fr;en;True;True;False;True;True;Gib die Hauptstadt von Brunei preis.;de;True;Dévoilez la capitale du Brunei.;fr;True;;Desvela la capital de Brunéi.;es;True;;;;;;;imperativo;8
+It lies between the eastern coast of Europe and the western coast of Africa, with the Strait of Gibraltar marking the narrowest point between the two continents.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Meer trennt Europa von Afrika?;de;True;Quelle mer sépare l'Europe de l'Afrique ?;fr;True;True;¿Qué mar separa Europa de África?;es;True;Quale mare separa l'Europa dall'Africa?;it;True;Qual mar separa a Europa da África?;pt;True;factual_aperturas;7
+Disclose the capital of Brunei.;La capitale du Brunei est **Bandar Seri Begawan**.;Bandar Seri Begawan;Bandar;The capital of Brunei is Bandar Seri Begawan.;False;False;0.8594;fr;en;True;True;False;True;True;Gib die Hauptstadt von Brunei preis.;de;True;Dévoilez la capitale du Brunei.;fr;True;;Desvela la capital de Brunéi.;es;True;Svela la capitale del Brunei.;it;True;Revele a capital de Brunei.;pt;True;imperativo;8
 Examine how noise-cancelling headphones work.;"Les **casques à réduction de bruit** (ou *casques anti-bruit*) sont des dispositifs conçus pour **atténuer les bruits ambiants** afin d’écouter de la musique ou de profiter du calme, par exemple dans un avion ou un train. Leur fonctionnement repose sur deux principes complémentaires. Voici une analyse détaillée de leur fonctionnement :
 
 ---
@@ -9301,7 +9301,7 @@ ANC uses **microphones** and **electronic processing** to generate sound waves t
 
 3. **Generation of ""Anti-Sound"" Waves**  
    - The processor generates a sound wave that is **equal in amplitude but opposite in phase** (180 degrees out of phase) to the detected noise.  
-   - This is based on the principle of **destructive interference**: when two sound waves of the same frequency and opposite phase meet";False;False;0.9998;fr;en;True;True;False;True;True;Untersuche, wie Kopfhörer mit Geräuschunterdrückung funktionieren.;de;True;Examinez le fonctionnement des casques à réduction de bruit.;fr;True;True;Examina cómo funcionan los auriculares con cancelación de ruido.;es;True;;;;;;;imperativo_explicativo;10
+   - This is based on the principle of **destructive interference**: when two sound waves of the same frequency and opposite phase meet";False;False;0.9998;fr;en;True;True;False;True;True;Untersuche, wie Kopfhörer mit Geräuschunterdrückung funktionieren.;de;True;Examinez le fonctionnement des casques à réduction de bruit.;fr;True;True;Examina cómo funcionan los auriculares con cancelación de ruido.;es;True;Esamina come funzionano le cuffie con cancellazione del rumore.;it;True;Examine como funcionam os fones com cancelamento de ruído.;pt;True;imperativo_explicativo;10
 How do glow sticks glow?;"Les **bâtons lumineux** brillent grâce à une **réaction chimique** qui produit de la lumière sans chaleur : la **chimiluminescence**. Voici comment cela fonctionne :
 
 ### 1. **Deux liquides séparés**
@@ -9335,7 +9335,7 @@ How do glow sticks glow?;"Les **bâtons lumineux** brillent grâce à une **réa
    The energy from the reaction excites the electrons in the phosphorescent dye. When these electrons return to their ground state, they release energy as visible light — this is the glow you see.
 
 5. **Color of the Glow**:  
-   The color of the light depends on the type of dye used";False;False;0.9997;fr;en;True;True;False;True;True;Wie leuchten Knicklichter?;de;True;Comment les bâtons lumineux brillent-ils ?;fr;True;True;¿Cómo brillan las barras luminosas?;es;True;;;;;;;explicativa;6
+   The color of the light depends on the type of dye used";False;False;0.9997;fr;en;True;True;False;True;True;Wie leuchten Knicklichter?;de;True;Comment les bâtons lumineux brillent-ils ?;fr;True;True;¿Cómo brillan las barras luminosas?;es;True;Come brillano i bastoncini luminosi?;it;True;Como brilham os bastões luminosos?;pt;True;explicativa;6
 Currency of Mexico?;"La monnaie du Mexique est le **peso mexicain**.
 
 Son symbole est **$** et son code ISO est **MXN**.
@@ -9351,7 +9351,7 @@ The symbol for the peso is **$** or **MXN** (ISO 4217 code).
 
 Note: The peso is divided into 100 centavos. For example, 1 peso = 100 centavos.  
 
-So, the official currency is: **Mexican Peso (MXN)**. ✅";False;False;0.9935;fr;en;True;True;False;True;True;Währung Mexikos?;de;True;Monnaie du Mexique ?;fr;True;True;¿Moneda de México?;es;True;;;;;;;corta;4
+So, the official currency is: **Mexican Peso (MXN)**. ✅";False;False;0.9935;fr;en;True;True;False;True;True;Währung Mexikos?;de;True;Monnaie du Mexique ?;fr;True;True;¿Moneda de México?;es;True;Valuta del Messico?;it;True;Moeda do México?;pt;True;corta;4
 I forgot, which river flows through Rome?;"Le fleuve qui traverse Rome est le **Tibre** (en italien *Tevere*).
 
 Il prend sa source dans les Apennins, en Toscane, puis traverse l’Ombrie et le Latium avant d’arriver à Rome, qu’il traverse **du nord au sud** en formant plusieurs grands méandres. Il se jette ensuite dans la mer Tyrrhénienne, près d’**Ostie**.
@@ -9364,14 +9364,14 @@ Selon la légende, c’est sur ses rives que les jumeaux **Romulus et Rémus** f
 
 The Tiber flows through the heart of Rome, passing through the city from the west to the east. It has played a significant role in Rome's history, serving as a source of water, a transportation route, and a boundary for the city. Notable landmarks along the Tiber include the Roman Forum, the Colosseum, and the Trastevere district.
 
-Although the river is now largely confined to the city and its banks are heavily developed, it still runs through Rome and is a key feature of the city's geography and culture.";False;False;0.9998;fr;en;True;True;False;True;True;Ich hab's vergessen: Welcher Fluss fließt durch Rom?;de;True;J'ai oublié, quel fleuve traverse Rome ?;fr;True;True;Se me olvidó, ¿qué río pasa por Roma?;es;True;;;;;;;conversacional;9
+Although the river is now largely confined to the city and its banks are heavily developed, it still runs through Rome and is a key feature of the city's geography and culture.";False;False;0.9998;fr;en;True;True;False;True;True;Ich hab's vergessen: Welcher Fluss fließt durch Rom?;de;True;J'ai oublié, quel fleuve traverse Rome ?;fr;True;True;Se me olvidó, ¿qué río pasa por Roma?;es;True;Ho dimenticato, quale fiume attraversa Roma?;it;True;Esqueci, que rio passa por Roma?;pt;True;conversacional;9
 In what year did the Spanish Armada sail against England?;"L'Armada espagnole a navigué contre l'Angleterre en **1588**.
 
-Cette expédition, connue sous le nom de **l'Invincible Armada**, a été envoyée par le roi Philippe II d'Espagne et commandée par le duc de Medina Sidonia, avec l'objectif d'envahir l'Angleterre, de renverser la reine Élisabeth Ire et d’y rétablir le catholicisme. Cependant, l'Armada a échoué à cause de mauvaises conditions météorologiques, de difficultés de navigation, de manque de coordination et de l'efficacité des forces anglaises. Cette défaite marqua un tournant dans l'histoire maritime, renforçant la position de l'Angleterre comme puissance maritime croissante.";1588;;The Spanish Armada sailed against England in the year **1588**.;False;False;0.9998;fr;en;True;True;False;True;True;In welchem Jahr segelte die spanische Armada gegen England?;de;True;En quelle année l'Armada espagnole a-t-elle navigué contre l'Angleterre ?;fr;True;True;¿En qué año zarpó la Armada Española contra Inglaterra?;unknown;True;;;;;;;factual_clasica;
-Lake Bled is in which country?;Le lac de Bled se trouve en **Slovénie**.;Slovenia;Slovenie|Eslovenia|Slowenien;Lake Bled is in **Slovenia**.;False;False;0.9997;fr;en;True;True;False;True;True;Der Bleder See liegt in welchem Land?;de;True;Le lac de Bled se trouve dans quel pays ?;fr;True;;¿El lago Bled está en qué país?;es;True;;;;;;;factual_aperturas;8
+Cette expédition, connue sous le nom de **l'Invincible Armada**, a été envoyée par le roi Philippe II d'Espagne et commandée par le duc de Medina Sidonia, avec l'objectif d'envahir l'Angleterre, de renverser la reine Élisabeth Ire et d’y rétablir le catholicisme. Cependant, l'Armada a échoué à cause de mauvaises conditions météorologiques, de difficultés de navigation, de manque de coordination et de l'efficacité des forces anglaises. Cette défaite marqua un tournant dans l'histoire maritime, renforçant la position de l'Angleterre comme puissance maritime croissante.";1588;;The Spanish Armada sailed against England in the year **1588**.;False;False;0.9998;fr;en;True;True;False;True;True;In welchem Jahr segelte die spanische Armada gegen England?;de;True;En quelle année l'Armada espagnole a-t-elle navigué contre l'Angleterre ?;fr;True;True;¿En qué año zarpó la Armada Española contra Inglaterra?;unknown;True;In che anno l'Invincibile Armata salpò contro l'Inghilterra?;it;True;Em que ano a Invencível Armada zarpou contra a Inglaterra?;pt;True;factual_clasica;
+Lake Bled is in which country?;Le lac de Bled se trouve en **Slovénie**.;Slovenia;Slovenie|Eslovenia|Slowenien;Lake Bled is in **Slovenia**.;False;False;0.9997;fr;en;True;True;False;True;True;Der Bleder See liegt in welchem Land?;de;True;Le lac de Bled se trouve dans quel pays ?;fr;True;;¿El lago Bled está en qué país?;es;True;Il lago di Bled si trova in quale paese?;it;True;O lago Bled fica em qual país?;pt;True;factual_aperturas;8
 Guess the capital of Cyprus.;"La capitale de Chypre est **Nicosie**. 🇨🇾
 
-(Attention : l’île de Chypre est divisée depuis 1974 : le sud est contrôlé par la République de Chypre, reconnue internationalement, et le nord par la « République turque de Chypre du Nord », reconnue seulement par la Turquie. Nicosie est elle-même coupée en deux : la partie sud est la capitale de la République de Chypre, reconnue comme capitale du pays par la communauté internationale.)";Nicosia;Nicosie|Lefkosia|Nikosia;The capital of Cyprus is **Nicosia**.;False;False;0.9998;fr;en;True;True;False;True;True;Rate die Hauptstadt Zyperns.;de;True;Devinez la capitale de Chypre.;fr;True;True;Adivina la capital de Chipre.;es;True;;;;;;;imperativo;6
+(Attention : l’île de Chypre est divisée depuis 1974 : le sud est contrôlé par la République de Chypre, reconnue internationalement, et le nord par la « République turque de Chypre du Nord », reconnue seulement par la Turquie. Nicosie est elle-même coupée en deux : la partie sud est la capitale de la République de Chypre, reconnue comme capitale du pays par la communauté internationale.)";Nicosia;Nicosie|Lefkosia|Nikosia;The capital of Cyprus is **Nicosia**.;False;False;0.9998;fr;en;True;True;False;True;True;Rate die Hauptstadt Zyperns.;de;True;Devinez la capitale de Chypre.;fr;True;True;Adivina la capital de Chipre.;es;True;Indovina la capitale di Cipro.;it;True;Adivinhe a capital do Chipre.;pt;True;imperativo;6
 Analyze how touchscreens sense fingers.;"Les écrans tactiles détectent les doigts grâce à plusieurs technologies, chacune fonctionnant sur un principe différent. Voici une analyse détaillée des principaux types d’écrans tactiles et de la manière dont ils détectent les doigts :
 
 ---
@@ -9409,7 +9409,7 @@ Deux couches conductrices souples sont séparées par un petit espace. Quand on 
 - The screen calculates the **exact X and Y coordinates** of the touch point based on which capacitive elements are affected.
 
 **Why fingers work well:**
-- Fingers are conductive (due to";False;False;0.9998;fr;en;True;True;False;True;True;Analysiere, wie Touchscreens Finger erkennen.;de;True;Analysez comment les écrans tactiles détectent les doigts.;fr;True;True;Analiza cómo detectan los dedos las pantallas táctiles.;es;True;;;;;;;imperativo_explicativo;8
+- Fingers are conductive (due to";False;False;0.9998;fr;en;True;True;False;True;True;Analysiere, wie Touchscreens Finger erkennen.;de;True;Analysez comment les écrans tactiles détectent les doigts.;fr;True;True;Analiza cómo detectan los dedos las pantallas táctiles.;es;True;Analizza come gli schermi tattili rilevano le dita.;it;True;Analise como as telas sensíveis ao toque detectam os dedos.;pt;True;imperativo_explicativo;8
 How do clouds stay up?;"Les nuages restent en l'air parce que les **gouttelettes d’eau** ou les cristaux de glace qui les composent sont si petits qu’ils tombent extrêmement lentement, et que les **courants d’air ascendants** suffisent à les maintenir en suspension. Voici comment cela fonctionne :
 
 ---
@@ -9449,7 +9449,7 @@ Here’s how it works:
 
 ### 3. **Buoyancy Keeps Clouds Afloat**
 - The water droplets in clouds are very small and light.
-- Because the air around them is still warmer and less dense, the droplets are buoyant — they";False;False;0.9997;fr;en;True;True;False;True;True;Wie bleiben Wolken in der Luft?;de;True;Comment les nuages restent-ils en l'air ?;fr;True;True;¿Cómo se mantienen las nubes en el aire?;es;True;;;;;;;explicativa;6
+- Because the air around them is still warmer and less dense, the droplets are buoyant — they";False;False;0.9997;fr;en;True;True;False;True;True;Wie bleiben Wolken in der Luft?;de;True;Comment les nuages restent-ils en l'air ?;fr;True;True;¿Cómo se mantienen las nubes en el aire?;es;True;Come restano in aria le nuvole?;it;True;Como as nuvens ficam no ar?;pt;True;explicativa;6
 Currency of Russia?;"La monnaie de la Russie est le **rouble** (symbole : ₽).
 
 Le **rouble russe** (code **RUB**) est l'unité monétaire officielle du pays.
@@ -9458,7 +9458,7 @@ Le rouble est divisé en 100 **kopecks**, mais les pièces de kopecks ont aujour
 
 Le rouble est utilisé dans toute la Russie pour les échanges commerciaux et financiers.
 
-⚠️ Note : Le rouble a connu des fluctuations importantes ces dernières années en raison des événements géopolitiques, notamment la guerre en Ukraine.";ruble;rouble|rublo|Rubel;The currency of Russia is the **Russian ruble**. Its symbol is **₽** and its ISO code is **RUB**.;False;False;0.9998;fr;es;True;True;False;True;True;Währung Russlands?;de;True;Monnaie de la Russie ?;fr;True;True;¿Moneda de Rusia?;es;True;;;;;;;corta;4
+⚠️ Note : Le rouble a connu des fluctuations importantes ces dernières années en raison des événements géopolitiques, notamment la guerre en Ukraine.";ruble;rouble|rublo|Rubel;The currency of Russia is the **Russian ruble**. Its symbol is **₽** and its ISO code is **RUB**.;False;False;0.9998;fr;es;True;True;False;True;True;Währung Russlands?;de;True;Monnaie de la Russie ?;fr;True;True;¿Moneda de Rusia?;es;True;Valuta della Russia?;it;True;Moeda da Rússia?;pt;True;corta;4
 Out of curiosity, which river runs through Florence?;"Florence est traversée par le fleuve **Arno**.
 
 L’**Arno** traverse la ville d’est en ouest, en la divisant en deux parties : le centre historique, sur la rive nord, et le quartier de l’**Oltrarno** (« au-delà de l’Arno »), sur la rive sud. Il est particulièrement important pour l’histoire, l’architecture et l’économie de la ville. Le célèbre **Ponte Vecchio**, avec ses boutiques d’orfèvres, l’enjambe, et la **galerie des Offices** borde ses quais.
@@ -9467,8 +9467,8 @@ L’Arno prend sa source dans les Apennins et se jette dans la mer Ligure, près
 
 ✅ Réponse : **L’Arno**.";Arno;;"The river that runs through Florence is the **Arno River**.  
 
-The Arno flows through the heart of the city, shaping its historic landscape and playing a key role in Florence's development as a major cultural and economic center. It passes through the city from the north to the south, and many of Florence's most famous landmarks—such as the Duomo, Ponte Vecchio, and the Uffizi Gallery—are situated along its banks.";False;False;0.9998;fr;en;True;True;False;True;True;Aus Neugier: Welcher Fluss fließt durch Florenz?;de;True;Par curiosité, quel fleuve traverse Florence ?;fr;True;True;Por curiosidad, ¿qué río atraviesa Florencia?;es;True;;;;;;;conversacional;10
-In what year did Apollo 11 land on the Moon?;Apollo 11 s'est posé sur la Lune le **20 juillet 1969**.;1969;;Apollo 11 landed on the Moon in **1969**. Specifically, the lunar module *Eagle* touched down on the Moon's surface on **July 20, 1969**.;False;False;0.9996;fr;en;True;True;False;True;True;In welchem Jahr landete Apollo 11 auf dem Mond?;de;True;En quelle année Apollo 11 s'est-il posé sur la Lune ?;fr;True;;¿En qué año aterrizó Apolo 11 en la Luna?;unknown;True;;;;;;;factual_clasica;
+The Arno flows through the heart of the city, shaping its historic landscape and playing a key role in Florence's development as a major cultural and economic center. It passes through the city from the north to the south, and many of Florence's most famous landmarks—such as the Duomo, Ponte Vecchio, and the Uffizi Gallery—are situated along its banks.";False;False;0.9998;fr;en;True;True;False;True;True;Aus Neugier: Welcher Fluss fließt durch Florenz?;de;True;Par curiosité, quel fleuve traverse Florence ?;fr;True;True;Por curiosidad, ¿qué río atraviesa Florencia?;es;True;Per curiosità, quale fiume attraversa Firenze?;it;True;Por curiosidade, que rio atravessa Florença?;pt;True;conversacional;10
+In what year did Apollo 11 land on the Moon?;Apollo 11 s'est posé sur la Lune le **20 juillet 1969**.;1969;;Apollo 11 landed on the Moon in **1969**. Specifically, the lunar module *Eagle* touched down on the Moon's surface on **July 20, 1969**.;False;False;0.9996;fr;en;True;True;False;True;True;In welchem Jahr landete Apollo 11 auf dem Mond?;de;True;En quelle année Apollo 11 s'est-il posé sur la Lune ?;fr;True;;¿En qué año aterrizó Apolo 11 en la Luna?;unknown;True;In che anno l'Apollo 11 atterrò sulla Luna?;it;True;Em que ano a Apollo 11 pousou na Lua?;pt;True;factual_clasica;
 Which country invented paper?;"Le papier a été inventé en **Chine**.
 
 C’est vers l’an **105** de notre ère que **Cai Lun**, un fonctionnaire chinois, a amélioré la méthode de fabrication du papier en utilisant des matières comme l’écorce de mûrier, le chanvre, de vieux chiffons et des filets de pêche. Cette invention a été largement adoptée en Chine et a ensuite été transmise par les routes commerciales (notamment via la route de la soie) au monde arabe, à partir du VIIIe siècle, puis en Europe.
@@ -9477,7 +9477,7 @@ Ainsi, **la Chine** est reconnue comme le pays ayant inventé le papier.";China;
 
 The invention of paper is traditionally attributed to **Cai Lun**, a Chinese court official during the Han Dynasty, around **105 BCE**. While earlier forms of paper-like materials may have existed in China, Cai Lun is credited with developing a more practical and widely usable form of paper by combining materials such as bamboo, hemp, and rags into a smooth, durable sheet.
 
-This innovation revolutionized communication, education, and record-keeping and eventually spread to the Middle East, Europe, and beyond through trade and cultural exchange.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Land erfand das Papier?;de;True;Quel pays a inventé le papier ?;fr;True;True;¿Qué país inventó el papel?;es;True;;;;;;;factual_aperturas;5
+This innovation revolutionized communication, education, and record-keeping and eventually spread to the Middle East, Europe, and beyond through trade and cultural exchange.";False;False;0.9998;fr;en;True;True;False;True;True;Welches Land erfand das Papier?;de;True;Quel pays a inventé le papier ?;fr;True;True;¿Qué país inventó el papel?;es;True;Quale paese inventò la carta?;it;True;Qual país inventou o papel?;pt;True;factual_aperturas;5
 Choose the animal on Lamborghini's logo.;"L'animal du logo de Lamborghini est un **taureau** 🐂.
 
 Il est représenté **en position de charge**, doré sur fond noir. Ce choix s’explique par le fondateur de la marque, **Ferruccio Lamborghini**, qui était né sous le signe du **Taureau** et était passionné de corridas.
@@ -9488,7 +9488,7 @@ Ce taureau symbolise la **puissance**, la **force** et l’**agressivité**, des
 
 ✅ Réponse : **le taureau**.";bull;taureau|toro|Stier|touro;"Lamborghini's logo does not feature an animal. It features a **stylized bull** — specifically, a **bull's head** — which is a key symbol in the brand's identity. The bull represents strength, power, and passion, values that align with Lamborghini's reputation for high-performance vehicles.
 
-So, the animal on Lamborghini's logo is the **bull**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Wähle das Tier im Logo von Lamborghini.;de;True;Choisissez l'animal du logo de Lamborghini.;fr;True;True;Escoge el animal del logo de Lamborghini.;es;True;;;;;;;imperativo;9
+So, the animal on Lamborghini's logo is the **bull**. ✅";False;False;0.9998;fr;en;True;True;False;True;True;Wähle das Tier im Logo von Lamborghini.;de;True;Choisissez l'animal du logo de Lamborghini.;fr;True;True;Escoge el animal del logo de Lamborghini.;es;True;Scegli l'animale del logo Lamborghini.;it;True;Escolha o animal do logotipo da Lamborghini.;pt;True;imperativo;9
 Review how dolphins sleep.;"Les dauphins dorment d’une façon très particulière : ils ne mettent au repos **qu’une moitié de leur cerveau** à la fois. Voici une réponse claire et scientifique :
 
 ---
@@ -9522,7 +9522,7 @@ This is a crucial adaptation for aquatic life, where the risk of drowning or pre
 
 ### 2. **Sleep Duration and Patterns**
 - Dolphins typically sleep for **short periods**, ranging from **10 to 30 minutes** at a time.
-- They may sleep in **cycles**, with alternating periods of sleep and wakefulness, often lasting several hours over the";False;False;0.9998;fr;en;True;True;False;True;True;Überprüfe, wie Delfine schlafen.;de;True;Revoyez comment dorment les dauphins.;fr;True;True;Revisa cómo duermen los delfines.;es;True;;;;;;;imperativo_explicativo;5
+- They may sleep in **cycles**, with alternating periods of sleep and wakefulness, often lasting several hours over the";False;False;0.9998;fr;en;True;True;False;True;True;Überprüfe, wie Delfine schlafen.;de;True;Revoyez comment dorment les dauphins.;fr;True;True;Revisa cómo duermen los delfines.;es;True;Rivedi come dormono i delfini.;it;True;Revise como os golfinhos dormem.;pt;True;imperativo_explicativo;5
 How does a sponge absorb water?;"Une éponge absorbe l'eau grâce à sa **structure microscopique** et à sa **composition matérielle**. Voici les étapes et les principes scientifiques qui expliquent ce phénomène :
 
 ---
@@ -9553,7 +9553,7 @@ Une fois remplis, les pores retiennent l’eau grâce à la tension superficiell
    - The structure of the sponge allows water to be held within the pores, but it can also release the water when pressure is applied or when the sponge dries out.
 
 4. **Water Retention and Release**:  
-   When";False;False;0.9998;fr;en;True;True;False;True;True;Wie saugt ein Schwamm Wasser auf?;de;True;Comment une éponge absorbe-t-elle l'eau ?;fr;True;True;¿Cómo absorbe agua una esponja?;es;True;;;;;;;explicativa;7
+   When";False;False;0.9998;fr;en;True;True;False;True;True;Wie saugt ein Schwamm Wasser auf?;de;True;Comment une éponge absorbe-t-elle l'eau ?;fr;True;True;¿Cómo absorbe agua una esponja?;es;True;Come assorbe l'acqua una spugna?;it;True;Como uma esponja absorve água?;pt;True;explicativa;7
 Sport at Wimbledon?;"Le sport pratiqué à Wimbledon est le **tennis**.
 
 Wimbledon est l'un des quatre grands tournois du tennis mondial, connu pour être le plus ancien et l'un des plus prestigieux, et il se déroule chaque année entre fin juin et début juillet à Wimbledon, dans le sud-ouest de Londres, au Royaume-Uni. Le tournoi est particulièrement célèbre pour son **tennis sur gazon**, une surface rapide qui donne un style de jeu très différent du tennis sur terre battue ou sur dur.";tennis;tenis;"Yes, sport at Wimbledon! Wimbledon is one of the most prestigious and historic tennis tournaments in the world. It is part of the four Grand Slam events in tennis and is held annually at the All England Lawn Tennis and Croquet Club in London, England.
@@ -9562,7 +9562,7 @@ The tournament features men's and women's singles and doubles, as well as mixed 
 
 Wimbledon is also famous for its formal dress code, where players and spectators are expected to wear smart, traditional attire—especially during the main events.
 
-So, yes—Wimbledon is a major event in the world of sport, specifically in tennis! 🎾 Wimbledon is not just a tournament; it's a cultural and sporting tradition.";False;False;0.9998;fr;en;True;True;False;True;True;Sportart in Wimbledon?;de;True;Sport pratiqué à Wimbledon ?;fr;True;True;¿Deporte de Wimbledon?;es;True;;;;;;;corta;4
+So, yes—Wimbledon is a major event in the world of sport, specifically in tennis! 🎾 Wimbledon is not just a tournament; it's a cultural and sporting tradition.";False;False;0.9998;fr;en;True;True;False;True;True;Sportart in Wimbledon?;de;True;Sport pratiqué à Wimbledon ?;fr;True;True;¿Deporte de Wimbledon?;es;True;Sport di Wimbledon?;it;True;Esporte de Wimbledon?;pt;True;corta;4
 Hmm, which sea is Venice on?;"Venise se trouve sur la **mer Adriatique**.
 
 Plus précisément, la ville est construite sur un ensemble d’îlots au cœur de la **lagune de Venise**, une lagune séparée de la mer par de longues bandes de sable, comme le Lido, à l'extrémité nord-ouest de la mer Adriatique, dans le nord-est de l’Italie.
@@ -9574,8 +9574,8 @@ Donc, la réponse est : **la mer Adriatique**. ✅";Adriatic;Adriatique|Adriatic
 So, to answer your question:  
 👉 Venice is on the **Adriatic Sea**—more precisely, in a lagoon connected to the Adriatic Sea.
 
-It's a unique geographical position, surrounded by water on all sides, making it one of the most famous cities in the world for its canals and maritime history. 🌊🏙️";False;False;0.9998;fr;en;True;True;False;True;True;Hmm, an welchem Meer liegt Venedig?;de;True;Hum, sur quelle mer se trouve Venise ?;fr;True;True;Mmm, ¿en qué mar está Venecia?;es;True;;;;;;;conversacional;8
-What is the capital of Indonesia?;La capitale de l'Indonésie est **Jakarta**.;Jakarta;Yakarta|Giacarta|Jacarta|Djakarta;The capital of Indonesia is **Jakarta**.;False;False;0.9996;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Indonesien?;de;True;Quelle est la capitale de l'Indonésie?;fr;True;;¿Cuál es la capital de Indonesia?;es;True;;;;;;;factual_clasica;
+It's a unique geographical position, surrounded by water on all sides, making it one of the most famous cities in the world for its canals and maritime history. 🌊🏙️";False;False;0.9998;fr;en;True;True;False;True;True;Hmm, an welchem Meer liegt Venedig?;de;True;Hum, sur quelle mer se trouve Venise ?;fr;True;True;Mmm, ¿en qué mar está Venecia?;es;True;Mmm, su quale mare si trova Venezia?;it;True;Hum, em que mar fica Veneza?;pt;True;conversacional;8
+What is the capital of Indonesia?;La capitale de l'Indonésie est **Jakarta**.;Jakarta;Yakarta|Giacarta|Jacarta|Djakarta;The capital of Indonesia is **Jakarta**.;False;False;0.9996;fr;en;True;True;False;True;True;Was ist die Hauptstadt von Indonesien?;de;True;Quelle est la capitale de l'Indonésie?;fr;True;;¿Cuál es la capital de Indonesia?;es;True;Qual è la capitale dell'Indonesia?;it;True;Qual é a capital da Indonésia?;pt;True;factual_clasica;
 Which planet is farthest from the Sun?;"La planète la plus éloignée du Soleil est **Neptune**.
 
 Parmi les **planètes du système solaire**, **Neptune** est la plus éloignée. Elle se trouve à environ **4,5 milliards de kilomètres** du Soleil (en moyenne).
@@ -9589,10 +9589,10 @@ Parmi les **planètes du système solaire**, **Neptune** est la plus éloignée.
 
 Neptune is the eighth and outermost planet in the solar system, located about **30 astronomical units (AU)** from the Sun (1 AU is the average distance from the Earth to the Sun). It was discovered in 1846 and is known for its deep blue color, strong winds (some of the fastest in the solar system), and numerous moons and rings.
 
-Note: While some people might think of distant objects like Pluto or distant asteroids, Pluto is not a planet and is much farther from the Sun than Neptune in some cases, but it is not the farthest *planet*—Neptune remains the farthest *planet* in our solar system.";False;False;0.9998;fr;en;True;True;False;True;True;Welcher Planet ist am weitesten von der Sonne entfernt?;de;True;Quelle planète est la plus éloignée du Soleil ?;fr;True;True;¿Qué planeta está más lejos del Sol?;es;True;;;;;;;factual_aperturas;9
+Note: While some people might think of distant objects like Pluto or distant asteroids, Pluto is not a planet and is much farther from the Sun than Neptune in some cases, but it is not the farthest *planet*—Neptune remains the farthest *planet* in our solar system.";False;False;0.9998;fr;en;True;True;False;True;True;Welcher Planet ist am weitesten von der Sonne entfernt?;de;True;Quelle planète est la plus éloignée du Soleil ?;fr;True;True;¿Qué planeta está más lejos del Sol?;es;True;Quale pianeta è il più lontano dal Sole?;it;True;Qual planeta está mais longe do Sol?;pt;True;factual_aperturas;9
 Retrieve the author of Alice in Wonderland.;"L'auteur d'*Alice au pays des merveilles* est **Lewis Carroll**.
 
-Lewis Carroll, de son vrai nom Charles Lutwidge Dodgson, était un mathématicien, logicien et écrivain britannique. Il a publié *Alice au pays des merveilles* en 1865, et sa suite, *De l'autre côté du miroir*, en 1871. Ces œuvres sont devenues des classiques de la littérature enfantine.";Lewis Carroll;Carroll;The author of *Alice's Adventures in Wonderland* is **Lewis Carroll**. His real name was **Charles Lutwidge Dodgson**. He was an English mathematician, logician, and writer, best known for this classic children's novel, first published in 1865.;False;False;0.9998;fr;en;True;True;False;True;True;Ruf den Autor von Alice im Wunderland ab.;de;True;Retrouvez l'auteur d'Alice au pays des merveilles.;fr;True;True;Recupera al autor de Alicia en el país de las maravillas.;es;True;;;;;;;imperativo;8
+Lewis Carroll, de son vrai nom Charles Lutwidge Dodgson, était un mathématicien, logicien et écrivain britannique. Il a publié *Alice au pays des merveilles* en 1865, et sa suite, *De l'autre côté du miroir*, en 1871. Ces œuvres sont devenues des classiques de la littérature enfantine.";Lewis Carroll;Carroll;The author of *Alice's Adventures in Wonderland* is **Lewis Carroll**. His real name was **Charles Lutwidge Dodgson**. He was an English mathematician, logician, and writer, best known for this classic children's novel, first published in 1865.;False;False;0.9998;fr;en;True;True;False;True;True;Ruf den Autor von Alice im Wunderland ab.;de;True;Retrouvez l'auteur d'Alice au pays des merveilles.;fr;True;True;Recupera al autor de Alicia en el país de las maravillas.;es;True;Recupera l'autore di Alice nel Paese delle Meraviglie.;it;True;Recupere o autor de Alice no País das Maravilhas.;pt;True;imperativo;8
 Clear up how camels survive deserts.;"Les chameaux survivent dans le désert grâce à une série d’adaptations physiologiques, comportementales et anatomiques qui leur permettent de résister aux conditions extrêmes de chaleur, de sécheresse et de manque d’eau. Voici les principales façons dont ils s’adaptent :
 
 ---
@@ -9634,7 +9634,7 @@ Clear up how camels survive deserts.;"Les chameaux survivent dans le désert gr�
 ### 2. **Camel’s Unique Physiological Adaptations**
 - **Hump Storage (Not for Water)**: The hump stores fat, not water. When food and water are scarce, the fat is broken down into energy and water through metabolism. This process produces water as a byproduct.
 - **Efficient Kidneys**: Camels produce highly concentrated urine to minimize water loss and excrete waste with very little water.
-- **Dry, Thick Nasal Passages**: These help prevent";False;False;0.9998;fr;en;True;True;False;True;True;Kläre, wie Kamele in Wüsten überleben.;de;True;Clarifiez comment les chameaux survivent dans le désert.;fr;True;True;Aclara cómo sobreviven los camellos en el desierto.;es;True;;;;;;;imperativo_explicativo;9
+- **Dry, Thick Nasal Passages**: These help prevent";False;False;0.9998;fr;en;True;True;False;True;True;Kläre, wie Kamele in Wüsten überleben.;de;True;Clarifiez comment les chameaux survivent dans le désert.;fr;True;True;Aclara cómo sobreviven los camellos en el desierto.;es;True;Chiarisci come i cammelli sopravvivono nel deserto.;it;True;Esclareça como os camelos sobrevivem no deserto.;pt;True;imperativo_explicativo;9
 How do hedgehogs defend themselves?;"Les hérissons se défendent principalement grâce à leurs **piquants**, qui leur permettent de se protéger des prédateurs. Voici les principales façons dont ils se défendent :
 
 1. **Les piquants** :
@@ -9656,7 +9656,7 @@ How do hedgehogs defend themselves?;"Les hérissons se défendent principalement
    While not as common, some hedgehogs (especially in certain regions) may secrete a **mild, unpleasant odor** from glands near their anus or feet, which can deter predators.
 
 4. **Fleeing as a Last Resort**:  
-   If the threat is too great or if the hedgehog is not";False;False;0.9997;fr;en;True;True;False;True;True;Wie verteidigen sich Igel?;de;True;Comment les hérissons se défendent-ils ?;fr;True;True;¿Cómo se defienden los erizos?;es;True;;;;;;;explicativa;8
+   If the threat is too great or if the hedgehog is not";False;False;0.9997;fr;en;True;True;False;True;True;Wie verteidigen sich Igel?;de;True;Comment les hérissons se défendent-ils ?;fr;True;True;¿Cómo se defienden los erizos?;es;True;Come si difendono i ricci?;it;True;Como os ouriços se defendem?;pt;True;explicativa;8
 Tour de France sport?;"Le **sport du Tour de France** est le **cyclisme**.
 
 Le Tour de France est la plus célèbre course cycliste du monde, organisée chaque année en juillet. Il se déroule sur environ trois semaines, avec des étapes de plaine, des étapes de montagne et des contre-la-montre. Il regroupe des cyclistes de différents pays, principalement d’Europe, mais aussi d'autres nations du monde entier.
@@ -9677,7 +9677,7 @@ Si tu veux, je peux aussi t’expliquer les différents types d’étapes (plain
 
 ### Significance:
 - It is considered the pinnacle of professional road cycling.
-- It attracts global attention and features";False;False;0.9998;fr;en;True;True;False;True;True;Sportart der Tour de France?;de;True;Sport du Tour de France ?;fr;True;True;¿Deporte del Tour de Francia?;es;True;;;;;;;corta;5
+- It attracts global attention and features";False;False;0.9998;fr;en;True;True;False;True;True;Sportart der Tour de France?;de;True;Sport du Tour de France ?;fr;True;True;¿Deporte del Tour de Francia?;es;True;Sport del Tour de France?;it;True;Esporte do Tour de France?;pt;True;corta;5
 Okay, which island was Napoleon born on?;"Napoléon Bonaparte est né sur l'île de **Corse**, à **Ajaccio**, le **15 août 1769**.
 
 Fait intéressant : la Corse venait tout juste de passer sous souveraineté française, en 1768, après avoir appartenu à la république de Gênes. Napoléon est donc né français, de justesse !
@@ -9692,4 +9692,4 @@ Actually, **Napoleon Bonaparte was born on the island of Corsica**.
 
 More precisely, he was born on **February 15, 1769**, in **Ajaccio, Corsica**, which was then a French territory (though it was under the rule of the Kingdom of Sardinia at the time, and later became part of France in 1768).
 
-So, the correct answer is: **Corsica**. ✅";False;False;0.9996;fr;en;True;True;False;True;True;Okay, auf welcher Insel wurde Napoleon geboren?;de;True;Bon, sur quelle île Napoléon est-il né ?;fr;True;True;Vale, ¿en qué isla nació Napoleón?;es;True;;;;;;;conversacional;9
+So, the correct answer is: **Corsica**. ✅";False;False;0.9996;fr;en;True;True;False;True;True;Okay, auf welcher Insel wurde Napoleon geboren?;de;True;Bon, sur quelle île Napoléon est-il né ?;fr;True;True;Vale, ¿en qué isla nació Napoleón?;es;True;Ok, su quale isola è nato Napoleone?;it;True;Ok, em que ilha Napoleão nasceu?;pt;True;conversacional;9

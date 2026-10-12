@@ -4,7 +4,7 @@ d=2560  ||e|| medio del vocabulario 1.0885
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
   [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
   [OK   ] finito
-  [OK   ] ||v|| = 0.0823  (||v||/||e|| = 0.076; Llama v9: 0.78-0.87)
+  [OK   ] ||v|| = 0.0858  (||v||/||e|| = 0.079; Llama v9: 0.78-0.87)
   [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
   [OK   ] metadata num_patch_positions = 1 (receta 1)
   [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
@@ -16,13 +16,13 @@ d=2560  ||e|| medio del vocabulario 1.0885
   [OK   ] prompt_cols = ['prompt', 'prompt_es', 'prompt_de'] (sin prompt_fr)
   [OK   ] split 0.84
   [OK   ] curva sin NaN (1 epochs)
-  goal_len_media_train 10.18388683886839  best_train_epoch 1
+  goal_len_media_train 10.183106575963718  best_train_epoch 1
 
 [es]
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt
   [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
   [OK   ] finito
-  [OK   ] ||v|| = 0.0770  (||v||/||e|| = 0.071; Llama v9: 0.78-0.87)
+  [OK   ] ||v|| = 0.0796  (||v||/||e|| = 0.073; Llama v9: 0.78-0.87)
   [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
   [OK   ] metadata num_patch_positions = 1 (receta 1)
   [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
@@ -34,13 +34,13 @@ d=2560  ||e|| medio del vocabulario 1.0885
   [OK   ] prompt_cols = ['prompt', 'prompt_de', 'prompt_fr'] (sin prompt_es)
   [OK   ] split 0.84
   [OK   ] curva sin NaN (1 epochs)
-  goal_len_media_train 10.291512915129152  best_train_epoch 1
+  goal_len_media_train 10.267006802721088  best_train_epoch 1
 
 [de]
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt
   [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
   [OK   ] finito
-  [OK   ] ||v|| = 0.0840  (||v||/||e|| = 0.077; Llama v9: 0.78-0.87)
+  [OK   ] ||v|| = 0.0872  (||v||/||e|| = 0.080; Llama v9: 0.78-0.87)
   [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
   [OK   ] metadata num_patch_positions = 1 (receta 1)
   [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
@@ -52,9 +52,9 @@ d=2560  ||e|| medio del vocabulario 1.0885
   [OK   ] prompt_cols = ['prompt', 'prompt_es', 'prompt_fr'] (sin prompt_de)
   [OK   ] split 0.84
   [OK   ] curva sin NaN (1 epochs)
-  goal_len_media_train 10.538130381303812  best_train_epoch 1
+  goal_len_media_train 10.496031746031745  best_train_epoch 1
 
-  [OK   ] mismas filas de train en las tres celdas: {'fr': 542, 'es': 542, 'de': 542}
+  [OK   ] mismas filas de train en las tres celdas: {'fr': 588, 'es': 588, 'de': 588}
 
 ======================================================================
 controles train: 0 FALLA, 0 AVISO

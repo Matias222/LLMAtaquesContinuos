@@ -1,7 +1,7 @@
 # Eval parche de idioma (aleman)
 
 - Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt`
-- Norma: 0.0840  |  shape: [1, 1, 2560]
+- Norma: 0.0872  |  shape: [1, 1, 2560]
 - Config: `{'num_patch_positions': 1, 'patch_offset': 0, 'patch_anchor': 'goal_all', 'scale': 1.0, 'num_tokens': 250, 'regen_ref': True, 'control': 'nativo', 'temperature': 0.0, 'train_test_split': 0.84, 'target_lang': 'de', 'upper': False}`
 
 ## Metricas sobre held-out (n=4)
@@ -20,9 +20,9 @@ El control nativo es la pregunta escrita en aleman, sin parche ni instruccion, g
 
 | tramo | sin parche | con parche | delta |
 |---|---|---|---|
-| head (primeros 5 tokens) | 7.6875 | 7.4922 | -0.1953 |
-| tail (el resto) | 0.3462 | 0.3394 | -0.0068 |
-| toda la respuesta | 0.6333 | 0.6211 | -0.0122 |
+| head (primeros 5 tokens) | 7.9453 | 7.7422 | -0.2031 |
+| tail (el resto) | 0.7637 | 0.7534 | -0.0103 |
+| toda la respuesta | 1.0391 | 1.0264 | -0.0127 |
 
 La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en aleman correcto en cada paso, asi que el tail solo mide 'continuar una oracion en aleman', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 

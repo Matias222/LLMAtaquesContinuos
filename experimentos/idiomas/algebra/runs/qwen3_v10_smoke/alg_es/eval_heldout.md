@@ -1,7 +1,7 @@
 # Eval parche de idioma (espanol)
 
 - Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt`
-- Norma: 0.0770  |  shape: [1, 1, 2560]
+- Norma: 0.0796  |  shape: [1, 1, 2560]
 - Config: `{'num_patch_positions': 1, 'patch_offset': 0, 'patch_anchor': 'goal_all', 'scale': 1.0, 'num_tokens': 250, 'regen_ref': True, 'control': 'nativo', 'temperature': 0.0, 'train_test_split': 0.84, 'target_lang': 'es', 'upper': False}`
 
 ## Metricas sobre held-out (n=4)
@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|---|---|
 | baseline  M(q) | 0.00% | 0.00% | 0.082 | 0.00% | 0.00% | 100.00% | 0.00% |
 | control nativo  M(q_es) | 100.00% | 100.00% | 0.999 | 0.00% | 0.00% | 100.00% | 0.00% |
-| parche  M(q+v) | 0.00% | 0.00% | 0.082 | 0.00% | 0.00% | 100.00% | 0.00% |
+| parche  M(q+v) | 0.00% | 0.00% | 0.083 | 0.00% | 0.00% | 100.00% | 0.00% |
 
 `celda ok` exige el idioma target Y el formato (una celda normal NO puede salir en mayusculas). Accuracy: answer_correct con los alias del banco (en, es, de, fr, it, pt).
 
@@ -20,9 +20,9 @@ El control nativo es la pregunta escrita en espanol, sin parche ni instruccion, 
 
 | tramo | sin parche | con parche | delta |
 |---|---|---|---|
-| head (primeros 5 tokens) | 8.3281 | 8.1562 | -0.1719 |
-| tail (el resto) | 0.2421 | 0.2388 | -0.0033 |
-| toda la respuesta | 0.5796 | 0.5684 | -0.0112 |
+| head (primeros 5 tokens) | 8.3125 | 8.1250 | -0.1875 |
+| tail (el resto) | 0.6191 | 0.6113 | -0.0078 |
+| toda la respuesta | 0.9434 | 0.9287 | -0.0146 |
 
 La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en espanol correcto en cada paso, asi que el tail solo mide 'continuar una oracion en espanol', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 

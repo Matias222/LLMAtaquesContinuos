@@ -1,8 +1,8 @@
-Gate de calidad sobre train: 542/588 targets limpios
+Gate de calidad sobre train: 588/588 targets limpios
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.06it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 63.58it/s]
 
-Train: 542  |  Held-out: 112  |  validacion: 2
+Train: 588  |  Held-out: 112  |  validacion: 2
 L2: 0.0915  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
   [prompt] parche sobre 13..22 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
         antes: ['user', '\n']   despues: ['<|im_end|>', '\n']
@@ -12,60 +12,61 @@ L2: 0.0915  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_al
         antes: ['user', '\n']   despues: ['<|im_end|>', '\n']
   largo del goal en train: media 10.2  min 4  max 25  (el mismo v se suma en cada posicion)
 Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_es', 'prompt_de']
-  prompt: 542/542 filas de train usables
-  prompt_es: 542/542 filas de train usables
-  prompt_de: 542/542 filas de train usables
-Epochs: 1  |  batch: 28 (20 batches/epoch)  |  steps/batch: 1
+  prompt: 588/588 filas de train usables
+  prompt_es: 588/588 filas de train usables
+  prompt_de: 588/588 filas de train usables
+Epochs: 1  |  batch: 28 (21 batches/epoch)  |  steps/batch: 1
 Checkpoint: mejor por CE held-out
 ======================================================================
 
 ######################################################################
 EPOCH 1/1
 ######################################################################
-  [batch 1/20] CE=6.8114  norma=0.012649  lr=2.50e-04
-  [batch 2/20] CE=6.5433  norma=0.021834  lr=2.48e-04
-  [batch 3/20] CE=6.6049  norma=0.030300  lr=2.43e-04
-  [batch 4/20] CE=6.4048  norma=0.038787  lr=2.35e-04
-  [batch 5/20] CE=6.2122  norma=0.044970  lr=2.24e-04
-  [batch 6/20] CE=6.4992  norma=0.051572  lr=2.10e-04
-  [batch 7/20] CE=6.1150  norma=0.056145  lr=1.93e-04
-  [batch 8/20] CE=6.2881  norma=0.061886  lr=1.75e-04
-  [batch 9/20] CE=6.0277  norma=0.066028  lr=1.56e-04
-  [batch 10/20] CE=6.0197  norma=0.070089  lr=1.35e-04
-  [batch 11/20] CE=5.7967  norma=0.073722  lr=1.15e-04
-  [batch 12/20] CE=6.1223  norma=0.076146  lr=9.43e-05
-  [batch 13/20] CE=6.2824  norma=0.078191  lr=7.48e-05
-  [batch 14/20] CE=6.5632  norma=0.079969  lr=5.66e-05
-  [batch 15/20] CE=6.2183  norma=0.081228  lr=4.03e-05
-  [batch 16/20] CE=6.6577  norma=0.081582  lr=2.64e-05
-  [batch 17/20] CE=6.3300  norma=0.082049  lr=1.51e-05
-  [batch 18/20] CE=6.4433  norma=0.082263  lr=6.77e-06
-  [batch 19/20] CE=6.0472  norma=0.082267  lr=1.70e-06
-  [batch 20/20] CE=5.8323  norma=0.082267  lr=0.00e+00
-  held-out head CE por entrada: prompt=8.4688  prompt_es=7.6562  prompt_de=8.7344
+  [batch 1/21] CE=7.0162  norma=0.012649  lr=2.50e-04
+  [batch 2/21] CE=6.4509  norma=0.021596  lr=2.48e-04
+  [batch 3/21] CE=6.6233  norma=0.029812  lr=2.44e-04
+  [batch 4/21] CE=6.7141  norma=0.038226  lr=2.36e-04
+  [batch 5/21] CE=6.1133  norma=0.045238  lr=2.26e-04
+  [batch 6/21] CE=6.2763  norma=0.053337  lr=2.13e-04
+  [batch 7/21] CE=6.2188  norma=0.056860  lr=1.98e-04
+  [batch 8/21] CE=6.1979  norma=0.062610  lr=1.82e-04
+  [batch 9/21] CE=6.4896  norma=0.066853  lr=1.64e-04
+  [batch 10/21] CE=5.9985  norma=0.071128  lr=1.45e-04
+  [batch 11/21] CE=5.6926  norma=0.074675  lr=1.25e-04
+  [batch 12/21] CE=6.1267  norma=0.077788  lr=1.05e-04
+  [batch 13/21] CE=6.2480  norma=0.080472  lr=8.64e-05
+  [batch 14/21] CE=6.4081  norma=0.082282  lr=6.83e-05
+  [batch 15/21] CE=6.3670  norma=0.083767  lr=5.15e-05
+  [batch 16/21] CE=6.1945  norma=0.084916  lr=3.66e-05
+  [batch 17/21] CE=6.5980  norma=0.085203  lr=2.39e-05
+  [batch 18/21] CE=6.1801  norma=0.085598  lr=1.36e-05
+  [batch 19/21] CE=6.4950  norma=0.085769  lr=6.12e-06
+  [batch 20/21] CE=5.8545  norma=0.085807  lr=1.54e-06
+  [batch 21/21] CE=6.3441  norma=0.085807  lr=0.00e+00
+  held-out head CE por entrada: prompt=8.3750  prompt_es=7.6094  prompt_de=8.6875
 
-Epoch 1: CE train (trayectoria)=6.2910  norma=0.082267
-  CE head del checkpoint:  train=9.1354   held-out=8.2865   brecha=-0.8490
-  held-out CE  head(primeros 5): con parche=8.2865  sin parche=9.1979  delta=-0.9115
-               toda la respuesta      : con parche=0.7760  sin parche=0.8379  delta=-0.0618
-  * mejor HELD-OUT hasta ahora (head CE 8.2865)
-  * mejor TRAIN hasta ahora (head CE 9.1354)
+Epoch 1: CE train (trayectoria)=6.3146  norma=0.085807
+  CE head del checkpoint:  train=9.0729   held-out=8.2240   brecha=-0.8490
+  held-out CE  head(primeros 5): con parche=8.2240  sin parche=9.2083  delta=-0.9844
+               toda la respuesta      : con parche=0.8242  sin parche=0.9004  delta=-0.0762
+  * mejor HELD-OUT hasta ahora (head CE 8.2240)
+  * mejor TRAIN hasta ahora (head CE 9.0729)
 ----------------------------------------------------------------------
 
-Guardando el parche de la epoch 1 (head CE 8.2865)
+Guardando el parche de la epoch 1 (head CE 8.2240)
 
 ======================================================================
 CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
  epoch     train   held-out    brecha     norma
 -----------------------------------------------
-     1    9.1354     8.2865   -0.8490    0.0823  <- mejor held-out  <- mejor train
+     1    9.0729     8.2240   -0.8490    0.0858  <- mejor held-out  <- mejor train
 
-  mejor por HELD-OUT: epoch 1 (CE 8.2865)  -> algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_heldout.pt
-  mejor por TRAIN   : epoch 1 (CE 9.1354)  -> algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
+  mejor por HELD-OUT: epoch 1 (CE 8.2240)  -> algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 9.0729)  -> algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
 
 ======================================================================
-Norma final: 0.082267
-  posicion 0: 0.082267
+Norma final: 0.085807
+  posicion 0: 0.085807
 
 Guardado: algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch.pt
           algebra/runs/qwen3_v10_smoke/alg_fr/lang_metadata.pt

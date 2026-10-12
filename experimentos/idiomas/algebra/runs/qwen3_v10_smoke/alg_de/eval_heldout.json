@@ -1,7 +1,7 @@
 {
   "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt",
   "model_path": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
-  "patch_norm": 0.08404329419136047,
+  "patch_norm": 0.08715767413377762,
   "lang_id": {
     "backend": "glotlid",
     "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
@@ -74,20 +74,20 @@
     },
     "patched": {
       "is_french": 0.0,
-      "french_score": 2.0979619831456787e-05,
+      "french_score": 2.4147825943879677e-05,
       "answer_correct": 1.0,
       "role_leak": 0.0,
       "is_target": 0.0,
-      "target_score": 0.00014623811518004048,
+      "target_score": 0.00014661957568589575,
       "is_uppercase": 0.0,
       "attr_ok": 0.0
     },
-    "nll_fr_baseline": 0.63330078125,
-    "nll_fr_patched": 0.62109375,
-    "nll_fr_head_baseline": 7.6875,
-    "nll_fr_head_patched": 7.4921875,
-    "nll_fr_tail_baseline": 0.34619140625,
-    "nll_fr_tail_patched": 0.33935546875,
+    "nll_fr_baseline": 1.0390625,
+    "nll_fr_patched": 1.0263671875,
+    "nll_fr_head_baseline": 7.9453125,
+    "nll_fr_head_patched": 7.7421875,
+    "nll_fr_tail_baseline": 0.763671875,
+    "nll_fr_tail_patched": 0.75341796875,
     "head_k": 5,
     "n_patched_media": 9.75
   },
@@ -140,9 +140,9 @@
           "n": 109
         },
         "nll_patched": {
-          "all": 0.6328125,
+          "all": 0.62890625,
           "head": 7.375,
-          "tail": 0.30859375,
+          "tail": 0.302734375,
           "n": 109
         }
       },
@@ -193,9 +193,9 @@
           "n": 61
         },
         "nll_patched": {
-          "all": 0.74609375,
-          "head": 6.1875,
-          "tail": 0.259765625,
+          "all": 0.75,
+          "head": 6.21875,
+          "tail": 0.26171875,
           "n": 61
         }
       },
@@ -206,7 +206,7 @@
         "has_answer": true,
         "baseline": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
         "reference": "Der größte See Südamerikas ist der **Titicaca-See**.\n\nEr liegt auf der Grenze zwischen **Bolivien** und **Peru** und ist der **größte See in Südamerika**. Mit einer Fläche von etwa **8.300 Quadratkilometern** (3.200 sq mi) ist er auch der **größte See in der Welt, der über 200 Meter hoch liegt** (er liegt auf einer Höhe von etwa 3.812 Metern über dem Meeresspiegel).\n\nDer Titicaca-See ist nicht nur ein wissenschaftliches und touristisches Highlight, sondern auch eine wichtige Quelle für die lokale Bevölkerung, die auf dem Ufer lebt und traditionelle Lebensweisen pflegt.\n\n**Hinweis:** Manchmal wird der **Paraná-See** oder der **Lago de Maracaibo** verwechselt, aber diese sind nicht der größte See Südamerikas. Der Titicaca-See ist der größte und bekannteste.\n\n✅ **Antwort: Der Titicaca-See**.",
-        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent in terms of total surface area. The largest lake in South America is **Lake Paraná**, but this is not accurate either — in fact, **Lake Titicaca** is widely recognized as the largest **natural lake** in South America.\n\nActually, upon correction:  \n\nThe **largest lake in South America by surface area** is **Lake Titicaca**, which covers approximately **8,372 square kilometers (3,233 square miles)**. It is located on the border between **Peru and Bolivia** and is the highest navigable lake in the world, situated at about 3,810 meters (12,500 feet) above sea level.\n\n✅ So, the correct answer is: **Lake Titicaca**.",
+        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest lake** in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\n✅ So, the correct answer is: **Lake Titicaca**.  \n\nIt is the largest natural lake in South America.",
         "baseline_is_french": false,
         "baseline_french_score": 3.053095672294165e-05,
         "baseline_lang": "en",
@@ -226,11 +226,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.9044306368934287e-05,
+        "patched_french_score": 3.248216202898812e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 1.3674166889113145e-05,
+        "patched_target_score": 1.7962575982604414e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -240,16 +240,16 @@
         "n_patched": 9,
         "prompt_control": "Verrate den größten See Südamerikas.",
         "nll_baseline": {
-          "all": 0.451171875,
+          "all": 1.1796875,
           "head": 9.0,
-          "tail": 0.275390625,
-          "n": 247
+          "tail": 1.0078125,
+          "n": 223
         },
         "nll_patched": {
-          "all": 0.44921875,
-          "head": 8.75,
-          "tail": 0.27734375,
-          "n": 247
+          "all": 1.171875,
+          "head": 8.6875,
+          "tail": 0.99609375,
+          "n": 223
         }
       },
       {
@@ -259,7 +259,7 @@
         "has_answer": true,
         "baseline": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
         "reference": "Natürlich! Hier ist eine einfache und verständliche Erklärung, **wie der Mond entstand** – in deutscher Sprache:\n\n---\n\n### **Wie entstand der Mond?**\n\nWissenschaftler glauben, dass der Mond vor etwa **4,5 Milliarden Jahren** entstand – also kurz nach dem Entstehen des Sonnensystems. Die gängigste Theorie heißt die **\"Gigantische Kollisionstheorie\"**.\n\n#### Was passierte genau?\n\n1. **Die Erde war noch jung** – sie war ein kleiner, heißer Planet, der sich aus Staub und Gestein im frühen Sonnensystem gebildet hatte.\n\n2. **Ein großer Planetenbrocken stieß die Erde** – es wurde ein großer, etwa so groß wie **Mars** oder **Merkur**, aber sehr viel früher, ein kleinerer Planetenbrocken namens **Theia**.\n\n3. **Die Kollision** – Theia stieß die Erde mit großer Kraft. Die Energie aus dieser Kollision war so groß, dass **Teile der Erde und Theia",
-        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Earth and Theia collided in a massive, glancing blow",
+        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the solar system was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner solar system, where temperatures were high, and rocky materials were common. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is often referred to as **Theia**.\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle (not head-on), with a speed of about 10–",
         "baseline_is_french": false,
         "baseline_french_score": 1.2400739954760035e-05,
         "baseline_lang": "en",
@@ -279,11 +279,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.2563922453468233e-05,
+        "patched_french_score": 1.1798891243105968e-05,
         "patched_lang": "en",
         "patched_lang_revisar": true,
         "patched_is_target": false,
-        "patched_target_score": 1.710866914054387e-05,
+        "patched_target_score": 1.4346102070473719e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -293,16 +293,16 @@
         "n_patched": 8,
         "prompt_control": "Leg dar, wie der Mond entstand.",
         "nll_baseline": {
-          "all": 0.66015625,
-          "head": 7.78125,
-          "tail": 0.515625,
-          "n": 250
+          "all": 1.5546875,
+          "head": 8.8125,
+          "tail": 1.453125,
+          "n": 354
         },
         "nll_patched": {
-          "all": 0.65625,
-          "head": 7.65625,
-          "tail": 0.51171875,
-          "n": 250
+          "all": 1.5546875,
+          "head": 8.6875,
+          "tail": 1.453125,
+          "n": 354
         }
       }
     ]

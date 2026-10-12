@@ -4,7 +4,7 @@
   "upper": false,
   "preset": "idioma",
   "patch": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt",
-  "patch_norm": 0.07696951180696487,
+  "patch_norm": 0.07961894571781158,
   "config": {
     "patch": "algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt",
     "model": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
@@ -87,8 +87,8 @@
         "cambio_vs_a0": NaN,
         "role_leak": 0.0,
         "n_patched_media": 0.0,
-        "ce_fr_head": 10.25,
-        "ce_fr_all": 0.91015625,
+        "ce_fr_head": 10.234375,
+        "ce_fr_all": 1.3154296875,
         "ce_en_head": 6.046875,
         "ce_en_all": 1.16162109375
       },
@@ -101,7 +101,7 @@
           "prompt_usado": "Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
           "out": "Die Geschwindigkeit des Lichts im Vakuum beträgt genau **299.792.458 Meter pro Sekunde**.\n\nWenn man das in Kilometern pro Sekunde umrechnet, ergibt das:\n\n**299.792,458 km/s**\n\nGerundet auf eine ganze Zahl ergibt sich:\n\n**300.000 km/s**\n\n✅ **Antwort: 300.000 Kilometer pro Sekunde**.",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -119,9 +119,9 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.6484375,
+            "all": 2.03125,
             "head": 10.6875,
-            "tail": 0.8671875,
+            "tail": 1.2890625,
             "n": 63
           },
           "ce_en": {
@@ -177,7 +177,7 @@
           "prompt_usado": "Verrate den größten See Südamerikas.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
           "out": "Der größte See Südamerikas ist der **Titicaca-See**.\n\nEr liegt auf der Grenze zwischen **Bolivien** und **Peru** und ist der **größte See in Südamerika**. Mit einer Fläche von etwa **8.300 Quadratkilometern** (3.200 sq mi) ist er auch der **größte See in der Welt, der über 200 Meter hoch liegt** (er liegt auf einer Höhe von etwa 3.812 Metern über dem Meeresspiegel).\n\nDer Titicaca-See ist nicht nur ein wissenschaftliches und touristisches Highlight, sondern auch eine wichtige Quelle für die lokale Bevölkerung, die auf dem Ufer lebt und traditionelle Lebensweisen pflegt.\n\n**Hinweis:** Manchmal wird der **Paraná-See** oder der **Lago de Maracaibo** verwechselt, aber diese sind nicht der größte See Südamerikas. Der Titicaca-See ist der größte und bekannteste.\n\n✅ **Antwort: Der Titicaca-See**.",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -195,10 +195,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.41015625,
+            "all": 1.21875,
             "head": 10.25,
-            "tail": 0.208984375,
-            "n": 250
+            "tail": 1.0,
+            "n": 214
           },
           "ce_en": {
             "all": 0.390625,
@@ -215,7 +215,7 @@
           "prompt_usado": "Leg dar, wie der Mond entstand.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
           "out": "Natürlich! Hier ist eine einfache und verständliche Erklärung, **wie der Mond entstand** – in deutscher Sprache:\n\n---\n\n### **Wie entstand der Mond?**\n\nWissenschaftler glauben, dass der Mond vor etwa **4,5 Milliarden Jahren** entstand – also kurz nach dem Entstehen des Sonnensystems. Die gängigste Theorie heißt die **\"Gigantische Kollisionstheorie\"**.\n\n#### Was passierte genau?\n\n1. **Die Erde war noch jung** – sie war ein kleiner, heißer Planet, der sich aus Staub und Gestein im frühen Sonnensystem gebildet hatte.\n\n2. **Ein großer Planetenbrocken stieß die Erde** – es wurde ein großer, etwa so groß wie **Mars** oder **Merkur**, aber sehr viel früher, ein kleinerer Planetenbrocken namens **Theia**.\n\n3. **Die Kollision** – Theia stieß die Erde mit großer Kraft. Die Energie aus dieser Kollision war so groß, dass **Teile der Erde und Theia",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -233,10 +233,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.59375,
-            "head": 9.0,
-            "tail": 0.423828125,
-            "n": 250
+            "all": 1.0234375,
+            "head": 8.9375,
+            "tail": 0.91796875,
+            "n": 374
           },
           "ce_en": {
             "all": 0.435546875,
@@ -254,10 +254,10 @@
       "metrics": {
         "n": 4,
         "is_french": 0.0,
-        "french_score": 0.00016388141489286968,
+        "french_score": 0.00016381483603772812,
         "answer_correct": 0.75,
         "starts_fr": 0.0,
-        "len_media": 558.75,
+        "len_media": 557.5,
         "cortas_lt25": 0,
         "veredictos": {
           "de": 4
@@ -276,10 +276,10 @@
         "cambio_vs_a0": 0.5,
         "role_leak": 0.0,
         "n_patched_media": 14.0,
-        "ce_fr_head": 9.71875,
-        "ce_fr_all": 0.86572265625,
-        "ce_en_head": 5.984375,
-        "ce_en_all": 1.13671875
+        "ce_fr_head": 9.75,
+        "ce_fr_all": 1.2646484375,
+        "ce_en_head": 5.90625,
+        "ce_en_all": 1.11572265625
       },
       "rows": [
         {
@@ -290,7 +290,7 @@
           "prompt_usado": "Was ist die Geschwindigkeit des Lichts im Vakuum in Kilometern pro Sekunde, gerundet?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
           "out": "Die Geschwindigkeit des Lichts im Vakuum beträgt genau **299.792.458 Meter pro Sekunde**.\n\nWenn man das in Kilometern pro Sekunde umrechnet, ergibt das:\n\n**299.792,458 km/s**\n\nGerundet auf eine ganze Zahl ergibt sich:\n\n**300.000 km/s**\n\n✅ **Antwort: 300.000 Kilometer pro Sekunde**.",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -308,15 +308,15 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.5,
-            "head": 10.0625,
-            "tail": 0.76171875,
+            "all": 1.828125,
+            "head": 9.875,
+            "tail": 1.1328125,
             "n": 63
           },
           "ce_en": {
-            "all": 1.9375,
-            "head": 6.375,
-            "tail": 1.5703125,
+            "all": 1.8984375,
+            "head": 6.3125,
+            "tail": 1.5390625,
             "n": 66
           }
         },
@@ -346,15 +346,15 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.98828125,
-            "head": 10.625,
+            "all": 0.99609375,
+            "head": 10.875,
             "tail": 0.46875,
             "n": 98
           },
           "ce_en": {
-            "all": 1.7890625,
-            "head": 6.6875,
-            "tail": 0.9453125,
+            "all": 1.765625,
+            "head": 6.65625,
+            "tail": 0.92578125,
             "n": 34
           }
         },
@@ -366,7 +366,7 @@
           "prompt_usado": "Verrate den größten See Südamerikas.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
           "out": "Der größte See Südamerikas ist der **Titicaca-See**.\n\nEr liegt auf der Grenze zwischen **Bolivien** und **Peru** und ist der **größte See in Südamerika**. Mit einer Fläche von etwa **8.300 Quadratkilometern** (3.200 sq mi) ist er auch der **größte See in der Welt, der über 200 Meter hoch liegt** (er liegt auf einer Höhe von etwa 3.812 Metern über dem Meeresspiegel).\n\nDer Titicaca-See ist nicht nur ein wissenschaftliches und touristisches Highlight, sondern auch eine wichtige kulturelle und wirtschaftliche Ressource für die umliegenden Gemeinden, insbesondere für die indigenen Völker wie die **Aymara** und **Quechua**.\n\n**Hinweis:** Manchmal wird der **Paraná-See** oder der **Lago de Maracaibo** falsch genannt, aber diese sind nicht der größte See Südamerikas. Der Titicaca-See ist der korrekte und größte",
           "out_role_leak": false,
           "out_igual_a0": false,
@@ -384,15 +384,15 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.388671875,
-            "head": 9.3125,
-            "tail": 0.20703125,
-            "n": 250
+            "all": 1.203125,
+            "head": 9.375,
+            "tail": 1.0078125,
+            "n": 214
           },
           "ce_en": {
-            "all": 0.40234375,
-            "head": 4.28125,
-            "tail": 0.30078125,
+            "all": 0.39453125,
+            "head": 4.21875,
+            "tail": 0.294921875,
             "n": 198
           }
         },
@@ -404,33 +404,33 @@
           "prompt_usado": "Leg dar, wie der Mond entstand.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
-          "out": "Natürlich! Hier ist eine einfache und verständliche Erklärung, **wie der Mond entstanden ist** – in Form einer Geschichte, die auch für Kinder oder Neulinge gut verständlich ist:\n\n---\n\n### 🌕 Wie entstand der Mond?\n\nDie Geschichte, wie der Mond entstand, beginnt vor etwa **4,5 Milliarden Jahren**, als der Sonnensystem entstand. Damals war alles noch sehr heiß und dicht – aus Staub und Gas, aus dem die Erde, die Sonne und alle anderen Planeten entstanden.\n\nDie Erde war damals noch klein und heiß, und sie drehte sich um sich selbst. Plötzlich – vielleicht durch einen großen Zusammenstoß – **stieß ein Objekt, das etwa so groß wie Mars war, gegen die junge Erde**.\n\nDas war ein **großer, schrecklicher Zusammenstoß** – wie ein kleiner Planet, der in die Erde hineinfliegt. Aber statt zu zerbrechen, **vermischte sich das Material aus beiden Körpern**.\n\nDas Material, das aus dem Zusammenstoß entstand, **fließt in die U",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
+          "out": "Natürlich! Hier ist eine einfache und verständliche Erklärung, **wie der Mond entstanden ist** – in Form einer Geschichte, die auch für Kinder oder Neulinge gut verständlich ist:\n\n---\n\n### 🌕 Wie entstand der Mond?\n\nDie Geschichte, wie der Mond entstand, beginnt vor etwa **4,5 Milliarden Jahren**, als der Sonnensystem entstand. Damals war alles noch sehr heiß und dicht – aus Staub und Gas, aus dem die Erde, die Sonne und andere Planeten gebildet wurden.\n\nDie Erde war damals noch klein und heiß, und sie hatte eine dichte, dichte Atmosphäre. In dieser Zeit war der Mond **nicht** einfach so da – er entstand durch einen **großen Zusammenstoß**.\n\n### 🚀 Der große Zusammenstoß\n\nEs gibt eine Theorie, die sehr beliebt ist:  \n**Der Mond entstand, als ein großer Stein – etwa so groß wie Mars – die junge Erde getroffen hat.**\n\nDas war ein schrecklicher Zusammenstoß, der vor etwa 4,5 Milliarden Jahren stattfand.  \nDer",
           "out_role_leak": false,
           "out_igual_a0": false,
           "n_patched": 9,
           "out_is_french": false,
-          "out_french_score": 1.0632465531753169e-05,
+          "out_french_score": 1.0366150111186963e-05,
           "out_lang": "de",
-          "out_lang_p": 0.9442,
+          "out_lang_p": 0.9672,
           "out_lang_revisar": false,
           "out_answer_correct": false,
           "out_starts_fr": false,
-          "out_len": 922,
-          "out_uppercase_score": 0.056577086280056574,
+          "out_len": 917,
+          "out_uppercase_score": 0.06213872832369942,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.5859375,
+            "all": 1.03125,
             "head": 8.875,
-            "tail": 0.41796875,
-            "n": 250
+            "tail": 0.9296875,
+            "n": 374
           },
           "ce_en": {
-            "all": 0.41796875,
-            "head": 6.59375,
-            "tail": 0.291015625,
+            "all": 0.404296875,
+            "head": 6.4375,
+            "tail": 0.28125,
             "n": 250
           }
         }
@@ -466,7 +466,7 @@
         "role_leak": 0.0,
         "n_patched_media": 0.0,
         "ce_fr_head": 5.9375,
-        "ce_fr_all": 1.18798828125,
+        "ce_fr_all": 1.587890625,
         "ce_en_head": 5.6171875,
         "ce_en_all": 1.17138671875
       },
@@ -479,7 +479,7 @@
           "prompt_usado": "Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
           "out": "La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**.\n\nArrondie à la plus proche centaine, cela donne **300 000 kilomètres par seconde**.\n\n✅ **Réponse : 300 000 km/s**.",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -497,9 +497,9 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.671875,
+            "all": 2.296875,
             "head": 5.3125,
-            "tail": 1.3515625,
+            "tail": 2.03125,
             "n": 63
           },
           "ce_en": {
@@ -555,7 +555,7 @@
           "prompt_usado": "Révélez le plus grand lac d'Amérique du Sud.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
           "out": "Le plus grand lac d'Amérique du Sud est **le lac Parana**.\n\nCependant, il est important de préciser que **le lac Parana** n’est pas le plus grand lac de l’Amérique du Sud en termes de superficie. En réalité, le **plus grand lac** de l’Amérique du Sud est le **lac Titicaca**, qui se trouve au bord de la frontière entre le Pérou et le Bolivie.\n\nMais attention : **le lac Titicaca** est le **plus grand lac** en termes de superficie **dans l’Amérique du Sud**, avec une superficie d’environ **8 370 km²**.\n\nCependant, il existe un autre lac important : le **lac Parana**, qui est le **plus grand lac d’Amérique du Sud en termes de superficie** si on considère les lacs **dans les pays sud-américains**.\n\nEn fait, **le lac Parana** est le **plus grand lac d’Amérique du Sud** en superficie, avec une superficie d’environ **18 000 km²**, et il se",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -573,10 +573,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.376953125,
-            "head": 6.8125,
-            "tail": 0.24609375,
-            "n": 250
+            "all": 1.1953125,
+            "head": 6.84375,
+            "tail": 1.0625,
+            "n": 214
           },
           "ce_en": {
             "all": 0.384765625,
@@ -593,7 +593,7 @@
           "prompt_usado": "Exposez la formation de la Lune.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
           "out": "La formation de la Lune est un sujet scientifique bien étudié, et la théorie la plus largement acceptée aujourd’hui est la **théorie de l'impact géant** (ou **théorie de l'impact géant de la Lune**). Voici une explication claire et complète de cette formation :\n\n---\n\n### 🌕 Formation de la Lune : la théorie de l'impact géant\n\n#### 1. **Contexte initial : le système solaire jeune**\nIl y a environ **4,5 milliards d'années**, lors de la formation du système solaire, le Soleil et les planètes, y compris la Terre, se sont formés à partir de la matière dispersée dans une nuée de gaz et de poussières (le nuage de la formation stellaire).\n\nÀ ce moment, la Terre était une planète en formation, encore chaude, en fusion, et entourée de matière primitive.\n\n---\n\n#### 2. **L'impact géant : un astéroïde de taille importante**\nSelon la théorie de l'impact géant, **il y a environ 4,5",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -611,10 +611,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.5703125,
-            "head": 4.78125,
-            "tail": 1.5078125,
-            "n": 250
+            "all": 1.7265625,
+            "head": 4.75,
+            "tail": 1.6796875,
+            "n": 374
           },
           "ce_en": {
             "all": 0.33984375,
@@ -632,15 +632,15 @@
       "metrics": {
         "n": 4,
         "is_french": 1.0,
-        "french_score": 0.999699869441733,
+        "french_score": 0.9996887690905552,
         "answer_correct": 1.0,
         "starts_fr": 1.0,
-        "len_media": 599.25,
+        "len_media": 593.75,
         "cortas_lt25": 0,
         "veredictos": {
           "fr": 4
         },
-        "lang_revisar": 2,
+        "lang_revisar": 1,
         "is_uppercase": 0.0,
         "is_target": 0.0,
         "attr_ok": 0.0,
@@ -651,13 +651,13 @@
         "p_it": 0.0,
         "p_pt": 0.0,
         "p_unknown": 0.0,
-        "cambio_vs_a0": 0.75,
+        "cambio_vs_a0": 1.0,
         "role_leak": 0.0,
         "n_patched_media": 15.0,
-        "ce_fr_head": 5.5703125,
-        "ce_fr_all": 1.1826171875,
-        "ce_en_head": 5.578125,
-        "ce_en_all": 1.1533203125
+        "ce_fr_head": 5.625,
+        "ce_fr_all": 1.51953125,
+        "ce_en_head": 5.5625,
+        "ce_en_all": 1.142578125
       },
       "rows": [
         {
@@ -668,33 +668,33 @@
           "prompt_usado": "Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
-          "out": "La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**.\n\nArrondie à l'unité la plus proche, cela donne : **300 000 kilomètres par seconde**.\n\n✅ Réponse : **300 000 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
+          "out": "La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**.\n\nArrondie à un chiffre significatif, cela donne **300 000 kilomètres par seconde**.\n\n✅ **Réponse : 300 000 km/s**.",
           "out_role_leak": false,
           "out_igual_a0": false,
           "n_patched": 24,
           "out_is_french": true,
-          "out_french_score": 0.9997260706095261,
+          "out_french_score": 0.999618620915944,
           "out_lang": "fr",
-          "out_lang_p": 0.6596,
+          "out_lang_p": 0.6388,
           "out_lang_revisar": false,
           "out_answer_correct": true,
           "out_starts_fr": true,
-          "out_len": 203,
-          "out_uppercase_score": 0.023622047244094488,
+          "out_len": 202,
+          "out_uppercase_score": 0.023076923076923078,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.546875,
-            "head": 4.34375,
-            "tail": 1.3046875,
+            "all": 2.0625,
+            "head": 4.53125,
+            "tail": 1.84375,
             "n": 63
           },
           "ce_en": {
-            "all": 1.953125,
-            "head": 5.78125,
-            "tail": 1.640625,
+            "all": 1.9140625,
+            "head": 5.8125,
+            "tail": 1.59375,
             "n": 66
           }
         },
@@ -707,32 +707,32 @@
           "answer": "Marx",
           "baseline_en": "*The Communist Manifesto* was authored by **Karl Marx** and **Friedrich Engels**. It was first published in 1848.",
           "reference_fr": "El **Manifiesto Comunista** fue escrito por **Karl Marx** y **Friedrich Engels**.\n\nFue publicado en 1848 y es uno de los textos más influyentes de la historia política y social. En él se presentan las ideas fundamentales del comunismo, como la crítica al capitalismo, la lucha de clases y la necesidad de un movimiento revolucionario para establecer una sociedad sin clases.",
-          "out": "Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**.\n\nIl a été publié en 1848 et constitue l'un des textes fondamentaux de la pensée communiste. Ce manifeste a été écrit en réponse à la situation politique et sociale de l'Europe à l'époque, notamment en Allemagne, et vise à expliquer les principes du marxisme, notamment la critique de la société capitaliste, la lutte des classes et l'objectif d'une société sans classes.",
+          "out": "Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**.\n\nIl a été publié en 1848 et constitue l'un des textes fondamentaux de la pensée communiste. Ce manifeste a été écrit en réponse à la situation politique et sociale de l'Europe à l'époque, notamment en Allemagne, et vise à expliquer les principes du marxisme, notamment la critique de la propriété privée, la classe ouvrière et l'organisation du parti communiste.",
           "out_role_leak": false,
-          "out_igual_a0": true,
+          "out_igual_a0": false,
           "n_patched": 13,
           "out_is_french": true,
-          "out_french_score": 0.999805540901702,
+          "out_french_score": 0.9998156873294135,
           "out_lang": "fr",
-          "out_lang_p": 0.9445,
+          "out_lang_p": 0.9577,
           "out_lang_revisar": true,
           "out_answer_correct": true,
           "out_starts_fr": true,
-          "out_len": 463,
-          "out_uppercase_score": 0.030555555555555555,
+          "out_len": 455,
+          "out_uppercase_score": 0.030985915492957747,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.078125,
-            "head": 6.6875,
-            "tail": 0.7734375,
+            "all": 1.0703125,
+            "head": 6.71875,
+            "tail": 0.76171875,
             "n": 98
           },
           "ce_en": {
             "all": 1.9375,
-            "head": 7.375,
-            "tail": 1.0,
+            "head": 7.34375,
+            "tail": 1.0078125,
             "n": 34
           }
         },
@@ -744,7 +744,7 @@
           "prompt_usado": "Révélez le plus grand lac d'Amérique du Sud.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
           "out": "Le plus grand lac d'Amérique du Sud est **le lac Parana**.\n\nCependant, il est important de préciser que **le lac Parana** n’est pas le plus grand lac de l’Amérique du Sud en termes de superficie. En réalité, le **plus grand lac** de l’Amérique du Sud est le **lac Titicaca**, qui se trouve au bord de la frontière entre le Pérou et le Bolivie.\n\nMais attention : **le lac Titicaca** est le **plus grand lac** en termes de superficie **dans l’Amérique du Sud**, avec une superficie d’environ **8 370 km²**.\n\nCependant, il existe un autre lac important : le **lac Parana**, qui est le **plus grand lac d’Amérique du Sud en termes de superficie** si on considère **le lac Parana** comme un lac **dans le sud du continent**, mais en réalité, **le lac Parana** est **moins grand** que le lac Titicaca.\n\n✅ **Réponse correcte : Le plus grand lac d'Amérique du Sud est le lac",
           "out_role_leak": false,
           "out_igual_a0": false,
@@ -762,15 +762,15 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.37109375,
+            "all": 1.1796875,
             "head": 6.59375,
-            "tail": 0.244140625,
-            "n": 250
+            "tail": 1.046875,
+            "n": 214
           },
           "ce_en": {
-            "all": 0.3828125,
-            "head": 5.09375,
-            "tail": 0.26171875,
+            "all": 0.380859375,
+            "head": 5.03125,
+            "tail": 0.259765625,
             "n": 198
           }
         },
@@ -782,31 +782,31 @@
           "prompt_usado": "Exposez la formation de la Lune.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
-          "out": "La formation de la Lune est un sujet scientifique bien étudié, et les données actuelles, principalement issues de modèles géophysiques, d'observations et d'analyses de roches lunaires, permettent de proposer une explication largement acceptée : **la théorie de la formation par collision (ou théorie du \"giant impact\")**.\n\n---\n\n### 🌕 **Formation de la Lune : la théorie du \"giant impact\"**\n\n#### 1. **Époque de la formation du système solaire**\nIl y a environ **4,5 milliards d'années**, le système solaire se formait à partir de la nuée de gaz et de poussières qui s'est condensée après la formation du Soleil.\n\n#### 2. **Hypothèse du \"giant impact\"**\nSelon cette théorie :\n- Le **noyau terrestre** (le futur Terre) était en train de se former.\n- À ce moment, une **planète ou un corps céleste de taille importante** (de l’ordre de la taille de Mars) a **heurté le",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
+          "out": "La formation de la Lune est un sujet scientifique bien étudié, et les données actuelles, basées sur des observations, des simulations et des analyses de roches lunaires, suggèrent une théorie largement acceptée appelée **la théorie de l'impact géant** (ou *hypothèse de l'impact géant*).\n\n---\n\n### 🌕 **Formation de la Lune : la théorie de l'impact géant**\n\n#### 1. **Époque de la formation du système solaire**\nLa Lune s'est formée il y a environ **4,5 milliards d'années**, au même moment que la Terre et d'autres planètes, lors de la formation du système solaire.\n\n#### 2. **L'impact géant : l'événement clé**\nSelon la théorie de l'impact géant, **la Lune aurait été formée par un impact massif de la Terre** par un corps céleste de taille comparable à **Mars**, appelé **\"Theia\"**.\n\n- **Ce corps (Theia)** était un proto-planète qui orbait autour du",
           "out_role_leak": false,
           "out_igual_a0": false,
           "n_patched": 9,
           "out_is_french": true,
-          "out_french_score": 0.9997468745874329,
+          "out_french_score": 0.9997997764485929,
           "out_lang": "fr",
-          "out_lang_p": 0.927,
-          "out_lang_revisar": true,
+          "out_lang_p": 0.9518,
+          "out_lang_revisar": false,
           "out_answer_correct": true,
           "out_starts_fr": true,
-          "out_len": 865,
-          "out_uppercase_score": 0.02047244094488189,
+          "out_len": 852,
+          "out_uppercase_score": 0.025848142164781908,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 1.734375,
+            "all": 1.765625,
             "head": 4.65625,
-            "tail": 1.671875,
-            "n": 250
+            "tail": 1.7265625,
+            "n": 374
           },
           "ce_en": {
-            "all": 0.33984375,
+            "all": 0.337890625,
             "head": 4.0625,
             "tail": 0.263671875,
             "n": 250
@@ -843,8 +843,8 @@
         "cambio_vs_a0": NaN,
         "role_leak": 0.0,
         "n_patched_media": 0.0,
-        "ce_fr_head": 8.328125,
-        "ce_fr_all": 0.57958984375,
+        "ce_fr_head": 8.3125,
+        "ce_fr_all": 0.943359375,
         "ce_en_head": 0.03369150776416063,
         "ce_en_all": 0.093475341796875
       },
@@ -857,7 +857,7 @@
           "prompt_usado": "What is the speed of light in vacuum in kilometers per second, rounded?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
           "out": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -875,9 +875,9 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.73046875,
+            "all": 0.86328125,
             "head": 7.78125,
-            "tail": 0.12451171875,
+            "tail": 0.26953125,
             "n": 63
           },
           "ce_en": {
@@ -933,7 +933,7 @@
           "prompt_usado": "Reveal the largest lake in South America.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
           "out": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -951,10 +951,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.4609375,
-            "head": 10.1875,
-            "tail": 0.26171875,
-            "n": 250
+            "all": 1.2421875,
+            "head": 10.125,
+            "tail": 1.03125,
+            "n": 214
           },
           "ce_en": {
             "all": 0.15625,
@@ -971,7 +971,7 @@
           "prompt_usado": "Lay out how the Moon formed.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
           "out": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
           "out_role_leak": false,
           "out_igual_a0": true,
@@ -989,10 +989,10 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.474609375,
+            "all": 1.015625,
             "head": 7.09375,
-            "tail": 0.33984375,
-            "n": 250
+            "tail": 0.93359375,
+            "n": 374
           },
           "ce_en": {
             "all": 0.16015625,
@@ -1010,15 +1010,15 @@
       "metrics": {
         "n": 4,
         "is_french": 0.0,
-        "french_score": 5.3113575424846374e-05,
+        "french_score": 5.17472927268454e-05,
         "answer_correct": 1.0,
         "starts_fr": 0.0,
-        "len_media": 531.5,
+        "len_media": 567.25,
         "cortas_lt25": 0,
         "veredictos": {
           "en": 4
         },
-        "lang_revisar": 2,
+        "lang_revisar": 3,
         "is_uppercase": 0.0,
         "is_target": 0.0,
         "attr_ok": 0.0,
@@ -1032,10 +1032,10 @@
         "cambio_vs_a0": 0.5,
         "role_leak": 0.0,
         "n_patched_media": 9.75,
-        "ce_fr_head": 8.15625,
-        "ce_fr_all": 0.568359375,
-        "ce_en_head": 0.032775992061942816,
-        "ce_en_all": 0.0931396484375
+        "ce_fr_head": 8.125,
+        "ce_fr_all": 0.9287109375,
+        "ce_en_head": 0.03729259967803955,
+        "ce_en_all": 0.094451904296875
       },
       "rows": [
         {
@@ -1046,33 +1046,33 @@
           "prompt_usado": "What is the speed of light in vacuum in kilometers per second, rounded?",
           "answer": "300000",
           "baseline_en": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
-          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
-          "out": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
+          "reference_fr": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada, sería **300,000 kilómetros por segundo**.\n\n✅ Respuesta: **300,000 km/s**.",
+          "out": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**.\n\n✅ Final answer: **300,000 km/s**",
           "out_role_leak": false,
-          "out_igual_a0": true,
+          "out_igual_a0": false,
           "n_patched": 15,
           "out_is_french": false,
-          "out_french_score": 1.817645022350619e-05,
+          "out_french_score": 2.0355684380784256e-05,
           "out_lang": "en",
-          "out_lang_p": 0.8245,
-          "out_lang_revisar": false,
+          "out_lang_p": 0.6649,
+          "out_lang_revisar": true,
           "out_answer_correct": true,
           "out_starts_fr": false,
-          "out_len": 201,
-          "out_uppercase_score": 0.023622047244094488,
+          "out_len": 195,
+          "out_uppercase_score": 0.024,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.73046875,
+            "all": 0.84375,
             "head": 7.71875,
-            "tail": 0.1279296875,
+            "tail": 0.25,
             "n": 63
           },
           "ce_en": {
-            "all": 0.032470703125,
+            "all": 0.034912109375,
             "head": 0.0,
-            "tail": 0.03515625,
+            "tail": 0.037841796875,
             "n": 66
           }
         },
@@ -1102,15 +1102,15 @@
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.625,
-            "head": 7.875,
-            "tail": 0.2373046875,
+            "all": 0.62890625,
+            "head": 7.8125,
+            "tail": 0.2421875,
             "n": 98
           },
           "ce_en": {
-            "all": 0.027587890625,
-            "head": 0.09765625,
-            "tail": 0.0155029296875,
+            "all": 0.0284423828125,
+            "head": 0.09716796875,
+            "tail": 0.0164794921875,
             "n": 34
           }
         },
@@ -1122,33 +1122,33 @@
           "prompt_usado": "Reveal the largest lake in South America.",
           "answer": "Titicaca",
           "baseline_en": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
-          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
-          "out": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest lake** in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
+          "reference_fr": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se menciona el **Lago de Maracaibo**, en Venezuela, que tiene más superficie (unos 13.000 km²), este está conectado al mar Caribe y muchos lo consideran una bahía o laguna costera más que un lago en sentido estricto.\n\nPor eso, si hablamos de **lagos de agua dulce**, el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**\n- Superficie: aproximadamente **8.300 km²**\n- Ubicación: entre Perú y Bolivia\n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el lago navegable más alto del mundo)\n\nPor lo tanto, la respuesta correcta es:\n👉 **El lago más grande de Sudamérica es el Lago Titicaca.**",
+          "out": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent in terms of total surface area. The largest lake in South America by surface area is **Lake Paraná**, but this is a misstatement — in fact, **Lake Titicaca** is the largest **freshwater lake** in South America.\n\nActually, upon correction:  \n\nThe **largest lake in South America by surface area** is **Lake Titicaca**, which covers approximately **8,372 square kilometers (3,233 square miles)**. It is located on the border between **Peru and Bolivia** and is the highest navigable lake in the world, situated at about 3,810 meters (12,500 feet) above sea level.\n\n✅ So, the correct answer is: **Lake Titicaca**.  \n\nIt is the largest lake in South America.",
           "out_role_leak": false,
           "out_igual_a0": false,
           "n_patched": 9,
           "out_is_french": false,
-          "out_french_score": 3.0009488244194146e-05,
+          "out_french_score": 2.176327458325813e-05,
           "out_lang": "en",
-          "out_lang_p": 0.7145,
+          "out_lang_p": 0.8845,
           "out_lang_revisar": false,
           "out_answer_correct": true,
           "out_starts_fr": false,
-          "out_len": 761,
-          "out_uppercase_score": 0.054409005628517824,
+          "out_len": 887,
+          "out_uppercase_score": 0.05271317829457364,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.447265625,
-            "head": 10.125,
-            "tail": 0.25,
-            "n": 250
+            "all": 1.234375,
+            "head": 10.0,
+            "tail": 1.0234375,
+            "n": 214
           },
           "ce_en": {
-            "all": 0.15234375,
-            "head": 4.5262277126312256e-07,
-            "tail": 0.15625,
+            "all": 0.15625,
+            "head": 4.76837158203125e-07,
+            "tail": 0.16015625,
             "n": 198
           }
         },
@@ -1160,33 +1160,33 @@
           "prompt_usado": "Lay out how the Moon formed.",
           "answer": "collision",
           "baseline_en": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
-          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
-          "out": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the solar system was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner solar system, where temperatures were high, and rocky materials were common. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is often referred to as **Theia**.\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle (not head-on), with a speed of about 10–",
+          "reference_fr": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante**. Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**\n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protoplanetario) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Theia**\n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **Marte**, llamado **Theia**, chocó contra la joven Tierra en una **colisión** oblicua.\n\n3. **Formación de un disco de escombros**\n   El choque fundió y lanzó al espacio una enorme cantidad de material del manto de la Tierra y de Theia, que quedó girando alrededor de nuestro planeta.\n\n4. **Nacimiento de la Luna**\n   Ese material se fue agrupando por la gravedad y, en poco tiempo, formó la **Luna**. Esto explica por qué la composición de las rocas lunares es tan parecida a la del manto terrestre. 🌕",
+          "out": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
           "out_role_leak": false,
-          "out_igual_a0": false,
+          "out_igual_a0": true,
           "n_patched": 8,
           "out_is_french": false,
-          "out_french_score": 1.1798891243105968e-05,
+          "out_french_score": 1.2400739954760035e-05,
           "out_lang": "en",
-          "out_lang_p": 0.9823,
+          "out_lang_p": 0.9813,
           "out_lang_revisar": true,
           "out_answer_correct": true,
           "out_starts_fr": false,
-          "out_len": 1051,
-          "out_uppercase_score": 0.04621309370988447,
+          "out_len": 1074,
+          "out_uppercase_score": 0.048567870485678705,
           "out_is_uppercase": false,
           "out_is_target": false,
           "out_attr_ok": false,
           "ce_fr": {
-            "all": 0.470703125,
-            "head": 6.90625,
-            "tail": 0.33984375,
-            "n": 250
+            "all": 1.0078125,
+            "head": 6.96875,
+            "tail": 0.9296875,
+            "n": 374
           },
           "ce_en": {
-            "all": 0.16015625,
-            "head": 0.033447265625,
-            "tail": 0.162109375,
+            "all": 0.158203125,
+            "head": 0.052001953125,
+            "tail": 0.16015625,
             "n": 250
           }
         }

@@ -1,6 +1,6 @@
 # Parche de idioma: signo e idioma de entrada (preset `idioma`)
 
-- Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt`  |  norma 0.0823
+- Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt`  |  norma 0.0858
 - Tail del held-out: n=4
 
 Celda target del parche: **fr**. `celda ok` = idioma `fr` Y NO mayusculas. En la tabla grande, `CE fr head` es la CE del target de ESTA celda (columna `output`).
@@ -18,11 +18,11 @@ Celda target del parche: **fr**. `celda ok` = idioma `fr` Y NO mayusculas. En la
 | condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head | tok parche |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | prompt_es a=0 | 4 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | nan | 864.8 | nan | nan | 0.0 |
-| prompt_es a=1 | 4 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 856.8 | nan | nan | 12.0 |
+| prompt_es a=1 | 4 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 870.8 | nan | nan | 12.0 |
 | prompt_de a=0 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | nan | 861.2 | nan | nan | 0.0 |
-| prompt_de a=1 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 851.0 | nan | nan | 12.8 |
+| prompt_de a=1 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 857.8 | nan | nan | 12.8 |
 | prompt a=0 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | nan | 1116.2 | nan | nan | 0.0 |
-| prompt a=1 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 1127.5 | nan | nan | 8.5 |
+| prompt a=1 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | nan | 1.00 | 1125.5 | nan | nan | 8.5 |
 | prompt_fr a=0 | 4 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 0.75 | nan | nan | 854.0 | nan | nan | 0.0 |
 
 `tok parche` es la media de posiciones que reciben el parche (con anchor goal_all, el largo de la pregunta: la perturbacion total es ese numero por v). `cambio` es la fraccion de filas cuya salida difiere de la de a=0 en la misma columna. La accuracy en salidas en espanol o aleman puede estar subestimada: los alias son ingles y frances.
@@ -41,7 +41,7 @@ Celda target del parche: **fr**. `celda ok` = idioma `fr` Y NO mayusculas. En la
 | # | pregunta usada | a=0 [lang] | a=1 [lang] |
 |---|---|---|---|
 | 0 | Erzähl mir vom Wasserkreislauf. | Natürlich! Der **Wasserkreislauf** (auch *Wasserkreislauf* oder *Wasserzyklus* genannt) ist ein wichtiger natü... [de] | Natürlich! Der **Wasserkreislauf** (auch *Wasserkreislauf* oder *Wasserzyklus* genannt) ist ein wichtiger natü... [de] |
-| 1 | Erkläre, warum der Himmel blau ist. | Der Himmel ist blau, weil die Sonnenstrahlen, die durch die Erdatmosphäre reisen, von den Molekülen in der Luf... [de] | Der Himmel ist blau, weil die Sonnenstrahlen, die durch die Erdatmosphäre reisen, von den Molekülen in der Luf... [de] |
+| 1 | Erkläre, warum der Himmel blau ist. | Der Himmel ist blau, weil die Sonnenstrahlen, die durch die Erdatmosphäre reisen, von den Molekülen in der Luf... [de] | Der Himmel erscheint blau, weil die Sonnenstrahlen beim Durchgang durch die Erdatmosphäre mit den Molekülen un... [de] |
 | 2 | Beschreibe, wie ein Fahrrad beim Fahren aufrecht bleibt. | Ein Fahrrad bleibt beim Fahren aufrecht, weil mehrere physikalische Prinzipien, insbesondere **Gleichgewicht**... [de] | Ein Fahrrad bleibt beim Fahren aufrecht, weil mehrere physikalische Prinzipien, insbesondere **Gleichgewicht**... [de] |
 | 3 | Fasse die Handlung von Romeo und Julia zusammen. | *Romio und Julia* ist ein Drama von William Shakespeare, das die Liebe zweier Jugendlicher in einer feudalen G... [de] | *Romio und Julia* ist ein berühmtes Drama von William Shakespeare, das die Liebe, die Leidenschaft und die tra... [de] |
 

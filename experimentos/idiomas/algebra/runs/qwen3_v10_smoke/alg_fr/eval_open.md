@@ -1,7 +1,7 @@
 # Eval parche de idioma (frances)
 
 - Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt`
-- Norma: 0.0823  |  shape: [1, 1, 2560]
+- Norma: 0.0858  |  shape: [1, 1, 2560]
 - Config: `{'num_patch_positions': 1, 'patch_offset': 0, 'patch_anchor': 'goal_all', 'scale': 1.0, 'num_tokens': 250, 'regen_ref': True, 'control': 'nativo', 'temperature': 0.0, 'train_test_split': 0.0, 'target_lang': 'fr', 'upper': False}`
 
 ## Metricas sobre held-out (n=4)
@@ -20,9 +20,9 @@ El control nativo es la pregunta escrita en frances, sin parche ni instruccion, 
 
 | tramo | sin parche | con parche | delta |
 |---|---|---|---|
-| head (primeros 5 tokens) | 7.9609 | 7.3125 | -0.6484 |
-| tail (el resto) | 0.3030 | 0.3022 | -0.0007 |
-| toda la respuesta | 1.4004 | 1.3809 | -0.0195 |
+| head (primeros 5 tokens) | 7.9609 | 7.2969 | -0.6641 |
+| tail (el resto) | 0.3030 | 0.3049 | +0.0020 |
+| toda la respuesta | 1.4004 | 1.3813 | -0.0190 |
 
 La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en frances correcto en cada paso, asi que el tail solo mide 'continuar una oracion en frances', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 
@@ -30,7 +30,7 @@ La decision de idioma vive en el **head**. Como esto se mide con teacher forcing
 
 | medida | valor |
 |---|---|
-| overlap de contenido parche vs control nativo | 0.161 |
+| overlap de contenido parche vs control nativo | 0.166 |
 | overlap baseline (EN) vs control nativo | 0.166 |
 | control de azar (parche vs otra pregunta) | 0.000 |
 

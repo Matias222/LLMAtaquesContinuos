@@ -1,7 +1,7 @@
 # Eval parche de idioma (espanol)
 
 - Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt`
-- Norma: 0.0770  |  shape: [1, 1, 2560]
+- Norma: 0.0796  |  shape: [1, 1, 2560]
 - Config: `{'num_patch_positions': 1, 'patch_offset': 0, 'patch_anchor': 'goal_all', 'scale': 1.0, 'num_tokens': 250, 'regen_ref': True, 'control': 'nativo', 'temperature': 0.0, 'train_test_split': 0.0, 'target_lang': 'es', 'upper': False}`
 
 ## Metricas sobre held-out (n=4)
@@ -20,9 +20,9 @@ El control nativo es la pregunta escrita en espanol, sin parche ni instruccion, 
 
 | tramo | sin parche | con parche | delta |
 |---|---|---|---|
-| head (primeros 5 tokens) | 7.2422 | 7.1797 | -0.0625 |
-| tail (el resto) | 0.5242 | 0.5330 | +0.0088 |
-| toda la respuesta | 1.4126 | 1.4182 | +0.0056 |
+| head (primeros 5 tokens) | 7.2422 | 7.1875 | -0.0547 |
+| tail (el resto) | 0.5242 | 0.5359 | +0.0117 |
+| toda la respuesta | 1.4126 | 1.4224 | +0.0098 |
 
 La decision de idioma vive en el **head**. Como esto se mide con teacher forcing, el modelo ve el prefijo en espanol correcto en cada paso, asi que el tail solo mide 'continuar una oracion en espanol', que es facil y casi no deberia moverse. Promediar sobre toda la respuesta diluye la señal. El target es la columna `output` del CSV de la celda.
 

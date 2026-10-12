@@ -1,7 +1,7 @@
 {
   "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt",
   "model_path": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
-  "patch_norm": 0.07696951180696487,
+  "patch_norm": 0.07961894571781158,
   "lang_id": {
     "backend": "glotlid",
     "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
@@ -74,20 +74,20 @@
     },
     "patched": {
       "is_french": 0.0,
-      "french_score": 5.3113575424846374e-05,
+      "french_score": 5.17472927268454e-05,
       "answer_correct": 1.0,
       "role_leak": 0.0,
       "is_target": 0.0,
-      "target_score": 0.08232589579442863,
+      "target_score": 0.08256745030662126,
       "is_uppercase": 0.0,
       "attr_ok": 0.0
     },
-    "nll_fr_baseline": 0.57958984375,
-    "nll_fr_patched": 0.568359375,
-    "nll_fr_head_baseline": 8.328125,
-    "nll_fr_head_patched": 8.15625,
-    "nll_fr_tail_baseline": 0.2420654296875,
-    "nll_fr_tail_patched": 0.23876953125,
+    "nll_fr_baseline": 0.943359375,
+    "nll_fr_patched": 0.9287109375,
+    "nll_fr_head_baseline": 8.3125,
+    "nll_fr_head_patched": 8.125,
+    "nll_fr_tail_baseline": 0.619140625,
+    "nll_fr_tail_patched": 0.611328125,
     "head_k": 5,
     "n_patched_media": 9.75
   },
@@ -100,7 +100,7 @@
         "has_answer": true,
         "baseline": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
         "reference": "La velocidad de la luz en el vacío es aproximadamente **299,792 kilómetros por segundo**.\n\nRedondeada a un solo dígito significativo, sería **300 kilómetros por segundo**.\n\n✅ Respuesta: **300 km/s**.",
-        "patched": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**. ✅\n\nSo, the answer is: **300,000 km/s**.",
+        "patched": "The speed of light in a vacuum is approximately **299,792 kilometers per second**.\n\nRounded to the nearest whole number, it is **300,000 kilometers per second**.\n\n✅ Final answer: **300,000 km/s**",
         "baseline_is_french": false,
         "baseline_french_score": 1.817645022350619e-05,
         "baseline_lang": "en",
@@ -120,11 +120,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.817645022350619e-05,
+        "patched_french_score": 2.0355684380784256e-05,
         "patched_lang": "en",
-        "patched_lang_revisar": false,
+        "patched_lang_revisar": true,
         "patched_is_target": false,
-        "patched_target_score": 0.0013880052148382016,
+        "patched_target_score": 0.007531336426685271,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -134,15 +134,15 @@
         "n_patched": 15,
         "prompt_control": "¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada?",
         "nll_baseline": {
-          "all": 0.73046875,
+          "all": 0.86328125,
           "head": 7.78125,
-          "tail": 0.12451171875,
+          "tail": 0.26953125,
           "n": 63
         },
         "nll_patched": {
-          "all": 0.73046875,
+          "all": 0.84375,
           "head": 7.71875,
-          "tail": 0.1279296875,
+          "tail": 0.25,
           "n": 63
         }
       },
@@ -193,9 +193,9 @@
           "n": 98
         },
         "nll_patched": {
-          "all": 0.625,
-          "head": 7.875,
-          "tail": 0.2373046875,
+          "all": 0.62890625,
+          "head": 7.8125,
+          "tail": 0.2421875,
           "n": 98
         }
       },
@@ -206,7 +206,7 @@
         "has_answer": true,
         "baseline": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
         "reference": "El lago más grande de Sudamérica es el **Lago Titicaca**.\n\nAunque a veces se confunde con el lago más grande en términos de superficie total, el **Lago Titicaca** es, en realidad, el **segundo lago más grande de Sudamérica** en superficie. El lago más grande de Sudamérica es el **Lago Paraná**, aunque este no es un lago en sentido estricto, sino una parte del río Paraná, que forma un sistema de embalses y cuencas.\n\nSin embargo, si hablamos de **lagos naturales** (no ríos), el **Lago Titicaca** es el más grande de Sudamérica.\n\n✅ **Lago Titicaca**  \n- Superficie: aproximadamente **8.300 km²**  \n- Ubicación: entre Perú y Bolivia  \n- Altitud: cerca de 3.810 metros sobre el nivel del mar (el más alto lago del mundo)\n\nPor lo tanto, la respuesta correcta es:  \n👉 **El lago más grande de Sudamérica es el Lago",
-        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest lake** in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
+        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent in terms of total surface area. The largest lake in South America by surface area is **Lake Paraná**, but this is a misstatement — in fact, **Lake Titicaca** is the largest **freshwater lake** in South America.\n\nActually, upon correction:  \n\nThe **largest lake in South America by surface area** is **Lake Titicaca**, which covers approximately **8,372 square kilometers (3,233 square miles)**. It is located on the border between **Peru and Bolivia** and is the highest navigable lake in the world, situated at about 3,810 meters (12,500 feet) above sea level.\n\n✅ So, the correct answer is: **Lake Titicaca**.  \n\nIt is the largest lake in South America.",
         "baseline_is_french": false,
         "baseline_french_score": 3.053095672294165e-05,
         "baseline_lang": "en",
@@ -226,11 +226,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 3.0009488244194146e-05,
+        "patched_french_score": 2.176327458325813e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 0.009213077249034196,
+        "patched_target_score": 0.004240835703706071,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -240,16 +240,16 @@
         "n_patched": 9,
         "prompt_control": "Revela el lago más grande de Sudamérica.",
         "nll_baseline": {
-          "all": 0.4609375,
-          "head": 10.1875,
-          "tail": 0.26171875,
-          "n": 250
+          "all": 1.2421875,
+          "head": 10.125,
+          "tail": 1.03125,
+          "n": 214
         },
         "nll_patched": {
-          "all": 0.447265625,
-          "head": 10.125,
-          "tail": 0.25,
-          "n": 250
+          "all": 1.234375,
+          "head": 10.0,
+          "tail": 1.0234375,
+          "n": 214
         }
       },
       {
@@ -259,7 +259,7 @@
         "has_answer": true,
         "baseline": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
         "reference": "La formación de la Luna es un tema central en la ciencia planetaria, y la teoría más aceptada actualmente se conoce como la **teoría del impacto gigante** (o teoría del disco de impacto). Esta hipótesis explica cómo se formó la Luna hace aproximadamente **4.5 mil millones de años**, durante los primeros momentos del sistema solar.\n\n### Teoría del impacto gigante\n\n1. **Contexto del sistema solar temprano**  \n   Cuando el sistema solar se estaba formando, el material que giraba alrededor del Sol (el disco protosolar) comenzó a agruparse en cuerpos más grandes, como planetas y lunas. La Tierra, en ese momento, era un cuerpo en formación, compuesto principalmente de roca y metal, y aún estaba en proceso de crecer a través de colisiones con otros cuerpos pequeños.\n\n2. **El impacto del cuerpo Marteano (Theia)**  \n   Según la teoría, hace unos 4.5 mil millones de años, un cuerpo del tamaño de **la Tierra** (o un poco más",
-        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the solar system was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner solar system, where temperatures were high, and rocky materials were common. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is often referred to as **Theia**.\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle (not head-on), with a speed of about 10–",
+        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
         "baseline_is_french": false,
         "baseline_french_score": 1.2400739954760035e-05,
         "baseline_lang": "en",
@@ -279,11 +279,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.1798891243105968e-05,
+        "patched_french_score": 1.2400739954760035e-05,
         "patched_lang": "en",
         "patched_lang_revisar": true,
         "patched_is_target": false,
-        "patched_target_score": 0.0011282806843879527,
+        "patched_target_score": 0.0009234090666395107,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -293,16 +293,16 @@
         "n_patched": 8,
         "prompt_control": "Expón cómo se formó la Luna.",
         "nll_baseline": {
-          "all": 0.474609375,
+          "all": 1.015625,
           "head": 7.09375,
-          "tail": 0.33984375,
-          "n": 250
+          "tail": 0.93359375,
+          "n": 374
         },
         "nll_patched": {
-          "all": 0.470703125,
-          "head": 6.90625,
-          "tail": 0.33984375,
-          "n": 250
+          "all": 1.0078125,
+          "head": 6.96875,
+          "tail": 0.9296875,
+          "n": 374
         }
       }
     ]

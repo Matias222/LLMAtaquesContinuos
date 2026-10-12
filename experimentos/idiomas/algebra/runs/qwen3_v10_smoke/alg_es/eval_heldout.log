@@ -1,9 +1,9 @@
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.98it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.92it/s]
 Held-out: 4  |  parche: algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt  |  escala: 1.0
 ======================================================================
 eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
-eval:  25%|██▌       | 1/4 [00:04<00:12,  4.18s/it]eval:  50%|█████     | 2/4 [00:05<00:05,  2.57s/it]eval:  75%|███████▌  | 3/4 [00:13<00:04,  4.89s/it]eval: 100%|██████████| 4/4 [00:22<00:00,  6.77s/it]eval: 100%|██████████| 4/4 [00:22<00:00,  5.73s/it]
+eval:  25%|██▌       | 1/4 [00:03<00:11,  3.92s/it]eval:  50%|█████     | 2/4 [00:05<00:04,  2.46s/it]eval:  75%|███████▌  | 3/4 [00:13<00:05,  5.26s/it]eval: 100%|██████████| 4/4 [00:23<00:00,  6.99s/it]eval: 100%|██████████| 4/4 [00:23<00:00,  5.90s/it]
 
 ======================================================================
 condicion                   is_french   fr_score   accuracy    leak
@@ -19,9 +19,9 @@ referencia  M([FR;q])         100.0%     100.0%       0.0%
 parche  M(q+v)                  0.0%       0.0%       0.0%
 ----------------------------------------------------------------------
 CE target FR                sin parche  con parche     delta
-head (primeros 5)               8.3281      8.1562   -0.1719
-tail (el resto)                 0.2421      0.2388   -0.0033
-toda la respuesta               0.5796      0.5684   -0.0112
+head (primeros 5)               8.3125      8.1250   -0.1875
+tail (el resto)                 0.6191      0.6113   -0.0078
+toda la respuesta               0.9434      0.9287   -0.0146
   el head es donde vive la decision de idioma; el tail casi no deberia moverse
   tokens parcheados por prompt (anchor goal_all): media 9.8
 ======================================================================

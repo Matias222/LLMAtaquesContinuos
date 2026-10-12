@@ -1,7 +1,7 @@
 {
   "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt",
   "model_path": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
-  "patch_norm": 0.08226706832647324,
+  "patch_norm": 0.08580741286277771,
   "lang_id": {
     "backend": "glotlid",
     "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
@@ -74,31 +74,31 @@
     },
     "patched": {
       "is_french": 0.0,
-      "french_score": 0.12506145193654955,
+      "french_score": 0.1250448391459019,
       "answer_correct": NaN,
       "role_leak": 0.0,
       "is_target": 0.0,
-      "target_score": 0.12506145193654955,
+      "target_score": 0.1250448391459019,
       "is_uppercase": 0.0,
       "attr_ok": 0.0
     },
     "nll_fr_baseline": 1.400390625,
-    "nll_fr_patched": 1.380859375,
+    "nll_fr_patched": 1.38134765625,
     "nll_fr_head_baseline": 7.9609375,
-    "nll_fr_head_patched": 7.3125,
+    "nll_fr_head_patched": 7.296875,
     "nll_fr_tail_baseline": 0.302978515625,
-    "nll_fr_tail_patched": 0.30224609375,
+    "nll_fr_tail_patched": 0.304931640625,
     "head_k": 5,
     "n_patched_media": 7.0,
     "open": {
       "n": 4,
-      "overlap_patched_reference": 0.1612742396630182,
+      "overlap_patched_reference": 0.1660026482935467,
       "overlap_baseline_reference": 0.16607835081292655,
       "overlap_shuffled_control": 0.0,
       "french_thirds_patched": [
-        0.12501632580160646,
-        0.12516631392589256,
-        0.12508886744010334
+        0.1250129442262377,
+        0.1250341901333956,
+        0.12511164079427378
       ],
       "french_thirds_reference": [
         0.8744068573030906,
@@ -116,7 +116,7 @@
         "has_answer": false,
         "baseline": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather feature. Let me know your location, and I can help you interpret weather data or explain weather terms! 🌤️🌧️☀️",
         "reference": "Je ne peux pas accéder en temps réel aux conditions météorologiques. Pour savoir quel temps il fait, je te conseille de consulter une application météo ou un site comme :\n\n- [www.meteo.fr](https://www.meteo.fr)\n- [www.accuweather.com](https://www.accuweather.com)\n- Google (en tapant \"temps à [ton lieu]\" dans la barre de recherche)\n\nTu peux aussi me dire ton lieu, et je te donnerai des informations générales sur la météo typique de cette région (par exemple, en hiver, en été, etc.), mais pas des prévisions précises. 😊",
-        "patched": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather service. Let me know your location, and I can help you interpret weather data or explain weather patterns! 🌤️🌧️☀️",
+        "patched": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather feature. Let me know your location, and I can help you interpret weather data or explain weather patterns! 🌤️🌧️☀️",
         "baseline_is_french": false,
         "baseline_french_score": 1.6397888704856026e-05,
         "baseline_lang": "en",
@@ -136,11 +136,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": null,
         "patched_is_french": false,
-        "patched_french_score": 1.9390452200807167e-05,
+        "patched_french_score": 1.648195103658195e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 1.9390452200807167e-05,
+        "patched_target_score": 1.648195103658195e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": null,
@@ -156,9 +156,9 @@
           "n": 144
         },
         "nll_patched": {
-          "all": 0.55859375,
+          "all": 0.5625,
           "head": 7.84375,
-          "tail": 0.296875,
+          "tail": 0.298828125,
           "n": 144
         }
       },
@@ -169,7 +169,7 @@
         "has_answer": false,
         "baseline": "There are several ways to sort a list in Python. Here are the most common methods:\n\n## 1. Using `sort()` method (in-place sorting)\n\nThis modifies the original list and returns `None`:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nnumbers.sort()\nprint(numbers)  # [11, 12, 22, 25, 34, 64, 90]\n```\n\n## 2. Using `sorted()` function (returns new list)\n\nThis creates a new sorted list and leaves the original unchanged:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nsorted_numbers = sorted(numbers)\nprint(numbers)  # [64, 34, 25, 12, 22, 11, 90] (unchanged)\nprint(sorted_numbers)  # [11, 12, 22, 25, 34, 64, 90]",
         "reference": "En Python, il existe plusieurs façons de **trier une liste**. Voici les méthodes les plus courantes et efficaces :\n\n---\n\n### 1. **Méthode `sort()`** (modifie la liste en place)\n\n```python\nliste = [3, 1, 4, 1, 5, 9, 2]\nliste.sort()\nprint(liste)  # [1, 1, 2, 3, 4, 5, 9]\n```\n\n- **Fonctionne sur la liste existante**.\n- **Ne retourne rien** (modifie directement la liste).\n- **Plus rapide** que `sorted()` pour de grandes listes.\n\n> ⚠️ Attention : `sort()` ne fonctionne que sur des listes **mutables** (comme les listes en Python).\n\n---\n\n### 2. **Fonction `sorted()`** (retourne une nouvelle liste triée)\n\n```python\nliste = [3, 1, 4, 1, 5, 9, 2]\nnouvelle_liste = sorted(liste)\nprint(nouvelle_liste)",
-        "patched": "There are several ways to sort a list in Python. Here are the most common methods:\n\n## 1. Using `sort()` method (in-place sorting)\n\nThis modifies the original list:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nnumbers.sort()\nprint(numbers)  # [11, 12, 22, 25, 34, 64, 90]\n\n# Sort in descending order\nnumbers.sort(reverse=True)\nprint(numbers)  # [90, 64, 34, 25, 22, 12, 11]\n```\n\n## 2. Using `sorted()` function (returns new list)\n\nThis creates a new sorted list without modifying the original:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nsorted_numbers = sorted(numbers)\nprint(numbers)  # Original list remains unchanged: [64, 34, 25, 12, 22, 11",
+        "patched": "There are several ways to sort a list in Python. Here are the most common methods:\n\n## 1. Using `sort()` method (in-place sorting)\n\nThis modifies the original list and returns `None`:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nnumbers.sort()\nprint(numbers)  # [11, 12, 22, 25, 34, 64, 90]\n```\n\n## 2. Using `sorted()` function (returns new list)\n\nThis creates a new sorted list and leaves the original unchanged:\n\n```python\nnumbers = [64, 34, 25, 12, 22, 11, 90]\nsorted_numbers = sorted(numbers)\nprint(numbers)  # [64, 34, 25, 12, 22, 11, 90] (unchanged)\nprint(sorted_numbers)  # [11, 12, 22, 25, 34, 64, 90]",
         "baseline_is_french": false,
         "baseline_french_score": 0.0001439723002157873,
         "baseline_lang": "en",
@@ -189,11 +189,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": null,
         "patched_is_french": false,
-        "patched_french_score": 0.0001948914249305309,
+        "patched_french_score": 0.0001439723002157873,
         "patched_lang": "en",
         "patched_lang_revisar": true,
         "patched_is_target": false,
-        "patched_target_score": 0.0001948914249305309,
+        "patched_target_score": 0.0001439723002157873,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": null,
@@ -209,9 +209,9 @@
           "n": 249
         },
         "nll_patched": {
-          "all": 0.265625,
-          "head": 5.78125,
-          "tail": 0.15234375,
+          "all": 0.263671875,
+          "head": 5.6875,
+          "tail": 0.1533203125,
           "n": 249
         }
       },
@@ -222,7 +222,7 @@
         "has_answer": false,
         "baseline": "Sure! Let's dive into **machine learning** — one of the most exciting and transformative fields in modern technology.\n\n---\n\n### 🌟 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed to perform specific tasks.\n\nInstead of writing rules for every possible scenario (like in traditional programming), machine learning models *learn patterns* from large amounts of data and improve their performance over time.\n\n> 🔍 Think of it like teaching a child: you don’t give them a rulebook for every situation — instead, you show them examples, and they gradually learn how to behave appropriately.\n\n---\n\n### 📚 How Does It Work?\n\nAt its core, machine learning involves:\n\n1. **Data Input** – A dataset containing examples (e.g., images, text, numbers).\n2. **Model Training** – The algorithm learns patterns and relationships in the data.\n3. **Prediction or Decision** – The model applies what it learned to new, unseen data.\n4. **Evaluation & Improvement** – The model is tested and refined to improve accuracy.\n\n---\n\n### 🚀 Types of Machine Learning\n\nThere",
         "reference": "Bien sûr ! 😊  \nL’**apprentissage automatique** (ou *machine learning* en anglais) est une branche de l’intelligence artificielle qui permet aux ordinateurs d’apprendre à partir de données, sans être explicitement programmés pour effectuer une tâche spécifique.\n\n---\n\n### 🌟 En résumé :\nL’apprentissage automatique consiste à **trouver des modèles ou des règles** à partir d’un ensemble de données, afin de **prédire des résultats** ou **prendre des décisions** sur de nouvelles données.\n\n---\n\n### 🔍 Comment ça marche ?\n\n1. **Données d’entrée** : On fournit un ensemble de données (par exemple, des prix de logements, des notes d’étudiants, des comportements d’achat).\n2. **Apprentissage** : L’algorithme analyse ces données pour trouver des **relations** (par exemple : \"plus le prix d’un logement est élevé, plus la surface est grande\").\n3. **Prédiction** : L’algorithme peut alors prédire une valeur pour de nouvelles données (ex :",
-        "patched": "Sure! Let's dive into **machine learning** — one of the most exciting and transformative fields in modern technology.\n\n---\n\n### 🌟 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed to perform every task.\n\nInstead of writing rules for every possible scenario (like traditional programming), machine learning models *learn patterns* from large amounts of data and improve their performance over time.\n\n> 🔍 Think of it like teaching a child: you don’t give them a rulebook for every situation — instead, you show them examples, and they gradually learn how to behave appropriately.\n\n---\n\n### 📚 How Does It Work?\n\nMachine learning works through a process called **training**:\n\n1. **Data Collection**: Gather large datasets (e.g., images, text, numbers).\n2. **Data Preprocessing**: Clean, normalize, and format the data.\n3. **Model Selection**: Choose a type of algorithm (e.g., decision trees, neural networks).\n4. **Training**: Feed data into the model so it learns patterns and relationships.\n5. **Evaluation**: Test the model on unseen data to",
+        "patched": "Sure! Let's dive into **machine learning** — one of the most exciting and transformative fields in modern technology.\n\n---\n\n### 🌟 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed to perform specific tasks.\n\nInstead of writing rules for every possible scenario (like in traditional programming), machine learning models *learn patterns* from large amounts of data and improve their performance over time.\n\n> 🔍 Think of it like teaching a child: you don’t give them a rulebook for every situation — instead, you show them examples, and they gradually learn how to behave appropriately.\n\n---\n\n### 📚 How Does It Work?\n\nAt its core, machine learning involves:\n\n1. **Data Input** – A dataset containing examples (e.g., images, text, numbers).\n2. **Model Training** – The algorithm learns patterns in the data by adjusting internal parameters.\n3. **Prediction or Decision** – Once trained, the model can make predictions on new, unseen data.\n\nThere are three main types of machine learning:\n\n---\n\n#### 1. **Supervised Learning**\n- The model learns from labeled",
         "baseline_is_french": false,
         "baseline_french_score": 1.8163713749177337e-05,
         "baseline_lang": "en",
@@ -242,11 +242,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": null,
         "patched_is_french": false,
-        "patched_french_score": 3.152586906681067e-05,
+        "patched_french_score": 1.890233235515152e-05,
         "patched_lang": "en",
-        "patched_lang_revisar": true,
+        "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 3.152586906681067e-05,
+        "patched_target_score": 1.890233235515152e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": null,
@@ -263,7 +263,7 @@
         },
         "nll_patched": {
           "all": 0.38671875,
-          "head": 6.75,
+          "head": 6.78125,
           "tail": 0.255859375,
           "n": 250
         }
@@ -317,7 +317,7 @@
         "nll_patched": {
           "all": 4.3125,
           "head": 8.875,
-          "tail": 0.50390625,
+          "tail": 0.51171875,
           "n": 11
         }
       }

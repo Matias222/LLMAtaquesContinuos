@@ -1,7 +1,7 @@
 {
   "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt",
   "model_path": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
-  "patch_norm": 0.08404329419136047,
+  "patch_norm": 0.08715767413377762,
   "lang_id": {
     "backend": "glotlid",
     "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
@@ -74,31 +74,31 @@
     },
     "patched": {
       "is_french": 0.0,
-      "french_score": 0.1250574165693702,
+      "french_score": 0.12505820291728273,
       "answer_correct": NaN,
       "role_leak": 0.0,
       "is_target": 0.0,
-      "target_score": 0.12502265924844047,
+      "target_score": 0.1250241569682503,
       "is_uppercase": 0.0,
       "attr_ok": 0.0
     },
     "nll_fr_baseline": 1.0634765625,
-    "nll_fr_patched": 1.06298828125,
+    "nll_fr_patched": 1.06396484375,
     "nll_fr_head_baseline": 7.5,
-    "nll_fr_head_patched": 7.515625,
+    "nll_fr_head_patched": 7.5546875,
     "nll_fr_tail_baseline": 0.307861328125,
-    "nll_fr_tail_patched": 0.306640625,
+    "nll_fr_tail_patched": 0.305908203125,
     "head_k": 5,
     "n_patched_media": 7.0,
     "open": {
       "n": 4,
-      "overlap_patched_reference": 0.27850980392156865,
+      "overlap_patched_reference": 0.2783559577677225,
       "overlap_baseline_reference": 0.2784468117955844,
       "overlap_shuffled_control": 0.0,
       "french_thirds_patched": [
-        0.1250218319128938,
-        0.1250170735958648,
-        0.12503700640381765
+        0.12501503533133446,
+        0.12501760399853232,
+        0.12505017866505788
       ],
       "french_thirds_reference": [
         0.8746379376070679,
@@ -116,7 +116,7 @@
         "has_answer": false,
         "baseline": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather feature. Let me know your location, and I can help you interpret weather data or explain weather terms! 🌤️🌧️☀️",
         "reference": "Leider kann ich aktuelles Wetter nicht direkt sehen oder abrufen. Du kannst das Wetter am besten über eine zuverlässige Wetterwebsite oder App wie **Wetter.de**, **Meteo Germany**, **OpenWeatherMap** oder über die App deines Smartphones abfragen.  \n\nWenn du mir sagst, wo du gerade bist (z. B. Berlin, München, oder ein anderes Land), kann ich dir vielleicht allgemeine Wetterbedingungen für die Region beschreiben – aber das wäre eine grobe Schätzung, nicht die aktuelle Situation.  \n\nMöchtest du, dass ich dir eine allgemeine Wetterbeschreibung für eine Stadt gebe? 😊",
-        "patched": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather feature. Let me know your location, and I can help you interpret weather data or explain weather terms! 🌤️🌧️☀️",
+        "patched": "I can't provide real-time weather information. To find out the current weather, I recommend checking a reliable weather website or app like Weather.com, AccuWeather, or your phone's built-in weather feature. Let me know your location, and I can help you interpret weather data or explain weather patterns! 🌤️🌧️☀️",
         "baseline_is_french": false,
         "baseline_french_score": 1.6397888704856026e-05,
         "baseline_lang": "en",
@@ -136,11 +136,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": null,
         "patched_is_french": false,
-        "patched_french_score": 1.6397888704856026e-05,
+        "patched_french_score": 1.648195103658195e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 2.0342776771449696e-05,
+        "patched_target_score": 2.151690367887854e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": null,
@@ -157,8 +157,8 @@
         },
         "nll_patched": {
           "all": 0.7109375,
-          "head": 8.1875,
-          "tail": 0.45703125,
+          "head": 8.25,
+          "tail": 0.451171875,
           "n": 151
         }
       },
@@ -209,9 +209,9 @@
           "n": 250
         },
         "nll_patched": {
-          "all": 0.322265625,
-          "head": 9.875,
-          "tail": 0.126953125,
+          "all": 0.32421875,
+          "head": 9.9375,
+          "tail": 0.1279296875,
           "n": 250
         }
       },
@@ -222,7 +222,7 @@
         "has_answer": false,
         "baseline": "Sure! Let's dive into **machine learning** — one of the most exciting and transformative fields in modern technology.\n\n---\n\n### 🌟 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed to perform specific tasks.\n\nInstead of writing rules for every possible scenario (like in traditional programming), machine learning models *learn patterns* from large amounts of data and improve their performance over time.\n\n> 🔍 Think of it like teaching a child: you don’t give them a rulebook for every situation — instead, you show them examples, and they gradually learn how to behave appropriately.\n\n---\n\n### 📚 How Does It Work?\n\nAt its core, machine learning involves:\n\n1. **Data Input** – A dataset containing examples (e.g., images, text, numbers).\n2. **Model Training** – The algorithm learns patterns and relationships in the data.\n3. **Prediction or Decision** – The model applies what it learned to new, unseen data.\n4. **Evaluation & Improvement** – The model is tested and refined to improve accuracy.\n\n---\n\n### 🚀 Types of Machine Learning\n\nThere",
         "reference": "Natürlich! 😊  \nMaschinelles Lernen (engl. *Machine Learning*) ist ein Teilbereich der Künstlichen Intelligenz (KI), der es Maschinen ermöglicht, aus Daten zu lernen, ohne explizit programmiert zu werden. Stell dir vor, du hast eine Menge Beispiele – zum Beispiel Bilder von Katzen und Hunden – und die Maschine soll lernen, welche Bilder von Katzen und welche von Hunden sind.\n\n### Wie funktioniert das?\n\nStell dir vor, du hast eine Menge von Eingaben (z. B. Bilder) und Ausgaben (z. B. „Katze“ oder „Hund“). Die Maschine analysiert diese Beispiele und sucht Muster. Sie lernt dann, wie man neue, bisher nicht gesehene Bilder klassifiziert – also z. B. ein neues Bild als „Katze“ oder „Hund“ zu erkennen.\n\nDas geschieht durch **Algorithmen**, die mathematische Modelle erstellen, um aus den Daten Muster zu erkennen. Diese Modelle werden „trainiert“, indem",
-        "patched": "Sure! Let's dive into **machine learning** in a clear, engaging way.\n\n---\n\n### 🤖 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed for every single task.\n\nInstead of writing step-by-step instructions (like traditional programming), machine learning uses algorithms that **learn patterns** from large amounts of data and improve their performance over time.\n\nThink of it like teaching a child:  \n- You don’t tell them *exactly* how to solve every math problem.  \n- Instead, you show them examples, and they gradually learn the rules.  \n- Over time, they can solve new problems on their own.\n\nThat’s what machine learning does — it learns from examples and improves through experience.\n\n---\n\n### 🔍 How Does It Work?\n\n1. **Data Input**: You provide a dataset (e.g., images, text, numbers).\n2. **Model Training**: The algorithm analyzes the data to find patterns and relationships.\n3. **Prediction or Decision**: The model makes predictions or decisions based on new input.\n4. **Feedback & Improvement**: The model can be refined using feedback",
+        "patched": "Sure! Let's dive into **machine learning** — one of the most exciting and transformative fields in modern technology.\n\n---\n\n### 🌟 What is Machine Learning?\n\n**Machine learning (ML)** is a branch of artificial intelligence (AI) that enables computers to *learn from data* and *make decisions or predictions* without being explicitly programmed to perform every task.\n\nInstead of writing rules for every possible scenario (like in traditional programming), machine learning models *learn patterns* from large amounts of data and improve their performance over time.\n\n> 🔍 Think of it like teaching a child: you don’t give them a rulebook for every situation — instead, you show them examples, and they gradually learn how to behave appropriately.\n\n---\n\n### 📚 How Does It Work?\n\nMachine learning works through a process called **training**:\n\n1. **Data Collection**: Gather large datasets (e.g., images, text, numbers).\n2. **Data Preprocessing**: Clean, normalize, and format the data so the model can understand it.\n3. **Model Selection**: Choose a type of algorithm (e.g., decision trees, neural networks).\n4. **Training**: Feed data into the model so it learns patterns and relationships.\n5. **Evaluation**:",
         "baseline_is_french": false,
         "baseline_french_score": 1.8163713749177337e-05,
         "baseline_lang": "en",
@@ -242,11 +242,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": null,
         "patched_is_french": false,
-        "patched_french_score": 2.3382102024706904e-05,
+        "patched_french_score": 2.644343134305138e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 2.4758914938402675e-05,
+        "patched_target_score": 2.9575667270365177e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": null,
@@ -262,9 +262,9 @@
           "n": 250
         },
         "nll_patched": {
-          "all": 0.40625,
+          "all": 0.408203125,
           "head": 6.25,
-          "tail": 0.287109375,
+          "tail": 0.2890625,
           "n": 250
         }
       },
@@ -316,7 +316,7 @@
         },
         "nll_patched": {
           "all": 2.8125,
-          "head": 5.75,
+          "head": 5.78125,
           "tail": 0.35546875,
           "n": 11
         }

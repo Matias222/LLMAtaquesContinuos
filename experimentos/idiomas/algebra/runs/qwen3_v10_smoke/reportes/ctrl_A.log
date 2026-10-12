@@ -1,7 +1,7 @@
 
 [fr]
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_fr/eval_heldout.json
-  [OK   ] |v| del eval 0.0823 == |v| del checkpoint 0.0823 (escala 1)
+  [OK   ] |v| del eval 0.0858 == |v| del checkpoint 0.0858 (escala 1)
   [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
   [OK   ] anchor goal_all
   [OK   ] target_lang fr
@@ -15,7 +15,7 @@
 
 [es]
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_es/eval_heldout.json
-  [OK   ] |v| del eval 0.0770 == |v| del checkpoint 0.0770 (escala 1)
+  [OK   ] |v| del eval 0.0796 == |v| del checkpoint 0.0796 (escala 1)
   [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt
   [OK   ] anchor goal_all
   [OK   ] target_lang es
@@ -29,7 +29,7 @@
 
 [de]
   [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_de/eval_heldout.json
-  [OK   ] |v| del eval 0.0840 == |v| del checkpoint 0.0840 (escala 1)
+  [OK   ] |v| del eval 0.0872 == |v| del checkpoint 0.0872 (escala 1)
   [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt
   [OK   ] anchor goal_all
   [OK   ] target_lang de

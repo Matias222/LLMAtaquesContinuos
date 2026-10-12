@@ -4,7 +4,7 @@ Held-out = filas desde int(700*0.84) del CSV de cada celda (16 por categoria). I
 
 ## Celda fr (parche hacia el francés)
 
-### Pregunta en inglés (norma ‖v‖ = 0.082)
+### Pregunta en inglés (norma ‖v‖ = 0.086)
 
 | categoria | n | % fr sin parche | % fr control nativo | % fr parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
 |---|---|---|---|---|---|---|---|---|
@@ -45,7 +45,7 @@ Held-out = filas desde int(700*0.84) del CSV de cada celda (16 por categoria). I
 
 ## Celda es (parche hacia el español)
 
-### Pregunta en inglés (norma ‖v‖ = 0.077)
+### Pregunta en inglés (norma ‖v‖ = 0.080)
 
 | categoria | n | % es sin parche | % es control nativo | % es parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
 |---|---|---|---|---|---|---|---|---|
@@ -86,7 +86,7 @@ Held-out = filas desde int(700*0.84) del CSV de cada celda (16 por categoria). I
 
 ## Celda de (parche hacia el alemán)
 
-### Pregunta en inglés (norma ‖v‖ = 0.084)
+### Pregunta en inglés (norma ‖v‖ = 0.087)
 
 | categoria | n | % de sin parche | % de control nativo | % de parche | acc sin parche | acc control nativo | acc parche | acuerdo parche/control |
 |---|---|---|---|---|---|---|---|---|

@@ -7,7 +7,7 @@
   "std_por_dim": 0.021761717274785042,
   "espaciado_dtype": 0.0003012602917533559,
   "largo_medio": 7.484285714285714,
-  "seg_por_token": 0.03819880129755006
+  "seg_por_token": 0.03738758175872093
  },
  "controles": [
   {
@@ -146,13 +146,13 @@
    "seccion": "4",
    "control": "gradiente del parche: forma [1,1,d], finito, no nulo",
    "nivel": "OK",
-   "detalle": "|grad| 1.716e+01, dtype torch.float32"
+   "detalle": "|grad| 1.715e+01, dtype torch.float32"
   },
   {
    "seccion": "4",
    "control": "5 pasos de sign-SGD no suben la CE del target (fila 0)",
    "nivel": "OK",
-   "detalle": "6.6562 -> 6.4688 -> 6.3750 -> 6.2812 -> 6.1875 -> 6.0000"
+   "detalle": "6.6562 -> 6.5000 -> 6.3750 -> 6.1875 -> 6.1250 -> 6.0312"
   },
   {
    "seccion": "5",

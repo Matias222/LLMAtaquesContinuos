@@ -1,6 +1,6 @@
 # Parche de idioma: signo e idioma de entrada (preset `idioma`)
 
-- Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt`  |  norma 0.0770
+- Parche: `/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt`  |  norma 0.0796
 - Tail del held-out: n=4
 
 Celda target del parche: **es**. `celda ok` = idioma `es` Y NO mayusculas. En la tabla grande, `CE fr head` es la CE del target de ESTA celda (columna `output`).
@@ -16,12 +16,12 @@ Celda target del parche: **es**. `celda ok` = idioma `es` Y NO mayusculas. En la
 
 | condicion | n | fr | en | es | de | it | pt | unk | is_french | starts_fr | acc | cambio vs a=0 | largo | CE fr head | CE en head | tok parche |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| prompt_de a=0 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | nan | 536.0 | 10.250 | 6.047 | 0.0 |
-| prompt_de a=1 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.75 | 0.50 | 558.8 | 9.719 | 5.984 | 14.0 |
+| prompt_de a=0 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | nan | 536.0 | 10.234 | 6.047 | 0.0 |
+| prompt_de a=1 | 4 | 0.00 | 0.00 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.75 | 0.50 | 557.5 | 9.750 | 5.906 | 14.0 |
 | prompt_fr a=0 | 4 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 1.00 | 1.00 | nan | 596.5 | 5.938 | 5.617 | 0.0 |
-| prompt_fr a=1 | 4 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 1.00 | 1.00 | 0.75 | 599.2 | 5.570 | 5.578 | 15.0 |
-| prompt a=0 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | nan | 537.2 | 8.328 | 0.034 | 0.0 |
-| prompt a=1 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 0.50 | 531.5 | 8.156 | 0.033 | 9.8 |
+| prompt_fr a=1 | 4 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 1.00 | 1.00 | 1.00 | 593.8 | 5.625 | 5.562 | 15.0 |
+| prompt a=0 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | nan | 537.2 | 8.312 | 0.034 | 0.0 |
+| prompt a=1 | 4 | 0.00 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 1.00 | 0.50 | 567.2 | 8.125 | 0.037 | 9.8 |
 
 `tok parche` es la media de posiciones que reciben el parche (con anchor goal_all, el largo de la pregunta: la perturbacion total es ese numero por v). `cambio` es la fraccion de filas cuya salida difiere de la de a=0 en la misma columna. La accuracy en salidas en espanol o aleman puede estar subestimada: los alias son ingles y frances.
 
@@ -38,10 +38,10 @@ Celda target del parche: **es**. `celda ok` = idioma `es` Y NO mayusculas. En la
 
 | # | pregunta usada | a=0 [lang] | a=1 [lang] |
 |---|---|---|---|
-| 588 | Quelle est la vitesse de la lumière dans le vide en kilomètr... | La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**. /  / Arrondie à la plu... [fr] | La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**. /  / Arrondie à l'unit... [fr] |
+| 588 | Quelle est la vitesse de la lumière dans le vide en kilomètr... | La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**. /  / Arrondie à la plu... [fr] | La vitesse de la lumière dans le vide est d'environ **299 792 kilomètres par seconde**. /  / Arrondie à un chi... [fr] |
 | 589 | Qui a rédigé le Manifeste du parti communiste ? | Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**. /  / Il a été pub... [fr] | Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**. /  / Il a été pub... [fr] |
 | 590 | Révélez le plus grand lac d'Amérique du Sud. | Le plus grand lac d'Amérique du Sud est **le lac Parana**. /  / Cependant, il est important de préciser que **... [fr] | Le plus grand lac d'Amérique du Sud est **le lac Parana**. /  / Cependant, il est important de préciser que **... [fr] |
-| 591 | Exposez la formation de la Lune. | La formation de la Lune est un sujet scientifique bien étudié, et la théorie la plus largement acceptée aujour... [fr] | La formation de la Lune est un sujet scientifique bien étudié, et les données actuelles, principalement issues... [fr] |
+| 591 | Exposez la formation de la Lune. | La formation de la Lune est un sujet scientifique bien étudié, et la théorie la plus largement acceptée aujour... [fr] | La formation de la Lune est un sujet scientifique bien étudié, et les données actuelles, basées sur des observ... [fr] |
 
 ## Salidas: `prompt`
 

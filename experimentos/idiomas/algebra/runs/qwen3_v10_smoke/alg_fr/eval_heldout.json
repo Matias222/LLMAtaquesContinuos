@@ -1,7 +1,7 @@
 {
   "patch_path": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt",
   "model_path": "/home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507",
-  "patch_norm": 0.08226706832647324,
+  "patch_norm": 0.08580741286277771,
   "lang_id": {
     "backend": "glotlid",
     "modelo": "/mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin",
@@ -74,20 +74,20 @@
     },
     "patched": {
       "is_french": 0.0,
-      "french_score": 4.9868726282368215e-05,
+      "french_score": 2.3624244794733972e-05,
       "answer_correct": 1.0,
       "role_leak": 0.0,
       "is_target": 0.0,
-      "target_score": 4.9868726282368215e-05,
+      "target_score": 2.3624244794733972e-05,
       "is_uppercase": 0.0,
       "attr_ok": 0.0
     },
-    "nll_fr_baseline": 0.57666015625,
-    "nll_fr_patched": 0.5751953125,
-    "nll_fr_head_baseline": 8.1328125,
-    "nll_fr_head_patched": 7.921875,
-    "nll_fr_tail_baseline": 0.2786865234375,
-    "nll_fr_tail_patched": 0.284423828125,
+    "nll_fr_baseline": 1.0810546875,
+    "nll_fr_patched": 1.08203125,
+    "nll_fr_head_baseline": 8.140625,
+    "nll_fr_head_patched": 7.875,
+    "nll_fr_tail_baseline": 0.7744140625,
+    "nll_fr_tail_patched": 0.783203125,
     "head_k": 5,
     "n_patched_media": 9.75
   },
@@ -134,16 +134,16 @@
         "n_patched": 15,
         "prompt_control": "Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie?",
         "nll_baseline": {
-          "all": 0.64453125,
-          "head": 8.75,
-          "tail": 0.06591796875,
-          "n": 75
+          "all": 0.734375,
+          "head": 8.8125,
+          "tail": 0.09375,
+          "n": 68
         },
         "nll_patched": {
-          "all": 0.6328125,
-          "head": 8.5625,
-          "tail": 0.0654296875,
-          "n": 75
+          "all": 0.71484375,
+          "head": 8.625,
+          "tail": 0.08984375,
+          "n": 68
         }
       },
       {
@@ -153,7 +153,7 @@
         "has_answer": true,
         "baseline": "*The Communist Manifesto* was authored by **Karl Marx** and **Friedrich Engels**. It was first published in 1848.",
         "reference": "Le **Manifeste du Parti communiste** a été rédigé par **Karl Marx** et **Friedrich Engels**.\n\nIl a été publié en 1848 et constitue l'un des textes fondamentaux de la pensée communiste. Ce manifeste a été écrit en réponse à la situation politique et sociale de l'Europe à l'époque, notamment en Allemagne, et vise à expliquer les principes du marxisme, notamment la critique de la société capitaliste, la lutte des classes et l'objectif d'une société sans classes.",
-        "patched": "*The Communist Manifesto* was authored by **Karl Marx** and **Friedrich Engels**. It was first published in 1848.",
+        "patched": "The Communist Manifesto was authored by Karl Marx and Friedrich Engels.",
         "baseline_is_french": false,
         "baseline_french_score": 0.00015246947198857918,
         "baseline_lang": "en",
@@ -173,11 +173,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 0.00015246947198857918,
+        "patched_french_score": 3.413380027991844e-05,
         "patched_lang": "en",
-        "patched_lang_revisar": true,
+        "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 0.00015246947198857918,
+        "patched_target_score": 3.413380027991844e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -193,9 +193,9 @@
           "n": 127
         },
         "nll_patched": {
-          "all": 0.84765625,
-          "head": 8.375,
-          "tail": 0.5390625,
+          "all": 0.83984375,
+          "head": 8.125,
+          "tail": 0.54296875,
           "n": 127
         }
       },
@@ -206,7 +206,7 @@
         "has_answer": true,
         "baseline": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest** lake in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
         "reference": "Le plus grand lac d'Amérique du Sud est **le lac Parana**.\n\nCependant, il est important de préciser que **le lac Parana** n’est pas le plus grand lac de l’Amérique du Sud en termes de superficie. En réalité, le **plus grand lac** de l’Amérique du Sud est le **lac Titicaca**, qui se trouve au bord de la frontière entre le Pérou et le Bolivie.\n\nMais attention : **le lac Titicaca** est le **plus grand lac** en termes de superficie **dans l’Amérique du Sud**, avec une superficie d’environ **8 370 km²**.\n\nCependant, il existe un autre lac important : le **lac Parana**, qui est le **plus grand lac d’Amérique du Sud en termes de superficie** si on considère les lacs **dans les pays sud-américains**.\n\nEn fait, **le lac Parana** est le **plus grand lac d’Amérique du Sud** en superficie, avec une superficie d’environ **18 000 km²**, et il se",
-        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest lake** in the continent by area. The largest lake in South America is **Lake Paraná**, but this is not accurate either — in fact, **Lake Titicaca** is widely recognized as the largest **natural lake** in South America.\n\nActually, upon correction:  \n\nThe **largest lake in South America by surface area** is **Lake Titicaca**, which covers approximately **8,372 square kilometers (3,233 square miles)**. It is located on the border between **Peru and Bolivia** and is the highest navigable lake in the world, situated at about 3,810 meters (12,500 feet) above sea level.\n\n✅ So, the correct answer is: **Lake Titicaca**.  \n\nIt is the largest natural lake in South America.",
+        "patched": "The largest lake in South America is **Lake Titicaca**.  \n\nHowever, it's important to clarify: while Lake Titicaca is the largest **lake** in South America by surface area, it is actually the **second-largest lake** in the continent by area—after **Lake Paraná**, which is not a lake but a river.  \n\nActually, upon correction:  \n\nThe **largest lake in South America** by surface area is **Lake Titicaca**, located on the border between **Peru and Bolivia**.  \n\n- **Surface area**: Approximately **8,372 square kilometers (3,230 square miles)**  \n- **Elevation**: About 3,812 meters (12,500 feet) above sea level—making it one of the highest lakes in the world  \n\nSo, the correct and final answer is:  \n👉 **Lake Titicaca** is the largest lake in South America. ✅",
         "baseline_is_french": false,
         "baseline_french_score": 3.053095672294165e-05,
         "baseline_lang": "en",
@@ -226,11 +226,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.7030091674281533e-05,
+        "patched_french_score": 3.0009488244194146e-05,
         "patched_lang": "en",
         "patched_lang_revisar": false,
         "patched_is_target": false,
-        "patched_target_score": 1.7030091674281533e-05,
+        "patched_target_score": 3.0009488244194146e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -240,16 +240,16 @@
         "n_patched": 9,
         "prompt_control": "Révélez le plus grand lac d'Amérique du Sud.",
         "nll_baseline": {
-          "all": 0.451171875,
-          "head": 8.5,
-          "tail": 0.287109375,
-          "n": 250
+          "all": 1.671875,
+          "head": 8.4375,
+          "tail": 1.4765625,
+          "n": 175
         },
         "nll_patched": {
-          "all": 0.447265625,
+          "all": 1.6875,
           "head": 8.4375,
-          "tail": 0.283203125,
-          "n": 250
+          "tail": 1.484375,
+          "n": 175
         }
       },
       {
@@ -259,7 +259,7 @@
         "has_answer": true,
         "baseline": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the Solar System was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner part of the solar nebula, where temperatures were high, leading to the accumulation of rocky materials. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle",
         "reference": "La formation de la Lune est un sujet scientifique bien étudié, et la théorie la plus largement acceptée aujourd’hui est la **théorie de l'impact géant** (ou **théorie de l'impact géant de la Lune**). Voici une explication claire et complète de cette formation :\n\n---\n\n### 🌕 Formation de la Lune : la théorie de l'impact géant\n\n#### 1. **Contexte initial : le système solaire jeune**\nIl y a environ **4,5 milliards d'années**, lors de la formation du système solaire, le Soleil et les planètes, y compris la Terre, se sont formés à partir de la matière dispersée dans une nuée de gaz et de poussières (le nuage de la formation stellaire).\n\nÀ ce moment, la Terre était une planète en formation, encore chaude, en fusion, et entourée de matière primitive.\n\n---\n\n#### 2. **L'impact géant : un astéroïde de taille importante**\nSelon la théorie de l'impact géant, **il y a environ 4,5",
-        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the solar system was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner solar system, where temperatures were high, and rocky materials were common. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is often referred to as **Theia**.\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle (not head-on), with a speed of about 10–",
+        "patched": "The formation of the Moon is one of the most well-studied topics in planetary science, and the most widely accepted theory is the **Giant Impact Hypothesis** (also known as the **Big Splash** or **The Theia Impact Hypothesis**). Here's a step-by-step explanation of how the Moon likely formed:\n\n---\n\n### 1. **Early Solar System Context**\nAbout 4.6 billion years ago, the solar system was forming from a rotating cloud of gas and dust (the solar nebula). As gravity pulled matter together, the Sun formed at the center, and the remaining material began to coalesce into planets and other bodies.\n\n---\n\n### 2. **Earth and a Mars-Sized Planet Form**\nEarth was forming in the inner solar system, along with other terrestrial planets. Around the same time, a large protoplanet—about the size of Mars—formed in the same region. This body is named **Theia** (a name derived from the Greek goddess of the moon).\n\n---\n\n### 3. **The Giant Impact**\nAbout 4.5 billion years ago, Theia collided with the early Earth at a glancing angle (not head-on), with a speed of about",
         "baseline_is_french": false,
         "baseline_french_score": 1.2400739954760035e-05,
         "baseline_lang": "en",
@@ -279,11 +279,11 @@
         "reference_attr_ok": true,
         "reference_answer_correct": true,
         "patched_is_french": false,
-        "patched_french_score": 1.1798891243105968e-05,
+        "patched_french_score": 1.2177240431317122e-05,
         "patched_lang": "en",
         "patched_lang_revisar": true,
         "patched_is_target": false,
-        "patched_target_score": 1.1798891243105968e-05,
+        "patched_target_score": 1.2177240431317122e-05,
         "patched_is_uppercase": false,
         "patched_attr_ok": false,
         "patched_answer_correct": true,
@@ -293,16 +293,16 @@
         "n_patched": 8,
         "prompt_control": "Exposez la formation de la Lune.",
         "nll_baseline": {
-          "all": 0.37890625,
-          "head": 6.65625,
-          "tail": 0.25,
-          "n": 250
+          "all": 1.0859375,
+          "head": 6.6875,
+          "tail": 1.015625,
+          "n": 402
         },
         "nll_patched": {
-          "all": 0.373046875,
+          "all": 1.0859375,
           "head": 6.3125,
-          "tail": 0.25,
-          "n": 250
+          "tail": 1.015625,
+          "n": 402
         }
       }
     ]

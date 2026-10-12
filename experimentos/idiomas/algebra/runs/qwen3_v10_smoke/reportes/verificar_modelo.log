@@ -1,5 +1,5 @@
 `torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 53.84it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 56.18it/s]
 modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507  model_type qwen3  plantilla qwen3
 
 ## 1 modelo
@@ -43,8 +43,8 @@ imperativo_explicativo   7.6  5.0  10.0
 ## 4 forward: causalidad y gradiente
   [OK   ] logits antes del goal identicos con y sin parche  -- []
   [OK   ] logits desde el goal cambian con el parche  -- []
-  [OK   ] gradiente del parche: forma [1,1,d], finito, no nulo  -- |grad| 1.716e+01, dtype torch.float32
-  [OK   ] 5 pasos de sign-SGD no suben la CE del target (fila 0)  -- 6.6562 -> 6.4688 -> 6.3750 -> 6.2812 -> 6.1875 -> 6.0000
+  [OK   ] gradiente del parche: forma [1,1,d], finito, no nulo  -- |grad| 1.715e+01, dtype torch.float32
+  [OK   ] 5 pasos de sign-SGD no suben la CE del target (fila 0)  -- 6.6562 -> 6.5000 -> 6.3750 -> 6.1875 -> 6.1250 -> 6.0312
 
 ## 5 generacion
   tokens de corte: {151643: <|endoftext|>, 151645: <|im_end|>}
@@ -65,7 +65,7 @@ imperativo_explicativo   7.6  5.0  10.0
   [OK   ] sin fuga de rol ni tokens de control en la salida  -- 0/8
   [OK   ] sin <think>  -- 0/8
   [OK   ] un v al azar de norma 0.85 cambia la salida  -- 7/8
-  segundos por token (mediana, sin KV cache, respuestas cortas): 0.038
+  segundos por token (mediana, sin KV cache, respuestas cortas): 0.037
 [lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
   [OK   ] M(q) en ingles  -- 8/8
   [OK   ] M('Answer in French.' + q) en fr  -- 8/8

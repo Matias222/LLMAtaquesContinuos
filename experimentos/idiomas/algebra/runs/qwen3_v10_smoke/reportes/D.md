@@ -1,0 +1,68 @@
+# Etapa D: chequeos sin generación
+
+## Normas y cosenos
+
+Referencia del paper: réplica de alg_fr con otro orden de batches = 0.49; dos direcciones al azar en d=2560 = ±0.020 (1/√d).
+
+| vector | ‖v‖ | qwen3_v10_smoke_fr | qwen3_v10_smoke_es | qwen3_v10_smoke_de |
+|---|---|---|---|---|
+| qwen3_v10_smoke_fr | 0.086 | 1.00 | 0.33 | 0.47 |
+| qwen3_v10_smoke_es | 0.080 | 0.33 | 1.00 | 0.41 |
+| qwen3_v10_smoke_de | 0.087 | 0.47 | 0.41 | 1.00 |
+
+Celda fr: ‖v‖ = 0.086 (‖v‖/‖e‖ medio del vocabulario = 0.079; Llama v9: 0.78-0.87); supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.93.
+
+Celda es: ‖v‖ = 0.080 (‖v‖/‖e‖ medio del vocabulario = 0.073; Llama v9: 0.78-0.87); supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.93.
+
+Celda de: ‖v‖ = 0.087 (‖v‖/‖e‖ medio del vocabulario = 0.080; Llama v9: 0.78-0.87); supera la norma del 0.0% del vocabulario y del 0.0% de los tokens de las preguntas; distancia mediana token-vecino 0.93.
+
+## Token más cercano de e + α·v (§4.1)
+
+| celda | α | entrada | tokens | % cambia (L2) | % cambia (coseno) |
+|---|---|---|---|---|---|
+| fr | 0.5 | en | 848 | 0 | 0 |
+| fr | 0.5 | es | 1336 | 0 | 0 |
+| fr | 0.5 | de | 1293 | 0 | 0 |
+| fr | 1.0 | en | 848 | 0 | 0 |
+| fr | 1.0 | es | 1336 | 0 | 0 |
+| fr | 1.0 | de | 1293 | 0 | 0 |
+| fr | 2.0 | en | 848 | 0 | 0 |
+| fr | 2.0 | es | 1336 | 0 | 0 |
+| fr | 2.0 | de | 1293 | 0 | 0 |
+| fr | 4.0 | en | 848 | 0 | 0 |
+| fr | 4.0 | es | 1336 | 0 | 0 |
+| fr | 4.0 | de | 1293 | 0 | 0 |
+| fr | 8.0 | en | 848 | 0 | 0 |
+| fr | 8.0 | es | 1336 | 0 | 0 |
+| fr | 8.0 | de | 1293 | 0 | 0 |
+| es | 0.5 | en | 848 | 0 | 0 |
+| es | 0.5 | de | 1293 | 0 | 0 |
+| es | 0.5 | fr | 1410 | 0 | 0 |
+| es | 1.0 | en | 848 | 0 | 0 |
+| es | 1.0 | de | 1293 | 0 | 0 |
+| es | 1.0 | fr | 1410 | 0 | 0 |
+| es | 2.0 | en | 848 | 0 | 0 |
+| es | 2.0 | de | 1293 | 0 | 0 |
+| es | 2.0 | fr | 1410 | 0 | 0 |
+| es | 4.0 | en | 848 | 0 | 0 |
+| es | 4.0 | de | 1293 | 0 | 0 |
+| es | 4.0 | fr | 1410 | 0 | 0 |
+| es | 8.0 | en | 848 | 0 | 0 |
+| es | 8.0 | de | 1293 | 0 | 0 |
+| es | 8.0 | fr | 1410 | 0 | 0 |
+| de | 0.5 | en | 848 | 0 | 0 |
+| de | 0.5 | es | 1336 | 0 | 0 |
+| de | 0.5 | fr | 1410 | 0 | 0 |
+| de | 1.0 | en | 848 | 0 | 0 |
+| de | 1.0 | es | 1336 | 0 | 0 |
+| de | 1.0 | fr | 1410 | 0 | 0 |
+| de | 2.0 | en | 848 | 0 | 0 |
+| de | 2.0 | es | 1336 | 0 | 0 |
+| de | 2.0 | fr | 1410 | 0 | 0 |
+| de | 4.0 | en | 848 | 0 | 0 |
+| de | 4.0 | es | 1336 | 0 | 0 |
+| de | 4.0 | fr | 1410 | 0 | 0 |
+| de | 8.0 | en | 848 | 0 | 0 |
+| de | 8.0 | es | 1336 | 0 | 0 |
+| de | 8.0 | fr | 1410 | 0 | 0 |
+
