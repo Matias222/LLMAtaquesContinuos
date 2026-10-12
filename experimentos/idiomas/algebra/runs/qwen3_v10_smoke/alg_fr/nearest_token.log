@@ -1,0 +1,5 @@
+parche algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt  ||v|| 0.0823  ||e|| medio del vocab 1.0885  (ratio 0.076)
+||v|| supera la norma de 0.0% de los tokens del vocabulario y de 0.0% de los tokens de las preguntas (mediana preguntas 1.1212)
+held-out 112 filas (idx 588..699)  |  entradas ['prompt', 'prompt_es', 'prompt_de']  |  tokens unicos 1468
+sanity: vecino l2 de W[t] sin parche == t en 100.0%
+gap (distancia al 2do vecino): mediana 0.931  p10 0.619  p90 1.208  |  ||v|| < gap/2 en 100.0%

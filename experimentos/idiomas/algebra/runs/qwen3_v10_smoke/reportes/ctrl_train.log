@@ -1,0 +1,60 @@
+d=2560  ||e|| medio del vocabulario 1.0885
+
+[fr]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
+  [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
+  [OK   ] finito
+  [OK   ] ||v|| = 0.0823  (||v||/||e|| = 0.076; Llama v9: 0.78-0.87)
+  [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
+  [OK   ] metadata num_patch_positions = 1 (receta 1)
+  [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
+  [OK   ] metadata step_size = 0.00025 (receta 0.00025)
+  [OK   ] metadata step_decay = 'cosine' (receta 'cosine')
+  [OK   ] metadata batch_size = 28 (receta 28)
+  [OK   ] metadata loss_head_k = 8 (receta 8)
+  [OK   ] targets_csv = /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3/targets_v8_fr.csv (termina en qwen3/targets_v8_fr.csv)
+  [OK   ] prompt_cols = ['prompt', 'prompt_es', 'prompt_de'] (sin prompt_fr)
+  [OK   ] split 0.84
+  [OK   ] curva sin NaN (1 epochs)
+  goal_len_media_train 10.18388683886839  best_train_epoch 1
+
+[es]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt
+  [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
+  [OK   ] finito
+  [OK   ] ||v|| = 0.0770  (||v||/||e|| = 0.071; Llama v9: 0.78-0.87)
+  [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
+  [OK   ] metadata num_patch_positions = 1 (receta 1)
+  [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
+  [OK   ] metadata step_size = 0.00025 (receta 0.00025)
+  [OK   ] metadata step_decay = 'cosine' (receta 'cosine')
+  [OK   ] metadata batch_size = 28 (receta 28)
+  [OK   ] metadata loss_head_k = 8 (receta 8)
+  [OK   ] targets_csv = /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3/targets_v8_es.csv (termina en qwen3/targets_v8_es.csv)
+  [OK   ] prompt_cols = ['prompt', 'prompt_de', 'prompt_fr'] (sin prompt_es)
+  [OK   ] split 0.84
+  [OK   ] curva sin NaN (1 epochs)
+  goal_len_media_train 10.291512915129152  best_train_epoch 1
+
+[de]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt
+  [OK   ] forma (1, 1, 2560) == (1, 1, 2560)
+  [OK   ] finito
+  [OK   ] ||v|| = 0.0840  (||v||/||e|| = 0.077; Llama v9: 0.78-0.87)
+  [OK   ] metadata patch_anchor = 'goal_all' (receta 'goal_all')
+  [OK   ] metadata num_patch_positions = 1 (receta 1)
+  [OK   ] metadata l2_weight = 0.0915 (receta 0.0915)
+  [OK   ] metadata step_size = 0.00025 (receta 0.00025)
+  [OK   ] metadata step_decay = 'cosine' (receta 'cosine')
+  [OK   ] metadata batch_size = 28 (receta 28)
+  [OK   ] metadata loss_head_k = 8 (receta 8)
+  [OK   ] targets_csv = /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/attributes/qwen3/targets_v8_de.csv (termina en qwen3/targets_v8_de.csv)
+  [OK   ] prompt_cols = ['prompt', 'prompt_es', 'prompt_fr'] (sin prompt_de)
+  [OK   ] split 0.84
+  [OK   ] curva sin NaN (1 epochs)
+  goal_len_media_train 10.538130381303812  best_train_epoch 1
+
+  [OK   ] mismas filas de train en las tres celdas: {'fr': 542, 'es': 542, 'de': 542}
+
+======================================================================
+controles train: 0 FALLA, 0 AVISO

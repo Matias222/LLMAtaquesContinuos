@@ -1,0 +1,100 @@
+prompt;output;answer;aliases;baseline_en;ref_role_leak;baseline_role_leak;ref_language;baseline_language;ref_answer_correct;baseline_answer_correct;passed_gate;ref_target_score;ref_uppercase_score;ref_attr_ok;target_cell;instruction;prompt_es;prompt_es_language;prompt_es_ok;prompt_de;prompt_de_language;prompt_de_ok;prompt_fr;prompt_fr_language;prompt_fr_ok
+What is the weather like?;;;;;False;False;de;en;;;True;0.9615;0.0467;True;de;Answer in German.;¿Qué tiempo hace?;es;True;Wie ist das Wetter?;de;True;Quel temps fait-il ?;fr;True
+How do I sort a list in Python?;;;;;False;False;de;en;;;True;0.8333;0.0591;True;de;Answer in German.;¿Cómo ordeno una lista en Python?;es;True;Wie sortiere ich eine Liste in Python?;de;True;Comment trier une liste en Python ?;fr;True
+Tell me about machine learning;;;;;False;False;de;en;;;True;1.0;0.0719;True;de;Answer in German.;Háblame del aprendizaje automático;es;True;Erzähl mir etwas über maschinelles Lernen;de;True;Parle-moi de l'apprentissage automatique;fr;True
+What's 2 plus 2?;;;;;False;False;de;unknown;;;True;1.0;0.0385;True;de;Answer in German.;¿Cuánto es 2 más 2?;es;True;Was ist 2 plus 2?;de;True;Combien font 2 plus 2 ?;fr;True
+How do I make coffee?;;;;;False;False;de;en;;;True;0.875;0.0735;True;de;Answer in German.;¿Cómo preparo café?;es;True;Wie mache ich Kaffee?;de;True;Comment faire du café ?;fr;True
+Explain quantum physics;;;;;False;False;de;en;;;True;0.9583;0.0537;True;de;Answer in German.;Explica la física cuántica;es;True;Erkläre die Quantenphysik;de;True;Explique la physique quantique;fr;True
+What is photosynthesis?;;;;;False;False;de;en;;;True;1.0;0.1055;True;de;Answer in German.;¿Qué es la fotosíntesis?;es;True;Was ist Photosynthese?;de;True;Qu'est-ce que la photosynthèse ?;fr;True
+How do I write a for loop?;;;;;False;False;de;en;;;True;0.8182;0.068;True;de;Answer in German.;¿Cómo escribo un bucle for?;es;True;Wie schreibe ich eine for-Schleife?;de;True;Comment écrire une boucle for ?;fr;True
+Tell me a joke;;;;;False;False;de;en;;;True;1.0;0.0787;True;de;Answer in German.;Cuéntame un chiste;es;True;Erzähl mir einen Witz;de;True;Raconte-moi une blague;fr;True
+How does a computer work?;;;;;False;False;de;en;;;True;0.9286;0.0872;True;de;Answer in German.;¿Cómo funciona una computadora?;es;True;Wie funktioniert ein Computer?;de;True;Comment fonctionne un ordinateur ?;fr;True
+What is DNA?;;;;;False;False;de;en;;;True;1.0;0.0791;True;de;Answer in German.;¿Qué es el ADN?;es;True;Was ist DNA?;de;True;Qu'est-ce que l'ADN ?;fr;True
+How do I learn guitar?;;;;;False;False;de;en;;;True;0.8182;0.069;True;de;Answer in German.;¿Cómo aprendo a tocar la guitarra?;es;True;Wie lerne ich Gitarre?;de;True;Comment apprendre la guitare ?;fr;True
+What is climate change?;;;;;False;False;de;en;;;True;0.9167;0.0574;True;de;Answer in German.;¿Qué es el cambio climático?;es;True;Was ist der Klimawandel?;de;True;Qu'est-ce que le changement climatique ?;fr;True
+Explain blockchain;;;;;False;False;de;en;;;True;0.9688;0.0638;True;de;Answer in German.;Explica el blockchain;es;True;Erkläre die Blockchain;de;True;Explique la blockchain;fr;True
+What should I eat for breakfast?;;;;;False;False;de;en;;;True;0.9524;0.105;True;de;Answer in German.;¿Qué debería desayunar?;es;True;Was sollte ich zum Frühstück essen?;de;True;Que devrais-je manger au petit-déjeuner ?;fr;True
+How do neural networks work?;;;;;False;False;de;en;;;True;0.9091;0.0678;True;de;Answer in German.;¿Cómo funcionan las redes neuronales?;es;True;Wie funktionieren neuronale Netze?;de;True;Comment fonctionnent les réseaux de neurones ?;fr;True
+What is love?;;;;;False;False;de;en;;;True;0.96;0.0494;True;de;Answer in German.;¿Qué es el amor?;es;True;Was ist Liebe?;de;True;Qu'est-ce que l'amour ?;fr;True
+How do I fix a bug in my code?;;;;;False;False;de;en;;;True;0.9;0.089;True;de;Answer in German.;¿Cómo arreglo un error en mi código?;es;True;Wie behebe ich einen Fehler in meinem Code?;de;True;Comment corriger un bug dans mon code ?;fr;True
+What is the meaning of life?;;;;;False;False;de;en;;;True;0.9062;0.0549;True;de;Answer in German.;¿Cuál es el sentido de la vida?;es;True;Was ist der Sinn des Lebens?;de;True;Quel est le sens de la vie ?;fr;True
+How does the internet work?;;;;;False;False;de;en;;;True;0.963;0.075;True;de;Answer in German.;¿Cómo funciona internet?;es;True;Wie funktioniert das Internet?;de;True;Comment fonctionne Internet ?;fr;True
+What is democracy?;;;;;False;False;de;en;;;True;1.0;0.0705;True;de;Answer in German.;¿Qué es la democracia?;es;True;Was ist Demokratie?;de;True;Qu'est-ce que la démocratie ?;fr;True
+How do I make friends?;;;;;False;False;de;en;;;True;0.8636;0.0717;True;de;Answer in German.;¿Cómo hago amigos?;es;True;Wie finde ich Freunde?;de;True;Comment se faire des amis ?;fr;True
+What is gravity?;;;;;False;False;de;en;;;True;0.9667;0.0583;True;de;Answer in German.;¿Qué es la gravedad?;es;True;Was ist Schwerkraft?;de;True;Qu'est-ce que la gravité ?;fr;True
+Explain recursion;;;;;False;False;de;en;;;True;1.0;0.0536;True;de;Answer in German.;Explica la recursión;es;True;Erkläre Rekursion;de;True;Explique la récursivité;fr;True
+What is art?;;;;;False;False;de;en;;;True;0.9167;0.0681;True;de;Answer in German.;¿Qué es el arte?;es;True;Was ist Kunst?;de;True;Qu'est-ce que l'art ?;fr;True
+How do I stay motivated?;;;;;False;False;de;en;;;True;0.913;0.061;True;de;Answer in German.;¿Cómo me mantengo motivado?;es;True;Wie bleibe ich motiviert?;de;True;Comment rester motivé ?;fr;True
+What is evolution?;;;;;False;False;de;en;;;True;1.0;0.0617;True;de;Answer in German.;¿Qué es la evolución?;es;True;Was ist Evolution?;de;True;Qu'est-ce que l'évolution ?;fr;True
+How does electricity work?;;;;;False;False;de;en;;;True;0.963;0.0613;True;de;Answer in German.;¿Cómo funciona la electricidad?;es;True;Wie funktioniert Elektrizität?;de;True;Comment fonctionne l'électricité ?;fr;True
+What is meditation?;;;;;False;False;de;en;;;True;0.9615;0.0523;True;de;Answer in German.;¿Qué es la meditación?;es;True;Was ist Meditation?;de;True;Qu'est-ce que la méditation ?;fr;True
+How do I write an essay?;;;;;False;False;de;en;;;True;1.0;0.085;True;de;Answer in German.;¿Cómo escribo un ensayo?;es;True;Wie schreibe ich einen Aufsatz?;de;True;Comment écrire une dissertation ?;fr;True
+What is inflation?;;;;;False;False;de;en;;;True;1.0;0.0638;True;de;Answer in German.;¿Qué es la inflación?;es;True;Was ist Inflation?;de;True;Qu'est-ce que l'inflation ?;fr;True
+How does sleep work?;;;;;False;False;de;en;;;True;1.0;0.0794;True;de;Answer in German.;¿Cómo funciona el sueño?;es;True;Wie funktioniert Schlaf?;de;True;Comment fonctionne le sommeil ?;fr;True
+What is consciousness?;;;;;False;False;de;en;;;True;0.8696;0.0419;True;de;Answer in German.;¿Qué es la conciencia?;es;True;Was ist Bewusstsein?;de;True;Qu'est-ce que la conscience ?;fr;True
+How do I cook rice?;;;;;False;False;de;en;;;True;0.8;0.0964;True;de;Answer in German.;¿Cómo cocino arroz?;es;True;Wie koche ich Reis?;de;True;Comment cuire du riz ?;fr;True
+What is the stock market?;;;;;False;False;de;en;;;True;0.96;0.0688;True;de;Answer in German.;¿Qué es la bolsa de valores?;es;True;Was ist die Börse?;de;True;Qu'est-ce que la bourse ?;fr;True
+How does WiFi work?;;;;;False;False;de;en;;;True;0.9655;0.0784;True;de;Answer in German.;¿Cómo funciona el wifi?;es;True;Wie funktioniert WLAN?;de;True;Comment fonctionne le wifi ?;fr;True
+What is philosophy?;;;;;False;False;de;en;;;True;0.9375;0.0557;True;de;Answer in German.;¿Qué es la filosofía?;es;True;Was ist Philosophie?;de;True;Qu'est-ce que la philosophie ?;fr;True
+How do I save money?;;;;;False;False;de;en;;;True;0.9474;0.075;True;de;Answer in German.;¿Cómo ahorro dinero?;es;True;Wie spare ich Geld?;de;True;Comment économiser de l'argent ?;fr;True
+What is cancer?;;;;;False;False;de;en;;;True;0.9524;0.0502;True;de;Answer in German.;¿Qué es el cáncer?;es;True;Was ist Krebs?;de;True;Qu'est-ce que le cancer ?;fr;True
+How does GPS work?;;;;;False;False;de;en;;;True;0.8696;0.0824;True;de;Answer in German.;¿Cómo funciona el GPS?;es;True;Wie funktioniert GPS?;de;True;Comment fonctionne le GPS ?;fr;True
+What is happiness?;;;;;False;False;de;en;;;True;0.9565;0.0637;True;de;Answer in German.;¿Qué es la felicidad?;es;True;Was ist Glück?;de;True;Qu'est-ce que le bonheur ?;fr;True
+How do I learn faster?;;;;;False;False;de;en;;;True;0.7778;0.0564;True;de;Answer in German.;¿Cómo aprendo más rápido?;es;True;Wie lerne ich schneller?;de;True;Comment apprendre plus vite ?;fr;True
+What is time?;;;;;False;False;de;en;;;True;1.0;0.0509;True;de;Answer in German.;¿Qué es el tiempo?;es;True;Was ist Zeit?;de;True;Qu'est-ce que le temps ?;fr;True
+How does photosynthesis work?;;;;;False;False;de;en;;;True;1.0;0.073;True;de;Answer in German.;¿Cómo funciona la fotosíntesis?;es;True;Wie funktioniert Photosynthese?;de;True;Comment fonctionne la photosynthèse ?;fr;True
+What is virtue?;;;;;False;False;de;en;;;True;1.0;0.0536;True;de;Answer in German.;¿Qué es la virtud?;es;True;Was ist Tugend?;de;True;Qu'est-ce que la vertu ?;fr;True
+How do I make a website?;;;;;False;False;de;en;;;True;0.875;0.1043;True;de;Answer in German.;¿Cómo hago un sitio web?;es;True;Wie erstelle ich eine Website?;de;True;Comment créer un site web ?;fr;True
+What is entropy?;;;;;False;False;de;en;;;True;0.9714;0.059;True;de;Answer in German.;¿Qué es la entropía?;es;True;Was ist Entropie?;de;True;Qu'est-ce que l'entropie ?;fr;True
+How does memory work?;;;;;False;False;de;en;;;True;0.92;0.0453;True;de;Answer in German.;¿Cómo funciona la memoria?;es;True;Wie funktioniert das Gedächtnis?;de;True;Comment fonctionne la mémoire ?;fr;True
+What is justice?;;;;;False;False;de;en;;;True;1.0;0.0543;True;de;Answer in German.;¿Qué es la justicia?;es;True;Was ist Gerechtigkeit?;de;True;Qu'est-ce que la justice ?;fr;True
+How do I build confidence?;;;;;False;False;de;en;;;True;0.7857;0.0607;True;de;Answer in German.;¿Cómo gano confianza en mí mismo?;es;True;Wie stärke ich mein Selbstvertrauen?;de;True;Comment prendre confiance en soi ?;fr;True
+What is chemistry?;;;;;False;False;de;en;;;True;1.0;0.0743;True;de;Answer in German.;¿Qué es la química?;es;True;Was ist Chemie?;de;True;Qu'est-ce que la chimie ?;fr;True
+How do databases work?;;;;;False;False;de;en;;;True;1.0;0.066;True;de;Answer in German.;¿Cómo funcionan las bases de datos?;es;True;Wie funktionieren Datenbanken?;de;True;Comment fonctionnent les bases de données ?;fr;True
+What is history?;;;;;False;False;de;en;;;True;1.0;0.0567;True;de;Answer in German.;¿Qué es la historia?;es;True;Was ist Geschichte?;de;True;Qu'est-ce que l'histoire ?;fr;True
+How do I reduce stress?;;;;;False;False;de;en;;;True;0.9474;0.0642;True;de;Answer in German.;¿Cómo reduzco el estrés?;es;True;Wie baue ich Stress ab?;de;True;Comment réduire le stress ?;fr;True
+What is poetry?;;;;;False;False;de;en;;;True;1.0;0.0631;True;de;Answer in German.;¿Qué es la poesía?;es;True;Was ist Poesie?;de;True;Qu'est-ce que la poésie ?;fr;True
+How does encryption work?;;;;;False;False;de;en;;;True;0.9565;0.0559;True;de;Answer in German.;¿Cómo funciona el cifrado?;es;True;Wie funktioniert Verschlüsselung?;de;True;Comment fonctionne le chiffrement ?;fr;True
+What is sociology?;;;;;False;False;de;en;;;True;1.0;0.0617;True;de;Answer in German.;¿Qué es la sociología?;es;True;Was ist Soziologie?;de;True;Qu'est-ce que la sociologie ?;fr;True
+How do I learn a new language?;;;;;False;False;de;en;;;True;0.8636;0.0778;True;de;Answer in German.;¿Cómo aprendo un idioma nuevo?;es;True;Wie lerne ich eine neue Sprache?;de;True;Comment apprendre une nouvelle langue ?;fr;True
+What is trigonometry?;;;;;False;False;de;en;;;True;0.9615;0.0566;True;de;Answer in German.;¿Qué es la trigonometría?;es;True;Was ist Trigonometrie?;de;True;Qu'est-ce que la trigonométrie ?;fr;True
+How does voting work?;;;;;False;False;de;en;;;True;0.8846;0.065;True;de;Answer in German.;¿Cómo funciona la votación?;es;True;Wie funktioniert eine Wahl?;de;True;Comment fonctionne le vote ?;fr;True
+What is nutrition?;;;;;False;False;de;en;;;True;1.0;0.0644;True;de;Answer in German.;¿Qué es la nutrición?;es;True;Was ist Ernährung?;de;True;Qu'est-ce que la nutrition ?;fr;True
+How do I write clean code?;;;;;False;False;de;en;;;True;0.8462;0.0634;True;de;Answer in German.;¿Cómo escribo código limpio?;es;True;Wie schreibe ich sauberen Code?;de;True;Comment écrire du code propre ?;fr;True
+What is astronomy?;;;;;False;False;de;en;;;True;1.0;0.0678;True;de;Answer in German.;¿Qué es la astronomía?;es;True;Was ist Astronomie?;de;True;Qu'est-ce que l'astronomie ?;fr;True
+How does the heart work?;;;;;False;False;de;en;;;True;0.9286;0.0735;True;de;Answer in German.;¿Cómo funciona el corazón?;es;True;Wie funktioniert das Herz?;de;True;Comment fonctionne le cœur ?;fr;True
+What is anthropology?;;;;;False;False;de;en;;;True;1.0;0.0554;True;de;Answer in German.;¿Qué es la antropología?;es;True;Was ist Anthropologie?;de;True;Qu'est-ce que l'anthropologie ?;fr;True
+How do I create good habits?;;;;;False;False;de;en;;;True;0.75;0.0741;True;de;Answer in German.;¿Cómo creo buenos hábitos?;es;True;Wie entwickle ich gute Gewohnheiten?;de;True;Comment prendre de bonnes habitudes ?;fr;True
+What is calculus?;;;;;False;False;de;en;;;True;1.0;0.0543;True;de;Answer in German.;¿Qué es el cálculo?;es;True;Was ist Infinitesimalrechnung?;de;True;Qu'est-ce que le calcul infinitésimal ?;fr;True
+How does music theory work?;;;;;False;False;de;en;;;True;0.96;0.0699;True;de;Answer in German.;¿Cómo funciona la teoría musical?;es;True;Wie funktioniert Musiktheorie?;de;True;Comment fonctionne la théorie musicale ?;fr;True
+What is psychology?;;;;;False;False;de;en;;;True;0.9667;0.0567;True;de;Answer in German.;¿Qué es la psicología?;es;True;Was ist Psychologie?;de;True;Qu'est-ce que la psychologie ?;fr;True
+How do I overcome procrastination?;;;;;False;False;de;en;;;True;0.8667;0.0469;True;de;Answer in German.;¿Cómo supero la procrastinación?;es;True;Wie überwinde ich Prokrastination?;de;True;Comment vaincre la procrastination ?;fr;True
+What is geometry?;;;;;False;False;de;en;;;True;1.0;0.0785;True;de;Answer in German.;¿Qué es la geometría?;es;True;Was ist Geometrie?;de;True;Qu'est-ce que la géométrie ?;fr;True
+How does advertising work?;;;;;False;False;de;en;;;True;0.963;0.0774;True;de;Answer in German.;¿Cómo funciona la publicidad?;es;True;Wie funktioniert Werbung?;de;True;Comment fonctionne la publicité ?;fr;True
+What is ecology?;;;;;False;False;de;en;;;True;0.9545;0.0563;True;de;Answer in German.;¿Qué es la ecología?;es;True;Was ist Ökologie?;de;True;Qu'est-ce que l'écologie ?;fr;True
+How do I improve communication?;;;;;False;False;de;en;;;True;0.7647;0.0417;True;de;Answer in German.;¿Cómo mejoro la comunicación?;es;True;Wie verbessere ich die Kommunikation?;de;True;Comment améliorer la communication ?;fr;True
+What is statistics?;;;;;False;False;de;en;;;True;0.9524;0.0738;True;de;Answer in German.;¿Qué es la estadística?;es;True;Was ist Statistik?;de;True;Qu'est-ce que la statistique ?;fr;True
+How does respiration work?;;;;;False;False;de;en;;;True;0.9615;0.0691;True;de;Answer in German.;¿Cómo funciona la respiración?;es;True;Wie funktioniert die Atmung?;de;True;Comment fonctionne la respiration ?;fr;True
+What is ethics?;;;;;False;False;de;en;;;True;1.0;0.0647;True;de;Answer in German.;¿Qué es la ética?;es;True;Was ist Ethik?;de;True;Qu'est-ce que l'éthique ?;fr;True
+How do I practice mindfulness?;;;;;False;False;de;en;;;True;0.9333;0.0615;True;de;Answer in German.;¿Cómo practico la atención plena?;es;True;Wie übe ich Achtsamkeit?;de;True;Comment pratiquer la pleine conscience ?;fr;True
+What is linguistics?;;;;;False;False;de;en;;;True;1.0;0.0559;True;de;Answer in German.;¿Qué es la lingüística?;es;True;Was ist Linguistik?;de;True;Qu'est-ce que la linguistique ?;fr;True
+How does digestion work?;;;;;False;False;de;en;;;True;1.0;0.0784;True;de;Answer in German.;¿Cómo funciona la digestión?;es;True;Wie funktioniert die Verdauung?;de;True;Comment fonctionne la digestion ?;fr;True
+What is mythology?;;;;;False;False;de;en;;;True;1.0;0.0588;True;de;Answer in German.;¿Qué es la mitología?;es;True;Was ist Mythologie?;de;True;Qu'est-ce que la mythologie ?;fr;True
+How do I build resilience?;;;;;False;False;de;en;;;True;0.8462;0.0584;True;de;Answer in German.;¿Cómo desarrollo resiliencia?;es;True;Wie werde ich resilienter?;de;True;Comment développer sa résilience ?;fr;True
+What is probability?;;;;;False;False;de;en;;;True;0.9655;0.0517;True;de;Answer in German.;¿Qué es la probabilidad?;es;True;Was ist Wahrscheinlichkeit?;de;True;Qu'est-ce que la probabilité ?;fr;True
+How does metabolism work?;;;;;False;False;de;en;;;True;0.9545;0.059;True;de;Answer in German.;¿Cómo funciona el metabolismo?;es;True;Wie funktioniert der Stoffwechsel?;de;True;Comment fonctionne le métabolisme ?;fr;True
+What is architecture?;;;;;False;False;de;en;;;True;0.963;0.0777;True;de;Answer in German.;¿Qué es la arquitectura?;es;True;Was ist Architektur?;de;True;Qu'est-ce que l'architecture ?;fr;True
+How do I develop empathy?;;;;;False;False;de;en;;;True;0.9444;0.0399;True;de;Answer in German.;¿Cómo desarrollo empatía?;es;True;Wie entwickle ich Empathie?;de;True;Comment développer l'empathie ?;fr;True
+What is algebra?;;;;;False;False;de;en;;;True;0.96;0.0592;True;de;Answer in German.;¿Qué es el álgebra?;es;True;Was ist Algebra?;de;True;Qu'est-ce que l'algèbre ?;fr;True
+How does the immune system work?;;;;;False;False;de;en;;;True;0.9412;0.0727;True;de;Answer in German.;¿Cómo funciona el sistema inmunitario?;es;True;Wie funktioniert das Immunsystem?;de;True;Comment fonctionne le système immunitaire ?;fr;True
+What is political science?;;;;;False;False;de;en;;;True;1.0;0.0515;True;de;Answer in German.;¿Qué es la ciencia política?;es;True;Was ist Politikwissenschaft?;de;True;Qu'est-ce que la science politique ?;fr;True
+How do I set boundaries?;;;;;False;False;de;en;;;True;0.7727;0.0429;True;de;Answer in German.;¿Cómo pongo límites?;es;True;Wie setze ich Grenzen?;de;True;Comment poser des limites ?;fr;True
+What is thermodynamics?;;;;;False;False;de;en;;;True;1.0;0.08;True;de;Answer in German.;¿Qué es la termodinámica?;es;True;Was ist Thermodynamik?;de;True;Qu'est-ce que la thermodynamique ?;fr;True
+How does photographic memory work?;;;;;False;False;de;en;;;True;0.9167;0.0429;True;de;Answer in German.;¿Cómo funciona la memoria fotográfica?;es;True;Wie funktioniert ein fotografisches Gedächtnis?;de;True;Comment fonctionne la mémoire photographique ?;fr;True
+What is journalism?;;;;;False;False;de;en;;;True;1.0;0.071;True;de;Answer in German.;¿Qué es el periodismo?;es;True;Was ist Journalismus?;de;True;Qu'est-ce que le journalisme ?;fr;True
+How do I manage time better?;;;;;False;False;de;en;;;True;0.8667;0.0638;True;de;Answer in German.;¿Cómo administro mejor mi tiempo?;es;True;Wie teile ich meine Zeit besser ein?;de;True;Comment mieux gérer mon temps ?;fr;True
+What is oceanography?;;;;;False;False;de;en;;;True;1.0;0.0627;True;de;Answer in German.;¿Qué es la oceanografía?;es;True;Was ist Ozeanographie?;de;True;Qu'est-ce que l'océanographie ?;fr;True
+How do algorithms work?;;;;;False;False;de;en;;;True;1.0;0.0671;True;de;Answer in German.;¿Cómo funcionan los algoritmos?;es;True;Wie funktionieren Algorithmen?;de;True;Comment fonctionnent les algorithmes ?;fr;True
+What is cybersecurity?;;;;;False;False;de;en;;;True;1.0;0.0625;True;de;Answer in German.;¿Qué es la ciberseguridad?;es;True;Was ist Cybersicherheit?;de;True;Qu'est-ce que la cybersécurité ?;fr;True
+How does translation work?;;;;;False;False;de;en;;;True;0.9474;0.0735;True;de;Answer in German.;¿Cómo funciona la traducción?;es;True;Wie funktioniert Übersetzung?;de;True;Comment fonctionne la traduction ?;fr;True
+What is critical thinking?;;;;;False;False;de;en;;;True;0.8889;0.0578;True;de;Answer in German.;¿Qué es el pensamiento crítico?;es;True;Was ist kritisches Denken?;de;True;Qu'est-ce que l'esprit critique ?;fr;True

@@ -1,0 +1,45 @@
+
+[fr]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_fr/eval_heldout.json
+  [OK   ] |v| del eval 0.0823 == |v| del checkpoint 0.0823 (escala 1)
+  [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_fr/lang_patch_best_train.pt
+  [OK   ] anchor goal_all
+  [OK   ] target_lang fr
+  [OK   ] modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507
+  [OK   ] held-out: el parche cae en todos y solo los tokens de la pregunta (4/4) []
+  [OK   ] baseline en ingles 4/4
+  [OK   ] control nativo en fr: 4/4
+  parche en fr: 0/4
+  [OK   ] cross_lang_idioma: n_patched == largo del goal en 24/24 (escala 0 -> 0) []
+  [OK   ] cross_lang_romance: n_patched == largo del goal en 16/16 (escala 0 -> 0) []
+
+[es]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_es/eval_heldout.json
+  [OK   ] |v| del eval 0.0770 == |v| del checkpoint 0.0770 (escala 1)
+  [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt
+  [OK   ] anchor goal_all
+  [OK   ] target_lang es
+  [OK   ] modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507
+  [OK   ] held-out: el parche cae en todos y solo los tokens de la pregunta (4/4) []
+  [OK   ] baseline en ingles 4/4
+  [OK   ] control nativo en es: 4/4
+  parche en es: 0/4
+  [OK   ] cross_lang_idioma: n_patched == largo del goal en 24/24 (escala 0 -> 0) []
+  [OK   ] cross_lang_romance: n_patched == largo del goal en 16/16 (escala 0 -> 0) []
+
+[de]
+  [OK   ] existe algebra/runs/qwen3_v10_smoke/alg_de/eval_heldout.json
+  [OK   ] |v| del eval 0.0840 == |v| del checkpoint 0.0840 (escala 1)
+  [OK   ] parche /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/alg_de/lang_patch_best_train.pt
+  [OK   ] anchor goal_all
+  [OK   ] target_lang de
+  [OK   ] modelo /home/sagemaker-user/user-default-efs/modelos/Qwen3-4B-Instruct-2507
+  [OK   ] held-out: el parche cae en todos y solo los tokens de la pregunta (4/4) []
+  [OK   ] baseline en ingles 4/4
+  [OK   ] control nativo en de: 4/4
+  parche en de: 0/4
+  [OK   ] cross_lang_idioma: n_patched == largo del goal en 24/24 (escala 0 -> 0) []
+  [OK   ] cross_lang_romance: n_patched == largo del goal en 16/16 (escala 0 -> 0) []
+
+======================================================================
+controles A: 0 FALLA, 0 AVISO

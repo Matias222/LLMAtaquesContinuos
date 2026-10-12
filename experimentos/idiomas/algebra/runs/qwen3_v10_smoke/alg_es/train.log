@@ -1,0 +1,71 @@
+Gate de calidad sobre train: 542/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.03it/s]
+
+Train: 542  |  Held-out: 112  |  validacion: 2
+L2: 0.0915  |  step_size: 0.00025 (cosine)  |  posiciones: 1  |  anchor: goal_all
+  [prompt] parche sobre 13..22 (10 tokens) = ['On', ' which', ' continent', ' is', ' the', ' Amazon', ' rain', 'forest', ' located', '?']
+        antes: ['user', '\n']   despues: ['<|im_end|>', '\n']
+  [prompt_de] parche sobre 13..26 (14 tokens) = ['Auf', ' wel', 'chem', ' Kont', 'inent', ' liegt', ' der', ' Amazon', 'as', '-', 'Reg', 'en', 'wald', '?']
+        antes: ['user', '\n']   despues: ['<|im_end|>', '\n']
+  [prompt_fr] parche sobre 13..23 (11 tokens) = ['Sur', ' quel', ' continent', ' se', ' trouve', ' la', ' for', 'êt', ' amazon', 'ienne', ' ?']
+        antes: ['user', '\n']   despues: ['<|im_end|>', '\n']
+  largo del goal en train: media 10.3  min 4  max 26  (el mismo v se suma en cada posicion)
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_de', 'prompt_fr']
+  prompt: 542/542 filas de train usables
+  prompt_de: 542/542 filas de train usables
+  prompt_fr: 542/542 filas de train usables
+Epochs: 1  |  batch: 28 (20 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/20] CE=6.4513  norma=0.012649  lr=2.50e-04
+  [batch 2/20] CE=6.5154  norma=0.020473  lr=2.48e-04
+  [batch 3/20] CE=6.7215  norma=0.028171  lr=2.43e-04
+  [batch 4/20] CE=6.6760  norma=0.035756  lr=2.35e-04
+  [batch 5/20] CE=6.4807  norma=0.042761  lr=2.24e-04
+  [batch 6/20] CE=5.9810  norma=0.047493  lr=2.10e-04
+  [batch 7/20] CE=5.8828  norma=0.052865  lr=1.93e-04
+  [batch 8/20] CE=6.2020  norma=0.058058  lr=1.75e-04
+  [batch 9/20] CE=5.9913  norma=0.062190  lr=1.56e-04
+  [batch 10/20] CE=5.7039  norma=0.065749  lr=1.35e-04
+  [batch 11/20] CE=5.8850  norma=0.068994  lr=1.15e-04
+  [batch 12/20] CE=6.0398  norma=0.071010  lr=9.43e-05
+  [batch 13/20] CE=6.6166  norma=0.073015  lr=7.48e-05
+  [batch 14/20] CE=6.2005  norma=0.074513  lr=5.66e-05
+  [batch 15/20] CE=6.3346  norma=0.075650  lr=4.03e-05
+  [batch 16/20] CE=7.1382  norma=0.076340  lr=2.64e-05
+  [batch 17/20] CE=6.1096  norma=0.076742  lr=1.51e-05
+  [batch 18/20] CE=6.6481  norma=0.076931  lr=6.77e-06
+  [batch 19/20] CE=6.1974  norma=0.076970  lr=1.70e-06
+  [batch 20/20] CE=6.1000  norma=0.076970  lr=0.00e+00
+  held-out head CE por entrada: prompt=7.7969  prompt_de=10.3438  prompt_fr=5.5156
+
+Epoch 1: CE train (trayectoria)=6.2938  norma=0.076970
+  CE head del checkpoint:  train=9.5521   held-out=7.8854   brecha=-1.6667
+  held-out CE  head(primeros 5): con parche=7.8854  sin parche=8.3229  delta=-0.4375
+               toda la respuesta      : con parche=1.0781  sin parche=1.1374  delta=-0.0592
+  * mejor HELD-OUT hasta ahora (head CE 7.8854)
+  * mejor TRAIN hasta ahora (head CE 9.5521)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 7.8854)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    9.5521     7.8854   -1.6667    0.0770  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 7.8854)  -> algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 9.5521)  -> algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.076970
+  posicion 0: 0.076970
+
+Guardado: algebra/runs/qwen3_v10_smoke/alg_es/lang_patch.pt
+          algebra/runs/qwen3_v10_smoke/alg_es/lang_metadata.pt

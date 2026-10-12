@@ -1,0 +1,40 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 60.38it/s]
+Held-out: 4  |  parche: algebra/runs/qwen3_v10_smoke/alg_es/lang_patch_best_train.pt  |  escala: 1.0
+======================================================================
+eval:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+eval:  25%|██▌       | 1/4 [00:04<00:13,  4.48s/it]eval:  50%|█████     | 2/4 [00:13<00:14,  7.38s/it]eval:  75%|███████▌  | 3/4 [00:23<00:08,  8.37s/it]eval: 100%|██████████| 4/4 [00:23<00:00,  5.27s/it]eval: 100%|██████████| 4/4 [00:23<00:00,  5.99s/it]
+
+======================================================================
+condicion                   is_french   fr_score   accuracy    leak
+----------------------------------------------------------------------
+baseline  M(q)                  0.0%      0.125      nan%      0%
+referencia  M([FR;q])           0.0%      0.125      nan%      0%
+parche  M(q+v)                  0.0%      0.125      nan%      0%
+----------------------------------------------------------------------
+celda target: es   (celda_ok = idioma es Y NO mayusculas)
+condicion                    celda_ok     idioma      mayus
+baseline  M(q)                  0.0%       0.0%       0.0%
+referencia  M([FR;q])          75.0%      75.0%       0.0%
+parche  M(q+v)                  0.0%       0.0%       0.0%
+----------------------------------------------------------------------
+CE target FR                sin parche  con parche     delta
+head (primeros 5)               7.2422      7.1797   -0.0625
+tail (el resto)                 0.5242      0.5330   +0.0088
+toda la respuesta               1.4126      1.4182   +0.0056
+  el head es donde vive la decision de idioma; el tail casi no deberia moverse
+  tokens parcheados por prompt (anchor goal_all): media 7.0
+
+======================================================================
+PROMPTS ABIERTOS  (n=4, sin respuesta verificable)
+  overlap de contenido parche vs referencia : 0.044
+  overlap baseline(EN) vs referencia        : 0.044
+  control de azar (parche vs otra pregunta) : 0.000
+  frances por tercio, parche     : [0.13, 0.13, 0.13]
+  frances por tercio, referencia : [0.87, 0.67, 0.76]
+  si el parche cae en el tercer tercio, el efecto es local y decae
+======================================================================
+
+Reportes: algebra/runs/qwen3_v10_smoke/alg_es/eval_open.json
+          algebra/runs/qwen3_v10_smoke/alg_es/eval_open.md
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10_smoke/gen_cache: reusadas 8, generadas 4
