@@ -1,0 +1,417 @@
+{
+ "patch": "algebra/runs/qwen3_v10/alg_fr/lang_patch_best_train.pt",
+ "v_norm": 0.922789990901947,
+ "vocab_norm_mean": 1.0885443687438965,
+ "n_unique": 1468,
+ "sanity_self": 1.0,
+ "gap_median": 0.9308655261993408,
+ "pct_norma_vocab": 0.09049970656633377,
+ "pct_norma_preguntas": 0.024523161351680756,
+ "norma_mediana_preguntas": 1.121228575706482,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.294811320754717,
+   "cambia_cos": 0.2959905660377358,
+   "destinos_l2": [
+    [
+     "ᐟ",
+     161
+    ],
+    [
+     ".\n",
+     32
+    ],
+    [
+     " présenté",
+     12
+    ],
+    [
+     " Country",
+     6
+    ],
+    [
+     " Largest",
+     3
+    ],
+    [
+     " ersten",
+     3
+    ],
+    [
+     " Species",
+     2
+    ],
+    [
+     " était",
+     2
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.13922155688622753,
+   "cambia_cos": 0.1437125748502994,
+   "destinos_l2": [
+    [
+     "ᐟ",
+     132
+    ],
+    [
+     ".\n",
+     33
+    ],
+    [
+     " présenté",
+     14
+    ],
+    [
+     " Invent",
+     3
+    ],
+    [
+     "racuse",
+     1
+    ],
+    [
+     "Ti",
+     1
+    ],
+    [
+     "-control",
+     1
+    ],
+    [
+     " jusqu",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.10827532869296211,
+   "cambia_cos": 0.09899458623356536,
+   "destinos_l2": [
+    [
+     "ᐟ",
+     86
+    ],
+    [
+     ".\n",
+     32
+    ],
+    [
+     " présenté",
+     15
+    ],
+    [
+     "Er",
+     2
+    ],
+    [
+     "Dr",
+     1
+    ],
+    [
+     "Gas",
+     1
+    ],
+    [
+     " était",
+     1
+    ],
+    [
+     "Auf",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.012971698113207548,
+   "cambia_cos": 0.02240566037735849,
+   "destinos_l2": [
+    [
+     " Which",
+     10
+    ],
+    [
+     " guess",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.002245508982035928,
+   "cambia_cos": 0.002245508982035928,
+   "destinos_l2": [
+    [
+     "Man",
+     1
+    ],
+    [
+     " Detect",
+     1
+    ],
+    [
+     "_H",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_de",
+   "n_tok": 1293,
+   "cambia_l2": 0.0038669760247486465,
+   "cambia_cos": 0.0038669760247486465,
+   "destinos_l2": [
+    [
+     " O",
+     3
+    ],
+    [
+     "Met",
+     1
+    ],
+    [
+     "トレ",
+     1
+    ]
+   ]
+  }
+ ]
+}

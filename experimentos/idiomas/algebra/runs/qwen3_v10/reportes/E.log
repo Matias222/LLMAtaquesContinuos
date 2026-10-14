@@ -1,0 +1,65 @@
+# Etapa E: tests de comportamiento
+
+## Resta q_L − v (equivale a las Tablas 5 y 6)
+
+Quedan: la respuesta sigue en el idioma de la pregunta o sin idioma identificable.
+
+| pregunta en | restado | n | % quedan | destinos (%) | acc |
+|---|---|---|---|---|---|
+| fr | — | 112 | 100 |  | 84 |
+| fr | -1·fr | 112 | 62 | ro 24, it 5, es 4, de 3 | 76 |
+| fr | -1·es | 112 | 90 | ro 9, es 1 | 60 |
+| fr | -1·de | 112 | 100 |  | 62 |
+| fr | -1·rand0_fr | 112 | 100 |  | 76 |
+| fr | -1·rand1_fr | 112 | 97 | it 3 | 80 |
+| fr | -1·rand2_fr | 112 | 94 | ro 5, it 1 | 74 |
+| es | — | 112 | 97 | ca 2, gl 1 | 84 |
+| es | -1·fr | 112 | 93 | pt 4, ro 4 | 79 |
+| es | -1·es | 112 | 52 | ro 31, pt 12, ca 3, en 2 | 45 |
+| es | -1·de | 112 | 89 | ro 4, ca 4, pt 2 | 46 |
+| es | -1·rand0_es | 112 | 95 | en 3, ca 2, it 1 | 78 |
+| es | -1·rand1_es | 112 | 96 | it 2, ca 2 | 79 |
+| es | -1·rand2_es | 112 | 93 | ro 4, ca 2, pt 1 | 71 |
+| de | — | 112 | 98 | es 1, en 1 | 84 |
+| de | -1·fr | 112 | 97 | es 2, en 1 | 77 |
+| de | -1·es | 112 | 89 | en 9, nl 2 | 57 |
+| de | -1·de | 112 | 7 | en 63, nl 10, ro 7, es 6 | 27 |
+| de | -1·rand0_de | 112 | 95 | en 4, es 2 | 71 |
+| de | -1·rand1_de | 112 | 97 | en 3 | 73 |
+| de | -1·rand2_de | 112 | 96 | en 4, es 1 | 68 |
+
+## Identificación de idioma (Tabla 7)
+
+| condición | n | dice en | dice fr | dice es | dice de | ninguno |
+|---|---|---|---|---|---|---|
+| lang_id · prompt | 112 | 100 | 0 | 0 | 0 | 0 |
+| lang_id · prompt +1*fr | 112 | 0 | 88 | 0 | 0 | 12 |
+| lang_id · prompt +1*es | 112 | 0 | 0 | 97 | 0 | 2 |
+| lang_id · prompt +1*de | 112 | 0 | 0 | 0 | 99 | 1 |
+| lang_id · prompt +1*rand0 | 112 | 99 | 1 | 0 | 0 | 0 |
+| lang_id · prompt_fr | 112 | 0 | 100 | 0 | 0 | 0 |
+| lang_id · prompt_es | 112 | 0 | 0 | 100 | 0 | 0 |
+| lang_id · prompt_de | 112 | 0 | 0 | 0 | 100 | 0 |
+
+## Resta contra una instrucción (Tabla 8)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_fr · prompt | 112 | 100 | 0 | 0 | 82 |
+| instr_fr · prompt -1*fr | 112 | 100 | 0 | 0 | 79 |
+| instr_fr · prompt -1*es | 112 | 99 | 1 | 0 | 54 |
+| instr_fr · prompt -1*rand0 | 112 | 99 | 0 | 0 | 82 |
+
+## Instrucción en conflicto (Tabla 9)
+
+| condición | n | % fr | % en | % sin idioma | acc |
+|---|---|---|---|---|---|
+| instr_en · prompt_fr | 112 | 4 | 96 | 0 | 83 |
+| instr_en · prompt | 112 | 0 | 100 | 0 | 98 |
+| instr_en · prompt +1*fr | 112 | 4 | 96 | 0 | 90 |
+| instr_en · prompt +1*rand0 | 112 | 0 | 100 | 0 | 97 |
+| plain · prompt | 112 | 0 | 99 | 0 | 99 |
+| plain · prompt +1*fr | 112 | 97 | 2 | 0 | 85 |
+
+
+reporte: algebra/runs/qwen3_v10/reportes/E.md

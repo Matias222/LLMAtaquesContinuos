@@ -1,0 +1,85 @@
+parche algebra/runs/qwen3_v10/alg_de/lang_patch_best_train.pt  ||v|| 0.9977  ||e|| medio del vocab 1.0885  (ratio 0.917)
+||v|| supera la norma de 15.9% de los tokens del vocabulario y de 10.6% de los tokens de las preguntas (mediana preguntas 1.1199)
+held-out 112 filas (idx 588..699)  |  entradas ['prompt', 'prompt_es', 'prompt_fr']  |  tokens unicos 1388
+sanity: vecino l2 de W[t] sin parche == t en 100.0%
+gap (distancia al 2do vecino): mediana 0.928  p10 0.622  p90 1.199  |  ||v|| < gap/2 en 0.0%
+
+vec       a  entrada     n_tok  cambia l2  cambia cos  destinos l2 mas frecuentes
+--------------------------------------------------------------------------------------------------------------
+v       0.5  prompt        848       0.0%        0.0%  
+v       0.5  prompt_es    1336       0.0%        0.0%  
+v       0.5  prompt_fr    1410       0.0%        0.0%  
+v         1  prompt        848       0.0%        0.0%  
+v         1  prompt_es    1336       0.0%        0.0%  
+v         1  prompt_fr    1410       0.0%        0.0%  
+v         2  prompt        848       0.0%        0.0%  
+v         2  prompt_es    1336       0.0%        0.0%  
+v         2  prompt_fr    1410       0.0%        0.0%  
+v         4  prompt        848       0.0%        0.0%  
+v         4  prompt_es    1336       0.0%        0.0%  
+v         4  prompt_fr    1410       0.0%        0.0%  
+v         8  prompt        848      60.8%       67.3%  '픕'x445, ' wich'x10, 'DidChange'x5, '´s'x4, '_species'x2
+v         8  prompt_es    1336      47.1%       52.9%  '픕'x577, 'Präs'x21, ' Qui'x8, '_por'x5, ' detects'x3
+v         8  prompt_fr    1410      41.1%       48.7%  '픕'x552, ' Qui'x8, 'Präs'x4, '.Par'x3, '뭅'x3
+rand    0.5  prompt        848       0.0%        0.0%  
+rand    0.5  prompt_es    1336       0.0%        0.0%  
+rand    0.5  prompt_fr    1410       0.0%        0.0%  
+rand      1  prompt        848       0.0%        0.0%  
+rand      1  prompt_es    1336       0.0%        0.0%  
+rand      1  prompt_fr    1410       0.0%        0.0%  
+rand      2  prompt        848       0.0%        0.0%  
+rand      2  prompt_es    1336       0.0%        0.0%  
+rand      2  prompt_fr    1410       0.0%        0.0%  
+rand      4  prompt        848       0.0%        0.0%  
+rand      4  prompt_es    1336       0.0%        0.0%  
+rand      4  prompt_fr    1410       0.0%        0.0%  
+rand      8  prompt        848       3.3%        5.0%  '_H'x16, ' O'x6, ' NULL'x2, 'Islamic'x1, 'Å'x1
+rand      8  prompt_es    1336       1.0%        0.5%  ' están'x6, ' NULL'x2, 'Man'x1, '_H'x1, 'トレ'x1
+rand      8  prompt_fr    1410       1.1%        1.1%  'トレ'x6, ' O'x4, ' Simple'x1, ' como'x1, '_H'x1
+
+## prompt  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? | What is the speed of light in vacuum in kilometers per second, rounded? |
+| 589 | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? | Who authored The Communist Manifesto? |
+| 590 | Reveal the largest lake in South America. | Reveal the largest lake in South America. | Reveal the largest lake in South America. |
+| 591 | Lay out how the Moon formed. | Lay out how the Moon formed. | Lay out how the Moon formed. |
+| 592 | How does the eye focus light? | How does the eye focus light? | How does the eye focus light? |
+| 593 | Tallest tree species? | Tallest tree species? | Tallest tree species? |
+| 594 | Wait, who proposed continental drift? | Wait, who proposed continental drift? | Wait, who proposed continental drift? |
+| 595 | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? | In what year did the Islamic Revolution take place in Iran? |
+| 596 | Who invented the electric battery? | Who invented the electric battery? | Who invented the electric battery? |
+| 597 | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. | Pinpoint the capital of Armenia. |
+
+## prompt_es  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? | ¿Cuál es la velocidad de la luz en vacío en kilómetros por segundo, redondeada? |
+| 589 | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? | ¿Quién escribió el Manifiesto comunista? |
+| 590 | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. | Revela el lago más grande de Sudamérica. |
+| 591 | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. | Expón cómo se formó la Luna. |
+| 592 | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? | ¿Cómo enfoca la luz el ojo? |
+| 593 | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? | ¿Especie de árbol más alta? |
+| 594 | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? | Espera, ¿quién propuso la deriva continental? |
+| 595 | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? | ¿En qué año tuvo lugar la Revolución Islámica en Irán? |
+| 596 | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? | ¿Quién inventó la pila eléctrica? |
+| 597 | Ubica la capital de Armenia. | Ubica la capital de Armenia. | Ubica la capital de Armenia. |
+
+## prompt_fr  (a=1, parche v)
+
+| # | original | vecino l2 | vecino cos |
+|---|---|---|---|
+| 588 | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? | Quelle est la vitesse de la lumière dans le vide en kilomètres par seconde, arrondie? |
+| 589 | Qui a rédigé le Manifeste du parti communiste ? | Qui a rédigé le Manifeste du parti communiste ? | Qui a rédigé le Manifeste du parti communiste ? |
+| 590 | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. | Révélez le plus grand lac d'Amérique du Sud. |
+| 591 | Exposez la formation de la Lune. | Exposez la formation de la Lune. | Exposez la formation de la Lune. |
+| 592 | Comment l'œil concentre-t-il la lumière ? | Comment l'œil concentre-t-il la lumière ? | Comment l'œil concentre-t-il la lumière ? |
+| 593 | Espèce d'arbre la plus haute ? | Espèce d'arbre la plus haute ? | Espèce d'arbre la plus haute ? |
+| 594 | Attends, qui a proposé la dérive des continents ? | Attends, qui a proposé la dérive des continents ? | Attends, qui a proposé la dérive des continents ? |
+| 595 | En quelle année a eu lieu la révolution islamique en Iran ? | En quelle année a eu lieu la révolution islamique en Iran ? | En quelle année a eu lieu la révolution islamique en Iran ? |
+| 596 | Qui a inventé la pile électrique ? | Qui a inventé la pile électrique ? | Qui a inventé la pile électrique ? |
+| 597 | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. | Situez la capitale de l'Arménie. |
+
+Guardado: algebra/runs/qwen3_v10/alg_de/nearest_token/nearest_token.json  algebra/runs/qwen3_v10/alg_de/nearest_token/nearest_token.md

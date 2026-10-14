@@ -1,0 +1,477 @@
+{
+ "patch": "algebra/runs/qwen3_v10/alg_de/lang_patch_best_train.pt",
+ "v_norm": 0.9977103471755981,
+ "vocab_norm_mean": 1.0885443687438965,
+ "n_unique": 1388,
+ "sanity_self": 1.0,
+ "gap_median": 0.9276800155639648,
+ "pct_norma_vocab": 0.15889206528663635,
+ "pct_norma_preguntas": 0.10590778291225433,
+ "norma_mediana_preguntas": 1.1199487447738647,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.6084905660377359,
+   "cambia_cos": 0.6733490566037735,
+   "destinos_l2": [
+    [
+     "픕",
+     445
+    ],
+    [
+     " wich",
+     10
+    ],
+    [
+     "DidChange",
+     5
+    ],
+    [
+     "´s",
+     4
+    ],
+    [
+     "_species",
+     2
+    ],
+    [
+     " Birth",
+     2
+    ],
+    [
+     " ihre",
+     2
+    ],
+    [
+     "(author",
+     2
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.4708083832335329,
+   "cambia_cos": 0.5291916167664671,
+   "destinos_l2": [
+    [
+     "픕",
+     577
+    ],
+    [
+     "Präs",
+     21
+    ],
+    [
+     " Qui",
+     8
+    ],
+    [
+     "_por",
+     5
+    ],
+    [
+     " detects",
+     3
+    ],
+    [
+     "(RuntimeObject",
+     2
+    ],
+    [
+     " india",
+     2
+    ],
+    [
+     "뭅",
+     2
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.41134751773049644,
+   "cambia_cos": 0.48652482269503544,
+   "destinos_l2": [
+    [
+     "픕",
+     552
+    ],
+    [
+     " Qui",
+     8
+    ],
+    [
+     "Präs",
+     4
+    ],
+    [
+     ".Par",
+     3
+    ],
+    [
+     "뭅",
+     3
+    ],
+    [
+     "(org",
+     2
+    ],
+    [
+     "(bar",
+     1
+    ],
+    [
+     "(RuntimeObject",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.5,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0330188679245283,
+   "cambia_cos": 0.049528301886792456,
+   "destinos_l2": [
+    [
+     "_H",
+     16
+    ],
+    [
+     " O",
+     6
+    ],
+    [
+     " NULL",
+     2
+    ],
+    [
+     "Islamic",
+     1
+    ],
+    [
+     "Å",
+     1
+    ],
+    [
+     "トレ",
+     1
+    ],
+    [
+     " Review",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_es",
+   "n_tok": 1336,
+   "cambia_l2": 0.010479041916167664,
+   "cambia_cos": 0.005239520958083832,
+   "destinos_l2": [
+    [
+     " están",
+     6
+    ],
+    [
+     " NULL",
+     2
+    ],
+    [
+     "Man",
+     1
+    ],
+    [
+     "_H",
+     1
+    ],
+    [
+     "トレ",
+     1
+    ],
+    [
+     " Detect",
+     1
+    ],
+    [
+     " train",
+     1
+    ],
+    [
+     " O",
+     1
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 8.0,
+   "col": "prompt_fr",
+   "n_tok": 1410,
+   "cambia_l2": 0.011347517730496455,
+   "cambia_cos": 0.011347517730496455,
+   "destinos_l2": [
+    [
+     "トレ",
+     6
+    ],
+    [
+     " O",
+     4
+    ],
+    [
+     " Simple",
+     1
+    ],
+    [
+     " como",
+     1
+    ],
+    [
+     "_H",
+     1
+    ],
+    [
+     " Analy",
+     1
+    ],
+    [
+     " cr",
+     1
+    ],
+    [
+     " animal",
+     1
+    ]
+   ]
+  }
+ ]
+}
