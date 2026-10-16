@@ -1,0 +1,12 @@
+
+=== instr_en_post_ref | prompt_fr
+  [588] 25 tok  antes='user<|end_header_id|>\n\n'  tramo=['Qu', 'elle', ' est', ' la', ' v', 'itesse', ' de', ' la', ' lum', 'ière', ' dans', ' le', ' vide', ' en', ' kil', 'om', 'ètres', ' par', ' se', 'conde', ',', ' arr', 'ond', 'ie', '?']  despues=' Please respond to'
+  [589] 13 tok  antes='user<|end_header_id|>\n\n'  tramo=['Qui', ' a', ' ré', 'dig', 'é', ' le', ' Manifest', 'e', ' du', ' parti', ' communist', 'e', '?']  despues=' Please respond to'
+  [590] 14 tok  antes='user<|end_header_id|>\n\n'  tramo=['Ré', 'vé', 'lez', ' le', ' plus', ' grand', ' lac', ' d', "'", 'Am', 'érique', ' du', ' Sud', '.']  despues=' Please respond to'
+
+=== instr_en_post_ref | prompt
+  [588] 15 tok  antes='user<|end_header_id|>\n\n'  tramo=['What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues=' Please respond to'
+  [589]  7 tok  antes='user<|end_header_id|>\n\n'  tramo=['Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues=' Please respond to'
+  [590]  9 tok  antes='user<|end_header_id|>\n\n'  tramo=['Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues=' Please respond to'
+
+tramos OK. Sacar --dry para correr.
