@@ -1,0 +1,33 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 64.70it/s]
+parche algebra/runs/qwen3_v10/pos_smoke/pos_h3_fr/lang_patch_best_train.pt  norma 0.1751  |  tail held-out 4 (idx 588..591)
+preset=romance  condiciones=['prompt_it a=0', 'prompt_it a=1', 'prompt_pt a=0', 'prompt_pt a=1']
+prompt_it a=0:   0%|          | 0/4 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+prompt_it a=0:  25%|██▌       | 1/4 [00:01<00:05,  1.71s/it]prompt_it a=0:  75%|███████▌  | 3/4 [00:01<00:00,  1.92it/s]prompt_it a=0: 100%|██████████| 4/4 [00:02<00:00,  2.63it/s]prompt_it a=0: 100%|██████████| 4/4 [00:02<00:00,  1.97it/s]
+prompt_it a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_it a=1:  25%|██▌       | 1/4 [00:02<00:08,  2.69s/it]prompt_it a=1:  50%|█████     | 2/4 [00:07<00:07,  3.70s/it]prompt_it a=1:  75%|███████▌  | 3/4 [00:16<00:06,  6.21s/it]prompt_it a=1: 100%|██████████| 4/4 [00:25<00:00,  7.38s/it]prompt_it a=1: 100%|██████████| 4/4 [00:25<00:00,  6.37s/it]
+prompt_pt a=0:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=0:  50%|█████     | 2/4 [00:00<00:00, 10.78it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00,  9.64it/s]prompt_pt a=0: 100%|██████████| 4/4 [00:00<00:00,  9.79it/s]
+prompt_pt a=1:   0%|          | 0/4 [00:00<?, ?it/s]prompt_pt a=1:  25%|██▌       | 1/4 [00:02<00:08,  2.72s/it]prompt_pt a=1:  50%|█████     | 2/4 [00:07<00:08,  4.02s/it]prompt_pt a=1:  75%|███████▌  | 3/4 [00:16<00:06,  6.34s/it]prompt_pt a=1: 100%|██████████| 4/4 [00:25<00:00,  7.46s/it]prompt_pt a=1: 100%|██████████| 4/4 [00:25<00:00,  6.48s/it]
+
+============================================================================================================================================
+condicion              n    fr    en    es    de    it    pt  unk  is_fr  st_fr   acc  cambio  largo  ce_fr_h  ce_en_h  leak
+--------------------------------------------------------------------------------------------------------------------------------------------
+prompt_it a=0          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  1.00     nan  568.5    7.734    5.414  0.00
+prompt_it a=1          4  0.00  0.00  0.00  0.00  1.00  0.00 0.00   0.00   1.00  1.00    0.50  552.2    6.797    5.109  0.00
+prompt_pt a=0          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  1.00     nan  558.0   10.625    6.023  0.00
+prompt_pt a=1          4  0.00  0.00  0.00  0.00  0.00  1.00 0.00   0.00   0.00  1.00    0.75  578.2   10.070    5.484  0.00
+============================================================================================================================================
+
+celda target: fr
+condicion             celda_ok    tgt  mayus
+prompt_it a=0             0.00   0.00   0.00
+prompt_it a=1             0.00   0.00   0.00
+prompt_pt a=0             0.00   0.00   0.00
+prompt_pt a=1             0.00   0.00   0.00
+ce_fr_h es la CE del head del target de ESTA celda (columna `output` del CSV), no de frances.
+fr/en/es/de/it/pt/unk: fraccion de salidas por idioma (language_verdict). cambio: salida != a=0.
+ce_*_h: CE del head del target frances / del baseline ingles bajo esa condicion.
+Lectura: it/pt no estuvieron en el entrenamiento. Si fr sube con a=1 desde las dos, la
+transferencia es a idiomas no vistos; comparar con es/de del preset idioma (mismo parche).
+
+Guardado: algebra/runs/qwen3_v10/pos_smoke/pos_h3_fr/cross_lang_romance.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10/gen_cache: reusadas 8, generadas 8

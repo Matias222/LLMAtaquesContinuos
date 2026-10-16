@@ -1,0 +1,37 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 62.41it/s]
+parche fr         norma 0.9228  forma (1, 1, 2560)  anchor goal_all
+parche q3         norma 0.1135  forma (1, 3, 2560)  anchor goal
+parche h3         norma 0.1751  forma (1, 3, 2560)  anchor header
+parche rand0      norma 0.9228  forma (1, 1, 2560)  anchor goal_all
+parche rand0_q3   norma 0.1135  forma (1, 3, 2560)  anchor goal
+parche rand0_h3   norma 0.1751  forma (1, 3, 2560)  anchor header
+tail held-out 3  |  preset=pos_resta
+plain | prompt_fr:   0%|          | 0/3 [00:00<?, ?it/s][lang_id] GlotLID: /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/modelos/glotlid/model.bin
+plain | prompt_fr:  33%|███▎      | 1/3 [00:01<00:03,  1.70s/it]plain | prompt_fr:  67%|██████▋   | 2/3 [00:01<00:00,  1.31it/s]plain | prompt_fr: 100%|██████████| 3/3 [00:01<00:00,  2.12it/s]plain | prompt_fr: 100%|██████████| 3/3 [00:01<00:00,  1.55it/s]
+plain | prompt_fr -1*fr:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*fr:  33%|███▎      | 1/3 [00:00<00:00,  9.60it/s]plain | prompt_fr -1*fr:  67%|██████▋   | 2/3 [00:00<00:00,  8.96it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:00<00:00,  8.50it/s]plain | prompt_fr -1*fr: 100%|██████████| 3/3 [00:00<00:00,  8.67it/s]
+plain | prompt_fr -1*q3:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*q3:  33%|███▎      | 1/3 [00:02<00:05,  2.84s/it]plain | prompt_fr -1*q3:  67%|██████▋   | 2/3 [00:07<00:03,  3.93s/it]plain | prompt_fr -1*q3: 100%|██████████| 3/3 [00:16<00:00,  6.40s/it]plain | prompt_fr -1*q3: 100%|██████████| 3/3 [00:16<00:00,  5.62s/it]
+plain | prompt_fr -1*h3:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*h3:  33%|███▎      | 1/3 [00:02<00:05,  2.95s/it]plain | prompt_fr -1*h3:  67%|██████▋   | 2/3 [00:07<00:04,  4.00s/it]plain | prompt_fr -1*h3: 100%|██████████| 3/3 [00:17<00:00,  6.47s/it]plain | prompt_fr -1*h3: 100%|██████████| 3/3 [00:17<00:00,  5.70s/it]
+plain | prompt_fr -1*rand0:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand0:  33%|███▎      | 1/3 [00:00<00:00,  9.79it/s]plain | prompt_fr -1*rand0:  67%|██████▋   | 2/3 [00:00<00:00,  9.27it/s]plain | prompt_fr -1*rand0: 100%|██████████| 3/3 [00:00<00:00,  8.78it/s]plain | prompt_fr -1*rand0: 100%|██████████| 3/3 [00:00<00:00,  8.95it/s]
+plain | prompt_fr -1*rand0_q3:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand0_q3:  33%|███▎      | 1/3 [00:02<00:05,  2.89s/it]plain | prompt_fr -1*rand0_q3:  67%|██████▋   | 2/3 [00:07<00:03,  3.99s/it]plain | prompt_fr -1*rand0_q3: 100%|██████████| 3/3 [00:16<00:00,  6.39s/it]plain | prompt_fr -1*rand0_q3: 100%|██████████| 3/3 [00:16<00:00,  5.63s/it]
+plain | prompt_fr -1*rand0_h3:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -1*rand0_h3:  33%|███▎      | 1/3 [00:02<00:05,  2.93s/it]plain | prompt_fr -1*rand0_h3:  67%|██████▋   | 2/3 [00:07<00:04,  4.04s/it]plain | prompt_fr -1*rand0_h3: 100%|██████████| 3/3 [00:17<00:00,  6.48s/it]plain | prompt_fr -1*rand0_h3: 100%|██████████| 3/3 [00:17<00:00,  5.71s/it]
+plain | prompt_fr -2*q3:   0%|          | 0/3 [00:00<?, ?it/s]plain | prompt_fr -2*q3:  33%|███▎      | 1/3 [00:02<00:05,  2.87s/it]plain | prompt_fr -2*q3:  67%|██████▋   | 2/3 [00:07<00:03,  3.94s/it]plain | prompt_fr -2*q3: 100%|██████████| 3/3 [00:16<00:00,  6.45s/it]plain | prompt_fr -2*q3: 100%|██████████| 3/3 [00:16<00:00,  5.66s/it]
+
+====================================================================================================================================
+IDIOMA DE LA SALIDA (language_verdict)
+condicion                            n    fr    en    es    de   unk   acc  cambio  largo  ce_fr_h  ce_en_h   tok
+------------------------------------------------------------------------------------------------------------------------------------
+plain | prompt_fr                    3  1.00  0.00  0.00  0.00  0.00  1.00     nan  502.7    0.011    6.125   0.0
+plain | prompt_fr -1*fr              3  1.00  0.00  0.00  0.00  0.00  1.00    1.00  599.7    1.013    5.927  17.0
+plain | prompt_fr -1*q3              3  1.00  0.00  0.00  0.00  0.00  1.00    0.67  504.0    0.011    6.167   3.0
+plain | prompt_fr -1*h3              3  1.00  0.00  0.00  0.00  0.00  1.00    0.33  504.0    0.011    6.094   3.0
+plain | prompt_fr -1*rand0           3  1.00  0.00  0.00  0.00  0.00  1.00    1.00  645.0    0.663    5.344  17.0
+plain | prompt_fr -1*rand0_q3        3  1.00  0.00  0.00  0.00  0.00  1.00    0.00  502.7    0.011    6.010   3.0
+plain | prompt_fr -1*rand0_h3        3  1.00  0.00  0.00  0.00  0.00  1.00    0.33  505.0    0.011    6.073   3.0
+plain | prompt_fr -2*q3              3  1.00  0.00  0.00  0.00  0.00  1.00    1.00  506.3    0.017    6.208   3.0
+====================================================================================================================================
+tok: posiciones parcheadas (tramo de la pregunta, o header). cambio: salida != la de sin parche.
+ce_*_h: CE de los primeros head_k tokens del target frances / del baseline ingles.
+
+Guardado: algebra/runs/qwen3_v10/pos_smoke/pos_tests/entrada_o_directiva_pos_resta.json
+[gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10/gen_cache: reusadas 9, generadas 15

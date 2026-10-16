@@ -1,0 +1,107 @@
+# Formatos: Shared vs Question-3 vs Header-3 (celda fr)
+
+Shared = algebra/runs/qwen3_v10/alg_fr; Question-3 = algebra/runs/qwen3_v10/pos_smoke/pos_q3_fr; Header-3 = algebra/runs/qwen3_v10/pos_smoke/pos_h3_fr; tests = algebra/runs/qwen3_v10/pos_smoke/pos_tests.
+
+## Formatos
+
+| formato | anchor | forma | ‖v‖ total | ‖v_i‖ por posición | epoch |
+|---|---|---|---|---|---|
+| Shared | goal_all | (1, 1, 2560) | 0.923 | 0.923 | 10 |
+| Question-3 | goal | (1, 3, 2560) | 0.114 | 0.074 / 0.063 / 0.059 | 1 |
+| Header-3 | header | (1, 3, 2560) | 0.175 | 0.103 / 0.103 / 0.097 | 1 |
+
+## Idioma y accuracy por entrada
+
+| entrada | sin parche / nativo | Shared | Question-3 | Header-3 |
+|---|---|---|---|---|
+| en sin parche | 0 / 99 | — | — | — |
+| control nativo (fr) | 100 / 84 | — | — | — |
+| en (held-out) |  | 97 / 84 | 0 / 100 | 0 / 100 |
+| es |  | 99 / 80 | 0 / 100 | 0 / 100 |
+| de |  | 94 / 71 | 0 / 100 | 0 / 100 |
+| it |  | 100 / 71 | 0 / 100 | 0 / 100 |
+| pt |  | 97 / 79 | 0 / 100 | 0 / 100 |
+| open1 (en) |  | 89 / — | 0 / — | 0 / — |
+| open2 (en) |  | 96 / — | 0 / — | 0 / — |
+| open2 (es) |  | 96 / — | 0 / — | 0 / — |
+| open2 (de) |  | 94 / — | 0 / — | 0 / — |
+
+Celdas: % francés / accuracy (— = no medido; open sin accuracy).
+
+# Tests (Shared = parche fr; rand0_q3 / rand0_h3 = azar con forma, norma y anchor de q3 / h3)
+
+## pos_conflicto
+
+| condición | n | % fr | % en | % queda en el idioma de la pregunta | destinos (%) | acc |
+|---|---|---|---|---|---|---|
+| instr_en · prompt_fr | 3 | 0 | 100 | 0 | en 100 | 100 |
+| instr_en · prompt | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*fr | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*h3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*rand0 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*rand0_q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en · prompt +1*rand0_h3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt_fr | 3 | 0 | 100 | 0 | en 100 | 100 |
+| instr_en_post · prompt | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*fr | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*h3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*rand0 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*rand0_q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post · prompt +1*rand0_h3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt_fr | 3 | 0 | 100 | 0 | en 100 | 100 |
+| instr_en_post_ref · prompt | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*fr | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*h3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*rand0 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*rand0_q3 | 3 | 0 | 100 | 100 |  | 100 |
+| instr_en_post_ref · prompt +1*rand0_h3 | 3 | 0 | 100 | 100 |  | 100 |
+| plain · prompt | 3 | 0 | 100 | 100 |  | 100 |
+| plain · prompt +1*fr | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| plain · prompt +1*q3 | 3 | 0 | 100 | 100 |  | 100 |
+| plain · prompt +1*h3 | 3 | 0 | 100 | 100 |  | 100 |
+
+## pos_directiva
+
+| condición | n | % fr | % en | % queda en el idioma de la pregunta | destinos (%) | acc |
+|---|---|---|---|---|---|---|
+| instr_fr · prompt | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| instr_fr · prompt -1*fr | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| instr_fr · prompt -1*q3 | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| instr_fr · prompt -1*h3 | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| instr_fr · prompt -1*rand0 | 3 | 100 | 0 | 0 | fr 100 | 67 |
+| instr_fr · prompt -1*rand0_q3 | 3 | 100 | 0 | 0 | fr 100 | 100 |
+| instr_fr · prompt -1*rand0_h3 | 3 | 100 | 0 | 0 | fr 100 | 100 |
+
+## pos_idioma
+
+| condición | n | dice fr | dice en | ninguno |
+|---|---|---|---|---|
+| lang_id · prompt | 3 | 0 | 100 | 0 |
+| lang_id · prompt +1*fr | 3 | 100 | 0 | 0 |
+| lang_id · prompt +1*q3 | 3 | 0 | 100 | 0 |
+| lang_id · prompt +1*h3 | 3 | 0 | 100 | 0 |
+| lang_id · prompt +1*rand0 | 3 | 0 | 100 | 0 |
+| lang_id · prompt +1*rand0_q3 | 3 | 0 | 100 | 0 |
+| lang_id · prompt +1*rand0_h3 | 3 | 0 | 100 | 0 |
+| lang_id · prompt_fr | 3 | 100 | 0 | 0 |
+
+## pos_resta
+
+| condición | n | % fr | % en | % queda en el idioma de la pregunta | destinos (%) | acc |
+|---|---|---|---|---|---|---|
+| plain · prompt_fr | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*fr | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*q3 | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*h3 | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*rand0 | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*rand0_q3 | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -1*rand0_h3 | 3 | 100 | 0 | 100 |  | 100 |
+| plain · prompt_fr -2*q3 | 3 | 100 | 0 | 100 |  | 100 |
+
+## Controles
+
+- OK: anchors y posiciones parcheadas
+

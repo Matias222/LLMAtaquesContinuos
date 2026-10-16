@@ -1,0 +1,67 @@
+Gate de calidad sobre train: 588/588 targets limpios
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.49s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.19s/it]
+
+Train: 588  |  Held-out: 112  |  validacion: 2
+L2: 0.0915  |  step_size: 0.00025 (cosine)  |  posiciones: 3
+Loss: CE sobre los primeros 8 tokens  |  entradas: ['prompt', 'prompt_es', 'prompt_de']
+  prompt: 588/588 filas de train usables
+  prompt_es: 588/588 filas de train usables
+  prompt_de: 588/588 filas de train usables
+Epochs: 1  |  batch: 28 (21 batches/epoch)  |  steps/batch: 1
+Checkpoint: mejor por CE held-out
+======================================================================
+
+######################################################################
+EPOCH 1/1
+######################################################################
+  [batch 1/21] CE=7.0162  norma=0.021909  lr=2.50e-04
+  [batch 2/21] CE=6.4626  norma=0.036711  lr=2.48e-04
+  [batch 3/21] CE=6.6430  norma=0.048437  lr=2.44e-04
+  [batch 4/21] CE=6.8088  norma=0.056174  lr=2.36e-04
+  [batch 5/21] CE=6.1825  norma=0.065264  lr=2.26e-04
+  [batch 6/21] CE=6.3797  norma=0.073536  lr=2.13e-04
+  [batch 7/21] CE=6.3002  norma=0.079186  lr=1.98e-04
+  [batch 8/21] CE=6.3308  norma=0.087113  lr=1.82e-04
+  [batch 9/21] CE=6.6302  norma=0.094074  lr=1.64e-04
+  [batch 10/21] CE=6.1894  norma=0.097724  lr=1.45e-04
+  [batch 11/21] CE=5.8151  norma=0.101512  lr=1.25e-04
+  [batch 12/21] CE=6.3209  norma=0.104937  lr=1.05e-04
+  [batch 13/21] CE=6.4838  norma=0.107714  lr=8.64e-05
+  [batch 14/21] CE=6.6252  norma=0.109513  lr=6.83e-05
+  [batch 15/21] CE=6.5975  norma=0.111127  lr=5.15e-05
+  [batch 16/21] CE=6.4592  norma=0.112363  lr=3.66e-05
+  [batch 17/21] CE=6.7894  norma=0.113016  lr=2.39e-05
+  [batch 18/21] CE=6.5686  norma=0.113442  lr=1.36e-05
+  [batch 19/21] CE=6.8250  norma=0.113482  lr=6.12e-06
+  [batch 20/21] CE=6.0971  norma=0.113531  lr=1.54e-06
+  [batch 21/21] CE=6.4829  norma=0.113531  lr=0.00e+00
+  held-out head CE por entrada: prompt=8.5938  prompt_es=8.1250  prompt_de=10.1406
+
+Epoch 1: CE train (trayectoria)=6.4766  norma=0.113531
+  CE head del checkpoint:  train=9.3542   held-out=8.9531   brecha=-0.4010
+  held-out CE  head(primeros 5): con parche=8.9531  sin parche=9.2083  delta=-0.2552
+               toda la respuesta      : con parche=0.8919  sin parche=0.9004  delta=-0.0085
+  * mejor HELD-OUT hasta ahora (head CE 8.9531)
+  * mejor TRAIN hasta ahora (head CE 9.3542)
+----------------------------------------------------------------------
+
+Guardando el parche de la epoch 1 (head CE 8.9531)
+
+======================================================================
+CURVA POR EPOCH (CE del head sobre el checkpoint de esa epoch)
+ epoch     train   held-out    brecha     norma
+-----------------------------------------------
+     1    9.3542     8.9531   -0.4010    0.1135  <- mejor held-out  <- mejor train
+
+  mejor por HELD-OUT: epoch 1 (CE 8.9531)  -> algebra/runs/qwen3_v10/pos_smoke/pos_q3_fr/lang_patch_best_heldout.pt
+  mejor por TRAIN   : epoch 1 (CE 9.3542)  -> algebra/runs/qwen3_v10/pos_smoke/pos_q3_fr/lang_patch_best_train.pt
+
+======================================================================
+Norma final: 0.113531
+  posicion 0: 0.073768
+  posicion 1: 0.063292
+  posicion 2: 0.058665
+
+Guardado: algebra/runs/qwen3_v10/pos_smoke/pos_q3_fr/lang_patch.pt
+          algebra/runs/qwen3_v10/pos_smoke/pos_q3_fr/lang_metadata.pt
