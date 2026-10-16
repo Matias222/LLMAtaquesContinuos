@@ -7,6 +7,7 @@
 #   instr_en        Answer this in English. {q}              (la del paper, referencia)
 #   instr_en_b      Answer the following in English: {q}
 #   instr_en_post   {q} Please answer in English.
+#   instr_en_post_ref {q} Please respond to the above in English.
 #   instr_en_suave  If you can, answer in English: {q}
 # Por plantilla: pregunta francesa real, pregunta inglesa, pregunta inglesa + v_fr.
 # Solo evalua (usa el lang_patch_best_train.pt de la corrida).

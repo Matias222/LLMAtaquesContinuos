@@ -114,6 +114,7 @@ PLANTILLAS = {
     # gana 96/4 a la pregunta francesa y al parche por igual, y el test queda en el piso
     "instr_en_b": ("Answer the following in English: {q}", 100, True),
     "instr_en_post": ("{q} Please answer in English.", 100, True),
+    "instr_en_post_ref": ("{q} Please respond to the above in English.", 100, True),
     "instr_en_suave": ("If you can, answer in English: {q}", 100, True),
     "lang_id": ("What language is the following question written in? "
                 "Reply with only the name of the language.\n\n{q}", 40, False),
