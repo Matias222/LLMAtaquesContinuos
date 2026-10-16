@@ -1,0 +1,13 @@
+
+=== instr_fr | prompt
+  [588] 15 tok  antes=' in French.'  tramo=[' What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' What', ' is', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [589]  7 tok  antes=' in French.'  tramo=[' Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Who', ' authored', ' The']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [590]  9 tok  antes=' in French.'  tramo=[' Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> [' Re', 'veal', ' the']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.
