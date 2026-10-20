@@ -115,6 +115,7 @@ PLANTILLAS = {
     "instr_en_b": ("Answer the following in English: {q}", 100, True),
     "instr_en_post": ("{q} Please answer in English.", 100, True),
     "instr_en_post_ref": ("{q} Please respond to the above in English.", 100, True),
+    "instr_en_post_answer": ("{q} Please answer to the above in English.", 100, True),
     "instr_en_suave": ("If you can, answer in English: {q}", 100, True),
     "lang_id": ("What language is the following question written in? "
                 "Reply with only the name of the language.\n\n{q}", 40, False),
@@ -285,6 +286,8 @@ def main():
                     help="tokens a generar en las plantillas de respuesta (plain, instr_*); las\n"
                          "lang_id quedan en 40 (la salida es un nombre). Default: el de PLANTILLAS (100)")
     ap.add_argument("--n", type=int, default=0, help="limitar filas (0 = todo el tail)")
+    ap.add_argument("--idx", default=None,
+                    help="solo estas filas del held-out (indices del CSV separados por coma); se aplica antes de --n")
     ap.add_argument("--keep_bad_translations", action="store_true")
     ap.add_argument("--dry", action="store_true",
                     help="solo tokenizer: imprime los tramos de 3 filas por condicion y sale")
@@ -311,6 +314,12 @@ def main():
     model_path = args.model or DEFAULT_MODEL
     df = pd.read_csv(args.targets, sep=";", keep_default_na=False)
     heldout = df.iloc[int(len(df) * args.train_test_split):]
+    if args.idx:
+        pedidas = [int(i) for i in args.idx.split(",")]
+        fuera = [i for i in pedidas if i not in heldout.index]
+        if fuera:
+            raise SystemExit(f"--idx fuera del held-out: {fuera}")
+        heldout = heldout.loc[pedidas]
     if args.n > 0:
         heldout = heldout.head(args.n)
 

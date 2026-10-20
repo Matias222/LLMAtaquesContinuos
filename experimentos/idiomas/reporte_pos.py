@@ -1,18 +1,23 @@
 """
 Reporte de formatos (run_pos_v10.sh): Shared (un v en todos los tokens de la
-pregunta) contra Question-3 y Header-3 (3 vectores con posicion fija), celda fr.
+pregunta) contra Question-3 y Header-3 (3 vectores con posicion fija), en una celda
+(--lang fr | es | de; el parche Shared de los tests se llama como la celda).
 
     formatos     norma total y por posicion, epoch del checkpoint, anchor
-    traspaso     % frances y acc con cada formato: held-out en ingles (con control
-                 nativo), es/de, it/pt, open1, open2
-    tests        resta (Tabla 6), identificacion de idioma (7), resta contra
-                 instruccion (8), conflicto (9, con la instruccion antes y al final)
+    traspaso     % idioma target y acc con cada formato: held-out en ingles (con
+                 control nativo), los otros idiomas de entrada, it/pt, open1, open2
+    tests        resta (Tabla 6), identificacion de idioma (7: que idioma dice y en
+                 que idioma esta escrita la respuesta), resta contra instruccion (8,
+                 solo fr), conflicto (9, con la instruccion antes y al final)
     controles    anchor y posiciones de lang_metadata.pt y de cada json; en q3/h3
                  cada fila parchea exactamente 3 tokens
 
     python3 reporte_pos.py --shared algebra/runs/v10/alg_fr --q3 algebra/runs/v10/pos_q3_fr \
         --h3 algebra/runs/v10/pos_h3_fr --tests algebra/runs/v10/pos_tests \
         --out algebra/runs/v10/reportes/pos.md
+    python3 reporte_pos.py --lang es --shared algebra/runs/v10/alg_es --q3 algebra/runs/v10/pos_q3_es \
+        --h3 algebra/runs/v10/pos_h3_es --tests algebra/runs/v10/pos_tests_es \
+        --out algebra/runs/v10/reportes/pos_es.md
 """
 
 import argparse
@@ -25,7 +30,6 @@ from reporte_v8 import cargar, media, pct, tabla
 FORMATOS = ("shared", "q3", "h3")
 NOMBRE = {"shared": "Shared", "q3": "Question-3", "h3": "Header-3"}
 ANCHOR = {"shared": ("goal_all", 1), "q3": ("goal", 3), "h3": ("header", 3)}
-PARCHE = {"fr": "shared", "q3": "q3", "h3": "h3"}   # nombre del parche en los tests
 COL_LANG = {"prompt": "en", "prompt_es": "es", "prompt_de": "de", "prompt_fr": "fr",
             "prompt_it": "it", "prompt_pt": "pt"}
 
@@ -79,7 +83,7 @@ def chequear_cfg(j, f, donde, fallas):
         fallas.append(f"{f} en {donde}: anchor={anc} N={n}, se esperaba {ANCHOR[f]}")
 
 
-def traspaso(dirs, fallas):
+def traspaso(dirs, lang, fallas):
     filas = {}
 
     def put(fila, f, frac, acc):
@@ -97,7 +101,7 @@ def traspaso(dirs, fallas):
             if f == "shared":
                 put("en sin parche", "ref", media(r["baseline_is_target"] for r in rows),
                     media(r["baseline_answer_correct"] for r in rows))
-                put("control nativo (fr)", "ref", media(r["reference_is_target"] for r in rows),
+                put(f"control nativo ({lang})", "ref", media(r["reference_is_target"] for r in rows),
                     media(r["reference_answer_correct"] for r in rows))
         for archivo in ("cross_lang_idioma.json", "cross_lang_romance.json"):
             cl = cargar(os.path.join(d, archivo))
@@ -118,14 +122,15 @@ def traspaso(dirs, fallas):
             for x in o2["condiciones"]:
                 if x["escala"] == 1.0:
                     put(f"open2 ({COL_LANG[x['col']]})", f, media(r["out_is_target"] for r in x["rows"]), None)
-    orden = ["en sin parche", "control nativo (fr)", "en (held-out)", "es", "de", "it", "pt", "open1 (en)",
-             "open2 (en)", "open2 (es)", "open2 (de)"]
+    orden = ["en sin parche", f"control nativo ({lang})", "en (held-out)", "es", "de", "fr", "it", "pt",
+             "open1 (en)", "open2 (en)", "open2 (es)", "open2 (de)", "open2 (fr)"]
     cab = ["entrada", "sin parche / nativo"] + [NOMBRE[f] for f in FORMATOS]
     out = [[k, filas[k].get("ref", "")] + [filas[k].get(f, "—") for f in FORMATOS] for k in orden if k in filas]
-    return [tabla(cab, out), "", "Celdas: % francés / accuracy (— = no medido; open sin accuracy).", ""]
+    return [tabla(cab, out), "", f"Celdas: % {lang} / accuracy (— = no medido; open sin accuracy).", ""]
 
 
-def tests(tdir, fallas):
+def tests(tdir, lang, fallas):
+    PARCHE = {lang: "shared", "q3": "q3", "h3": "h3"}   # nombre del parche en los tests
     L = []
     for p in sorted(glob.glob(os.path.join(tdir, "entrada_o_directiva_*.json"))):
         t = cargar(p)
@@ -141,22 +146,25 @@ def tests(tdir, fallas):
             if x["parche"] in PARCHE:
                 chequear_n(rows, PARCHE[x["parche"]], f"{tag}:{x['label']}", fallas)
             if es_lang_id:
-                filas.append([x["label"], m["n"], pct(m["dice_fr"]), pct(m["dice_en"]), pct(m["dice_ninguno"])])
+                filas.append([x["label"], m["n"], pct(m[f"dice_{lang}"]), pct(m["dice_en"]), pct(m["dice_ninguno"]),
+                              pct(m[f"p_{lang}"])])
                 continue
             lang_q = COL_LANG.get(x["col"], "en")
             quedan = media(r["out_lang"] in (lang_q, "unknown") for r in rows)
             destinos = collections.Counter(r["out_lang"] for r in rows if r["out_lang"] not in (lang_q, "unknown"))
             dest = ", ".join(f"{k} {100 * v / len(rows):.0f}" for k, v in destinos.most_common(3))
-            filas.append([x["label"], m["n"], pct(m["p_fr"]), pct(m["p_en"]), pct(quedan), dest,
+            filas.append([x["label"], m["n"], pct(m[f"p_{lang}"]), pct(m["p_en"]), pct(quedan), dest,
                           pct(m["answer_correct"])])
-        cab = (["condición", "n", "dice fr", "dice en", "ninguno"] if es_lang_id else
-               ["condición", "n", "% fr", "% en", "% queda en el idioma de la pregunta", "destinos (%)", "acc"])
+        cab = (["condición", "n", f"dice {lang}", "dice en", "ninguno", f"respuesta escrita en {lang}"]
+               if es_lang_id else
+               ["condición", "n", f"% {lang}", "% en", "% queda en el idioma de la pregunta", "destinos (%)", "acc"])
         L += [f"## {tag}", "", tabla(cab, filas), ""]
     return L
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--lang", default="fr", choices=["fr", "es", "de"])
     ap.add_argument("--shared", required=True)
     ap.add_argument("--q3", required=True)
     ap.add_argument("--h3", required=True)
@@ -165,13 +173,14 @@ def main():
     args = ap.parse_args()
     dirs = {"shared": args.shared, "q3": args.q3, "h3": args.h3}
     fallas = []
-    L = ["# Formatos: Shared vs Question-3 vs Header-3 (celda fr)", "",
+    lang = args.lang
+    L = [f"# Formatos: Shared vs Question-3 vs Header-3 (celda {lang})", "",
          f"Shared = {args.shared}; Question-3 = {args.q3}; Header-3 = {args.h3}; tests = {args.tests}.", "",
          "## Formatos", ""]
     L += formatos(dirs, fallas)
-    L += ["## Idioma y accuracy por entrada", ""] + traspaso(dirs, fallas)
-    L += ["# Tests (Shared = parche fr; rand0_q3 / rand0_h3 = azar con forma, norma y anchor de q3 / h3)", ""]
-    L += tests(args.tests, fallas)
+    L += ["## Idioma y accuracy por entrada", ""] + traspaso(dirs, lang, fallas)
+    L += [f"# Tests (Shared = parche {lang}; rand0_q3 / rand0_h3 = azar con forma, norma y anchor de q3 / h3)", ""]
+    L += tests(args.tests, lang, fallas)
     L += ["## Controles", ""] + ([f"- FALLA {x}" for x in fallas] or ["- OK: anchors y posiciones parcheadas"]) + [""]
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
