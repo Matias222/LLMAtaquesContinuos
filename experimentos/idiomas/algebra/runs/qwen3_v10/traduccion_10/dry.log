@@ -1,0 +1,22 @@
+
+=== instr_en_post_ref | prompt_fr
+  [594] 12 tok  antes='<|im_start|>user\n'  tramo=['Att', 'ends', ',', ' qui', ' a', ' proposé', ' la', ' dé', 'rive', ' des', ' continents', ' ?']  despues=' Please respond to'
+  [600]  5 tok  antes='<|im_start|>user\n'  tramo=['Plus', ' grand', ' po', 'isson', ' ?']  despues=' Please respond to'
+  [607]  8 tok  antes='<|im_start|>user\n'  tramo=['M', 'amm', 'if', 'ère', ' le', ' plus', ' lent', ' ?']  despues=' Please respond to'
+
+=== instr_en_post_ref | prompt
+  [594]  7 tok  antes='<|im_start|>user\n'  tramo=['Wait', ',', ' who', ' proposed', ' continental', ' drift', '?']  despues=' Please respond to'
+  [600]  4 tok  antes='<|im_start|>user\n'  tramo=['L', 'argest', ' fish', '?']  despues=' Please respond to'
+  [607]  5 tok  antes='<|im_start|>user\n'  tramo=['Slow', 'est', ' mamm', 'al', '?']  despues=' Please respond to'
+
+=== instr_en_post_answer | prompt_fr
+  [594] 12 tok  antes='<|im_start|>user\n'  tramo=['Att', 'ends', ',', ' qui', ' a', ' proposé', ' la', ' dé', 'rive', ' des', ' continents', ' ?']  despues=' Please answer to'
+  [600]  5 tok  antes='<|im_start|>user\n'  tramo=['Plus', ' grand', ' po', 'isson', ' ?']  despues=' Please answer to'
+  [607]  8 tok  antes='<|im_start|>user\n'  tramo=['M', 'amm', 'if', 'ère', ' le', ' plus', ' lent', ' ?']  despues=' Please answer to'
+
+=== instr_en_post_answer | prompt
+  [594]  7 tok  antes='<|im_start|>user\n'  tramo=['Wait', ',', ' who', ' proposed', ' continental', ' drift', '?']  despues=' Please answer to'
+  [600]  4 tok  antes='<|im_start|>user\n'  tramo=['L', 'argest', ' fish', '?']  despues=' Please answer to'
+  [607]  5 tok  antes='<|im_start|>user\n'  tramo=['Slow', 'est', ' mamm', 'al', '?']  despues=' Please answer to'
+
+tramos OK. Sacar --dry para correr.
