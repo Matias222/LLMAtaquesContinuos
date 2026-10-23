@@ -1,0 +1,13 @@
+
+=== plain | prompt_de
+  [588] 24 tok  antes='user<|end_header_id|>\n\n'  tramo=['Was', ' ist', ' die', ' Gesch', 'wind', 'igkeit', ' des', ' Licht', 's', ' im', ' Vak', 'uum', ' in', ' Kil', 'omet', 'ern', ' pro', ' Sek', 'unde', ',', ' ger', 'und', 'et', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Was', ' ist', ' die']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [589] 10 tok  antes='user<|end_header_id|>\n\n'  tramo=['Wer', ' ver', 'fas', 'ste', ' das', ' Komm', 'unist', 'ische', ' Manifest', '?']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['Wer', ' ver', 'fas']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+  [590] 13 tok  antes='user<|end_header_id|>\n\n'  tramo=['V', 'err', 'ate', ' den', ' größ', 'ten', ' See', ' Sü', 'd', 'amer', 'ik', 'as', '.']  despues='<|eot_id|><|start_header_id|>assistant'
+        @goal   (N=3) -> ['V', 'err', 'ate']
+        @header (N=3) -> ['assistant', '<|end_header_id|>', '\n\n']
+
+tramos OK. Sacar --dry para correr.

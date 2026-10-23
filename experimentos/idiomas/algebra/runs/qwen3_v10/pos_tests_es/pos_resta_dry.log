@@ -1,0 +1,13 @@
+
+=== plain | prompt_es
+  [588] 23 tok  antes='<|im_start|>user\n'  tramo=['¿', 'Cu', 'ál', ' es', ' la', ' velocidad', ' de', ' la', ' luz', ' en', ' vac', 'ío', ' en', ' kil', 'ó', 'metros', ' por', ' segundo', ',', ' red', 'onde', 'ada', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['¿', 'Cu', 'ál']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589] 12 tok  antes='<|im_start|>user\n'  tramo=['¿', 'Qui', 'én', ' escri', 'bió', ' el', ' Man', 'ifi', 'esto', ' comun', 'ista', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['¿', 'Qui', 'én']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590] 13 tok  antes='<|im_start|>user\n'  tramo=['Re', 'vel', 'a', ' el', ' l', 'ago', ' más', ' grande', ' de', ' Sud', 'am', 'érica', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Re', 'vel', 'a']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+tramos OK. Sacar --dry para correr.
