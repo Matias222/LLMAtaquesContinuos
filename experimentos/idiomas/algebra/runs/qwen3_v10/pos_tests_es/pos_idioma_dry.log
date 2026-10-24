@@ -1,0 +1,24 @@
+
+=== lang_id | prompt
+  [588] 15 tok  antes=' the language.\n\n'  tramo=['What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589]  7 tok  antes=' the language.\n\n'  tramo=['Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Who', ' authored', ' The']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590]  9 tok  antes=' the language.\n\n'  tramo=['Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Re', 'veal', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== lang_id | prompt_es
+  [588] 23 tok  antes=' the language.\n\n'  tramo=['¿', 'Cu', 'ál', ' es', ' la', ' velocidad', ' de', ' la', ' luz', ' en', ' vac', 'ío', ' en', ' kil', 'ó', 'metros', ' por', ' segundo', ',', ' red', 'onde', 'ada', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['¿', 'Cu', 'ál']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589] 12 tok  antes=' the language.\n\n'  tramo=['¿', 'Qui', 'én', ' escri', 'bió', ' el', ' Man', 'ifi', 'esto', ' comun', 'ista', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['¿', 'Qui', 'én']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590] 13 tok  antes=' the language.\n\n'  tramo=['Re', 'vel', 'a', ' el', ' l', 'ago', ' más', ' grande', ' de', ' Sud', 'am', 'érica', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Re', 'vel', 'a']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+tramos OK. Sacar --dry para correr.

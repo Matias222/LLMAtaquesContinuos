@@ -1,0 +1,79 @@
+
+=== instr_en | prompt_de
+  [588] 25 tok  antes=' in English.'  tramo=[' Was', ' ist', ' die', ' Gesch', 'wind', 'igkeit', ' des', ' Licht', 's', ' im', ' V', 'ak', 'uum', ' in', ' Kil', 'omet', 'ern', ' pro', ' Sek', 'unde', ',', ' ger', 'und', 'et', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' Was', ' ist', ' die']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589] 10 tok  antes=' in English.'  tramo=[' Wer', ' ver', 'fas', 'ste', ' das', ' Komm', 'unist', 'ische', ' Manifest', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' Wer', ' ver', 'fas']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590] 12 tok  antes=' in English.'  tramo=[' V', 'err', 'ate', ' den', ' größ', 'ten', ' See', ' Süd', 'amer', 'ik', 'as', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' V', 'err', 'ate']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== instr_en | prompt
+  [588] 15 tok  antes=' in English.'  tramo=[' What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' What', ' is', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589]  7 tok  antes=' in English.'  tramo=[' Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' Who', ' authored', ' The']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590]  9 tok  antes=' in English.'  tramo=[' Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> [' Re', 'veal', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== instr_en_post | prompt_de
+  [588] 25 tok  antes='<|im_start|>user\n'  tramo=['Was', ' ist', ' die', ' Gesch', 'wind', 'igkeit', ' des', ' Licht', 's', ' im', ' V', 'ak', 'uum', ' in', ' Kil', 'omet', 'ern', ' pro', ' Sek', 'unde', ',', ' ger', 'und', 'et', '?']  despues=' Please answer in'
+        @goal   (N=3) -> ['Was', ' ist', ' die']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589] 10 tok  antes='<|im_start|>user\n'  tramo=['Wer', ' ver', 'fas', 'ste', ' das', ' Komm', 'unist', 'ische', ' Manifest', '?']  despues=' Please answer in'
+        @goal   (N=3) -> ['Wer', ' ver', 'fas']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590] 12 tok  antes='<|im_start|>user\n'  tramo=['V', 'err', 'ate', ' den', ' größ', 'ten', ' See', ' Süd', 'amer', 'ik', 'as', '.']  despues=' Please answer in'
+        @goal   (N=3) -> ['V', 'err', 'ate']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== instr_en_post | prompt
+  [588] 15 tok  antes='<|im_start|>user\n'  tramo=['What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues=' Please answer in'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589]  7 tok  antes='<|im_start|>user\n'  tramo=['Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues=' Please answer in'
+        @goal   (N=3) -> ['Who', ' authored', ' The']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590]  9 tok  antes='<|im_start|>user\n'  tramo=['Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues=' Please answer in'
+        @goal   (N=3) -> ['Re', 'veal', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== instr_en_post_ref | prompt_de
+  [588] 25 tok  antes='<|im_start|>user\n'  tramo=['Was', ' ist', ' die', ' Gesch', 'wind', 'igkeit', ' des', ' Licht', 's', ' im', ' V', 'ak', 'uum', ' in', ' Kil', 'omet', 'ern', ' pro', ' Sek', 'unde', ',', ' ger', 'und', 'et', '?']  despues=' Please respond to'
+        @goal   (N=3) -> ['Was', ' ist', ' die']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589] 10 tok  antes='<|im_start|>user\n'  tramo=['Wer', ' ver', 'fas', 'ste', ' das', ' Komm', 'unist', 'ische', ' Manifest', '?']  despues=' Please respond to'
+        @goal   (N=3) -> ['Wer', ' ver', 'fas']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590] 12 tok  antes='<|im_start|>user\n'  tramo=['V', 'err', 'ate', ' den', ' größ', 'ten', ' See', ' Süd', 'amer', 'ik', 'as', '.']  despues=' Please respond to'
+        @goal   (N=3) -> ['V', 'err', 'ate']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== instr_en_post_ref | prompt
+  [588] 15 tok  antes='<|im_start|>user\n'  tramo=['What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues=' Please respond to'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589]  7 tok  antes='<|im_start|>user\n'  tramo=['Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues=' Please respond to'
+        @goal   (N=3) -> ['Who', ' authored', ' The']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590]  9 tok  antes='<|im_start|>user\n'  tramo=['Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues=' Please respond to'
+        @goal   (N=3) -> ['Re', 'veal', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+=== plain | prompt
+  [588] 15 tok  antes='<|im_start|>user\n'  tramo=['What', ' is', ' the', ' speed', ' of', ' light', ' in', ' vacuum', ' in', ' kilometers', ' per', ' second', ',', ' rounded', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['What', ' is', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [589]  7 tok  antes='<|im_start|>user\n'  tramo=['Who', ' authored', ' The', ' Communist', ' Manifest', 'o', '?']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Who', ' authored', ' The']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+  [590]  9 tok  antes='<|im_start|>user\n'  tramo=['Re', 'veal', ' the', ' largest', ' lake', ' in', ' South', ' America', '.']  despues='<|im_end|>\n<|im_start|>'
+        @goal   (N=3) -> ['Re', 'veal', ' the']
+        @header (N=3) -> ['<|im_start|>', 'assistant', '\n']
+
+tramos OK. Sacar --dry para correr.
