@@ -1,0 +1,41 @@
+{
+  "lang": "fr",
+  "src": [
+    "prompt",
+    "prompt_es",
+    "prompt_de"
+  ],
+  "targets": "attributes/v10/targets_v8_fr.csv",
+  "rows": "0:528",
+  "n_rows": 8,
+  "seed": 1,
+  "norma_cruda": 0.17548350989818573,
+  "norma_emb_media": 1.0861295461654663,
+  "d": 3072,
+  "cos_azar_esperado": 0.018042195912175804,
+  "cos": {
+    "shared": 0.03681103954153107,
+    "Dmulti_528": 0.773679578061515
+  },
+  "cos(mu_L, mu_vocab)": 0.23878151275872325,
+  "cos(D, mu_vocab)": 0.0031631183129285953,
+  "tokens": {
+    "prompt_fr": {
+      "ocurrencias": 99,
+      "unicos": 77
+    },
+    "prompt": {
+      "ocurrencias": 58,
+      "unicos": 45
+    },
+    "prompt_es": {
+      "ocurrencias": 94,
+      "unicos": 72
+    },
+    "prompt_de": {
+      "ocurrencias": 89,
+      "unicos": 76
+    }
+  },
+  "out": "algebra/runs/diffmean_llama/datos/vec/Dmulti_fr_N8_s1.pt"
+}

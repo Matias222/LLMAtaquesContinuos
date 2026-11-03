@@ -1,0 +1,30 @@
+{
+  "lang": "de",
+  "src": [
+    "prompt"
+  ],
+  "targets": "attributes/v10/targets_v8_de.csv",
+  "rows": "0:528",
+  "n_rows": 528,
+  "seed": null,
+  "norma_cruda": 0.20920492708683014,
+  "norma_emb_media": 1.0861295461654663,
+  "d": 3072,
+  "cos_azar_esperado": 0.018042195912175804,
+  "cos": {
+    "shared": 0.08655444374065133
+  },
+  "cos(mu_L, mu_vocab)": 0.4562773344679183,
+  "cos(D, mu_vocab)": 0.5855418727972322,
+  "tokens": {
+    "prompt_de": {
+      "ocurrencias": 5908,
+      "unicos": 1596
+    },
+    "prompt": {
+      "ocurrencias": 3936,
+      "unicos": 1357
+    }
+  },
+  "out": "algebra/runs/diffmean_llama/vec/Den_de.pt"
+}

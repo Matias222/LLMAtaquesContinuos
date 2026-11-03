@@ -1,0 +1,15 @@
+
+################ final: eleccion de norma
+Dmulti fr: norma 0.7  (target y correcta 0.35)  min norma con >=95% target: 0.8
+Dmulti es: norma 0.6  (target y correcta 0.27)  min norma con >=95% target: None
+Dmulti de: norma 0.5  (target y correcta 0.07)  min norma con >=95% target: 1.0
+Den fr: norma 0.6  (target y correcta 0.62)  min norma con >=95% target: 0.7
+Den es: norma 0.6  (target y correcta 0.53)  min norma con >=95% target: 0.7
+Den de: norma 0.6  (target y correcta 0.43)  min norma con >=95% target: 0.8
+guardado algebra/runs/diffmean_llama/sel/seleccion.json y los *_sel.pt
+  Dmulti fr v         1  prompt        844       0.0%        0.0%  
+  Den fr v         1  prompt        844       0.0%        0.0%  
+  Dmulti es v         1  prompt        844       0.0%        0.0%  
+  Den es v         1  prompt        844       0.0%        0.0%  
+  Dmulti de v         1  prompt        844       0.0%        0.0%  
+  Den de v         1  prompt        844       0.0%        0.0%  

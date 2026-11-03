@@ -1,0 +1,30 @@
+{
+  "lang": "fr",
+  "src": [
+    "prompt"
+  ],
+  "targets": "attributes/qwen3/targets_v8_fr.csv",
+  "rows": "0:528",
+  "n_rows": 528,
+  "seed": null,
+  "norma_cruda": 0.18496073782444,
+  "norma_emb_media": 1.0885441303253174,
+  "d": 2560,
+  "cos_azar_esperado": 0.01976423537605237,
+  "cos": {
+    "shared": 0.046339297523178634
+  },
+  "cos(mu_L, mu_vocab)": 0.056192026431975725,
+  "cos(D, mu_vocab)": 0.36089812970900303,
+  "tokens": {
+    "prompt_fr": {
+      "ocurrencias": 6432,
+      "unicos": 1585
+    },
+    "prompt": {
+      "ocurrencias": 3956,
+      "unicos": 1352
+    }
+  },
+  "out": "algebra/runs/diffmean_qwen/vec/Den_fr.pt"
+}

@@ -1,0 +1,11 @@
+
+################ vec
+Dmulti_fr.pt: L=fr src=['prompt', 'prompt_es', 'prompt_de'] filas=528 ||raw||=0.1301  cos(shared)=+0.080
+Den_fr.pt: L=fr src=['prompt'] filas=528 ||raw||=0.2175  cos(shared)=+0.079
+Dmulti_es.pt: L=es src=['prompt', 'prompt_de', 'prompt_fr'] filas=528 ||raw||=0.1321  cos(shared)=+0.061
+Den_es.pt: L=es src=['prompt'] filas=528 ||raw||=0.2181  cos(shared)=+0.044
+Dmulti_de.pt: L=de src=['prompt', 'prompt_es', 'prompt_fr'] filas=528 ||raw||=0.1336  cos(shared)=+0.124
+Den_de.pt: L=de src=['prompt'] filas=528 ||raw||=0.2092  cos(shared)=+0.087
+referencia: algebra/runs/diffmean_llama/vec/Dmulti_fr.pt  (shape (1, 1, 3072), norma 1.0000)
+parche random: seed=0  norma=1.0000
+guardado en /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/diffmean_llama/vec/rand_unit.pt
