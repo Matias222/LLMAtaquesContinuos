@@ -1,0 +1,19 @@
+Shared algebra/runs/qwen3_v10/alg_fr/lang_patch_best_train.pt  ||v|| 0.9228  d 2560  (cos al azar ~ 0.0198)
+train: 588 filas  |  prompt_fr: 7136 tokens (1675 unicos)  |  prompt: 4391 tokens (1447 unicos)
+----------------------------------------------------------------------
+cA: norma cruda 0.1817 -> 0.9228  cos(shared) -0.0181  cos(mu_vocab) +0.0519  -> algebra/runs/centroide_qwen3_v10/fr/cA.pt
+cB: norma cruda 0.1845 -> 0.9228  cos(shared) +0.0474  cos(mu_vocab) +0.3606  -> algebra/runs/centroide_qwen3_v10/fr/cB.pt
+----------------------------------------------------------------------
+  cos(mu_L, mu_en)                 +0.5657
+  cos(mu_L, mu_vocab)              +0.0519
+  cos(mu_en, mu_vocab)             -0.2714
+  cos(shared, mu_vocab)            +0.0512
+  norma mu_vocab                   +0.3047
+  unicos: cos(cA, shared)          +0.0391
+  unicos: cos(cB, shared)          +0.0690
+  unicos: cos(cB, cB_frecuencia)   +0.5775
+
+reporte: algebra/runs/centroide_qwen3_v10/fr/centroide.json
+referencia: algebra/runs/qwen3_v10/alg_fr/lang_patch_best_train.pt  (shape (1, 1, 2560), norma 0.9228)
+parche random: seed=0  norma=0.9228
+guardado en /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/centroide_qwen3_v10/fr/rand0.pt

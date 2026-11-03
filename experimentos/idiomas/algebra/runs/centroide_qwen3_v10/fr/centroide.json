@@ -1,0 +1,46 @@
+{
+  "lang": "fr",
+  "base_col": "prompt",
+  "like": "algebra/runs/qwen3_v10/alg_fr/lang_patch_best_train.pt",
+  "targets": "attributes/qwen3/targets_v8_fr.csv",
+  "n_train_filas": 588,
+  "norma_shared": 0.922789990901947,
+  "d": 2560,
+  "cos_azar_esperado": 0.01976423537605237,
+  "tokens": {
+    "prompt_fr": {
+      "ocurrencias": 7136,
+      "unicos": 1675
+    },
+    "prompt": {
+      "ocurrencias": 4391,
+      "unicos": 1447
+    }
+  },
+  "vectores": {
+    "cA": {
+      "path": "algebra/runs/centroide_qwen3_v10/fr/cA.pt",
+      "norma_cruda": 0.18173885345458984,
+      "norma": 0.9227900505065918,
+      "cos_shared": -0.018084244293069568,
+      "cos_mu_vocab": 0.051865734807630855
+    },
+    "cB": {
+      "path": "algebra/runs/centroide_qwen3_v10/fr/cB.pt",
+      "norma_cruda": 0.18448661267757416,
+      "norma": 0.922789990901947,
+      "cos_shared": 0.04740597312214866,
+      "cos_mu_vocab": 0.36064078895220797
+    }
+  },
+  "diagnostico": {
+    "cos(mu_L, mu_en)": 0.5657196161580059,
+    "cos(mu_L, mu_vocab)": 0.051865734807630855,
+    "cos(mu_en, mu_vocab)": -0.2714112253326748,
+    "cos(shared, mu_vocab)": 0.05119239397381887,
+    "norma mu_vocab": 0.3047277629375458,
+    "unicos: cos(cA, shared)": 0.039145475047303334,
+    "unicos: cos(cB, shared)": 0.06899719143267727,
+    "unicos: cos(cB, cB_frecuencia)": 0.5775267369176559
+  }
+}

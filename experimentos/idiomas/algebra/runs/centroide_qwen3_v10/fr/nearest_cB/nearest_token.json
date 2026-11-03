@@ -1,0 +1,174 @@
+{
+ "patch": "algebra/runs/centroide_qwen3_v10/fr/cB.pt",
+ "v_norm": 0.922789990901947,
+ "vocab_norm_mean": 1.0885441303253174,
+ "n_unique": 439,
+ "sanity_self": 1.0,
+ "gap_median": 0.7632215023040771,
+ "pct_norma_vocab": 0.09049970656633377,
+ "pct_norma_preguntas": 0.05466970428824425,
+ "norma_mediana_preguntas": 1.072376012802124,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 0.6,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 0.7,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.003537735849056604,
+   "cambia_cos": 0.0,
+   "destinos_l2": [
+    [
+     "\tfor",
+     3
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.4893867924528302,
+   "cambia_cos": 0.4858490566037736,
+   "destinos_l2": [
+    [
+     "ﴀ",
+     80
+    ],
+    [
+     "튈",
+     45
+    ],
+    [
+     " la",
+     43
+    ],
+    [
+     "ﱂ",
+     41
+    ],
+    [
+     "퀜",
+     28
+    ],
+    [
+     "\tis",
+     15
+    ],
+    [
+     " كيفية",
+     14
+    ],
+    [
+     "capital",
+     11
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.8148584905660378,
+   "cambia_cos": 0.9351415094339622,
+   "destinos_l2": [
+    [
+     " !\");\n",
+     542
+    ],
+    [
+     " la",
+     46
+    ],
+    [
+     " les",
+     8
+    ],
+    [
+     "\tlight",
+     4
+    ],
+    [
+     "\tout",
+     3
+    ],
+    [
+     "\tfirst",
+     3
+    ],
+    [
+     "\tMy",
+     3
+    ],
+    [
+     "\tme",
+     3
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.6,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 0.7,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  }
+ ]
+}
