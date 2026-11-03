@@ -1,0 +1,31 @@
+{
+ "patch": "algebra/runs/diffmean_qwen/vec/Dmulti_de_sel.pt",
+ "v_norm": 0.6000000238418579,
+ "vocab_norm_mean": 1.0885441303253174,
+ "n_unique": 439,
+ "sanity_self": 1.0,
+ "gap_median": 0.7632215023040771,
+ "pct_norma_vocab": 0.030474256724119186,
+ "pct_norma_preguntas": 0.0,
+ "norma_mediana_preguntas": 1.072376012802124,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 848,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  }
+ ]
+}
