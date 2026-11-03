@@ -29,7 +29,8 @@
 #               FORCE=1 rehace evals que ya tienen eval_heldout.json (por defecto se saltean)
 #               RUN (algebra/runs/v10: de donde sale Shared y el gen_cache)
 #               SMOKE=1 (evals de 4 filas, todo en algebra/runs/centroide_smoke)
-#   Qwen:       RUN=algebra/runs/qwen3_v10 TDIR=attributes/qwen3 (ajustar a donde esten sus targets)
+#               NN_ALPHAS ("0.6,0.7,1,2,4") escalas del chequeo de token mas cercano
+#   Qwen:       RUN=algebra/runs/qwen3_v10 TDIR=attributes/qwen3  -> algebra/runs/centroide_qwen3_v10/
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE/.."
@@ -46,10 +47,16 @@ SPLIT=0.84
 NTOK=250
 SHARED="$RUN/alg_$L/lang_patch_best_train.pt"
 T="$TDIR/targets_v8_$L.csv"
-R="algebra/runs/centroide/$L"
+# una carpeta por modelo: Llama (RUN=algebra/runs/v10) queda en centroide/, el resto en
+# centroide_<run>/ (p.ej. centroide_qwen3_v10/). Si compartieran carpeta, el skip de evals
+# ya hechas reusaria los vectores y las generaciones del otro modelo.
+CDIR=centroide
+[[ "$(basename "$RUN")" != v10 ]] && CDIR="centroide_$(basename "$RUN")"
+NN_ALPHAS="${NN_ALPHAS:-0.6,0.7,1,2,4}"
+R="algebra/runs/$CDIR/$L"
 NEVAL=()
 if [[ "${SMOKE:-0}" == "1" ]]; then
-  R="algebra/runs/centroide_smoke/$L"; NEVAL=(--n 4); SCALES="${SCALES%% *}"
+  R="algebra/runs/${CDIR}_smoke/$L"; NEVAL=(--n 4); SCALES="${SCALES%% *}"
   echo "### SMOKE: evals de 4 filas, una sola escala -> $R"
 fi
 has() { [[ " $STAGES " == *" $1 "* ]]; }
@@ -76,7 +83,7 @@ if has nn; then
     echo; echo "################ nn $P"
     # mismas entradas que el chequeo de la seccion 4.1 (ingles y las otras dos de train)
     python3 -u nearest_token_patch.py --model "$MODEL" --patch "$R/$P.pt" --targets "$T" \
-        --train_test_split $SPLIT --cols prompt --alphas 1,2,4 \
+        --train_test_split $SPLIT --cols prompt --alphas "$NN_ALPHAS" \
         --out_dir "$R/nearest_$P" 2>&1 | tee "$R/nearest_$P.log"
   done
 fi
