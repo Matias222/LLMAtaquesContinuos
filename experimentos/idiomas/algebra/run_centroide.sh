@@ -24,7 +24,9 @@
 #
 #   uso (desde cualquier lado):  bash algebra/run_centroide.sh MODEL_PATH
 #   variables:  DEVICE (cuda:0)  L (fr)  STAGES ("vec nn eval tabla")
-#               SCALES ("2 4")  SCALED ("cB": que vectores se escalan; "cA cB" para los dos)
+#               SCALES ("2 4")  SCALED ("cB": que vectores se escalan; "cA cB" para los dos;
+#                     "shared cA cB" para la curva dosis-respuesta completa)
+#               FORCE=1 rehace evals que ya tienen eval_heldout.json (por defecto se saltean)
 #               RUN (algebra/runs/v10: de donde sale Shared y el gen_cache)
 #               SMOKE=1 (evals de 4 filas, todo en algebra/runs/centroide_smoke)
 #   Qwen:       RUN=algebra/runs/qwen3_v10 TDIR=attributes/qwen3 (ajustar a donde esten sus targets)
@@ -82,6 +84,9 @@ fi
 # =============================================================================
 ev() {   # ev <nombre> <parche> <escala>
   local O="$R/eval_$1"; mkdir -p "$O"
+  if [[ "${FORCE:-0}" != "1" && -f "$O/eval_heldout.json" ]]; then
+    echo "ya evaluado: $O (FORCE=1 para rehacer)"; return
+  fi
   echo; echo "################ eval $1 ($2, escala $3)"
   python3 -u eval_lang_patch.py --model "$MODEL" --device "$DEVICE" --patch "$2" --scale "$3" \
       --patch_anchor goal_all --num_patch_positions 1 --target_lang "$L" --num_tokens $NTOK \
@@ -92,7 +97,11 @@ ev() {   # ev <nombre> <parche> <escala>
 if has eval; then
   ev shared "$SHARED" 1
   for P in cA cB rand0; do ev "$P" "$R/$P.pt" 1; done
-  for P in $SCALED; do for a in $SCALES; do ev "${P}_x$a" "$R/$P.pt" "$a"; done; done
+  # SCALED puede incluir shared (el v_L entrenado) para comparar curvas dosis-respuesta
+  for P in $SCALED; do
+    if [[ "$P" == shared ]]; then SRC="$SHARED"; else SRC="$R/$P.pt"; fi
+    for a in $SCALES; do ev "${P}_x$a" "$SRC" "$a"; done
+  done
 fi
 
 # =============================================================================
