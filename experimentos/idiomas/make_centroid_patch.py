@@ -66,6 +66,11 @@ def main():
     ap.add_argument("--like", required=True, help="parche Shared del que copiar forma, norma y dtype")
     ap.add_argument("--targets", default="attributes/v10/targets_v8_fr.csv")
     ap.add_argument("--train_test_split", type=float, default=0.84)
+    ap.add_argument("--multi_cols", default="",
+                    help="columnas de origen para la version multi-fuente, como el entrenamiento de "
+                         "Shared (p.ej. prompt,prompt_es,prompt_de). Guarda ademas cB_pool.pt "
+                         "(mu_L - media agrupada de los tokens de todas las fuentes) y cB_multi.pt "
+                         "(mu_L - promedio de las mu_s, mismo peso por idioma)")
     ap.add_argument("--out_dir", required=True)
     args = ap.parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
@@ -96,6 +101,29 @@ def main():
     mu_vocab = W.mean(0)
 
     raw = {"cA": mu_l, "cB": mu_l - mu_b}
+
+    # version multi-fuente: las mismas filas de train, cada una en cada idioma de origen
+    multi = {}
+    cols_m = [c for c in args.multi_cols.split(",") if c.strip()]
+    if cols_m:
+        faltan = [c for c in cols_m if c not in train.columns]
+        if faltan:
+            raise SystemExit(f"--multi_cols: faltan {faltan} en {args.targets}")
+        ids_m, mus = {}, {}
+        for c in cols_m:
+            qs = [str(q) for q in train[c] if str(q).strip()]
+            ids_m[c] = [goal_ids(tok, q) for q in qs]
+            mus[c], _, n_c, u_c = centroid(W, ids_m[c])
+            multi[c] = {"filas": len(qs), "ocurrencias": n_c, "unicos": u_c}
+        mu_pool = centroid(W, [ids for c in cols_m for ids in ids_m[c]])[0]
+        raw["cB_pool"] = mu_l - mu_pool
+        raw["cB_multi"] = mu_l - torch.stack([mus[c] for c in cols_m]).mean(0)
+        # diagnostico por origen: mu_L - mu_s para cada s (no se guardan como parche)
+        por_origen = {c: mu_l - mus[c] for c in cols_m}
+        multi["cos_entre_origenes"] = {f"{a}~{b}": cos(por_origen[a], por_origen[b])
+                                       for i, a in enumerate(cols_m) for b in cols_m[i + 1:]}
+        multi["cos_origen_shared"] = {c: cos(d_, v) for c, d_ in por_origen.items()}
+        multi["cos(cB_pool, cB_multi)"] = cos(raw["cB_pool"], raw["cB_multi"])
     out = {}
     for name, vec in raw.items():
         p = (vec / vec.norm() * target_norm).reshape(like.shape).to(like.dtype)
@@ -123,6 +151,7 @@ def main():
             "unicos: cos(cB, shared)": cos(mu_l_u - mu_b_u, v),
             "unicos: cos(cB, cB_frecuencia)": cos(mu_l_u - mu_b_u, mu_l - mu_b),
         },
+        "multi": multi,
     }
 
     print(f"Shared {args.like}  ||v|| {target_norm:.4f}  d {d}  (cos al azar ~ {1 / d ** 0.5:.4f})")
@@ -135,6 +164,14 @@ def main():
     print("-" * 70)
     for k, val in rep["diagnostico"].items():
         print(f"  {k:32s} {val:+.4f}")
+    if multi:
+        print("-" * 70)
+        print("multi-fuente: " + ", ".join(f"{c} {multi[c]['ocurrencias']} tokens" for c in cols_m))
+        for k, val in multi["cos_entre_origenes"].items():
+            print(f"  cos(mu_L - mu_{k.replace('~', ', mu_L - mu_')})  {val:+.4f}")
+        for c, val in multi["cos_origen_shared"].items():
+            print(f"  cos(mu_L - mu_{c}, shared)  {val:+.4f}")
+        print(f"  cos(cB_pool, cB_multi)  {multi['cos(cB_pool, cB_multi)']:+.4f}")
 
     with open(os.path.join(args.out_dir, "centroide.json"), "w", encoding="utf-8") as f:
         json.dump(rep, f, indent=2, ensure_ascii=False)

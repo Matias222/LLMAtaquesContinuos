@@ -21,6 +21,11 @@
 #   nn    token mas cercano de e_i + a*c para cA y cB              (CPU)
 #   eval  generaciones sobre el held-out                           (GPU)
 #   tabla resumen en $R/resumen.md
+#   multi (no corre por defecto) centroides multi-fuente, como el entrenamiento de Shared:
+#         cB_pool  = mu_L - media agrupada de los tokens de las 3 fuentes
+#         cB_multi = mu_L - promedio de mu_en, mu_es, mu_de (mismo peso por idioma)
+#         evaluados con cross_lang_patch.py desde varios idiomas -> $R/resumen_multi.md
+#         MULTI_P ("shared cB cB_pool cB_multi")  MULTI_CONDS ("prompt:0,prompt:1,prompt_es:0,prompt_es:1")
 #
 #   uso (desde cualquier lado):  bash algebra/run_centroide.sh MODEL_PATH
 #   variables:  DEVICE (cuda:0)  L (fr)  STAGES ("vec nn eval tabla")
@@ -60,6 +65,11 @@ if [[ "${SMOKE:-0}" == "1" ]]; then
   echo "### SMOKE: evals de 4 filas, una sola escala -> $R"
 fi
 has() { [[ " $STAGES " == *" $1 "* ]]; }
+# idiomas de origen del entrenamiento de Shared (los mismos que run_train_v10.sh cols())
+fuentes() { case $1 in fr) echo prompt,prompt_es,prompt_de ;; es) echo prompt,prompt_de,prompt_fr ;;
+                       de) echo prompt,prompt_es,prompt_fr ;; esac; }
+MULTI_P="${MULTI_P:-shared cB cB_pool cB_multi}"
+MULTI_CONDS="${MULTI_CONDS:-prompt:0,prompt:1,prompt_es:0,prompt_es:1}"
 mkdir -p "$R"
 # baseline, nativo y shared ya estan en el cache de la corrida de la Tabla 1:
 # no se regeneran (la clave incluye embeddings de entrada y num_tokens)
@@ -71,8 +81,10 @@ for f in "$SHARED" "$T"; do [[ -f "$f" ]] || { echo "falta $f"; exit 1; }; done
 # =============================================================================
 if has vec; then
   echo; echo "################ vec"
+  # cA y cB son deterministas: rehacer vec los reescribe identicos y agrega cB_pool / cB_multi
   python3 -u make_centroid_patch.py --model "$MODEL" --lang "$L" --like "$SHARED" \
-      --targets "$T" --train_test_split $SPLIT --out_dir "$R" 2>&1 | tee "$R/vec.log"
+      --targets "$T" --train_test_split $SPLIT --multi_cols "$(fuentes $L)" \
+      --out_dir "$R" 2>&1 | tee "$R/vec.log"
   python3 -u make_random_patch.py --like "$SHARED" --seed 0 --out "$R/rand0.pt" 2>&1 | tee -a "$R/vec.log"
 fi
 for P in cA cB rand0; do [[ -f "$R/$P.pt" ]] || { echo "falta $R/$P.pt (correr la etapa vec)"; exit 1; }; done
@@ -109,6 +121,49 @@ if has eval; then
     if [[ "$P" == shared ]]; then SRC="$SHARED"; else SRC="$R/$P.pt"; fi
     for a in $SCALES; do ev "${P}_x$a" "$SRC" "$a"; done
   done
+fi
+
+# =============================================================================
+# multi: centroides multi-fuente (cB_pool, cB_multi) contra Shared y cB, desde varios
+# idiomas de pregunta (cross_lang_patch.py, el eval de la Tabla 6). a=0 sale del cache.
+if has multi; then
+  for P in $MULTI_P; do
+    if [[ "$P" == shared ]]; then SRC="$SHARED"; else SRC="$R/$P.pt"; fi
+    [[ -f "$SRC" ]] || { echo "falta $SRC (correr la etapa vec)"; exit 1; }
+    O="$R/multi_$P"
+    if [[ "${FORCE:-0}" != "1" && -f "$O/cross_lang_multi.json" ]]; then echo "ya evaluado: $O"; continue; fi
+    mkdir -p "$O"
+    echo; echo "################ multi $P ($MULTI_CONDS)"
+    python3 -u cross_lang_patch.py --model "$MODEL" --device "$DEVICE" --patch "$SRC" \
+        --patch_anchor goal_all --num_patch_positions 1 --target_lang "$L" --num_tokens $NTOK \
+        ${NEVAL[@]+"${NEVAL[@]}"} --targets "$T" --train_test_split $SPLIT \
+        --conds "$MULTI_CONDS" --tag multi --out_dir "$O" 2>&1 | tee "$O/multi.log"
+  done
+  python3 - "$R" "$L" $MULTI_P <<'PY' | tee "$R/resumen_multi.md"
+import json, os, sys
+R, L, ps = sys.argv[1], sys.argv[2], sys.argv[3:]
+cen = json.load(open(f"{R}/centroide.json", encoding="utf-8"))
+m = cen.get("multi") or {}
+print(f"# Centroides multi-fuente, idioma {L}\n")
+for k in ("cB", "cB_pool", "cB_multi"):
+    if k in cen["vectores"]:
+        print(f"- cos({k}, shared) = {cen['vectores'][k]['cos_shared']:+.3f}")
+for k, v in (m.get("cos_entre_origenes") or {}).items():
+    print(f"- cos(mu_L - mu_{k.split('~')[0]}, mu_L - mu_{k.split('~')[1]}) = {v:+.3f}")
+for k, v in (m.get("cos_origen_shared") or {}).items():
+    print(f"- cos(mu_L - mu_{k}, shared) = {v:+.3f}")
+print("\n| vector | pregunta en | a | % idioma target | accuracy | veredictos |\n|---|---|---|---|---|---|")
+for p in ps:
+    f = f"{R}/multi_{p}/cross_lang_multi.json"
+    if not os.path.exists(f):
+        continue
+    for c in json.load(open(f, encoding="utf-8"))["condiciones"]:
+        if c["escala"] == 0 and p != ps[0]:
+            continue   # la fila sin parche es la misma para todos: se muestra una vez
+        mt = c["metrics"]; ver = sorted(mt["veredictos"].items(), key=lambda x: -x[1])[:3]
+        print(f"| {p if c['escala'] else '-'} | {c['col']} | {c['escala']:g} | {100*mt['is_target']:.1f} | "
+              f"{100*mt['answer_correct']:.1f} | {', '.join(f'{a} {b}' for a, b in ver)} |")
+PY
 fi
 
 # =============================================================================
