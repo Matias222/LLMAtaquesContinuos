@@ -1,0 +1,146 @@
+{
+ "patch": "algebra/runs/centroide/fr/cB.pt",
+ "v_norm": 0.8782814145088196,
+ "vocab_norm_mean": 1.0861295461654663,
+ "n_unique": 438,
+ "sanity_self": 1.0,
+ "gap_median": 0.7976208925247192,
+ "pct_norma_vocab": 0.03383077681064606,
+ "pct_norma_preguntas": 0.02283105067908764,
+ "norma_mediana_preguntas": 1.128975749015808,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.026066350710900472,
+   "cambia_cos": 0.011848341232227487,
+   "destinos_l2": [
+    [
+     "which",
+     10
+    ],
+    [
+     "who",
+     6
+    ],
+    [
+     "what",
+     6
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.5485781990521327,
+   "cambia_cos": 0.566350710900474,
+   "destinos_l2": [
+    [
+     "?>\r\n\r\n",
+     133
+    ],
+    [
+     ".L",
+     32
+    ],
+    [
+     " của",
+     27
+    ],
+    [
+     "\tis",
+     15
+    ],
+    [
+     " cómo",
+     14
+    ],
+    [
+     "webElementProperties",
+     11
+    ],
+    [
+     " في",
+     11
+    ],
+    [
+     "capital",
+     11
+    ]
+   ]
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.8021327014218009,
+   "cambia_cos": 0.9869668246445498,
+   "destinos_l2": [
+    [
+     "!\");\n",
+     498
+    ],
+    [
+     "-capital",
+     11
+    ],
+    [
+     " la",
+     9
+    ],
+    [
+     ".country",
+     6
+    ],
+    [
+     "\tlight",
+     4
+    ],
+    [
+     " YEAR",
+     4
+    ],
+    [
+     "!\"",
+     4
+    ],
+    [
+     "-largest",
+     3
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  }
+ ]
+}

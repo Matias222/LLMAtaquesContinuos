@@ -1,0 +1,100 @@
+{
+ "patch": "algebra/runs/centroide_smoke/fr/cA.pt",
+ "v_norm": 0.8782814145088196,
+ "vocab_norm_mean": 1.0861295461654663,
+ "n_unique": 438,
+ "sanity_self": 1.0,
+ "gap_median": 0.7976208925247192,
+ "pct_norma_vocab": 0.03383077681064606,
+ "pct_norma_preguntas": 0.02283105067908764,
+ "norma_mediana_preguntas": 1.128975749015808,
+ "conds": [
+  {
+   "vec": "v",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "v",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.46445497630331756,
+   "cambia_cos": 0.46445497630331756,
+   "destinos_l2": [
+    [
+     " la",
+     275
+    ],
+    [
+     "?",
+     80
+    ],
+    [
+     " qui",
+     6
+    ],
+    [
+     "Moon",
+     3
+    ],
+    [
+     "South",
+     2
+    ],
+    [
+     " leur",
+     2
+    ],
+    [
+     "Europe",
+     2
+    ],
+    [
+     "India",
+     2
+    ]
+   ]
+  },
+  {
+   "vec": "rand",
+   "alpha": 1.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 2.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  },
+  {
+   "vec": "rand",
+   "alpha": 4.0,
+   "col": "prompt",
+   "n_tok": 844,
+   "cambia_l2": 0.0,
+   "cambia_cos": 0.0,
+   "destinos_l2": []
+  }
+ ]
+}

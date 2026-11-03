@@ -1,0 +1,19 @@
+Shared algebra/runs/v10/alg_fr/lang_patch_best_train.pt  ||v|| 0.8783  d 3072  (cos al azar ~ 0.0180)
+train: 588 filas  |  prompt_fr: 7151 tokens (1679 unicos)  |  prompt: 4371 tokens (1452 unicos)
+----------------------------------------------------------------------
+cA: norma cruda 0.1984 -> 0.8783  cos(shared) +0.0257  cos(mu_vocab) +0.3431  -> algebra/runs/centroide_smoke/fr/cA.pt
+cB: norma cruda 0.2174 -> 0.8783  cos(shared) +0.0789  cos(mu_vocab) +0.4777  -> algebra/runs/centroide_smoke/fr/cB.pt
+----------------------------------------------------------------------
+  cos(mu_L, mu_en)                 +0.3856
+  cos(mu_L, mu_vocab)              +0.3431
+  cos(mu_en, mu_vocab)             -0.1847
+  cos(shared, mu_vocab)            +0.0966
+  norma mu_vocab                   +0.4162
+  unicos: cos(cA, shared)          +0.0930
+  unicos: cos(cB, shared)          +0.0455
+  unicos: cos(cB, cB_frecuencia)   +0.6796
+
+reporte: algebra/runs/centroide_smoke/fr/centroide.json
+referencia: algebra/runs/v10/alg_fr/lang_patch_best_train.pt  (shape (1, 1, 3072), norma 0.8783)
+parche random: seed=0  norma=0.8783
+guardado en /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/centroide_smoke/fr/rand0.pt
