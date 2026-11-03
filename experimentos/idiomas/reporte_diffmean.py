@@ -306,6 +306,74 @@ def main():
         L += ["La diagonal (x, x) es el techo de ruido split-half. Todas las capas en "
               f"`{O}/geo.csv`.", ""]
 
+    # ------------------------------------------------------------------ pares
+    PD = f"{O}/pares"
+    L += ["## 8. Pares de idiomas: D_{s->L} = mu_L - mu_s", ""]
+    selp = load(f"{PD}/seleccion.json") or {}
+    pares_lst = [(s_, lg) for lg in ("fr", "es", "de") for s_ in {"fr": ("es", "de"), "es": ("de", "fr"),
+                                                                    "de": ("es", "fr")}[lg]]
+
+    def cross_full(p, col, esc, src):
+        d = load(p)
+        if not d:
+            return None
+        for c in d["condiciones"]:
+            if c["col"] == col and abs(float(c["escala"]) - esc) < 1e-9:
+                rows = c["rows"]
+                n = len(rows)
+                t = [bool(r["out_is_target"]) for r in rows]
+                a = [bool(r["out_answer_correct"]) for r in rows]
+                tc = sum(x and y for x, y in zip(t, a))
+                return {"target": sum(t) / n, "tc": tc / n, "acc_t": tc / sum(t) if sum(t) else None,
+                        "origen": sum(r["out_lang"] == src for r in rows) / n}
+        return None
+    filas = []
+    for s_, lg in pares_lst:
+        par = f"{s_}2{lg}"
+        j = load(f"{PD}/vec/{par}.json")
+        col = f"prompt_{s_}"
+        celdas = []
+        for x in (cross_full(f"{R}/alg_{lg}/cross_lang_idioma.json", col, 1.0, s_),
+                  cross_full(f"{O}/cross_Den/{lg}/cross_lang_cross.json", col, 1.0, s_),
+                  cross_full(f"{PD}/heldout/{par}/cross_lang_par.json", col, 1.0, s_)):
+            celdas.append(f"{pct(x['target'])} / {pct(x['tc'])} / {pct(x['acc_t'])} / {pct(x['origen'])}"
+                          if x else "(falta)")
+        filas.append([f"{s_} -> {lg}", selp.get(par, {}).get("norma", "–"),
+                      f"{j['cos'].get('Den', float('nan')):+.2f}" if j else "–",
+                      f"{j['cos'].get('shared', float('nan')):+.2f}" if j else "–"] + celdas)
+    L += ["### Cross: q_s + vector_L (held-out)", ""]
+    tabla(L, ["par", "norma", "cos(par, Den_L)", "cos(par, Shared_L)", "Shared", "Den_L", "D_{s->L}"], filas)
+    L += ["Celdas: % target / % target y correcta / acc | target / % que se queda en el idioma de origen.", ""]
+
+    dr = load(f"{PD}/tests/entrada_o_directiva_resta_pares.json")
+    if dr:
+        m = {c["label"]: c["metrics"] for c in dr["condiciones"]}
+        filas = []
+        for s_, lg in pares_lst:
+            mm = m.get(f"plain | prompt_{lg} -1*{s_}2{lg}")
+            base = m.get(f"plain | prompt_{lg}")
+            if mm:
+                filas.append([f"q_{lg} - D_{{{s_}->{lg}}}", pct(mm.get(f"p_{s_}")), pct(mm.get("p_en")),
+                              pct(mm.get(f"p_{lg}")), pct(mm.get("answer_correct")),
+                              pct(base.get(f"p_{lg}")) if base else "–"])
+        L += ["### Resta: q_L - D_{s->L} (¿termina en el idioma de origen s?)", ""]
+        tabla(L, ["condicion", "% en s (esperado)", "% en", "% se queda en L", "acc", "% L sin parche"], filas)
+    else:
+        L += ["### Resta por pares", "", "(falta)", ""]
+    di = load(f"{PD}/tests/entrada_o_directiva_idioma_pares.json")
+    if di:
+        m = {c["label"]: c["metrics"] for c in di["condiciones"]}
+        filas = []
+        for s_, lg in pares_lst:
+            mm, base = m.get(f"lang_id | prompt_{s_} +1*{s_}2{lg}"), m.get(f"lang_id | prompt_{s_}")
+            if mm:
+                filas.append([f"q_{s_} + D_{{{s_}->{lg}}}", pct(mm.get(f"dice_{lg}")), pct(mm.get(f"dice_{s_}")),
+                              pct(base.get(f"dice_{s_}")) if base else "–"])
+        L += ["### Identificacion de idioma: q_s + D_{s->L}", ""]
+        tabla(L, ["condicion", "dice L", "dice s", "dice s sin parche"], filas)
+    else:
+        L += ["### Identificacion por pares", "", "(falta)", ""]
+
     os.makedirs(O, exist_ok=True)
     with open(f"{O}/resumen.md", "w", encoding="utf-8") as f:
         f.write("\n".join(L))

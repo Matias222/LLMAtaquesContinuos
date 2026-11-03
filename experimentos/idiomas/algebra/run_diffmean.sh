@@ -28,6 +28,8 @@
 #   datos    eficiencia de datos: Dmulti_fr con N filas (DATA_N) x semillas (DATA_SEEDS)
 #   geo      cosenos capa por capa de los desplazamientos (Shared, D, azar, nativo,
 #            instruccion), validacion cruzada por mitades                  solo forwards
+#   pares    un vector por par de idiomas D_{s->L} = mu_L - mu_s (s, L en fr/es/de): cross
+#            q_s + D_{s->L}, resta q_L - D_{s->L} (¿termina en s?) e identificacion de idioma
 #   reporte  reporte_diffmean.py -> $O/resumen.md + figuras (se puede correr en
 #            cualquier momento: lo que falta queda marcado)
 #
@@ -49,7 +51,7 @@ case "$(basename "$MODEL")" in
   *)         FAM=llama; RUN=algebra/runs/v10;       TDIR=attributes/v10 ;;
 esac
 RUN="${RUN_OVERRIDE:-$RUN}"; TDIR="${TDIR_OVERRIDE:-$TDIR}"
-STAGES="${STAGES:-vec sel final heldout tests cross datos geo reporte}"
+STAGES="${STAGES:-vec sel final heldout tests cross datos geo pares reporte}"
 LANGS="${LANGS:-fr es de}"
 VECS="${VECS:-Dmulti Den}"
 TEST_VECS="${TEST_VECS:-Dmulti}"
@@ -265,6 +267,84 @@ if has geo; then
         --lang $L --train_test_split $SPLIT --n $NGEO "${GP[@]}" --out "$O/geo/geo_$L.json"
   done
 fi 2>&1 | tee -a "$O/logs/geo.log"
+
+# =============================================================================
+# pares: un vector por PAR de idiomas, D_{s->L} = mu_L - mu_s (Den es el par en->L).
+#   cross    q_s + D_{s->L}: ¿mejora a Den cuando la resta coincide con el idioma de la pregunta?
+#   resta    q_L - D_{s->L}: ¿la pregunta en L termina en s (no en ingles)?
+#   idioma   "¿en que idioma esta?" sobre q_s + D_{s->L}: ¿dice L?
+#   norma elegida en validacion (528..587) igual que el resto: argmax target y correcta
+if has pares; then
+  echo; echo "################ pares"
+  PD=$O/pares; mkdir -p "$PD/vec" "$PD/sel" "$PD/heldout" "$PD/tests"
+  for L in fr es de; do
+    for S in $(otros $L); do
+      [[ -f "$PD/vec/${S}2$L.pt" && "${FORCE:-0}" != "1" ]] || \
+        python3 -u make_diffmean.py --model "$MODEL" --targets "$TDIR/targets_v8_$L.csv" --lang $L \
+            --src prompt_$S --rows $BUILD_ROWS --like "$(shared $L)" --compare "shared=$(shared $L)" \
+            --compare "Den=$O/vec/Den_$L.pt" --out "$PD/vec/${S}2$L.pt"
+      D=$PD/sel/${S}2$L
+      if [[ ! -f "$D/cross_lang_sel.json" || "${FORCE:-0}" == "1" ]]; then
+        mkdir -p "$D"
+        C="prompt_$S:0"; for N in $NORMS; do C+=",prompt_$S:$N"; done
+        python3 -u cross_lang_patch.py --model "$MODEL" --device "$DEVICE" --patch "$PD/vec/${S}2$L.pt" \
+            --patch_anchor goal_all --num_patch_positions 1 --target_lang $L --num_tokens $NTOK \
+            --targets "$TDIR/targets_v8_$L.csv" --train_test_split $VAL_SPLIT --n $VAL_N \
+            --conds "$C" --tag sel --out_dir "$D" 2>&1 | tee "$D/sel.log"
+      else echo "  ya esta: $D"; fi
+    done
+  done
+  python3 - "$PD" <<'PY'
+import glob, json, os, sys
+import torch
+PD = sys.argv[1]
+out = {}
+for p in sorted(glob.glob(f"{PD}/sel/*/cross_lang_sel.json")):
+    par = os.path.basename(os.path.dirname(p))
+    curva = []
+    for c in json.load(open(p, encoding="utf-8"))["condiciones"]:
+        a = float(c["escala"])
+        if a == 0:
+            continue
+        rows = c["rows"]
+        n = len(rows)
+        tc = sum(bool(r["out_is_target"]) and bool(r["out_answer_correct"]) for r in rows)
+        curva.append({"norma": a, "n": n, "target": sum(bool(r["out_is_target"]) for r in rows) / n,
+                      "target_y_correcta": tc / n})
+    best = max(curva, key=lambda c: (c["target_y_correcta"], -c["norma"]))
+    out[par] = {"norma": best["norma"], "curva": curva}
+    torch.save(torch.load(f"{PD}/vec/{par}.pt", map_location="cpu") * best["norma"], f"{PD}/vec/{par}_sel.pt")
+    print(f"{par}: norma {best['norma']}  (target y correcta {best['target_y_correcta']:.2f} en validacion)")
+json.dump(out, open(f"{PD}/seleccion.json", "w"), indent=2)
+PY
+  for L in fr es de; do
+    for S in $(otros $L); do
+      D=$PD/heldout/${S}2$L
+      if [[ -f "$D/cross_lang_par.json" && "${FORCE:-0}" != "1" ]]; then echo "  ya esta: $D"; continue; fi
+      mkdir -p "$D"
+      python3 -u cross_lang_patch.py --model "$MODEL" --device "$DEVICE" --patch "$PD/vec/${S}2${L}_sel.pt" \
+          --patch_anchor goal_all --num_patch_positions 1 --target_lang $L --num_tokens $NTOK \
+          --targets "$TDIR/targets_v8_$L.csv" --train_test_split $SPLIT ${NHO[@]+"${NHO[@]}"} \
+          --conds "prompt_$S:0,prompt_$S:1" --tag par --out_dir "$D" 2>&1 | tee "$D/par.log"
+    done
+  done
+  PP=(); RP=""; IP=""
+  for L in fr es de; do
+    for S in $(otros $L); do
+      PP+=(--patch "${S}2$L=$PD/vec/${S}2${L}_sel.pt")
+      RP+="plain:prompt_$L:${S}2$L:-1,"
+      IP+="lang_id:prompt_$S:-:0,lang_id:prompt_$S:${S}2$L:1,"
+    done
+  done
+  for TAG in resta_pares idioma_pares; do
+    if [[ -f "$PD/tests/entrada_o_directiva_$TAG.json" && "${FORCE:-0}" != "1" ]]; then echo "  ya esta: $TAG"; continue; fi
+    [[ $TAG == resta_pares ]] && CC="${RP%,}" || CC="${IP%,}"
+    python3 -u entrada_o_directiva.py --model "$MODEL" --device "$DEVICE" \
+        --targets "$TDIR/targets_v8_fr.csv" --train_test_split $SPLIT --n $NENTRADA \
+        --num_tokens $NTOK "${PP[@]}" --conds "$CC" --tag $TAG --out_dir "$PD/tests" \
+        2>&1 | tee "$PD/tests/$TAG.log"
+  done
+fi 2>&1 | tee -a "$O/logs/pares.log"
 
 # =============================================================================
 if has reporte; then
