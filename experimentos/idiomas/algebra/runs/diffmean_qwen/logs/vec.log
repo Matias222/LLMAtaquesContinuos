@@ -9,3 +9,11 @@ Den_de.pt: L=de src=['prompt'] filas=528 ||raw||=0.1708  cos(shared)=+0.076
 referencia: algebra/runs/diffmean_qwen/vec/Dmulti_fr.pt  (shape (1, 1, 2560), norma 1.0000)
 parche random: seed=0  norma=1.0000
 guardado en /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/diffmean_qwen/vec/rand_unit.pt
+
+################ vec
+Den_fr.pt: L=fr src=['prompt'] filas=528 ||raw||=0.1850  cos(shared)=+0.046
+Den_es.pt: L=es src=['prompt'] filas=528 ||raw||=0.1806  cos(shared)=+0.069
+Den_de.pt: L=de src=['prompt'] filas=528 ||raw||=0.1708  cos(shared)=+0.076
+referencia: algebra/runs/diffmean_qwen/vec/Den_fr.pt  (shape (1, 1, 2560), norma 1.0000)
+parche random: seed=0  norma=1.0000
+guardado en /mnt/custom-file-systems/efs/fs-0ded2930a619aa967_fsap-0faa05c681ed1a8f3/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/diffmean_qwen/vec/rand_unit.pt

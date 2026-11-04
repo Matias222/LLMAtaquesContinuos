@@ -1023,3 +1023,23 @@ toda la respuesta               1.6068      1.5395   -0.0673
 Reportes: algebra/runs/diffmean_qwen/sel/Den_de_n1.0/eval_heldout.json
           algebra/runs/diffmean_qwen/sel/Den_de_n1.0/eval_heldout.md
 [gen_cache] /home/sagemaker-user/user-default-efs/papers/LLMAtaquesContinuos/experimentos/idiomas/algebra/runs/qwen3_v10/gen_cache: reusadas 120, generadas 60
+
+################ sel (validacion: filas 528..587)
+  ya esta: algebra/runs/diffmean_qwen/sel/shared_fr
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_fr_n0.5
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_fr_n0.6
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_fr_n0.7
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_fr_n0.8
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_fr_n1.0
+  ya esta: algebra/runs/diffmean_qwen/sel/shared_es
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_es_n0.5
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_es_n0.6
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_es_n0.7
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_es_n0.8
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_es_n1.0
+  ya esta: algebra/runs/diffmean_qwen/sel/shared_de
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_de_n0.5
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_de_n0.6
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_de_n0.7
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_de_n0.8
+  ya esta: algebra/runs/diffmean_qwen/sel/Den_de_n1.0

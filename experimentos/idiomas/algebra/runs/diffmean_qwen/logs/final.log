@@ -13,3 +13,12 @@ guardado algebra/runs/diffmean_qwen/sel/seleccion.json y los *_sel.pt
   Den es v         1  prompt        848       0.0%        0.0%  
   Dmulti de v         1  prompt        848       0.0%        0.0%  
   Den de v         1  prompt        848       0.0%        0.0%  
+
+################ final: eleccion de norma
+Den fr: norma 0.5  (target y correcta 0.78)  min norma con >=95% target: 0.6
+Den es: norma 0.5  (target y correcta 0.82)  min norma con >=95% target: 0.5
+Den de: norma 0.6  (target y correcta 0.75)  min norma con >=95% target: 0.6
+guardado algebra/runs/diffmean_qwen/sel/seleccion.json y los *_sel.pt
+  Den fr v         1  prompt        848       0.0%        0.0%  
+  Den es v         1  prompt        848       0.0%        0.0%  
+  Den de v         1  prompt        848       0.0%        0.0%  

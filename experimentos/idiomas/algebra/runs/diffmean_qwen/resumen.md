@@ -1,0 +1,291 @@
+# DiffMean en la capa 0 contra Shared (qwen)
+
+Corrida: `algebra/runs/diffmean_qwen`  |  Shared: `algebra/runs/qwen3_v10`
+
+Criterio pre-registrado: norma = argmax de *target y correcta* en validacion (filas 528..587); **equivalente** = McNemar exacto p > 0.05 contra Shared en *target y correcta* Y a <= 5 pp del nativo. Primario: `Dmulti`.
+
+## 1. Vectores
+
+| vector | L | norma cruda | norma elegida | norma Shared | cos(D, Shared) | cos(D, mu_vocab) |
+|---|---|---|---|---|---|---|
+| Den | fr | 0.18 | 0.5 | 0.923 | +0.046 | +0.361 |
+| Den | es | 0.18 | 0.5 | 0.963 | +0.069 | +0.438 |
+| Den | de | 0.17 | 0.6 | 0.998 | +0.076 | +0.493 |
+
+Cosenos entre vectores (capa 0):
+
+|  | Den_fr | Den_es | Den_de | shared_fr | shared_es | shared_de |
+|---|---|---|---|---|---|---|
+| Den_fr | +1.00 | +0.72 | +0.66 | +0.05 | +0.02 | +0.00 |
+| Den_es | +0.72 | +1.00 | +0.64 | +0.04 | +0.07 | +0.01 |
+| Den_de | +0.66 | +0.64 | +1.00 | +0.06 | +0.06 | +0.08 |
+| shared_fr | +0.05 | +0.04 | +0.06 | +1.00 | +0.27 | +0.26 |
+| shared_es | +0.02 | +0.07 | +0.06 | +0.27 | +1.00 | +0.24 |
+| shared_de | +0.00 | +0.01 | +0.08 | +0.26 | +0.24 | +1.00 |
+
+## 2. Seleccion de norma (validacion, filas 528..587)
+
+### fr
+
+| condicion | norma | % target | accuracy | target y correcta | CE head |
+|---|---|---|---|---|---|
+| nativo | – | 100.0 | 78.3 | 78.3 | – |
+| Shared | 0.923 | 96.7 | 81.7 | 80.0 | 1.19 |
+| Den **<-** | 0.5 | 93.3 | 85.0 | 78.3 | 1.92 |
+| Den | 0.6 | 98.3 | 78.3 | 78.3 | 1.89 |
+| Den | 0.7 | 98.3 | 63.3 | 61.7 | 2.91 |
+| Den | 0.8 | 90.0 | 43.3 | 38.3 | 4.49 |
+| Den | 1 | 58.3 | 0.0 | 0.0 | 7.29 |
+
+### es
+
+| condicion | norma | % target | accuracy | target y correcta | CE head |
+|---|---|---|---|---|---|
+| nativo | – | 100.0 | 78.3 | 78.3 | – |
+| Shared | 0.963 | 100.0 | 78.3 | 78.3 | 1.04 |
+| Den **<-** | 0.5 | 96.7 | 85.0 | 81.7 | 2.37 |
+| Den | 0.6 | 96.7 | 81.7 | 78.3 | 2.30 |
+| Den | 0.7 | 93.3 | 60.0 | 53.3 | 2.96 |
+| Den | 0.8 | 65.0 | 50.0 | 30.0 | 5.60 |
+| Den | 1 | 83.3 | 1.7 | 0.0 | 8.18 |
+
+### de
+
+| condicion | norma | % target | accuracy | target y correcta | CE head |
+|---|---|---|---|---|---|
+| nativo | – | 96.7 | 76.7 | 73.3 | – |
+| Shared | 0.998 | 98.3 | 78.3 | 76.7 | 1.23 |
+| Den | 0.5 | 90.0 | 81.7 | 71.7 | 2.40 |
+| Den **<-** | 0.6 | 96.7 | 78.3 | 75.0 | 2.44 |
+| Den | 0.7 | 100.0 | 65.0 | 65.0 | 3.18 |
+| Den | 0.8 | 98.3 | 41.7 | 41.7 | 4.76 |
+| Den | 1 | 95.0 | 10.0 | 10.0 | 6.80 |
+
+Curvas en `algebra/runs/diffmean_qwen/curvas_sel.csv`.
+
+## 3. Held-out (Tabla 1): q_en + vector
+
+### fr
+
+| condicion | % target | accuracy | target y correcta | acc \| target | CE head | McNemar vs Shared (solo Shared / solo este) | equivalente |
+|---|---|---|---|---|---|---|---|
+| none | 0.0 | 99.1 | 0.0 | – | 8.57 |  |  |
+| nativo | 100.0 | 83.9 | 83.9 | 83.9 | – |  |  |
+| Shared | 97.3 | 83.9 | 82.1 | 84.4 | 1.43 |  |  |
+| Den | 94.6 | 90.2 | 84.8 | 89.6 | 1.85 | 5/8 p=0.581 | **si** |
+| rand | 0.0 | 98.2 | 0.0 | – | 8.33 | 92/0 p=0.000 |  |
+
+### es
+
+| condicion | % target | accuracy | target y correcta | acc \| target | CE head | McNemar vs Shared (solo Shared / solo este) | equivalente |
+|---|---|---|---|---|---|---|---|
+| none | 0.9 | 99.1 | 0.9 | – | 8.26 |  |  |
+| nativo | 97.3 | 83.9 | 81.2 | 83.5 | – |  |  |
+| Shared | 96.4 | 83.9 | 80.4 | 83.3 | 1.45 |  |  |
+| Den | 92.9 | 83.9 | 76.8 | 82.7 | 2.20 | 10/6 p=0.454 | **si** |
+| rand | 0.9 | 98.2 | 0.9 | 100.0 | 8.00 | 89/0 p=0.000 |  |
+
+### de
+
+| condicion | % target | accuracy | target y correcta | acc \| target | CE head | McNemar vs Shared (solo Shared / solo este) | equivalente |
+|---|---|---|---|---|---|---|---|
+| none | 0.0 | 99.1 | 0.0 | – | 9.00 |  |  |
+| nativo | 98.2 | 83.9 | 83.0 | 84.5 | – |  |  |
+| Shared | 97.3 | 83.0 | 81.2 | 83.5 | 1.73 |  |  |
+| Den | 100.0 | 80.4 | 80.4 | 80.4 | 2.49 | 9/8 p=1.000 | **si** |
+| rand | 0.0 | 98.2 | 0.0 | – | 8.90 | 91/0 p=0.000 |  |
+
+**Veredicto pre-registrado**
+
+- Den fr: EQUIVALENTE (t&c 84.8 vs Shared 82.1, nativo 83.9, p=0.581)
+- Den es: EQUIVALENTE (t&c 76.8 vs Shared 80.4, nativo 81.2, p=0.454)
+- Den de: EQUIVALENTE (t&c 80.4 vs Shared 81.2, nativo 83.0, p=1.000)
+
+## 4. Otros idiomas de origen (Tabla 6 + it/pt no vistos): q_s + vector_L
+
+| origen -> target | sin parche | Shared | Den |
+|---|---|---|---|
+| es -> fr | 0.0 / 0.0 | 99.1 / 80.4 | 0.0 / 0.0 |
+| de -> fr | 0.0 / 0.0 | 93.8 / 65.2 | 22.3 / 15.2 |
+| it -> fr (no visto) | 0.0 / 0.0 | 100.0 / 71.4 | 22.3 / 16.1 |
+| pt -> fr (no visto) | 0.0 / 0.0 | 97.3 / 76.8 | 13.4 / 10.7 |
+| de -> es | 0.9 / 0.0 | 92.9 / 64.3 | 54.5 / 30.4 |
+| fr -> es | 0.0 / 0.0 | 95.5 / 75.0 | 63.4 / 56.2 |
+| it -> es (no visto) | 0.0 / 0.0 | 83.0 / 58.9 | 70.5 / 47.3 |
+| pt -> es (no visto) | 1.8 / 0.9 | 97.3 / 75.9 | 45.5 / 35.7 |
+| es -> de | 0.0 / 0.0 | 99.1 / 70.5 | 81.2 / 49.1 |
+| fr -> de | 0.0 / 0.0 | 97.3 / 66.1 | 92.0 / 64.3 |
+| it -> de (no visto) | 0.0 / 0.0 | 89.3 / 56.2 | 93.8 / 55.4 |
+| pt -> de (no visto) | 0.0 / 0.0 | 99.1 / 63.4 | 95.5 / 51.8 |
+
+Celdas: % target / % target y correcta.
+
+## 5. Bateria de tests (mismas condiciones que la etapa E de Shared)
+
+### resta
+
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| plain \| prompt_fr | — | 0.0 | 100.0 | 0.0 | 0.0 | 83.9 |
+| plain \| prompt_fr -1*fr | Shared | 0.9 | 61.6 | 3.6 | 2.7 | 75.9 |
+| plain \| prompt_fr -1*fr | Den | 56.2 | 33.9 | 0.0 | 0.9 | 79.5 |
+| plain \| prompt_fr -1*es | Shared | 0.0 | 90.2 | 0.9 | 0.0 | 59.8 |
+| plain \| prompt_fr -1*es | Den | 3.6 | 95.5 | 0.9 | 0.0 | 80.4 |
+| plain \| prompt_fr -1*de | Shared | 0.0 | 100.0 | 0.0 | 0.0 | 62.5 |
+| plain \| prompt_fr -1*de | Den | 0.9 | 98.2 | 0.9 | 0.0 | 69.6 |
+| plain \| prompt_fr -1*rand0_fr | Shared | 0.0 | 100.0 | 0.0 | 0.0 | 75.9 |
+| plain \| prompt_fr -1*rand0_fr | Den | 0.0 | 100.0 | 0.0 | 0.0 | 83.0 |
+| plain \| prompt_es | — | 0.0 | 0.0 | 97.3 | 0.0 | 83.9 |
+| plain \| prompt_es -1*fr | Shared | 0.0 | 0.0 | 92.9 | 0.0 | 79.5 |
+| plain \| prompt_es -1*fr | Den | 17.9 | 0.0 | 79.5 | 0.0 | 76.8 |
+| plain \| prompt_es -1*es | Shared | 1.8 | 0.9 | 51.8 | 0.0 | 44.6 |
+| plain \| prompt_es -1*es | Den | 84.8 | 0.0 | 6.2 | 0.0 | 80.4 |
+| plain \| prompt_es -1*de | Shared | 0.0 | 0.0 | 89.3 | 0.0 | 46.4 |
+| plain \| prompt_es -1*de | Den | 6.2 | 0.0 | 89.3 | 0.0 | 73.2 |
+| plain \| prompt_es -1*rand0_es | Shared | 2.7 | 0.0 | 94.6 | 0.0 | 77.7 |
+| plain \| prompt_es -1*rand0_es | Den | 0.0 | 0.0 | 97.3 | 0.0 | 83.9 |
+| plain \| prompt_de | — | 0.9 | 0.0 | 0.9 | 98.2 | 83.9 |
+| plain \| prompt_de -1*fr | Shared | 0.9 | 0.0 | 1.8 | 97.3 | 76.8 |
+| plain \| prompt_de -1*fr | Den | 8.0 | 0.0 | 0.9 | 91.1 | 75.9 |
+| plain \| prompt_de -1*es | Shared | 8.9 | 0.0 | 0.0 | 89.3 | 57.1 |
+| plain \| prompt_de -1*es | Den | 4.5 | 0.0 | 0.0 | 94.6 | 79.5 |
+| plain \| prompt_de -1*de | Shared | 63.4 | 1.8 | 6.2 | 7.1 | 26.8 |
+| plain \| prompt_de -1*de | Den | 97.3 | 0.9 | 0.0 | 1.8 | 49.1 |
+| plain \| prompt_de -1*rand0_de | Shared | 3.6 | 0.0 | 1.8 | 94.6 | 71.4 |
+| plain \| prompt_de -1*rand0_de | Den | 0.9 | 0.0 | 0.0 | 99.1 | 83.0 |
+
+### idioma_entrada
+
+| condicion | vector | dice en | dice fr | dice es | dice de |
+|---|---|---|---|---|---|
+| lang_id \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 |
+| lang_id \| prompt +1*fr | Shared | 0.0 | 88.4 | 0.0 | 0.0 |
+| lang_id \| prompt +1*fr | Den | 3.6 | 92.9 | 3.6 | 0.0 |
+| lang_id \| prompt +1*es | Shared | 0.0 | 0.0 | 97.3 | 0.0 |
+| lang_id \| prompt +1*es | Den | 0.0 | 0.0 | 99.1 | 0.0 |
+| lang_id \| prompt +1*de | Shared | 0.0 | 0.0 | 0.0 | 99.1 |
+| lang_id \| prompt +1*de | Den | 0.0 | 0.0 | 0.0 | 100.0 |
+| lang_id \| prompt +1*rand0 | Shared | 99.1 | 0.9 | 0.0 | 0.0 |
+| lang_id \| prompt +1*rand0 | Den | 99.1 | 0.9 | 0.0 | 0.0 |
+| lang_id \| prompt_fr | — | 0.0 | 100.0 | 0.0 | 0.0 |
+| lang_id \| prompt_es | — | 0.0 | 0.0 | 100.0 | 0.0 |
+| lang_id \| prompt_de | — | 0.0 | 0.0 | 0.0 | 100.0 |
+
+### resta_directiva
+
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_fr \| prompt | — | 0.0 | 100.0 | 0.0 | 0.0 | 82.1 |
+| instr_fr \| prompt -1*fr | Shared | 0.0 | 100.0 | 0.0 | 0.0 | 78.6 |
+| instr_fr \| prompt -1*fr | Den | 0.0 | 100.0 | 0.0 | 0.0 | 79.5 |
+| instr_fr \| prompt -1*es | Shared | 0.9 | 99.1 | 0.0 | 0.0 | 54.5 |
+| instr_fr \| prompt -1*es | Den | 0.0 | 100.0 | 0.0 | 0.0 | 80.4 |
+| instr_fr \| prompt -1*rand0 | Shared | 0.0 | 99.1 | 0.0 | 0.9 | 82.1 |
+| instr_fr \| prompt -1*rand0 | Den | 0.0 | 100.0 | 0.0 | 0.0 | 83.0 |
+
+### conflicto
+
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_en \| prompt_fr | — | 95.5 | 4.5 | 0.0 | 0.0 | 83.0 |
+| instr_en \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 98.2 |
+| instr_en \| prompt +1*fr | Shared | 95.5 | 4.5 | 0.0 | 0.0 | 90.2 |
+| instr_en \| prompt +1*fr | Den | 100.0 | 0.0 | 0.0 | 0.0 | 99.1 |
+| instr_en \| prompt +1*rand0 | Shared | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+| instr_en \| prompt +1*rand0 | Den | 100.0 | 0.0 | 0.0 | 0.0 | 98.2 |
+| plain \| prompt | — | 99.1 | 0.0 | 0.9 | 0.0 | 99.1 |
+| plain \| prompt +1*fr | Shared | 1.8 | 97.3 | 0.9 | 0.0 | 84.8 |
+| plain \| prompt +1*fr | Den | 4.5 | 94.6 | 0.9 | 0.0 | 88.4 |
+
+### conflicto_v2
+
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_en_post \| prompt_fr | — | 99.1 | 0.0 | 0.9 | 0.0 | 92.0 |
+| instr_en_post \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 98.2 |
+| instr_en_post \| prompt +1*fr | Shared | 100.0 | 0.0 | 0.0 | 0.0 | 92.0 |
+| instr_en_post \| prompt +1*fr | Den | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+| instr_en_post_ref \| prompt_fr | — | 99.1 | 0.0 | 0.0 | 0.0 | 68.8 |
+| instr_en_post_ref \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+| instr_en_post_ref \| prompt +1*fr | Shared | 97.3 | 0.0 | 0.0 | 0.0 | 67.9 |
+| instr_en_post_ref \| prompt +1*fr | Den | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+
+En los tests de D los nombres fr/es/de son D_fr/D_es/D_de a la norma elegida; randN copia la norma de D (en Shared, la de Shared).
+
+## 6. Eficiencia de datos: Dmulti_fr con N preguntas paralelas (held-out fr)
+
+| N | semilla | cos(D_N, D_528) | % target | accuracy | target y correcta | CE head |
+|---|---|---|---|---|---|---|
+| 8 | 0 | (falta) |  |  |  |  |
+| 8 | 1 | (falta) |  |  |  |  |
+| 32 | 0 | (falta) |  |  |  |  |
+| 32 | 1 | (falta) |  |  |  |  |
+| 128 | 0 | (falta) |  |  |  |  |
+| 128 | 1 | (falta) |  |  |  |  |
+| 528 | – | +1.000 | 92.9 | 82.1 | 75.9 | 2.97 |
+
+## 7. Geometria por capas (ultimo token del prompt, validacion cruzada por mitades)
+
+### fr (n=112, 36 capas)
+
+| par | L0 | L1 | L9 | L18 | L27 | L36 |
+|---|---|---|---|---|---|---|
+| cos(shared, Den) | +0.00 | +0.23 | +0.89 | +0.91 | +0.95 | +0.97 |
+| cos(shared, nativo) | +0.00 | +0.15 | +0.87 | +0.85 | +0.91 | +0.95 |
+| cos(Den, nativo) | +0.00 | +0.68 | +0.94 | +0.95 | +0.95 | +0.96 |
+| cos(rand, nativo) | +0.00 | +0.30 | +0.24 | +0.34 | +0.12 | +0.17 |
+| cos(shared, instr) | +0.00 | -0.15 | +0.52 | +0.35 | +0.80 | +0.88 |
+| cos(nativo, instr) | +0.00 | +0.01 | +0.44 | +0.14 | +0.74 | +0.86 |
+| cos(shared, shared) | +0.00 | +1.00 | +1.00 | +0.99 | +0.99 | +0.97 |
+| cos(nativo, nativo) | +0.00 | +0.99 | +1.00 | +0.99 | +0.99 | +0.98 |
+
+### es (n=112, 36 capas)
+
+| par | L0 | L1 | L9 | L18 | L27 | L36 |
+|---|---|---|---|---|---|---|
+| cos(shared, Den) | +0.00 | +0.40 | +0.85 | +0.86 | +0.91 | +0.95 |
+| cos(shared, nativo) | +0.00 | +0.31 | +0.76 | +0.75 | +0.87 | +0.93 |
+| cos(Den, nativo) | +0.00 | +0.78 | +0.95 | +0.96 | +0.97 | +0.97 |
+| cos(rand, nativo) | +0.00 | +0.31 | +0.23 | +0.34 | +0.14 | +0.17 |
+| cos(shared, instr) | +0.00 | -0.20 | +0.50 | +0.32 | +0.76 | +0.88 |
+| cos(nativo, instr) | +0.00 | -0.12 | +0.52 | +0.13 | +0.65 | +0.85 |
+| cos(shared, shared) | +0.00 | +1.00 | +1.00 | +0.99 | +0.98 | +0.97 |
+| cos(nativo, nativo) | +0.00 | +0.98 | +1.00 | +0.99 | +0.99 | +0.97 |
+
+### de (n=112, 36 capas)
+
+| par | L0 | L1 | L9 | L18 | L27 | L36 |
+|---|---|---|---|---|---|---|
+| cos(shared, Den) | +0.00 | +0.28 | +0.79 | +0.83 | +0.93 | +0.96 |
+| cos(shared, nativo) | +0.00 | +0.21 | +0.80 | +0.80 | +0.92 | +0.95 |
+| cos(Den, nativo) | +0.00 | +0.74 | +0.90 | +0.94 | +0.96 | +0.97 |
+| cos(rand, nativo) | +0.00 | +0.28 | +0.25 | +0.36 | +0.12 | +0.13 |
+| cos(shared, instr) | +0.00 | -0.14 | +0.58 | +0.42 | +0.80 | +0.90 |
+| cos(nativo, instr) | +0.00 | -0.18 | +0.53 | +0.17 | +0.75 | +0.88 |
+| cos(shared, shared) | +0.00 | +1.00 | +1.00 | +0.99 | +0.98 | +0.97 |
+| cos(nativo, nativo) | +0.00 | +0.99 | +1.00 | +0.99 | +0.99 | +0.98 |
+
+La diagonal (x, x) es el techo de ruido split-half. Todas las capas en `algebra/runs/diffmean_qwen/geo.csv`.
+
+## 8. Pares de idiomas: D_{s->L} = mu_L - mu_s
+
+### Cross: q_s + vector_L (held-out)
+
+| par | norma | cos(par, Den_L) | cos(par, Shared_L) | Shared | Den_L | D_{s->L} |
+|---|---|---|---|---|---|---|
+| es -> fr | – | – | – | 99.1 / 80.4 / 81.1 / 0.9 | 0.0 / 0.0 / – / 99.1 | (falta) |
+| de -> fr | – | – | – | 93.8 / 65.2 / 69.5 / 5.4 | 22.3 / 15.2 / 68.0 / 76.8 | (falta) |
+| de -> es | – | – | – | 92.9 / 64.3 / 69.2 / 4.5 | 54.5 / 30.4 / 55.7 / 44.6 | (falta) |
+| fr -> es | – | – | – | 95.5 / 75.0 / 78.5 / 2.7 | 63.4 / 56.2 / 88.7 / 35.7 | (falta) |
+| es -> de | – | – | – | 99.1 / 70.5 / 71.2 / 0.9 | 81.2 / 49.1 / 60.4 / 18.8 | (falta) |
+| fr -> de | – | – | – | 97.3 / 66.1 / 67.9 / 0.9 | 92.0 / 64.3 / 69.9 / 6.2 | (falta) |
+
+Celdas: % target / % target y correcta / acc | target / % que se queda en el idioma de origen.
+
+### Resta por pares
+
+(falta)
+
+### Identificacion por pares
+
+(falta)
