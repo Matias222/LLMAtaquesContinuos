@@ -124,23 +124,91 @@ Celdas: % target / % target y correcta.
 
 ### resta
 
-(falta)
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| plain \| prompt_fr | — | 0.0 | 99.1 | 0.0 | 0.0 | 75.9 |
+| plain \| prompt_fr -1*fr | Shared | 83.9 | 8.9 | 6.2 | 0.9 | 30.4 |
+| plain \| prompt_fr -1*fr | Den | 98.2 | 0.9 | 0.9 | 0.0 | 47.3 |
+| plain \| prompt_fr -1*es | Shared | 0.0 | 100.0 | 0.0 | 0.0 | 51.8 |
+| plain \| prompt_fr -1*es | Den | 73.2 | 26.8 | 0.0 | 0.0 | 51.8 |
+| plain \| prompt_fr -1*de | Shared | 49.1 | 50.9 | 0.0 | 0.0 | 41.1 |
+| plain \| prompt_fr -1*de | Den | 49.1 | 49.1 | 1.8 | 0.0 | 42.9 |
+| plain \| prompt_fr -1*rand0_fr | Shared | 1.8 | 98.2 | 0.0 | 0.0 | 56.2 |
+| plain \| prompt_fr -1*rand0_fr | Den | 0.9 | 99.1 | 0.0 | 0.0 | 75.0 |
+| plain \| prompt_es | — | 0.0 | 0.0 | 95.5 | 0.0 | 72.3 |
+| plain \| prompt_es -1*fr | Shared | 3.6 | 0.0 | 95.5 | 0.0 | 51.8 |
+| plain \| prompt_es -1*fr | Den | 85.7 | 0.0 | 13.4 | 0.0 | 50.9 |
+| plain \| prompt_es -1*es | Shared | 2.7 | 76.8 | 17.0 | 0.0 | 46.4 |
+| plain \| prompt_es -1*es | Den | 99.1 | 0.9 | 0.0 | 0.0 | 51.8 |
+| plain \| prompt_es -1*de | Shared | 18.8 | 0.9 | 80.4 | 0.0 | 46.4 |
+| plain \| prompt_es -1*de | Den | 72.3 | 0.0 | 26.8 | 0.0 | 49.1 |
+| plain \| prompt_es -1*rand0_es | Shared | 0.9 | 0.9 | 97.3 | 0.0 | 58.9 |
+| plain \| prompt_es -1*rand0_es | Den | 0.0 | 0.0 | 98.2 | 0.0 | 72.3 |
+| plain \| prompt_de | — | 0.9 | 0.0 | 0.0 | 94.6 | 77.7 |
+| plain \| prompt_de -1*fr | Shared | 39.3 | 0.0 | 0.0 | 60.7 | 39.3 |
+| plain \| prompt_de -1*fr | Den | 61.6 | 0.0 | 0.0 | 38.4 | 50.0 |
+| plain \| prompt_de -1*es | Shared | 0.0 | 0.0 | 0.0 | 100.0 | 63.4 |
+| plain \| prompt_de -1*es | Den | 82.1 | 0.0 | 0.0 | 17.9 | 51.8 |
+| plain \| prompt_de -1*de | Shared | 95.5 | 0.0 | 0.0 | 2.7 | 28.6 |
+| plain \| prompt_de -1*de | Den | 100.0 | 0.0 | 0.0 | 0.0 | 34.8 |
+| plain \| prompt_de -1*rand0_de | Shared | 7.1 | 0.0 | 0.0 | 92.0 | 52.7 |
+| plain \| prompt_de -1*rand0_de | Den | 0.9 | 0.0 | 0.0 | 96.4 | 69.6 |
 
 ### idioma_entrada
 
-(falta)
+| condicion | vector | dice en | dice fr | dice es | dice de |
+|---|---|---|---|---|---|
+| lang_id \| prompt | — | 96.4 | 0.9 | 1.8 | 0.0 |
+| lang_id \| prompt +1*fr | Shared | 15.2 | 75.9 | 2.7 | 0.9 |
+| lang_id \| prompt +1*fr | Den | 0.0 | 93.8 | 3.6 | 0.9 |
+| lang_id \| prompt +1*es | Shared | 4.5 | 0.9 | 90.2 | 0.9 |
+| lang_id \| prompt +1*es | Den | 1.8 | 0.9 | 94.6 | 1.8 |
+| lang_id \| prompt +1*de | Shared | 8.9 | 0.9 | 2.7 | 84.8 |
+| lang_id \| prompt +1*de | Den | 2.7 | 0.9 | 4.5 | 85.7 |
+| lang_id \| prompt +1*rand0 | Shared | 95.5 | 0.9 | 0.9 | 0.0 |
+| lang_id \| prompt +1*rand0 | Den | 96.4 | 0.9 | 1.8 | 0.0 |
+| lang_id \| prompt_fr | — | 0.0 | 100.0 | 0.0 | 0.0 |
+| lang_id \| prompt_es | — | 0.0 | 0.0 | 100.0 | 0.0 |
+| lang_id \| prompt_de | — | 0.9 | 0.9 | 2.7 | 95.5 |
 
 ### resta_directiva
 
-(falta)
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_fr \| prompt | — | 0.0 | 100.0 | 0.0 | 0.0 | 81.2 |
+| instr_fr \| prompt -1*fr | Shared | 1.8 | 96.4 | 0.0 | 0.0 | 71.4 |
+| instr_fr \| prompt -1*fr | Den | 0.9 | 98.2 | 0.0 | 0.0 | 70.5 |
+| instr_fr \| prompt -1*es | Shared | 0.0 | 99.1 | 0.0 | 0.0 | 75.9 |
+| instr_fr \| prompt -1*es | Den | 0.9 | 99.1 | 0.0 | 0.0 | 75.0 |
+| instr_fr \| prompt -1*rand0 | Shared | 0.0 | 99.1 | 0.0 | 0.0 | 79.5 |
+| instr_fr \| prompt -1*rand0 | Den | 0.0 | 100.0 | 0.0 | 0.0 | 76.8 |
 
 ### conflicto
 
-(falta)
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_en \| prompt_fr | — | 27.7 | 72.3 | 0.0 | 0.0 | 77.7 |
+| instr_en \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 96.4 |
+| instr_en \| prompt +1*fr | Shared | 23.2 | 76.8 | 0.0 | 0.0 | 82.1 |
+| instr_en \| prompt +1*fr | Den | 65.2 | 34.8 | 0.0 | 0.0 | 82.1 |
+| instr_en \| prompt +1*rand0 | Shared | 100.0 | 0.0 | 0.0 | 0.0 | 96.4 |
+| instr_en \| prompt +1*rand0 | Den | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+| plain \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 97.3 |
+| plain \| prompt +1*fr | Shared | 0.0 | 100.0 | 0.0 | 0.0 | 79.5 |
+| plain \| prompt +1*fr | Den | 2.7 | 97.3 | 0.0 | 0.0 | 68.8 |
 
 ### conflicto_v2
 
-(falta)
+| condicion | vector | en | fr | es | de | acc |
+|---|---|---|---|---|---|---|
+| instr_en_post \| prompt_fr | — | 96.4 | 3.6 | 0.0 | 0.0 | 92.9 |
+| instr_en_post \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 96.4 |
+| instr_en_post \| prompt +1*fr | Shared | (falta) |  |  |  |  |
+| instr_en_post \| prompt +1*fr | Den | 99.1 | 0.0 | 0.0 | 0.0 | 89.3 |
+| instr_en_post_ref \| prompt_fr | — | 98.2 | 1.8 | 0.0 | 0.0 | 92.0 |
+| instr_en_post_ref \| prompt | — | 100.0 | 0.0 | 0.0 | 0.0 | 96.4 |
+| instr_en_post_ref \| prompt +1*fr | Shared | 83.0 | 17.0 | 0.0 | 0.0 | 91.1 |
+| instr_en_post_ref \| prompt +1*fr | Den | 99.1 | 0.0 | 0.0 | 0.0 | 90.2 |
 
 En los tests de D los nombres fr/es/de son D_fr/D_es/D_de a la norma elegida; randN copia la norma de D (en Shared, la de Shared).
 
